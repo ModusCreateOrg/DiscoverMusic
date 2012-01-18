@@ -1,0 +1,24 @@
+.vbox, .hbox {
+    @include display-box;
+}
+
+.vbox {
+    @include box-orient(vertical);
+}
+
+.hbox {
+    @include box-orient(horizontal);
+}
+
+.stretch {
+    @include box-align(stretch);
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.flex1 {
+    @include box-flex(1);
+    font-size: 72px;
+}

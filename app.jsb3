@@ -1,0 +1,32 @@
+{
+    "projectName": "Project Name",
+    "licenseText": "Copyright(c) 2011 Company Name",
+    "builds": [
+        {
+            "name": "All Classes",
+            "target": "all-classes.js",
+            "options": {
+                "debug": true
+            },
+            "files": [
+                
+            ]
+        },
+        {
+            "name": "Application - Production",
+            "target": "app-all.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "js/Music/",
+                    "name": "all-classes.js"
+                },
+                {
+                    "path": "js/Music/app/",
+                    "name": "app.js"
+                }
+            ]
+        }
+    ],
+    "resources": []
+}
