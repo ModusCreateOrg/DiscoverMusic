@@ -1,6 +1,86 @@
-.music-article-image{
-    @include box-flex(3);
-    padding: 48px 0 100px 0;
+
+@mixin article-category($category,$bg-color1,$bg-color2){
+
+	.music-article-category-#{$category}{
+
+		div.music-article-category{
+			@include background-image(linear-gradient($bg-color1,$bg-color2));
+			float: left;
+			padding:20px 40px;
+			min-width:250px;
+			h1{
+				color:#fff;
+				font-weight:bold;
+				font-size:1.8em;
+				text-align:center;
+			}
+		}
+
+		div.music-article-title{
+			position:absolute;
+			left:20px;
+			right:20px;
+			bottom:90px;
+			height:130px;
+
+			div.music-content-all{
+				position:relative;
+				height:100%;
+			}
+			
+			div.music-article-title-bg{
+				position:absolute;
+				height:100%;
+				width:100%;
+				padding:30px 25px;
+				background-color:#000;
+				@include opacity(0.5);
+				@include border-radius(10px);
+			}
+
+			div.music-article-title-content{
+				position:absolute;
+				padding:30px 25px;
+				width:100%;
+
+				h2{
+					color:#fff;
+					font-size:1.9em;
+					@include opacity(1);
+				}
+				div.music-article-read-btn{
+					float:right;
+					@include opacity(1);
+					@include background-image(linear-gradient($bg-color1,$bg-color2));
+					@include border-radius(10px);
+					padding:20px 30px;
+					margin-left:50px;
+					color:#fff;
+					font-weight:bold;
+					font-size:1.4em;
+					em{
+						font-weight:normal;
+					}
+				}
+			}
+		}
+	}
+
+	.x-carousel-indicator-light span{
+		background-color:#fff;
+	}
+	.x-carousel-indicator-light span.x-carousel-indicator-active{
+		@include background-image(linear-gradient($bg-color1,$bg-color2));
+	}
+}
+
+.music-article-preview div.x-innerhtml {
+	height:100%;
+}
+.music-article-preview div.music-article-image{
+	@include box-flex(3);
+	position:relative;
+	padding-top:42px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,39 +88,4 @@
     height:100%;
 }
 
-.music-article-title{
-	height:85px;
-	@include background-image(linear-gradient(#444, #000));
-	@include opacity(0.85);
-}
-.music-article-title h2{
-	line-height:85px;
-	color:#fff;
-	font-size:1.5em;
-	@include opacity(1);
-	margin-left:20px;
-}
-.music-article-category{
-	margin:20px 0 390px 20px;
-}
-.music-article-category h1{
-	display:inline;
-	padding:10px 30px;
-	background-color:#f1f1f1;
-	text-transform:uppercase;
-	font-weight:bold;
-	font-size:0.8em;
-	@include single-box-shadow(rgba(0,0,0,0.6),3px,3px,7px);
-}
-.music-article-read{
-	float:right;
-	background-color:#f1f1f1;
-	margin:20px 20px;
-	padding:10px 30px;
-	text-transform:uppercase;
-	font-weight:bold;
-}
-.music-article-preview .x-innerhtml {
-	height:100%;
-	min-height:100%;
-}
+@include article-category('featured',#ffcc00,#ffa700);
