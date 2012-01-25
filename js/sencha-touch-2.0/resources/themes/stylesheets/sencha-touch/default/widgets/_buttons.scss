@@ -41,7 +41,7 @@ $toolbar-icon-size: 1.4em !default;
 $include-button-uis: $include-default-uis !default;
 
 /**
- * @var {boolean} $include-button-uis Optionally disable special CSS3 effects on buttons including gradients, text-shadows, and box-shadows.
+ * @var {boolean} $include-button-highlights Optionally disable special CSS3 effects on buttons including gradients, text-shadows, and box-shadows.
  */
 $include-button-highlights: $include-highlights !default;
 
@@ -107,15 +107,11 @@ $include-button-highlights: $include-highlights !default;
   // Button icon alignment
   .x-iconalign-left, .x-icon-align-right {
     @include box-orient(horizontal);
-    @include box-direction(reverse);
   }
   .x-iconalign-top, .x-iconalign-bottom {
     @include box-orient(vertical);
   }
   .x-iconalign-bottom, .x-iconalign-right {
-    @include box-direction(normal);
-  }
-  .x-iconalign-bottom {
     @include box-direction(reverse);
   }
   .x-iconalign-center {
@@ -126,6 +122,12 @@ $include-button-highlights: $include-highlights !default;
   }
   .x-iconalign-right .x-button-label {
     margin-right: $toolbar-spacing * 1.5;
+  }
+  .x-iconalign-top .x-button-label {
+    margin-top: $toolbar-spacing * 1.5;
+  }
+  .x-iconalign-bottom .x-button-label {
+    margin-bottom: $toolbar-spacing * 1.5;
   }
 
   // Button labels
@@ -234,7 +236,7 @@ $include-button-highlights: $include-highlights !default;
 
       $mask-radial-glow: lighten($active-color, 50%);
       @include background-image(radial-gradient(fade-out($mask-radial-glow, .3), fade-out($mask-radial-glow, 1) 24px));
-      .x-button-icon {
+      .x-button-icon.x-button-mask {
         @include background-gradient(#fff, 'recessed');
       }
     }

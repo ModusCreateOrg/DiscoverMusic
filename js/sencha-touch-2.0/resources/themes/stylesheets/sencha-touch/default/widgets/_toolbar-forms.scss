@@ -49,8 +49,12 @@ $toolbar-search-left-padding: 1.67em;
 
   .x-desktop .x-toolbar {
     .x-input-search {
-      padding-left: ($toolbar-search-left-padding - .61em);
+      margin-left: ($toolbar-search-left-padding - .61em);
     }
+  }
+
+  .x-android .x-toolbar .x-input-el {
+    -webkit-text-fill-color: #fff;
   }
 
   .x-toolbar {
@@ -110,12 +114,17 @@ $toolbar-search-left-padding: 1.67em;
       @if $include-border-radius { @include border-radius($toolbar-input-height/2); }
     }
 
-    .x-input-search {
-      background-image: -webkit-gradient(linear,0% 0%,0% 100%,from(rgba($toolbar-input-bg,.6))), theme_image($theme-name, "pictos/search.png");
-      -webkit-background-size: .83em .83em, .83em .83em;
-      background-repeat: no-repeat;
-      background-position: .5em 50%;
-      padding-left: $toolbar-search-left-padding;
+    .x-field-search {
+      .x-field-input {
+        background-image: -webkit-gradient(linear,0% 0%,0% 100%,from(rgba($toolbar-input-bg,.6))), theme_image($theme-name, "pictos/search.png");
+        -webkit-background-size: .83em .83em, .83em .83em;
+        background-repeat: no-repeat;
+        background-position: .5em 50%;
+
+        .x-form-field {
+          margin-left: $toolbar-search-left-padding - 0.67em;
+        }
+      }
     }
 
     .x-field-select {
@@ -150,4 +159,9 @@ $toolbar-search-left-padding: 1.67em;
       }
     }
   }
+
+  .x-android .x-field-search .x-field-input .x-form-field {
+    margin-left: $toolbar-search-left-padding;
+  }
+
 }

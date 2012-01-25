@@ -124,8 +124,8 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
   .x-form {
     .x-scroll-container {
       background-color: $form-bg-color;
-      
-      > .x-panel-inner {
+
+      > .x-inner {
         padding: 1em;
       }
     }
@@ -367,13 +367,15 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
     }
   }
 
+  .x-phone .x-select-overlay {
+    min-width: 14em;
+    min-height: 12.5em;
+  }
+
   // Ext.field.Select
   .x-select-overlay {
-    min-width: 14em;
-
-    .x-list-inner {
-      width: 100%;
-    }
+    min-width: 18em;
+    min-height: 22em;
 
     .x-list-item-label {
       height: 2.6em;
@@ -383,7 +385,7 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
       @include ellipsis;
       display: block;
     }
-    
+
     .x-list-item {
       padding-right: 2.6em;
     }
@@ -425,7 +427,7 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
     @include box-orient(horizontal);
     @include box-align(center);
     @include box-pack(center);
-    
+
     .x-input-el {
       @include box-flex(1);
     }
@@ -462,6 +464,10 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
     }
   }
 
+  .x-android .x-input-el {
+    -webkit-text-fill-color: #000;
+  }
+
   //disabled fields
   .x-item-disabled .x-form-label span,
   .x-item-disabled input,
@@ -470,26 +476,29 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
   .x-item-disabled textarea,
   .x-item-disabled .x-field-clear-container {
     color: lighten($form-dark, 50%);
+    -webkit-text-fill-color: lighten($form-dark, 50%);
     pointer-events: none;
   }
 
   // Rounded corners
   .x-form-fieldset {
     .x-field {
-      &:first-child {
+      &.x-form-fieldset-item-first {
         @if $include-border-radius {
           @include border-top-radius($form-fieldset-radius);
         }
       }
 
-      &:last-child {
+      &.x-form-fieldset-item-last {
+        border-bottom: 0;
+
         @if $include-border-radius {
           @include border-bottom-radius($form-fieldset-radius);
         }
       }
     }
   }
-  
+
   // Create the dropdown arrow
   // for select fields
   .x-field-select {
@@ -525,9 +534,9 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
     }
 
     .x-form-field {
-      white-space: nowrap;  
-      width: 100%;                     
-      overflow: hidden; 
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
       text-overflow: ellipsis
     }
 
@@ -535,52 +544,4 @@ $form-scrollable-fields: '.x-field-slider, .x-field-toggle';
       margin-right: 40px;
     }
   }
-
-//  .x-label-align-right .x-input-radio:after, .x-label-align-right .x-input-checkbox:after {
-//    right: auto;
-//    left: $form-spacing;
-//  }
-
-//  // spinner
-//  .x-spinner {
-//    input {
-//      text-align: center;
-//    }
-
-//    
-//  }
-
-//  $form-clear-size: 1.1em;
-
-//  .x-field-clear-container {
-//    min-height: $form-field-height;
-//    background-color: $form-field-bg-color;
-//    @include display-box;
-//    @include box-orient(horizontal);
-//    @include box-align(center);
-//    @include box-pack(center);
-//    padding: 0 .3em;
-//  }
-
-//  .x-field-clear {
-//    width: $form-clear-size;
-//    height: $form-clear-size;
-//    @if $include-border-radius { @include border-radius($form-clear-size/2); }
-//    background-color: rgba(#000, .15);
-//    color: #fff;
-//    font-weight: bold;
-//    line-height: .9em;
-//    text-align: center;
-//    padding: 0 .27em;
-//  }
-
-//  .x-label-align-top .x-field-clear {
-//    top: auto;
-//    bottom: .7em;
-//  }
-
-//  .x-label-align-right .x-field-clear {
-//    top: $form-spacing;
-//    right: $form-spacing;
-//  }
 }

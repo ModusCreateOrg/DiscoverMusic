@@ -17,7 +17,7 @@ $list-color: #000 !default;
 $list-bg-color: #f7f7f7 !default;
 
 /**
- * @var {color} $list-pressed-color
+ * @var {color} $include-list-highlights
  * Background-color for pressed list rows.
  */
 $include-list-highlights: $include-highlights !default;
@@ -65,11 +65,12 @@ $list-disclosure-size: 1.7em;
  */
 @mixin sencha-list {
   .x-list {
-    background-color: $list-bg-color;
-  }
-
-  .x-list {
     position: relative;
+    background-color: $list-bg-color;
+
+    .x-list-inner {
+      width: 100%;
+    }
 
     .x-list-disclosure {
       position: absolute;

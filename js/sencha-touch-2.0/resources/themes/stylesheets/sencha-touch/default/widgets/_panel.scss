@@ -4,12 +4,15 @@ $panel-border-radius: .3em;
 
 @mixin sencha-panel($include-floating: $include-floating-panels) {
   .x-panel,
+  .x-msgbox,
   .x-panel-body {
     position: relative;
   }
 
   @if $include-floating {
-    .x-panel.x-floating {
+    .x-panel.x-floating,
+    .x-msgbox.x-floating,
+    .x-form.x-floating {
       padding: 6px;
       @if $include-border-radius { @include border-radius($panel-border-radius); }
       -webkit-box-shadow: rgba(0,0,0,.8) 0 .2em .6em;

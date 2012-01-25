@@ -55,6 +55,7 @@ $picker-bar-gradient: $base-gradient !default;
 
       &:last-child {
         .x-body {
+          border-left: 0;
           border-right: 0;
         }
       }

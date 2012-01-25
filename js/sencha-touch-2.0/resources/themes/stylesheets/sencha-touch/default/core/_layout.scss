@@ -239,6 +239,14 @@
         opacity: 0.5;
     }
 
+    .x-list-light,
+    .x-dataview-light {
+        .x-scroll-indicator {
+            background: #fff;
+            opacity: 1;
+        }
+    }
+
     .x-scroll-indicator-x {
         height: 100%;
     }

@@ -110,6 +110,14 @@ $include-toolbar-uis: $include-default-uis !default;
       @include bevel-by-background($color);
     }
 
+    &.x-docked-top {
+      border-bottom-color: $toolbar-border-color;
+    }
+
+    &.x-docked-bottom {
+      border-top-color: $toolbar-border-color;
+    }
+
     .x-button,
     .x-field-select {
       @include toolbar-button($toolbar-button-color, $gradient);
