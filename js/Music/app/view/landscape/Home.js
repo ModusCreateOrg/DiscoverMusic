@@ -18,13 +18,9 @@ Ext.define('Music.view.landscape.Home',{
 			xtype	: 'toolbar',
 			docked	: 'top',
 			items	: [{
-				text	: 'Home'
-			},{
-				xtype:'spacer'
-			},{
-				text	: 'Categories'
-			},{
-				text	: 'Search'
+				xtype	: 'title',
+				title	: 'Discover Music',
+				cls		: 'music-app-title'
 			}]
 		}]
 	}

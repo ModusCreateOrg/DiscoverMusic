@@ -9,29 +9,37 @@
 Ext.define('Music.controller.Home',{
 	extend	: 'Ext.app.Controller',
 	models	: [
-		'Article'
+		'Article',
+		'Category'
 	],
 	stores	: [
-		'Articles'
+		'Articles',
+		'Categories'
 	],
 	views	: [
 		'landscape.Home',
 		'Category',
 		'ArticlePreview',
-		'Article'
+		'Article',
+		'MainMenu'
 	],
-	refs	: [{
-		xtype		: 'home',
-		ref			: 'home',
-		selector	: 'home',
-		autoCreate	: true
-	}],
+	config	: {
+		refs	: {
+			home	: {
+				xtype		: 'home',
+				selector	: 'home',
+				autoCreate	: true
+			}
+			
+		}
+	},
+	
 
     loadMask: undefined,
     
     apiKey	: 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
     topics	: {
-		featured	: 1107,
+		featured	: 1039,//1107,
 		rockPopFolk	: 10001,
 		classical	: 10003,
 		jazzBlues	: 10002,
@@ -60,7 +68,6 @@ Ext.define('Music.controller.Home',{
 			home = me.getHome();
 		
 		Ext.Object.each(me.topics,function(key,value){
-			console.log(key);
 			home.add({
 				xtype	: 'category',
 				store	: me.db.get(value),
@@ -124,9 +131,9 @@ Ext.define('Music.controller.Home',{
 			store = me.db.get(topic);
 		}
 
-		records = store.proxy.reader.extractData(data);
-		store.loadData(records);
+		store.setData(data);
 
+		//Start the app when the last topic is loaded
 		if(me.db.getCount() === Ext.Object.getSize(me.topics)){
 			me.startApp();
 		}

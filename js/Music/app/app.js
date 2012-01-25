@@ -11,6 +11,6 @@ Ext.application({
     ],
 
     launch : function() {
-        window[this.name].app = this;
+        window[this.getName()].app = this;
     }
 });

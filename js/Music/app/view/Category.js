@@ -10,21 +10,24 @@ Ext.define('Music.view.Category',{
 	alias	: 'widget.category',
 
 	config	: {
-		indicator	: false
+		indicator	: true,
+		ui			: 'light'
 	},
 
 	initialize	: function(){
 		var me = this;
 
+		me.callParent();
+
 		me.store.each(function(article){
 			if(article.get('image')){
 				me.add({
 					xtype	: 'articlepreview',
-					model	: article
+					model	: article,
+					data	: article.getData(),
+					topic	: me.topic
 				});
 			}
 		});
-
-		me.callParent();
 	}
 });
