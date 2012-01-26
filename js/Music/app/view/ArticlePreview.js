@@ -36,8 +36,8 @@ Ext.define('Music.view.ArticlePreview',{
 			me.setCls(me.getCls()+' music-article-category-'+me.getTopic());
 		}
 
-		var btn = me.element.down(".music-article-read");
-		//btn.on('tap',me.showFullArticle,me);
+		var btn = me.element.down(".music-article-read-btn");
+		btn.on('tap',me.showFullArticle,me);
 	},
 
 	showFullArticle	: function(event,node){
