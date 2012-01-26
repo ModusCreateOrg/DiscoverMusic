@@ -23,3 +23,6 @@ $base-color: #444444;
 @import 'include/shortcuts';
 @import 'include/home';
 @import 'include/article';
+
+// include our @font-faces
+@import 'include/fonts';
