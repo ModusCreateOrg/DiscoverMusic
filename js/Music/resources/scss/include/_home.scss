@@ -1,6 +1,8 @@
-
-.music-app-title div.x-innerhtml{
-	font-weight:normal;
-	padding-left:30px;
-	background:transparent url(../images/sencha-logo-small.png) 3px center no-repeat;
+.music-app-title {
+	div.x-innerhtml{
+		font-family: $alt-font;
+		font-size: 26px; 
+		padding-left:30px;
+		background:transparent url(../images/sencha-logo-small.png) 3px center no-repeat;
+	}
 }

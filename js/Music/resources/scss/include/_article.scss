@@ -1,18 +1,25 @@
+@mixin article-category($category,$bg-color1,$bg-color2) {
 
-@mixin article-category($category,$bg-color1,$bg-color2){
-
-	.music-article-category-#{$category}{
+	.music-article-category-#{$category} {
 
 		div.music-article-category{
-			@include background-image(linear-gradient($bg-color1,$bg-color2));
+			@include background-image(linear-gradient($bg-color1, $bg-color2));
+			@include bevel-box();
 			float: left;
 			padding:20px 40px;
 			min-width:250px;
-			h1{
-				color:#fff;
-				font-weight:bold;
-				font-size:1.8em;
-				text-align:center;
+			-webkit-border-top-right-radius: 20px;
+			-webkit-border-bottom-right-radius: 20px;
+			-moz-border-radius-topright: 20px;
+			-moz-border-radius-bottomright: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;	
+			h1 {
+				color: #fff;
+				font-size: 1.8em;
+				text-align: center;
+				font-family: $base-font;
+				text-transform: uppercase;
 			}
 		}
 
@@ -43,10 +50,10 @@
 				padding:30px 25px;
 				width:100%;
 
-				h2{
+				h2 {
 					color:#fff;
 					font-size:1.9em;
-					font-family: 'nevisBold';
+					font-family: $base-font;
 					@include opacity(1);
 				}
 				div.music-article-read-btn{
@@ -57,10 +64,11 @@
 					padding:20px 30px;
 					margin-left:50px;
 					color:#fff;
-					font-weight:bold;
-					font-size:1.4em;
-					em{
-						font-weight:normal;
+					font-family: $base-font;
+					font-size: 1.4em;
+					em {
+						font-weight: normal;
+						font-family: 'JuraItalic';
 					}
 				}
 			}
@@ -71,7 +79,7 @@
 		background-color:#fff;
 	}
 	.x-carousel-indicator-light span.x-carousel-indicator-active{
-		@include background-image(linear-gradient($bg-color1,$bg-color2));
+		@include background-image(linear-gradient($bg-color1, $bg-color2));
 	}
 }
 
