@@ -117,22 +117,26 @@
 	}
 	.text {
 		position: relative;
-		top: 320px;
-		margin: 10px 20px;
-		line-height: 27px;
+		top: 295px;
+		padding: 10px 20px;
+		background: white;
 		font-family: $alt-font;
+		p {
+			line-height: 27px;			
+			margin-bottom: 15px; 
+		}
 	}
 	.title {
 		position: relative;
 		top: 316px;
-		background-color: #2C96FC;
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#2C96FC), to(#006BB4));
-		background-image: -webkit-linear-gradient(top, #2C96FC, #006BB4);
-		background-image: -moz-linear-gradient(top, #2C96FC, #006BB4);
-		background-image: -o-linear-gradient(top, #2C96FC, #006BB4);
-		background-image: -ms-linear-gradient(top, #2C96FC, #006BB4);
-		background-image: linear-gradient(top, #2C96FC, #006BB4);
-		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2C96FC', EndColorStr='#006BB4');
+/*background-color: #2c96fc;*/
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(44, 150, 252, 0.80)), to(rgba(0, 107, 180, 0.80)));
+background-image: -webkit-linear-gradient(top, rgba(44, 150, 252, 0.80), rgba(0, 107, 180, 0.80));
+background-image: -moz-linear-gradient(top, rgba(44, 150, 252, 0.80), rgba(0, 107, 180, 0.80));
+background-image: -o-linear-gradient(top, rgba(44, 150, 252, 0.80), rgba(0, 107, 180, 0.80));
+background-image: -ms-linear-gradient(top, rgba(44, 150, 252, 0.80), rgba(0, 107, 180, 0.80));
+background-image: linear-gradient(top, rgba(44, 150, 252, 0.80), rgba(0, 107, 180, 0.80));
+
 		width: 600px;
 		left: 50px;
 		border: 6px solid white;
