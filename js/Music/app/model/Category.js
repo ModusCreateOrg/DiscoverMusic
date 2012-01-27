@@ -5,11 +5,10 @@
  *
  * The category model
  */
+Ext.define('Music.model.Category', {
+    extend: 'Ext.data.Model',
 
-Ext.define('Music.model.Category',{
-    extend      : 'Ext.data.Model',
-
-    config		: {
-		fields		: ['id','text']
+    config: {
+        fields: ['id', 'text']
     }
 });

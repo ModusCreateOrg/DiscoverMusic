@@ -5,19 +5,18 @@
  *
  * The categories store
  */
+Ext.define('Music.store.Categories', {
+    extend: 'Ext.data.Store',
 
-Ext.define('Music.store.Categories',{
-    extend      : 'Ext.data.Store',
+    config: {
+        model: 'Music.model.Category',
 
-    config		: {
-		model		: 'Music.model.Category',
-
-		proxy		: {
-			type	: 'memory',
-			reader	: {
-				type	: 'json'
-			}
-		}
+        proxy: {
+            type: 'memory',
+            reader: {
+                type: 'json'
+            }
+        }
     }
-    
+
 });

@@ -133,11 +133,14 @@ Ext.define('Music.controller.Home', {
         }
     },
 
-    onArticlePreviewReadArticle: function() {
-        debugger;
+    // when a user taps on the "Read & Listen"
+    onArticlePreviewReadArticle: function(record) {
         var me = this, 
             home = me.getHome(),
-            myNewPanel = home.add({ xtype: 'article' });
+            myNewPanel = home.add({ 
+                xtype: 'article',
+                data: record.data
+            });
             
         home.setActiveItem(myNewPanel);
     }

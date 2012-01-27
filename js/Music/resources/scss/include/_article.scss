@@ -1,5 +1,6 @@
 @mixin article-category($category,$bg-color1,$bg-color2) {
 
+	// definition for the Genre covers
 	.music-article-category-#{$category} {
 
 		div.music-article-category{
@@ -104,6 +105,46 @@
     background-size: cover;
     min-height:100%;
     height:100%;
+}
+
+
+// individual article page styling
+.music-article {
+	float: left; width: 66%;
+	.image { position: absolute; height: 400px; width: 650px; }
+	.controls {
+		
+	}
+	.text {
+		position: relative;
+		top: 320px;
+		margin: 10px 20px;
+		line-height: 27px;
+		font-family: $alt-font;
+	}
+	.title {
+		position: relative;
+		top: 316px;
+		background-color: #2C96FC;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#2C96FC), to(#006BB4));
+		background-image: -webkit-linear-gradient(top, #2C96FC, #006BB4);
+		background-image: -moz-linear-gradient(top, #2C96FC, #006BB4);
+		background-image: -o-linear-gradient(top, #2C96FC, #006BB4);
+		background-image: -ms-linear-gradient(top, #2C96FC, #006BB4);
+		background-image: linear-gradient(top, #2C96FC, #006BB4);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2C96FC', EndColorStr='#006BB4');
+		width: 600px;
+		left: 50px;
+		border: 6px solid white;
+		border-bottom: 0px;
+		border-right: 0px;
+		h1 {
+			font-size: 30px;
+			font-family: $base-font;
+			color: #fff;
+			padding: 20px;
+		}
+	}
 }
 
 @include article-category('featured',#ffcc00,#ffa700);

@@ -3,7 +3,7 @@
  * @extends Ext.Component
  * @author Dave Ackerman
  *
- * The article view
+ * The full article view
  */
 
 Ext.define('Music.view.Article', {
@@ -13,19 +13,25 @@ Ext.define('Music.view.Article', {
     	cls: 'music-article-fullview',
 	    tpl : [
 	    	'<div class="music-article">',
-	    		'<div class="image">',
-	    			'<div class="title"></div>',
-	    		'</div>',
-	    		'<div class="controls">Here is where the article text goes</div>',
-	    		'<div class="text"></div>',
+	    		'<div class="image" style="background-image:url(http://src.sencha.io/650/{image});"></div>',
+	    		'<div class="title"><h1>{title}</h1></div>',
+	    		'<div class="controls">Controls here</div>',
+	    		'<div class="text">{content}</div>',
+	    	'</div>',
+	    	'<div class="right-side">',
+
 	    	'</div>'
-	    ],
-	    data : {}  	
+	    ]
     },
 
     initialize   : function() {
         var me = this;
         me.callParent();
 
+    },
+
+    // function that returns us to the cover flow
+    backToCovers	: function() {
+    	
     }
 });
