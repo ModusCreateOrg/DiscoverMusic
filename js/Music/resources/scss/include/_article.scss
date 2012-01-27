@@ -4,7 +4,7 @@
 
 		div.music-article-category{
 			@include background-image(linear-gradient($bg-color1, $bg-color2));
-			@include bevel-box();
+			border: 2px solid rgba(255, 255, 255, .5);
 			float: left;
 			padding:20px 40px;
 			min-width:250px;
@@ -40,9 +40,17 @@
 				height:100%;
 				width:100%;
 				padding:30px 25px;
-				background-color:#000;
-				@include opacity(0.5);
+				//background-color:#000;
+				//@include opacity(0.5);
 				@include border-radius(10px);
+				/*background-color: #000000;*/
+				background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.40)), to(rgba(0, 0, 0, 0.70)));
+				background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70));
+				background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70));
+				background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70));
+				background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70));
+				background-image: linear-gradient(top, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70));
+				filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
 			}
 
 			div.music-article-title-content{
@@ -61,6 +69,7 @@
 					@include opacity(1);
 					@include background-image(linear-gradient($bg-color1,$bg-color2));
 					@include border-radius(10px);
+					border: 2px solid rgba(255, 255, 255, .5);
 					padding:20px 30px;
 					margin-left:50px;
 					color:#fff;

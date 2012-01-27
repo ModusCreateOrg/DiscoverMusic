@@ -1,3 +1,6 @@
+// make our font smoothing better in Webkit
+html { -webkit-font-smoothing: antialiased; }
+
 .music-app-title {
 	div.x-innerhtml{
 		font-family: $alt-font;

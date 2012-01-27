@@ -15,13 +15,10 @@ Ext.define('Music.view.landscape.Home',{
 		layout		: "card",
 		
 		items		: [{
-			xtype	: 'toolbar',
+			xtype	: 'title',
 			docked	: 'top',
-			items	: [{
-				xtype	: 'title',
-				title	: 'Discover Music',
-				cls		: 'music-app-title'
-			}]
+			title	: 'Discover Music',
+			cls		: 'music-app-title'
 		}]
 	}
 });
