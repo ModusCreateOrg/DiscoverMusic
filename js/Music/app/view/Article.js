@@ -1,7 +1,7 @@
 /**
  * @class Music.view.Article
- * @extends Ext.Panel
- * @author Crysfel Villa
+ * @extends Ext.Component
+ * @author Dave Ackerman
  *
  * The article view
  */
@@ -16,7 +16,7 @@ Ext.define('Music.view.Article', {
 	    		'<div class="image">',
 	    			'<div class="title"></div>',
 	    		'</div>',
-	    		'<div class="controls">HEre is some text</div>',
+	    		'<div class="controls">Here is where the article text goes</div>',
 	    		'<div class="text"></div>',
 	    	'</div>'
 	    ],
@@ -25,7 +25,7 @@ Ext.define('Music.view.Article', {
 
     initialize   : function() {
         var me = this;
-        
         me.callParent();
+
     }
 });
