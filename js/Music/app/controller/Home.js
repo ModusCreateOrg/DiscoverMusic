@@ -9,31 +9,33 @@ Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Category'],
     stores: ['Articles', 'Categories'],
-    views: ['landscape.Home', 'Category', 'ArticlePreview', 'Article', 'MainMenu'],
+    views: ['landscape.Home', 'Category', 'ArticlePreview', 'Article', 'MainMenu','Drawer'],
+    
     config: {
+        apiUrl: 'http://api.npr.org/query',
+        apiKey: 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
+        numResults: 10,
+
         refs: {
             home: {
                 xtype: 'home',
                 selector: 'home',
+                autoCreate: true
+            },
+            drawer : {
+                xtype: 'drawer',
+                selector: 'drawer',
                 autoCreate: true
             }
         }
     },
 
     loadMask: undefined,
-    apiKey: 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
-    topics: {
-        featured: 1039, //1107,
-        rockPopFolk: 10001,
-        classical: 10003,
-        jazzBlues: 10002,
-        world: 10004,
-        hipHopRB: 10005
-    },
-    numResults: 10,
+    
 
     init: function () {
-        var me = this;
+        var me = this,
+            drawer = me.getDrawer();
 
         me.db = Ext.create('Ext.util.MixedCollection');
 
@@ -43,52 +45,62 @@ Ext.define('Music.controller.Home', {
         Ext.Viewport.add(me.loadMask);
         me.loadMask.show();
 
-        Ext.Object.each(me.topics, function (key, value) {
-            me.loadData(value);
-        });
+        drawer.getStore().load(me.onTopicsLoaded,me);
+        
 
-        this.control({ 
-        	'articlepreview': {
-        		readarticle: this.onArticlePreviewReadArticle
-        	}
+        this.control({
+            'articlepreview': {
+                readarticle: this.onArticlePreviewReadArticle
+            }
         });
     },
 
-
     startApp: function () {
         var me = this,
-            home = me.getHome();
+            home = me.getHome(),
+            drawer = me.getDrawer();
 
-        Ext.Object.each(me.topics, function (key, value) {
+        drawer.getStore().each(function (record) {
             home.add({
                 xtype: 'category',
-                store: me.db.get(value),
-                topic: key,
-                topicId: value
+                store: me.db.get(record.getId()),
+                topic: record
             });
         });
 
         Ext.Viewport.add(home);
+        Ext.Viewport.add(drawer);
+
+        drawer.getStore().add();
 
         me.loadMask.hide();
     },
 
-    loadData: function (topic, numResults) {
-        var me = this, 
-        		ts = localStorage.getItem('timestamp-' + topic);
-    		needRefresh = !ts || (Ext.util.Date.format(new Date(), 'ymd') < ts);
+    onTopicsLoaded    : function(){
+        var me = this,
+            drawer = me.getDrawer();
+
+        drawer.getStore().each(function(record) {
+            me.loadData(record.getId());
+        },me);
+    },
+
+    loadData: function (topic) {
+        var me = this,
+            ts = localStorage.getItem('timestamp-' + topic);
+            needRefresh = !ts || (Ext.util.Date.format(new Date(), 'ymd') < ts);
 
         if (needRefresh) {
             Ext.util.JSONP.request({
-                url: 'http://api.npr.org/query',
+                url: me.getApiUrl(),
                 callback: Ext.Function.pass(me.saveData, [topic]),
                 scope: me,
                 callbackKey: 'callback',
                 params: {
-                    apiKey: me.apiKey,
+                    apiKey: me.getApiKey(),
                     id: topic,
                     requiredAssets: 'image,audio',
-                    numResults: me.numResults,
+                    numResults: me.getNumResults(),
                     transform: 'source',
                     output: 'JSON'
                 }
@@ -112,7 +124,8 @@ Ext.define('Music.controller.Home', {
 
     importDataToStore: function (topic, data) {
         var me = this,
-            store, records;
+            store, records,
+            drawer = me.getDrawer();
 
         if (!data) {
             data = Ext.decode(localStorage.getItem('articles-' + topic));
@@ -128,7 +141,7 @@ Ext.define('Music.controller.Home', {
         store.setData(data);
 
         //Start the app when the last topic is loaded
-        if (me.db.getCount() === Ext.Object.getSize(me.topics)) {
+        if (me.db.getCount() === drawer.getStore().getCount()) {
             me.startApp();
         }
     },
