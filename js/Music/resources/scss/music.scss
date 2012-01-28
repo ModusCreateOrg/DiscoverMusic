@@ -1,3 +1,5 @@
+$red-color: #982C2E;
+
 $base-color: #444444;
 $base-font: 'nevisBold';
 $alt-font: 'JuraRegular';
@@ -24,6 +26,7 @@ $alt-font: 'JuraRegular';
 @import 'include/shortcuts';
 @import 'include/home';
 @import 'include/article';
+@import 'include/drawer';
 
 // include our @font-faces
 @import 'include/fonts';

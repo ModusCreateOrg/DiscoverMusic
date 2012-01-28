@@ -1,0 +1,117 @@
+.drawer-body {
+    height: 230px;
+    width: 100%;
+    color: white;
+    @include transition(
+        top .2s ease-out,
+        opacity 3s ease-in-out
+    );
+
+    > div > .x-body {
+        @include background-gradient(#333, 'recessed');
+    }
+}
+
+.drawer-pages-cnt {
+    @include display-box;
+    @include box-orient(horizontal);
+}
+
+.drawer-page {
+    margin:  14px 10px 0 10px;
+    height: 170px;
+    color: black;
+    width: 120px;
+    float: left;
+
+    @include box-shadow(rgba(#000, .5) 0 1px 3px);
+
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    &:nth-child(2n+1) {
+        @include rotate(1deg);
+    }
+    &:nth-child(2n) {
+        @include rotate(-1deg);
+    }
+}
+
+.drawer-page-animate {
+    opacity: 0;
+    -webkit-transform-origin: 0px 100px;
+    -webkit-transform: translate(30px, -480px) rotate(32deg) translate(40px, 0) scale(2.5);
+    -webkit-transition-property: -webkit-transform, -webkit-transform-origin, opacity;
+    -webkit-transition-duration: .8s;
+}
+
+.drawer-page-title {
+    height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    position: absolute;
+    bottom: 0;
+    background-color: #f3f3f3;
+    padding: 8px 6px;
+    font-weight: bold;
+    border-top: 2px solid $red-color;
+    @extend .fullwidth;
+    @extend .small-sans;
+    /*white-space: nowrap;*/
+}
+
+.drawer-close {
+    text-align: center;
+}
+.drawer-close div {
+    @include border-top-radius(8px);
+    width: 200px;
+    height: 40px;
+    background-color: #1B1B1B;
+    display: inline-block;
+    position: relative;
+    top: 8px; // Position hack
+    font-size:0.9em;
+    line-height:30px;
+    font-weight:bold;
+    &:after {
+        content: '›';
+        color: #eee;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 0px;
+        left: 16px;
+        @include transition(1s);
+        @include rotate(90deg);
+    }
+
+    &.drawer-open-pull:after {
+        @include rotate(270deg);
+    }
+}
+
+.drawer-open-pull {
+    &:after {
+    }
+}
+
+.drawer-bottom-bar {
+    background: #EBEBEB;
+    height: 40px;
+    border-top:  1px solid white;
+}
+
+.drawer-home {
+    width: 30px;
+    height: 31px;
+    margin: 5px 10px 5px 20px;
+}
+
+.drawer-bottom-bar > div {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+}
