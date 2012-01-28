@@ -11,7 +11,9 @@ Ext.define('Music.view.Category',{
 
 	config	: {
 		indicator	: true,
-		ui			: 'light'
+		ui			: 'light',
+		topic		: null,
+		store		: null
 	},
 
 	initialize	: function(){
@@ -19,13 +21,15 @@ Ext.define('Music.view.Category',{
 
 		me.callParent();
 
-		me.store.each(function(article){
+		me.getStore().each(function(article){
 			if(article.get('image')){
+				var data = article.getData();
+				Ext.applyIf(data,me.getTopic().getData());
 				me.add({
 					xtype	: 'articlepreview',
 					model	: article,
-					data	: article.getData(),
-					topic	: me.topic
+					data	: data,
+					topic	: me.getTopic()
 				});
 			}
 		});

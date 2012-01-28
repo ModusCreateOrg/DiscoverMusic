@@ -11,11 +11,14 @@ Ext.define('Music.store.Categories',{
 
     config		: {
 		model		: 'Music.model.Category',
-
+		storeId		: 'Categories',
+		
 		proxy		: {
-			type	: 'memory',
+			type	: 'ajax',
+			url		: 'serverside/categories.json',
 			reader	: {
-				type	: 'json'
+				type			: 'json',
+				rootProperty	: 'data'
 			}
 		}
     }

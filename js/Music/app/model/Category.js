@@ -10,6 +10,6 @@ Ext.define('Music.model.Category',{
     extend      : 'Ext.data.Model',
 
     config		: {
-		fields		: ['id','text']
+		fields		: ['id','name','key']
     }
 });
