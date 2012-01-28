@@ -1,0 +1,27 @@
+{
+	"data"	: [{
+		"id"	: 1039,
+		"key"	: "featured",
+		"name"	: "Featured"
+	},{
+		"id"	: 10001,
+		"key"	: "rockPopFolk",
+		"name"	: "Rock / Pop / Folk"
+	},{
+		"id"	: 10003,
+		"key"	: "classical",
+		"name"	: "Classical"
+	},{
+		"id"	: 10002,
+		"key"	: "jazzBlues",
+		"name"	: "Jazz & Blues"
+	},{
+		"id"	: 10004,
+		"key"	: "world",
+		"name"	: "World"
+	},{
+		"id"	: 10005,
+		"key"	: "hipHopRB",
+		"name"	: "Hip-Hip / R&B"
+	}]
+}
