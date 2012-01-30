@@ -1,31 +1,38 @@
 /**
  * @class Music.view.Article
- * @extends Ext.Panel
- * @author Crysfel Villa
+ * @extends Ext.Component
+ * @author Dave Ackerman
  *
- * The article view
+ * The full article view
  */
 
 Ext.define('Music.view.Article', {
-    extend: 'Ext.Component',
+    extend: 'Ext.Container',
     alias : 'widget.article',
     config : {
     	cls: 'music-article-fullview',
+        scrollable: 'auto',
 	    tpl : [
 	    	'<div class="music-article">',
-	    		'<div class="image">',
-	    			'<div class="title"></div>',
-	    		'</div>',
-	    		'<div class="controls">HEre is some text</div>',
-	    		'<div class="text"></div>',
+	    		'<div class="image" style="background-image:url(http://src.sencha.io/650/{image});"></div>',
+	    		'<div class="title"><h1>{title}</h1></div>',
+	    		'<div class="controls">Controls here</div>',
+	    		'<div class="text">{content}</div>',
+	    	'</div>',
+	    	'<div class="right-side">',
+
 	    	'</div>'
-	    ],
-	    data : {}  	
+	    ]
     },
 
     initialize   : function() {
         var me = this;
-        
         me.callParent();
+
+    },
+
+    // function that returns us to the cover flow
+    backToCovers	: function() {
+    	
     }
 });

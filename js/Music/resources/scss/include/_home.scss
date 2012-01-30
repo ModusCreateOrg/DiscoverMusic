@@ -2,10 +2,22 @@
 html { -webkit-font-smoothing: antialiased; }
 
 .music-app-title {
-	div.x-innerhtml{
-		font-family: $alt-font;
-		font-size: 26px; 
-		padding-left:30px;
-		background:transparent url(../images/sencha-logo-small.png) 3px center no-repeat;
+	margin: 0 !important;
+	background-color: #4f5252;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(79, 82, 82)), to(rgb(32, 33, 33)));
+	background-image: -webkit-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
+	background-image: -moz-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
+	background-image: -o-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
+	background-image: -ms-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
+	background-image: linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#4f5252', EndColorStr='#202121');
+	
+	.x-innerhtml {
+		font-family: $base-font;
+		font-size: 24px; 
+		padding-left: 30px;
+		background: transparent url(../images/sencha-logo-small.png) 3px center no-repeat;
+		text-align: left;
+		color: #fff;
 	}
 }

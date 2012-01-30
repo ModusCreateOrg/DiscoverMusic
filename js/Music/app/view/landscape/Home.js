@@ -11,9 +11,7 @@ Ext.define('Music.view.landscape.Home',{
 
 	config	: {
 		fullscreen	: true,
-
 		layout		: "card",
-		
 		items		: [{
 			xtype	: 'title',
 			docked	: 'top',

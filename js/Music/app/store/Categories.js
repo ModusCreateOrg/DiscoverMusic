@@ -5,9 +5,8 @@
  *
  * The categories store
  */
-
-Ext.define('Music.store.Categories',{
-    extend      : 'Ext.data.Store',
+Ext.define('Music.store.Categories', {
+    extend: 'Ext.data.Store',
 
     config		: {
 		model		: 'Music.model.Category',
@@ -21,6 +20,6 @@ Ext.define('Music.store.Categories',{
 				rootProperty	: 'data'
 			}
 		}
-    }
-    
+	}
+
 });
