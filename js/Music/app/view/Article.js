@@ -7,10 +7,11 @@
  */
 
 Ext.define('Music.view.Article', {
-    extend: 'Ext.Component',
+    extend: 'Ext.Container',
     alias : 'widget.article',
     config : {
     	cls: 'music-article-fullview',
+        scrollable: 'auto',
 	    tpl : [
 	    	'<div class="music-article">',
 	    		'<div class="image" style="background-image:url(http://src.sencha.io/650/{image});"></div>',
