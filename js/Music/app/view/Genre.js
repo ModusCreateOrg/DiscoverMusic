@@ -5,9 +5,9 @@
  *
  * Description
  */
-Ext.define('Music.view.Category',{
+Ext.define('Music.view.Genre',{
 	extend	: 'Ext.carousel.Carousel',
-	alias	: 'widget.category',
+	alias	: 'widget.genrecarousel',
 
 	config	: {
 		indicator	: true,

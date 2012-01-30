@@ -7,9 +7,9 @@
  */
 Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
-    models: ['Article', 'Category'],
-    stores: ['Articles', 'Categories'],
-    views: ['landscape.Home', 'Category', 'ArticlePreview', 'Article', 'MainMenu','Drawer'],
+    models: ['Article', 'Genre'],
+    stores: ['Articles', 'Genres'],
+    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article', 'MainMenu','Drawer'],
     
     config: {
         apiUrl: 'http://api.npr.org/query',
@@ -62,7 +62,7 @@ Ext.define('Music.controller.Home', {
 
         drawer.getStore().each(function (record) {
             home.add({
-                xtype: 'category',
+                xtype: 'genrecarousel',
                 store: me.db.get(record.getId()),
                 topic: record
             });

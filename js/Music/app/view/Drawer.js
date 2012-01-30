@@ -13,7 +13,7 @@ Ext.define('Music.view.Drawer', {
     config  : {
         // top docked button that closes the drawer
         drawerPull      : true,
-        store           : 'Music.store.Categories',
+        store           : 'Music.store.Genres',
         closed          : true,
         indicator       : false,
         docked          :'bottom',
