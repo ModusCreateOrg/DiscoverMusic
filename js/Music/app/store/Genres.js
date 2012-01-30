@@ -5,11 +5,11 @@
  *
  * The categories store
  */
-Ext.define('Music.store.Categories', {
+Ext.define('Music.store.Genres', {
     extend: 'Ext.data.Store',
 
     config		: {
-		model		: 'Music.model.Category',
+		model		: 'Music.model.Genre',
 		storeId		: 'Categories',
 		
 		proxy		: {
