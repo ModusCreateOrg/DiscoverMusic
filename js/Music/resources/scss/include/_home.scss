@@ -1,5 +1,6 @@
 // make our font smoothing better in Webkit
 html { -webkit-font-smoothing: antialiased; }
+body { margin: 0; padding: 0; }
 
 .music-app-title {
 	margin: 0 !important;
