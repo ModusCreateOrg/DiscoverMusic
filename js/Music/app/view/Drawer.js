@@ -16,7 +16,7 @@ Ext.define('Music.view.Drawer', {
         store           : 'Music.store.Genres',
         closed          : true,
         indicator       : false,
-        docked          :'bottom',
+        docked          : 'bottom',
         scrollable      : {direction: 'horizontal'},
         height          : 280,
         left            : 0,
@@ -31,7 +31,6 @@ Ext.define('Music.view.Drawer', {
         me.add(me.getDrawerPull());
         
         me.registerEvents();
-        //me.addContent();
 
         if(me.getClosed()){
             me.close();
@@ -137,11 +136,14 @@ Ext.define('Music.view.Drawer', {
         return me.getClosed() ? me.close() : me.open();
     },
 
+    /**
+     * Using body width and page sample/icon width, etc, calculate max articles per carousel card
+     */
     getMaxPagesPerCard: function() {
         return (Ext.Viewport.getOrientation() == 'portrait')?5:70;
     },
 
-    addContent   : function() {
+    addArticles   : function() {
         var me      = this,
             store   = me.getStore(),
             maxPg   = me.getMaxPagesPerCard(),
@@ -155,22 +157,20 @@ Ext.define('Music.view.Drawer', {
                 card = {
                     xtype: 'component',
                     data: [],
-                    tpl: //'<div>Article Browser</div>' +
-                        '<div class="drawer-pages-cnt">' +
-                            '<tpl for=".">' +
-                                '<div class="drawer-page" data-id="{id}" style="background-image: url(http://src.sencha.io/175/175/{img})">' +
-                                    '<div class="drawer-page-title">{title}</div>' +
-                                '</div>' +
-                            '</tpl>' +
+                    tpl: [
+                        '<div class="drawer-pages-cnt">',
+                            '<tpl for=".">',
+                                '<div class="drawer-page" data-id="{id}">',
+                                    '<h2>{name}</h2>',
+                                    '<img src="http://src.sencha.io/175/{image}" />',
+                                '</div>',
+                            '</tpl>',
                         '</div>'
+                    ]
                 };
             }
 
-            card.data.push({
-                title   : record.get('title'),
-                img     : record.get('image'),
-                id      : record.getId()
-            });
+            card.data.push(record.getData());
 
             n++;
 
@@ -194,7 +194,6 @@ Ext.define('Music.view.Drawer', {
         Ext.each(added, function(item) {
             item.renderElement.on('tap', me.onPageTap, me);
         });
-
     }
 
 });

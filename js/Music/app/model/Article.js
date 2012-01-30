@@ -72,9 +72,9 @@ Ext.define('Music.model.Article', {
                 }
             }
         }, {
-            name: 'category'
+            name: 'genre'
         },{
-            name: 'categoryKey'
+            name: 'genreKey'
         }]
     }
 });

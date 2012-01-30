@@ -63,6 +63,7 @@ Ext.define('Music.controller.Home', {
         drawer.getStore().each(function (record) {
             home.add({
                 xtype: 'genrecarousel',
+                itemId: record.get('key'),
                 store: me.db.get(record.getId()),
                 topic: record
             });
@@ -71,7 +72,9 @@ Ext.define('Music.controller.Home', {
         Ext.Viewport.add(home);
         Ext.Viewport.add(drawer);
 
-        drawer.close(true);
+        //drawer.close(true);
+        drawer.close();
+        drawer.addArticles();
 
         me.loadMask.hide();
     },
@@ -118,8 +121,8 @@ Ext.define('Music.controller.Home', {
             category = drawer.getStore().getById(topic);
 
         for (var i = 0, len = list.length; i < len; i++) {
-            list[i].category = category.get('name');
-            list[i].categoryKey = category.get('key');
+            list[i].genre = category.get('name');
+            list[i].genreKey = category.get('key');
         }
 
         localStorage.setItem('timestamp-' + topic, Ext.util.Date.format(new Date(), 'ymd'));
@@ -151,13 +154,15 @@ Ext.define('Music.controller.Home', {
             //Populating the 'featured' store
             var featuredStore = Ext.create('Music.store.Articles'),
                 featuredId;
-            drawer.getStore().each(function(category){
-                if(category.get('key') !== 'featured'){
-                    me.db.each(function(store){
-                        featuredStore.add(store.getAt(0));
-                    });
+            drawer.getStore().each(function(genre){
+                if(genre.get('key') !== 'featured'){
+                    var store = me.db.getByKey(genre.getId()),
+                        article = store.getAt(0);
+
+                        featuredStore.add(article);
+                        genre.set('image',article.get('image'));
                 }else{
-                    featuredId = category.get('id');
+                    featuredId = genre.get('id');
                 }
             });
 
