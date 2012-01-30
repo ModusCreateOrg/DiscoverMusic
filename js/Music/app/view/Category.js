@@ -24,7 +24,6 @@ Ext.define('Music.view.Category',{
 		me.getStore().each(function(article){
 			if(article.get('image')){
 				var data = article.getData();
-				Ext.applyIf(data,me.getTopic().getData());
 				me.add({
 					xtype	: 'articlepreview',
 					model	: article,

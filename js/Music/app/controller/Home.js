@@ -71,7 +71,7 @@ Ext.define('Music.controller.Home', {
         Ext.Viewport.add(home);
         Ext.Viewport.add(drawer);
 
-        drawer.getStore().add();
+        drawer.close(true);
 
         me.loadMask.hide();
     },
@@ -81,7 +81,9 @@ Ext.define('Music.controller.Home', {
             drawer = me.getDrawer();
 
         drawer.getStore().each(function(record) {
-            me.loadData(record.getId());
+            if(record.get('key') !== 'featured'){
+                me.loadData(record.getId());
+            }
         },me);
     },
 
@@ -111,9 +113,13 @@ Ext.define('Music.controller.Home', {
     },
 
     saveData: function (topic, data) {
-        var list = data.list.story;
+        var list = data.list.story,
+            drawer = this.getDrawer(),
+            category = drawer.getStore().getById(topic);
+
         for (var i = 0, len = list.length; i < len; i++) {
-            list[i].category = data.list.title.$text;
+            list[i].category = category.get('name');
+            list[i].categoryKey = category.get('key');
         }
 
         localStorage.setItem('timestamp-' + topic, Ext.util.Date.format(new Date(), 'ymd'));
@@ -141,7 +147,21 @@ Ext.define('Music.controller.Home', {
         store.setData(data);
 
         //Start the app when the last topic is loaded
-        if (me.db.getCount() === drawer.getStore().getCount()) {
+        if (me.db.getCount() === (drawer.getStore().getCount() - 1)) {
+            //Populating the 'featured' store
+            var featuredStore = Ext.create('Music.store.Articles'),
+                featuredId;
+            drawer.getStore().each(function(category){
+                if(category.get('key') !== 'featured'){
+                    me.db.each(function(store){
+                        featuredStore.add(store.getAt(0));
+                    });
+                }else{
+                    featuredId = category.get('id');
+                }
+            });
+
+            me.db.insert(0,featuredId,featuredStore);
             me.startApp();
         }
     },

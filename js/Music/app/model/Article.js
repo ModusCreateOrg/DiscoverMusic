@@ -72,10 +72,9 @@ Ext.define('Music.model.Article', {
                 }
             }
         }, {
-            name: 'category',
-            convert: function (value) {
-                return value.replace(/^(NPR Topics:|Music Genre:) /, '');
-            }
+            name: 'category'
+        },{
+            name: 'categoryKey'
         }]
     }
 });

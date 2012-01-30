@@ -31,7 +31,7 @@ Ext.define('Music.view.Drawer', {
         me.add(me.getDrawerPull());
         
         me.registerEvents();
-        //me.addCategories();
+        //me.addContent();
 
         if(me.getClosed()){
             me.close();
@@ -141,7 +141,7 @@ Ext.define('Music.view.Drawer', {
         return (Ext.Viewport.getOrientation() == 'portrait')?5:70;
     },
 
-    addCategories   : function() {
+    addContent   : function() {
         var me      = this,
             store   = me.getStore(),
             maxPg   = me.getMaxPagesPerCard(),

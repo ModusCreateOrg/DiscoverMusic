@@ -1,13 +1,12 @@
 @mixin article-category($category,$bg-color1,$bg-color2) {
 
 	// definition for the Genre covers
-	.music-article-category-#{$category} {
+	.music-article-preview {
 
 		div.music-article-category{
-			@include background-image(linear-gradient($bg-color1, $bg-color2));
-			border: 2px solid rgba(255, 255, 255, .5);
 			float: left;
 			padding:20px 40px;
+			border: 2px solid rgba(255, 255, 255, .5);
 			min-width:250px;
 			-webkit-border-top-right-radius: 20px;
 			-webkit-border-bottom-right-radius: 20px;
@@ -22,6 +21,10 @@
 				font-family: $base-font;
 				text-transform: uppercase;
 			}
+		}
+
+		div.music-article-#{$category}{
+			@include background-image(linear-gradient($bg-color1, $bg-color2));
 		}
 
 		div.music-article-title{
@@ -65,10 +68,9 @@
 					font-family: $base-font;
 					@include opacity(1);
 				}
-				div.music-article-read-btn{
+				div.music-article-btn{
 					float:right;
 					@include opacity(1);
-					@include background-image(linear-gradient($bg-color1,$bg-color2));
 					@include border-radius(10px);
 					border: 2px solid rgba(255, 255, 255, .5);
 					padding:20px 30px;
@@ -80,6 +82,9 @@
 						font-weight: normal;
 						font-family: 'JuraItalic';
 					}
+				}
+				div.music-article-btn-#{$category}{
+					@include background-image(linear-gradient($bg-color1,$bg-color2));
 				}
 			}
 		}
@@ -152,4 +157,8 @@ background-image: linear-gradient(top, rgba(44, 150, 252, 0.80), rgba(0, 107, 18
 	}
 }
 
-@include article-category('featured',#ffcc00,#ffa700);
+@include article-category('rockPopFolk',#ffcc00,#ffa700);
+@include article-category('classical',#66cc00,#66ab20);
+@include article-category('jazzBlues',#33ccff,#1699c4);
+@include article-category('world',#662c91,#391057);
+@include article-category('hipHopRB',#ff00ff,#a612a6);
