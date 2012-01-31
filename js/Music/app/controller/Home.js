@@ -77,7 +77,7 @@ Ext.define('Music.controller.Home', {
         Ext.Viewport.add(home);
         Ext.Viewport.add(drawer);
 
-        drawer.close(true);
+        
         drawer.addArticles();
 
         me.loadMask.hide();

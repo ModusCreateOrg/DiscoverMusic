@@ -224,7 +224,7 @@ Ext.define('Music.view.Drawer', {
             }, 600, this);
 
             Ext.defer(function() {
-                this.close(true);
+                this.close();
             }, 101, this);
         };
     }
