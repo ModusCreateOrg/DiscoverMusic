@@ -82,14 +82,22 @@ Ext.define('Music.view.Drawer', {
 
     onPageTap   : function(event){
         var me = this,
-            page    = Ext.get(event.getTarget('.drawer-page')),
-            id = parseInt(page.getAttribute("data-id"),10),
-            genre = me.getStore().getById(id),
-            anim    = Ext.Function.createSequence(me.showPageAnim(page), me.hidePageAnim(page), me);
+            page    = Ext.get(event.getTarget('.drawer-page'));
 
-        if (page){ anim();}
+        if(page){
+            var id      = parseInt(page.getAttribute("data-id"),10),
+                genre   = me.getStore().getById(id),
+                anim    = Ext.Function.createSequence(me.showPageAnim(page), me.hidePageAnim(page), me);
 
-        me.fireEvent('itemclick',id,genre);
+            if (page){ anim();}
+
+            if(id){
+                me.fireEvent('itemtap',id,genre);
+            }else{
+                page = Ext.get(event.getTarget('.drawer-inner-btn'));
+                me.fireEvent(page.getAttribute("data-id")+'tap');
+            }
+        }
     },
 
     toggle: function(state, suppressEvent) {
@@ -173,6 +181,10 @@ Ext.define('Music.view.Drawer', {
                         data: [],
                         tpl: [
                             '<div class="drawer-pages-cnt">',
+                                '<div class="drawer-page">',
+                                    '<div class="drawer-inner-btn" data-id="favorites">Favorites</div>',
+                                    '<div class="drawer-inner-btn" data-id="search">Search</div>',
+                                '</div>',
                                 '<tpl for=".">',
                                     '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
                                         '<h2>{name}</h2>',

@@ -96,6 +96,22 @@
   box-orient: horizontal;
 }
 
+.drawer-inner-btn{
+    padding-left:75px;
+    height:77px;
+    background:#e6e6e6 url(../images/search-favorites.png) 15px -75px no-repeat;
+    border:1px solid rgba(0,0,0,0.7);
+    color:#333;
+    font-size:1.3em;
+    font-weight:bold;
+    line-height:77px;
+}
+
+.drawer-inner-btn:first-child{
+    margin-bottom:10px;
+    background-position:15px 0;
+}
+
 
 @mixin drawer-article-genre($genre,$bg-color1,$bg-color2){
     .drawer-page {

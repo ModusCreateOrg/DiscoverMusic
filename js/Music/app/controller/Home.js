@@ -52,7 +52,9 @@ Ext.define('Music.controller.Home', {
                 readarticle : this.onArticlePreviewReadArticle
             },
             'drawer'  : {
-                itemclick   : this.showGenre
+                itemtap       : this.showGenre,
+                favoritestap  : this.onFavoritesTap,
+                searchtap     : this.onSearchTap
             },
             'home': {
                 titletap: this.onHomeTitleTap
@@ -189,9 +191,9 @@ Ext.define('Music.controller.Home', {
 
     // when a user taps on the "Read & Listen"
     onArticlePreviewReadArticle: function(record) {
-        var me = this, 
+        var me = this,
             home = me.getHome(),
-            myNewPanel = home.add({ 
+            myNewPanel = home.add({
                 xtype: 'article',
                 data: record.data
             });
@@ -200,15 +202,20 @@ Ext.define('Music.controller.Home', {
         home.getLayout().setAnimation({
             type: 'fade',
             duration: 300
-        });            
+        });
         home.setActiveItem(myNewPanel);
-        me.getDrawer().show();
     },
 
     // when a user taps the "Discover Music" logo, show the about panel
     onHomeTitleTap: function() {
         Ext.create('Music.view.AboutPanel', {}).show();
+    },
+
+    onFavoritesTap: function(){
+        Ext.Msg.alert('Favorites','Please show my favorites!!');
+    },
+
+    onSearchTap: function(){
+        Ext.Msg.alert('Search','Please show me the search page!!');
     }
-
-
 });
