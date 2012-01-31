@@ -12,7 +12,7 @@ Ext.define('Music.view.Genre',{
 	config	: {
 		indicator	: true,
 		ui			: 'light',
-		topic		: null,
+		model		: null,
 		store		: null
 	},
 
@@ -20,7 +20,8 @@ Ext.define('Music.view.Genre',{
 		var me = this;
 
 		me.callParent();
-
+		me.setCls('music-genre-'+me.getModel().get('key'));
+		
 		me.getStore().each(function(article){
 			if(article.get('image')){
 				var data = article.getData();
@@ -28,7 +29,7 @@ Ext.define('Music.view.Genre',{
 					xtype	: 'articlepreview',
 					model	: article,
 					data	: data,
-					topic	: me.getTopic()
+					topic	: me.getModel()
 				});
 			}
 		});

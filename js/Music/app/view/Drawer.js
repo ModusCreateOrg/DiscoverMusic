@@ -20,7 +20,8 @@ Ext.define('Music.view.Drawer', {
         scrollable      : {direction: 'horizontal'},
         height          : 230,
         left            : 0,
-        cls             : 'drawer-body'
+        cls             : 'drawer-body',
+        title           : 'Browse Genres'
     },
 
     initialize  : function(){
@@ -52,7 +53,7 @@ Ext.define('Music.view.Drawer', {
         if (config === true) {
             config = {
                 docked  : 'top',
-                html    : 'Browse Genre',
+                html    : this.getTitle(),
                 cls     : 'drawer-close'
             };
         }

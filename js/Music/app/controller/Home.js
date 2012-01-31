@@ -70,14 +70,13 @@ Ext.define('Music.controller.Home', {
                 xtype: 'genrecarousel',
                 itemId: record.get('key'),
                 store: me.db.get(record.getId()),
-                topic: record
+                model: record
             });
         });
 
         Ext.Viewport.add(home);
         Ext.Viewport.add(drawer);
 
-        
         drawer.addArticles();
 
         me.loadMask.hide();
