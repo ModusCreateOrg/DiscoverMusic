@@ -46,11 +46,13 @@ Ext.define('Music.controller.Home', {
         me.loadMask.show();
 
         drawer.getStore().load(me.onTopicsLoaded,me);
-        
 
-        this.control({
+        me.control({
             'articlepreview': {
-                readarticle: this.onArticlePreviewReadArticle
+                readarticle : this.onArticlePreviewReadArticle
+            },
+            'drawer'  : {
+                itemclick   : this.showGenre
             }
         });
     },
@@ -105,6 +107,7 @@ Ext.define('Music.controller.Home', {
                     id: topic,
                     requiredAssets: 'image,audio',
                     numResults: me.getNumResults(),
+                    //sort:'dateDesc',
                     transform: 'source',
                     output: 'JSON'
                 }
@@ -156,10 +159,14 @@ Ext.define('Music.controller.Home', {
             drawer.getStore().each(function(genre){
                 if(genre.get('key') !== 'featured'){
                     var store = me.db.getByKey(genre.getId()),
-                        article = store.getAt(0);
+                        article,i=0;
+                    do{
+                        article = store.getAt(i);
+                        i++;
+                    }while(!article.get('image'));
 
-                        featuredStore.add(article);
-                        genre.set('image',article.get('image'));
+                    featuredStore.add(article);
+                    genre.set('image',article.get('image'));
                 }else{
                     featuredId = genre.get('id');
                 }
@@ -168,6 +175,14 @@ Ext.define('Music.controller.Home', {
             me.db.insert(0,featuredId,featuredStore);
             me.startApp();
         }
+    },
+
+    // when user taps on any genre from the drawer
+    showGenre   : function(id,genre){
+        var me = this,
+            view = me.getHome().down('#'+genre.get('key'));
+        
+        me.getHome().setActiveItem(view);
     },
 
     // when a user taps on the "Read & Listen"

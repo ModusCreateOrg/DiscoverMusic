@@ -79,6 +79,18 @@ Ext.define('Music.view.Drawer', {
         }
     },
 
+    onPageTap   : function(event){
+        var me = this,
+            page    = Ext.get(event.getTarget('.drawer-page')),
+            id = parseInt(page.getAttribute("data-id"),10),
+            genre = me.getStore().getById(id),
+            anim    = Ext.Function.createSequence(me.showPageAnim(page), me.hidePageAnim(page), me);
+
+        if (page){ anim();}
+
+        me.fireEvent('itemclick',id,genre);
+    },
+
     toggle: function(state, suppressEvent) {
         var me      = this,
             closed  = me.getClosed();
@@ -197,6 +209,24 @@ Ext.define('Music.view.Drawer', {
         Ext.each(added, function(item) {
             item.renderElement.on('tap', me.onPageTap, me);
         });
+    },
+
+    showPageAnim: function(page) {
+        return function() {
+            page.addCls('drawer-page-animate');
+        };
+    },
+
+    hidePageAnim: function(page) {
+        return function() {
+            Ext.defer(function() {
+                page.removeCls('drawer-page-animate');
+            }, 600, this);
+
+            Ext.defer(function() {
+                this.close(true);
+            }, 101, this);
+        };
     }
 
 });
