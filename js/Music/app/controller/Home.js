@@ -52,8 +52,7 @@ Ext.define('Music.controller.Home', {
                 readarticle : this.onArticlePreviewReadArticle
             },
             'drawer'  : {
-                itemclick   : this.showGenre,
-                readarticle: this.onArticlePreviewReadArticle
+                itemclick   : this.showGenre
             },
             'home': {
                 titletap: this.onHomeTitleTap
