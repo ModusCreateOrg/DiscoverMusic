@@ -20,6 +20,7 @@
 		.music-article-#{$category}{
 			@include background-image(linear-gradient($bg-color1, $bg-color2));
 			@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
+			@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
 		}
 
 		.music-article-title{
@@ -54,7 +55,7 @@
 					font-family: $base-font;
 					@include opacity(1);
 				}
-				.music-article-btn{
+				.music-article-btn {
 					float:right;
 					@include opacity(1);
 					@include border-radius(10px);
@@ -65,12 +66,14 @@
 					font-family: $base-font;
 					font-size: 1.4em;
 					em {
-						font-weight: normal;
-						font-family: 'JuraItalic';
+						font-family: $alt-font;
+						font-weight: 100;
+						font-size: 27px;						
 					}
 				}
 				.music-article-btn-#{$category}{
 					@include background-image(linear-gradient($bg-color1,$bg-color2));
+					@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
 				}
 			}
 		}
