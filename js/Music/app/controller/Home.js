@@ -9,7 +9,7 @@ Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Genre'],
     stores: ['Articles', 'Genres'],
-    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article', 'MainMenu','Drawer'],
+    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article', 'MainMenu','Drawer', 'AboutPanel'],
     
     config: {
         apiUrl: 'http://api.npr.org/query',
@@ -53,6 +53,9 @@ Ext.define('Music.controller.Home', {
             },
             'drawer'  : {
                 itemclick   : this.showGenre
+            },
+            'home': {
+                titletap: this.onHomeTitleTap
             }
         });
     },
@@ -193,8 +196,20 @@ Ext.define('Music.controller.Home', {
                 xtype: 'article',
                 data: record.data
             });
-            
+
+        // not sure if this is the correct way to do this, but we'll do it!
+        home.getLayout().setAnimation({
+            type: 'fade',
+            duration: 300
+        });            
         home.setActiveItem(myNewPanel);
         me.getDrawer().show();
+    },
+
+    // when a user taps the "Discover Music" logo, show the about panel
+    onHomeTitleTap: function() {
+        Ext.create('Music.view.AboutPanel', {}).show();
     }
+
+
 });

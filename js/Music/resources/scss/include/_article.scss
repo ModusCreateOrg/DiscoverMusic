@@ -19,6 +19,7 @@
 
 		.music-article-#{$category}{
 			@include background-image(linear-gradient($bg-color1, $bg-color2));
+			@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
 		}
 
 		.music-article-title{

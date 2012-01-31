@@ -5,17 +5,31 @@ body { margin: 0; padding: 0; }
 .music-app-title {
 	margin: 0 !important;
 	@include background-image(linear-gradient(color-stops(rgb(79, 82, 82)), rgb(20, 20, 20)));
-	@include single-box-shadow(#000, 0px, 10px, 20px, 20px, false);
 	height: 60px;
 	
 	.x-innerhtml {
 		font-family: $base-font;
-		font-size: 24px; 
+		font-weight: 300;
+		font-size: 27px; 
 		padding-left: 34px;
 		background: transparent url(../images/sencha-logo-small.png) 3px center no-repeat;
 		text-align: left;
 		color: #fff;
 		margin-top: 4px;
 		margin-left: 8px;
+	}
+}
+
+.music-about-panel {
+	background: rgba(0, 0, 0, .95);
+	border: 3px solid rgba(255, 255, 255, .8);
+	@include border-radius(10px);
+	h1 {
+		color: #fff;
+		font-size: 30px;
+		font-family: $base-font;
+		font-weight: 300;
+		text-align: center;
+		padding: 20px 0px;		
 	}
 }

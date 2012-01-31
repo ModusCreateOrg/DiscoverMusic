@@ -7,7 +7,7 @@
  */
 Ext.define('Music.view.landscape.Home',{
 	extend	: 'Ext.Panel',
-	alias	: 'widget.home',
+	xtype	: 'home',
 
 	config	: {
 		fullscreen	: true,
@@ -15,8 +15,22 @@ Ext.define('Music.view.landscape.Home',{
 		items		: [{
 			xtype	: 'title',
 			docked	: 'top',
-			title	: 'Discover Music',
-			cls		: 'music-app-title'
+			title	: '<span class="app-title">Discover Music</span>',
+			cls		: 'music-app-title',
 		}]
-	}
+	},
+	 
+	initialize: function() {
+		this.callParent();
+		this.element.on('tap', this.onTitleTap, this);
+	},
+
+  onTitleTap : function(eventObject) {
+  	var target = Ext.get(eventObject.target);
+			if (target.hasCls('app-title')) {
+				this.fireEvent('titletap', this);
+			}
+	}	
+
+
 });

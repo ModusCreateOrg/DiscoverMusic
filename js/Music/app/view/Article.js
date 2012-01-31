@@ -28,11 +28,5 @@ Ext.define('Music.view.Article', {
     initialize   : function() {
         var me = this;
         me.callParent();
-
-    },
-
-    // function that returns us to the cover flow
-    backToCovers	: function() {
-    	
     }
 });
