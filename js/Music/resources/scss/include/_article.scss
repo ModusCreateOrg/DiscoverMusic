@@ -76,10 +76,13 @@
 		}
 	}
 
-	.x-carousel-indicator-light span{
+	.x-carousel-indicator-horizontal{
+		height:5em;
+	}
+	.music-genre-#{$category} .x-carousel-indicator-light span{
 		background-color:#fff;
 	}
-	.x-carousel-indicator-light span.x-carousel-indicator-active{
+	.music-genre-#{$category} .x-carousel-indicator-light span.x-carousel-indicator-active{
 		@include background-image(linear-gradient($bg-color1, $bg-color2));
 	}
 }
