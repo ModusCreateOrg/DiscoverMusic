@@ -39,7 +39,7 @@
 				width:100%;
 				padding:30px 25px;
 				@include border-radius(10px);
-				@include linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70)));
+				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
 			}
 
 			.music-article-title-content{

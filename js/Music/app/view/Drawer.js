@@ -18,7 +18,7 @@ Ext.define('Music.view.Drawer', {
         indicator       : false,
         docked          : 'bottom',
         scrollable      : {direction: 'horizontal'},
-        height          : 280,
+        height          : 230,
         left            : 0,
         cls             : 'drawer-body'
     },
@@ -153,30 +153,33 @@ Ext.define('Music.view.Drawer', {
             emptySpaces;
 
         store.each(function(record) {
-            if (!n) {
-                card = {
-                    xtype: 'component',
-                    data: [],
-                    tpl: [
-                        '<div class="drawer-pages-cnt">',
-                            '<tpl for=".">',
-                                '<div class="drawer-page" data-id="{id}">',
-                                    '<h2>{name}</h2>',
-                                    '<img src="http://src.sencha.io/175/{image}" />',
-                                '</div>',
-                            '</tpl>',
-                        '</div>'
-                    ]
-                };
-            }
+            if(record.get('key') !== 'featured'){
+                if (!n) {
+                    card = {
+                        xtype: 'component',
+                        data: [],
+                        tpl: [
+                            '<div class="drawer-pages-cnt">',
+                                '<tpl for=".">',
+                                    '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
+                                        '<h2>{name}</h2>',
+                                        '<img src="http://src.sencha.io/182/{image}" />',
+                                        '<div class="drawer-title-folded"></div>',
+                                    '</div>',
+                                '</tpl>',
+                            '</div>'
+                        ]
+                    };
+                }
 
-            card.data.push(record.getData());
+                card.data.push(record.getData());
 
-            n++;
+                n++;
 
-            if (n==maxPg) {
-                n=0;
-                cards.push(card);
+                if (n==maxPg) {
+                    n=0;
+                    cards.push(card);
+                }
             }
         });
 
