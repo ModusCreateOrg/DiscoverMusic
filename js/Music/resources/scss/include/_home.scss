@@ -4,21 +4,18 @@ body { margin: 0; padding: 0; }
 
 .music-app-title {
 	margin: 0 !important;
-	background-color: #4f5252;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(79, 82, 82)), to(rgb(32, 33, 33)));
-	background-image: -webkit-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
-	background-image: -moz-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
-	background-image: -o-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
-	background-image: -ms-linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
-	background-image: linear-gradient(top, rgb(79, 82, 82), rgb(32, 33, 33));
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#4f5252', EndColorStr='#202121');
+	@include background-image(linear-gradient(color-stops(rgb(79, 82, 82)), rgb(20, 20, 20)));
+	@include single-box-shadow(#000, 0px, 10px, 20px, 20px, false);
+	height: 60px;
 	
 	.x-innerhtml {
 		font-family: $base-font;
 		font-size: 24px; 
-		padding-left: 30px;
+		padding-left: 34px;
 		background: transparent url(../images/sencha-logo-small.png) 3px center no-repeat;
 		text-align: left;
 		color: #fff;
+		margin-top: 4px;
+		margin-left: 8px;
 	}
 }
