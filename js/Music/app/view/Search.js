@@ -11,7 +11,7 @@ Ext.define('Music.view.Search', {
     alias : 'widget.search',
 		xtype: 'search',
     selector: 'search',
-    autoCreate: true
+    autoCreate: true,
     config : {
     	items: [{
     		html: 'Controls',

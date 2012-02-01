@@ -9,7 +9,7 @@ Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Genre'],
     stores: ['Articles', 'Genres'],
-    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article', 'MainMenu','Drawer', 'AboutPanel'],
+    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article', 'MainMenu','Drawer', 'AboutPanel','Search'],
     
     config: {
         apiUrl: 'http://api.npr.org/query',
@@ -25,6 +25,11 @@ Ext.define('Music.controller.Home', {
             drawer : {
                 xtype: 'drawer',
                 selector: 'drawer',
+                autoCreate: true
+            },
+            search : {
+                xtype: 'search',
+                selector: 'search',
                 autoCreate: true
             }
         }
