@@ -17,11 +17,11 @@ Ext.define('Music.view.Search', {
     	items: [{
     		xtype: 'panel',
     		width: 270,
+    		cls: 'genre-filters',
     		items: [{
             xtype: 'toolbar',
             title: 'Genre Filter',
             docked: 'top',
-    				cls: 'genre-filter'
 	    	},{
 			    xtype: 'togglefield',
 			    name: 'rockPopFolk',

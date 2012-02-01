@@ -1,15 +1,35 @@
-@mixin drawer-article-genre($genre, $bg-color1, $bg-color2) {
+@mixin genre-filter($genre, $bg-color1, $bg-color2) {
 	.#{$genre} .x-form-label {
 		color: #fff;
+		@include border-left-radius(8px);
 		@include background-image(linear-gradient($bg-color1, $bg-color2));
 		@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
 	}
-
-
+	.#{$genre} .x-component-outer {
+		@include background-image(linear-gradient($bg-color1, $bg-color2));
+		margin: 1px 0px 0px 0px;
+	}
+	.#{$genre} .x-toggle-on {
+		@include background-image(linear-gradient($bg-color2, $bg-color1));
+	}
 }
 
-@include drawer-article-genre('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include drawer-article-genre('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include drawer-article-genre('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include drawer-article-genre('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include drawer-article-genre('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+.genre-filters {
+	margin: 10px;
+	.x-toolbar-dark.x-docked-top {
+		background: none; border: none;
+		.x-innerhtml {
+			color: #333; text-shadow: none; text-align: left;
+		}
+	}
+	.x-field {
+		border: none !important;
+		margin-bottom: 10px;
+	}
+}
+
+@include genre-filter('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
+@include genre-filter('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
+@include genre-filter('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
+@include genre-filter('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
+@include genre-filter('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
