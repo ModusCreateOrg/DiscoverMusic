@@ -66,6 +66,7 @@ Ext.define('Music.controller.Home', {
         var me = this,
             home = me.getHome(),
             drawer = me.getDrawer();
+            search = me.getSearch();
 
         drawer.getStore().each(function (record) {
             home.add({
@@ -78,6 +79,7 @@ Ext.define('Music.controller.Home', {
 
         Ext.Viewport.add(home);
         Ext.Viewport.add(drawer);
+        Ext.Viewport.add(search);
 
         drawer.addArticles();
 
@@ -216,6 +218,8 @@ Ext.define('Music.controller.Home', {
     },
 
     onSearchTap: function(){
-        Ext.Msg.alert('Search','Please show me the search page!!');
+        var me = this,
+        home = me.getHome();
+        home.setActiveItem(me.getSearch());
     }
 });
