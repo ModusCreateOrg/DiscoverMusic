@@ -231,6 +231,10 @@ Ext.define('Music.controller.Home', {
     onSearchTap: function(){
         var me = this,
         home = me.getHome();
+        home.getLayout().setAnimation({
+            type: 'fade',
+            duration: 300
+        });        
         home.setActiveItem(me.getSearch());
     }
 });
