@@ -60,8 +60,10 @@ Ext.define('Music.view.Search', {
 					label: 'Search Arists, Titles, etc.',
 					autoCapitalize: false,
 					placeHolder: 'Search Arists, Titles, etc.',
-					name: 'query'    			
-
+					name: 'search'    			
+    		},{
+    			xtype: 'button',
+    			text: 'Search'
     		}]
 
     	}]

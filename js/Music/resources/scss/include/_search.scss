@@ -7,11 +7,17 @@
 	}
 	.#{$genre} .x-component-outer {
 		@include background-image(linear-gradient($bg-color1, $bg-color2));
+		@include border-right-radius(8px);
 		margin: 1px 0px 0px 0px;
 	}
-	.#{$genre} .x-toggle-on {
+	.#{$genre} .x-toggle {
 		@include background-image(linear-gradient($bg-color2, $bg-color1));
+		border: 1px solid darken($bg-color2, 5);
+		width: 5.5em;    // make our actual toggles a bit wider.
 	}
+	.#{$genre} .x-toggle-on {
+		@include background-image(linear-gradient(darken($bg-color2, 10), darken($bg-color1, 10)));
+	}	
 }
 
 .genre-filters {
@@ -22,10 +28,8 @@
 			color: #333; text-shadow: none; text-align: left;
 		}
 	}
-	.x-field {
-		border: none !important;
-		margin-bottom: 10px;
-	}
+	.x-field { border: none !important; margin-bottom: 10px }
+	.x-toggle { top: 2px; }
 }
 
 @include genre-filter('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
