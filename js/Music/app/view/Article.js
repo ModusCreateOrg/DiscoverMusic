@@ -14,7 +14,7 @@ Ext.define('Music.view.Article', {
         scrollable: 'auto',
 	    tpl : [
 	    	'<div class="music-article-full-{genreKey}">',
-	    		'<div class="image" style="background-image:url(http://src.sencha.io/650/{image});"></div>',
+	    		'<div class="image" style="background-image:url(http://src.sencha.io/1024/{image});"></div>',
 	    		'<div class="title"><h1>{title}</h1></div>',
 	    		'<div class="controls">Controls here</div>',
 	    		'<div class="text">{content}</div>',

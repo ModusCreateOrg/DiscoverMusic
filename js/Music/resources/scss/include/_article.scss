@@ -24,13 +24,21 @@
 
 		// full article page gets the same colors as the genre cover for the title
 		.music-article-full-#{$category} {
+			.image { 
+				background-repeat: no-repeat;
+				height: 400px;
+				position: relative;
+			}
 			.title {
 				@include background-image(linear-gradient($bg-color1, $bg-color2));
 				@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
 				@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+				position: absolute;
+				left: 0px;
+				top: 320px;
 				h1 {
 					color: #fff;
-					font-family: $alt-font;
+					font-family: $base-font;
 					font-weight: 500;
 					font-size: 32px;
 					padding: 20px;
