@@ -16,7 +16,7 @@ Ext.define('Music.view.Search', {
     	layout: 'hbox',
     	items: [{
     		xtype: 'panel',
-    		width: 270,
+    		width: 285,
     		cls: 'genre-filters',
     		items: [{
             xtype: 'toolbar',
