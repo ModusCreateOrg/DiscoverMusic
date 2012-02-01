@@ -31,6 +31,11 @@ Ext.define('Music.controller.Home', {
                 xtype: 'search',
                 selector: 'search',
                 autoCreate: true
+            },
+            article : {
+                xtype: 'article',
+                selector: 'article',
+                autoCreate: true
             }
         }
     },
@@ -70,8 +75,9 @@ Ext.define('Music.controller.Home', {
     startApp: function () {
         var me = this,
             home = me.getHome(),
-            drawer = me.getDrawer();
-            search = me.getSearch();
+            drawer = me.getDrawer(),
+            search = me.getSearch(),
+            article = me.getArticle();
 
         drawer.getStore().each(function (record) {
             home.add({
@@ -85,6 +91,7 @@ Ext.define('Music.controller.Home', {
         Ext.Viewport.add(home);
         Ext.Viewport.add(drawer);
         Ext.Viewport.add(search);
+        Ext.Viewport.add(article);
 
         drawer.addArticles();
 
@@ -200,17 +207,16 @@ Ext.define('Music.controller.Home', {
     onArticlePreviewReadArticle: function(record) {
         var me = this,
             home = me.getHome(),
-            myNewPanel = home.add({
-                xtype: 'article',
-                data: record.data
-            });
+            article = me.getArticle();
 
         // not sure if this is the correct way to do this, but we'll do it!
         home.getLayout().setAnimation({
             type: 'fade',
             duration: 300
         });
-        home.setActiveItem(myNewPanel);
+
+        article.setData(record.getData());
+        home.setActiveItem(article);
     },
 
     // when a user taps the "Discover Music" logo, show the about panel
