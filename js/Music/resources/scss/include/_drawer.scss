@@ -97,21 +97,23 @@
 }
 
 .drawer-inner-btn{
-    padding-left:75px;
+    padding-left:70px;
     height:77px;
     background:#e6e6e6 url(../images/search-favorites.png) 15px -75px no-repeat;
     border:1px solid rgba(0,0,0,0.7);
-    color:#333;
+    color: #333;
     font-size:1.3em;
     font-weight:bold;
     line-height:77px;
+    text-shadow: 0px 1px #fff;
+    @include border-radius(5px);
+    @include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
 }
 
 .drawer-inner-btn:first-child{
     margin-bottom:10px;
     background-position:15px 0;
 }
-
 
 @mixin drawer-article-genre($genre,$bg-color1,$bg-color2){
     .drawer-page {
