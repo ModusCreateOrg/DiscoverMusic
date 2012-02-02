@@ -149,7 +149,7 @@ Ext.define('Music.controller.Home', {
             list[i].genreKey = category.get('key');
         }
 
-        localStorage.setItem('timestamp-' + topic, Ext.util.Date.format(new Date(), 'ymd'));
+        localStorage.setItem('timestamp-' + topic, Ext.Date.format(new Date(), 'ymd'));
         localStorage.setItem('articles-' + topic, Ext.encode(data.list.story));
 
         this.importDataToStore(topic, data.list.story);
