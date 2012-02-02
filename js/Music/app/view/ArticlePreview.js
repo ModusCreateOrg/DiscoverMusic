@@ -9,6 +9,7 @@ Ext.define('Music.view.ArticlePreview', {
     extend: 'Ext.Component',
     alias: 'widget.articlepreview',
     config: {
+        model: null,
         topic: null,
         cls: 'music-article-preview',
         tpl: [
@@ -33,6 +34,6 @@ Ext.define('Music.view.ArticlePreview', {
     },
     
     showFullArticle: function (event, node) {
-        this.fireEvent("readarticle", this.model);
+        this.fireEvent("readarticle", this.getModel());
     }
 });

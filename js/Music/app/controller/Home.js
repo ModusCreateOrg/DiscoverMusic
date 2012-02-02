@@ -36,6 +36,11 @@ Ext.define('Music.controller.Home', {
                 xtype: 'article',
                 selector: 'article',
                 autoCreate: true
+            },
+            about   : {
+                xtype: 'aboutpanel',
+                selector: 'aboutpanel',
+                autoCreate: true
             }
         }
     },
@@ -75,9 +80,7 @@ Ext.define('Music.controller.Home', {
     startApp: function () {
         var me = this,
             home = me.getHome(),
-            drawer = me.getDrawer(),
-            search = me.getSearch(),
-            article = me.getArticle();
+            drawer = me.getDrawer();
 
         drawer.getStore().each(function (record) {
             home.add({
@@ -89,9 +92,10 @@ Ext.define('Music.controller.Home', {
         });
 
         Ext.Viewport.add(home);
-        Ext.Viewport.add(drawer);
-        Ext.Viewport.add(search);
-        Ext.Viewport.add(article);
+        Ext.Viewport.add(me.getDrawer());
+        Ext.Viewport.add(me.getSearch());
+        Ext.Viewport.add(me.getArticle());
+        Ext.Viewport.add(me.getAbout());
 
         drawer.addArticles();
 
@@ -112,7 +116,7 @@ Ext.define('Music.controller.Home', {
     loadData: function (topic) {
         var me = this,
             ts = localStorage.getItem('timestamp-' + topic);
-            needRefresh = !ts || (Ext.util.Date.format(new Date(), 'ymd') < ts);
+            needRefresh = !ts || (Ext.Date.format(new Date(), 'ymd') < ts);
 
         if (needRefresh) {
             Ext.util.JSONP.request({
@@ -125,7 +129,6 @@ Ext.define('Music.controller.Home', {
                     id: topic,
                     requiredAssets: 'image,audio',
                     numResults: me.getNumResults(),
-                    //sort:'dateDesc',
                     transform: 'source',
                     output: 'JSON'
                 }
@@ -215,13 +218,13 @@ Ext.define('Music.controller.Home', {
             duration: 300
         });
 
-        article.setData(record.getData());
+        article.setModel(record);
         home.setActiveItem(article);
     },
 
     // when a user taps the "Discover Music" logo, show the about panel
     onHomeTitleTap: function() {
-        Ext.create('Music.view.AboutPanel', {}).show();
+        this.getAbout().show();
     },
 
     onFavoritesTap: function(){

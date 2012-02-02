@@ -1,3 +1,10 @@
+
+/*********************************
+ *
+ * Styles for the cover
+ *
+ *********************************/
+
 @mixin article-category($category, $bg-color1, $bg-color2) {
 
 		// the 'genre flag' in the cover flow
@@ -135,6 +142,12 @@
 	}
 }
 
+@include article-category('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
+@include article-category('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
+@include article-category('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
+@include article-category('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
+@include article-category('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+
 .music-article-preview div.x-innerhtml {
 	height:100%;
 }
@@ -149,8 +162,39 @@
     height:100%;
 }
 
-@include article-category('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include article-category('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include article-category('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include article-category('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include article-category('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+/*********************************
+ *
+ * Styles for the article page
+ *
+ *********************************/
+
+.music-article-header div.x-innerhtml {
+	height:100%;
+}
+.music-article-header .music-article-header-image{
+	position:relative;
+	height:100%;
+	background-size: cover;
+	background-position: center top;
+    background-repeat: no-repeat;
+}
+.music-article-header h1{
+	position:absolute;
+	bottom:0;
+	right:0;
+	font-size:1.8em;
+	color:#fff;
+	padding:20px 25px;
+	font-weight:bold;
+	border-top:5px solid #fff;
+	border-left:5px solid #fff;
+	max-width:645px;
+	@include background-image(linear-gradient(#3399ff,#0071bc));
+}
+.music-article-content .x-innerhtml{
+	@include column-count(2);
+	padding:20px 0 20px 0;
+}
+.music-article-content .x-innerhtml p{
+	margin-bottom:30px;
+}

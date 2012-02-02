@@ -14,6 +14,7 @@ Ext.define('Music.view.AboutPanel', {
         centered : true,
         hideOnMaskTap: true,
         floating: true,
+        hidden: true,
         width: 600,
         height: 500,
         items: [{
