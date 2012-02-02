@@ -16,40 +16,56 @@ Ext.define('Music.view.Search', {
     	layout: 'hbox',
     	items: [{
     		xtype: 'panel',
-    		width: 270,
+    		width: 285,
+    		cls: 'genre-filters',
     		items: [{
-            docked: 'top',
             xtype: 'toolbar',
-            title: 'Genre Filter'	    	
+            title: 'Genre Filter',
+            docked: 'top',
 	    	},{
 			    xtype: 'togglefield',
-			    name: 'Rock / Pop / Folk',
+			    name: 'rockPopFolk',
+			    cls: 'rockPopFolk',
 			    label: 'Rock / Pop / Folk',
 			    labelWidth: '60%'  		
 			  },{
 			    xtype: 'togglefield',
-			    name: 'Jazz & Blues',
+			    name: 'jazzBlues',
+			    cls: 'jazzBlues',
 			    label: 'Jazz & Blues',
 			    labelWidth: '60%'
     		},{
 			    xtype: 'togglefield',
-			    name: 'Classical',
+			    name: 'classical',
+			    cls: 'classical',
 			    label: 'Classical',
 			    labelWidth: '60%'
     		},{
 			    xtype: 'togglefield',
-			    name: 'Hip-Hop / R&B',
+			    name: 'hipHopRB',
+			    cls: 'hipHopRB',
 			    label: 'Hip-Hop / R&B',
 			    labelWidth: '60%'
     		},{
 			    xtype: 'togglefield',
-			    name: 'World',
+			    name: 'world',
+			    cls: 'world',
 			    label: 'World',
 			    labelWidth: '60%'
     		}]
     	}, {
-    		html: 'stories here',
-    		flex: 1
+    		flex: 1,
+    		items: [{
+    			xtype: 'searchfield',
+					label: 'Search Arists, Titles, etc.',
+					autoCapitalize: false,
+					placeHolder: 'Search Arists, Titles, etc.',
+					name: 'search'    			
+    		},{
+    			xtype: 'button',
+    			text: 'Search'
+    		}]
+
     	}]
     },
 
