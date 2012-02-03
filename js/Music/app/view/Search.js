@@ -57,6 +57,7 @@ Ext.define('Music.view.Search', {
     		flex: 1,
     		items: [{
     			xtype: 'searchfield',
+    			docked: 'top',
 					label: 'Search Arists, Titles, etc.',
 					autoCapitalize: false,
 					placeHolder: 'Search Arists, Titles, etc.',
@@ -64,6 +65,9 @@ Ext.define('Music.view.Search', {
     		},{
     			xtype: 'button',
     			text: 'Search'
+    		},{
+    			scrollable: true,
+    			html: 'ipsum lorem.!'
     		}]
 
     	}]

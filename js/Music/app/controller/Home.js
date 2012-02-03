@@ -118,6 +118,7 @@ Ext.define('Music.controller.Home', {
             ts = localStorage.getItem('timestamp-' + topic);
             needRefresh = !ts || (Ext.Date.format(new Date(), 'ymd') < ts);
 
+
         if (needRefresh) {
             Ext.util.JSONP.request({
                 url: me.getApiUrl(),
