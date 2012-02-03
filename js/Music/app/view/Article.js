@@ -40,21 +40,7 @@ Ext.define('Music.view.Article', {
 				tpl		: '{content}'
 			}]
 		},{
-			xtype	: 'component',
-			padding	: 20,
-			data	: {
-				title		: 'Donate and support public radio!',
-				description	: 'Donate now and your tax-deductible gift helps keep all your favorite news, entertainment, and music programs on your local public radio station. <br/><br/> Your financial support helps ensure that you can listen to Morning Edition, All Things Considered, Fresh Air, Car Talk and Wait Wait ... Don\'t Tell Me! on your NPR station.'
-			},
-			cls		: 'donate-component',
-			tpl		: [
-				'<div class="donate-content">',
-					'<h2>{title}</h2>',
-					'<div class="donate-description">',
-					'<p>{description}</p>',
-					'</div>',
-				'</div>'
-			],
+			xtype	: 'donate',
 			width	: 340
 		}]
     },

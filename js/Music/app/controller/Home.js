@@ -9,7 +9,7 @@ Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Genre'],
     stores: ['Articles', 'Genres'],
-    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article', 'MainMenu','Drawer', 'AboutPanel','Search'],
+    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article','Donate', 'MainMenu','Drawer', 'AboutPanel','Search'],
     
     config: {
         apiUrl: 'http://api.npr.org/query',
@@ -128,7 +128,7 @@ Ext.define('Music.controller.Home', {
                 params: {
                     apiKey: me.getApiKey(),
                     id: topic,
-                    requiredAssets: 'image,audio',
+                    requiredAssets: 'image',
                     numResults: me.getNumResults(),
                     transform: 'source',
                     output: 'JSON'

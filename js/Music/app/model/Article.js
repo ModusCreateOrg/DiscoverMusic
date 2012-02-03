@@ -32,14 +32,15 @@ Ext.define('Music.model.Article', {
             mapping: 'text.paragraph',
             convert: function (paragraphs) {
                 var text = [];
-
-                for (var i = 0, len = paragraphs.length; i < len; i++) {
-                    if (paragraphs[i].$text) {
-                        text.push(
-                        Ext.String.format('<p>{0}</p>', paragraphs[i].$text.replace('[Copyright 2012 National Public Radio]', '')));
+                if(paragraphs){
+                    for (var i = 0, len = paragraphs.length; i < len; i++) {
+                        if (paragraphs[i].$text) {
+                            text.push(
+                            Ext.String.format('<p>{0}</p>', paragraphs[i].$text.replace('[Copyright 2012 National Public Radio]', '')));
+                        }
                     }
+                    return text.join('');
                 }
-                return text.join('');
             }
         }, {
             name: 'audioTitle',
