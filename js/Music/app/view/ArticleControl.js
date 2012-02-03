@@ -5,7 +5,7 @@
  *
  * The article view
  */
-Ext.define('Music.view.ArticlePreview', {
+Ext.define('Music.view.ArticleControl', {
     extend: 'Ext.Component',
     alias: 'widget.articlepreview',
     config: {
