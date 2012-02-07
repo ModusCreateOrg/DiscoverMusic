@@ -140,6 +140,10 @@
 	.music-genre-#{$category} .x-carousel-indicator-light span.x-carousel-indicator-active{
 		@include background-image(linear-gradient($bg-color1, $bg-color2));
 	}
+
+	.x-body{
+		background-color:#fff;
+	}
 }
 
 @include article-category('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
@@ -197,4 +201,33 @@
 }
 .music-article-content .x-innerhtml p{
 	margin-bottom:30px;
+}
+.music-article-controls .x-innerhtml{
+	padding:30px 0 20px 0;
+}
+.music-article-controls-content{
+	padding:15px 18px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	border-left:2px solid #ddd;
+	border-right:2px solid #ddd;
+	@include border-radius(50px);
+	margin:0 20px;
+	width:86px;
+}
+.music-article-controls-button{
+	width:48px;
+	height:48px;
+	margin-bottom:30px;
+	background:transparent url(../images/controls.png) 0 0 no-repeat;
+
+	&:last-child{
+		margin:0;
+	}
+}
+.music-article-controls-favorites{
+	background-position:0 -48px;
+}
+.music-article-controls-twitter{
+	background-position:0 -96px;
 }

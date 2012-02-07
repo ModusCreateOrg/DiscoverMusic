@@ -1,6 +1,6 @@
 /**
  * @class Music.view.Article
- * @extends Ext.Component
+ * @extends Ext.Container
  * @author Dave Ackerman
  *
  * The full article view
@@ -30,9 +30,8 @@ Ext.define('Music.view.Article', {
 					'</div>'
 				]
 			},{
-				xtype	: 'component',
-				width	: 150,
-				html	: 'Controls here'
+				xtype	: 'controls',
+				width	: 150
 			},{
 				xtype	: 'component',
 				flex	: 1,
@@ -45,14 +44,6 @@ Ext.define('Music.view.Article', {
 		}]
     },
 
-    initialize	: function(){
-		var me = this;
-
-		me.callParent();
-
-		Ext.Viewport.on('orientationchange',me.onOrientationChange,me);
-    },
-
     applyModel	: function(model){
 		var me = this,
 			header = me.down('component[cls=music-article-header]'),
@@ -62,13 +53,5 @@ Ext.define('Music.view.Article', {
 		content.setData(model.getData());
 
 		return model;
-    },
-
-    onOrientationChange	: function(viewport,width,height){
-		if(orientation === 1024){
-			Ext.Msg.alert('landscape');
-		}else{
-			Ext.Msg.alert('portrait');
-		}
     }
 });

@@ -7,7 +7,8 @@ Ext.application({
     appFolder          : 'js/Music/app',
     
     controllers : [
-        'Home'
+        'Home',
+        'Article'
     ],
 
     launch : function() {
