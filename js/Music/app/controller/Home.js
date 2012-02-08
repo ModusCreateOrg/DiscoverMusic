@@ -116,7 +116,7 @@ Ext.define('Music.controller.Home', {
     loadData: function (topic) {
         var me = this,
             ts = localStorage.getItem('timestamp-' + topic);
-            needRefresh = !ts || (Ext.Date.format(new Date(), 'ymd') < ts);
+            needRefresh = !ts || (parseInt(Ext.Date.format(new Date(), 'ymd'),10) > parseInt(ts,10));
 
 
         if (needRefresh) {
