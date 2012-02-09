@@ -237,8 +237,9 @@ Ext.define('Music.controller.Home', {
 
     // when a user taps the button to go back to the cover flow
     onBackToCoversTap: function() {
-        debugger;
-        console.log('onBackToCoversTap');
+        var home = this.getHome();
+
+        home.setActiveItem(home.down('#featured'));
     },
 
     // when a user taps the "Discover Music" logo, show the about panel
