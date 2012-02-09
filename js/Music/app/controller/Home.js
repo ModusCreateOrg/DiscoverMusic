@@ -42,7 +42,21 @@ Ext.define('Music.controller.Home', {
                 selector: 'aboutpanel',
                 autoCreate: true
             }
-        }
+        },
+        control: {
+            'articlepreview': {
+                readarticle : 'onArticlePreviewReadArticle',
+                seealltap: 'showGenre'
+            },
+            'drawer'  : {
+                itemtap       : 'showGenre',
+                favoritestap  : 'onFavoritesTap',
+                searchtap     : 'onSearchTap'
+            },
+            'home': {
+                titletap: 'onHomeTitleTap',
+            }
+        }        
     },
 
     loadMask: undefined,
@@ -61,20 +75,6 @@ Ext.define('Music.controller.Home', {
         me.loadMask.show();
 
         drawer.getStore().load(me.onTopicsLoaded,me);
-
-        me.control({
-            'articlepreview': {
-                readarticle : this.onArticlePreviewReadArticle
-            },
-            'drawer'  : {
-                itemtap       : this.showGenre,
-                favoritestap  : this.onFavoritesTap,
-                searchtap     : this.onSearchTap
-            },
-            'home': {
-                titletap: this.onHomeTitleTap
-            }
-        });
     },
 
     startApp: function () {
@@ -201,11 +201,19 @@ Ext.define('Music.controller.Home', {
     },
 
     // when user taps on any genre from the drawer
-    showGenre   : function(id,genre){
+    showGenre: function(id, genre) {
         var me = this,
-            view = me.getHome().down('#'+genre.get('key'));
+            home = me.getHome(),
+            genreKey = genre.get('key') || genre.get('genreKey'),
+            view = home.down('#' + genreKey);
         
-        me.getHome().setActiveItem(view);
+        home.getLayout().setAnimation({
+                duration: 300,
+                easing: 'ease-in',
+                type: 'slide',
+                direction: 'up'
+        });
+        home.setActiveItem(view);
     },
 
     // when a user taps on the "Read & Listen"

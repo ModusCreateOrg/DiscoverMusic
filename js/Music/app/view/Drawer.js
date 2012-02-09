@@ -85,11 +85,11 @@ Ext.define('Music.view.Drawer', {
             page    = Ext.get(event.getTarget('.drawer-page'));
 
         if(page){
-            var id      = parseInt(page.getAttribute("data-id"),10),
+            var id      = +page.getAttribute("data-id"),
                 genre   = me.getStore().getById(id),
                 anim    = Ext.Function.createSequence(me.showPageAnim(page), me.hidePageAnim(page), me);
 
-            if (page){ anim();}
+            anim();
 
             if(id){
                 me.fireEvent('itemtap',id,genre);
