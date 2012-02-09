@@ -40,7 +40,10 @@ Ext.define('Music.controller.Article', {
         var me = this,
             model = me.getArticle().getModel();
 
-        me.getPlayer().setData(model.getData());
+        if(model.get('audioFile')){
+            me.getPlayer().setData(model.getData());
+            me.getPlayer().loadSound(model.get('audioFile'));
+        }
     },
 
     onHideArticle   : function(){
@@ -48,6 +51,11 @@ Ext.define('Music.controller.Article', {
     },
 
     onShowArticle   : function(){
-        this.getPlayer().show();
+        var me = this,
+            model = me.getArticle().getModel();
+
+        if(model.get('audioFile')){
+            me.getPlayer().show();
+        }
     }
 });

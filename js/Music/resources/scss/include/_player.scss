@@ -19,6 +19,11 @@
 	height:20px;
 	@include background-image(linear-gradient(#99ffff,#6adcf3));
 	margin:5px 10px 5px 5px;
+	font-size:0.4em;
+	font-weight:normal;
+	padding:0 5px;
+	line-height:20px;
+	color:#000;
 }
 .music-player-button{
 	display:inline-block;
@@ -27,6 +32,9 @@
 	height:10px;
 	background:transparent url(../images/play-pause.png) 0 0 no-repeat;
 	margin:10px 5px 10px 10px;
+}
+.music-player-paused .music-player-button{
+	background-position:0 -10px;
 }
 .music-player-title{
 	display:inline-block;
