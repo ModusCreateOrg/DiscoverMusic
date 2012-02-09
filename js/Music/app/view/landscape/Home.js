@@ -7,7 +7,7 @@
  */
 Ext.define('Music.view.landscape.Home',{
 	extend	: 'Ext.Panel',
-	alias	: 'widget.home',
+	xtype	: 'home',
 
 	config	: {
 		fullscreen	: true,
@@ -24,6 +24,15 @@ Ext.define('Music.view.landscape.Home',{
 			},{
 				xtype	: 'player',
 				flex	: 1
+			},{
+				xtype: 'button',
+				text: 'Back to Cover Flow',
+				ui: 'light',
+				listeners: {
+					tap: function() {
+						this.fireEvent('backtocovers', this);
+					}
+				}
 			}]
 		}]
 	},

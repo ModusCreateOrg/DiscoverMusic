@@ -6,7 +6,7 @@
  * The category model
  */
 
-Ext.define('Music.model.Genre',{
+Ext.define('Music.model.Genre', {
     extend      : 'Ext.data.Model',
     config: {
         fields	: ['id','name','key','image']

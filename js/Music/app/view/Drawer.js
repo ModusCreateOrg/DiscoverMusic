@@ -17,7 +17,7 @@ Ext.define('Music.view.Drawer', {
         closed          : true,
         indicator       : false,
         docked          : 'bottom',
-        scrollable      : {direction: 'horizontal'},
+        scrollable      : { direction: 'horizontal' },
         height          : 230,
         left            : 0,
         cls             : 'drawer-body',

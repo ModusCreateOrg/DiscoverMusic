@@ -55,6 +55,7 @@ Ext.define('Music.controller.Home', {
             },
             'home': {
                 titletap: 'onHomeTitleTap',
+                backtocovers: 'onBackToCoversTap'
             }
         }        
     },
@@ -232,6 +233,12 @@ Ext.define('Music.controller.Home', {
         home.setActiveItem(article);
     },
 
+    // when a user taps the button to go back to the cover flow
+    onBackToCoversTap: function() {
+        debugger;
+        console.log('onBackToCoversTap');
+    },
+
     // when a user taps the "Discover Music" logo, show the about panel
     onHomeTitleTap: function() {
         this.getAbout().show();
@@ -245,8 +252,10 @@ Ext.define('Music.controller.Home', {
         var me = this,
         home = me.getHome();
         home.getLayout().setAnimation({
-            type: 'fade',
-            duration: 300
+            duration: 300,
+            easing: 'ease-in',
+            type: 'slide',
+            direction: 'up'
         });
         home.setActiveItem(me.getSearch());
     }
