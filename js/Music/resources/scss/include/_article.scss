@@ -196,8 +196,13 @@
 	@include background-image(linear-gradient(#3399ff,#0071bc));
 }
 .music-article-content .x-innerhtml{
-	@include column-count(2);
 	padding:20px 0 20px 0;
+}
+.landscape .music-article-content .x-innerhtml{
+	@include column-count(2);
+}
+.portrait .music-article-content .x-innerhtml{
+	@include column-count(1);
 }
 .music-article-content .x-innerhtml p{
 	margin-bottom:30px;

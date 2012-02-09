@@ -1,7 +1,7 @@
 /**
  * @class Music.view.ArticlePreview
  * @extends Ext.Panel
- * @author Crysfel Villa
+ * @author Crysfel Villa <crysfel@moduscreate.com>
  *
  * The article view
  */
@@ -31,7 +31,6 @@ Ext.define('Music.view.Controls', {
 
     onTap   : function(event){
         var me = this;
-        console.log('Msg!');
         if (event.getTarget('.music-article-controls-play')){
             return this.fireEvent('play', this);
         }

@@ -1,0 +1,39 @@
+
+.music-player{
+	height:35px;
+	border:2px solid #151313;
+	margin-top:12px;
+	@include background-image(linear-gradient(#0d0d0d,#1a1a1a));
+}
+
+.music-player .x-innerhtml{
+	margin:0;
+	background:none;
+	padding:0;
+}
+
+.music-player-timer{
+	display:inline-block;
+	vertical-align: top;
+	width:100px;
+	height:20px;
+	@include background-image(linear-gradient(#99ffff,#6adcf3));
+	margin:5px 10px 5px 5px;
+}
+.music-player-button{
+	display:inline-block;
+	vertical-align: top;
+	width:11px;
+	height:10px;
+	background:transparent url(../images/play-pause.png) 0 0 no-repeat;
+	margin:10px 5px 10px 10px;
+}
+.music-player-title{
+	display:inline-block;
+	vertical-align: top;
+	font-size:0.5em;
+	font-weight:normal;
+	line-height:30px;
+	font-family:arial;
+	color:#77c3c3;
+}

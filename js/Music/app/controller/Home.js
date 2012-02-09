@@ -1,7 +1,7 @@
 /**
  * @class Music.controller.Home
  * @extends Ext.app.Controller
- * @author Crysfel Villa
+ * @author Crysfel Villa <crysfel@moduscreate.com>
  *
  * The home controller
  */
@@ -9,7 +9,7 @@ Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Genre'],
     stores: ['Articles', 'Genres'],
-    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article','Donate', 'MainMenu','Drawer', 'AboutPanel','Search','Controls'],
+    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article','Donate', 'MainMenu','Drawer', 'AboutPanel','Search','Controls','Player'],
     
     config: {
         apiUrl: 'http://api.npr.org/query',
@@ -128,7 +128,7 @@ Ext.define('Music.controller.Home', {
                 params: {
                     apiKey: me.getApiKey(),
                     id: topic,
-                    requiredAssets: 'image',
+                    requiredAssets: 'audio,image',
                     numResults: me.getNumResults(),
                     transform: 'source',
                     output: 'JSON'
@@ -173,7 +173,7 @@ Ext.define('Music.controller.Home', {
 
         store.setData(data);
 
-        //Start the app when the last topic is loaded
+        //Start the app when the last genre is loaded
         if (me.db.getCount() === (drawer.getStore().getCount() - 1)) {
             //Populating the 'featured' store
             var featuredStore = Ext.create('Music.store.Articles'),
@@ -183,6 +183,7 @@ Ext.define('Music.controller.Home', {
                     var store = me.db.getByKey(genre.getId()),
                         article,i=0;
                     do{
+                        //we search for the first article that contains an image
                         article = store.getAt(i);
                         i++;
                     }while(!article.get('image'));
@@ -238,7 +239,7 @@ Ext.define('Music.controller.Home', {
         home.getLayout().setAnimation({
             type: 'fade',
             duration: 300
-        });        
+        });
         home.setActiveItem(me.getSearch());
     }
 });

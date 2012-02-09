@@ -1,7 +1,7 @@
 /**
  * @class Music.view.Article
  * @extends Ext.Container
- * @author Dave Ackerman
+ * @author Crysfel Villa <crysfel@moduscreate.com>
  *
  * The full article view
  */
@@ -44,6 +44,13 @@ Ext.define('Music.view.Article', {
 		}]
     },
 
+    initialize	: function(){
+		var me = this;
+		me.callParent();
+
+		Ext.Viewport.on('orientationchange',me.onOrientationChange,me);
+    },
+
     applyModel	: function(model){
 		var me = this,
 			header = me.down('component[cls=music-article-header]'),
@@ -52,6 +59,21 @@ Ext.define('Music.view.Article', {
 		header.setData(model.getData());
 		content.setData(model.getData());
 
+		me.onOrientationChange(Ext.Viewport,Ext.Viewport.orientation);
+
 		return model;
+    },
+
+    onOrientationChange	: function(viewport,orientation){
+		var me = this;
+
+        me.element.addCls(orientation);
+        if(orientation === Ext.Viewport.PORTRAIT){
+            me.element.removeCls(Ext.Viewport.LANDSCAPE);
+            me.down('donate').hide();
+        }else{
+            me.element.removeCls(Ext.Viewport.PORTRAIT);
+            me.down('donate').show();
+        }
     }
 });
