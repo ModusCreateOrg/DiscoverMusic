@@ -16,7 +16,7 @@ Ext.define('Music.controller.Search', {
         },
         control : {
         
-        },
+        }
     },
 
     init  : function() {

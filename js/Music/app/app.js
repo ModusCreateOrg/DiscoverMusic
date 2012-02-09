@@ -8,7 +8,8 @@ Ext.application({
     
     controllers : [
         'Home',
-        'Article'
+        'Article',
+        'Search'
     ],
 
     launch : function() {
