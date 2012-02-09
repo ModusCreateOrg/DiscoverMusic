@@ -57,7 +57,7 @@ Ext.define('Music.controller.Home', {
                 titletap: 'onHomeTitleTap',
                 backtocovers: 'onBackToCoversTap'
             }
-        }        
+        }
     },
 
     loadMask: undefined,
@@ -140,7 +140,7 @@ Ext.define('Music.controller.Home', {
         }
     },
 
-    saveData: function (topic, data) {
+    saveData: function (topic, success ,data) {
         var list = data.list.story,
             drawer = this.getDrawer(),
             category = drawer.getStore().getById(topic);
