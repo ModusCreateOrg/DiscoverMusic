@@ -3,7 +3,7 @@
  * @extends Ext.data.Store
  * @author Crysfel Villa <crysfel@moduscreate.com>
  *
- * The categories store
+ * The Genres store
  */
 Ext.define('Music.store.Genres', {
     extend: 'Ext.data.Store',
