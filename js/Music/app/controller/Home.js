@@ -54,7 +54,9 @@ Ext.define('Music.controller.Home', {
                 searchtap     : 'onSearchTap'
             },
             'home': {
-                titletap: 'onHomeTitleTap',
+                titletap: 'onHomeTitleTap'
+            },
+            'home toolbar button': {
                 backtocovers: 'onBackToCoversTap'
             }
         }
