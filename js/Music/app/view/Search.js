@@ -9,7 +9,7 @@
 Ext.define('Music.view.Search', {
     extend: 'Ext.Panel',
     alias : 'widget.search',
-		xtype: 'search',
+	xtype: 'search',
     selector: 'search',
     autoCreate: true,
     config : {
@@ -64,17 +64,26 @@ Ext.define('Music.view.Search', {
 					name: 'search'    			
     		},{
     			xtype: 'button',
-    			text: 'Search'
+    			text: 'Search',
     		},{
-    			scrollable: true,
-    			html: 'ipsum lorem.!'
+    			html: 'ipsum lorem.!ipsum lorem.!ipsum lorem.!ipsum lorem.!'
     		}]
 
-    	}]
+    	}],
+        listeners: {
+            tap: {
+                delegate : 'button[text=Search]',
+                fn : 'onSearchButton',
+            }
+        }
     },
 
     initialize   : function() {
         var me = this;
         me.callParent();
+    },
+
+    onSearchButton: function() {
+        console.log(this.getParent().down);
     }
 });
