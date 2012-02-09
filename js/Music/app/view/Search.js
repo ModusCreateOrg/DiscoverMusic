@@ -9,7 +9,7 @@
 Ext.define('Music.view.Search', {
     extend: 'Ext.Panel',
     alias : 'widget.search',
-		xtype: 'search',
+	xtype: 'search',
     selector: 'search',
     autoCreate: true,
     config : {
