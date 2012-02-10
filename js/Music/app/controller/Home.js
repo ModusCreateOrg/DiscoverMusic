@@ -92,6 +92,7 @@ Ext.define('Music.controller.Home', {
                 store: me.db.get(record.getId()),
                 model: record
             });
+
         });
 
         Ext.Viewport.add(home);
@@ -190,8 +191,10 @@ Ext.define('Music.controller.Home', {
                         article = store.getAt(i);
                         i++;
                     }while(!article.get('image'));
-
+                    
+                    article.set('isFeatured', true);
                     featuredStore.add(article);
+                    
                     genre.set('image',article.get('image'));
                 }else{
                     featuredId = genre.get('id');
