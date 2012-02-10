@@ -43,8 +43,8 @@ Ext.define('Music.view.ArticlePreview', {
         }
 
         // add the "Go Up" button
-        if (me.element.down('.back-to-covers')) {
-            var backToCoversBtn = me.element.down('.back-to-covers-button');
+        if (me.element.down('.back-to-covers') != null ) {
+            var backToCoversBtn = me.element.down('.back-to-covers');
             backToCoversBtn.on('tap', me.showCovers, me);
         }
 
