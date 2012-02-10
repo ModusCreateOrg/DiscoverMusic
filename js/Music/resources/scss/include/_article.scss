@@ -29,7 +29,7 @@
 			@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
 		}
 		
-		.show-genre-button-#{$category} {
+		.show-genre-button-#{$category}, .back-to-covers-button-#{$category} {
 			color: white;
 			font-weight: bold;
 			margin: 20px 0px 0px 0px;
@@ -40,6 +40,10 @@
 			@include background-image(linear-gradient(darken($bg-color1, 15), darken($bg-color2, 15)));
 			@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
 			@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+			span {
+				font-style: italic;
+				font-weight: normal;
+			}
 		}
 
 		// full article page gets the same colors as the genre cover for the title

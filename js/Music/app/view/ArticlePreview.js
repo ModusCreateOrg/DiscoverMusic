@@ -16,9 +16,9 @@ Ext.define('Music.view.ArticlePreview', {
             '<div class="music-article-image" style="background-image:url(http://src.sencha.io/1024/{image});">',
                 '<div class="music-article-category music-article-{genreKey}"><h1>{genre}</h1></div>',
                 '<tpl if="isFeatured">',
-                    '<div class="see-all-button show-genre-button-{genreKey}">See All {genre}</div>',
+                    '<div class="see-all-button show-genre-button-{genreKey}"><span>See All</span> {genre} &darr;</div>',
                 '<tpl else>',
-                    '<div class="back-to-covers-button">Go Up</div>',
+                    '<div class="back-to-covers back-to-covers-button-{genreKey}">Return to Covers &uarr;</div>',
                 '</tpl>',
                 '<div class="music-article-title"><div class="music-content-all">',
                     '<div class="music-article-title-bg"></div>',
@@ -34,13 +34,24 @@ Ext.define('Music.view.ArticlePreview', {
     initialize: function () {
         var me = this;
         me.callParent();
-        
+       
+        // since our covers may not have these elements, we check for their existance first 
+        // add the "See All" button
+        if (me.element.down('.see-all-button') != null ) {
+            var seeAllBtn = me.element.down(".see-all-button");
+            seeAllBtn.on('tap', me.showGenre, me);
+        }
+
+        // add the "Go Up" button
+        if (me.element.down('.back-to-covers')) {
+            var backToCoversBtn = me.element.down('.back-to-covers-button');
+            backToCoversBtn.on('tap', me.showCovers, me);
+        }
+
+        // add the "Read & Listen" button
         var btn = me.element.down(".music-article-btn");
-        var seeAllBtn = me.element.down(".see-all-button");
-        var backToCoversBtn = me.element.down('.back-to-covers-button');
         btn.on('tap', me.showFullArticle, me);
-        seeAllBtn.on('tap', me.showGenre, me);
-        backToCoversBtn.on('tap', me.showCovers, me);
+        
     },
 
     showGenre: function(event, node) {

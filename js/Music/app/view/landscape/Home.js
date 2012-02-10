@@ -24,15 +24,6 @@ Ext.define('Music.view.landscape.Home',{
 			},{
 				xtype	: 'player',
 				flex	: 1
-			},{
-				xtype: 'button',
-				text: 'Back to Cover Flow',
-				ui: 'back confirm',
-				listeners: {
-					tap: function() {
-						this.fireEvent('backtocovers', this);
-					}
-				}
 			}]
 		}]
 	},

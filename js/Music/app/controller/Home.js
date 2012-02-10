@@ -240,6 +240,12 @@ Ext.define('Music.controller.Home', {
     // when a user taps the button to go back to the cover flow
     onBackToCoversTap: function() {
         var home = this.getHome();
+        home.getLayout().setAnimation({
+            duration: 300,
+            easing: 'ease-in',
+            type: 'slide',
+            direction: 'down'
+        });        
         home.setActiveItem(home.down('#featured'));
     },
 
