@@ -15,9 +15,10 @@ Ext.define('Music.view.ArticlePreview', {
         tpl: [
             '<div class="music-article-image" style="background-image:url(http://src.sencha.io/1024/{image});">',
                 '<div class="music-article-category music-article-{genreKey}"><h1>{genre}</h1></div>',
-                '<div class="see-all-button show-genre-button-{genreKey}">See All {isFeatured}</div>',
                 '<tpl if="isFeatured">',
-                    '<div class="see-all-button show-genre-button-{genreKey}">FEATURED</div>',
+                    '<div class="see-all-button show-genre-button-{genreKey}">See All {genre}</div>',
+                '<tpl else>',
+                    '<div class="back-to-covers-button">Go Up</div>',
                 '</tpl>',
                 '<div class="music-article-title"><div class="music-content-all">',
                     '<div class="music-article-title-bg"></div>',
@@ -27,6 +28,7 @@ Ext.define('Music.view.ArticlePreview', {
                     '</div></div>',
                 '</div>',
             '</div>'
+
             ]
     },
     initialize: function () {
@@ -35,14 +37,19 @@ Ext.define('Music.view.ArticlePreview', {
         
         var btn = me.element.down(".music-article-btn");
         var seeAllBtn = me.element.down(".see-all-button");
+        var backToCoversBtn = me.element.down('.back-to-covers-button');
         btn.on('tap', me.showFullArticle, me);
         seeAllBtn.on('tap', me.showGenre, me);
+        backToCoversBtn.on('tap', me.showCovers, me);
     },
 
     showGenre: function(event, node) {
-        console.log(this.getModel());
         var genreKey = this.getModel();
         this.fireEvent('seealltap', null, genreKey);
+    },
+
+    showCovers: function(event, node) {
+        this.fireEvent('backtocovers', this);
     },
     
     showFullArticle: function (event, node) {

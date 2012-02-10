@@ -46,7 +46,8 @@ Ext.define('Music.controller.Home', {
         control: {
             'articlepreview': {
                 readarticle : 'onArticlePreviewReadArticle',
-                seealltap: 'showGenre'
+                seealltap: 'showGenre',
+                backtocovers: 'onBackToCoversTap'
             },
             'drawer'  : {
                 itemtap       : 'showGenre',
@@ -55,9 +56,6 @@ Ext.define('Music.controller.Home', {
             },
             'home': {
                 titletap: 'onHomeTitleTap'
-            },
-            'home toolbar button': {
-                backtocovers: 'onBackToCoversTap'
             }
         }
     },
@@ -186,17 +184,18 @@ Ext.define('Music.controller.Home', {
                 if(genre.get('key') !== 'featured'){
                     var store = me.db.getByKey(genre.getId()),
                         article,i=0;
-                    do{
+                    do {
                         //we search for the first article that contains an image
                         article = store.getAt(i);
                         i++;
-                    }while(!article.get('image'));
+                    } while(!article.get('image'));
+
+                    var featuredArticle = article.copy();
+                    featuredArticle.set('isFeatured', true);
+                    featuredStore.add(featuredArticle);
                     
-                    article.set('isFeatured', true);
-                    featuredStore.add(article);
-                    
-                    genre.set('image',article.get('image'));
-                }else{
+                    genre.set('image', featuredArticle.get('image'));
+                } else {
                     featuredId = genre.get('id');
                 }
             });
