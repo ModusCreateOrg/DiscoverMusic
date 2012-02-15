@@ -25,6 +25,8 @@ Ext.define('Music.view.landscape.Home',{
 				xtype	: 'player',
 				flex	: 1
 			}]
+		},{
+			xtype : 'mainflow'
 		}]
 	},
 	 

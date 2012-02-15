@@ -14,7 +14,7 @@ Ext.define('Music.store.Genres', {
 		
 		proxy		: {
 			type	: 'ajax',
-			url		: 'serverside/categories.json',
+			url		: 'serverside/genres.json',
 			reader	: {
 				type			: 'json',
 				rootProperty	: 'data'

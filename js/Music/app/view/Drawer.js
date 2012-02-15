@@ -174,37 +174,35 @@ Ext.define('Music.view.Drawer', {
             emptySpaces;
 
         store.each(function(record) {
-            if(record.get('key') !== 'featured'){
-                if (!n) {
-                    card = {
-                        xtype: 'component',
-                        data: [],
-                        tpl: [
-                            '<div class="drawer-pages-cnt">',
-                                '<div class="drawer-page">',
-                                    '<div class="drawer-inner-btn" data-id="favorites">Favorites</div>',
-                                    '<div class="drawer-inner-btn" data-id="search">Search</div>',
+            if (!n) {
+                card = {
+                    xtype: 'component',
+                    data: [],
+                    tpl: [
+                        '<div class="drawer-pages-cnt">',
+                            '<div class="drawer-page">',
+                                '<div class="drawer-inner-btn" data-id="favorites">Favorites</div>',
+                                '<div class="drawer-inner-btn" data-id="search">Search</div>',
+                            '</div>',
+                            '<tpl for=".">',
+                                '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
+                                    '<h2>{name}</h2>',
+                                    '<img src="http://src.sencha.io/182/{image}" />',
+                                    '<div class="drawer-title-folded"></div>',
                                 '</div>',
-                                '<tpl for=".">',
-                                    '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
-                                        '<h2>{name}</h2>',
-                                        '<img src="http://src.sencha.io/182/{image}" />',
-                                        '<div class="drawer-title-folded"></div>',
-                                    '</div>',
-                                '</tpl>',
-                            '</div>'
-                        ]
-                    };
-                }
+                            '</tpl>',
+                        '</div>'
+                    ]
+                };
+            }
 
-                card.data.push(record.getData());
+            card.data.push(record.getData());
 
-                n++;
+            n++;
 
-                if (n==maxPg) {
-                    n=0;
-                    cards.push(card);
-                }
+            if (n==maxPg) {
+                n=0;
+                cards.push(card);
             }
         });
 

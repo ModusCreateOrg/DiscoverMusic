@@ -9,7 +9,10 @@ Ext.define('Music.controller.Home', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Genre'],
     stores: ['Articles', 'Genres'],
-    views: ['landscape.Home', 'Genre', 'ArticlePreview', 'Article','Donate', 'MainMenu','Drawer', 'AboutPanel','Search','Controls','Player'],
+    views: [
+        'landscape.Home', 'ArticlePreview', 'Article','Donate', 'MainFlow','Drawer',
+        'AboutPanel','Search','Controls','Player','GlobalToc','GenreToc'
+    ],
     
     config: {
         apiUrl: 'http://api.npr.org/query',
@@ -41,21 +44,20 @@ Ext.define('Music.controller.Home', {
                 xtype: 'aboutpanel',
                 selector: 'aboutpanel',
                 autoCreate: true
+            },
+            mainFlow : {
+                xtype: 'mainflow',
+                selector: 'home mainflow'
             }
         },
         control: {
             'articlepreview': {
-                readarticle : 'onArticlePreviewReadArticle',
-                seealltap: 'showGenre',
-                backtocovers: 'onBackToCoversTap'
+                readarticle : 'onArticlePreviewReadArticle'
             },
             'drawer'  : {
                 itemtap       : 'showGenre',
                 favoritestap  : 'onFavoritesTap',
                 searchtap     : 'onSearchTap'
-            },
-            'home': {
-                titletap: 'onHomeTitleTap'
             }
         }
     },
@@ -81,17 +83,15 @@ Ext.define('Music.controller.Home', {
     startApp: function () {
         var me = this,
             home = me.getHome(),
-            drawer = me.getDrawer();
+            drawer = me.getDrawer(),
+            mainFlow = me.getMainFlow();
 
-        drawer.getStore().each(function (record) {
-            home.add({
-                xtype: 'genrecarousel',
-                itemId: record.get('key'),
-                store: me.db.get(record.getId()),
-                model: record
-            });
-
+        //adding all the articles to the main flow
+        drawer.getStore().each(function (genre) {
+            mainFlow.addArticles(genre,me.db.get(genre.getId()));
         });
+        mainFlow.addGlobalToc(drawer.getStore());
+        mainFlow.setRandomCover();
 
         Ext.Viewport.add(home);
         Ext.Viewport.add(me.getDrawer());
@@ -176,31 +176,7 @@ Ext.define('Music.controller.Home', {
         store.setData(data);
 
         //Start the app when the last genre is loaded
-        if (me.db.getCount() === (drawer.getStore().getCount() - 1)) {
-            //Populating the 'featured' store
-            var featuredStore = Ext.create('Music.store.Articles'),
-                featuredId;
-            drawer.getStore().each(function(genre){
-                if(genre.get('key') !== 'featured'){
-                    var store = me.db.getByKey(genre.getId()),
-                        article,i=0;
-                    do {
-                        //we search for the first article that contains an image
-                        article = store.getAt(i);
-                        i++;
-                    } while(!article.get('image'));
-
-                    var featuredArticle = article.copy();
-                    featuredArticle.set('isFeatured', true);
-                    featuredStore.add(featuredArticle);
-                    
-                    genre.set('image', featuredArticle.get('image'));
-                } else {
-                    featuredId = genre.get('id');
-                }
-            });
-
-            me.db.insert(0,featuredId,featuredStore);
+        if (me.db.getCount() === drawer.getStore().getCount()) {
             me.startApp();
         }
     },
@@ -227,7 +203,6 @@ Ext.define('Music.controller.Home', {
             home = me.getHome(),
             article = me.getArticle();
 
-        // not sure if this is the correct way to do this, but we'll do it!
         home.getLayout().setAnimation({
             type: 'fade',
             duration: 300
@@ -235,23 +210,6 @@ Ext.define('Music.controller.Home', {
 
         article.setModel(record);
         home.setActiveItem(article);
-    },
-
-    // when a user taps the button to go back to the cover flow
-    onBackToCoversTap: function() {
-        var home = this.getHome();
-        home.getLayout().setAnimation({
-            duration: 300,
-            easing: 'ease-in',
-            type: 'slide',
-            direction: 'down'
-        });        
-        home.setActiveItem(home.down('#featured'));
-    },
-
-    // when a user taps the "Discover Music" logo, show the about panel
-    onHomeTitleTap: function() {
-        this.getAbout().show();
     },
 
     onFavoritesTap: function(){
