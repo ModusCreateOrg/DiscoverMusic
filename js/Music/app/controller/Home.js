@@ -11,7 +11,7 @@ Ext.define('Music.controller.Home', {
     stores: ['Articles', 'Genres'],
     views: [
         'landscape.Home', 'ArticlePreview', 'Article','Donate', 'MainFlow','Drawer',
-        'AboutPanel','Search','Controls','Player','GlobalToc','GenreToc'
+        'AboutPanel','Search','Controls','Player'
     ],
     
     config: {
@@ -90,7 +90,6 @@ Ext.define('Music.controller.Home', {
         drawer.getStore().each(function (genre) {
             mainFlow.addArticles(genre,me.db.get(genre.getId()));
         });
-        mainFlow.addGlobalToc(drawer.getStore());
         mainFlow.setRandomCover();
 
         Ext.Viewport.add(home);

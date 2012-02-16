@@ -166,8 +166,8 @@
 }
 
 
-@include drawer-article-genre('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include drawer-article-genre('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include drawer-article-genre('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include drawer-article-genre('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include drawer-article-genre('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+@include drawer-article-genre('rockPopFolk', $rockpopfolk-background-color-light, $rockpopfolk-background-color-dark);
+@include drawer-article-genre('classical', $classical-background-color-light, $classical-background-color-dark);
+@include drawer-article-genre('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include drawer-article-genre('world', $world-background-color-light, $world-background-color-dark);
+@include drawer-article-genre('hipHopRB',$hiphoprb-background-color-light , $hiphoprb-background-color-dark);

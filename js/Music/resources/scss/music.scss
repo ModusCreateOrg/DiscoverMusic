@@ -4,6 +4,23 @@ $base-color: #444444;
 $base-font: 'nevisBold';
 $alt-font: 'JuraRegular';
 
+//Genre colors
+$rockpopfolk-background-color-light:rgba(255, 204, 0, 1.0);
+$rockpopfolk-background-color-dark:rgba(255, 167, 0, 1.0);
+
+$classical-background-color-light:rgba(102, 204, 0, 1.0);
+$classical-background-color-dark:rgba(102, 171, 32, 1.0);
+
+$jazzblues-background-color-light:rgba(51, 204, 255, 1.0);
+$jazzblues-background-color-dark:rgba(22, 153, 196, 1.0);
+
+$world-background-color-light:rgba(102, 44, 145, 1.0);
+$world-background-color-dark:rgba(57, 16, 87, 1.0);
+
+$hiphoprb-background-color-light:rgba(255, 0, 255, 1.0);
+$hiphoprb-background-color-dark:rgba(166, 18, 166, 1.0);
+
+
 @import 'sencha-touch/default/all'; 
 
 @include sencha-panel;
@@ -30,6 +47,7 @@ $alt-font: 'JuraRegular';
 @import 'include/search';
 @import 'include/donate';
 @import 'include/player';
+@import 'include/toc';
 
 // include our @font-faces
 @import 'include/fonts';

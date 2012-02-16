@@ -9,20 +9,25 @@
 Ext.define('Music.view.MainFlow',{
     extend      : 'Ext.carousel.Carousel',
     alias       : 'widget.mainflow',
+    
+    requires	: [
+		'Music.view.GlobalToc',
+		'Music.view.GenreToc'
+    ],
 
     config		: {
 		ui		: 'light',
 		articles: []
     },
 
-    addArticles	: function(genre,store){
+    addArticles	: function(genre,articles){
 		var me = this,
 			collection = me.getArticles();
 
-		if(collection.length === 0){
-			me.add({
-				xtype	: 'globaltoc'
-			});
+		//TOC's
+		if(Ext.isEmpty(me.globalToc)){
+			me.globalToc = Ext.create('Music.view.GlobalToc');
+			me.add(me.globalToc);
 		}else{
 			me.add({
 				xtype	: 'genretoc',
@@ -30,8 +35,10 @@ Ext.define('Music.view.MainFlow',{
 			});
 		}
 
+		me.globalToc.addGenre(genre,articles);
+
 		//Adding the articles preview to the main flow
-		store.each(function(article){
+		articles.each(function(article){
             if(article.get('image')){
                 var tmp = me.add({
                     xtype   : 'articlepreview',
@@ -57,10 +64,7 @@ Ext.define('Music.view.MainFlow',{
             genre   : cover.getGenre()
 		});
 		me.setActiveItem(0);
-    },
-
-    addGlobalToc	: function(){
-
+		me.globalToc.setFeatured(cover.getModel().getData());
     }
     
 });

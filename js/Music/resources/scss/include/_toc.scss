@@ -1,0 +1,62 @@
+
+.global-toc-featured-story {
+	.x-innerhtml {
+		height:250px;
+	}
+	.global-toc-featured-image {
+		position:relative;
+		height:100%;
+		background-size: cover;
+		background-position: center top;
+	    background-repeat: no-repeat;
+
+		div{
+			float:left;
+			margin:15px;
+			padding:5px 15px;
+			background-color:#f4f4f4;
+			color:#333;
+			font-weight:bold;
+			font-size:0.7em;
+			text-transform:uppercase;
+		}
+		h2{
+			position:absolute;
+			color:#fff;
+			background-color:#000;
+			padding:15px 20px;
+			font-size:1em;
+			bottom:25px;
+			right:5px;
+		}
+	}
+}
+
+
+@mixin global-toc($genre,$background-color){
+	.global-toc{
+		.global-toc-genre-#{$genre}{
+			h3{
+				background-color:$background-color;
+				color:#fff;
+				font-weight:bold;
+				font-size:0.85em;
+				text-transform:uppercase;
+				padding:10px;
+				text-align:center;
+				margin-bottom:10px
+			}
+			p{
+				font-size:0.7em;
+				margin-bottom:10px;
+				padding:5px;
+			}
+		}
+	}
+}
+
+@include global-toc('rockPopFolk', $rockpopfolk-background-color-light);
+@include global-toc('classical', $classical-background-color-light);
+@include global-toc('jazzBlues', $jazzblues-background-color-light);
+@include global-toc('world', $world-background-color-light);
+@include global-toc('hipHopRB', $hiphoprb-background-color-light);
