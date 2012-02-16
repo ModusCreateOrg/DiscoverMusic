@@ -54,7 +54,7 @@ Ext.define('Music.view.GenreToc',{
 					key		: genre.get('key'),
 					title	: article.get('title'),
 					image	: article.get('image'),
-					content	: Ext.String.ellipsis(article.get('content'),120,true)
+					content	: Ext.String.ellipsis(article.get('content'), 175, true)
 				};
 
 				container.add({

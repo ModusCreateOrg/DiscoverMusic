@@ -41,6 +41,7 @@
 @mixin global-toc($genre, $bg-color1, $bg-color2){
 	.global-toc{
 		.global-toc-genre-#{$genre}{
+			border-right: 1px solid #ccc;
 			h3{
 				@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
 				border: 2px solid rgba(255, 255, 255, .5);
@@ -71,63 +72,80 @@
 /************************************
  *	GENRE TOC
  ************************************/
-@mixin genre-toc($genre,$background-color){
+@mixin genre-toc($genre, $bg-color1, $bg-color2){
 	.genre-toc-featured-#{$genre}{
-		position:relative;
-		height:250px;
-		background-size: cover;
-		background-position: center top;
+			position:relative;
+			height:250px;
+			background-size: cover;
+			background-position: center top;
 	    background-repeat: no-repeat;
-
-	    h2{
-	    	position:absolute;
-			color:#fff;
-			background-color:#000;
-			padding:15px 20px;
-			font-size:1em;
-			bottom:25px;
-			right:5px;
+			box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+			border-bottom: 1px solid black;
+	    h2 {
+				position:absolute;
+				color:#fff;
+				@include border-radius(10px);
+				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
+				@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+				padding: 15px 20px;
+				font-size:1.3em;
+				font-family: $base-font;
+				bottom:25px;
+				right:5px;
 	    }
-	    h3{
+	    h3 {
+	    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+	    	@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+	    	border: 2px solid rgba(255, 255, 255, .5);
 	    	position:absolute;
 	    	top:10px;
 	    	left:0;
-	    	background-color:$background-color;
 	    	color:#fff;
 	    	font-size:1.2em;
-	    	font-weight:bold;
-	    	padding:10px 30px;
+				padding:20px 40px;
+				color: #fff;
+				font-size: 1.1em;
+				font-family: $base-font;
+				text-transform: uppercase; 			
+				text-shadow: 0px 1px darken($bg-color2, 20);
 	    }
 	}
 
- 	.genre-toc-story .genre-toc-story-image-#{$genre}{
- 		position:relative;
- 		height:200px;
- 		background-size: cover;
-		background-position: center top;
+ 	.genre-toc-story {
+    p {
+			font-size: .7em;
+			line-height: 1.8em;
+			padding: 4px 4px;
+	 	}
+	 	.genre-toc-story-image-#{$genre} {
+ 			position:relative;
+ 			height:200px;
+ 			background-size: cover;
+			background-position: center top;
 	    background-repeat: no-repeat;
-	    border:4px solid #000;
+	    border: 1px solid #000;
+	    @include border-radius(5px);
 
- 		h3{
- 			position:absolute;
- 			width:100%;
- 			min-height:40px;
- 			bottom:0;
- 			background-color: $background-color;
- 			color:#fff;
- 			font-size:0.7em;
- 			font-weight:bold;
- 			padding:5px;
+ 		h3 {
+	    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+	    	position:absolute;
+	    	bottom: 0px;
+	    	left:0;
+	    	color:#fff;
+	    	font-size: .8em;
+	    	font-weight: bold;
+	    	width: 100%;
+	    	padding: 10px;
+				color: #fff;
+				font-size: .8em;
+				text-shadow: 0px 1px darken($bg-color2, 20);
  		}
  	}
- 	p{
- 		font-size:1em;
- 		line-height:1.6em;
- 	}
+}
 }
 
-@include genre-toc('rockPopFolk', $rockpopfolk-background-color-light);
-@include genre-toc('classical', $classical-background-color-light);
-@include genre-toc('jazzBlues', $jazzblues-background-color-light);
-@include genre-toc('world', $world-background-color-light);
-@include genre-toc('hipHopRB', $hiphoprb-background-color-light);
+@include genre-toc('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
+@include genre-toc('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
+@include genre-toc('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
+@include genre-toc('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
+@include genre-toc('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
