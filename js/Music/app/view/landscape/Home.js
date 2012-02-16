@@ -22,24 +22,16 @@ Ext.define('Music.view.landscape.Home',{
 				title	: '<span class="app-title">Discover Music</span>',
 				width	: 252
 			},{
+				xtype	: 'button',
+				action	: 'globaltoc',
+				text	: 'TOC',
+				height	: 40
+			},{
 				xtype	: 'player',
 				flex	: 1
 			}]
 		},{
 			xtype : 'mainflow'
 		}]
-	},
-	 
-	initialize: function() {
-		this.callParent();
-		this.element.on('tap', this.onTitleTap, this);
-	},
-
-	onTitleTap : function(eventObject) {
-		var target = Ext.get(eventObject.target);
-		if (target.hasCls('app-title')) {
-			this.fireEvent('titletap', this);
-		}
 	}
-
 });
