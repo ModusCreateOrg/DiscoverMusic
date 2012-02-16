@@ -195,16 +195,12 @@ Ext.define('Music.controller.Home', {
     showGenre: function(id, genre) {
         var me = this,
             home = me.getHome(),
+            mainFlow = me.getMainFlow(),
             genreKey = genre.get('key') || genre.get('genreKey'),
-            view = home.down('#' + genreKey);
+            view = mainFlow.down('#' + genreKey);
         
-        home.getLayout().setAnimation({
-                duration: 300,
-                easing: 'ease-in',
-                type: 'slide',
-                direction: 'up'
-        });
-        home.setActiveItem(view);
+        home.setActiveItem(mainFlow);
+        mainFlow.setActiveItem(view);
     },
 
     // when a user taps on the "Read & Listen"

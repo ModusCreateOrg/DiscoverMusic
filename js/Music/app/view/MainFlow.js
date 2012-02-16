@@ -28,14 +28,14 @@ Ext.define('Music.view.MainFlow',{
 		if(Ext.isEmpty(me.globalToc)){
 			me.globalToc = Ext.create('Music.view.GlobalToc');
 			me.add(me.globalToc);
-		}else{
-			me.add({
-				xtype	: 'genretoc',
-				genre	: genre,
-				articles: articles
-			});
 		}
-
+		
+		me.add({
+			xtype	: 'genretoc',
+			itemId	: genre.get('key'),
+			genre	: genre,
+			articles: articles
+		});
 		me.globalToc.addGenre(genre,articles);
 
 		//Adding the articles preview to the main flow
