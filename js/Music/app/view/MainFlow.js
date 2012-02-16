@@ -41,7 +41,7 @@ Ext.define('Music.view.MainFlow',{
 		//Adding the articles preview to the main flow
 		articles.each(function(article){
             var tmp = me.add({
-                xtype   : 'articlepreview',
+                xtype   : 'article',
                 model   : article,
                 data    : article.getData(),
                 genre   : genre

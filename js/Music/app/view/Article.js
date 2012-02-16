@@ -12,8 +12,9 @@ Ext.define('Music.view.Article', {
 
     config : {
 		model		: null,
+		genre		: null,
 		layout		: 'hbox',
-        scrollable	: 'auto',
+        //scrollable	: 'auto',
 	    items		: [{
 			xtype	: 'container',
 			flex	: 1,
