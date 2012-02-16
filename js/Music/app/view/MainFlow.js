@@ -24,14 +24,15 @@ Ext.define('Music.view.MainFlow',{
 		var me = this,
 			collection = me.getArticles();
 
-		//TOC's
+		//adding the TOC's
 		if(Ext.isEmpty(me.globalToc)){
 			me.globalToc = Ext.create('Music.view.GlobalToc');
 			me.add(me.globalToc);
 		}else{
 			me.add({
 				xtype	: 'genretoc',
-				genre	: genre
+				genre	: genre,
+				articles: articles
 			});
 		}
 
@@ -39,15 +40,13 @@ Ext.define('Music.view.MainFlow',{
 
 		//Adding the articles preview to the main flow
 		articles.each(function(article){
-            if(article.get('image')){
-                var tmp = me.add({
-                    xtype   : 'articlepreview',
-                    model   : article,
-                    data    : article.getData(),
-                    genre   : genre
-                });
-                collection.push(tmp);
-            }
+            var tmp = me.add({
+                xtype   : 'articlepreview',
+                model   : article,
+                data    : article.getData(),
+                genre   : genre
+            });
+            collection.push(tmp);
         },me);
     },
 

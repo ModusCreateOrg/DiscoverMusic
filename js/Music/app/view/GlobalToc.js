@@ -13,9 +13,7 @@ Ext.define('Music.view.GlobalToc',{
     config		: {
 		first	: true,
 		cls		: 'global-toc',
-		layout	: {
-			type	: 'vbox'
-		},
+		layout	: 'vbox',
 		items	: [{
 			xtype	: 'container',
 			position: 'top',
@@ -40,12 +38,6 @@ Ext.define('Music.view.GlobalToc',{
 			layout	: 'hbox',
 			flex	: 1
 		}]
-    },
-
-    initialize   : function(){
-        var me = this;
-        
-        me.callParent();
     },
 
     addGenre	: function(genre,articles){

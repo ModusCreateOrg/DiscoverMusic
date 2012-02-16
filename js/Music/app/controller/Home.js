@@ -88,7 +88,9 @@ Ext.define('Music.controller.Home', {
 
         //adding all the articles to the main flow
         drawer.getStore().each(function (genre) {
-            mainFlow.addArticles(genre,me.db.get(genre.getId()));
+            var articles = me.db.get(genre.getId());
+            genre.set('image',articles.getAt(0).get('image'));
+            mainFlow.addArticles(genre,articles);
         });
         mainFlow.setRandomCover();
 
@@ -143,11 +145,11 @@ Ext.define('Music.controller.Home', {
     saveData: function (topic, success ,data) {
         var list = data.list.story,
             drawer = this.getDrawer(),
-            category = drawer.getStore().getById(topic);
+            genre = drawer.getStore().getById(topic);
 
         for (var i = 0, len = list.length; i < len; i++) {
-            list[i].genre = category.get('name');
-            list[i].genreKey = category.get('key');
+            list[i].genre = genre.get('name');
+            list[i].genreKey = genre.get('key');
         }
 
         localStorage.setItem('timestamp-' + topic, Ext.Date.format(new Date(), 'ymd'));
@@ -173,6 +175,15 @@ Ext.define('Music.controller.Home', {
         }
 
         store.setData(data);
+
+        //remove articles without primary image
+        var toRemove = [];
+        store.each(function(article){
+            if(!article.get('image')){
+                toRemove.push(article);
+            }
+        });
+        store.remove(toRemove);
 
         //Start the app when the last genre is loaded
         if (me.db.getCount() === drawer.getStore().getCount()) {
