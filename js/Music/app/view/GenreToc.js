@@ -20,7 +20,7 @@ Ext.define('Music.view.GenreToc',{
 			height	: 250,
 			data	: {},
 			tpl		: [
-				'<div class="genre-toc-featured-{key}" style="background-image:url({image});">',
+				'<div class="genre-toc-featured genre-toc-featured-{key}" style="background-image:url({image});">',
 						'<h2>{title}</h2>',
 						'<h3>{name}</h3>',
 				'</div>'
@@ -50,6 +50,7 @@ Ext.define('Music.view.GenreToc',{
         articles.each(function(article,i){
 			if(i > 0 && i < 5){
 				var data = {
+					id		: article.getId(),
 					key		: genre.get('key'),
 					title	: article.get('title'),
 					image	: article.get('image'),
@@ -63,7 +64,7 @@ Ext.define('Music.view.GenreToc',{
 					padding	: 5,
 					data	: data,
 					tpl		: [
-						'<div class="genre-toc-story-image-{key}" style="background-image:url({image})">',
+						'<div class="genre-toc-story genre-toc-story-image-{key}" data-id="{id}" style="background-image:url({image})">',
 							'<h3>{title}</h3>',
 						'</div>',
 						'<p>{content}</p>'
@@ -72,5 +73,26 @@ Ext.define('Music.view.GenreToc',{
 			}
         },me);
         
+        me.registerEvents();
+    },
+
+    registerEvents	: function(){
+		var me          = this,
+            el          = me.renderElement;
+
+        el.on('tap', me.onTap, me);
+    },
+
+    onTap: function(event) {
+        var me = this;
+        if (event.getTarget('.genre-toc-featured')){
+            return me.fireEvent('featuredtap', me.getArticles().getAt(0));
+        }
+        if (event.getTarget('.genre-toc-story')){
+			var el = Ext.get(event.getTarget('.genre-toc-story')),
+				id = +el.getAttribute("data-id");
+
+            return me.fireEvent('storytap', me.getArticles().getById(id));
+        }
     }
 });

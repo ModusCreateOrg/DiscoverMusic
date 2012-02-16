@@ -51,6 +51,13 @@ Ext.define('Music.controller.Home', {
             }
         },
         control: {
+            'home toolbar button[action=globaltoc]': {
+                tap     : 'onShowGlobalToc'
+            },
+            'genretoc'  : {
+                featuredtap : 'onArticlePreviewReadArticle',
+                storytap    : 'onArticlePreviewReadArticle'
+            },
             'articlepreview': {
                 readarticle : 'onArticlePreviewReadArticle'
             },
@@ -96,9 +103,9 @@ Ext.define('Music.controller.Home', {
 
         Ext.Viewport.add(home);
         Ext.Viewport.add(me.getDrawer());
-        Ext.Viewport.add(me.getSearch());
+        //Ext.Viewport.add(me.getSearch());
         Ext.Viewport.add(me.getArticle());
-        Ext.Viewport.add(me.getAbout());
+        //Ext.Viewport.add(me.getAbout());
 
         drawer.addArticles();
 
@@ -195,16 +202,12 @@ Ext.define('Music.controller.Home', {
     showGenre: function(id, genre) {
         var me = this,
             home = me.getHome(),
+            mainFlow = me.getMainFlow(),
             genreKey = genre.get('key') || genre.get('genreKey'),
-            view = home.down('#' + genreKey);
+            view = mainFlow.down('#' + genreKey);
         
-        home.getLayout().setAnimation({
-                duration: 300,
-                easing: 'ease-in',
-                type: 'slide',
-                direction: 'up'
-        });
-        home.setActiveItem(view);
+        home.setActiveItem(mainFlow);
+        mainFlow.setActiveItem(view);
     },
 
     // when a user taps on the "Read & Listen"
@@ -229,12 +232,16 @@ Ext.define('Music.controller.Home', {
     onSearchTap: function(){
         var me = this,
         home = me.getHome();
-        home.getLayout().setAnimation({
-            duration: 300,
-            easing: 'ease-in',
-            type: 'slide',
-            direction: 'up'
-        });
-        home.setActiveItem(me.getSearch());
+        
+    },
+
+    onShowGlobalToc : function(){
+        var me = this,
+            home = me.getHome(),
+            mainFlow = me.getMainFlow(),
+            view = mainFlow.down('globaltoc');
+        
+        home.setActiveItem(mainFlow);
+        mainFlow.setActiveItem(view);
     }
 });
