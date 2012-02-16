@@ -17,18 +17,20 @@
 			float:left;
 			margin:15px;
 			padding:5px 15px;
-			background-color:#f4f4f4;
-			color:#333;
-			font-weight:bold;
-			font-size:0.7em;
+			@include background-image(linear-gradient(color-stops(rgba(255, 255, 255, .8), rgba(255, 255, 255, 1))));
+			color:#222;
+			font-family: $base-font;
+			font-size:0.85em;
 			text-transform:uppercase;
 		}
 		h2{
 			position:absolute;
 			color:#fff;
-			background-color:#000;
-			padding:15px 20px;
-			font-size:1em;
+			@include border-radius(10px);
+			@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
+			padding: 15px 20px;
+			font-size:1.3em;
+			font-family: $base-font;
 			bottom:25px;
 			right:5px;
 		}
@@ -36,33 +38,34 @@
 }
 
 
-@mixin global-toc($genre,$background-color){
+@mixin global-toc($genre, $bg-color1, $bg-color2){
 	.global-toc{
 		.global-toc-genre-#{$genre}{
 			h3{
-				background-color:$background-color;
+				@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+				border: 2px solid rgba(255, 255, 255, .5);
 				color:#fff;
-				font-weight:bold;
+				font-family: $base-font;
+				text-shadow: 0px 1px darken($bg-color2, 20);
 				font-size:0.85em;
 				text-transform:uppercase;
-				padding:10px;
-				text-align:center;
-				margin-bottom:10px
+				padding: 10px;
+				text-align: center;
+				margin-bottom: 10px;
 			}
 			p{
 				font-size:0.7em;
-				margin-bottom:10px;
-				padding:5px;
+				padding: 10px 20px
 			}
 		}
 	}
 }
 
-@include global-toc('rockPopFolk', $rockpopfolk-background-color-light);
-@include global-toc('classical', $classical-background-color-light);
-@include global-toc('jazzBlues', $jazzblues-background-color-light);
-@include global-toc('world', $world-background-color-light);
-@include global-toc('hipHopRB', $hiphoprb-background-color-light);
+@include global-toc('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
+@include global-toc('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
+@include global-toc('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
+@include global-toc('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
+@include global-toc('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
 
 
 /************************************
