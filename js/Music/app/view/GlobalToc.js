@@ -17,7 +17,7 @@ Ext.define('Music.view.GlobalToc',{
 		items	: [{
 			xtype	: 'container',
 			position: 'top',
-			height	: 250,
+			height	: 300,
 			layout	: 'hbox',
 			cls		:'global-toc-featured-story',
 			items	: [{

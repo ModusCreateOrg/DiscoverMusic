@@ -4,7 +4,7 @@
 
 .global-toc-featured-story {
 	.x-innerhtml {
-		height:250px;
+		height:300px;
 	}
 	.global-toc-featured-image {
 			position:relative;
@@ -134,7 +134,8 @@
 	    	font-size: .8em;
 	    	font-weight: bold;
 	    	height: 76px;
-	    	width: 100%;
+	    	width: 90%;
+	    	margin: 0px 0px 10px -5px;
 	    	padding: 10px;
 				color: #fff;
  		}

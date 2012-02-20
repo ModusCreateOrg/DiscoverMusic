@@ -17,7 +17,7 @@ Ext.define('Music.view.GenreToc',{
 		items	: [{
 			xtype	: 'component',
 			itemId	: 'featured',
-			height	: 250,
+			height	: 310,
 			data	: {},
 			tpl		: [
 				'<div class="genre-toc-featured genre-toc-featured-{key}" style="background-image:url({image});">',
@@ -67,7 +67,6 @@ Ext.define('Music.view.GenreToc',{
 						'<div class="genre-toc-story genre-toc-story-image-{key}" data-id="{id}" style="background-image:url({image})">',
 							'<h3>{title}</h3>',
 						'</div>',
-						'<p>{content}</p>'
 					]
 				});
 			}
