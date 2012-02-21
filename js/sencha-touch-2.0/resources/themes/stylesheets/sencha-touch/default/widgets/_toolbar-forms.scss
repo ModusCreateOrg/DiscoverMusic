@@ -62,7 +62,7 @@ $toolbar-search-left-padding: 1.67em;
     -webkit-text-fill-color: #fff;
   }
 
-  .x-toolbar .x-field-select .x-item-disabled .x-input-el {
+  .x-toolbar .x-field-select.x-item-disabled .x-input-el {
     -webkit-text-fill-color: rgba(255,255,255,.6);
   }
 
@@ -78,13 +78,13 @@ $toolbar-search-left-padding: 1.67em;
       border-bottom: 0;
 
       .x-clear-icon {
-        margin: 0 .3em 0 0;
-        width: 1em;
-        height: 1em;
-        line-height: .8em;
+        background-size: 50% 50%;
+        right: -0.8em;
+        margin-top: -1.06em;
       }
     }
 
+    .x-field-textarea,
     .x-field-text,
     .x-field-number,
     .x-field-search {
@@ -145,8 +145,7 @@ $toolbar-search-left-padding: 1.67em;
 
       .x-component-outer {
         &:after {
-          top: -.5em;
-          right: -.5em;
+          right: .4em;
         }
       }
 
@@ -178,7 +177,10 @@ $toolbar-search-left-padding: 1.67em;
     }
   }
 
-  .x-android .x-field-search .x-field-input .x-form-field {
-    margin-left: $toolbar-search-left-padding;
+  .x-android .x-field-search .x-field-input {
+    .x-form-field {
+      margin-left: $toolbar-search-left-padding !important;
+      width: 75% !important;
+    }
   }
 }

@@ -40,22 +40,22 @@
     }
 
     .x-field {
-      margin: .4em .4em 0 .4em;
+      /*padding: .4em .4em 0 .4em;*/
       min-height:2em;
       background: #fff;
       @if $include-border-radius { @include border-radius(.2em); }
 
-      .x-input-el {
-        width: 80px;
-      }
+      /*.x-input-el {*/
+        /*width: 80px;*/
+      /*}*/
 
-      &:last-child {
-        margin-bottom: .4em;
-      }
+      /*&:last-child {*/
+        /*margin-bottom: .4em;*/
+      /*}*/
 
-      .x-clear-icon {
-        margin: .4em;
-      }
+      /*.x-clear-icon {*/
+        /*margin: .4em;*/
+      /*}*/
     }
 
     .x-form-field {
@@ -65,7 +65,6 @@
   }
 
   .x-msgbox-text {
-    font-size: .9em;
     text-align: center;
     padding: 6px 0;
     line-height: 1.4em;
