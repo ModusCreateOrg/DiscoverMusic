@@ -8,7 +8,7 @@
 Ext.define('Music.controller.Article', {
     extend: 'Ext.app.Controller',
     models: ['Article', 'Genre'],
-    stores: ['Articles', 'Genres'],
+    stores: ['Articles', 'Genres','Favorites'],
 
     config	: {
 		refs	: {

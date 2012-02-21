@@ -10,7 +10,6 @@ Ext.define('Music.store.Genres', {
 
     config		: {
 		model		: 'Music.model.Genre',
-		storeId		: 'Categories',
 		
 		proxy		: {
 			type	: 'ajax',
