@@ -3,7 +3,7 @@
  * @extends Ext.data.Store
  * @author Crysfel Villa <crysfel@moduscreate.com>
  *
- * Description
+ * The favorites store use a localstorage proxy to persist articles
  */
 
 Ext.define('Music.store.Favorites',{
@@ -11,7 +11,8 @@ Ext.define('Music.store.Favorites',{
 
 	config		: {
 		model	: 'Music.model.Article',
-
+		storeId	: 'favorites',
+		autoLoad: true,
 		proxy	: {
 			type	: 'localstorage',
 			id		: 'favorites'

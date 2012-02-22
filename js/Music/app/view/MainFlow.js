@@ -3,7 +3,7 @@
  * @extends Ext.dataview.DataView
  * @author Crysfel Villa <crysfel@moduscreate.com>
  *
- * This view display all the covers and TOCs
+ * This view display all the articles, TOCs, favorites, search and the about
  */
 
 Ext.define('Music.view.MainFlow',{
@@ -42,6 +42,7 @@ Ext.define('Music.view.MainFlow',{
 		articles.each(function(article){
             var tmp = me.add({
                 xtype   : 'article',
+                itemId	: 'article-'+article.getId(),
                 model   : article,
                 data    : article.getData(),
                 genre   : genre

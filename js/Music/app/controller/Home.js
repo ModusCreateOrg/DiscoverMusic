@@ -11,7 +11,7 @@ Ext.define('Music.controller.Home', {
     stores: ['Articles', 'Genres'],
     views: [
         'landscape.Home', 'ArticlePreview', 'Article','Donate', 'MainFlow','Drawer',
-        'AboutPanel','Search','Controls','Player'
+        'AboutPanel','Search','Controls','Player','Favorites'
     ],
     
     config: {
@@ -30,14 +30,14 @@ Ext.define('Music.controller.Home', {
                 selector: 'drawer',
                 autoCreate: true
             },
+            favorites : {
+                xtype   : 'favorites',
+                selector: 'favorites',
+                autoCreate:true
+            },
             search : {
                 xtype: 'search',
                 selector: 'search',
-                autoCreate: true
-            },
-            article : {
-                xtype: 'article',
-                selector: 'article',
                 autoCreate: true
             },
             about   : {
@@ -101,11 +101,11 @@ Ext.define('Music.controller.Home', {
         });
         mainFlow.setRandomCover();
 
+        mainFlow.add(me.getFavorites());
+        mainFlow.add(me.getSearch());
+
         Ext.Viewport.add(home);
         Ext.Viewport.add(me.getDrawer());
-        //Ext.Viewport.add(me.getSearch());
-        Ext.Viewport.add(me.getArticle());
-        //Ext.Viewport.add(me.getAbout());
 
         drawer.addArticles();
 
@@ -213,20 +213,18 @@ Ext.define('Music.controller.Home', {
     // when a user taps on the "Read & Listen"
     onArticlePreviewReadArticle: function(record) {
         var me = this,
-            home = me.getHome(),
-            article = me.getArticle();
+            mainFlow = me.getMainFlow(),
+            article = mainFlow.down('#article-'+record.getId());
 
-        home.getLayout().setAnimation({
-            type: 'fade',
-            duration: 300
-        });
-
-        article.setModel(record);
-        home.setActiveItem(article);
+        mainFlow.setActiveItem(article);
     },
 
     onFavoritesTap: function(){
-        Ext.Msg.alert('Favorites','Please show my favorites!!');
+        var me = this,
+            mainFlow = me.getMainFlow(),
+            fav = mainFlow.down('favorites');
+
+        mainFlow.setActiveItem(fav);
     },
 
     onSearchTap: function(){
@@ -237,11 +235,9 @@ Ext.define('Music.controller.Home', {
 
     onShowGlobalToc : function(){
         var me = this,
-            home = me.getHome(),
             mainFlow = me.getMainFlow(),
             view = mainFlow.down('globaltoc');
         
-        home.setActiveItem(mainFlow);
         mainFlow.setActiveItem(view);
     }
 });

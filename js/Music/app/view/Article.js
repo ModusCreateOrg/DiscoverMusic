@@ -14,7 +14,6 @@ Ext.define('Music.view.Article', {
 		model		: null,
 		genre		: null,
 		layout		: 'hbox',
-        //scrollable	: 'auto',
 	    items		: [{
 			xtype	: 'container',
 			flex	: 1,
@@ -37,6 +36,7 @@ Ext.define('Music.view.Article', {
 				xtype	: 'component',
 				flex	: 1,
 				cls		: 'music-article-content',
+				scrollable	: 'auto',
 				tpl		: '{content}'
 			}]
 		},{
@@ -55,10 +55,12 @@ Ext.define('Music.view.Article', {
     applyModel	: function(model){
 		var me = this,
 			header = me.down('component[cls=music-article-header]'),
-			content = me.down('component[cls=music-article-content]');
+			content = me.down('component[cls=music-article-content]'),
+			controls = me.down('controls');
 
 		header.setData(model.getData());
 		content.setData(model.getData());
+		controls.setModel(model);
 
 		me.onOrientationChange(Ext.Viewport,Ext.Viewport.orientation);
 

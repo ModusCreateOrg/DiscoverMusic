@@ -12,16 +12,14 @@ Ext.define('Music.controller.Article', {
 
     config	: {
 		refs	: {
-			article : {
-                selector: 'article'
-            },
             player  : {
                 selector: 'home player'
             }
 		},
         control : {
             'article controls'  : {
-                play    : 'playSong'
+                play    : 'playSong',
+                favorite: 'onAddToFavorites'
             },
             'article' : {
                 show    : 'onShowArticle',
@@ -36,9 +34,8 @@ Ext.define('Music.controller.Article', {
         
     },
 
-    playSong        : function(){
-        var me = this,
-            model = me.getArticle().getModel();
+    playSong        : function(view,model){
+        var me = this;
 
         if(model.get('audioFile')){
             me.getPlayer().setData(model.getData());
@@ -46,14 +43,23 @@ Ext.define('Music.controller.Article', {
         }
     },
 
+    onAddToFavorites  : function(view,model){
+        var me = this,
+            favorites = Ext.data.StoreManager.lookup('favorites');
+        
+        favorites.add(model);
+        favorites.sync();
+
+        Ext.Msg.alert('Alert','Added to your favorites!');
+    },
+
     onHideArticle   : function(){
         this.getPlayer().hide();
     },
 
-    onShowArticle   : function(){
-        var me = this,
-            model = me.getArticle().getModel();
-
+    onShowArticle   : function(view,model){
+        var me = this;
+            
         if(model.get('audioFile')){
             me.getPlayer().show();
         }

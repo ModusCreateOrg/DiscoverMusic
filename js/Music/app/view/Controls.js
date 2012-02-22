@@ -9,17 +9,18 @@ Ext.define('Music.view.Controls', {
     extend: 'Ext.Component',
     alias: 'widget.controls',
     config: {
-        cls: 'music-article-controls',
-        data:{},
+        cls     : 'music-article-controls',
+        model   : null,
         bodyPadding:{top:30},
-        tpl: [
+        html: [
             '<div class="music-article-controls-content">',
                 '<div class="music-article-controls-button music-article-controls-play"></div>',
                 '<div class="music-article-controls-button music-article-controls-favorites"></div>',
                 '<div class="music-article-controls-button music-article-controls-twitter"></div>',
             '</div>'
-        ]
+        ].join('')
     },
+
     initialize: function () {
         var me = this,
             el  = me.renderElement;
@@ -32,13 +33,13 @@ Ext.define('Music.view.Controls', {
     onTap   : function(event){
         var me = this;
         if (event.getTarget('.music-article-controls-play')){
-            return this.fireEvent('play', this);
+            return this.fireEvent('play', this.getModel());
         }
         if (event.getTarget('.music-article-controls-favorites')){
-            return this.fireEvent('favorite', this);
+            return this.fireEvent('favorite', this,this.getModel());
         }
         if (event.getTarget('.music-article-controls-twitter')){
-            return this.fireEvent('twitter', this);
+            return this.fireEvent('twitter', this,this.getModel());
         }
     }
 });
