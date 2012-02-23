@@ -24,7 +24,9 @@ Ext.define('Music.view.landscape.Home',{
 			},{
 				xtype	: 'button',
 				action	: 'globaltoc',
-				text	: 'TOC',
+				iconMask: true,
+				iconCls : 'toc-mask',
+				margin	: 10,
 				height	: 40
 			},{
 				xtype	: 'player',
