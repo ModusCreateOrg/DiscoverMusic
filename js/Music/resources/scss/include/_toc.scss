@@ -3,7 +3,7 @@
  ************************************/
 
 .global-toc{
-	@include background-image(linear-gradient(#1a1a1a,#262626));
+	@include background-image(linear-gradient(color-stops(#1a1a1a 80%,#262626)));
 
 	.global-toc-featured-story {
 		.x-innerhtml {

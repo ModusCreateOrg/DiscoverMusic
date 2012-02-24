@@ -29,12 +29,20 @@ Ext.define('Music.view.GlobalToc',{
 			]
 		},{
 			xtype	: 'container',
+			itemId	: 'genres',
 			width	: 350
 		}]
     },
 
     addGenre	: function(genre,articles){
-		
+		var me = this,
+			container = me.down('#genres');
+
+		var component = {
+			xtype	: 'component',
+			data	: {},
+			tpl		: []
+		};
     },
 
     setFeatured	: function(data){
