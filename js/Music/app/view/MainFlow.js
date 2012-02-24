@@ -16,7 +16,7 @@ Ext.define('Music.view.MainFlow',{
     ],
 
     config		: {
-		ui		: 'light',
+		indicator:false,
 		articles: []
     },
 

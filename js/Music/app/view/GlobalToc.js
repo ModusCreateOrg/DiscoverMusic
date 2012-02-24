@@ -13,68 +13,34 @@ Ext.define('Music.view.GlobalToc',{
     config		: {
 		first	: true,
 		cls		: 'global-toc',
-		layout	: 'vbox',
+		layout	: 'hbox',
 		items	: [{
 			xtype	: 'container',
-			position: 'top',
-			height	: 300,
-			layout	: 'hbox',
-			cls		:'global-toc-featured-story',
-			items	: [{
-				xtype	: 'component',
-				itemId	: 'featured',
-				flex	: 3,
-				data	: {},
-				tpl		: [
-					'<div class="global-toc-featured-image" style="background-image:url({image});">',
-						'<div>Featured story</div>',
-						'<h2>{title}</h2>',
-					'</div>'
-				]
-			}]
+			itemId	: 'featured',
+			cls		: 'global-toc-featured-story',
+			flex	: 1,
+			tpl		: [
+				'<div class="global-toc-featured-image" style="background-image:url({image})">',
+					'<div>Featured story</div>',
+					'<h2>{title}</h2>',
+				'</div>',
+				'<div class="global-toc-featured-content">{content}</div>',
+				'<div class="global-toc-about"><p>This app was developed using the open content API provided by NPR. All content and images copyright NPR and respective properties. App development sponsored by Sencha Inc. and application developed by Modus Create Inc.</p></div>'
+			]
 		},{
 			xtype	: 'container',
-			position: 'bottom',
-			layout	: 'hbox',
-			flex	: 1
+			width	: 350
 		}]
     },
 
     addGenre	: function(genre,articles){
-		var me = this,
-			data = {
-				name : genre.get('name'),
-				key	 : genre.get('key'),
-				articles : []
-			},
-			container = me.getFirst()?me.down('container[position=top]'):me.down('container[position=bottom]');
 		
-		articles.each(function(article,i){
-			if(i < 4){
-				data.articles.push(article.getData());
-			}
-		});
-
-		container.add({
-			xtype	: 'component',
-			flex	: 1,
-			data	: data,
-			tpl		: [
-				'<div class="global-toc-genre-{key}">',
-					'<h3>{name}</h3>',
-					'<tpl for="articles">',
-					'<p data-id="{id}">{title}</p>',
-					'</tpl>',
-				'</div>'
-			]
-		});
-		me.setFirst(false);
     },
 
     setFeatured	: function(data){
 		var me = this,
 			featured = me.down('#featured');
-		
+		data.content = Ext.util.Format.ellipsis(data.content,330,true);
 		featured.setData(data);
     }
 });
