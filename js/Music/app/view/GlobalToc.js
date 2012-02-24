@@ -20,7 +20,7 @@ Ext.define('Music.view.GlobalToc',{
 			cls		: 'global-toc-featured-story',
 			flex	: 1,
 			tpl		: [
-				'<div class="global-toc-featured-image" style="background-image:url({image})">',
+				'<div class="global-toc-featured-image" style="background-image:url(http://src.sencha.io/600/{image})">',
 					'<div>Featured story</div>',
 					'<h2>{title}</h2>',
 				'</div>',
@@ -30,25 +30,46 @@ Ext.define('Music.view.GlobalToc',{
 		},{
 			xtype	: 'container',
 			itemId	: 'genres',
+			scrollable : true,
 			width	: 350
 		}]
     },
 
     addGenre	: function(genre,articles){
 		var me = this,
-			container = me.down('#genres');
+			container = me.down('#genres'),
+			range = articles.getRange(1,4),
+			list = [];
+
+		Ext.each(range,function(article){
+			list.push(article.getData());
+		});
 
 		var component = {
 			xtype	: 'component',
-			data	: {},
-			tpl		: []
+			cls		: 'global-toc-genre-'+genre.get('key'),
+			data	: {
+				genre	: Ext.apply(genre.getData(),articles.getAt(0).getData()),
+				articles: list
+			},
+			tpl		: [
+				'<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{genre.image})">',
+					'<h2>{genre.name}</h2>',
+					'<h3>{genre.title}</h3>',
+				'</div>',
+				'<tpl for="articles">',
+					'<p>{title}</p>',
+				'</tpl>'
+			]
 		};
+
+		container.add(component);
     },
 
     setFeatured	: function(data){
 		var me = this,
 			featured = me.down('#featured');
-		data.content = Ext.util.Format.ellipsis(data.content,330,true);
+		data.content = Ext.util.Format.ellipsis(data.content,300,true).replace(/<(\/)?p>/g,' ');
 		featured.setData(data);
     }
 });

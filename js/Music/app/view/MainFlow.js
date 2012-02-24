@@ -51,19 +51,10 @@ Ext.define('Music.view.MainFlow',{
         },me);
     },
 
-    //set a random cover for the first card
-    setRandomCover	: function(){
+    setFeatured	: function(){
 		var me = this,
 			articles = me.getArticles(),
 			cover = articles[Math.floor(Math.random()*articles.length)];
-		
-		me.insert(0,{
-            xtype   : 'articlepreview',
-            model   : cover.getModel(),
-            data    : cover.getModel().getData(),
-            genre   : cover.getGenre()
-		});
-		me.setActiveItem(0);
 		me.globalToc.setFeatured(cover.getModel().getData());
     }
     

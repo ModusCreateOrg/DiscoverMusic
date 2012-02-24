@@ -8,6 +8,7 @@
 	.global-toc-featured-story {
 		.x-innerhtml {
 			height:340px;
+			padding-right:15px;
 		}
 		.global-toc-featured-image {
 				position:relative;
@@ -58,23 +59,46 @@
 @mixin global-toc($genre, $bg-color1, $bg-color2){
 	.global-toc{
 		.global-toc-genre-#{$genre}{
-			border-right: 1px solid #ccc;
-			height: 386px;
-			h3{
-				@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-				border: 2px solid rgba(255, 255, 255, .5);
-				color:#fff;
-				font-family: $base-font;
-				text-shadow: 0px 1px darken($bg-color2, 20);
-				font-size:0.85em;
-				text-transform:uppercase;
-				padding: 10px;
-				text-align: center;
-				margin-bottom: 10px;
+			background-color:#000;
+
+			.global-toc-genre-image{
+				position:relative;
+				height:210px;
+				background-size: cover;
+				background-position: center center;
+		    	background-repeat: no-repeat;
+
+				h2{
+					@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+					border: 2px solid rgba(255, 255, 255, .5);
+					color:#fff;
+					font-family: $base-font;
+					text-shadow: 0px 1px darken($bg-color2, 20);
+					font-size:0.85em;
+					text-transform:uppercase;
+					padding: 10px;
+					text-align: center;
+					margin-bottom: 10px;
+				}
+
+				h3{
+					position:absolute;
+					width:100%;
+					bottom:0;
+					color:#ccc;
+					font-size:1em;
+					font-weight:bold;
+					padding:15px 20px;
+					@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
+				}
 			}
+
 			p{
-				font-size:0.7em;
-				padding: 10px 20px
+				font-size:0.85em;
+				padding: 10px 20px;
+				color:#fff;
+			}&:last-child{
+				margin-bottom:30px;
 			}
 		}
 	}

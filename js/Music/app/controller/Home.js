@@ -99,7 +99,7 @@ Ext.define('Music.controller.Home', {
             genre.set('image',articles.getAt(0).get('image'));
             mainFlow.addArticles(genre,articles);
         });
-        mainFlow.setRandomCover();
+        mainFlow.setFeatured();
 
         mainFlow.add(me.getFavorites());
         mainFlow.add(me.getSearch());
