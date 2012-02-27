@@ -7,8 +7,7 @@
 
 	.global-toc-featured-story {
 		.x-innerhtml {
-			height:340px;
-			padding-right:15px;
+			height:400px;
 		}
 		.global-toc-featured-image {
 				position:relative;
@@ -18,18 +17,18 @@
 		    	background-repeat: no-repeat;
 
 			div {
+				@include background-image(linear-gradient(color-stops(rgba(255, 255, 255, .8), rgba(255, 255, 255, 1))));
 				float:left;
 				padding:5px 15px;
-				@include background-image(linear-gradient(color-stops(rgba(255, 255, 255, .8), rgba(255, 255, 255, 1))));
 				color:#222;
 				font-family: $base-font;
 				font-size:0.85em;
 				text-transform:uppercase;
 			}
 			h2{
+				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
 				position:absolute;
 				color:#fff;
-				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
 				padding: 15px 20px;
 				font-size: 1.5em;
 				width:100%;
@@ -39,10 +38,12 @@
 			}
 		}
 		.global-toc-featured-content{
-			background-color:#000;
+			background: none;
 			color:#fff;
 			line-height:1.6em;
-			padding:10px;
+			padding: 10px 20px;
+			font-size: 17px;
+			font-family: "Georgia", sans-serif;
 		}
 		.global-toc-about{
 			@include border-radius(5px);
@@ -51,6 +52,7 @@
 			line-height:1.5em;
 			padding:15px 20px;
 			margin:15px 0 0 15px;
+			font-size: 13px;
 		}
 	}
 }
@@ -58,19 +60,23 @@
 
 @mixin global-toc($genre, $bg-color1, $bg-color2){
 	.global-toc{
+		.global-toc-right-sidebar { 
+			border-left: 10px solid rgba(0, 0, 0, 1);
+		}
 		.global-toc-genre-#{$genre}{
-			background-color:#000;
+			background: #1a1a1a;
 
 			.global-toc-genre-image{
-				position:relative;
-				height:210px;
-				background-size: cover;
-				background-position: center center;
-		    	background-repeat: no-repeat;
+			   position:relative;
+				 height: 250px;
+				 background-size: cover;
+				 background-position: center center;
+		     background-repeat: no-repeat;
 
-				h2{
+				h2 {
 					@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
 					border: 2px solid rgba(255, 255, 255, .5);
+					box-shadow: 0px 6px 5px rgba(0, 0, 0, .65);
 					color:#fff;
 					font-family: $base-font;
 					text-shadow: 0px 1px darken($bg-color2, 20);
@@ -81,23 +87,24 @@
 					margin-bottom: 10px;
 				}
 
-				h3{
+				h3 {
+					@include background-image(linear-gradient(rgba(35,35,35,1),rgba(0,0,0,1)));
+					font-family: $base-font;
 					position:absolute;
 					width:100%;
 					bottom:0;
-					color:#ccc;
+					color:#fff;
 					font-size:1em;
-					font-weight:bold;
 					padding:15px 20px;
-					@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
 				}
 			}
 
-			p{
+			p {
 				font-size:0.85em;
-				padding: 10px 20px;
-				color:#fff;
-			}&:last-child{
+				font-weight: bold;
+				padding: 12px 20px;
+				color:#ccc;
+			} &:last-child{
 				margin-bottom:30px;
 			}
 		}
