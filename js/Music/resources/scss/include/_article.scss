@@ -193,11 +193,11 @@
 	@include box-flex(3);
 	position:relative;
 	padding-top:42px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height:100%;
-    height:100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height:100%;
+	height:100%;
 }
 
 /*********************************
@@ -212,9 +212,10 @@
 .music-article-header .music-article-header-image{
 	position:relative;
 	height:100%;
+	margin-left: -1px;
 	background-size: cover;
 	background-position: center top;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 .music-article-header h1{
 	@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
