@@ -55,16 +55,19 @@ Ext.define('Music.controller.Home', {
                 tap     : 'onShowGlobalToc'
             },
             'genretoc'  : {
-                featuredtap : 'onArticlePreviewReadArticle',
-                storytap    : 'onArticlePreviewReadArticle'
+                featuredtap : 'onShowArticle',
+                storytap    : 'onShowArticle'
             },
             'articlepreview': {
-                readarticle : 'onArticlePreviewReadArticle'
+                readarticle : 'onShowArticle'
             },
             'drawer'  : {
                 itemtap       : 'showGenre',
                 favoritestap  : 'onFavoritesTap',
                 searchtap     : 'onSearchTap'
+            },
+            'globaltoc'  : {
+                storytap    : 'onShowArticle'
             }
         }
     },
@@ -211,10 +214,10 @@ Ext.define('Music.controller.Home', {
     },
 
     // when a user taps on the "Read & Listen"
-    onArticlePreviewReadArticle: function(record) {
+    onShowArticle: function(record) {
         var me = this,
             mainFlow = me.getMainFlow(),
-            article = mainFlow.down('#article-'+record.getId());
+            article = mainFlow.down('#article-'+(Ext.isNumber(record)?record:record.getId()));
 
         mainFlow.setActiveItem(article);
     },

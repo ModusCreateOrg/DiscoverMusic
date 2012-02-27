@@ -12,13 +12,15 @@ Ext.define('Music.view.GlobalToc',{
 
     config		: {
 		first	: true,
+		featuredArticle: null,
 		cls		: 'global-toc',
 		layout	: 'hbox',
 		items	: [{
 			xtype	: 'container',
-			itemId	: 'featured',
+			itemId	: 'featuredstory',
 			cls		: 'global-toc-featured-story',
 			flex	: 1,
+			data	: {},
 			tpl		: [
 				'<div class="global-toc-featured-image" style="background-image:url(http://src.sencha.io/600/{image})">',
 					'<div>Featured story</div>',
@@ -33,6 +35,14 @@ Ext.define('Music.view.GlobalToc',{
 			scrollable : true,
 			width	: 350
 		}]
+    },
+
+    initialize	: function(){
+		var me = this;
+
+		me.callParent();
+
+		me.registerEvents();
     },
 
     addGenre	: function(genre,articles){
@@ -53,12 +63,12 @@ Ext.define('Music.view.GlobalToc',{
 				articles: list
 			},
 			tpl		: [
-				'<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{genre.image})">',
+				'<div class="global-toc-genre-image" data-id="{genre.id}" style="background-image:url(http://src.sencha.io/350/{genre.image})">',
 					'<h2>{genre.name}</h2>',
 					'<h3>{genre.title}</h3>',
 				'</div>',
 				'<tpl for="articles">',
-					'<p>{title}</p>',
+					'<p class="global-toc-article" data-id="{id}">{title}</p>',
 				'</tpl>'
 			]
 		};
@@ -66,10 +76,41 @@ Ext.define('Music.view.GlobalToc',{
 		container.add(component);
     },
 
-    setFeatured	: function(data){
+    setFeatured	: function(model){
 		var me = this,
-			featured = me.down('#featured');
+			featured = me.down('#featuredstory'),
+			data = model.getData();
+
 		data.content = Ext.util.Format.ellipsis(data.content,300,true).replace(/<(\/)?p>/g,' ');
 		featured.setData(data);
+		me.setFeaturedArticle(model);
+    },
+
+    registerEvents	: function(){
+		var me    = this,
+            el    = me.renderElement;
+
+        el.on('tap', me.onTap, me);
+    },
+
+    onTap	: function(event){
+		var me = this,
+			el,id;
+
+		if (event.getTarget('.global-toc-featured-image')){
+            return me.fireEvent('storytap', me.getFeaturedArticle());
+        }
+        if (event.getTarget('.global-toc-article')){
+			el = Ext.get(event.getTarget('.global-toc-article'));
+			id = +el.getAttribute("data-id");
+
+            return me.fireEvent('storytap', id);
+        }
+        if (event.getTarget('.global-toc-genre-image')){
+			el = Ext.get(event.getTarget('.global-toc-genre-image'));
+			id = +el.getAttribute("data-id");
+
+            return me.fireEvent('storytap', id);
+        }
     }
 });
