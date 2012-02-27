@@ -231,12 +231,6 @@
 .music-article-content .x-innerhtml{
 	padding:20px 0 20px 0;
 }
-.landscape .music-article-content .x-innerhtml{
-	@include column-count(2);
-}
-.portrait .music-article-content .x-innerhtml{
-	@include column-count(1);
-}
 .music-article-content .x-innerhtml p{
 	margin-bottom:30px;
 	font-family: "Georgia", serif;

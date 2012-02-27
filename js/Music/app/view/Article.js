@@ -12,7 +12,7 @@ Ext.define('Music.view.Article', {
 
     config : {
 		model		: null,
-		genre		: null,
+		genre		: null, 
 		layout		: 'hbox',
 	    items		: [{
 			xtype	: 'container',
@@ -33,10 +33,13 @@ Ext.define('Music.view.Article', {
 				xtype	: 'controls',
 				width	: 150
 			},{
-				xtype	: 'component',
+				xtype	: 'container',
 				flex	: 1,
+        scrollable: {
+            direction: 'vertical',
+            directionLock: true
+        },           
 				cls		: 'music-article-content',
-				scrollable	: 'auto',
 				tpl		: '{content}'
 			}]
 		},{
