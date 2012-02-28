@@ -163,35 +163,37 @@
 	}
 
  	.genre-toc-story {
-    p {
+ 		margin-left:5px;
+
+    	p {
 			font-size: .7em;
 			line-height: 1.8em;
 			padding: 4px 4px;
 	 	}
 	 	.genre-toc-story-image-#{$genre} {
  			position:relative;
- 			height:200px;
+ 			height:300px;
  			background-size: cover;
 			background-position: center top;
-	    background-repeat: no-repeat;
+	    	background-repeat: no-repeat;
 
- 		h3 {
-	    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-				text-shadow: 0px 1px darken($bg-color2, 20);
-	    	position:absolute;
-	    	bottom: 0px;
-	    	left:0;
-	    	color:#fff;
-	    	font-size: .8em;
-	    	font-weight: bold;
-	    	height: 76px;
-	    	width: 90%;
-	    	margin: 0px 0px 10px -5px;
-	    	padding: 10px;
+	 		h3 {
+		    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
+		    	position:absolute;
+		    	bottom: 0px;
+		    	left:0;
+		    	color:#fff;
+		    	font-size: 1em;
+		    	height: 76px;
+		    	width: 100%;
+		    	padding: 10px;
 				color: #fff;
+	 		}
  		}
- 	}
-}
+	}
+	.genre-toc-story:first-child{
+		margin:0;
+	}
 }
 
 @include genre-toc('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));

@@ -16,12 +16,15 @@ Ext.define('Music.view.GenreToc',{
 		articles: null,
 		items	: [{
 			xtype	: 'container',
-			layout	: 'hbox',
+			layout	: {
+				type : 'hbox',
+				align: 'stretch'
+			},
 			position: 'top',
+			height	: 305,
 			items	: [{
 				xtype	: 'component',
 				itemId	: 'featured',
-				height	: 310,
 				data	: {},
 				flex	: 2,
 				tpl		: [
@@ -35,7 +38,6 @@ Ext.define('Music.view.GenreToc',{
 			xtype	: 'container',
 			layout	: 'hbox',
 			flex	: 1,
-			padding	: 5,
 			itemId	: 'stories'
 		}]
     },
@@ -45,28 +47,34 @@ Ext.define('Music.view.GenreToc',{
 			container = me.down('#stories'),
 			featured = me.down('#featured'),
 			genre = me.getGenre(),
-			articles = me.getArticles().getRange(0,4);
+			articles = me.getArticles().getRange(0,4),
+			top = me.down('container[position=top]');
         
         me.callParent();
 
         featured.setData(articles.pop().getData());
+        me.insertArticle(top,articles.pop());
+
 
         Ext.each(articles,function(article,i){
-			container.add({
-				xtype	: 'component',
-				cls		: 'genre-toc-story',
-				flex	: 1,
-				padding	: 5,
-				data	: article.getData(),
-				tpl		: [
-					'<div class="genre-toc-story genre-toc-story-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/300/{image})">',
-						'<h3>{title}</h3>',
-					'</div>'
-				]
-			});
+			me.insertArticle(container,article);
         },me);
         
         me.registerEvents();
+    },
+
+    insertArticle	: function(container,article){
+		container.add({
+			xtype	: 'component',
+			cls		: 'genre-toc-story',
+			flex	: 1,
+			data	: article.getData(),
+			tpl		: [
+				'<div class="genre-toc-story genre-toc-story-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/300/{image})">',
+					'<h3>{title}</h3>',
+				'</div>'
+			]
+		});
     },
 
     registerEvents	: function(){
