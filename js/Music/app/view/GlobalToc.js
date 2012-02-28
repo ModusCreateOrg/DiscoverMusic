@@ -33,6 +33,7 @@ Ext.define('Music.view.GlobalToc',{
 			xtype	: 'container',
 			itemId	: 'genres',
 			scrollable : true,
+      cls: 'global-toc-right-sidebar',
 			width	: 350
 		}]
     },

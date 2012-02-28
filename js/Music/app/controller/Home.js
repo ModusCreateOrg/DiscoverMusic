@@ -82,7 +82,7 @@ Ext.define('Music.controller.Home', {
         me.db = Ext.create('Ext.util.MixedCollection');
 
         me.loadMask = Ext.create('Ext.LoadMask', {
-            message: ''
+            message: 'Curating content...'
         });
         Ext.Viewport.add(me.loadMask);
         me.loadMask.show();
