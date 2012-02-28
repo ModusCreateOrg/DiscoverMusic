@@ -14,6 +14,10 @@ Ext.define('Music.view.Article', {
 		model		: null,
 		genre		: null,
 		layout		: 'hbox',
+		scrollable: {
+			direction: 'vertical',
+			directionLock: true
+		},
 	    items		: [{
 			xtype	: 'container',
 			flex	: 1,
@@ -35,10 +39,6 @@ Ext.define('Music.view.Article', {
 			},{
 				xtype	: 'container',
 				flex	: 1,
-        scrollable: {
-            direction: 'vertical',
-            directionLock: true
-        },
 				cls		: 'music-article-content',
 				tpl		: '{content}'
 			}]
