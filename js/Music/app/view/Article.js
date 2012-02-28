@@ -12,7 +12,7 @@ Ext.define('Music.view.Article', {
 
     config : {
 		model		: null,
-		genre		: null, 
+		genre		: null,
 		layout		: 'hbox',
 	    items		: [{
 			xtype	: 'container',
@@ -38,22 +38,13 @@ Ext.define('Music.view.Article', {
         scrollable: {
             direction: 'vertical',
             directionLock: true
-        },           
+        },
 				cls		: 'music-article-content',
 				tpl		: '{content}'
 			}]
-		},{
-			xtype	: 'donate',
-			width	: 340
 		}]
     },
 
-    initialize	: function(){
-		var me = this;
-		me.callParent();
-
-		Ext.Viewport.on('orientationchange',me.onOrientationChange,me);
-    },
 
     applyModel	: function(model){
 		var me = this,
@@ -65,21 +56,7 @@ Ext.define('Music.view.Article', {
 		content.setData(model.getData());
 		controls.setModel(model);
 
-		me.onOrientationChange(Ext.Viewport,Ext.Viewport.orientation);
 
 		return model;
-    },
-
-    onOrientationChange	: function(viewport,orientation){
-		var me = this;
-
-        me.element.addCls(orientation);
-        if(orientation === Ext.Viewport.PORTRAIT){
-            me.element.removeCls(Ext.Viewport.LANDSCAPE);
-            me.down('donate').hide();
-        }else{
-            me.element.removeCls(Ext.Viewport.PORTRAIT);
-            me.down('donate').show();
-        }
     }
 });
