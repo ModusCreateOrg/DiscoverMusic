@@ -87,7 +87,7 @@ Ext.define('Music.controller.Home', {
         Ext.Viewport.add(me.loadMask);
         me.loadMask.show();
 
-        drawer.getStore().load(me.onTopicsLoaded,me);
+        drawer.getStore().load(me.onGenresLoaded,me);
     },
 
     startApp: function () {
@@ -115,7 +115,7 @@ Ext.define('Music.controller.Home', {
         me.loadMask.hide();
     },
 
-    onTopicsLoaded    : function(){
+    onGenresLoaded    : function(){
         var me = this,
             drawer = me.getDrawer();
 
@@ -126,21 +126,21 @@ Ext.define('Music.controller.Home', {
         },me);
     },
 
-    loadData: function (topic) {
+    loadData: function (genreId) {
         var me = this,
-            ts = localStorage.getItem('timestamp-' + topic);
+            ts = localStorage.getItem('timestamp-' + genreId);
             needRefresh = !ts || (parseInt(Ext.Date.format(new Date(), 'ymd'),10) > parseInt(ts,10));
 
 
         if (needRefresh) {
             Ext.util.JSONP.request({
                 url: me.getApiUrl(),
-                callback: Ext.Function.pass(me.saveData, [topic]),
+                callback: Ext.Function.pass(me.saveData, [genreId]),
                 scope: me,
                 callbackKey: 'callback',
                 params: {
                     apiKey: me.getApiKey(),
-                    id: topic,
+                    id: genreId,
                     requiredAssets: 'audio,image',
                     numResults: me.getNumResults(),
                     transform: 'source',
@@ -148,40 +148,40 @@ Ext.define('Music.controller.Home', {
                 }
             });
         } else {
-            me.importDataToStore(topic);
+            me.importDataToStore(genreId);
         }
     },
 
-    saveData: function (topic, success ,data) {
+    saveData: function (genreId, success ,data) {
         var list = data.list.story,
             drawer = this.getDrawer(),
-            genre = drawer.getStore().getById(topic);
+            genre = drawer.getStore().getById(genreId);
 
         for (var i = 0, len = list.length; i < len; i++) {
             list[i].genre = genre.get('name');
             list[i].genreKey = genre.get('key');
         }
 
-        localStorage.setItem('timestamp-' + topic, Ext.Date.format(new Date(), 'ymd'));
-        localStorage.setItem('articles-' + topic, Ext.encode(data.list.story));
+        localStorage.setItem('timestamp-' + genreId, Ext.Date.format(new Date(), 'ymd'));
+        localStorage.setItem('articles-' + genreId, Ext.encode(data.list.story));
 
-        this.importDataToStore(topic, data.list.story);
+        this.importDataToStore(genreId, data.list.story);
     },
 
-    importDataToStore: function (topic, data) {
+    importDataToStore: function (genreId, data) {
         var me = this,
             store, records,
             drawer = me.getDrawer();
 
         if (!data) {
-            data = Ext.decode(localStorage.getItem('articles-' + topic));
+            data = Ext.decode(localStorage.getItem('articles-' + genreId));
         }
 
-        if (!me.db.containsKey(topic)) {
+        if (!me.db.containsKey(genreId)) {
             store = Ext.create('Music.store.Articles');
-            me.db.add(topic, store);
+            me.db.add(genreId, store);
         } else {
-            store = me.db.get(topic);
+            store = me.db.get(genreId);
         }
 
         store.setData(data);
