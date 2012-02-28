@@ -54,6 +54,12 @@ Ext.define('Music.controller.Home', {
             'home toolbar button[action=globaltoc]': {
                 tap     : 'onShowGlobalToc'
             },
+            'home toolbar button[action=favorites]': {
+                tap     : 'onFavoritesTap'
+            },
+            'home toolbar button[action=search]': {
+                tap     : 'onSearchTap'
+            },
             'genretoc'  : {
                 featuredtap : 'onShowArticle',
                 storytap    : 'onShowArticle'
@@ -232,8 +238,10 @@ Ext.define('Music.controller.Home', {
 
     onSearchTap: function(){
         var me = this,
-        home = me.getHome();
-        
+            mainFlow = me.getMainFlow(),
+            search = mainFlow.down('search');
+
+        mainFlow.setActiveItem(search);
     },
 
     onShowGlobalToc : function(){

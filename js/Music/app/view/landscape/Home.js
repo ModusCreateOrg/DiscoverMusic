@@ -35,16 +35,18 @@ Ext.define('Music.view.landscape.Home',{
 				 xtype: 'spacer'
 			},{
 				xtype	: 'button',
-				iconCls: 'heart',
-    		iconMask: true,
+				iconCls	: 'heart',
+				action	: 'favorites',
+				iconMask: true,
 				margin	: '10 5 10 5',
-				height	: 40				
+				height	: 40
 			},{
 				xtype	: 'button',
-				iconCls: 'search',
-    		iconMask: true,
+				action	: 'search',
+				iconCls	: 'search',
+				iconMask: true,
 				margin	: '10 5 10 5',
-				height	: 40				
+				height	: 40
 			}]
 		},{
 			xtype : 'mainflow'
