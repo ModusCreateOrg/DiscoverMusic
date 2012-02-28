@@ -28,7 +28,7 @@ Ext.define('Music.view.GenreToc',{
 				data	: {},
 				flex	: 2,
 				tpl		: [
-					'<div class="genre-toc-featured genre-toc-featured-{genreKey}" style="background-image:url(http://src.sencha.io/1024/{image});">',
+					'<div class="genre-toc-featured genre-toc-featured-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
 							'<h2>{title}</h2>',
 							'<h3>{genre}</h3>',
 					'</div>'
@@ -52,8 +52,8 @@ Ext.define('Music.view.GenreToc',{
         
         me.callParent();
 
-        featured.setData(articles.pop().getData());
-        me.insertArticle(top,articles.pop());
+        featured.setData(articles.shift().getData());
+        me.insertArticle(top,articles.shift());
 
 
         Ext.each(articles,function(article,i){
@@ -85,13 +85,11 @@ Ext.define('Music.view.GenreToc',{
     },
 
     onTap: function(event) {
-        var me = this;
-        if (event.getTarget('.genre-toc-featured')){
-            return me.fireEvent('featuredtap', me.getArticles().getAt(0));
-        }
-        if (event.getTarget('.genre-toc-story')){
-			var el = Ext.get(event.getTarget('.genre-toc-story')),
-				id = +el.getAttribute("data-id");
+        var me = this,
+			target = event.getTarget('.genre-toc-featured') || event.getTarget('.genre-toc-story');
+
+        if (target){
+			var id = +target.getAttribute("data-id");
 
             return me.fireEvent('storytap', me.getArticles().getById(id));
         }
