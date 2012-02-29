@@ -14,9 +14,11 @@
 .music-player-timer{
 	display:inline-block;
 	vertical-align: top;
-	width:100px;
+	width:60px;
 	height:20px;
 	@include background-image(linear-gradient(#99ffff,#6adcf3));
+	@include text-shadow(none);
+	text-align:center;
 	margin:5px 10px 5px 5px;
 	font-size:0.4em;
 	font-weight:normal;
