@@ -28,18 +28,13 @@ Ext.define('Music.controller.Article', {
         }
     },
 
-    init	: function() {
-        var me = this;
-        
-        
-    },
-
-    playSong        : function(view,model){
+    playSong        : function(model){
         var me = this;
 
         if(model.get('audioFile')){
             me.getPlayer().setData(model.getData());
             me.getPlayer().loadSound(model.get('audioFile'));
+            me.getPlayer().show();
         }
     },
 

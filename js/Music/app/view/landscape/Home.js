@@ -29,10 +29,12 @@ Ext.define('Music.view.landscape.Home',{
 				margin	: 10,
 				height	: 40
 			},{
-				xtype	: 'player',
-				flex	: 1
-			},{
-				 xtype: 'spacer'
+				xtype	: 'container',
+				flex	: 1,
+				padding	: 3,
+				items	: [{
+					xtype	: 'player'
+				}]
 			},{
 				xtype	: 'button',
 				iconCls	: 'heart',

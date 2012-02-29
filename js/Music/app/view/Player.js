@@ -35,6 +35,7 @@ Ext.define('Music.view.Player',{
         me.callParent();
 
         me.element.addCls('music-player-paused');
+        me.element.on('tap',me.onPlayPause,me);
         
         audio.on('timeupdate',me.onUpdateTime,me);
         audio.on('pause',me.onPause,me);
@@ -56,6 +57,19 @@ Ext.define('Music.view.Player',{
 			audio.play();
 		}
 		me.timer = me.element.down('.music-player-timer');
+	},
+
+	onPlayPause		: function(event){
+		var me = this,
+			audio = me.down('audio');
+
+		if(audio.isPlaying()){
+			audio.pause();
+			me.onPause();
+		}else{
+			audio.play();
+			me.onPlay();
+		}
 	},
 
 	onUpdateTime	: function(audio,time){
