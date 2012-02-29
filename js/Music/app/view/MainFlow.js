@@ -55,7 +55,14 @@ Ext.define('Music.view.MainFlow',{
 		var me = this,
 			articles = me.getArticles(),
 			cover = articles[Math.floor(Math.random()*articles.length)];
+		
 		me.globalToc.setFeatured(cover.getModel());
+
+		me.insert(0,{
+			xtype	: 'articlepreview',
+			data	: cover.getModel().getData()
+		});
+		me.setActiveItem(0);
     }
     
 });
