@@ -40,7 +40,7 @@ Ext.define('Music.view.landscape.Home',{
 				iconCls	: 'heart',
 				action	: 'favorites',
 				iconMask: true,
-				margin	: '10 5 10 5',
+				margin	: '10 5 10 10',
 				height	: 40
 			},{
 				xtype	: 'button',
