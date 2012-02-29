@@ -35,22 +35,26 @@ Ext.define('Music.view.ArticlePreview', {
     },
 
     registerEvents  : function(){
-        this.readAndListen = this.renderElement.down(".music-article-btn");
+        var me = this;
+
+        me.readAndListen = me.renderElement.down(".music-article-btn");
         
-        this.readAndListen.on({
-            scope      : this,
+        me.readAndListen.on({
+            scope      : me,
             tap        : 'showFullArticle',
             touchstart : 'onPress',
             touchend   : 'onRelease'
         });
+        me.pressedCls = 'music-article-btn-pressed-'+this.getModel().get('genreKey');
+        console.log(me.pressedCls);
     },
     
     onPress         : function(){
-        this.readAndListen.addCls('music-article-btn-pressed');
+        this.readAndListen.addCls(this.pressedCls);
     },
 
     onRelease       : function(){
-        this.readAndListen.removeCls('music-article-btn-pressed');
+        this.readAndListen.removeCls(this.pressedCls);
     },
 
     showFullArticle: function (event, node) {
