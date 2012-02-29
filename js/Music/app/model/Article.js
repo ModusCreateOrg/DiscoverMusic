@@ -10,6 +10,7 @@ Ext.define('Music.model.Article', {
 
     config: {
         fields: ['id',
+        {name:'articleId',mapping:'id'},
         {
             name: 'title',
             mapping: 'title.$text'

@@ -31,13 +31,30 @@ Ext.define('Music.view.ArticlePreview', {
         var me = this;
         me.callParent();
 
-        // add the "Read & Listen" button
-        var btn = me.element.down(".music-article-btn");
-        btn.on('tap', me.showFullArticle, me);
+        me.registerEvents();
+    },
+
+    registerEvents  : function(){
+        this.readAndListen = this.renderElement.down(".music-article-btn");
         
+        this.readAndListen.on({
+            scope      : this,
+            tap        : 'showFullArticle',
+            touchstart : 'onPress',
+            touchend   : 'onRelease'
+        });
     },
     
+    onPress         : function(){
+        this.readAndListen.addCls('music-article-btn-pressed');
+    },
+
+    onRelease       : function(){
+        this.readAndListen.removeCls('music-article-btn-pressed');
+    },
+
     showFullArticle: function (event, node) {
+        console.log('TAP!');
         this.fireEvent("readarticle", this.getModel());
     }
 });

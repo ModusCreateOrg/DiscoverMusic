@@ -40,9 +40,13 @@ Ext.define('Music.controller.Article', {
 
     onAddToFavorites  : function(view,model){
         var me = this,
-            favorites = Ext.data.StoreManager.lookup('favorites');
+            favorites = Ext.data.StoreManager.lookup('favorites'),
+            fav = model.copy();
         
-        favorites.add(model.copy());
+
+        favorites.add(model);
+        console.log(fav.getData());
+
         favorites.sync();
 
         Ext.Msg.alert('Alert','Added to your favorites!');

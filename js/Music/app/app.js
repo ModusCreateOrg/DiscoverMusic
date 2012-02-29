@@ -9,6 +9,7 @@ Ext.application({
     controllers : [
         'Home',
         'Article',
+        'Favorites',
         'Search'
     ],
 

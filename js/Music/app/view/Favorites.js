@@ -29,11 +29,5 @@ Ext.define('Music.view.Favorites',{
 				text	: 'Edit'
 			}]
 		}]
-    },
-
-    initialize   : function(){
-        var me = this;
-        
-        me.callParent();
     }
 });

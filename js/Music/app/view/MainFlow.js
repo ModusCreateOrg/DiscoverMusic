@@ -60,6 +60,7 @@ Ext.define('Music.view.MainFlow',{
 
 		me.insert(0,{
 			xtype	: 'articlepreview',
+			model	: cover.getModel(),
 			data	: cover.getModel().getData()
 		});
 		me.setActiveItem(0);

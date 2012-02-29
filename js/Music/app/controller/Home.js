@@ -10,8 +10,8 @@ Ext.define('Music.controller.Home', {
     models: ['Article', 'Genre'],
     stores: ['Articles', 'Genres'],
     views: [
-        'landscape.Home', 'ArticlePreview', 'Article','Donate', 'MainFlow','Drawer',
-        'AboutPanel','Search','Controls','Player','Favorites'
+        'landscape.Home', 'ArticlePreview', 'Article', 'MainFlow','Drawer',
+        'AboutPanel','Search','Controls','Player','Favorites','ArticlePreview'
     ],
     
     config: {
@@ -54,9 +54,6 @@ Ext.define('Music.controller.Home', {
             'home toolbar button[action=globaltoc]': {
                 tap     : 'onShowGlobalToc'
             },
-            'home toolbar button[action=favorites]': {
-                tap     : 'onFavoritesTap'
-            },
             'home toolbar button[action=search]': {
                 tap     : 'onSearchTap'
             },
@@ -69,7 +66,6 @@ Ext.define('Music.controller.Home', {
             },
             'drawer'  : {
                 itemtap       : 'showGenre',
-                favoritestap  : 'onFavoritesTap',
                 searchtap     : 'onSearchTap'
             },
             'globaltoc'  : {
