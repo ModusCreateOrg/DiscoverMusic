@@ -34,7 +34,7 @@ Ext.define('Music.controller.Article', {
         if(model.get('audioFile')){
             me.getPlayer().setData(model.getData());
             me.getPlayer().loadSound(model.get('audioFile'));
-            me.getPlayer().show();
+            me.getPlayer().show({ type: 'fade' });
         }
     },
 
