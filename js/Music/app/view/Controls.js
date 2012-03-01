@@ -37,23 +37,25 @@ Ext.define('Music.view.Controls', {
     },
 
     initialize: function () {
-        var me = this,
-            el  = me.renderElement;
+        var me = this;
 
         me.callParent();
 
-        el.on('tap', me.onTap, me);
+        me.items.each(function(btn){
+            btn.on("tap",me.onTap,me);
+        },me);
     },
 
-    onTap   : function(event){
+    onTap   : function(button,event){
         var me = this;
-        if (event.getTarget('.music-article-controls-play')){
+        
+        if (button.config.action == 'play'){
             return this.fireEvent('play', this.getModel());
         }
-        if (event.getTarget('.music-article-controls-favorites')){
+        if (button.config.action == 'favorites'){
             return this.fireEvent('favorite', this,this.getModel());
         }
-        if (event.getTarget('.music-article-controls-twitter')){
+        if (button.config.action == 'twitter'){
             return this.fireEvent('twitter', this,this.getModel());
         }
     }
