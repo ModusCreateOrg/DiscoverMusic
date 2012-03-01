@@ -12,19 +12,22 @@ Ext.define('Music.view.Controls', {
         cls     : 'music-article-controls',
         model   : null,
         bodyPadding:{top:30},
-        defaults:{iconMask: true,width:50},
+        defaults: { iconMask: true, width: 70, height: 70 },
         items   : [{
             xtype   : 'button',
             iconCls : 'play',
-            action  : 'play'
+            action  : 'play',
+            cls: 'control-button'
         },{
             xtype   : 'button',
-            iconCls : 'favorites',
-            action  : 'favorites'
+            iconCls : 'heart',
+            action  : 'favorites',
+            cls: 'control-button'
         },{
             xtype   : 'button',
             iconCls : 'action',
-            action  : 'twitter'
+            action  : 'twitter',
+            cls: 'control-button'
         }]
         /*html: [
             '<div class="music-article-controls-content">',

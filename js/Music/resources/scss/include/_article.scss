@@ -239,3 +239,27 @@
 .music-article-controls-twitter{
 	background-position:0 -96px;
 }
+
+.music-article-controls {
+	.control-button {
+		background-color: #EEE;
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #EEE), color-stop(100%, #CCC));
+		background-image: -webkit-linear-gradient(top, #EEE, #CCC);
+		background-image: -moz-linear-gradient(top, #EEE, #CCC);
+		background-image: -ms-linear-gradient(top, #EEE, #CCC);
+		background-image: -o-linear-gradient(top, #EEE, #CCC);
+		background-image: linear-gradient(top, #EEE, #CCC);
+		border: 1px solid #CCC;
+		border-bottom: 1px solid #BBB;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		-ms-border-radius: 3px;
+		-o-border-radius: 3px;
+		border-radius: 3px;
+		line-height: 1;
+		padding: 8px 0;
+		text-align: center;
+		text-shadow: 0 1px 0 #EEE;
+		margin-bottom: 10px;	
+	}
+}
