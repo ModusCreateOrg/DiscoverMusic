@@ -94,7 +94,21 @@ Ext.define('Music.view.GlobalToc',{
 		var me    = this,
             el    = me.renderElement;
 
-        el.on('tap', me.onTap, me);
+        el.on({
+            scope      : me,
+            tap        : 'onTap',
+            touchstart : 'onPress',
+            touchend   : 'onRelease'
+        });
+
+    },
+
+    onPress	: function(event,node){
+		Ext.fly(node).addCls('global-toc-article-pressed');
+    },
+
+    onRelease	: function(event,node){
+		Ext.fly(node).removeCls('global-toc-article-pressed');
     },
 
     onTap	: function(event){
