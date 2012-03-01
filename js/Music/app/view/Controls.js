@@ -6,19 +6,34 @@
  * The article view
  */
 Ext.define('Music.view.Controls', {
-    extend: 'Ext.Component',
+    extend: 'Ext.Container',
     alias: 'widget.controls',
     config: {
         cls     : 'music-article-controls',
         model   : null,
         bodyPadding:{top:30},
-        html: [
+        defaults:{iconMask: true,width:50},
+        items   : [{
+            xtype   : 'button',
+            iconCls : 'play',
+            action  : 'play'
+        },{
+            xtype   : 'button',
+            iconCls : 'favorites',
+            action  : 'favorites'
+        },{
+            xtype   : 'button',
+            iconCls : 'action',
+            action  : 'twitter'
+        }]
+        /*html: [
             '<div class="music-article-controls-content">',
                 '<div class="music-article-controls-button music-article-controls-play"></div>',
                 '<div class="music-article-controls-button music-article-controls-favorites"></div>',
                 '<div class="music-article-controls-button music-article-controls-twitter"></div>',
             '</div>'
         ].join('')
+        */
     },
 
     initialize: function () {

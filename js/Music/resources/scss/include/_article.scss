@@ -131,9 +131,7 @@
 
 				.music-article-btn-pressed-#{$category}{
 					border: 2px solid rgba(255, 255, 255, .3);
-					@include background-image(linear-gradient(
-							$bg-color2,$bg-color1
-						)
+					@include background-image(linear-gradient($bg-color2,$bg-color1)
 					);
 				}
 			}
