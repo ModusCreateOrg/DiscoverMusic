@@ -25,7 +25,7 @@ Ext.define('Music.view.Article', {
 			items	: [{
 				xtype	: 'component',
 				cls		: 'music-article-header',
-				height	: 370,
+				height	: 280,
 				docked	: 'top',
 				data	: null,
 				tpl		: [
@@ -35,7 +35,7 @@ Ext.define('Music.view.Article', {
 				]
 			},{
 				xtype	: 'controls',
-				width	: 150
+				width	: 100
 			},{
 				xtype	: 'container',
 				flex	: 1,

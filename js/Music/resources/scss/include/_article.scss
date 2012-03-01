@@ -241,25 +241,27 @@
 }
 
 .music-article-controls {
+	@include border-radius(10px);
+	background: #333;
+	height: 260px;
+	padding: 15px;
+	margin: 25px 15px 0px 15px;
+
 	.control-button {
-		background-color: #EEE;
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #EEE), color-stop(100%, #CCC));
-		background-image: -webkit-linear-gradient(top, #EEE, #CCC);
-		background-image: -moz-linear-gradient(top, #EEE, #CCC);
-		background-image: -ms-linear-gradient(top, #EEE, #CCC);
-		background-image: -o-linear-gradient(top, #EEE, #CCC);
-		background-image: linear-gradient(top, #EEE, #CCC);
-		border: 1px solid #CCC;
-		border-bottom: 1px solid #BBB;
+		background: #E3E3E3;
+		border: 1px solid #BBB;
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
 		-ms-border-radius: 3px;
 		-o-border-radius: 3px;
 		border-radius: 3px;
+		-webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+		-moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+		box-shadow: inset 0 0 1px 1px #f6f6f6;
 		line-height: 1;
-		padding: 8px 0;
+		padding: 8px 0 9px;
 		text-align: center;
-		text-shadow: 0 1px 0 #EEE;
-		margin-bottom: 10px;	
+		text-shadow: 0 1px 0 white;
+		margin-bottom: 10px;
 	}
 }
