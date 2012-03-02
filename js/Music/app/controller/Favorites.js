@@ -60,9 +60,17 @@ Ext.define('Music.controller.Favorites',{
     onEditTap   : function(){
         var me = this,
             mainFlow = me.getMainFlow(),
-            favorites = mainFlow.down('favorites');
+            favorites = mainFlow.down('favorites'),
+            btn = mainFlow.down('favorites button[action=edit]');
 
-        favorites.setEditing(!favorites.getEditing());
+        if(favorites.getEditing()){
+            favorites.setEditing(false);
+            btn.setText('Edit');
+        }else{
+            favorites.setEditing(true);
+            btn.setText('Done');
+        }
+        
         me.setEditable(favorites.getStore(),favorites.getEditing());
     },
 
