@@ -13,8 +13,16 @@ Ext.define('Music.view.Favorites',{
     config		: {
 		store	: 'favorites',
 		cls		: 'music-favorites',
+		editing	: false,
+		scrollable: {
+			direction: 'vertical',
+			directionLock: true
+		},
 		itemTpl	: [
 			'<div class="music-favorites-article" style="background-image:url(http://src.sencha.io/300/{image})">',
+				'<tpl if="editable == true">',
+				'<div class="music-favorites-remove"></div>',
+				'</tpl>',
 				'<h2>{title}</h2>',
 			'</div>'
 		],
@@ -26,7 +34,8 @@ Ext.define('Music.view.Favorites',{
 				xtype	:'title',
 				title	: 'Your favorites'
 			},{
-				text	: 'Edit'
+				text	: 'Edit',
+				action	: 'edit'
 			}]
 		}]
     }

@@ -160,9 +160,25 @@ Ext.define('Music.controller.Home', {
             genre = drawer.getStore().getById(genreId);
 
         for (var i = 0, len = list.length; i < len; i++) {
+            var images = list[i].image,
+                primary;
+
             list[i].genre = genre.get('name');
             list[i].genreKey = genre.get('key');
+            list[i].image = null;
+
+            if(images){
+                for (var j = 0, size = images.length; j < size; j++) {
+                    primary = images[j];
+                    if (primary.type === 'primary' && primary.enlargement) {
+                        list[i].image = primary.enlargement.src;
+                        break;
+                    }
+                }
+            }
         }
+
+
 
         localStorage.setItem('timestamp-' + genreId, Ext.Date.format(new Date(), 'ymd'));
         localStorage.setItem('articles-' + genreId, Ext.encode(data.list.story));

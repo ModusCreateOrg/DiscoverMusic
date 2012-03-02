@@ -29,14 +29,6 @@ Ext.define('Music.view.Controls', {
             action  : 'twitter',
             cls: 'control-button'
         }]
-        /*html: [
-            '<div class="music-article-controls-content">',
-                '<div class="music-article-controls-button music-article-controls-play"></div>',
-                '<div class="music-article-controls-button music-article-controls-favorites"></div>',
-                '<div class="music-article-controls-button music-article-controls-twitter"></div>',
-            '</div>'
-        ].join('')
-        */
     },
 
     initialize: function () {

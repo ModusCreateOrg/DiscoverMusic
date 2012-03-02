@@ -9,26 +9,17 @@ Ext.define('Music.model.Article', {
     extend: 'Ext.data.Model',
 
     config: {
-        fields: ['id',
-        {name:'articleId',mapping:'id'},
+        fields: [
+        'id',
+        'articleId',
         {
             name: 'title',
             mapping: 'title.$text'
-        }, {
-            name: 'image',
-            convert: function (images) {
-                var primary;
-
-                if (images) {
-                    for (var i = 0, len = images.length; i < len; i++) {
-                        primary = images[i];
-                        if (primary.type === 'primary' && primary.enlargement) {
-                            return primary.enlargement.src;
-                        }
-                    }
-                }
-            }
-        }, {
+        },
+        {
+            name: 'image'
+        },
+        {
             name: 'content',
             mapping: 'text.paragraph',
             convert: function (paragraphs) {
@@ -43,7 +34,8 @@ Ext.define('Music.model.Article', {
                     return text.join('');
                 }
             }
-        }, {
+        },
+        {
             name: 'audioTitle',
             mapping: 'audio',
             convert: function (audios) {
@@ -58,7 +50,8 @@ Ext.define('Music.model.Article', {
                     }
                 }
             }
-        }, {
+        },
+        {
             name: 'audioFile',
             mapping: 'audio',
             convert: function (audios) {
@@ -73,10 +66,17 @@ Ext.define('Music.model.Article', {
                     }
                 }
             }
-        }, {
+        },
+        {
             name: 'genre'
-        },{
+        },
+        {
             name: 'genreKey'
+        },
+        {
+            name: 'editable',
+            type: 'boolean',
+            defaultValue : false
         }]
     }
 });

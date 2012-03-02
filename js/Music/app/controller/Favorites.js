@@ -17,9 +17,12 @@ Ext.define('Music.controller.Favorites',{
             }
 		},
 		control : {
-			"mainflow favorites" : {
+			'mainflow favorites' : {
 				itemtap : 'onShowArticle'
 			},
+            'mainflow favorites button[action=edit]' : {
+                tap : 'onEditTap'
+            },
 			'home toolbar button[action=favorites]': {
                 tap     : 'onFavoriteTap'
             },
@@ -37,12 +40,36 @@ Ext.define('Music.controller.Favorites',{
         mainFlow.setActiveItem(fav);
     },
 
-    onShowArticle: function(dataview,index,target,record) {
+    onShowArticle: function(dataview,index,target,record,event) {
         var me = this,
             mainFlow = me.getMainFlow(),
             article = mainFlow.down('#article-'+record.get('articleId'));
-console.log(record.get('articleId'));
-        mainFlow.setActiveItem(article);
+        
+        if(event.getTarget('.music-favorites-remove')){
+            var store = dataview.getStore();
+
+            me.setEditable(store,false);
+            store.remove(record);
+            store.sync();
+            me.setEditable(store,true);
+        }else{
+            mainFlow.setActiveItem(article);
+        }
+    },
+
+    onEditTap   : function(){
+        var me = this,
+            mainFlow = me.getMainFlow(),
+            favorites = mainFlow.down('favorites');
+
+        favorites.setEditing(!favorites.getEditing());
+        me.setEditable(favorites.getStore(),favorites.getEditing());
+    },
+
+    setEditable : function(store,value){
+        store.each(function(fav){
+            fav.set('editable',value);
+        });
     }
     
 });

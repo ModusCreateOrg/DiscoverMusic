@@ -46,7 +46,6 @@ Ext.define('Music.view.ArticlePreview', {
             touchend   : 'onRelease'
         });
         me.pressedCls = 'music-article-btn-pressed-'+this.getModel().get('genreKey');
-        console.log(me.pressedCls);
     },
     
     onPress         : function(){

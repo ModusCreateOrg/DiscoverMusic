@@ -44,9 +44,8 @@ Ext.define('Music.controller.Article', {
             fav = model.copy();
         
 
-        favorites.add(model);
-        console.log(fav.getData());
-
+        fav.set('articleId',model.getId());
+        favorites.add(fav);
         favorites.sync();
 
         Ext.Msg.alert('Alert','Added to your favorites!');
