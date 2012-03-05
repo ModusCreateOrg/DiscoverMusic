@@ -26,8 +26,7 @@ Ext.define('Music.view.GlobalToc',{
 					'<div>Featured story</div>',
 					'<h2>{title}</h2>',
 				'</div>',
-				'<div class="global-toc-featured-content">{content}</div>',
-				'<div class="global-toc-about"><p>This app was developed using the open content API provided by NPR. All content and images copyright NPR and respective properties. App development sponsored by Sencha Inc. and application developed by Modus Create Inc.</p></div>'
+				'<div class="global-toc-featured-content">{content}</div>'
 			]
 		},{
 			xtype	: 'container',

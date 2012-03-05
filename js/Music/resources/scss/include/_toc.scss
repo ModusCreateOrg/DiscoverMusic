@@ -108,7 +108,7 @@
 				padding: 12px 20px;
 				color:#ccc;
 			} &:last-child{
-				margin-bottom:30px;
+				//margin-bottom:30px;
 			}
 
 			.global-toc-article-pressed{
@@ -131,22 +131,23 @@
 @mixin genre-toc($genre, $bg-color1, $bg-color2){
 	.genre-toc-featured-#{$genre}{
 			position:relative;
-			height:300px;
+			height: 305px;
+			border: 6px solid #000;
 			background-size: cover;
 			background-position: center top;
 	    background-repeat: no-repeat;
-			box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
 	    h2 {
-				position:absolute;
-				color:#fff;
-				@include border-radius(10px);
-				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
-				@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+				background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+				background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
+				background-image: linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
+				position: absolute;
+				color: white;
 				padding: 15px 20px;
-				font-size:1.3em;
+				font-size: 1.5em;
+				width: 100%;
 				font-family: $base-font;
-				bottom:25px;
-				right:5px;
+				font-weight: normal;
+				bottom: 0;
 	    }
 	    h3 {
 	    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
@@ -167,19 +168,18 @@
 	}
 
  	.genre-toc-story {
- 		margin-left:5px;
-
     	p {
-			font-size: .7em;
-			line-height: 1.8em;
-			padding: 4px 4px;
+				font-size: .7em;
+				line-height: 1.8em;
+				padding: 4px 4px;
 	 	}
 	 	.genre-toc-story-image-#{$genre} {
  			position:relative;
- 			height:300px;
+ 			height:308px;
  			background-size: cover;
 			background-position: center top;
-	    	background-repeat: no-repeat;
+	    background-repeat: no-repeat;
+	    border: 6px solid black;
 
 	 		h3 {
 		    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
@@ -187,11 +187,12 @@
 		    	bottom: 0px;
 		    	left:0;
 		    	color:#fff;
-		    	font-size: 1em;
+		    	font-size: .85em;
 		    	height: 76px;
 		    	width: 100%;
 		    	padding: 10px;
-				color: #fff;
+					color: #fefefe;
+					font-weight: bold;					
 	 		}
  		}
 	}
