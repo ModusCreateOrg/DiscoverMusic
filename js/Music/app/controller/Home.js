@@ -193,7 +193,6 @@ Ext.define('Music.controller.Home', {
 
         if (!data) {
             data = Ext.decode(localStorage.getItem('articles-' + genreId));
-            console.log(data);
         }
 
         if (!me.db.containsKey(genreId)) {

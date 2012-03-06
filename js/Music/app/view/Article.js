@@ -42,11 +42,15 @@ Ext.define('Music.view.Article', {
 			items	: [{
 				xtype	: 'component',
 				cls		: 'music-article-content',
-				tpl		: [
+				tpl		: new Ext.XTemplate(
 					'<h3>{author}</h3>',
-					'<h4>{date}</h4>',
-					'{content}'
-				]
+					'<h4>{[ this.dateFormat(values.date) ]}</h4>',
+					'{content}',{
+						dateFormat : function(value){
+							return Ext.util.Format.date(value,'F d,Y');
+						}
+					}
+				)
 			}]
 	    }]
     },
