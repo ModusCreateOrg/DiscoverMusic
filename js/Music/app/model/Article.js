@@ -20,6 +20,10 @@ Ext.define('Music.model.Article', {
             name: 'image'
         },
         {
+            name: 'teaser',
+            mapping : 'teaser.$text'
+        },
+        {
             name: 'content',
             mapping: 'text.paragraph',
             convert: function (paragraphs) {

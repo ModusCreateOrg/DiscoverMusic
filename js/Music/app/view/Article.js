@@ -42,7 +42,11 @@ Ext.define('Music.view.Article', {
 			items	: [{
 				xtype	: 'component',
 				cls		: 'music-article-content',
-				tpl		: ['{content}']
+				tpl		: [
+					'<h3>{author}</h3>',
+					'<h4>{date}</h4>',
+					'{content}'
+				]
 			}]
 	    }]
     },
