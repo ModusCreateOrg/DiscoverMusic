@@ -11,9 +11,10 @@ Ext.define('Music.view.GenreToc',{
     xtype       : 'genretoc',
 
     config		: {
-		layout	: 'vbox',
-		genre	: null,
-		articles: null,
+  		layout	: 'vbox',
+  		genre	: null,
+  		articles: null,
+      cls: 'genre-toc',
 		items	: [{
 			xtype	: 'container',
 			layout	: {
@@ -63,7 +64,7 @@ Ext.define('Music.view.GenreToc',{
         me.registerEvents();
     },
 
-    insertArticle	: function(container,article){
+    insertArticle	: function(container,article) {
 		container.add({
 			xtype	: 'component',
 			cls		: 'genre-toc-story',

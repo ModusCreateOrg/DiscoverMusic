@@ -33,14 +33,14 @@ Ext.define('Music.view.landscape.Home',{
 				action	: 'globaltoc',
 				iconMask: true,
 				iconCls : 'toc-mask',
-				margin	: '10 0 10 15',
+				margin	: '10 5 10 5',
 				height	: 40
 			},{
 				xtype	: 'button',
 				iconCls	: 'heart',
 				action	: 'favorites',
 				iconMask: true,
-				margin	: '10 5 10 10',
+				margin	: '10 5 10 5',
 				height	: 40
 			},{
 				xtype	: 'button',

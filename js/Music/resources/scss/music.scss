@@ -40,6 +40,7 @@ $hiphoprb-background-color-dark:rgba(166, 18, 166, 1.0);
 @include sencha-msgbox;
 @include sencha-loading-spinner;
 
+@import 'include/animate';
 @import 'include/shortcuts';
 @import 'include/home';
 @import 'include/article';
