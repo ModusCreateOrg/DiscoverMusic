@@ -179,89 +179,90 @@
  *
  *********************************/
 
-.music-article-header div.x-innerhtml {
-	height:100%;
-}
-.music-article-header .music-article-header-image{
-	position:relative;
-	height:100%;
-	margin-left: -1px;
-	background-size: cover;
-	background-position: center top;
-  background-repeat: no-repeat;
-}
-.music-article-header h1{
-	@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
-	font-family: $base-font;
-	position:absolute;
-	bottom:0;
-	right:0;
-	font-size:1.8em;
-	text-shadow: 0px 2px rgba(0, 0, 0, .9);
-	color:#fff;
-	padding: 20px 25px;
-	max-width:645px;
-}
-.music-article-content .x-innerhtml{
-	padding:20px 0 20px 0;
-}
-.music-article-content .x-innerhtml p{
-	margin-bottom:30px;
-	font-family: "Georgia", serif;
-	line-height: 30px;
-}
-.music-article-controls .x-innerhtml{
-	padding:30px 0 20px 0;
-}
-.music-article-controls-content{
-	padding:15px 18px;
-	background-color:#eee;
-	border:1px solid #ddd;
-	border-left:2px solid #ddd;
-	border-right:2px solid #ddd;
-	@include border-radius(50px);
-	margin:0 20px;
-	width:86px;
-}
-.music-article-controls-button{
-	width:48px;
-	height:48px;
-	margin-bottom:30px;
-	background:transparent url(../images/controls.png) 0 0 no-repeat;
-
-	&:last-child{
-		margin:0;
+@mixin article($genre, $bg-color1, $bg-color2){
+	.music-article-header .music-article-#{$genre}{
+		h2{
+			position:absolute;
+			top:0px;
+			left:0px;
+			@include background-image(linear-gradient($bg-color1, $bg-color2));
+			color:#fff;
+			font-size:0.9em;
+			font-weight:bold;
+			text-transform:uppercase;
+			padding:10px 20px;
+			border: 1px solid rgba(255, 255, 255, .5);
+		}
 	}
 }
-.music-article-controls-favorites{
-	background-position:0 -48px;
-}
-.music-article-controls-twitter{
-	background-position:0 -96px;
-}
 
-.music-article-controls {
-	@include border-radius(10px);
-	background: #333;
-	height: 260px;
-	padding: 15px;
-	margin: 25px 15px 0px 15px;
+.music-article{
+	.music-article-header{
+		padding:15px;
+		background:#191919 url(../images/article-view-sidebar-bg.png);
 
-	.control-button {
-		background: #E3E3E3;
-		border: 1px solid #BBB;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		-ms-border-radius: 3px;
-		-o-border-radius: 3px;
-		border-radius: 3px;
-		-webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
-		-moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
-		box-shadow: inset 0 0 1px 1px #f6f6f6;
-		line-height: 1;
-		padding: 8px 0 9px;
-		text-align: center;
-		text-shadow: 0 1px 0 white;
-		margin-bottom: 10px;
+		.music-article-header-image{
+			position:relative;
+			width:487px;
+			height:331px;
+			background-size: cover;
+			background-position: center center;
+	  		background-repeat: no-repeat;
+
+	  		h1{
+				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
+				font-family: $base-font;
+				position:absolute;
+				bottom:0;
+				right:0;
+				font-size:1.5em;
+				text-shadow: 0px 2px rgba(0, 0, 0, .9);
+				color:#fff;
+				padding: 20px 25px;
+				width:100%;
+			}
+		}
+
+		.music-article-button{
+			display: inline-block;
+			width:196px;
+			height:41px;
+			background:transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
+			text-indent:-9999px;
+			margin:34px 0 0 37px;
+		}
+		.music-article-button-listen{
+			background-position:0 -42px;
+		}
+		.music-article-button-tweet{
+			background-position:0 -84px;
+		}
+		.music-article-button-toc{
+			background-position:0 -126px;
+		}
+		.music-article-button-pressed{
+			background-position-x:-197px;
+		}
+	}
+
+	.music-article-container .x-scroll-view{
+		background:#e7e7e7 url(../images/article-bg.png);
+		@include box-shadow(inset rgba(0,0,0,0.7) 5px 0px 5px);
+	}
+
+	.music-article-content{
+		padding:15px;
+
+		p{
+			margin-bottom:15px;
+			font-size:0.8em;
+			line-height:1.6em;
+		}
 	}
 }
+
+@include article('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
+@include article('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
+@include article('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
+@include article('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
+@include article('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));

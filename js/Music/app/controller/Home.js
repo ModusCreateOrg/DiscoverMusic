@@ -11,7 +11,7 @@ Ext.define('Music.controller.Home', {
     stores: ['Articles', 'Genres'],
     views: [
         'landscape.Home', 'ArticlePreview', 'Article', 'MainFlow','Drawer',
-        'AboutPanel','Search','Controls','Player','Favorites','ArticlePreview'
+        'AboutPanel','Search','Player','Favorites','ArticlePreview'
     ],
     
     config: {

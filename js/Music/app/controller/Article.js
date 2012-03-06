@@ -14,16 +14,17 @@ Ext.define('Music.controller.Article', {
 		refs	: {
             player  : {
                 selector: 'home player'
+            },
+            mainFlow : {
+                xtype: 'mainflow',
+                selector: 'home mainflow'
             }
 		},
         control : {
-            'article controls'  : {
+            'article'  : {
                 play    : 'playSong',
-                favorite: 'onAddToFavorites'
-            },
-            'article' : {
-                show    : 'onShowArticle',
-                hide    : 'onHideArticle'
+                favorite: 'onAddToFavorites',
+                toc     : 'onGenreToc'
             }
         }
     },
@@ -51,15 +52,10 @@ Ext.define('Music.controller.Article', {
         Ext.Msg.alert('Alert','Added to your favorites!');
     },
 
-    onHideArticle   : function(){
-        this.getPlayer().hide();
-    },
+    onGenreToc  : function(article,model){
+        var mainFlow = this.getMainFlow(),
+            toc = mainFlow.down('#'+model.get('genreKey'));
 
-    onShowArticle   : function(view,model){
-        var me = this;
-            
-        if(model.get('audioFile')){
-            me.getPlayer().show();
-        }
+        mainFlow.setActiveItem(toc);
     }
 });

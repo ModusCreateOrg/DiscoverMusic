@@ -4,7 +4,6 @@ html { -webkit-font-smoothing: antialiased; }
 body { margin: 0; padding: 0; }
 
 .music-app-title {
-	// @include background-image(linear-gradient(color-stops(rgb(79, 82, 82)), rgb(20, 20, 20)));
 	background: url('../images/topbar-texture.png') repeat-x;
 	margin: 0 !important;
 	box-shadow: 0px 2px 7px rgba(0, 0, 0, .75);
