@@ -22,13 +22,6 @@ Ext.define('Music.view.landscape.Home',{
 				title	: '<span class="app-title">Discover Music</span>',
 				width	: 252
 			},{
-				xtype	: 'button',
-				action	: 'globaltoc',
-				iconMask: true,
-				iconCls : 'toc-mask',
-				margin	: 10,
-				height	: 40
-			},{
 				xtype	: 'container',
 				flex	: 1,
 				padding	: 3,
@@ -37,10 +30,17 @@ Ext.define('Music.view.landscape.Home',{
 				}]
 			},{
 				xtype	: 'button',
+				action	: 'globaltoc',
+				iconMask: true,
+				iconCls : 'toc-mask',
+				margin	: '10 5 10 5',
+				height	: 40
+			},{
+				xtype	: 'button',
 				iconCls	: 'heart',
 				action	: 'favorites',
 				iconMask: true,
-				margin	: '10 5 10 10',
+				margin	: '10 5 10 5',
 				height	: 40
 			},{
 				xtype	: 'button',
