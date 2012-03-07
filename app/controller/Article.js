@@ -31,7 +31,8 @@ Ext.define('Music.controller.Article', {
             'article' : {
                 play     : 'playSong',
                 favorite : 'onAddToFavorites',
-                toc      : 'onGenreToc'
+                toc      : 'onGenreToc',
+                tweet    : 'onTweet'
             }
         }
     },
@@ -58,10 +59,36 @@ Ext.define('Music.controller.Article', {
         Ext.Msg.alert('Alert', 'Added to your favorites!');
     },
 
-    onGenreToc : function(article, model) {
+    onGenreToc : function(view, model) {
         var mainFlow = this.getMainFlow(),
             toc = mainFlow.down('#' + model.get('genreKey'));
 
         mainFlow.setActiveItem(toc);
+    },
+
+    onTweet : function(view,model){
+        var me = this;
+        console.log(model.getId());
+        if(!me.overlay){
+            me.overlay = Ext.Viewport.add({
+                xtype   : 'panel',
+                modal   : true,
+                hideOnMaskTap:true,
+                centered: true,
+                width   : 500,
+                height  : 220,
+                padding : 20
+            });
+            twttr.anywhere(function (T) {
+                T(me.overlay.renderElement.down('.x-inner').dom).tweetBox({
+                    height: 100,
+                    width: 450,
+                    label:'Share this story',
+                    defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate'
+                });
+            });
+        }
+
+        me.overlay.show();
     }
 });
