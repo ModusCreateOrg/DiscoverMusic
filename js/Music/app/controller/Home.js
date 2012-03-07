@@ -50,7 +50,13 @@ Ext.define('Music.controller.Home', {
                 selector: 'home mainflow'
             }
         },
+        routes: {
+            'article/:id': 'onArticleActive'
+        },
         control: {
+            'mainflow'  :{
+                activeitemchange: 'onArticleActive'
+            },
             'home toolbar button[action=globaltoc]': {
                 tap     : 'onShowGlobalToc'
             },
@@ -115,6 +121,9 @@ Ext.define('Music.controller.Home', {
         drawer.addArticles();
 
         me.loadMask.hide();
+
+        //custom event fired when articles are loaded
+        Ext.Viewport.fireEvent('loaded');
     },
 
     onGenresLoaded    : function(){
@@ -234,8 +243,9 @@ Ext.define('Music.controller.Home', {
     // when a user taps on the "Read & Listen"
     onShowArticle: function(record) {
         var me = this,
+            id = record.getId?record.getId():record,
             mainFlow = me.getMainFlow(),
-            article = mainFlow.down('#article-'+(Ext.isNumber(record)?record:record.getId()));
+            article = mainFlow.down('#article-'+id);
 
         mainFlow.setActiveItem(article);
     },
@@ -262,5 +272,29 @@ Ext.define('Music.controller.Home', {
             view = mainFlow.down('globaltoc');
         
         mainFlow.setActiveItem(view);
+    },
+
+    onArticleActive : function(id,item,oldItem){
+        var me = this;
+
+        //if item is not null we need to update
+        //the browser's URL HASH
+        if(item){
+            if(item.xtype === 'article'){
+                me.redirectTo(item.getModel());
+            }
+        }else{
+            //if mainFlow is null means the user is
+            //getting to the app for the first time
+            if(!me.getMainFlow()){
+                //we need to wait until all articles are loaded
+                //and then activate the given article
+                Ext.Viewport.on('loaded',function(){
+                    var view = me.getMainFlow().down('#article-'+id);
+                    me.getMainFlow().setActiveItem(view);
+                },me);
+                
+            }
+        }
     }
 });
