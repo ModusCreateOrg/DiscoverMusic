@@ -32,12 +32,12 @@ Ext.define('Music.view.landscape.Home',{
 				xtype	: 'button',
 				action	: 'globaltoc',
 				iconMask: true,
-				iconCls : 'toc-mask',
+				iconCls : 'toc-icon',
 				margin	: '10 5 10 5',
 				height	: 40
 			},{
 				xtype	: 'button',
-				iconCls	: 'favorite',
+				iconCls	: 'favorite-icon',
 				action	: 'favorites',
 				iconMask: true,
 				margin	: '10 5 10 5',
@@ -45,7 +45,7 @@ Ext.define('Music.view.landscape.Home',{
 			},{
 				xtype	: 'button',
 				action	: 'search',
-				iconCls	: 'search3',
+				iconCls	: 'search-icon',
 				iconMask: true,
 				margin	: '10 5 10 5',
 				height	: 40
