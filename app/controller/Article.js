@@ -68,7 +68,7 @@ Ext.define('Music.controller.Article', {
 
     onTweet : function(view,model){
         var me = this;
-        console.log(model.getId());
+        
         if(!me.overlay){
             me.overlay = Ext.Viewport.add({
                 xtype   : 'panel',
@@ -79,16 +79,24 @@ Ext.define('Music.controller.Article', {
                 height  : 220,
                 padding : 20
             });
-            twttr.anywhere(function (T) {
-                T(me.overlay.renderElement.down('.x-inner').dom).tweetBox({
-                    height: 100,
-                    width: 450,
-                    label:'Share this story',
-                    defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate'
-                });
-            });
+            me.body = me.overlay.renderElement.down('.x-inner');
         }
 
+        if(me.body.dom.hasChildNodes()){
+            var dom = me.body.dom;
+            while ( dom.childNodes.length >= 1 ){
+                Ext.removeNode(dom.firstChild);
+            }
+        }
+
+        twttr.anywhere(function (T) {
+            T(me.body.dom).tweetBox({
+                height: 100,
+                width: 450,
+                label:'Share this story',
+                defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate'
+            });
+        });
         me.overlay.show();
     }
 });
