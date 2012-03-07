@@ -45,7 +45,7 @@ Ext.define('Music.view.landscape.Home',{
 			},{
 				xtype	: 'button',
 				action	: 'search',
-				iconCls	: 'search',
+				iconCls	: 'search3',
 				iconMask: true,
 				margin	: '10 5 10 5',
 				height	: 40
