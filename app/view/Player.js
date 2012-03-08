@@ -14,7 +14,7 @@ Ext.define('Music.view.Player',{
 		cls		: 'music-player',
 		hidden	: true,
 		data	: {
-			time:'00:00 / 00:00',
+			time:'00:00',
 			title:''
 		},
 		tpl		: [
@@ -80,10 +80,10 @@ Ext.define('Music.view.Player',{
 	},
 
 	onPlay	: function(){
-		this.element.removeCls('music-player-paused');
+		this.element.addCls('music-player-paused');
 	},
 
 	onPause	: function(){
-		this.element.addCls('music-player-paused');
+		this.element.removeCls('music-player-paused');
 	}
 });
