@@ -20,7 +20,8 @@ Ext.define('Music.view.Player',{
 		tpl		: [
 			'<div class="music-player-button"></div>',
 			'<div class="music-player-timer">{time}</div>',
-			'<div class="music-player-title">{title}</div>'
+			'<div class="music-player-title">{title}</div>',
+			'<div class="music-player-close"></div>'
 		],
 		items	: [{
 			xtype	: 'audio',
@@ -34,7 +35,6 @@ Ext.define('Music.view.Player',{
         
         me.callParent();
 
-        me.element.addCls('music-player-paused');
         me.element.on('tap',me.onPlayPause,me);
         
         audio.on('timeupdate',me.onUpdateTime,me);
@@ -63,12 +63,18 @@ Ext.define('Music.view.Player',{
 		var me = this,
 			audio = me.down('audio');
 
-		if(audio.isPlaying()){
+		if(event.getTarget('.music-player-close')){
 			audio.pause();
 			me.onPause();
+			me.hide();
 		}else{
-			audio.play();
-			me.onPlay();
+			if(audio.isPlaying()){
+				audio.pause();
+				me.onPause();
+			}else{
+				audio.play();
+				me.onPlay();
+			}
 		}
 	},
 
