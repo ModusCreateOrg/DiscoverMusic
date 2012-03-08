@@ -187,8 +187,8 @@
 			left:0px;
 			@include background-image(linear-gradient($bg-color1, $bg-color2));
 			color:#fff;
+			font-family: $base-font;
 			font-size:0.9em;
-			font-weight:bold;
 			text-transform:uppercase;
 			padding:10px 20px;
 			border: 1px solid rgba(255, 255, 255, .5);
