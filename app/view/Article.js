@@ -43,6 +43,10 @@ Ext.define('Music.view.Article', {
 				xtype	: 'component',
 				cls		: 'music-article-content',
 				tpl		: new Ext.XTemplate(
+					'<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/487/{image});">',
+						'<h1>{title}</h1>',
+						'<h2>{genre}</h2>',
+					'</div>',
 					'<h3>{author}</h3>',
 					'<h4>{[ this.dateFormat(values.date) ]}</h4>',
 					'{content}',{
@@ -66,6 +70,10 @@ Ext.define('Music.view.Article', {
             touchstart : me.onPress,
             touchend   : me.onRelease
 		});
+		me.articleTitle = me.renderElement.down('.music-article-image');
+
+		Ext.Viewport.on('orientationchange',me.onOrientationChange,me);
+		Ext.Viewport.fireEvent('orientationchange',Ext.Viewport,Ext.Viewport.orientation);
     },
 
     onPress	: function(event){
@@ -112,5 +120,18 @@ Ext.define('Music.view.Article', {
 		content.setData(model.getData());
 		
 		return model;
+    },
+
+	onOrientationChange : function(viewport,orientation){
+		var me = this,
+			header = me.down('component[cls=music-article-header]');
+
+		if(orientation === Ext.Viewport.PORTRAIT){
+            header.hide();
+            me.articleTitle.setStyle('display','block');
+        }else{
+            header.show();
+            me.articleTitle.setStyle('display','none');
+        }
     }
 });
