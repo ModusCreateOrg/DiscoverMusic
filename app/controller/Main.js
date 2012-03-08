@@ -67,6 +67,9 @@ Ext.define('Music.controller.Main', {
             'article/:id' : 'onArticleActive'
         },
         control : {
+            'main'  : {
+                titletap : 'onShowGlobalToc'
+            },
             'mainflow' : {
                 activeitemchange : 'onArticleActive'
             },

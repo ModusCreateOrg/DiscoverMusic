@@ -53,5 +53,19 @@ Ext.define('Music.view.landscape.Main',{
 		},{
 			xtype : 'mainflow'
 		}]
+	},
+
+	initialize : function(){
+		var me = this;
+
+		me.callParent();
+
+		me.renderElement.on('tap',me.onTap,me);
+	},
+
+	onTap : function(event){
+		if(event.getTarget('.app-title')){
+			this.fireEvent('titletap');
+		}
 	}
 });
