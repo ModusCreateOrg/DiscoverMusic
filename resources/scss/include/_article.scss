@@ -187,8 +187,8 @@
 			left:0px;
 			@include background-image(linear-gradient($bg-color1, $bg-color2));
 			color:#fff;
+			font-family: $base-font;
 			font-size:0.9em;
-			font-weight:bold;
 			text-transform:uppercase;
 			padding:10px 20px;
 			border: 1px solid rgba(255, 255, 255, .5);
@@ -223,11 +223,13 @@
 			}
 		}
 
-		p{
-			margin-top:10px;
-			font-size:0.8em;
-			line-height:1.6em;
-			color:#989898;
+		p {
+			margin: 15px 15px 0px 15px;
+			font-size: 0.7em;
+			line-height: 1.6em;
+			color: #999;
+			margin: 15px 15px 0px 15px;
+			font-style: italic;
 		}
 
 		.music-article-button{
@@ -260,13 +262,17 @@
 	.music-article-content{
 		padding:15px;
 
-		h3,h4{
-			color:#7a7a7a;
-			font-weight:normal;
-			font-size:1.2em;
+		h3, h4 {
+			color: #7A7A7A;
+			font-weight: normal;
+			font-size: 1em;
+			text-shadow: 0px 1px white;
+			font-weight: bold;
 		}
-		h4{
+
+		h4 {
 			margin-bottom:20px;
+			font-size: .8em;
 		}
 
 		p{
