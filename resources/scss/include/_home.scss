@@ -16,8 +16,8 @@ body { margin: 0; padding: 0; }
 	.x-button-normal {
 		background: none;
 		border: none;
-		&.x-button-icon {
-			width: 30px;
+		.x-button-icon {
+			width: 30px; height: 30px;
 		}
 	}
 
