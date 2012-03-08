@@ -12,6 +12,15 @@ body { margin: 0; padding: 0; }
 	z-index: 1;	
 	height: 60px;
 
+	// unstyle our buttons
+	.x-button-normal {
+		background: none;
+		border: none;
+		.x-icon-mask {
+			width: 35px;
+		}
+	}
+
 	
 	.x-innerhtml {
 		font-family: $base-font;
