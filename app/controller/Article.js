@@ -52,11 +52,15 @@ Ext.define('Music.controller.Article', {
             favorites = Ext.data.StoreManager.lookup('favorites'),
             fav = model.copy();
 
-        fav.set('articleId', model.getId());
-        favorites.add(fav);
-        favorites.sync();
-
-        Ext.Msg.alert('Alert', 'Added to your favorites!');
+        if(favorites.find('articleId',model.getId()) === -1){
+            fav.set('articleId', model.getId());
+            favorites.add(fav);
+            favorites.each(function(f){
+                f.set('editable',false);
+            });
+            fav.commit();
+            Ext.Msg.alert('Alert', 'Added to your favorites!');
+        }
     },
 
     onGenreToc : function(view, model) {

@@ -9,6 +9,9 @@
 Ext.define('Music.view.Player',{
     extend      : 'Ext.Container',
     alias       : 'widget.player',
+    requires	: [
+		'Ext.Audio'
+    ],
 
     config		: {
 		cls		: 'music-player',

@@ -50,11 +50,7 @@ Ext.define('Music.controller.Favorites', {
 
         if (event.getTarget('.music-favorites-remove')) {
             var store = dataview.getStore();
-
-            me.setEditable(store, false);
             store.remove(record);
-            store.sync();
-            me.setEditable(store, true);
         } else {
             mainFlow.setActiveItem(article);
         }
@@ -67,19 +63,20 @@ Ext.define('Music.controller.Favorites', {
             btn = mainFlow.down('favorites button[action=edit]');
 
         if (favorites.getEditing()) {
-            favorites.setEditing(false);
             btn.setText('Edit');
         } else {
-            favorites.setEditing(true);
             btn.setText('Done');
         }
+        favorites.setEditing(!favorites.getEditing());
 
         me.setEditable(favorites.getStore(), favorites.getEditing());
+
     },
 
     setEditable : function(store, value) {
         store.each(function(fav) {
             fav.set('editable', value);
+            //fav.commit();
         });
     }
 

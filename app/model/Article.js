@@ -33,7 +33,7 @@ Ext.define('Music.model.Article', {
             name: 'author',
             mapping: 'performance',
             convert:function(list){
-                if(list && list.length>0){
+                if(list && list.length>0 && list[0].artist){
                     return list[0].artist.$text;
                 }
             }

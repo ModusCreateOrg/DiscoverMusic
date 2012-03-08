@@ -8,8 +8,12 @@
 
 Ext.define('Music.store.Favorites',{
 	extend      : 'Ext.data.Store',
+	requires	: [
+		'Ext.data.proxy.LocalStorage'
+	],
 
 	config		: {
+		autoSync: true,
 		model	: 'Music.model.Article',
 		storeId	: 'favorites',
 		autoLoad: true,
