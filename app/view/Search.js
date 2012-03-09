@@ -26,7 +26,7 @@ Ext.define('Music.view.Search', {
             cls  : 'music-genre-filters',
             items: [{
                 xtype   : 'fieldset',
-                title   : 'Genre Filters',
+                title   : 'Filter by Genre',
                 defaults: {
                     xtype:'checkboxfield',
                     labelWidth:'70%'

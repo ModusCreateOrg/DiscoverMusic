@@ -1,6 +1,26 @@
 .music-search{
+  background: url('../images/article-view-sidebar-bg.png');
+
 	.music-result-article{
-		width:235px;
-		height:235px;
+    float:left;
+    position:relative;
+    margin: 15px;
+    width: 215px;
+    height: 215px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include border-radius(5px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 6px #000;  
 	}
+
+  .music-genre-filters {
+    .x-form-fieldset-title .x-innerhtml {
+      color: white;
+      text-shadow: 0px 1px #000;
+    }
+  }
 }
