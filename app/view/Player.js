@@ -24,7 +24,7 @@ Ext.define('Music.view.Player',{
 			'<div class="music-player-button"></div>',
 			'<div class="music-player-timer">{time}</div>',
 			'<div class="music-player-title">{title}</div>',
-			'<div class="music-player-close"></div>'
+			'<div class="music-player-close">X</div>'
 		],
 		items	: [{
 			xtype	: 'audio',
