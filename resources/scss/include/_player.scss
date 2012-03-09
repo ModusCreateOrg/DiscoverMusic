@@ -58,10 +58,17 @@
 	white-space: nowrap;	
 }
 .music-player-close{
-	position:absolute;
-	right:5px;
-	top:5px;
-	width:25px;
-	height:25px;
-	background:#f00;
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	width: 30px;
+	height: 29px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#4F5050), to(#171818));
+	background-image: -webkit-linear-gradient(top, #4F5050, #171818);
+	border-radius: 10px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 25px;
+	border: 1px solid black;
+	color: #CCC;
 }

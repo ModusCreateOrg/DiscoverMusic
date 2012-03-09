@@ -33,21 +33,21 @@ Ext.define('Music.view.landscape.Main',{
 				action	: 'globaltoc',
 				iconMask: true,
 				iconCls : 'toc-icon',
-				margin	: '6 5 10 5',
+				margin	: '9 5 10 5',
 				height	: 40
 			},{
 				xtype	: 'button',
 				iconCls	: 'favorite-icon',
 				action	: 'favorites',
 				iconMask: true,
-				margin	: '6 5 10 5',
+				margin	: '9 5 10 5',
 				height	: 40
 			},{
 				xtype	: 'button',
 				action	: 'search',
 				iconCls	: 'search-icon',
 				iconMask: true,
-				margin	: '6 5 10 5',
+				margin	: '9 5 10 5',
 				height	: 40
 			}]
 		},{

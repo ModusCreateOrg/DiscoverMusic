@@ -21,7 +21,7 @@ Ext.define('Music.view.Favorites',{
 		itemTpl	: [
 			'<div class="music-result-article" style="background-image:url(http://src.sencha.io/300/{image})">',
 				'<tpl if="editable == true">',
-				'<div class="music-favorites-remove"></div>',
+				'<div class="music-favorites-remove">X</div>',
 				'</tpl>',
 				'<h2>{title}</h2>',
 			'</div>'

@@ -58,8 +58,16 @@ Ext.define('Music.controller.Article', {
             favorites.each(function(f){
                 f.set('editable',false);
             });
+
             fav.commit();
-            Ext.Msg.alert('Alert', 'Added to your favorites!');
+
+            Ext.Msg.show({
+               title: 'Favorite Added',
+               message: '<strong>' + model.get('title') + '</strong> was to your Favorites!',
+               width: 750,
+               buttons: Ext.MessageBox.OK,
+            });
+
         }
     },
 
