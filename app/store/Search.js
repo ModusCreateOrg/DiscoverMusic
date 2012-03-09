@@ -8,21 +8,26 @@
 
 Ext.define('Music.store.Search', {
     extend  : 'Ext.data.Store',
+    alias   : 'store.search',
+    requires: ['Ext.data.proxy.JsonP'],
     config	: {
 		model   : 'Music.model.Article',
 		proxy   : {
             type    : 'jsonp',
             url     : 'http://api.npr.org/query',
-            callbackKey: 'callback'
+            callbackKey: 'callback',
             reader  : {
-                type    : 'json'
+                type    : 'json',
+                rootProperty : 'list.story'
             },
             extraParams: {
                 apiKey: 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
                 requiredAssets: 'image',
-                numResults: 10
-                transform: 'source',
-                output: 'JSON'                
+                numResults: 10,
+                dateType:'story',
+                sort:'dateDesc',
+                action:'Or',
+                output:'JSON'
             }
         }
     }

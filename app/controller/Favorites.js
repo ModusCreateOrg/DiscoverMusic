@@ -64,6 +64,7 @@ Ext.define('Music.controller.Favorites', {
 
         if (favorites.getEditing()) {
             btn.setText('Edit');
+            favorites.getStore().sync();
         } else {
             btn.setText('Done');
         }
@@ -76,7 +77,6 @@ Ext.define('Music.controller.Favorites', {
     setEditable : function(store, value) {
         store.each(function(fav) {
             fav.set('editable', value);
-            //fav.commit();
         });
     }
 
