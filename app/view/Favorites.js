@@ -32,10 +32,11 @@ Ext.define('Music.view.Favorites',{
 			ui		: 'transparent',
 			items	: [{
 				xtype	:'title',
-				title	: 'Your favorites'
+				title	: 'Your Favorites'
 			},{
 				text	: 'Edit',
-				action	: 'edit'
+				action	: 'edit',
+				margin: '10 0 0 0 '
 			}]
 		}]
     }

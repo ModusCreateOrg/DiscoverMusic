@@ -1,5 +1,15 @@
 .music-favorites { 
 	background: url('../images/article-view-sidebar-bg.png');
+
+	.x-toolbar { 
+		border: none;
+		.x-innerhtml {
+			color: white;
+			padding-top: 7px;
+			text-shadow: 0px 3px black;			
+		}
+	}
+
 }
 
 .music-result-article {
@@ -12,7 +22,7 @@
 	background-position: center center;
   background-repeat: no-repeat;
   @include border-radius(5px);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 2px solid rgba(255, 255, 255, 0.15);
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	box-shadow: 0px 5px 6px #000;    
