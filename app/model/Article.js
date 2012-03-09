@@ -17,7 +17,23 @@ Ext.define('Music.model.Article', {
             mapping: 'title.$text'
         },
         {
-            name: 'image'
+            name: 'image',
+            convert : function(value,model){
+                if(Ext.isArray(value)){
+                    var primary;
+                    //we search for the large image
+                    for (var i = 0, len = value.length; i < len; i++) {
+                        primary = value[i];
+                        if (primary.enlargement) {
+                            return primary.enlargement.src;
+                        }
+                    }
+                    //if there's not a large version use anything else
+                    return primary.src;
+                }else{
+                    return value;
+                }
+            }
         },
         {
             name: 'teaser',

@@ -1,4 +1,4 @@
-.music-favorites-article{
+.music-result-article{
 	float:left;
 	position:relative;
 	margin:5px;
@@ -11,7 +11,7 @@
     @include border-radius(5px);
 }
 
-.music-favorites-article h2{
+.music-result-article h2{
 	position:absolute;
 	bottom:0;
 	width:100%;
