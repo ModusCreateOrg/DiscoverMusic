@@ -1,7 +1,7 @@
 .music-favorites-article{
 	float:left;
 	position:relative;
-	margin:5px;
+	margin: 15px;
 	width:246px;
 	height:246px;
 	background-size: cover;
@@ -19,15 +19,25 @@
 	color:#fff;
 	padding:10px;
 	@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.75))));
-	font-family: $base-font;
-	font-size:0.6em;
+	font-size:0.8em;
+	font-weight: bold;
 }
 
 .music-favorites-remove{
-	position:absolute;
-	top:-10px;
-	right:-10px;
-	width:20px;
-	height:20px;
-	background-color:red;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 40px;
+	height: 40px;
+	color: white;
+	text-align: center;
+	padding-top: 9px;
+	font-weight: bold;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#C31508), to(#780C04));
+	background-image: -webkit-linear-gradient(top, #C31508, #780C04);
+	-webkit-border-radius: 13px;
+	-webkit-border-bottom-left-radius: 0;
+	text-shadow: 0px 1px #780C04;
+	box-shadow: -4px 3px 7px rgba(0,0,0,0.5);
+	border: 1px solid #C31508;
 }
