@@ -3,7 +3,7 @@
  ************************************/
 
 .global-toc{
-	@include background-image(linear-gradient(color-stops(#1a1a1a 80%,#262626)));
+	background: url('../images/article-view-sidebar-bg.png');
 
 	.global-toc-featured-story {
 		.x-innerhtml {
@@ -61,10 +61,11 @@
 @mixin global-toc($genre, $bg-color1, $bg-color2){
 	.global-toc{
 		.global-toc-right-sidebar { 
-			border-left: 10px solid rgba(0, 0, 0, 1);
+			border-left: 10px solid #000;
 		}
 		.global-toc-genre-#{$genre}{
-			background: #1a1a1a;
+			background: url('../images/article-view-sidebar-bg.png');
+			background-attachment: fixed;
 
 			.global-toc-genre-image{
 			   	 position:relative;
