@@ -65,7 +65,7 @@ Ext.define('Music.controller.Article', {
                title: 'Favorite Added',
                message: '<strong>' + model.get('title') + '</strong> was to your Favorites!',
                width: 750,
-               buttons: Ext.MessageBox.OK,
+               buttons: Ext.MessageBox.OK
             });
 
         }

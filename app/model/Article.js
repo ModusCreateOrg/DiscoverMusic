@@ -106,7 +106,21 @@ Ext.define('Music.model.Article', {
             name: 'genre'
         },
         {
-            name: 'genreKey'
+            name: 'genreKey',
+            convert:function(value,data){
+                var parent;
+
+                if(Ext.isString(value)){
+                    return value;
+                }else if(parent = data.raw.parent){
+                    for(var i=0,len=parent.length;i<len;i++){
+                        var genre = parent[i];
+                        if(genre.type === 'genre'){
+                            return genre.id;
+                        }
+                    }
+                }
+            }
         },
         {
             name: 'editable',

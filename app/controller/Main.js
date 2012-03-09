@@ -197,12 +197,17 @@ Ext.define('Music.controller.Main', {
             list[i].image = null;
 
             if (images) {
+                //search for the primary image
                 for (var j = 0, size = images.length; j < size; j++) {
                     primary = images[j];
                     if (primary.type === 'primary' && primary.enlargement) {
                         list[i].image = primary.enlargement.src;
                         break;
                     }
+                }
+                //if not primary image found, we use the default image provided
+                if(!list[i].image && primary && primary.src){
+                    list[i].image = primary.src;
                 }
             }
         }

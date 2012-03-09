@@ -11,6 +11,7 @@ Ext.define('Music.controller.Search', {
     config  : {
         models: ['Article', 'Genre'],
         stores: ['Articles', 'Genres','Search'],
+        filters: Ext.create('Ext.util.MixedCollection'),
         refs  : {
             search : {
                 selector : 'mainflow search'
@@ -25,6 +26,13 @@ Ext.define('Music.controller.Search', {
         control : {
             'mainflow search dataview toolbar button[action=search]' : {
                 tap : 'onSearchClick'
+            },
+            'mainflow search dataview toolbar searchfield' : {
+                keyup: 'onSearchReturn'
+            },
+            'mainflow search checkboxfield' : {
+                check   : 'addFilter',
+                uncheck : 'removeFilter'
             }
         }
     },
@@ -37,6 +45,38 @@ Ext.define('Music.controller.Search', {
         dataview.getStore().load({
             params : {searchTerm:textfield.getValue()}
         });
+    },
+
+    onSearchReturn : function(field,event){
+        console.log(event);
+    },
+
+    addFilter   : function(checkbox){
+        var me = this,
+            dataview = me.getResults(),
+            filters = me.getFilters();
+
+        filters.add(checkbox.getName(),checkbox._value);
+        me.filter(dataview,filters.getRange());
+    },
+
+    removeFilter   : function(checkbox){
+        var me = this,
+            dataview = me.getResults(),
+            filters = me.getFilters();
+
+        filters.remove(filters.getByKey(checkbox.getName()));
+        me.filter(dataview,filters.getRange());
+    },
+
+    filter: function(dataview,genres){
+        dataview.getStore().clearFilter();
+        
+        if(genres.length > 0){
+            dataview.getStore().filterBy(function(record,id){
+                return Ext.Array.contains(genres,record.get('genreKey'));
+            });
+        }
     }
 
 });

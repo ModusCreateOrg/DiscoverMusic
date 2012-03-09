@@ -33,23 +33,23 @@ Ext.define('Music.view.Search', {
                 },
                 items   : [{
                     label   : 'Rock / Pop / Folk',
-                    value   : 'rockPopFolk',
+                    value   : '10001',
                     name    : 'rockPopFolk'
                 },{
                     label   : 'Jazz & Blues',
-                    value   : 'jazzBlues',
+                    value   : '10003',
                     name    : 'jazzBlues'
                 },{
                     label   : 'Classical',
-                    value   : 'classical',
+                    value   : '10002',
                     name    : 'classical'
                 },{
                     label   : 'Hip-Hop / R&B',
-                    value   : 'hipHopRB',
+                    value   : '10004',
                     name    : 'hipHopRB'
                 },{
                     label   : 'World',
-                    value   : 'world',
+                    value   : '10005',
                     name    : 'world'
                 }]
             }]

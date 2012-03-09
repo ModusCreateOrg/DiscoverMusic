@@ -22,8 +22,9 @@ Ext.define('Music.store.Search', {
             },
             extraParams: {
                 apiKey: 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
+                id:'10001,10003,10002,10004,10005',
                 requiredAssets: 'image',
-                numResults: 10,
+                numResults: 12,
                 dateType:'story',
                 sort:'dateDesc',
                 action:'Or',
