@@ -1,14 +1,21 @@
+.music-favorites { 
+	background: url('../images/article-view-sidebar-bg.png');
+}
+
 .music-favorites-article{
 	float:left;
 	position:relative;
 	margin: 15px;
-	width:246px;
-	height:246px;
+	width: 225px;
+	height: 225px;
 	background-size: cover;
 	background-position: center center;
-    background-repeat: no-repeat;
-    border:2px solid #000;
-    @include border-radius(5px);
+  background-repeat: no-repeat;
+  @include border-radius(5px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0px 5px 6px #000;    
 }
 
 .music-favorites-article h2{
