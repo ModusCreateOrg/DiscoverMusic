@@ -70,7 +70,9 @@ Ext.define('Music.controller.Search', {
     },
 
     onSearchReturn : function(field,event){
-        console.log(event.event.which);
+        if(event.event.which === 13){
+            this.onSearchTap();
+        }
     },
 
     addFilter   : function(checkbox){
