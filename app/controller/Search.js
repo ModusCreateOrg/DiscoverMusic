@@ -21,11 +21,17 @@ Ext.define('Music.controller.Search', {
             },
             query : {
                 selector : 'mainflow search searchfield'
+            },
+            mainFlow : {
+                selector : 'main mainflow'
             }
         },
         control : {
+            'mainflow search dataview' : {
+                itemtap : 'onArticleTap'
+            },
             'mainflow search dataview toolbar button[action=search]' : {
-                tap : 'onSearchClick'
+                tap : 'onSearchTap'
             },
             'mainflow search dataview toolbar searchfield' : {
                 keyup: 'onSearchReturn'
@@ -37,7 +43,7 @@ Ext.define('Music.controller.Search', {
         }
     },
 
-    onSearchClick : function(){
+    onSearchTap : function(){
         var me = this,
             dataview = me.getResults(),
             textfield = me.getQuery();
@@ -47,8 +53,24 @@ Ext.define('Music.controller.Search', {
         });
     },
 
+    onArticleTap : function(view,index,target,record){
+        var me = this,
+            mainFlow = me.getMainFlow(),
+            article = mainFlow.down('#article-' + record.getId());
+
+        if(!article){
+            article = mainFlow.add({
+                xtype   : 'article',
+                itemId  : 'article-'+record.getId(),
+                model   : record,
+                data    : record.getData()
+            });
+        }
+        mainFlow.setActiveItem(article);
+    },
+
     onSearchReturn : function(field,event){
-        console.log(event);
+        console.log(event.event.which);
     },
 
     addFilter   : function(checkbox){

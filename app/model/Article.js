@@ -95,7 +95,8 @@ Ext.define('Music.model.Article', {
                 if (audios) {
                     for (var i = 0, len = audios.length; i < len; i++) {
                         primary = audios[i];
-                        if (primary.type === 'primary' && primary.format.mp3 && primary.format.mp3.length > 0) {
+                        
+                        if (primary.type === 'primary' && primary.format.mp3 && primary.format.mp3.length) {
                             return primary.format.mp3[0].$text;
                         }
                     }
