@@ -26,7 +26,7 @@ Ext.define('Music.view.GlobalToc',{
 					'<div>Featured story</div>',
 					'<h2>{title}</h2>',
 				'</div>',
-				'<div class="global-toc-featured-content">{content}</div>'
+				'<div class="global-toc-featured-content">{text}</div>'
 			]
 		},{
 			xtype	: 'container',
