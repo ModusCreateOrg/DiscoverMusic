@@ -43,7 +43,7 @@ Ext.define('Music.view.Article', {
 				xtype	: 'component',
 				cls		: 'music-article-content',
 				tpl		: new Ext.XTemplate(
-					'<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/487/{image});">',
+					'<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/600/{image});">',
 						'<h1>{title}</h1>',
 						'<h2>{genre}</h2>',
 					'</div>',

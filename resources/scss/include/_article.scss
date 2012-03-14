@@ -223,30 +223,6 @@
 			margin: 15px 15px 0px 15px;
 			font-style: italic;
 		}
-
-		.music-article-button{
-			display: inline-block;
-			width:196px;
-			height:41px;
-			background:transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
-			text-indent:-9999px;
-			margin:34px 0 0 37px;
-		}
-		.music-article-button-listen{
-			background-position:0 -42px;
-		}
-		.music-article-button-tweet{
-			background-position:0 -84px;
-		}
-		.music-article-button-toc{
-			background-position:0 -126px;
-		}
-		.music-article-button-favorite-added{
-			background-position:0 -167px;
-		}
-		.music-article-button-pressed{
-			background-position-x:-197px;
-		}
 	}
 
 	.music-article-container .x-scroll-view{
@@ -308,6 +284,30 @@
 			font-size:0.8em;
 			line-height:1.6em;
 		}
+	}
+
+	.music-article-button{
+		display: inline-block;
+		width:196px;
+		height:41px;
+		background:transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
+		text-indent:-9999px;
+		margin:34px 0 0 37px;
+	}
+	.music-article-button-listen{
+		background-position:0 -42px;
+	}
+	.music-article-button-tweet{
+		background-position:0 -84px;
+	}
+	.music-article-button-toc{
+		background-position:0 -126px;
+	}
+	.music-article-button-favorite-added{
+		background-position:0 -167px;
+	}
+	.music-article-button-pressed{
+		background-position-x:-197px;
 	}
 }
 
