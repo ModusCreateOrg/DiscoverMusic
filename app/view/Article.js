@@ -49,7 +49,7 @@ Ext.define('Music.view.Article', {
 					'</div>',
 					'<h3>{author}</h3>',
 					'<h4>{[ this.dateFormat(values.date) ]}</h4>',
-					'{content}',{
+					'{text}',{
 						dateFormat : function(value){
 							return Ext.util.Format.date(value,'F d,Y');
 						}
