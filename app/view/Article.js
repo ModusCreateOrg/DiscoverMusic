@@ -27,7 +27,7 @@ Ext.define('Music.view.Article', {
 				'</div>',
 				'<p>{teaser}</p>',
 				'<div class="music-article-button music-article-button-listen">Listen to Story</div>',
-				'<div class="music-article-button music-article-button-favorite">Add to Favorites</div>',
+				'<div class="music-article-button <tpl if="isFavorite">music-article-button-favorite-added <tpl else> music-article-button-favorite</tpl> ">Add to Favorites</div>',
 				'<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
 				'<div class="music-article-button music-article-button-toc">Table of Contents</div>'
 			]
@@ -100,7 +100,7 @@ Ext.define('Music.view.Article', {
         if (event.getTarget('.music-article-button-listen')){
             return me.fireEvent('play', me.getModel());
         }
-        if (event.getTarget('.music-article-button-favorite')){
+        if (event.getTarget('.music-article-button-favorite') || event.getTarget('.music-article-button-favorite-added')){
             return me.fireEvent('favorite', me,me.getModel());
         }
         if (event.getTarget('.music-article-button-tweet')){

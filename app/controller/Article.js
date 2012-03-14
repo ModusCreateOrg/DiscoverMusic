@@ -23,7 +23,6 @@ Ext.define('Music.controller.Article', {
                 selector : 'main player'
             },
             mainFlow : {
-                xtype    : 'mainflow',
                 selector : 'main mainflow'
             }
         },
@@ -49,25 +48,33 @@ Ext.define('Music.controller.Article', {
 
     onAddToFavorites : function(view, model) {
         var me = this,
+            mainFlow = me.getMainFlow(),
+            article = mainFlow.getActiveItem(),
             favorites = Ext.data.StoreManager.lookup('favorites'),
-            fav = model.copy();
+            story = favorites.find('articleId',model.getId()),
+            btn;
 
-        if(favorites.find('articleId',model.getId()) === -1){
+        // if the article doesn't exist in the favorites store let's add it
+        if(story === -1){
+            var fav = model.copy();
             fav.set('articleId', model.getId());
             favorites.add(fav);
-            favorites.each(function(f){
-                f.set('editable',false);
-            });
+            me.setEditable(favorites,false);
 
             fav.commit();
 
-            Ext.Msg.show({
-               title: 'Favorite Added',
-               message: '<strong>' + model.get('title') + '</strong> was to your Favorites!',
-               width: 750,
-               buttons: Ext.MessageBox.OK
-            });
+            btn = article.renderElement.down('.music-article-button-favorite');
+            btn.removeCls('music-article-button-favorite');
+            btn.addCls('music-article-button-favorite-added');
 
+        }else{
+            //if the article exist we need to remove it
+            me.setEditable(favorites,false);
+            favorites.remove(favorites.getAt(story));
+            
+            btn = article.renderElement.down('.music-article-button-favorite-added');
+            btn.removeCls('music-article-button-favorite-added');
+            btn.addCls('music-article-button-favorite');
         }
     },
 
@@ -110,5 +117,11 @@ Ext.define('Music.controller.Article', {
             });
         });
         me.overlay.show();
+    },
+
+    setEditable : function(store,value){
+        store.each(function(f){
+            f.set('editable',value);
+        });
     }
 });
