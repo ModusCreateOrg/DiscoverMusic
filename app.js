@@ -5,7 +5,8 @@ Ext.Loader.setPath({
 //</debug>
 
 Ext.require([
-    'Ext.util.JSONP'
+    'Ext.util.JSONP',
+    'Ext.device.Geolocation'
 ]);
 
 Ext.application({

@@ -7,9 +7,14 @@
  */
 Ext.define('Music.controller.Main', {
     extend : 'Ext.app.Controller',
+
+    loadMask : undefined,
+
     config : {
-        apiUrl     : 'http://api.npr.org/query',
-        apiKey     : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
+        apiUrl              : 'http://api.npr.org/query',
+        stationFinderApiUrl : 'http://api.npr.org/stations.php',
+        apiKey              : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
+
         numResults : 10,
         models     : [
             'Article',
@@ -67,15 +72,20 @@ Ext.define('Music.controller.Main', {
             'article/:id' : 'onArticleActive'
         },
         control : {
-            'main'  : {
+            'main' : {
                 titletap : 'onShowGlobalToc'
             },
+
             'mainflow' : {
                 activeitemchange : 'onArticleActive'
             },
 
-            'main toolbar button[action=globaltoc]' : {
-                tap : 'onShowGlobalToc'
+            'main toolbar button[action=favorites]' : {
+                tap : 'onFavoritesTap'
+            },
+
+            'main toolbar button[action=findstations]' : {
+                tap : 'onFindStations'
             },
 
             'main toolbar button[action=search]' : {
@@ -99,10 +109,11 @@ Ext.define('Music.controller.Main', {
             'globaltoc' : {
                 storytap : 'onShowArticle'
             }
-        }
+        },
+        queryApiTpl : Ext.create('Ext.Template',
+            'select * from xml where url="http://moduscreate.com/nprStationFinderProxy.php?lat={latitude}&lon={longitude}"'
+        )
     },
-
-    loadMask : undefined,
 
     init : function() {
         var me = this,
@@ -128,6 +139,7 @@ Ext.define('Music.controller.Main', {
         //adding all the articles to the main flow
         drawer.getStore().each(function(genre) {
             var articles = me.db.get(genre.getId());
+
             genre.set('image', articles.getAt(0).get('image'));
             mainFlow.addArticles(genre, articles);
         });
@@ -142,6 +154,9 @@ Ext.define('Music.controller.Main', {
         drawer.addArticles();
 
         me.loadMask.hide();
+        me.loadMask.destroy();
+
+        delete me.loadMask;
 
         //custom event fired when articles are loaded
         Ext.Viewport.fireEvent('loaded');
@@ -160,8 +175,8 @@ Ext.define('Music.controller.Main', {
 
     loadData : function(genreId) {
         var me = this,
-            ts = localStorage.getItem('timestamp-' + genreId);
-        needRefresh = !ts || (parseInt(Ext.Date.format(new Date(), 'ymd'), 10) > parseInt(ts, 10));
+            ts = localStorage.getItem('timestamp-' + genreId),
+            needRefresh = !ts || +Ext.Date.format(new Date(), 'ymd') > +ts;
 
         if (needRefresh) {
             Ext.util.JSONP.request({
@@ -179,7 +194,8 @@ Ext.define('Music.controller.Main', {
                     output         : 'JSON'
                 }
             });
-        } else {
+        }
+        else {
             me.importDataToStore(genreId);
         }
     },
@@ -187,28 +203,34 @@ Ext.define('Music.controller.Main', {
     saveData : function(genreId, success, data) {
         var list = data.list.story,
             drawer = this.getDrawer(),
-            genre = drawer.getStore().getById(genreId);
+            genre = drawer.getStore().getById(genreId),
+            listLength = list.length,
+            i = 0,
+            listItem,
+            images,
+            primary;
 
-        for (var i = 0, len = list.length; i < len; i++) {
-            var images = list[i].image,
-                primary;
+        for (; i < listLength; i++) {
+            listItem = list[i];
 
-            list[i].genre = genre.get('name');
-            list[i].genreKey = genre.get('key');
-            list[i].image = null;
+            images = listItem.image;
+
+            listItem.genre = genre.get('name');
+            listItem.genreKey = genre.get('key');
+            listItem.image = null;
 
             if (images) {
                 //search for the primary image
                 for (var j = 0, size = images.length; j < size; j++) {
                     primary = images[j];
                     if (primary.type === 'primary' && primary.enlargement) {
-                        list[i].image = primary.enlargement.src;
+                        listItem.image = primary.enlargement.src;
                         break;
                     }
                 }
                 //if not primary image found, we use the default image provided
-                if(!list[i].image && primary && primary.src){
-                    list[i].image = primary.src;
+                if (!listItem.image && primary && primary.src) {
+                    listItem.image = primary.src;
                 }
             }
         }
@@ -221,8 +243,8 @@ Ext.define('Music.controller.Main', {
 
     importDataToStore : function(genreId, data) {
         var me = this,
-            store, records,
-            drawer = me.getDrawer();
+            drawer = me.getDrawer(),
+            store;
 
         if (!data) {
             data = Ext.decode(localStorage.getItem('articles-' + genreId));
@@ -231,7 +253,8 @@ Ext.define('Music.controller.Main', {
         if (!me.db.containsKey(genreId)) {
             store = Ext.create('Music.store.Articles');
             me.db.add(genreId, store);
-        } else {
+        }
+        else {
             store = me.db.get(genreId);
         }
 
@@ -251,7 +274,32 @@ Ext.define('Music.controller.Main', {
             me.startApp();
         }
     },
+    onFindStations    : function() {
+        Ext.device.Geolocation.getCurrentPosition({
+            scope   : this,
+            success : this.onGeoLocationFind
+        });
+    },
+    onGeoLocationFind : function(geoPosition) {
+        console.log('Coordinates', geoPosition.coords);
+        var me = this,
+            coords = geoPosition.coords,
+            query = this.getQueryApiTpl().apply(coords);
 
+        Ext.util.JSONP.request({
+            url         : 'http://query.yahooapis.com/v1/public/yql',
+            scope       : me,
+            callbackKey : 'callback',
+            callback    : function() {
+                console.log('NPR', arguments);
+            },
+
+            params : {
+                q      : query,
+                format : 'json'
+            }
+        });
+    },
     // when user taps on any genre from the drawer
     showGenre         : function(id, genre) {
         var me = this,
@@ -303,11 +351,10 @@ Ext.define('Music.controller.Main', {
 
         //if item is not null we need to update
         //the browser's URL HASH
-        if (item) {
-            if (item.xtype === 'article') {
-                me.redirectTo(item.getModel());
-            }
-        } else {
+        if (item && item.xtype === 'article') {
+            me.redirectTo(item.getModel());
+        }
+        else {
             //if mainFlow is null means the user is
             //getting to the app for the first time
             if (!me.getMainFlow()) {

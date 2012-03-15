@@ -49,6 +49,12 @@ Ext.define('Music.view.Article', {
                             '<h1>{title}</h1>',
                             '<h2>{genre}</h2>',
                         '</div>',
+                        '<div class="music-article-header music-article-header-portrait">',
+                            '<div class="music-article-button music-article-button-listen">Listen to Story</div>',
+                            '<div class="music-article-button music-article-button-favorite">Add to Favorites</div>',
+                            '<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
+                            '<div class="music-article-button music-article-button-toc">Table of Contents</div>',
+                        '</div>',
                         '<h3>{author}</h3>',
                         '<h4>{[ this.dateFormat(values.date) ]}</h4>',
                         '{text}',
@@ -122,10 +128,11 @@ Ext.define('Music.view.Article', {
     applyModel	: function(model){
 		var me      = this,
 			header  = me.down('component[cls=music-article-header]'),
-			content = me.down('component[cls=music-article-content]');
+			content = me.down('component[cls=music-article-content]'),
+            modelData = model.getData();
 
-		header.setData(model.getData());
-		content.setData(model.getData());
+		header.setData(modelData);
+		content.setData(modelData);
 
 		return model;
     },
