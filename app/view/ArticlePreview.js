@@ -57,7 +57,6 @@ Ext.define('Music.view.ArticlePreview', {
     },
 
     showFullArticle: function (event, node) {
-        console.log('TAP!');
         this.fireEvent("readarticle", this.getModel());
     }
 });

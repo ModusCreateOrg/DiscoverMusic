@@ -52,6 +52,14 @@ Ext.define('Music.controller.Favorites', {
             var store = dataview.getStore();
             store.remove(record);
         } else {
+            if(!article){
+                article = mainFlow.add({
+                    xtype   : 'article',
+                    itemId  : 'article-'+record.get('articleId'),
+                    model   : record,
+                    data    : record.getData()
+                });
+            }
             mainFlow.setActiveItem(article);
         }
     },

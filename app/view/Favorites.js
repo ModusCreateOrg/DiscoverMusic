@@ -14,6 +14,7 @@ Ext.define('Music.view.Favorites',{
 		store	: 'favorites',
 		cls		: 'music-favorites',
 		editing	: false,
+		emptyText : 'You don\'t have any favorite story yet.',
 		scrollable: {
 			direction: 'vertical',
 			directionLock: true
@@ -31,12 +32,12 @@ Ext.define('Music.view.Favorites',{
 			xtype	: 'toolbar',
 			ui		: 'transparent',
 			items	: [{
-				xtype	:'title',
+				xtype	: 'title',
 				title	: 'Your Favorites'
 			},{
 				text	: 'Edit',
 				action	: 'edit',
-				margin: '10 0 0 0 '
+				margin: '10 0 0 0'
 			}]
 		}]
     }

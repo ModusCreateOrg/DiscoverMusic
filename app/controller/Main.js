@@ -174,6 +174,7 @@ Ext.define('Music.controller.Main', {
                     id             : genreId,
                     requiredAssets : 'audio,image',
                     numResults     : me.getNumResults(),
+                    fields         : 'title,teaser,storyDate,text,audio,image,artist',
                     transform      : 'source',
                     output         : 'JSON'
                 }

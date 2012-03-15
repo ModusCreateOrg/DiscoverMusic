@@ -55,18 +55,23 @@ Ext.define('Music.model.Article', {
             }
         },
         {
-            name: 'content',
-            mapping: 'text.paragraph',
-            convert: function (paragraphs) {
-                var text = [];
-                if(paragraphs){
-                    for (var i = 0, len = paragraphs.length; i < len; i++) {
-                        if (paragraphs[i].$text) {
-                            text.push(
-                            Ext.String.format('<p>{0}</p>', paragraphs[i].$text.replace('[Copyright 2012 National Public Radio]', '')));
+            name: 'text',
+            convert: function (text) {
+                if(Ext.isString(text)){
+                    return text;
+                }else{
+                    var content = [],
+                    paragraphs = text.paragraph;
+
+                    if(paragraphs){
+                        for (var i = 0, len = paragraphs.length; i < len; i++) {
+                            if (paragraphs[i].$text) {
+                                content.push(
+                                Ext.String.format('<p>{0}</p>', paragraphs[i].$text.replace('[Copyright 2012 National Public Radio]', '')));
+                            }
                         }
+                        return content.join('');
                     }
-                    return text.join('');
                 }
             }
         },
@@ -95,7 +100,8 @@ Ext.define('Music.model.Article', {
                 if (audios) {
                     for (var i = 0, len = audios.length; i < len; i++) {
                         primary = audios[i];
-                        if (primary.type === 'primary' && primary.format.mp3 && primary.format.mp3.length > 0) {
+                        
+                        if (primary.type === 'primary' && primary.format.mp3 && primary.format.mp3.length) {
                             return primary.format.mp3[0].$text;
                         }
                     }
@@ -103,7 +109,8 @@ Ext.define('Music.model.Article', {
             }
         },
         {
-            name: 'genre'
+            name: 'genre',
+            defaultValue:''
         },
         {
             name: 'genreKey',

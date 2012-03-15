@@ -26,7 +26,7 @@ Ext.define('Music.view.GlobalToc',{
 					'<div>Featured story</div>',
 					'<h2>{title}</h2>',
 				'</div>',
-				'<div class="global-toc-featured-content">{content}</div>'
+				'<div class="global-toc-featured-content">{text}</div>'
 			]
 		},{
 			xtype	: 'container',
@@ -84,7 +84,7 @@ Ext.define('Music.view.GlobalToc',{
 			featured = me.down('#featuredstory'),
 			data = model.getData();
 
-		data.content = Ext.util.Format.ellipsis(data.content,300,true).replace(/<(\/)?p>/g,' ');
+		data.text = Ext.util.Format.ellipsis(data.text,300,true).replace(/<(\/)?p>/g,' ');
 		featured.setData(data);
 		me.setFeaturedArticle(model);
     },

@@ -11,18 +11,21 @@ Ext.define('Music.view.MainFlow',{
     alias       : 'widget.mainflow',
     
     requires	: [
+		'Ext.Anim',
 		'Music.view.GlobalToc',
 		'Music.view.GenreToc'
     ],
 
     config		: {
 		indicator:false,
+		showAnimation:'slideIn',
 		articles: []
     },
 
     addArticles	: function(genre,articles){
 		var me = this,
-			collection = me.getArticles();
+			collection = me.getArticles(),
+			favorites = Ext.data.StoreManager.lookup('favorites');
 
 		//adding the TOC's
 		if(Ext.isEmpty(me.globalToc)){
@@ -40,11 +43,14 @@ Ext.define('Music.view.MainFlow',{
 
 		//Adding the articles preview to the main flow
 		articles.each(function(article){
+			var data = article.getData();
+				data.isFavorite = favorites.find('articleId',article.getId()) !== -1;
+
             var tmp = me.add({
                 xtype   : 'article',
                 itemId	: 'article-'+article.getId(),
                 model   : article,
-                data    : article.getData(),
+                data    : data,
                 genre   : genre
             });
             collection.push(tmp);
@@ -65,5 +71,4 @@ Ext.define('Music.view.MainFlow',{
 		});
 		me.setActiveItem(0);
     }
-    
 });
