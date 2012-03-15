@@ -11,9 +11,8 @@ Ext.define('Music.controller.Main', {
     loadMask : undefined,
 
     config : {
-        apiUrl              : 'http://api.npr.org/query',
-        stationFinderApiUrl : 'http://api.npr.org/stations.php',
-        apiKey              : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
+        apiUrl : 'http://api.npr.org/query',
+        apiKey : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
 
         numResults : 10,
         models     : [
@@ -37,7 +36,7 @@ Ext.define('Music.controller.Main', {
             'ArticlePreview'
         ],
 
-        refs    : {
+        refs        : {
             main      : {
                 xtype      : 'main',
                 selector   : 'main',
@@ -68,10 +67,10 @@ Ext.define('Music.controller.Main', {
                 selector : 'main mainflow'
             }
         },
-        routes  : {
+        routes      : {
             'article/:id' : 'onArticleActive'
         },
-        control : {
+        control     : {
             'main' : {
                 titletap : 'onShowGlobalToc'
             },
@@ -110,9 +109,7 @@ Ext.define('Music.controller.Main', {
                 storytap : 'onShowArticle'
             }
         },
-        queryApiTpl : Ext.create('Ext.Template',
-            'select * from xml where url="http://moduscreate.com/nprStationFinderProxy.php?lat={latitude}&lon={longitude}"'
-        )
+
     },
 
     init : function() {
@@ -274,31 +271,8 @@ Ext.define('Music.controller.Main', {
             me.startApp();
         }
     },
-    onFindStations    : function() {
-        Ext.device.Geolocation.getCurrentPosition({
-            scope   : this,
-            success : this.onGeoLocationFind
-        });
-    },
-    onGeoLocationFind : function(geoPosition) {
-        console.log('Coordinates', geoPosition.coords);
-        var me = this,
-            coords = geoPosition.coords,
-            query = this.getQueryApiTpl().apply(coords);
-
-        Ext.util.JSONP.request({
-            url         : 'http://query.yahooapis.com/v1/public/yql',
-            scope       : me,
-            callbackKey : 'callback',
-            callback    : function() {
-                console.log('NPR', arguments);
-            },
-
-            params : {
-                q      : query,
-                format : 'json'
-            }
-        });
+    onFindStations    : function(btn) {
+        this.getApplication().fireEvent('findstations', btn);
     },
     // when user taps on any genre from the drawer
     showGenre         : function(id, genre) {

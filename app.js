@@ -19,7 +19,8 @@ Ext.application({
         'Main',
         'Article',
         'Favorites',
-        'Search'
+        'Search',
+        'Stations'
     ],
 
 
