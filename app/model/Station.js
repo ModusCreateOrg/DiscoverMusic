@@ -18,12 +18,12 @@ Ext.define('Music.model.Station', {
                         validItems = {
                             'PodCast'                : 1,
                             'Audio MP3 Stream'       : 1,
-                            'Newscast'               : 1,
-                            'Twitter'                : 1,
-                            'Organization Home Page' : 1,
-                            'Program Schedule'       : 1,
-                            'Pledge Page'            : 1,
-                            'Facebook Url'           : 1
+                            'Newscast'               : 1
+//                            'Twitter'                : 1,
+//                            'Organization Home Page' : 1,
+//                            'Program Schedule'       : 1,
+//                            'Pledge Page'            : 1,
+//                            'Facebook Url'           : 1
                         },
                         len,
                         item,
@@ -35,7 +35,7 @@ Ext.define('Music.model.Station', {
                         for (; i < len; ++i) {
                             item = value[i];
                             type = item.type;
-                            // Use a hash map
+                            // Use a hash map for fast tests!
                             if (validItems[type]) {
                                 urls.push(item);
                             }

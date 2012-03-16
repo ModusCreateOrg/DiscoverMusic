@@ -17,7 +17,7 @@ Ext.define('Music.view.StationFinder', {
                 xtype  : 'component',
                 docked : 'top',
                 height : 25,
-                style  : 'color: #FFF; text-align: center; font-size: 1.25em;',
+                cls    : 'stationfinder-title',
                 html   : 'Station finder'
             },
             {
@@ -53,7 +53,7 @@ Ext.define('Music.view.StationFinder', {
                         itemId : 'searchGeoLocationBtn',
                         style  : 'margin-top: 10px;',
                         hidden : true,
-                        width  : 260
+                        width  : 290
                     }
                 ]
             }
@@ -122,6 +122,7 @@ Ext.define('Music.view.StationFinder', {
     onListItemTap : function(nestedList, list, index, target, record) {
         console.log('onListItemTap', record.getData());
         nestedList.getDetailCard().setData(record.getData());
+        this.selectedRecord = record;
     },
     showMask      : function() {
         var me = this;

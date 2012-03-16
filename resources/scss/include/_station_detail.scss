@@ -1,0 +1,61 @@
+
+
+
+.station-selected {
+    border-top-color: #421313;
+    border-bottom-color: #070202;
+    background-color: #421313;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #B83636), color-stop(2%, #5E1B1B), color-stop(100%, #260B0B));
+    background-image: -webkit-linear-gradient(#B83636,#5E1B1B 2%,#260B0B);
+    background-image: linear-gradient(#B83636,#5E1B1B 2%,#260B0B);
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.5) 0
+}
+
+
+.stationfinder-title {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25em;
+    padding-left: 10px;
+}
+
+.stationfinder-urls-title {
+    font-weight: bold;
+    /*padding: 0.65em 0.8em;*/
+    margin: 5px;
+    font-size: 1.15em;
+
+}
+
+.stationfinder-title-block {
+    padding: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.stationfinder-tagline {
+    text-decoration: italic;
+    color: #333132;
+    margin: 5px;
+}
+
+.station-url-container {
+    padding: 0.65em 0.8em .8em .75em;
+    border-bottom: 1px solid #EFEFEF ;
+    min-height: 2.6em;
+}
+
+/*.station-url {*/
+    /*vertical-align: top;*/
+    /*display: inline-block;*/
+/*}*/
+
+.station-play-icon {
+    background: url(../images/sound-16x16.png) 0 0 no-repeat;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
