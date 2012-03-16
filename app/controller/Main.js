@@ -301,7 +301,7 @@ Ext.define('Music.controller.Main', {
             mainFlow = me.getMainFlow(),
             fav = mainFlow.down('favorites');
 
-        mainFlow.animateActiveItem(fav, Ext.fx.layout.card.Fade);
+        mainFlow.setActiveItem(fav);
     },
 
     onSearchTap : function() {
