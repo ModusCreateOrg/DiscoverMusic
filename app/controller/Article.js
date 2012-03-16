@@ -127,7 +127,6 @@ Ext.define('Music.controller.Article', {
     },
 
     onTweetResponse : function(text,html){
-        console.log(arguments);
         this.overlay.hide();
     }
 });
