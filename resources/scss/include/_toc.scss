@@ -130,32 +130,60 @@
  *	GENRE TOC
  ************************************/
 @mixin genre-toc($genre, $bg-color1, $bg-color2){
-	.genre-toc{
-		background-color:#000;
-		.genre-toc-featured-#{$genre}{
-				position:relative;
-				height: 305px;
-				border: 6px solid #000;
-				background-size: cover;
-				background-position: center top;
-		    background-repeat: no-repeat;
-		    h2 {
-					background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-					background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
-					background-image: linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
-					position: absolute;
-					color: white;
-					padding: 15px 20px;
-					font-size: 1.5em;
-					width: 100%;
-					font-family: $base-font;
-					font-weight: normal;
-					bottom: 0;
-		    }
-		    h3 {
-		    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-		    	@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
-		    	border: 2px solid rgba(255, 255, 255, .5);
+	.genre-toc-featured-#{$genre}{
+			position:relative;
+			height: 305px;
+			border: 6px solid #000;
+			background-size: cover;
+			background-position: center top;
+	    background-repeat: no-repeat;
+	    h2 {
+				background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+				background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
+				background-image: linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
+				position: absolute;
+				color: white;
+				padding: 15px 20px;
+				font-size: 1.5em;
+				width: 100%;
+				font-family: $base-font;
+				font-weight: normal;
+				bottom: 0;
+	    }
+	    h3 {
+	    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+	    	@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+	    	border: 2px solid rgba(255, 255, 255, .5);
+	    	position:absolute;
+	    	top:10px;
+	    	left:0;
+	    	color:#fff;
+	    	font-size:1.2em;
+				padding:20px 40px;
+				color: #fff;
+				font-size: 1.1em;
+				font-family: $base-font;
+				text-transform: uppercase; 			
+				text-shadow: 0px 1px darken($bg-color2, 20);
+	    }
+	}
+
+ 	.genre-toc-story {
+    	p {
+				font-size: .7em;
+				line-height: 1.8em;
+				padding: 4px 4px;
+	 	}
+	 	.genre-toc-story-image-#{$genre} {
+ 			position:relative;
+ 			height:308px;
+ 			background-size: cover;
+			background-position: center top;
+            background-repeat: no-repeat;
+            border: 6px solid black;
+
+	 		h3 {
+		    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
 		    	position:absolute;
 		    	top:10px;
 		    	left:0;

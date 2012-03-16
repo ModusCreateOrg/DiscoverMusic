@@ -18,12 +18,9 @@ Ext.define('Music.view.GenreToc', {
         items    : [
             {
                 xtype    : 'container',
-                layout   : {
-                    type  : 'hbox',
-                    align : 'stretch'
-                },
                 position : 'top',
                 height   : 305,
+                layout   : 'fit',
                 items    : [
                     {
                         xtype  : 'component',
@@ -32,8 +29,8 @@ Ext.define('Music.view.GenreToc', {
                         flex   : 2,
                         tpl    : [
                             '<div class="genre-toc-featured genre-toc-featured-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
-                            '<h2>{title}</h2>',
-                            '<h3>{genre}</h3>',
+                                '<h2>{title}</h2>',
+                                '<h3>{genre}</h3>',
                             '</div>'
                         ]
                     }
@@ -52,7 +49,6 @@ Ext.define('Music.view.GenreToc', {
         var me = this,
             container = me.down('#stories'),
             featured = me.down('#featured'),
-            genre = me.getGenre(),
             articles = me.getArticles().getRange(0, 4),
             top = me.down('container[position=top]');
 
@@ -76,7 +72,7 @@ Ext.define('Music.view.GenreToc', {
             data  : article.getData(),
             tpl   : [
                 '<div class="genre-toc-story genre-toc-story-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/300/{image})">',
-                '<h3>{title}</h3>',
+                    '<h3>{title}</h3>',
                 '</div>'
             ]
         });
