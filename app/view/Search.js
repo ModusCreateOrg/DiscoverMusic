@@ -29,7 +29,8 @@ Ext.define('Music.view.Search', {
                 title   : 'Filter by Genre',
                 defaults: {
                     xtype:'checkboxfield',
-                    labelWidth:'70%'
+                    labelWidth:'70%',
+                    checked: true
                 },
                 items   : [{
                     label   : 'Rock / Pop / Folk',

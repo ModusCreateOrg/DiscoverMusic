@@ -116,7 +116,7 @@ Ext.define('Music.model.Article', {
                 name    : 'genreKey',
                 convert : function(value, data) {
                     var parent;
-
+                    
                     if (Ext.isString(value)) {
                         return value;
                     } else if (parent = data.raw.parent) {
