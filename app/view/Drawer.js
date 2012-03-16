@@ -54,7 +54,7 @@ Ext.define('Music.view.Drawer', {
             config = {
                 docked  : 'top',
                 html    : this.getTitle(),
-                cls     : 'drawer-close'
+                cls     : 'drawer-toggle-pull drawer-close'
             };
         }
         return Ext.factory(config, Ext.Component, this.getDrawerPull());
@@ -75,7 +75,7 @@ Ext.define('Music.view.Drawer', {
         if (ev.getTarget('.drawer-about')){
             return this.fireEvent('goabout', this);
         }
-        if (ev.getTarget('.drawer-close')){
+        if (ev.getTarget('.drawer-toggle-pull .x-innerhtml')){
             return me.toggle();
         }
     },
