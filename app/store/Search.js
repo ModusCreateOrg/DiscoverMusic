@@ -17,15 +17,15 @@ Ext.define('Music.store.Search', {
             url     : 'http://api.npr.org/query',
             callbackKey: 'callback',
             reader  : {
-                type    : 'json',
+                type         : 'json',
                 rootProperty : 'list.story'
             },
             extraParams: {
                 apiKey: 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
                 id:'10001,10003,10002,10004,10005',
                 requiredAssets: 'image,audio',
-                fields: 'title,teaser,storyDate,text,audio,image,artist',
-                numResults: 12,
+                fields: 'parent,title,teaser,storyDate,text,audio,image,artist',
+                numResults: 20,
                 dateType:'story',
                 sort:'dateDesc',
                 action:'Or',
