@@ -31,8 +31,9 @@ Ext.define('Music.view.StationFinder', {
                 },
                 items  : [
                     {
-                        xtype : 'container',
-                        items : [
+                        xtype  : 'container',
+                        itemId : 'searchContainer',
+                        items  : [
                             {
                                 xtype       : 'textfield',
                                 width       : 200,
@@ -81,8 +82,14 @@ Ext.define('Music.view.StationFinder', {
         me.callParent();
     },
 
-    onSearchGeoLocation : function() {
-        this.fireEvent('searchgeo', this);
+    onSearchGeoLocation : function(btn) {
+        var zip = btn.getParent().down('#zipCode').getValue();
+        if (zip.length == 5) {
+            this.fireEvent('searchgeo', this, zip);
+        }
+        else {
+            Ext.Msg.alert('Please enter a valid zip code.');
+        }
     },
 
     onSearchZipCodeBtn : function() {

@@ -19,6 +19,7 @@ Ext.define('Music.model.Station', {
                             'PodCast'                : 1,
                             'Audio MP3 Stream'       : 1,
                             'Newscast'               : 1
+                            // Later!
 //                            'Twitter'                : 1,
 //                            'Organization Home Page' : 1,
 //                            'Program Schedule'       : 1,

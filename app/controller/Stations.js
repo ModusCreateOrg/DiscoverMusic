@@ -2,19 +2,22 @@ Ext.define('Music.controller.Stations', {
     extend : 'Ext.app.Controller',
 
     config : {
-        views   : [
+        views       : [
             'StationFinder'
         ],
-        stores  : [
+        stores      : [
             'Stations'
         ],
-        control : {
+        control     : {
             stationfinder : {
                 searchgeo : 'onSearchGeo',
                 searchzip : 'onSearchZip'
+            },
+            stationdetail : {
+                stationurlselect : 'onStationUrlSelect'
             }
         },
-        queryApiTpl   : Ext.create('Ext.Template',
+        queryApiTpl : Ext.create('Ext.Template',
             'select * from xml where url="http://moduscreate.com/nprStationFinderProxy.php?lat={latitude}&lon={longitude}&zip={zip}"'
         )
     },
@@ -39,16 +42,20 @@ Ext.define('Music.controller.Stations', {
 
     onSearchZip : function(view, zip) {
         console.log('onSearchZip');
-        this.queryStations({zip : 21703})
+        if (zip.length != 5) {
+            this.queryStations({zip : zip})
+        }
+        else {
+            Ext.Msg.alert('Please enter a valid ZipCode.');
+        }
     },
 
-    onSearchGeo  : function(view) {
-        console.log('onSearchGeo');
-
+    onSearchGeo : function(view) {
         this.queryStations(this.coords);
-
     },
-    onStationTap : function() {
+
+    onStationUrlSelect : function(detailCard, urlObj) {
+        console.log('onStationUrlSelect', urlObj)
 
     },
 
@@ -89,8 +96,8 @@ Ext.define('Music.controller.Stations', {
     onAfterQueryStations : function(success, data) {
         if (success) {
             var dataItems = data.query.results.stations.station;
-             console.log('NPR data:', dataItems);
-             this.view.showStations(dataItems);
+            //             console.log('NPR data:', dataItems);
+            this.view.showStations(dataItems);
         }
     },
 
