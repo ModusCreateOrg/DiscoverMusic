@@ -19,5 +19,21 @@
 		"id"	: 10005,
 		"key"	: "hipHopRB",
 		"name"	: "Hip-Hop / R&B"
+	},{
+		"id"	: 135408474,
+		"key"	: "electronicDance",
+		"name"	: "Electronic/Dance"
+	},{
+		"id"	: 1108,
+		"key"	: "discoverSongs",
+		"name"	: "Discover songs"
+	},{
+		"id"	: 92792712,
+		"key"	: "country",
+		"name"	: "Country"
+	},{
+		"id"	: 139996449,
+		"key"	: "latinAlternative",
+		"name"	: "Latin alternative"
 	}]
 }

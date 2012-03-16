@@ -108,7 +108,7 @@ Ext.define('Music.controller.Main', {
             'globaltoc' : {
                 storytap : 'onShowArticle'
             }
-        },
+        }
 
     },
 
