@@ -114,7 +114,7 @@ Ext.define('Music.controller.Article', {
                 width: 450,
                 label:'Share this story',
                 defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate',
-                onTweet : me.onTweet
+                onTweet : Ext.Function.bind(me.onTweet,me)
             });
         });
         me.overlay.show();
