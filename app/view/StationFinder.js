@@ -1,13 +1,29 @@
 Ext.define('Music.view.StationFinder', {
     extend : 'Ext.Panel',
-
-    config              : {
-        displayField : 'name',
-        layout       : 'fit',
-        items        : [
+    xtype  : 'stationfinder',
+    requires : [
+        'Music.view.StationDetail',
+        'Ext.dataview.NestedList',
+        'Ext.TitleBar'
+    ],
+    config : {
+        displayField  : 'name',
+        layout        : 'fit',
+        height        : 100,
+        width         : 350,
+        hideOnMaskTap : true,
+        items         : [
+            {
+                xtype  : 'component',
+                docked : 'top',
+                height : 25,
+                cls    : 'stationfinder-title',
+                html   : 'Station finder'
+            },
             {
                 xtype  : 'container',
                 docked : 'top',
+                style  : 'padding: 10px;',
                 layout : {
                     type  : 'vbox',
                     align : 'center',
@@ -15,71 +31,110 @@ Ext.define('Music.view.StationFinder', {
                 },
                 items  : [
                     {
-                        xtype  : 'button',
-                        itemId : 'currentLocation',
-                        text   : 'Use current location',
-                        width  : 200
+                        xtype : 'container',
+                        items : [
+                            {
+                                xtype       : 'textfield',
+                                width       : 200,
+                                placeHolder : 'Zip code',
+                                itemId      : 'zipCode',
+                                style       : 'float: left; margin-right: 10px; -webkit-border-radius: 10px; min-height: 1.5em !important;'
+                            },
+                            {
+                                xtype  : 'button',
+                                text   : 'Search',
+                                itemId : 'searchZipCodeBtn',
+                                style  : 'position: relative; top: 5px;'
+                            }
+                        ]
                     },
                     {
-                        xtype : 'container'
+                        xtype  : 'button',
+                        itemId : 'searchGeoLocationBtn',
+                        style  : 'margin-top: 10px;',
+                        hidden : true,
+                        width  : 290
                     }
-
                 ]
             }
         ]
     },
-    initialize          : function() {
 
-    },
-    onAppFindStations   : function(btn) {
-        this.findStationsBtn = btn;
-        Ext.device.Geolocation.getCurrentPosition({
-            scope   : this,
-            success : this.onGeoLocationFind
-        });
+    initialize : function() {
+        var me = this;
 
-        var view = Ext.create('Music.view.StationFinder', {
-            title  : 'Stations',
-            store  : store,
-            height : 400,
-            width  : 300
-        });
-
-        view.showBy(this.findStationsBtn);
-    },
-    onGeoLocationFind   : function(geoPosition) {
-        console.log('Coordinates', geoPosition.coords);
-        var me = this,
-            coords = geoPosition.coords,
-            query = this.getQueryApiTpl().apply(coords);
-
-        Ext.util.JSONP.request({
-            url         : 'http://query.yahooapis.com/v1/public/yql',
-            scope       : me,
-            callbackKey : 'callback',
-            callback    : me.onAfterJsonpRequest,
-            params      : {
-                q      : query,
-                format : 'json'
+        me.on({
+            tap : {
+                scope    : me,
+                delegate : 'container > #searchGeoLocationBtn',
+                fn       : me.onSearchGeoLocation
             }
         });
+
+        me.on({
+            tap : {
+                scope    : me,
+                delegate : 'container > #searchZipCodeBtn',
+                fn       : me.onSearchZipCodeBtn
+            }
+        });
+        me.callParent();
     },
-    onAfterJsonpRequest : function(success, data) {
+
+    onSearchGeoLocation : function() {
+        this.fireEvent('searchgeo', this);
+    },
+
+    onSearchZipCodeBtn : function() {
+        this.fireEvent('searchzip', this, 21703);
+    },
+
+    showStations : function(data) {
         var me = this;
-        if (success) {
-            var datItems = data.query.results.stations.station;
-            console.log('NPR data:', datItems);
-            var store = Ext.create('Ext.data.TreeStore', {
+
+        me.unmask();
+
+        me.list = me.add({
+            xtype        : 'nestedlist',
+            title        : 'Stations',
+            displayField : 'name',
+            backText     : 'Back',
+            store        : {
+                type                : 'tree',
                 model               : 'Music.model.Station',
                 defaultRootProperty : 'items',
                 root                : {
                     text  : '',
-                    items : datItems
+                    items : data
                 }
-            });
-            //            store.applyData(root);
+            },
+            detailCard   : {
+                xtype : 'stationdetail'
+            },
+            listeners    : {
+                scope   : this,
+                itemtap : 'onListItemTap'
+            }
+        });
 
-        }
     },
 
+    onListItemTap : function(nestedList, list, index, target, record) {
+        console.log('onListItemTap', record.getData());
+        nestedList.getDetailCard().setData(record.getData());
+        this.selectedRecord = record;
+    },
+    showMask      : function() {
+        var me = this;
+        me.setMasked({
+            xtype   : 'loadmask',
+            message : 'Searching'
+        });
+
+        if (me.list) {
+            me.remove(me.list);
+            delete me.list;
+        }
+        me.setHeight(550);
+    }
 });
