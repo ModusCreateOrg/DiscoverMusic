@@ -22,38 +22,10 @@ Ext.define('Music.controller.Stations', {
         })
     },
     onAppFindStations   : function(btn) {
-        this.findStationsBtn = btn;
-        Ext.device.Geolocation.getCurrentPosition({
-            scope   : this,
-            success : this.onGeoLocationFind
-        });
-    },
-    onGeoLocationFind   : function(geoPosition) {
-        console.log('Coordinates', geoPosition.coords);
-        var me = this,
-            coords = geoPosition.coords,
-            query = this.getQueryApiTpl().apply(coords);
-
-        Ext.util.JSONP.request({
-            url         : 'http://query.yahooapis.com/v1/public/yql',
-            scope       : me,
-            callbackKey : 'callback',
-            callback    : me.onAfterJsonpRequest,
-            params      : {
-                q      : query,
-                format : 'json'
-            }
-        });
-    },
-    onAfterJsonpRequest : function(success, data) {
-        var me = this;
-        if (success) {
-            var root = data.query.results.stations.station;
-            console.log('NPR data:', root);
-            var store = Ext.create('Music.store.Stations');
-            store.applyData(root);
-            console.log(store);
-        }
+        Ext.create('Music.view.StationFinder', {
+            height : 400,
+            width  : 300
+        }).showBy(btn);
     },
     onStationTap        : function() {
 
