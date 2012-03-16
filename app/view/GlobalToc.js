@@ -103,11 +103,13 @@ Ext.define('Music.view.GlobalToc',{
     },
 
     onPress	: function(event,node){
+		this.pressing = node;
 		Ext.fly(node).addCls('global-toc-article-pressed');
     },
 
     onRelease	: function(event,node){
-		Ext.fly(node).removeCls('global-toc-article-pressed');
+		Ext.fly(this.pressing).removeCls('global-toc-article-pressed');
+		delete this.pressing;
     },
 
     onTap	: function(event){
