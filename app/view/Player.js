@@ -14,17 +14,17 @@ Ext.define('Music.view.Player', {
     ],
 
     config : {
-        cls    : 'music-player',
-        data   : {
+        cls   : 'music-player',
+        data  : {
             time  : '00:00',
             title : 'Press "Listen to story" to play music.'
         },
-        tpl    : [
+        tpl   : [
             '<div class="music-player-button"></div>',
             '<div class="music-player-timer">{time}</div>',
             '<div class="music-player-title">{title}</div>'
         ],
-        items  : [
+        items : [
             {
                 xtype  : 'audio',
                 hidden : true
@@ -46,6 +46,7 @@ Ext.define('Music.view.Player', {
             play       : 'onPlay',
             timeupdate : 'onUpdateTime'
         });
+        timer = me.timer
     },
 
     loadSound : function(url) {
@@ -55,17 +56,18 @@ Ext.define('Music.view.Player', {
         if (url === audio.getUrl()) {
             if (audio.isPlaying()) {
                 audio.pause();
-            } else {
+            }
+            else {
                 audio.play();
             }
         } else {
             audio.setUrl(url);
             audio.play();
         }
-        me.timer = me.element.down('.music-player-timer');
+
     },
 
-    onPlayPause : function(event) {
+    onPlayPause : function() {
         var me = this,
             audio = me.down('audio');
 
@@ -78,11 +80,36 @@ Ext.define('Music.view.Player', {
         }
     },
 
+    applyData : function(o) {
+        var me = this,
+            file;
+
+        if (o && (o.audioFile || o.content || o.file)) {
+            delete me.timer;
+            me.loadSound(o.audioFile || o.content || o.file);
+        }
+
+        if (!o.time) {
+            o.time = '00:00';
+        }
+
+        return o;
+    },
+
     onUpdateTime : function(audio, time) {
-        var minutes = Math.floor(time / 60),
+
+        var me = this,
+            minutes = Math.floor(time / 60),
             seconds = Math.floor(time - minutes * 60);
 
-        this.timer.dom.innerHTML = Ext.util.Format.format('{0}:{1}', minutes < 10 ? '0' + minutes : minutes, seconds < 10 ? '0' + seconds : seconds);
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        if (! me.timer) {
+            me.timer = me.element.down('.music-player-timer').dom;
+        }
+
+        me.timer.innerHTML = minutes + ':' + seconds;
     },
 
     onPlay : function() {

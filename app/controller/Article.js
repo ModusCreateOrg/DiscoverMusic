@@ -19,16 +19,13 @@ Ext.define('Music.controller.Article', {
             'Favorites'
         ],
         refs    : {
-            player   : {
-                selector : 'main player'
-            },
             mainFlow : {
                 selector : 'main mainflow'
             }
         },
         control : {
-            'article' : {
-                play     : 'playSong',
+            article : {
+                play     : 'onPlay',
                 favorite : 'onAddToFavorites',
                 toc      : 'onGenreToc',
                 tweet    : 'onTweet'
@@ -36,14 +33,8 @@ Ext.define('Music.controller.Article', {
         }
     },
 
-    playSong : function(model) {
-        var me = this;
-
-        if (model.get('audioFile')) {
-            me.getPlayer().setData(model.getData());
-            me.getPlayer().loadSound(model.get('audioFile'));
-            me.getPlayer().show({ type : 'fade' });
-        }
+    onPlay : function(model) {
+        this.getApplication().fireEvent('playAudio', model.getData());
     },
 
     onAddToFavorites : function(view, model) {

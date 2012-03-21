@@ -41,21 +41,41 @@ Ext.define('Music.controller.Stations', {
     },
 
     onSearchZip : function(view, zip) {
-        console.log('onSearchZip');
-        if (zip.length != 5) {
-            this.queryStations({zip : zip})
-        }
-        else {
-            Ext.Msg.alert('Please enter a valid ZipCode.');
-        }
+        this.queryStations({zip : zip});
     },
 
-    onSearchGeo : function(view) {
+    onSearchGeo : function() {
         this.queryStations(this.coords);
     },
 
     onStationUrlSelect : function(detailCard, urlObj) {
-        console.log('onStationUrlSelect', urlObj)
+        var content = urlObj.content,
+            app     = this.getApplication();
+
+        urlObj = Ext.clone(urlObj);
+
+        if (content && content.match('\\\.mp3')) {
+            app.fireEvent('playAudio', urlObj);
+        }
+        else if (content.match('\\\.pls')) {
+            Ext.util.JSONP.request({
+                url         : 'plsProxy.php',
+                callbackKey : 'callback',
+                params      : { url : urlObj.content },
+                callback    : function(success, data) {
+                    if (success) {
+
+                        urlObj.content = data.file;
+                        urlObj.title = urlObj.name + ' ' + urlObj.title;
+                        app.fireEvent('playAudio', urlObj);
+                    }
+                    else {
+                        Ext.Msg.alert('We Apologize!', urlObj.title + ' is currently unavailable.');
+                    }
+                }
+            });
+
+        }
 
     },
 
@@ -69,10 +89,8 @@ Ext.define('Music.controller.Stations', {
     },
 
     onGeoLocationFind : function(geoPosition) {
-        var me = this,
-            coords = me.coords = geoPosition.coords;
-
-        me.getFriendlyGeoName(coords);
+        var me = this;
+        me.getFriendlyGeoName(me.coords = geoPosition.coords);
     },
 
     queryStations : function(params) {
@@ -96,7 +114,6 @@ Ext.define('Music.controller.Stations', {
     onAfterQueryStations : function(success, data) {
         if (success) {
             var dataItems = data.query.results.stations.station;
-            //             console.log('NPR data:', dataItems);
             this.view.showStations(dataItems);
         }
     },

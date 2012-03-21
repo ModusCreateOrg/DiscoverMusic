@@ -82,18 +82,18 @@ Ext.define('Music.view.StationFinder', {
         me.callParent();
     },
 
-    onSearchGeoLocation : function(btn) {
-        var zip = btn.getParent().down('#zipCode').getValue();
-        if (zip.length == 5) {
-            this.fireEvent('searchgeo', this, zip);
-        }
-        else {
-            Ext.Msg.alert('Please enter a valid zip code.');
-        }
+    onSearchGeoLocation : function() {
+        this.fireEvent('searchgeo', this);
     },
 
-    onSearchZipCodeBtn : function() {
-        this.fireEvent('searchzip', this, 21703);
+    onSearchZipCodeBtn : function(btn) {
+        var zip = btn.getParent().down('#zipCode').getValue();
+        if (zip.length == 5) {
+            this.fireEvent('searchzip', this, zip);
+        }
+        else {
+            Ext.Msg.alert('Please enter a valid Zip Code.');
+        }
     },
 
     showStations : function(data) {
@@ -104,6 +104,7 @@ Ext.define('Music.view.StationFinder', {
         me.list = me.add({
             xtype        : 'nestedlist',
             title        : 'Stations',
+            itemTpl      : '{name}, {location}',
             displayField : 'name',
             backText     : 'Back',
             store        : {
@@ -127,7 +128,6 @@ Ext.define('Music.view.StationFinder', {
     },
 
     onListItemTap : function(nestedList, list, index, target, record) {
-        console.log('onListItemTap', record.getData());
         nestedList.getDetailCard().setData(record.getData());
         this.selectedRecord = record;
     },

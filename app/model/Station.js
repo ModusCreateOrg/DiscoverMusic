@@ -10,9 +10,20 @@ Ext.define('Music.model.Station', {
             'state',
             'tagline',
             {
+                name    : 'name',
+                mapping : 'name',
+                convert : function(v, record) {
+                    // inject leaf for the detail card
+                    record.data.leaf = !!v;
+                    return v;
+                }
+            },
+
+            {
                 name    : 'urls',
                 mapping : 'url',
-                convert : function(value) {
+                convert : function(value, record) {
+//                    console.log('record.data', record.data)
                     var urls = [],
                         i = 0,
                         validItems = {
@@ -38,23 +49,14 @@ Ext.define('Music.model.Station', {
                             type = item.type;
                             // Use a hash map for fast tests!
                             if (validItems[type]) {
-                                urls.push(item);
+                                item.name = record.data.name;
+                                item.content && urls.push(item);
                             }
                         }
-                        console.log(urls)
                         return urls;
                     }
 
                     return value;
-                }
-            },
-            {
-                name    : 'name',
-                mapping : 'name',
-                convert : function(v, record) {
-                    // inject leaf for the detail card
-                    record.data.leaf = !!v;
-                    return v;
                 }
             }
         ]
