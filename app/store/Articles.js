@@ -7,16 +7,12 @@
  */
 
 Ext.define('Music.store.Articles', {
-    extend  : 'Ext.data.Store',
+    extend : 'Ext.data.Store',
 
-    config	: {
-		model   : 'Music.model.Article',
-
-		proxy   : {
-            type    : 'memory',
-            reader  : {
-                type    : 'json'
-            }
+    config : {
+        model : 'Music.model.Article',
+        proxy : {
+            type : 'memory'
         }
     }
 });

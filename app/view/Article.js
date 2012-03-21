@@ -108,19 +108,24 @@ Ext.define('Music.view.Article', {
     },
 
     onTap   : function(event){
-        var me = this;
+        var me = this,
+            isFavButton = event.getTarget('.music-article-button-favorite') || event.getTarget('.music-article-button-favorite-added'),
+            model = me.getModel();
 
         if (event.getTarget('.music-article-button-listen')){
-            return me.fireEvent('play', me.getModel());
+            return me.fireEvent('play', model);
         }
-        if (event.getTarget('.music-article-button-favorite') || event.getTarget('.music-article-button-favorite-added')){
-            return me.fireEvent('favorite', me,me.getModel());
+
+        else if (isFavButton){
+            return me.fireEvent('favorite', me, model, isFavButton);
         }
-        if (event.getTarget('.music-article-button-tweet')){
-            return me.fireEvent('tweet', me,me.getModel());
+
+        else if (event.getTarget('.music-article-button-tweet')){
+            return me.fireEvent('tweet', me , model);
         }
-        if (event.getTarget('.music-article-button-toc')){
-            return me.fireEvent('toc', me,me.getModel());
+
+        else if (event.getTarget('.music-article-button-toc')){
+            return me.fireEvent('toc', me, model);
         }
     },
 
@@ -130,6 +135,7 @@ Ext.define('Music.view.Article', {
 			content = me.down('component[cls=music-article-content]'),
             modelData = model.getData();
 
+        debugger;
 		header.setData(modelData);
 		content.setData(modelData);
 

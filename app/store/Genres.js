@@ -15,6 +15,16 @@ Ext.define('Music.store.Genres', {
             type : 'memory',
             data : [
                 {
+                    "id"   : 135408474,
+                    "key"  : "electronicDance",
+                    "name" : "Electronic"
+                },
+                {
+                    "id"   : 10005,
+                    "key"  : "hipHopRB",
+                    "name" : "Hip-Hop / R&B"
+                },
+                {
                     "id"   : 10001,
                     "key"  : "rockPopFolk",
                     "name" : "Rock / Pop / Folk"
@@ -33,16 +43,6 @@ Ext.define('Music.store.Genres', {
                     "id"   : 10004,
                     "key"  : "world",
                     "name" : "World"
-                },
-                {
-                    "id"   : 10005,
-                    "key"  : "hipHopRB",
-                    "name" : "Hip-Hop / R&B"
-                },
-                {
-                    "id"   : 135408474,
-                    "key"  : "electronicDance",
-                    "name" : "Electronic"
                 },
                 {
                     "id"   : 92792712,

@@ -138,7 +138,10 @@
 @mixin genre-toc($genre, $bg-color1, $bg-color2){
 	.genre-toc-featured-#{$genre}{
 			position:relative;
-			height: 305px;
+            height: 645px;
+    		@media screen and (orientation:landscape) {
+                height: 385px;
+            }
 			border: 6px solid #000;
 			background-size: cover;
 			background-position: center top;
@@ -169,7 +172,7 @@
 				color: #fff;
 				font-size: 1.1em;
 				font-family: $base-font;
-				text-transform: uppercase; 			
+				text-transform: uppercase;
 				text-shadow: 0px 1px darken($bg-color2, 20);
 	    }
 	}
@@ -195,7 +198,7 @@
 		    	left:0;
 		    	color:#fff;
 		    	font-size:1.2em;
-					padding:20px 40px;
+					padding: 20px;
 					color: #fff;
 					font-size: 1.1em;
 					font-family: $base-font;
@@ -215,8 +218,8 @@
 	 			height:308px;
 	 			background-size: cover;
 				background-position: center top;
-		    background-repeat: no-repeat;
-		    border: 6px solid black;
+                background-repeat: no-repeat;
+                border: 6px solid black;
 
 		 		h3 {
 			    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
@@ -248,3 +251,5 @@
 @include genre-toc('rock', $rock-background-color-light,  $electronicdance-background-color-light);
 @include genre-toc('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
 @include genre-toc('country',$country-background-color-light, $country-background-color-dark);
+
+

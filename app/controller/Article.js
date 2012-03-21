@@ -26,8 +26,8 @@ Ext.define('Music.controller.Article', {
         control : {
             article : {
                 play     : 'onPlay',
-                favorite : 'onAddToFavorites',
-                toc      : 'onGenreToc',
+                favorite : 'onFavorite',
+                toc      : 'onToc',
                 tweet    : 'onTweet'
             }
         }
@@ -37,87 +37,79 @@ Ext.define('Music.controller.Article', {
         this.getApplication().fireEvent('playAudio', model.getData());
     },
 
-    onAddToFavorites : function(view, model) {
+    onFavorite : function(view, model, el) {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            article = mainFlow.getActiveItem(),
             favorites = Ext.data.StoreManager.lookup('favorites'),
-            story = favorites.find('articleId',model.getId()),
-            btn;
+            story = favorites.find('articleId', model.getId());
+
 
         // if the article doesn't exist in the favorites store let's add it
-        if(story === -1){
+        if (story === -1) {
             var fav = model.copy();
             fav.set('articleId', model.getId());
             favorites.add(fav);
-            me.setEditable(favorites,false);
-
+            me.setEditable(favorites, false);
             fav.commit();
-
-            btn = article.renderElement.down('.music-article-button-favorite');
-            btn.removeCls('music-article-button-favorite');
-            btn.addCls('music-article-button-favorite-added');
-
-        }else{
+            Ext.fly(el).replaceCls('music-article-button-favorite','music-article-button-favorite-added');
+        }
+        else {
             //if the article exist we need to remove it
-            me.setEditable(favorites,false);
+            me.setEditable(favorites, false);
             favorites.remove(favorites.getAt(story));
-            
-            btn = article.renderElement.down('.music-article-button-favorite-added');
-            btn.removeCls('music-article-button-favorite-added');
-            btn.addCls('music-article-button-favorite');
+
+            Ext.fly(el).replaceCls('music-article-button-favorite-added','music-article-button-favorite');
         }
     },
 
-    onGenreToc : function(view, model) {
+    onToc : function(view, model) {
         var mainFlow = this.getMainFlow(),
             toc = mainFlow.down('#' + model.get('genreKey'));
 
         mainFlow.setActiveItem(toc);
     },
 
-    onTweet : function(view,model){
+    onTweet : function(view, model) {
         var me = this;
-        
-        if(!me.overlay){
+
+        if (!me.overlay) {
             me.overlay = Ext.Viewport.add({
-                xtype   : 'panel',
-                modal   : true,
-                hideOnMaskTap:true,
-                centered: true,
-                width   : 500,
-                height  : 220,
-                padding : 20
+                xtype         : 'panel',
+                modal         : true,
+                hideOnMaskTap : true,
+                centered      : true,
+                width         : 500,
+                height        : 220,
+                padding       : 20
             });
             me.body = me.overlay.renderElement.down('.x-inner');
         }
 
-        if(me.body.dom.hasChildNodes()){
+        if (me.body.dom.hasChildNodes()) {
             var dom = me.body.dom;
-            while ( dom.childNodes.length >= 1 ){
+            while (dom.childNodes.length >= 1) {
                 Ext.removeNode(dom.firstChild);
             }
         }
 
-        twttr.anywhere(function (T) {
+        twttr.anywhere(function(T) {
             T(me.body.dom).tweetBox({
-                height: 100,
-                width: 450,
-                label:'Share this story',
-                defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate',
-                onTweet : Ext.Function.bind(me.onTweetResponse,me)
+                height         : 100,
+                width          : 450,
+                label          : 'Share this story',
+                defaultContent : model.get('title') + ' ' + document.URL + ' via Discover Music @ModusCreate',
+                onTweet        : Ext.Function.bind(me.onTweetResponse, me)
             });
         });
         me.overlay.show();
     },
 
-    setEditable : function(store,value){
-        store.each(function(f){
-            f.set('editable',value);
+    setEditable : function(store, value) {
+        store.each(function(f) {
+            f.set('editable', value);
         });
     },
 
-    onTweetResponse : function(text,html){
+    onTweetResponse : function(text, html) {
         this.overlay.hide();
     }
 });

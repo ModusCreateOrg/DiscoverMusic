@@ -12,105 +12,136 @@ Ext.define('Music.view.Drawer', {
 
     config  : {
         // top docked button that closes the drawer
-        drawerPull      : true,
-        store           : 'Music.store.Genres',
-        closed          : true,
-        indicator       : false,
-        docked          : 'bottom',
-        scrollable      : { direction: 'horizontal' },
-        height          : 230,
-        left            : 0,
-        cls             : 'drawer-body',
-        title           : 'Browse Genres'
+        drawerPull : true,
+        store      : 'Music.store.Genres',
+        closed     : true,
+        indicator  : false,
+        docked     : 'bottom',
+        scrollable : { direction : 'horizontal' },
+        height     : 230,
+        left       : 0,
+        cls        : 'drawer-body',
+        title      : 'Browse Genres',
+        data       : [],
+        tpl        : [
+            '<div class="drawer-pages-cnt">',
+                '<div class="drawer-page">',
+                    '<div class="drawer-inner-btn" data-id="favorites">Favorites</div>',
+                    '<div class="drawer-inner-btn" data-id="search">Search</div>',
+                '</div>',
+                '<tpl for=".">',
+                    '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
+                        '<h2>{name}</h2>',
+                        '<img src="http://src.sencha.io/182/{image}" />',
+                        '<div class="drawer-title-folded"></div>',
+                    '</div>',
+                '</tpl>',
+            '</div>'
+        ]
     },
 
-    initialize  : function(){
+    initialize : function() {
         var me = this;
 
         me.callParent();
 
         me.add(me.getDrawerPull());
-        
+
         me.registerEvents();
 
-        if(me.getClosed()){
+        if (me.getClosed()) {
             me.close();
-        }else{
+        }
+        else {
             me.open();
         }
 
-        Ext.Viewport.on('orientationchange', me.reDraw, me);
+
     },
 
-    applyStore  : function(store){
-        if(Ext.isString(store)){
+    applyStore : function(store) {
+        if (Ext.isString(store)) {
             return Ext.create(store);
         }
         return store;
     },
 
-    applyDrawerPull : function(config){
+    applyDrawerPull : function(config) {
         if (config === true) {
             config = {
-                docked  : 'top',
-                html    : this.getTitle(),
-                cls     : 'drawer-toggle-pull drawer-close'
+                docked : 'top',
+                html   : this.getTitle(),
+                cls    : 'drawer-toggle-pull drawer-close'
             };
         }
         return Ext.factory(config, Ext.Component, this.getDrawerPull());
     },
 
-    registerEvents: function() {
-        var me          = this,
-            el          = me.renderElement;
+    registerEvents : function() {
+        var me = this,
+            el = me.renderElement;
 
         el.on('tap', me.onTap, me);
+
+        me.renderElement.on('tap', me.onPageTap, me);
+
+
+        Ext.Viewport.on({
+            scope             : me,
+            orientationchange : 'reDraw'
+        });
+
+        Ext.Viewport.renderElement.on({
+            scope : me,
+            tapstart : me.onViewportTapStart
+        });
     },
 
-    onTap: function(ev) {
+    onTap : function(ev) {
         var me = this;
-        if (ev.getTarget('.drawer-main')){
+        if (ev.getTarget('.drawer-main')) {
             return this.fireEvent('gomain', this);
         }
-        if (ev.getTarget('.drawer-about')){
+        if (ev.getTarget('.drawer-about')) {
             return this.fireEvent('goabout', this);
         }
-        if (ev.getTarget('.drawer-toggle-pull .x-innerhtml')){
+        if (ev.getTarget('.drawer-toggle-pull .x-innerhtml')) {
             return me.toggle();
         }
     },
 
-    onPageTap   : function(event){
+    onPageTap : function(event) {
         var me = this,
-            page    = Ext.get(event.getTarget('.drawer-page'));
+            page = Ext.get(event.getTarget('.drawer-page'));
 
-        if(page){
-            var id      = +page.getAttribute("data-id"),
-                genre   = me.getStore().getById(id),
-                anim    = Ext.Function.createSequence(me.showPageAnim(page), me.hidePageAnim(page), me);
+        if (page) {
+            var id = +page.getAttribute("data-id"),
+                genre = me.getStore().getById(id),
+                anim = Ext.Function.createSequence(me.showPageAnim(page), me.hidePageAnim(page), me);
 
             anim();
 
-            if(id){
-                me.fireEvent('itemtap',id,genre);
-            }else{
+            if (id) {
+                me.fireEvent('itemtap', id, genre);
+            }
+            else {
                 page = Ext.get(event.getTarget('.drawer-inner-btn'));
-                me.fireEvent(page.getAttribute("data-id")+'tap');
+                me.fireEvent(page.getAttribute("data-id") + 'tap');
             }
         }
     },
 
-    toggle: function(state, suppressEvent) {
-        var me      = this,
-            closed  = me.getClosed();
+    toggle : function(state, suppressEvent) {
+        var me = this,
+            closed = me.getClosed();
 
-        if (!Ext.isBoolean(state)){ state=undefined;}
+        if (!Ext.isBoolean(state)) { state = undefined;}
 
-        state = state === undefined ? !closed: !!state;
-        
+        state = state === undefined ? !closed : !!state;
+
         if (state !== closed) {
             if (me.rendered) {
-                me[state ? 'close': 'open']();
+                me[state ? 'close' : 'open']();
             }
 
             if (!suppressEvent) {
@@ -121,38 +152,38 @@ Ext.define('Music.view.Drawer', {
         return me;
     },
 
-    close       : function(hide){
-        var me      = this,
-            el      = me.renderElement,
-            vpHeight= Ext.Viewport.renderElement.getHeight(),
-            button  = el.down('.drawer-close > div');
+    close : function(hide) {
+        var me = this,
+            el = me.renderElement,
+            vpHeight = Ext.Viewport.renderElement.getHeight(),
+            button = el.down('.drawer-close > div');
 
-        me.setTop( vpHeight - 40);
+        me.setTop(vpHeight - 40);
 
         button.addCls('drawer-open-pull');
 
         if (hide) {
             this.hide();
         }
-        
+
         me.setClosed(true);
     },
 
-    open: function() {
-        var me      = this,
-            el      = me.renderElement,
-            height  = me.getHeight(),
-            vpHeight= Ext.Viewport.renderElement.getHeight(),
-            button  = el.down('.drawer-close > div');
+    open : function() {
+        var me = this,
+            el = me.renderElement,
+            height = me.getHeight(),
+            vpHeight = Ext.Viewport.renderElement.getHeight(),
+            button = el.down('.drawer-close > div');
 
-        me.setTop( vpHeight - height );
+        me.setTop(vpHeight - height);
 
         button.removeCls('drawer-open-pull');
 
         me.setClosed(false);
     },
 
-    reDraw: function() {
+    reDraw : function() {
         var me = this;
         return me.getClosed() ? me.close() : me.open();
     },
@@ -160,75 +191,29 @@ Ext.define('Music.view.Drawer', {
     /**
      * Using body width and page sample/icon width, etc, calculate max articles per carousel card
      */
-    getMaxPagesPerCard: function() {
-        return (Ext.Viewport.getOrientation() == 'portrait')?5:70;
+    getMaxPagesPerCard : function() {
+        return (Ext.Viewport.getOrientation() == 'portrait') ? 5 : 70;
     },
 
-    addArticles   : function() {
-        var me      = this,
-            store   = me.getStore(),
-            maxPg   = me.getMaxPagesPerCard(),
-            cards   = [],
-            n       = 0,
-            card,
-            emptySpaces;
+    addArticles : function() {
+        var me = this,
+            store = me.getStore(),
+            cardData = [];
 
         store.each(function(record) {
-            if (!n) {
-                card = {
-                    xtype: 'component',
-                    data: [],
-                    tpl: [
-                        '<div class="drawer-pages-cnt">',
-                            '<div class="drawer-page">',
-                                '<div class="drawer-inner-btn" data-id="favorites">Favorites</div>',
-                                '<div class="drawer-inner-btn" data-id="search">Search</div>',
-                            '</div>',
-                            '<tpl for=".">',
-                                '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
-                                    '<h2>{name}</h2>',
-                                    '<img src="http://src.sencha.io/182/{image}" />',
-                                    '<div class="drawer-title-folded"></div>',
-                                '</div>',
-                            '</tpl>',
-                        '</div>'
-                    ]
-                };
-            }
-
-            card.data.push(record.getData());
-
-            n++;
-
-            if (n==maxPg) {
-                n=0;
-                cards.push(card);
-            }
+            cardData.push(record.getData());
         });
 
-        emptySpaces = maxPg - card.data.length;
-        
-        if (emptySpaces) {
-            //add the last one to flex all the way though
-            // or use different flexing
-            cards.push(card);
-        }
-
-
-        var added = me.add(cards);
-
-        Ext.each(added, function(item) {
-            item.renderElement.on('tap', me.onPageTap, me);
-        });
+        me.setData(cardData);
     },
 
-    showPageAnim: function(page) {
+    showPageAnim : function(page) {
         return function() {
             page.addCls('drawer-page-animate');
         };
     },
 
-    hidePageAnim: function(page) {
+    hidePageAnim : function(page) {
         return function() {
             Ext.defer(function() {
                 page.removeCls('drawer-page-animate');
@@ -238,6 +223,11 @@ Ext.define('Music.view.Drawer', {
                 this.close();
             }, 101, this);
         };
+    },
+    onViewportTapStart : function(e) {
+        if (! e.getTarget('.drawer-body') && ! this.getClosed()) {
+            this.close();
+        }
     }
 
 });

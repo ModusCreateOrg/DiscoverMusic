@@ -35,9 +35,11 @@ Ext.define('Music.controller.Stations', {
 
         if (!me.view) {
             view = me.view = Ext.create('Music.view.StationFinder');
-            view.showBy(btn);
             me.getGeoLocation();
+
         }
+        view.showBy(btn);
+
     },
 
     onSearchZip : function(view, zip) {

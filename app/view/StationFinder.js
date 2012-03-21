@@ -1,18 +1,18 @@
 Ext.define('Music.view.StationFinder', {
-    extend : 'Ext.Panel',
-    xtype  : 'stationfinder',
+    extend   : 'Ext.Panel',
+    xtype    : 'stationfinder',
     requires : [
         'Music.view.StationDetail',
         'Ext.dataview.NestedList',
         'Ext.TitleBar'
     ],
-    config : {
-        displayField  : 'name',
-        layout        : 'fit',
-        height        : 100,
-        width         : 350,
-        hideOnMaskTap : true,
-        items         : [
+    config   : {
+        displayField : 'name',
+        layout       : 'fit',
+        cls          : 'stationfinder',
+        height       : 100,
+        width        : 350,
+        items        : [
             {
                 xtype  : 'component',
                 docked : 'top',
@@ -80,6 +80,13 @@ Ext.define('Music.view.StationFinder', {
             }
         });
         me.callParent();
+
+        me.on({
+            scope   : me,
+            painted : me.onPaintedInitViewportTapEvent,
+            buffer  : 250
+        })
+
     },
 
     onSearchGeoLocation : function() {
@@ -143,5 +150,25 @@ Ext.define('Music.view.StationFinder', {
             delete me.list;
         }
         me.setHeight(550);
+    },
+
+    onPaintedInitViewportTapEvent : function(view) {
+        Ext.Viewport.renderElement.on({
+            scope    : view,
+            tapstart : view.onViewportTapStart
+        });
+    },
+
+    onViewportTapStart : function(evtObj) {
+        var me = this;
+        if (!evtObj.getTarget('.stationfinder') && me.isPainted()) {
+            console.log('hiding');
+            me.hide();
+            Ext.Viewport.renderElement.un({
+                scope : me,
+                tap   : me.onViewportTap
+            });
+
+        }
     }
 });

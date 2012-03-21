@@ -197,8 +197,14 @@
 }
 
 .music-article{
-	.music-article-header{
-		padding:15px;
+	.music-article-header {
+        @media screen and (orientation:landscape) {
+            padding: 15px;
+        }
+        @media screen and (orientation:portrait) {
+            padding: 2px 0 2px 2px;
+        }
+
 		background:#191919 url(../images/article-view-sidebar-bg.png);
 
 		.music-article-header-image{
@@ -239,7 +245,11 @@
 	}
 
 	.music-article-content{
-		padding:15px;
+        padding:15px;
+
+        @media screen and (orientation:portrait) {
+            padding:0;
+        }
 
 		.music-article-image{
 			position:relative;
@@ -247,7 +257,7 @@
 			background-size: cover;
 			background-position: center center;
 	  		background-repeat: no-repeat;
-			margin-bottom:20px;
+			/*margin-bottom:20px;*/
 
 			h1{
 				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
@@ -290,6 +300,7 @@
 		p{
 			margin-bottom:15px;
 			font-size:0.8em;
+            padding: 0 15px 0 15px;
 			line-height:1.6em;
 		}
 	}
@@ -300,7 +311,14 @@
 		height:41px;
 		background:transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
 		text-indent:-9999px;
-		margin:34px 0 0 37px;
+
+        @media screen and (orientation:landscape) {
+            margin:34px 0 0 37px;
+        }
+        @media screen and (orientation:portrait) {
+            margin: 1px 0 2px 120px;
+            width: 194px;
+        }
 	}
 	.music-article-button-listen{
 		background-position:0 -42px;
