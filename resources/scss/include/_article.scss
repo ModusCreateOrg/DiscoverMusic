@@ -139,11 +139,19 @@
 	}
 }
 
-@include article-category('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include article-category('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include article-category('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include article-category('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include article-category('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+
+
+@include article-category('rockPopFolk', $rockpopfolk-background-color-light, $rockpopfolk-background-color-dark);
+@include article-category('classical', $classical-background-color-light, $classical-background-color-dark);
+@include article-category('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include article-category('world', $world-background-color-light, $world-background-color-dark);
+@include article-category('hipHopRB', $hiphoprb-background-color-light, $hiphoprb-background-color-dark);
+@include article-category('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
+@include article-category('rock', $rock-background-color-light,  $rock-background-color-dark);
+@include article-category('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
+@include article-category('country',$country-background-color-light, $country-background-color-dark);
+      
+
 
 .music-article-preview div.x-innerhtml {
 	height:100%;
@@ -311,8 +319,14 @@
 	}
 }
 
-@include article('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include article('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include article('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include article('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include article('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+@include article('rockPopFolk', $rockpopfolk-background-color-light, $rockpopfolk-background-color-dark);
+@include article('classical', $classical-background-color-light, $classical-background-color-dark);
+@include article('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include article('world', $world-background-color-light, $world-background-color-dark);
+@include article('hipHopRB', $hiphoprb-background-color-light, $hiphoprb-background-color-dark);
+@include article('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
+@include article('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
+
+@include article('rock', $rock-background-color-light,  $electronicdance-background-color-light);
+@include article('country',$country-background-color-light, $country-background-color-dark);
+
