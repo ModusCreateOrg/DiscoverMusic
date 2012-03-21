@@ -11,7 +11,6 @@ Ext.define('Music.controller.Search', {
     config  : {
         models: ['Article', 'Genre'],
         stores: ['Articles', 'Genres','Search'],
-        filters: Ext.create('Ext.util.MixedCollection'),
         refs  : {
             search : {
                 selector : 'mainflow search'
@@ -37,8 +36,8 @@ Ext.define('Music.controller.Search', {
                 keyup: 'onSearchReturn'
             },
             'mainflow search checkboxfield' : {
-                check   : 'addFilter',
-                uncheck : 'removeFilter'
+                check   : 'filter',
+                uncheck : 'filter'
             }
         }
     },
@@ -49,7 +48,10 @@ Ext.define('Music.controller.Search', {
             textfield = me.getQuery();
 
         dataview.getStore().load({
-            params : {searchTerm:textfield.getValue()}
+            params : {searchTerm:textfield.getValue()},
+            callback: function(){
+                me.filter();
+            }
         });
     },
 
@@ -75,30 +77,23 @@ Ext.define('Music.controller.Search', {
         }
     },
 
-    addFilter   : function(checkbox){
+    filter   : function(checkbox){
         var me = this,
+            checkboxs = Ext.ComponentQuery.query('mainflow search fieldset checkboxfield'),
             dataview = me.getResults(),
-            filters = me.getFilters();
+            filters = [];
 
-        filters.add(checkbox.getName(),checkbox._value);
-        me.filter(dataview,filters.getRange());
-    },
-
-    removeFilter   : function(checkbox){
-        var me = this,
-            dataview = me.getResults(),
-            filters = me.getFilters();
-
-        filters.remove(filters.getByKey(checkbox.getName()));
-        me.filter(dataview,filters.getRange());
-    },
-
-    filter: function(dataview,genres){
-        dataview.getStore().clearFilter();
+        for(var i=0,len=checkboxs.length;i<len;i++){
+            var chk = checkboxs[i];
+            if(chk.getValue()){
+                filters.push(chk._value);
+            }
+        }
         
-        if(genres.length > 0){
+        dataview.getStore().clearFilter();
+        if(filters.length > 0){
             dataview.getStore().filterBy(function(record,id){
-                return Ext.Array.contains(genres,record.get('genreKey'));
+                return Ext.Array.contains(filters,record.get('genreKey'));
             });
         }
     }

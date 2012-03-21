@@ -104,7 +104,8 @@ Ext.define('Music.controller.Article', {
                 height: 100,
                 width: 450,
                 label:'Share this story',
-                defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate'
+                defaultContent: model.get('title')+' '+document.URL+' via Discover Music @ModusCreate',
+                onTweet : Ext.Function.bind(me.onTweetResponse,me)
             });
         });
         me.overlay.show();
@@ -114,5 +115,9 @@ Ext.define('Music.controller.Article', {
         store.each(function(f){
             f.set('editable',value);
         });
+    },
+
+    onTweetResponse : function(text,html){
+        this.overlay.hide();
     }
 });

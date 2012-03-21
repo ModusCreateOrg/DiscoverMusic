@@ -95,16 +95,15 @@ Ext.define('Music.view.Article', {
 		var btn = event.getTarget('.music-article-button');
 
         if (btn){
+            this.pressing = btn;
             Ext.fly(btn).addCls('music-article-button-pressed');
         }
     },
 
     onRelease : function(event){
-		var me = this,
-			btn = event.getTarget('.music-article-button');
-
-        if (btn){
-            Ext.fly(btn).removeCls('music-article-button-pressed');
+        if (this.pressing){
+            Ext.fly(this.pressing).removeCls('music-article-button-pressed');
+            delete this.pressing;
         }
     },
 
