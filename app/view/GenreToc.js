@@ -17,29 +17,22 @@ Ext.define('Music.view.GenreToc', {
         cls      : 'genre-toc',
         items    : [
             {
-                xtype    : 'container',
-                position : 'top',
-                height   : 305,
-                layout   : 'fit',
-                items    : [
-                    {
-                        xtype  : 'component',
-                        itemId : 'featured',
-                        data   : {},
-                        flex   : 2,
-                        tpl    : [
-                            '<div class="genre-toc-featured genre-toc-featured-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
-                                '<h2>{title}</h2>',
-                                '<h3>{genre}</h3>',
-                            '</div>'
-                        ]
-                    }
+                xtype  : 'component',
+                itemId : 'featured',
+                cls    : 'genre-toc-featured',
+                data   : {},
+                flex   : 1,
+                tpl    : [
+                    '<div class="genre-toc-featured-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
+                        '<h2>{title}</h2>',
+                        '<h3>{genre}</h3>',
+                    '</div>'
                 ]
             },
             {
                 xtype  : 'container',
                 layout : 'hbox',
-                flex   : 1,
+                height : 307,
                 itemId : 'stories'
             }
         ]
@@ -49,15 +42,15 @@ Ext.define('Music.view.GenreToc', {
         var me = this,
             container = me.down('#stories'),
             featured = me.down('#featured'),
-            articles = me.getArticles().getRange(0, 4),
-            top = me.down('container[position=top]');
+            articles = me.getArticles().getRange(0, 4);
 
         me.callParent();
 
         featured.setData(articles.shift().getData());
-        me.insertArticle(top, articles.shift());
 
-        Ext.each(articles, function(article, i) {
+        articles.shift();
+
+        Ext.each(articles, function(article) {
             me.insertArticle(container, article);
         }, me);
 

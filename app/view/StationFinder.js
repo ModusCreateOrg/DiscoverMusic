@@ -1,18 +1,18 @@
 Ext.define('Music.view.StationFinder', {
-    extend : 'Ext.Panel',
-    xtype  : 'stationfinder',
+    extend   : 'Ext.Panel',
+    xtype    : 'stationfinder',
     requires : [
         'Music.view.StationDetail',
         'Ext.dataview.NestedList',
         'Ext.TitleBar'
     ],
-    config : {
-        displayField  : 'name',
-        layout        : 'fit',
-        height        : 100,
-        width         : 350,
-        hideOnMaskTap : true,
-        items         : [
+    config   : {
+        displayField : 'name',
+        layout       : 'fit',
+        cls          : 'stationfinder',
+        height       : 100,
+        width        : 350,
+        items        : [
             {
                 xtype  : 'component',
                 docked : 'top',
@@ -31,8 +31,9 @@ Ext.define('Music.view.StationFinder', {
                 },
                 items  : [
                     {
-                        xtype : 'container',
-                        items : [
+                        xtype  : 'container',
+                        itemId : 'searchContainer',
+                        items  : [
                             {
                                 xtype       : 'textfield',
                                 width       : 200,
@@ -79,14 +80,27 @@ Ext.define('Music.view.StationFinder', {
             }
         });
         me.callParent();
+
+        me.on({
+            scope   : me,
+            painted : me.onPaintedInitViewportTapEvent,
+            buffer  : 250
+        })
+
     },
 
     onSearchGeoLocation : function() {
         this.fireEvent('searchgeo', this);
     },
 
-    onSearchZipCodeBtn : function() {
-        this.fireEvent('searchzip', this, 21703);
+    onSearchZipCodeBtn : function(btn) {
+        var zip = btn.getParent().down('#zipCode').getValue();
+        if (zip.length == 5) {
+            this.fireEvent('searchzip', this, zip);
+        }
+        else {
+            Ext.Msg.alert('Please enter a valid Zip Code.');
+        }
     },
 
     showStations : function(data) {
@@ -97,6 +111,7 @@ Ext.define('Music.view.StationFinder', {
         me.list = me.add({
             xtype        : 'nestedlist',
             title        : 'Stations',
+            itemTpl      : '{name}, {location}',
             displayField : 'name',
             backText     : 'Back',
             store        : {
@@ -120,7 +135,6 @@ Ext.define('Music.view.StationFinder', {
     },
 
     onListItemTap : function(nestedList, list, index, target, record) {
-        console.log('onListItemTap', record.getData());
         nestedList.getDetailCard().setData(record.getData());
         this.selectedRecord = record;
     },
@@ -136,5 +150,25 @@ Ext.define('Music.view.StationFinder', {
             delete me.list;
         }
         me.setHeight(550);
+    },
+
+    onPaintedInitViewportTapEvent : function(view) {
+        Ext.Viewport.renderElement.on({
+            scope    : view,
+            tapstart : view.onViewportTapStart
+        });
+    },
+
+    onViewportTapStart : function(evtObj) {
+        var me = this;
+        if (!evtObj.getTarget('.stationfinder') && me.isPainted()) {
+            console.log('hiding');
+            me.hide();
+            Ext.Viewport.renderElement.un({
+                scope : me,
+                tap   : me.onViewportTap
+            });
+
+        }
     }
 });

@@ -119,11 +119,17 @@
 	}
 }
 
-@include global-toc('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include global-toc('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include global-toc('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include global-toc('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include global-toc('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+@include global-toc('rockPopFolk', $rockpopfolk-background-color-light, $rockpopfolk-background-color-dark);
+@include global-toc('classical', $classical-background-color-light, $classical-background-color-dark);
+@include global-toc('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include global-toc('world', $world-background-color-light, $world-background-color-dark);
+@include global-toc('hipHopRB', $hiphoprb-background-color-light, $hiphoprb-background-color-dark);
+@include global-toc('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
+@include global-toc('rock', $rock-background-color-light,  $electronicdance-background-color-light);
+@include global-toc('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
+@include global-toc('country',$country-background-color-light, $country-background-color-dark);
+
+
 
 
 /************************************
@@ -132,7 +138,10 @@
 @mixin genre-toc($genre, $bg-color1, $bg-color2){
 	.genre-toc-featured-#{$genre}{
 			position:relative;
-			height: 305px;
+            height: 645px;
+    		@media screen and (orientation:landscape) {
+                height: 385px;
+            }
 			border: 6px solid #000;
 			background-size: cover;
 			background-position: center top;
@@ -163,7 +172,7 @@
 				color: #fff;
 				font-size: 1.1em;
 				font-family: $base-font;
-				text-transform: uppercase; 			
+				text-transform: uppercase;
 				text-shadow: 0px 1px darken($bg-color2, 20);
 	    }
 	}
@@ -189,7 +198,7 @@
 		    	left:0;
 		    	color:#fff;
 		    	font-size:1.2em;
-					padding:20px 40px;
+					padding: 20px;
 					color: #fff;
 					font-size: 1.1em;
 					font-family: $base-font;
@@ -209,8 +218,8 @@
 	 			height:308px;
 	 			background-size: cover;
 				background-position: center top;
-		    background-repeat: no-repeat;
-		    border: 6px solid black;
+                background-repeat: no-repeat;
+                border: 6px solid black;
 
 		 		h3 {
 			    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
@@ -233,8 +242,14 @@
 	}
 }
 
-@include genre-toc('rockPopFolk', rgba(255, 204, 0, 1.0), rgba(255, 167, 0, 1.0));
-@include genre-toc('classical', rgba(102, 204, 0, 1.0), rgba(102, 171, 32, 1.0));
-@include genre-toc('jazzBlues', rgba(51, 204, 255, 1.0), rgba(22, 153, 196, 1.0));
-@include genre-toc('world', rgba(102, 44, 145, 1.0), rgba(57, 16, 87, 1.0));
-@include genre-toc('hipHopRB', rgba(255, 0, 255, 1.0), rgba(166, 18, 166, 1.0));
+@include genre-toc('rockPopFolk', $rockpopfolk-background-color-light, $rockpopfolk-background-color-dark);
+@include genre-toc('classical', $classical-background-color-light, $classical-background-color-dark);
+@include genre-toc('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include genre-toc('world', $world-background-color-light, $world-background-color-dark);
+@include genre-toc('hipHopRB', $hiphoprb-background-color-light, $hiphoprb-background-color-dark);
+@include genre-toc('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
+@include genre-toc('rock', $rock-background-color-light,  $electronicdance-background-color-light);
+@include genre-toc('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
+@include genre-toc('country',$country-background-color-light, $country-background-color-dark);
+
+

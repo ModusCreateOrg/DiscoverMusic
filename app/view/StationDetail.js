@@ -11,15 +11,11 @@ Ext.define('Music.view.StationDetail', {
                 '<div>Frequency: {band} {frequency}</div>',
                 '<div>Location: {marketCity} {state}</div>',
             '</div>',
-            '<tpl if="urls">',
-                '<tpl for="urls">',
-                    '<div class="station-url-container index_{[ xindex - 1 ]}">',
-                        '<div class="station-play-icon"></div>',
-//                        '<span class="station-url">',
-                            '{title}',
-//                        '</span>',
-                    '</div>',
-                '</tpl>',
+            '<tpl for="urls">',
+                '<div class="station-url-container index_{[ xindex - 1 ]}">',
+                    '<div class="station-play-icon"></div>',
+                    '{title}',
+                '</div>',
             '</tpl>'
         ]
     },
@@ -47,10 +43,11 @@ Ext.define('Music.view.StationDetail', {
         Ext.get(target).removeCls('station-selected');
     },
     onUrlElTap : function(evtObj) {
-        var target     = evtObj.target,
-            classNames = target.className.split(' '),
-            index      = classNames[1].split('_')[1];
+        var me         = this,
+            classNames = evtObj.target.className.split(' '),
+            index      = classNames[1].split('_')[1],
+            urlObj     = me.getData().urls[index];
 
-        this.fireEvent('stationurlselect', this, index);
+        me.fireEvent('stationurlselect', me, urlObj);
     }
 });

@@ -2,19 +2,22 @@ Ext.define('Music.controller.Stations', {
     extend : 'Ext.app.Controller',
 
     config : {
-        views   : [
+        views       : [
             'StationFinder'
         ],
-        stores  : [
+        stores      : [
             'Stations'
         ],
-        control : {
+        control     : {
             stationfinder : {
                 searchgeo : 'onSearchGeo',
                 searchzip : 'onSearchZip'
+            },
+            stationdetail : {
+                stationurlselect : 'onStationUrlSelect'
             }
         },
-        queryApiTpl   : Ext.create('Ext.Template',
+        queryApiTpl : Ext.create('Ext.Template',
             'select * from xml where url="http://moduscreate.com/nprStationFinderProxy.php?lat={latitude}&lon={longitude}&zip={zip}"'
         )
     },
@@ -32,23 +35,49 @@ Ext.define('Music.controller.Stations', {
 
         if (!me.view) {
             view = me.view = Ext.create('Music.view.StationFinder');
-            view.showBy(btn);
             me.getGeoLocation();
+
         }
+        view.showBy(btn);
+
     },
 
     onSearchZip : function(view, zip) {
-        console.log('onSearchZip');
-        this.queryStations({zip : 21703})
+        this.queryStations({zip : zip});
     },
 
-    onSearchGeo  : function(view) {
-        console.log('onSearchGeo');
-
+    onSearchGeo : function() {
         this.queryStations(this.coords);
-
     },
-    onStationTap : function() {
+
+    onStationUrlSelect : function(detailCard, urlObj) {
+        var content = urlObj.content,
+            app     = this.getApplication();
+
+        urlObj = Ext.clone(urlObj);
+
+        if (content && content.match('\\\.mp3')) {
+            app.fireEvent('playAudio', urlObj);
+        }
+        else if (content.match('\\\.pls')) {
+            Ext.util.JSONP.request({
+                url         : 'plsProxy.php',
+                callbackKey : 'callback',
+                params      : { url : urlObj.content },
+                callback    : function(success, data) {
+                    if (success) {
+
+                        urlObj.content = data.file;
+                        urlObj.title = urlObj.name + ' ' + urlObj.title;
+                        app.fireEvent('playAudio', urlObj);
+                    }
+                    else {
+                        Ext.Msg.alert('We Apologize!', urlObj.title + ' is currently unavailable.');
+                    }
+                }
+            });
+
+        }
 
     },
 
@@ -62,10 +91,8 @@ Ext.define('Music.controller.Stations', {
     },
 
     onGeoLocationFind : function(geoPosition) {
-        var me = this,
-            coords = me.coords = geoPosition.coords;
-
-        me.getFriendlyGeoName(coords);
+        var me = this;
+        me.getFriendlyGeoName(me.coords = geoPosition.coords);
     },
 
     queryStations : function(params) {
@@ -89,8 +116,7 @@ Ext.define('Music.controller.Stations', {
     onAfterQueryStations : function(success, data) {
         if (success) {
             var dataItems = data.query.results.stations.station;
-             console.log('NPR data:', dataItems);
-             this.view.showStations(dataItems);
+            this.view.showStations(dataItems);
         }
     },
 

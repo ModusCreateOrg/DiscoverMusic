@@ -65,6 +65,9 @@ Ext.define('Music.controller.Main', {
             mainFlow  : {
                 xtype    : 'mainflow',
                 selector : 'main mainflow'
+            },
+            player   : {
+                selector : 'main player'
             }
         },
         routes      : {
@@ -108,23 +111,29 @@ Ext.define('Music.controller.Main', {
             'globaltoc' : {
                 storytap : 'onShowArticle'
             }
-        },
+        }
 
     },
 
     init : function() {
-        var me = this,
+        var me     = this,
             drawer = me.getDrawer();
 
         me.db = Ext.create('Ext.util.MixedCollection');
 
-        me.loadMask = Ext.create('Ext.LoadMask', {
+        me.loadMask = Ext.Viewport.add({
+            xtype   : 'loadmask',
             message : 'Curating content...'
         });
-        Ext.Viewport.add(me.loadMask);
+
         me.loadMask.show();
 
         drawer.getStore().load(me.onGenresLoaded, me);
+
+        me.getApplication().on({
+            scope     : me,
+            playAudio : 'onAppPlayAudio'
+        })
     },
 
     startApp : function() {
@@ -297,9 +306,9 @@ Ext.define('Music.controller.Main', {
     },
 
     onFavoritesTap : function() {
-        var me = this,
+        var me       = this,
             mainFlow = me.getMainFlow(),
-            fav = mainFlow.down('favorites');
+            fav      = mainFlow.down('favorites');
 
         mainFlow.setActiveItem(fav);
     },
@@ -338,8 +347,30 @@ Ext.define('Music.controller.Main', {
                     var view = me.getMainFlow().down('#article-' + id);
                     me.getMainFlow().setActiveItem(view);
                 }, me);
-
             }
+        }
+    },
+
+    onAppPlayAudio : function(musicData) {
+        var me = this,
+            player = me.getPlayer();
+
+        if (musicData.audioFile) {
+             Ext.util.JSONP.request({
+                url         : 'm3uProxy.php',
+                callbackKey : 'callback',
+                params      : { url : musicData.audioFile },
+                callback    : function(success, data) {
+                    if (success) {
+                        musicData.audioFile = data.file;
+                        player.setData(musicData);
+                    }
+                }
+            });
+
+        }
+        else {
+            player.setData(musicData);
         }
     }
 });
