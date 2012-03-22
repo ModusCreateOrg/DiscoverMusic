@@ -162,6 +162,8 @@ Ext.define('Music.controller.Main', {
         me.loadMask.hide();
         me.loadMask.destroy();
 
+        Ext.Msg.hide();
+
         delete me.loadMask;
 
         //custom event fired when articles are loaded

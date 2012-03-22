@@ -1,0 +1,7 @@
+git add . 
+git commit -m "prod test push `date`" 
+git checkout master
+git merge dev 
+git push origin master 
+git checkout dev 
+git push origin dev
