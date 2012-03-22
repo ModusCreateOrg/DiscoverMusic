@@ -166,14 +166,14 @@
 }
 
 
-@include drawer-article-genre('rockPopFolk', $rockpopfolk-background-color-light, $rockpopfolk-background-color-dark);
+@include drawer-article-genre('rock', $rock-background-color-light, $rock-background-color-dark);
 @include drawer-article-genre('classical', $classical-background-color-light, $classical-background-color-dark);
 @include drawer-article-genre('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
 @include drawer-article-genre('world', $world-background-color-light, $world-background-color-dark);
-@include drawer-article-genre('hipHopRB',$hiphoprb-background-color-light , $hiphoprb-background-color-dark);
-
+@include drawer-article-genre('hipHop',$hipHop-background-color-light , $hipHop-background-color-dark);
 @include drawer-article-genre('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
-@include drawer-article-genre('rock', $rock-background-color-light,  $electronicdance-background-color-light);
+@include drawer-article-genre('pop', $pop-background-color-light,  $pop-background-color-dark);
 @include drawer-article-genre('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
 @include drawer-article-genre('country',$country-background-color-light, $country-background-color-dark);
+@include drawer-article-genre('rnb',$rnb-background-color-light, $rnb-background-color-dark);
 

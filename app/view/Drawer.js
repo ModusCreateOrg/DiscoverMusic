@@ -55,8 +55,6 @@ Ext.define('Music.view.Drawer', {
         else {
             me.open();
         }
-
-
     },
 
     applyStore : function(store) {

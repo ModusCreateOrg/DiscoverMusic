@@ -20,8 +20,8 @@ Ext.define('Music.view.StationDetail', {
         ]
     },
 
-	initialize: function() {
-	    var me = this;
+   initialize: function() {
+       var me = this;
 
         me.callParent();
 
@@ -32,7 +32,7 @@ Ext.define('Music.view.StationDetail', {
             touchstart : me.onUrlElTouchStart,
             tap        : me.onUrlElTap
         });
-	},
+   },
 
     onUrlElTouchStart : function(evtObj) {
         var target = evtObj.getTarget();

@@ -21,18 +21,23 @@ Ext.define('Music.store.Genres', {
                 },
                 {
                     "id"   : 10005,
-                    "key"  : "hipHopRB",
-                    "name" : "Hip-Hop / R&B"
+                    "key"  : "hipHop",
+                    "name" : "Hip-Hop"
+                },
+                {
+                    "id"   : 139998808,
+                    "key"  : "rnb",
+                    "name" : "R&B / Soul"
                 },
                 {
                     "id"   : 10001,
-                    "key"  : "rockPopFolk",
-                    "name" : "Rock / Pop / Folk"
+                    "key"  : "rock",
+                    "name" : "Rock"
                 },
                 {
-                    "id"   : 10003,
-                    "key"  : "classical",
-                    "name" : "Classical"
+                    "id"   : 139997200,
+                    "key"  : "pop",
+                    "name" : "Pop"
                 },
                 {
                     "id"   : 10002,
@@ -53,6 +58,11 @@ Ext.define('Music.store.Genres', {
                     "id"   : 139996449,
                     "key"  : "latinAlternative",
                     "name" : "Latin"
+                },
+                {
+                    "id"   : 10003,
+                    "key"  : "classical",
+                    "name" : "Classical"
                 }
             ]
 

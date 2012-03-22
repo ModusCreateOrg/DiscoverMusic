@@ -9,6 +9,6 @@
 Ext.define('Music.model.Genre', {
     extend      : 'Ext.data.Model',
     config: {
-        fields	: ['id','name','key','image']
+        fields   : ['id','name','key','image']
     }
 });

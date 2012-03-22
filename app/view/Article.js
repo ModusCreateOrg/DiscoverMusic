@@ -11,12 +11,12 @@ Ext.define('Music.view.Article', {
     alias : 'widget.article',
 
     config : {
-		model		: null,
-		genre		: null,
-		layout		: 'hbox',
-		scrollable	: false,
-		cls			: 'music-article',
-	    items : [
+      model      : null,
+      genre      : null,
+      layout      : 'hbox',
+      scrollable   : false,
+      cls         : 'music-article',
+       items : [
             {
                 xtype : 'component',
                 cls   : 'music-article-header',
@@ -42,9 +42,9 @@ Ext.define('Music.view.Article', {
                 },
                 cls        : 'music-article-container',
                 items      : {
-                    xtype	: 'component',
-                    cls		: 'music-article-content',
-                    tpl		: new Ext.XTemplate(
+                    xtype   : 'component',
+                    cls      : 'music-article-content',
+                    tpl      : new Ext.XTemplate(
                         '<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/600/{image});">',
                             '<h1>{title}</h1>',
                             '<h2>{genre}</h2>',
@@ -70,29 +70,29 @@ Ext.define('Music.view.Article', {
     },
 
     initialize : function(){
-		var me = this;
+      var me = this;
 
-		me.callParent();
+      me.callParent();
 
-		me.renderElement.on({
-			scope      : me,
+      me.renderElement.on({
+         scope      : me,
             tap        : me.onTap,
             touchstart : me.onPress,
             touchend   : me.onRelease
-		});
-		me.articleTitle = me.renderElement.down('.music-article-image');
+      });
+      me.articleTitle = me.renderElement.down('.music-article-image');
 
         var viewport  = Ext.Viewport;
 
-		viewport.on({
+      viewport.on({
             scope             : me,
             orientationchange : me.onOrientationChange
         });
-		viewport.fireEvent('orientationchange', viewport, viewport.orientation);
+      viewport.fireEvent('orientationchange', viewport, viewport.orientation);
     },
 
-    onPress	: function(event){
-		var btn = event.getTarget('.music-article-button');
+    onPress   : function(event){
+      var btn = event.getTarget('.music-article-button');
 
         if (btn){
             this.pressing = btn;
@@ -129,26 +129,26 @@ Ext.define('Music.view.Article', {
         }
     },
 
-    applyModel	: function(model){
-		var me      = this,
-			header  = me.down('component[cls=music-article-header]'),
-			content = me.down('component[cls=music-article-content]'),
+    applyModel   : function(model){
+      var me      = this,
+         header  = me.down('component[cls=music-article-header]'),
+         content = me.down('component[cls=music-article-content]'),
             modelData = model.getData();
 
-        debugger;
-		header.setData(modelData);
-		content.setData(modelData);
+//        debugger;
+      header.setData(modelData);
+      content.setData(modelData);
 
-		return model;
+      return model;
     },
 
-	onOrientationChange : function(viewport,orientation){
-		var me = this,
-			header = me.down('component[cls=music-article-header]'),
+   onOrientationChange : function(viewport,orientation){
+      var me = this,
+         header = me.down('component[cls=music-article-header]'),
             articleTitle = me.articleTitle,
             portraitButtons = me.element.down('.music-article-header-portrait');
 
-		if(orientation === Ext.Viewport.PORTRAIT){
+      if(orientation === Ext.Viewport.PORTRAIT){
             header.hide();
             articleTitle.setStyle('display','block');
             portraitButtons.show();

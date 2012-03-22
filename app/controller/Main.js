@@ -13,7 +13,7 @@ Ext.define('Music.controller.Main', {
     config : {
         apiUrl : 'http://api.npr.org/query',
         apiKey : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
-
+        numErrors : 0,
         numResults : 10,
         models     : [
             'Article',
@@ -172,8 +172,16 @@ Ext.define('Music.controller.Main', {
         var me = this,
             drawer = me.getDrawer();
 
+        var recs = [];
+        drawer.getStore().each(function(rec) {
+            recs.push(rec.getId())
+        });
+        console.log('genreIds', recs.toString());
+
         drawer.getStore().each(function(record) {
             if (record.get('key') !== 'featured') {
+                console.log('Loading', record.getId(), record.get('name'))
+
                 me.loadData(record.getId());
             }
         }, me);
@@ -207,8 +215,34 @@ Ext.define('Music.controller.Main', {
     },
 
     saveData : function(genreId, success, data) {
+        var me = this,
+            drawer = me.getDrawer();
+
+        success = false;
+
+        if (! success || ! data) {
+            var numErrors = this.getNumErrors();
+
+            if (numErrors > 5) {
+
+                //Start the app when the last genre is loaded
+                if (me.db.getCount() === drawer.getStore().getCount()) {
+                    me.startApp();
+                }
+                else {
+                    Ext.Msg.alert('Error', 'The NPR API seems to be down. Please ty again later');
+
+                }
+            }
+            else {
+                console.log('load failed for genreId: ', genreId);
+                me.setNumErrors(numErrors + 1);
+                me.loadData(genreId);
+                return;
+            }
+
+        }
         var list = data.list.story,
-            drawer = this.getDrawer(),
             genre = drawer.getStore().getById(genreId),
             listLength = list.length,
             i = 0,
@@ -244,21 +278,22 @@ Ext.define('Music.controller.Main', {
         localStorage.setItem('timestamp-' + genreId, Ext.Date.format(new Date(), 'ymd'));
         localStorage.setItem('articles-' + genreId, Ext.encode(data.list.story));
 
-        this.importDataToStore(genreId, data.list.story);
+        me.importDataToStore(genreId, data.list.story);
     },
 
     importDataToStore : function(genreId, data) {
         var me = this,
             drawer = me.getDrawer(),
-            store;
+            store,
+            db = me.db;
 
         if (!data) {
             data = Ext.decode(localStorage.getItem('articles-' + genreId));
         }
 
-        if (!me.db.containsKey(genreId)) {
+        if (!db.containsKey(genreId)) {
             store = Ext.create('Music.store.Articles');
-            me.db.add(genreId, store);
+            db.add(genreId, store);
         }
         else {
             store = me.db.get(genreId);
@@ -276,7 +311,7 @@ Ext.define('Music.controller.Main', {
         store.remove(toRemove);
 
         //Start the app when the last genre is loaded
-        if (me.db.getCount() === drawer.getStore().getCount()) {
+        if (db.getCount() === drawer.getStore().getCount()) {
             me.startApp();
         }
     },

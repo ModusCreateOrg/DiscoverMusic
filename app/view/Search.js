@@ -9,7 +9,7 @@
 Ext.define('Music.view.Search', {
     extend      : 'Ext.Panel',
     alias       : 'widget.search',
-	requires    : [
+   requires    : [
         'Ext.form.Checkbox',
         'Ext.form.FieldSet',
         'Ext.field.Search'
