@@ -1,3 +1,8 @@
+
+# This is a simple test push script
+cd src
+sencha app build production ../prod
+cd ..
 git add . 
 git commit -m "prod test push `date`" 
 git checkout master
