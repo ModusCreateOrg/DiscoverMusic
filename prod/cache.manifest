@@ -1,6 +1,46 @@
 CACHE MANIFEST
-# 27eb85db0a3c8d9accc5561cc0c1d62edc5f706d
+# 4c22c44f799ca3b5d7ecb139ca93854a8b82b3b1
 index.html
+# bc41e94651812ba8693e9e326cf9d8042f94dd01
+resources/images/arrow-down.png
+# 0d81f5d3e8561f720124058f5727688d24206095
+resources/images/arrow-up.png
+# 7cb1ba4745c34c798761fd52ef3760421ae014ba
+resources/images/article-bg.png
+# 3fe986796087e7dd1c19abde1cd533eebfe879bb
+resources/images/article-buttons-sprite.png
+# 9e733115b8e49574c21e1cc0a1c387ba48fae117
+resources/images/article-view-sidebar-bg.png
+# e7e4545cf5d07cd8ce3b9856a4f89d368a2fbcb4
+resources/images/foundation-grants.png
+# a0fce2dbf0d2bef99f5d9cba8d6b7eef8263f1e2
+resources/images/heart.png
+# c29a786a3b0531464e4c0bbb92716c624c917e9d
+resources/images/major-gifts.png
+# aefcaeb3dd0b6be8a9db0f333dd645c43344bef0
+resources/images/pattern.png
+# 60e613beb43cc033c7d8e727087fa462d0a880c6
+resources/images/play-black.png
+# 397f7042c63a5cb708e843cabb6692d9cf3404de
+resources/images/play-pause.png
+# 26a1ac3f9605ed5dfcbb74aa9840d0ee77a90c78
+resources/images/radar.png
+# 1413e864de6e4cb82ac5d4354c642ab17f20e1e4
+resources/images/remove-favorite-sprite.png
+# 358bada48e0c20af3b3b5bfbe25f1e26eacbf7b2
+resources/images/search-favorites.png
+# e68b46b5c89213ccae9b0892bf2191e94a687cfd
+resources/images/search3.png
+# 1b3eafa9880095316148fc3f7905397dfe7c9654
+resources/images/sencha-logo-small.png
+# 8bec6c769055e8523d96bf0abcb7a55933597030
+resources/images/sound-16x16.png
+# ccd53a11b0a58f5dfc0caca1675b617646279642
+resources/images/support-station.png
+# 020b2c52c7182fecfa5c9375161eb9fae5318c66
+resources/images/toc-mask.png
+# 0410206fd6ca667fef5d72be881ef077340d9195
+resources/images/topbar-texture.png
 
 FALLBACK:
 

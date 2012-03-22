@@ -392,7 +392,7 @@ Ext.define('Music.controller.Main', {
 
         if (musicData.audioFile) {
              Ext.util.JSONP.request({
-                url         : 'm3uProxy.php',
+                url         : 'http://moduscreate.com/api/npr/m3uProxy.php',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
                 callback    : function(success, data) {

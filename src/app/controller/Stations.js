@@ -18,7 +18,7 @@ Ext.define('Music.controller.Stations', {
             }
         },
         queryApiTpl : Ext.create('Ext.Template',
-            'select * from xml where url="http://moduscreate.com/nprStationFinderProxy.php?lat={latitude}&lon={longitude}&zip={zip}"'
+            'select * from xml where url="http://moduscreate.com/api/npr/stationFinderProxy.php?lat={latitude}&lon={longitude}&zip={zip}"'
         )
     },
 
@@ -61,7 +61,7 @@ Ext.define('Music.controller.Stations', {
         }
         else if (content.match('\\\.pls')) {
             Ext.util.JSONP.request({
-                url         : 'plsProxy.php',
+                url         : 'http://moduscreate.com/api/npr/plsProxy.php',
                 callbackKey : 'callback',
                 params      : { url : urlObj.content },
                 callback    : function(success, data) {

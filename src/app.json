@@ -42,7 +42,7 @@
      */
     "css": [
         {
-            "path": "resources/css/app.css",
+            "path": "resources/css/music.css",
             "update": "delta"
         }
     ],
@@ -55,7 +55,27 @@
          * List of items in the CACHE MANIFEST section
          */
         "cache": [
-            "index.html"
+            "index.html",
+            "resources/images/arrow-down.png",
+            "resources/images/arrow-up.png",
+            "resources/images/article-bg.png",
+            "resources/images/article-buttons-sprite.png",
+            "resources/images/article-view-sidebar-bg.png",
+            "resources/images/foundation-grants.png",
+            "resources/images/heart.png",
+            "resources/images/major-gifts.png",
+            "resources/images/pattern.png",
+            "resources/images/play-black.png",
+            "resources/images/play-pause.png",
+            "resources/images/radar.png",
+            "resources/images/remove-favorite-sprite.png",
+            "resources/images/search-favorites.png",
+            "resources/images/search3.png",
+            "resources/images/sencha-logo-small.png",
+            "resources/images/sound-16x16.png",
+            "resources/images/support-station.png",
+            "resources/images/toc-mask.png",
+            "resources/images/topbar-texture.png",
         ],
         /**
          * List of items in the NETWORK section
@@ -75,7 +95,10 @@
     "extras": [
         "resources/images",
         "resources/icons",
-        "resources/loading"
+        "resources/loading",
+        "m3uProxy.php",
+        "stationFinder.php",
+        "plsProxy.php",
     ],
 
     /**
