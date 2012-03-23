@@ -95,7 +95,7 @@
     "extras": [
         "resources/images",
         "resources/icons",
-        "resources/loading",
+        "resources/fonts",
         "m3uProxy.php",
         "stationFinder.php",
         "plsProxy.php",

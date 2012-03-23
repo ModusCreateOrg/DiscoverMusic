@@ -26,7 +26,7 @@ Ext.define('Music.controller.Stations', {
         this.getApplication().on({
             scope        : this,
             findstations : 'onAppFindStations'
-        })
+        });
     },
 
     onAppFindStations : function(btn) {
@@ -76,9 +76,7 @@ Ext.define('Music.controller.Stations', {
                     }
                 }
             });
-
         }
-
     },
 
     getGeoLocation : function() {
