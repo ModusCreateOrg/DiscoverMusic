@@ -97,7 +97,7 @@
         "resources/icons",
         "resources/fonts",
         "m3uProxy.php",
-        "stationFinder.php",
+        "stationFinderProxy.php",
         "plsProxy.php",
     ],
 
