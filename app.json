@@ -99,6 +99,7 @@
         "m3uProxy.php",
         "stationFinderProxy.php",
         "plsProxy.php",
+        "tmpfile"
     ],
 
     /**
