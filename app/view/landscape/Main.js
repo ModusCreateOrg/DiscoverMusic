@@ -18,41 +18,39 @@ Ext.define('Music.view.landscape.Main', {
                 docked : 'top',
                 cls    : 'music-app-title',
                 layout : 'hbox',
+
                 defaults : {
-                    margin : '9  0 0 0',
-                    height : 40,
+                    margin   : '9 0 0 0',
+                    height   : 40,
                     iconMask : true,
-                    xtype : 'button'
+                    xtype    : 'button'
                 },
-                items  : [
+
+                items : [
                     {
-                        xtype : 'title',
-                        title : '<span class="app-title">Discover Music</span>',
-                        width : 252,
+                        xtype  : 'title',
+                        title  : '<span class="app-title">Discover Music</span>',
+                        width  : 190,
                         margin : null,
                         height : null
                     },
                     {
-                        xtype   : 'player',
-                        flex    : 1,
-                        margin  : null,
+                        xtype  : 'player',
+                        flex   : 1,
+                        margin : null,
                         height : null
                     },
-//                    {
-//                        action   : 'globaltoc',
-//                        iconCls  : 'toc-icon'
-//                    },
                     {
-                        action   : 'findstations',
-                        iconCls  : 'find-stations-icon'
+                        action  : 'findstations',
+                        iconCls : 'find-stations-icon'
                     },
                     {
-                        iconCls  : 'favorite-icon',
-                        action   : 'favorites'
+                        iconCls : 'favorite-icon',
+                        action  : 'favorites'
                     },
                     {
-                        action   : 'search',
-                        iconCls  : 'search-icon'
+                        action  : 'search',
+                        iconCls : 'search-icon'
                     }
                 ]
             },

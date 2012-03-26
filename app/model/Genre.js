@@ -7,8 +7,14 @@
  */
 
 Ext.define('Music.model.Genre', {
-    extend      : 'Ext.data.Model',
-    config: {
-        fields   : ['id','name','key','image']
+    extend : 'Ext.data.Model',
+    config : {
+        fields : [
+            'id',
+            'name',
+            'key',
+            'image',
+            'data'
+        ]
     }
 });

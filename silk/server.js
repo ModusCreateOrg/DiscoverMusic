@@ -1,11 +1,12 @@
 Config.documentRoot = 'docroot';
 Config.numChildren = 25;
-Config.port = 80;
+Config.port = 9090;
 
-var curl       = require('builtin/curl'),
-    fs         = require('builtin/fs'),
-    getGenres  = require('actions/getGenres.js'),
-    getMp3File = require('actions/getMp3File.js');
+var curl          = require('builtin/curl'),
+    fs            = require('builtin/fs'),
+    getGenres     = require('actions/getGenres.js'),
+    stationFinder = require('actions/stationFinder.js'),
+    getMp3File    = require('actions/getMp3File.js');
 
 // Add julian calendar method
 Date.prototype.getJulian = function() {

@@ -18,7 +18,7 @@ Ext.define('Music.controller.Stations', {
             }
         },
         queryApiTpl : Ext.create('Ext.Template',
-            'select * from xml where url="http://moduscreate.com/api/npr/stationFinderProxy.php?lat={latitude}&lon={longitude}&zip={zip}"'
+            'select * from xml where url="http://23.21.152.214/stationFinder.jst?lat={latitude}&lon={longitude}&zip={zip}"'
         )
     },
 

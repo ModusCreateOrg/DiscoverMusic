@@ -96,10 +96,18 @@
         "resources/images",
         "resources/icons",
         "resources/fonts",
-        "m3uProxy.php",
-        "stationFinderProxy.php",
-        "plsProxy.php",
-        "tmpfile"
+        "phpProxies/genreProxy.php",
+        "phpProxies/m3uProxy.php",
+        "phpProxies/plsProxy.php",
+        "phpProxies/stationFinderProxy.php",
+        "silk/actions/getGenres.js",
+        "silk/actions/getMp3File.js",
+        "silk/actions/stationFinder.js",
+        "silk/docroot/getGenres.jst",
+        "silk/docroot/getMp3File.jst",
+        "silk/docroot/stationFinder.jst",
+        "silk/genres.json",
+        "silk/server.js"
     ],
 
     /**

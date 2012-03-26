@@ -122,8 +122,11 @@ Ext.define('Music.controller.Main', {
     },
 
     init : function() {
-        var me     = this,
+        var me = this,
             drawer = me.getDrawer();
+
+        Ext.Viewport.add(me.getMain());
+
 
         me.db = Ext.create('Ext.util.MixedCollection');
 
@@ -144,7 +147,6 @@ Ext.define('Music.controller.Main', {
 
     startApp : function() {
         var me       = this,
-            main     = me.getMain(),
             drawer   = me.getDrawer(),
             mainFlow = me.getMainFlow(),
             viewport = Ext.Viewport;
@@ -156,116 +158,53 @@ Ext.define('Music.controller.Main', {
             genre.set('image', articles.getAt(0).get('image'));
             mainFlow.addArticles(genre, articles);
         });
+
         mainFlow.setFeatured();
 
         mainFlow.add(me.getFavorites());
         mainFlow.add(me.getSearch());
 
-        viewport.add(main);
-        viewport.add(me.getDrawer());
-
-        drawer.addArticles();
-
         me.loadMask.hide();
         me.loadMask.destroy();
 
-        Ext.Msg.hide();
-
         delete me.loadMask;
+
+        viewport.add(me.getDrawer());
+        drawer.addArticles();
+
 
         //custom event fired when articles are loaded
         viewport.fireEvent('loaded');
     },
 
     onGenresLoaded : function() {
-        var me     = this,
-            drawer = me.getDrawer();
+        var me = this,
+            data;
 
-        var recs = [];
-        drawer.getStore().each(function(rec) {
-            recs.push(rec.getId())
-        });
-
-        var genresToLoad = this.getGenresToLoad();
-
-        drawer.getStore().each(function(record) {
+        me.getDrawer().getStore().each(function(record) {
             if (record.get('key') !== 'featured') {
-
-                genresToLoad.push(record.getData());
+                data = record.getData();
+                me.parseGenreData(data);
             }
         }, me);
 
-        me.loadData();
+//        var start = new Date().getTime();
+//        console.log('DOM start', start);
+        me.startApp();
+//        var end = new Date().getTime();
+//        console.log('DOM end', end, ' ' , (end - start) / 1000 , 's')
     },
 
-    loadData : function() {
-        var me          = this,
-            genreToLoad = me.getGenresToLoad().shift(),
-            genreId;
-
-
-        if (genreToLoad) {
-            genreId = genreToLoad.id;
-
-            var ts = localStorage.getItem('timestamp-' + genreId),
-                needRefresh = !ts || +Ext.Date.format(new Date(), 'ymd') > +ts;
-
-            if (needRefresh) {
-                Ext.util.JSONP.request({
-                    url         : me.getApiUrl(),
-                    callback    : Ext.Function.pass(me.onAfterGenereJsonpRequest, [genreToLoad]),
-                    scope       : me,
-                    callbackKey : 'callback',
-                    params      : {
-                        apiKey         : me.getApiKey(),
-                        id             : genreId,
-                        requiredAssets : 'audio,image',
-                        numResults     : me.getNumResults(),
-                        fields         : 'title,teaser,storyDate,text,audio,image,artist',
-                        transform      : 'source',
-                        output         : 'JSON'
-                    }
-                });
-            }
-            else {
-                me.importDataToStore(genreId);
-            }
-        }
-    },
-
-    onAfterGenereJsonpRequest : function(genre, success, data) {
+    parseGenreData : function(rawGenreObject) {
         var me = this,
             drawer = me.getDrawer(),
-            genreId = genre.id;
-
-        if (!success || !data) {
-            var numErrors = this.getNumErrors();
-
-            if (numErrors > 5) {
-
-                //Start the app when the last genre is loaded
-                if (this.getGenresToLoad().length == 0) {
-                    me.startApp();
-                }
-                else {
-                    Ext.Msg.alert('Error', 'The NPR API seems to be down. Please ty again later');
-                    return;
-
-                }
-            }
-            else {
-                me.setNumErrors(numErrors + 1);
-                me.getGenresToLoad().unshift(genre);
-                me.loadData();
-                return;
-            }
-
-        }
-
-        var list       = data.list.story,
-            genre      = drawer.getStore().getById(genreId),
+            genreId = rawGenreObject.id,
+            data = rawGenreObject.data,
+            list = data.list.story,
+            genre = drawer.getStore().getById(genreId),
             listLength = list.length,
-            i          = 0,
+            primaryStr = 'primary',
+            i = 0,
             listItem,
             images,
             primary;
@@ -283,7 +222,7 @@ Ext.define('Music.controller.Main', {
                 //search for the primary image
                 for (var j = 0, size = images.length; j < size; j++) {
                     primary = images[j];
-                    if (primary.type === 'primary' && primary.enlargement) {
+                    if (primary.type === primaryStr && primary.enlargement) {
                         listItem.image = primary.enlargement.src;
                         break;
                     }
@@ -303,7 +242,6 @@ Ext.define('Music.controller.Main', {
 
     importDataToStore : function(genreId, data) {
         var me = this,
-            drawer = me.getDrawer(),
             store,
             db = me.db;
 
@@ -329,21 +267,14 @@ Ext.define('Music.controller.Main', {
             }
         });
         store.remove(toRemove);
-
-        //Start the app when the last genre is loaded
-        if (this.getGenresToLoad().length == 0) {
-            me.startApp();
-        }
-        else {
-            // continue with the load process
-            this.loadData();
-        }
     },
-    onFindStations    : function(btn) {
+
+    onFindStations : function(btn) {
         this.getApplication().fireEvent('findstations', btn);
     },
+
     // when user taps on any genre from the drawer
-    showGenre         : function(id, genre) {
+    showGenre      : function(id, genre) {
         var me = this,
             main = me.getMain(),
             mainFlow = me.getMainFlow(),
@@ -355,11 +286,11 @@ Ext.define('Music.controller.Main', {
     },
 
     // when a user taps on the "Read & Listen"
-    onShowArticle     : function(record) {
-        var me = this,
-            id = record.getId ? record.getId() : record,
+    onShowArticle  : function(record) {
+        var me       = this,
+            id       = record.getId ? record.getId() : record,
             mainFlow = me.getMainFlow(),
-            article = mainFlow.down('#article-' + id);
+            article  = mainFlow.down('#article-' + id);
 
         mainFlow.setActiveItem(article);
     },
@@ -416,7 +347,7 @@ Ext.define('Music.controller.Main', {
 
         if (musicData.audioFile) {
             Ext.util.JSONP.request({
-                url         : 'http://moduscreate.com/api/npr/m3uProxy.php',
+                url         : 'http://23.21.152.214/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
                 callback    : function(success, data) {
