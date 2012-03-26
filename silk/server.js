@@ -1,6 +1,6 @@
 Config.documentRoot = 'docroot';
 Config.numChildren = 25;
-Config.port = 9090;
+Config.port = 80;
 
 var curl          = require('builtin/curl'),
     fs            = require('builtin/fs'),
