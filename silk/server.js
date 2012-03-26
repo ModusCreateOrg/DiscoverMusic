@@ -5,7 +5,7 @@ Config.port = 80;
 var curl       = require('builtin/curl'),
     fs         = require('builtin/fs'),
     getGenres  = require('actions/getGenres.js'),
-    getMp3File = require('actions/getMP3File.js');
+    getMp3File = require('actions/getMp3File.js');
 
 // Add julian calendar method
 Date.prototype.getJulian = function() {
