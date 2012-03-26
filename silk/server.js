@@ -1,4 +1,4 @@
-Config.documentRoot = 'actions';
+Config.documentRoot = 'docroot';
 Config.numChildren = 25;
 Config.port = 80;
 
@@ -12,6 +12,8 @@ Date.prototype.getJulian = function() {
     return Math.floor((this / 86400000) - (this.getTimezoneOffset()/1440) + 2440587.5);
 };
 
+
+// utils
 var doCurlRequest = function(url) {
     var handle  = curl.init(url),
         success = curl.perform(handle),
