@@ -24,7 +24,6 @@ if ($url) {
     foreach($lines as &$line) {
         preg_match('/\.mp3/i', $line, $match);
 
-
         if ($match) {
             $file = $line;
         }
@@ -43,8 +42,3 @@ if ($callback) {
 }
 
 echo $out;
-
-
-
-
-//

@@ -143,7 +143,6 @@ Ext.define('Music.controller.Main', {
     },
 
     startApp : function() {
-        console.log('start app called')
         var me       = this,
             main     = me.getMain(),
             drawer   = me.getDrawer(),
