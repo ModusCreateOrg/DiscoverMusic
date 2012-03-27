@@ -27,6 +27,7 @@ Ext.define('Music.view.Player', {
         items : [
             {
                 xtype  : 'audio',
+                autoResume : true,
                 hidden : true
             }
         ]
@@ -46,23 +47,23 @@ Ext.define('Music.view.Player', {
             play       : 'onPlay',
             timeupdate : 'onUpdateTime'
         });
-        timer = me.timer
     },
 
     loadSound : function(url) {
-        var me = this,
-            audio = me.down('audio');
+        var me    = this,
+            audioCmp = me.down('audio');
 
-        if (url === audio.getUrl()) {
-            if (audio.isPlaying()) {
-                audio.pause();
+        if (url == audioCmp.getUrl()) {
+            if (audioCmp.isPlaying()) {
+                Ext.Function.defer(audioCmp.play, 100, audioCmp);
             }
             else {
-                audio.play();
+                Ext.Function.defer(audioCmp.play, 100, audioCmp);
             }
-        } else {
-            audio.setUrl(url);
-            audio.play();
+        }
+        else {
+            audioCmp.updateUrl(url);
+            audioCmp.media.dom.play()
         }
 
     },
@@ -74,7 +75,8 @@ Ext.define('Music.view.Player', {
         if (audio.isPlaying()) {
             audio.pause();
             me.onPause();
-        } else {
+        }
+        else {
             audio.play();
             me.onPlay();
         }
@@ -84,9 +86,9 @@ Ext.define('Music.view.Player', {
         var me = this,
             file;
 
-        if (o && (o.audioFile || o.content || o.file)) {
+        if (o && (file = o.audioFile || o.content || o.file)) {
             delete me.timer;
-            me.loadSound(o.audioFile || o.content || o.file);
+            me.loadSound(file);
         }
 
         if (!o.time) {

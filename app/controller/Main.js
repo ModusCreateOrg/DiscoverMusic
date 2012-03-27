@@ -345,15 +345,16 @@ Ext.define('Music.controller.Main', {
         var me = this,
             player = me.getPlayer();
 
-        if (musicData.audioFile) {
+        if (Ext.browser.is.Chrome && musicData.audioFile.match('\.m3u')) {
             Ext.util.JSONP.request({
                 url         : 'http://23.21.152.214/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
                 callback    : function(success, data) {
+                    var obj = Ext.clone(musicData);
                     if (success) {
-                        musicData.audioFile = data.file;
-                        player.setData(musicData);
+                        obj.audioFile = data.file;
+                        player.setData(obj);
                     }
                 }
             });

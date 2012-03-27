@@ -13,8 +13,6 @@ Ext.application({
     name      : 'Music',
     appFolder : 'app',
 
-
-
     controllers : [
         'Main',
         'Article',
@@ -22,7 +20,6 @@ Ext.application({
         'Search',
         'Stations'
     ],
-
 
     icon: {
         72: 'resources/images/icon-72x72.png',
