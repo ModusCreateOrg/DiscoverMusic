@@ -246,7 +246,7 @@
 	}
 
 	.music-article-content{
-        padding:15px;
+        padding:10px;
 
         @media screen and (orientation:portrait) {
             padding:0;
@@ -296,6 +296,11 @@
 		h4 {
 			margin-bottom:20px;
 			font-size: .8em;
+
+            /*@media screen and (orientation:portrait) {*/
+                margin-left: 15px;
+            /*}*/
+
 		}
 
 		p{

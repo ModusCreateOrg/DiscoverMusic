@@ -11,12 +11,12 @@ Ext.define('Music.view.Article', {
     alias : 'widget.article',
 
     config : {
-      model      : null,
-      genre      : null,
-      layout      : 'hbox',
-      scrollable   : false,
-      cls         : 'music-article',
-       items : [
+        model      : null,
+        genre      : null,
+        layout     : 'hbox',
+        scrollable : false,
+        cls        : 'music-article',
+        items      : [
             {
                 xtype : 'component',
                 cls   : 'music-article-header',
@@ -36,17 +36,16 @@ Ext.define('Music.view.Article', {
             {
                 xtype      : 'container',
                 flex       : 1,
+                cls        : 'music-article-container',
                 scrollable : {
                     direction     : 'vertical',
                     directionLock : true
                 },
-                cls        : 'music-article-container',
-                items      : {
-                    xtype   : 'component',
-                    cls      : 'music-article-content',
-                    tpl      : new Ext.XTemplate(
+                items : {
+                    xtype : 'component',
+                    cls   : 'music-article-content',
+                    tpl   : new Ext.XTemplate(
                         '<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/600/{image});">',
-                            '<h1>{title}</h1>',
                             '<h2>{genre}</h2>',
                         '</div>',
                         '<div class="music-article-header music-article-header-portrait">',
@@ -55,12 +54,11 @@ Ext.define('Music.view.Article', {
                             '<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
                             '<div class="music-article-button music-article-button-toc">Table of Contents</div>',
                         '</div>',
-                        '<h3>{author}</h3>',
                         '<h4>{[ this.dateFormat(values.date) ]}</h4>',
                         '{text}',
                         {
                             dateFormat : function(value){
-                                return Ext.util.Format.date(value,'F d,Y');
+                                return Ext.util.Format.date(value,'F d, Y');
                             }
                         }
                     )
@@ -88,6 +86,7 @@ Ext.define('Music.view.Article', {
             scope             : me,
             orientationchange : me.onOrientationChange
         });
+
         viewport.fireEvent('orientationchange', viewport, viewport.orientation);
     },
 
@@ -112,19 +111,16 @@ Ext.define('Music.view.Article', {
             isFavButton = event.getTarget('.music-article-button-favorite') || event.getTarget('.music-article-button-favorite-added'),
             model = me.getModel();
 
-        if (event.getTarget('.music-article-button-listen')){
+        if (event.getTarget('.music-article-button-listen')) {
             return me.fireEvent('play', model);
         }
-
-        else if (isFavButton){
+        else if (isFavButton) {
             return me.fireEvent('favorite', me, model, isFavButton);
         }
-
-        else if (event.getTarget('.music-article-button-tweet')){
-            return me.fireEvent('tweet', me , model);
+        else if (event.getTarget('.music-article-button-tweet')) {
+            return me.fireEvent('tweet', me, model);
         }
-
-        else if (event.getTarget('.music-article-button-toc')){
+        else if (event.getTarget('.music-article-button-toc')) {
             return me.fireEvent('toc', me, model);
         }
     },
