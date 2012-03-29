@@ -14,7 +14,7 @@ Ext.define('Music.model.Article', {
             'articleId',
             {
                 name    : 'title',
-                mapping : 'title.$text'
+                mapping : 'title'
             },
             {
                 name    : 'image',
@@ -59,7 +59,8 @@ Ext.define('Music.model.Article', {
                 convert : function(text) {
                     if (Ext.isString(text)) {
                         return text;
-                    } else {
+                    }
+                    else {
                         var content = [],
                             paragraphs = text.paragraph;
 
@@ -119,7 +120,8 @@ Ext.define('Music.model.Article', {
                     
                     if (Ext.isString(value)) {
                         return value;
-                    } else if (parent = data.raw.parent) {
+                    }
+                    else if (parent = data.raw.parent) {
                         for (var i = 0, len = parent.length; i < len; i++) {
                             var genre = parent[i];
                             if (genre.type === 'genre') {

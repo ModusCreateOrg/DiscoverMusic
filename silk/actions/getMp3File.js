@@ -1,6 +1,6 @@
-exports = function() {
+exports = function(inboundUrl, justReturnFileString) {
     var url   = req.data.url,
-        data  = doCurlRequest(url),
+        data  = doCurlRequest(inboundUrl || url),
         m3uRe = /\.mp3/i,
         plsRe = /File1/i,
         lines,
@@ -26,12 +26,15 @@ exports = function() {
         });
     }
 
-    var response = Json.encode({ file : file });
-    if (req.data.callback) {
-        response = req.data.callback + '(' + response + ')';
+    if (! justReturnFileString) {
+        file = Json.encode({ file : file });
+        if (req.data.callback) {
+            file = req.data.callback + '(' + file + ')';
+        }
+        return file;
     }
+    return file;
 
 //    Json.success({ data : data });
-    return response;
 };
 

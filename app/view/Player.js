@@ -27,7 +27,6 @@ Ext.define('Music.view.Player', {
         items : [
             {
                 xtype  : 'audio',
-                autoResume : true,
                 hidden : true
             }
         ]
@@ -51,19 +50,21 @@ Ext.define('Music.view.Player', {
 
     loadSound : function(url) {
         var me    = this,
-            audioCmp = me.down('audio');
+            audioCmp = me.down('audioCmp');
 
-        if (url == audioCmp.getUrl()) {
+        if (url === audioCmp.getUrl()) {
             if (audioCmp.isPlaying()) {
-                Ext.Function.defer(audioCmp.play, 100, audioCmp);
+                audioCmp.pause();
+                audioCmp.setUrl(url);
+                audioCmp.play();
             }
             else {
-                Ext.Function.defer(audioCmp.play, 100, audioCmp);
+                audioCmp.play();
             }
         }
         else {
-            audioCmp.updateUrl(url);
-            audioCmp.media.dom.play()
+            audioCmp.setUrl(url);
+            audioCmp.play();
         }
 
     },
