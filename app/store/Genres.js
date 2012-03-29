@@ -14,6 +14,7 @@ Ext.define('Music.store.Genres', {
         proxy : {
             type : 'jsonp',
             url  : 'http://23.21.152.214/getGenres.jst'
+//            url  : 'http://localhost:9090/getGenres.jst'
         }
     }
 

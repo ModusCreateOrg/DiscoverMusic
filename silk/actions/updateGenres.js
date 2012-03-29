@@ -3,7 +3,7 @@ var getStationUrl = function(genreId) {
         + "?apiKey=MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001"
         + '&id=' + genreId
         + '&requiredAssets=audio,image'
-        + '&numResults=5'
+        + '&numResults=' + 5
         + '&fields=title,teaser,storyDate,text,audio,image,artist'
         + '&transform=source'
         + '&output=JSON';
@@ -11,23 +11,27 @@ var getStationUrl = function(genreId) {
 
 var imageGarbageRegex = /\.jpg.*/g;
 
-var cleanupGenre = function(genreData) {
+var cleanupGenre = function(genreData, key,     genreName) {
+
     genreData = genreData.list;
-    debugger;
+//    debugger;
     delete genreData.miniTeaser;
     delete genreData.link;
 
     genreData.title = genreData.title.$text;
     genreData.teaser = genreData.teaser.$text;
-
+    genreData.key = key;
     genreData.story.each(function(story) {
 
-        console.log('Cleaning up ' + story.title.$text);
+//        console.log('Cleaning up ' + story.title.$text);
 
         delete story.link;
         story.title = story.title.$text;
         story.teaser = story.teaser.$text;
         story.storyDate = story.storyDate.$text;
+        story.genreKey = key;
+        story.genre = genreName;
+//        debugger;
 
         if (story.audio) {
             story.audio.each(function(audio) {
@@ -37,16 +41,22 @@ var cleanupGenre = function(genreData) {
                 delete audio.downloadExpirationDate;
                 delete audio.stream;
 
-                audio.title = audio.title.$text;
+                audio.title = audio.title.$text || story.title;
                 audio.description = audio.description.$text;
 
+
+                if (audio.description == 'null' || ! audio.description) {
+                    audio.description = audio.title;
+                }
+
+//                console.log('audio.title = ' + audio.title);
+//                console.log('audio.description = ' + audio.description);
                 if (audio.format.mp3) {
                     audio.format.mp3.each(function(audioFormat) {
                         if (audioFormat.type == 'm3u' || audioFormat.type == 'mp3') {
-                            audio.m3u = audioFormat.$text;
-                            delete audio.type;
-                            delete audio.description;
-
+//                            console.log('Fetching audio file for ' + story.title);
+                            delete audioFormat.type;
+                            audio.src = getMp3File(audioFormat.$text, true);
                             story.audio = audio;
                             return false;
                         }
@@ -55,9 +65,7 @@ var cleanupGenre = function(genreData) {
 
                 delete audio.format;
             });
-
-//            console.log('Fetching audio file for ' + story.title);
-            story.audio = getMp3File(story.audio.m3u, true);
+//            debugger;
         }
 //        else {
 //            console.log('NO AUDIO FOR STORY ' + story.name);
@@ -103,9 +111,9 @@ var cleanupGenre = function(genreData) {
 //            console.log('NO IMAGE FOR STORY ' + story.name);
 //        }
 
-        var newParagraphs = [];
+        var newParagraphs = '';
         story.text.paragraph.each(function(paragraph) {
-            newParagraphs.push(paragraph.$text);
+            newParagraphs += '<p>' + paragraph.$text +'</p>';
         });
 
         story.text = newParagraphs;
@@ -180,10 +188,12 @@ exports = function() {
             data = doCurlRequest(url);
 
             if (data) {
-                console.log('cURL :: ' + genre.id + ' ' + genre.name);
+//                console.log('cURL :: ' + genre.id + ' ' + genre.name);
                 genre.data = Json.decode(data);
 
-                genre.data = cleanupGenre(genre.data);
+                debugger;
+                genre.data = cleanupGenre(genre.data, genre.key, genre.name);
+                genre.data.genreKey = genre.key;
                 addUpdateGenre(genre);
             }
         }

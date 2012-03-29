@@ -71,9 +71,9 @@ var addUpdateGenre = function(genre) {
         row        = SQL.getDataRow(query);
 
 //
-    console.log(today + ' :: '  + query);
+//    console.log(today + ' :: '  + query);
     if (row) {
-        console.log('found record for ' + genre.name);
+//        console.log('found record for ' + genre.name);
         return row;
     }
     else {
@@ -117,12 +117,12 @@ var fetchGenresExternal = function(requestDate, returnFalse) {
         return { msg : 'no data' };
     }
 
-    console.log('fetching for ' + requestDate);
+    console.log(new Date().toString() + ' fetching for ' + requestDate);
 
     data = SQL.getDataRows(query);
     if (data && data.length > 0) {
         data.each(function(genre) {
-            genre.db = genre.db_key;
+            genre.key = genre.db_key;
             delete genre.db_key;
             genre.data = Json.decode(genre.data);
         });

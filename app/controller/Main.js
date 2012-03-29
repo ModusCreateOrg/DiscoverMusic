@@ -172,7 +172,6 @@ Ext.define('Music.controller.Main', {
         viewport.add(me.getDrawer());
         drawer.addArticles();
 
-
         //custom event fired when articles are loaded
         viewport.fireEvent('loaded');
     },
@@ -197,47 +196,15 @@ Ext.define('Music.controller.Main', {
 
     parseGenreData : function(rawGenreObject) {
         var me = this,
-            drawer = me.getDrawer(),
             genreId = rawGenreObject.id,
             data = rawGenreObject.data,
-            list = data.list.story,
-            genre = drawer.getStore().getById(genreId),
-            listLength = list.length,
-            primaryStr = 'primary',
-            i = 0,
-            listItem,
-            images,
-            primary;
+            story = data.story;
 
-        for (; i < listLength; i++) {
-            listItem = list[i];
-
-            images = listItem.image;
-
-            listItem.genre = genre.get('name');
-            listItem.genreKey = genre.get('key');
-            listItem.image = null;
-
-            if (images) {
-                //search for the primary image
-                for (var j = 0, size = images.length; j < size; j++) {
-                    primary = images[j];
-                    if (primary.type === primaryStr && primary.enlargement) {
-                        listItem.image = primary.enlargement.src;
-                        break;
-                    }
-                }
-                //if not primary image found, we use the default image provided
-                if (!listItem.image && primary && primary.src) {
-                    listItem.image = primary.src;
-                }
-            }
-        }
 
         localStorage.setItem('timestamp-' + genreId, Ext.Date.format(new Date(), 'ymd'));
-        localStorage.setItem('articles-' + genreId, Ext.encode(data.list.story));
+        localStorage.setItem('articles-' + genreId, Ext.encode(story));
 
-        me.importDataToStore(genreId, data.list.story);
+        me.importDataToStore(genreId, story);
     },
 
     importDataToStore : function(genreId, data) {
@@ -345,8 +312,9 @@ Ext.define('Music.controller.Main', {
         var me = this,
             player = me.getPlayer();
 
-        if (Ext.browser.is.Chrome && musicData.audioFile.match('\.m3u')) {
+        if (musicData.audioFile.match('\.pls')) {
             Ext.util.JSONP.request({
+//                url         : 'http://localhost:9090/getMp3File.jst',
                 url         : 'http://23.21.152.214/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },

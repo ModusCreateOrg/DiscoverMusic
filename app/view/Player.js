@@ -50,7 +50,7 @@ Ext.define('Music.view.Player', {
 
     loadSound : function(url) {
         var me    = this,
-            audioCmp = me.down('audioCmp');
+            audioCmp = me.down('audio');
 
         if (url === audioCmp.getUrl()) {
             if (audioCmp.isPlaying()) {
