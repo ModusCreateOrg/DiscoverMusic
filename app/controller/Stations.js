@@ -146,7 +146,7 @@ Ext.define('Music.controller.Stations', {
             text = 'Use : ' + postalCodeItem.adminName2 + ', ' + postalCodeItem.adminCode1;
 
             locationBtn = view.down('#searchGeoLocationBtn');
-            view.setHeight(140);
+            view.setHeight(130);
             locationBtn.setText(text);
             locationBtn.show();
         }

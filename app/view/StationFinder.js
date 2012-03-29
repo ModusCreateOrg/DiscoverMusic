@@ -10,7 +10,7 @@ Ext.define('Music.view.StationFinder', {
         displayField : 'name',
         layout       : 'fit',
         cls          : 'stationfinder',
-        height       : 100,
+        height       : 90,
         width        : 350,
         items        : [
             {
@@ -85,8 +85,7 @@ Ext.define('Music.view.StationFinder', {
             scope   : me,
             painted : me.onPaintedInitViewportTapEvent,
             buffer  : 250
-        })
-
+        });
     },
 
     onSearchGeoLocation : function() {
@@ -149,11 +148,11 @@ Ext.define('Music.view.StationFinder', {
             me.remove(me.list);
             delete me.list;
         }
-        me.setHeight(550);
+        me.setHeight(530);
     },
 
     onPaintedInitViewportTapEvent : function(view) {
-        Ext.Viewport.renderElement.on({
+        Ext.Viewport.element.on({
             scope    : view,
             tapstart : view.onViewportTapStart
         });
