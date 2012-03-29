@@ -23,14 +23,12 @@ Ext.define('Music.view.ArticlePreview', {
                     '</div></div>',
                 '</div>',
             '</div>'
-
-            ]
+        ]
     },
     
     initialize: function () {
         var me = this;
         me.callParent();
-
         me.registerEvents();
     },
 
