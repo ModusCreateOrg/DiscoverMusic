@@ -1,6 +1,6 @@
 Config.documentRoot = 'docroot';
 Config.numChildren = 25;
-//Config.port = 80;
+Config.port = 80;
 
 Config.mysql = {
     host   : 'localhost',
@@ -105,6 +105,7 @@ var fetchGenres = function(requestDate) {
         return false;
     }
 };
+
 
 
 //TODO: Make this the public fetchGenres
