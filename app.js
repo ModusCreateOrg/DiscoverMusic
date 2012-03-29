@@ -33,9 +33,8 @@ Ext.application({
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
+        var x = 3;
         // Initialize the main view
-//        Ext.Viewport.add(Ext.create('Music.view.Main'));
- 
          window[this.getName()].app = this;
     },
     
@@ -49,3 +48,4 @@ Ext.application({
         );
     }
 });
+
