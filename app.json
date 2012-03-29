@@ -104,7 +104,6 @@
         "silk/actions/getMp3File.js",
         "silk/actions/stationFinder.js",
         "silk/actions/updateGenres.js",
-        "silk/docroot",
         "silk/docroot/getGenres.jst",
         "silk/docroot/getMp3File.jst",
         "silk/docroot/stationFinder.jst",

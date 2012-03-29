@@ -131,7 +131,6 @@ Ext.define('Music.controller.Stations', {
                 lng : coords.longitude
             }
         });
-
     },
 
     onAfterGetFriendlyGeoName : function(success, data) {
