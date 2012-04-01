@@ -12,6 +12,8 @@ Ext.define('Music.view.StationFinder', {
         cls          : 'stationfinder',
         height       : 90,
         width        : 350,
+
+
         items        : [
             {
                 xtype  : 'component',
@@ -84,7 +86,7 @@ Ext.define('Music.view.StationFinder', {
         me.on({
             scope   : me,
             painted : me.onPaintedInitViewportTapEvent,
-            buffer  : 250
+            buffer  : 1000
         });
     },
 

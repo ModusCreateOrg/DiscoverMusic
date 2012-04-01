@@ -11,17 +11,16 @@ Ext.define('Music.controller.Favorites', {
 
     config : {
         refs    : {
-            mainFlow : {
-                xtype    : 'mainflow',
-                selector : 'main mainflow'
+            main : {
+                xtype    : 'main'
             }
         },
         control : {
-            'mainflow favorites' : {
+            'main favorites' : {
                 itemtap : 'onShowArticle'
             },
 
-            'mainflow favorites button[action=edit]' : {
+            'main favorites button[action=edit]' : {
                 tap : 'onEditTap'
             },
 
@@ -37,38 +36,38 @@ Ext.define('Music.controller.Favorites', {
 
     onFavoriteTap : function() {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            fav = mainFlow.down('favorites');
+            main = me.getMain(),
+            fav = main.down('favorites');
 
-        mainFlow.setActiveItem(fav);
+        main.setActiveItem(fav);
     },
 
     onShowArticle : function(dataview, index, target, record, event) {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            article = mainFlow.down('#article-' + record.get('articleId'));
+            main = me.getMain(),
+            article = main.down('#article-' + record.get('articleId'));
 
         if (event.getTarget('.music-favorites-remove')) {
             var store = dataview.getStore();
             store.remove(record);
         } else {
             if(!article){
-                article = mainFlow.add({
+                article = main.add({
                     xtype   : 'article',
                     itemId  : 'article-'+record.get('articleId'),
                     model   : record,
                     data    : record.getData()
                 });
             }
-            mainFlow.setActiveItem(article);
+            main.setActiveItem(article);
         }
     },
 
     onEditTap : function() {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            favorites = mainFlow.down('favorites'),
-            btn = mainFlow.down('favorites button[action=edit]');
+            main = me.getMain(),
+            favorites = main.down('favorites'),
+            btn = main.down('favorites button[action=edit]');
 
         if (favorites.getEditing()) {
             btn.setText('Edit');

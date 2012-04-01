@@ -13,29 +13,29 @@ Ext.define('Music.controller.Search', {
         stores: ['Articles', 'Genres','Search'],
         refs  : {
             search : {
-                selector : 'mainflow search'
+                selector : 'main search'
             },
             results: {
-                selector : 'mainflow search dataview'
+                selector : 'main search dataview'
             },
             query : {
-                selector : 'mainflow search searchfield'
+                selector : 'main search searchfield'
             },
-            mainFlow : {
-                selector : 'main mainflow'
+            main : {
+                selector : 'main main'
             }
         },
         control : {
-            'mainflow search dataview' : {
+            'main search dataview' : {
                 itemtap : 'onArticleTap'
             },
-            'mainflow search dataview toolbar button[action=search]' : {
+            'main search dataview toolbar button[action=search]' : {
                 tap : 'onSearchTap'
             },
-            'mainflow search dataview toolbar searchfield' : {
+            'main search dataview toolbar searchfield' : {
                 keyup: 'onSearchReturn'
             },
-            'mainflow search checkboxfield' : {
+            'main search checkboxfield' : {
                 check   : 'filter',
                 uncheck : 'filter'
             }
@@ -57,18 +57,18 @@ Ext.define('Music.controller.Search', {
 
     onArticleTap : function(view,index,target,record){
         var me = this,
-            mainFlow = me.getMainFlow(),
-            article = mainFlow.down('#article-' + record.getId());
+            main = me.getMain(),
+            article = main.down('#article-' + record.getId());
 
         if(!article){
-            article = mainFlow.add({
+            article = main.add({
                 xtype   : 'article',
                 itemId  : 'article-'+record.getId(),
                 model   : record,
                 data    : record.getData()
             });
         }
-        mainFlow.setActiveItem(article);
+        main.setActiveItem(article);
     },
 
     onSearchReturn : function(field,event){
@@ -79,7 +79,7 @@ Ext.define('Music.controller.Search', {
 
     filter   : function(checkbox){
         var me = this,
-            checkboxs = Ext.ComponentQuery.query('mainflow search fieldset checkboxfield'),
+            checkboxs = Ext.ComponentQuery.query('main search fieldset checkboxfield'),
             dataview = me.getResults(),
             filters = [];
 

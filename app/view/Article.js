@@ -46,6 +46,7 @@ Ext.define('Music.view.Article', {
                     cls   : 'music-article-content',
                     tpl   : new Ext.XTemplate(
                         '<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/600/{image});">',
+                            '<h1>{title}</h1>',
                             '<h2>{genre}</h2>',
                         '</div>',
                         '<div class="music-article-header music-article-header-portrait">',
@@ -86,8 +87,9 @@ Ext.define('Music.view.Article', {
             scope             : me,
             orientationchange : me.onOrientationChange
         });
-
-        viewport.fireEvent('orientationchange', viewport, viewport.orientation);
+        if ( Ext.Viewport.getOrientation === 'portrait') {
+            viewport.fireEvent('orientationchange', viewport, viewport.orientation);
+        }
     },
 
     onPress   : function(event){
@@ -138,6 +140,7 @@ Ext.define('Music.view.Article', {
     },
 
     onOrientationChange : function(viewport, orientation) {
+
         var me = this,
             header = me.down('component[cls=music-article-header]'),
             articleTitle = me.articleTitle,
@@ -152,7 +155,8 @@ Ext.define('Music.view.Article', {
             header.show();
             articleTitle.setStyle('display', 'none');
             portraitButtons.hide();
-
         }
+
+
     }
 });

@@ -11,6 +11,7 @@ Ext.define('Music.controller.Main', {
     loadMask : undefined,
 
     config : {
+        audioHasPlayed : false,
         apiUrl       : 'http://api.npr.org/query',
         apiKey       : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
         genresToLoad : [],
@@ -28,10 +29,10 @@ Ext.define('Music.controller.Main', {
         ],
 
         views : [
-            'landscape.Main',
+            'Main',
             'ArticlePreview',
             'Article',
-            'MainFlow',
+            //            'MainFlow',
             'Drawer',
             'AboutPanel',
             'Search',
@@ -66,10 +67,6 @@ Ext.define('Music.controller.Main', {
                 selector   : 'aboutpanel',
                 autoCreate : true
             },
-            mainFlow  : {
-                xtype    : 'mainflow',
-                selector : 'main mainflow'
-            },
             player    : {
                 selector : 'main player'
             }
@@ -81,10 +78,7 @@ Ext.define('Music.controller.Main', {
 
         control : {
             'main' : {
-                titletap : 'onShowGlobalToc'
-            },
-
-            'mainflow' : {
+                titletap         : 'onShowGlobalToc',
                 activeitemchange : 'onArticleActive'
             },
 
@@ -127,7 +121,6 @@ Ext.define('Music.controller.Main', {
 
         Ext.Viewport.add(me.getMain());
 
-
         me.db = Ext.create('Ext.util.MixedCollection');
 
         me.loadMask = Ext.Viewport.add({
@@ -146,31 +139,34 @@ Ext.define('Music.controller.Main', {
     },
 
     startApp : function() {
-        var me       = this,
-            drawer   = me.getDrawer(),
-            mainFlow = me.getMainFlow(),
+        var me = this,
+            drawer = me.getDrawer(),
+            main = me.getMain(),
             viewport = Ext.Viewport;
-
-        //adding all the articles to the main flow
-        drawer.getStore().each(function(genre) {
-            var articles = me.db.get(genre.getId());
-
-            genre.set('image', articles.getAt(0).get('image'));
-            mainFlow.addArticles(genre, articles);
-        });
-
-        mainFlow.setFeatured();
-
-        mainFlow.add(me.getFavorites());
-        mainFlow.add(me.getSearch());
 
         me.loadMask.hide();
         me.loadMask.destroy();
 
         delete me.loadMask;
 
-        viewport.add(me.getDrawer());
-        drawer.addArticles();
+        //adding all the articles to the main
+        drawer.getStore().each(function(genre) {
+            var articles = me.db.get(genre.getId());
+
+            genre.set('image', articles.getAt(0).get('image'));
+            main.addArticles(genre, articles);
+        });
+
+        main.setFeatured();
+
+        Ext.Function.defer(function() {
+            main.add(me.getFavorites());
+            main.add(me.getSearch());
+
+            drawer.addArticles();
+            viewport.add(me.getDrawer());
+
+        }, 1000);
 
         //custom event fired when articles are loaded
         viewport.fireEvent('loaded');
@@ -187,11 +183,11 @@ Ext.define('Music.controller.Main', {
             }
         }, me);
 
-//        var start = new Date().getTime();
-//        console.log('DOM start', start);
+        //        var start = new Date().getTime();
+        //        console.log('DOM start', start);
         me.startApp();
-//        var end = new Date().getTime();
-//        console.log('DOM end', end, ' ' , (end - start) / 1000 , 's')
+        //        var end = new Date().getTime();
+        //        console.log('DOM end', end, ' ' , (end - start) / 1000 , 's')
     },
 
     parseGenreData : function(rawGenreObject) {
@@ -199,7 +195,6 @@ Ext.define('Music.controller.Main', {
             genreId = rawGenreObject.id,
             data = rawGenreObject.data,
             story = data.story;
-
 
         localStorage.setItem('timestamp-' + genreId, Ext.Date.format(new Date(), 'ymd'));
         localStorage.setItem('articles-' + genreId, Ext.encode(story));
@@ -244,46 +239,46 @@ Ext.define('Music.controller.Main', {
     showGenre      : function(id, genre) {
         var me = this,
             main = me.getMain(),
-            mainFlow = me.getMainFlow(),
+            main = me.getMain(),
             genreKey = genre.get('key') || genre.get('genreKey'),
-            view = mainFlow.down('#' + genreKey);
+            view = main.down('#' + genreKey);
 
-        main.setActiveItem(mainFlow);
-        mainFlow.setActiveItem(view);
+        main.setActiveItem(main);
+        main.setActiveItem(view);
     },
 
     // when a user taps on the "Read & Listen"
     onShowArticle  : function(record) {
-        var me       = this,
-            id       = record.getId ? record.getId() : record,
-            mainFlow = me.getMainFlow(),
-            article  = mainFlow.down('#article-' + id);
+        var me = this,
+            id = record.getId ? record.getId() : record,
+            main = me.getMain(),
+            article = main.down('#article-' + id);
 
-        mainFlow.setActiveItem(article);
+        main.setActiveItem(article);
     },
 
     onFavoritesTap : function() {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            fav = mainFlow.down('favorites');
+            main = me.getMain(),
+            fav = main.down('favorites');
 
-        mainFlow.setActiveItem(fav);
+        main.setActiveItem(fav);
     },
 
     onSearchTap : function() {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            search = mainFlow.down('search');
+            main = me.getMain(),
+            search = main.down('search');
 
-        mainFlow.setActiveItem(search);
+        main.setActiveItem(search);
     },
 
     onShowGlobalToc : function() {
         var me = this,
-            mainFlow = me.getMainFlow(),
-            view = mainFlow.down('globaltoc');
+            main = me.getMain(),
+            view = main.down('globaltoc');
 
-        mainFlow.setActiveItem(view);
+        main.setActiveItem(view);
     },
 
     onArticleActive : function(id, item, oldItem) {
@@ -295,14 +290,14 @@ Ext.define('Music.controller.Main', {
             me.redirectTo(item.getModel());
         }
         else {
-            //if mainFlow is null means the user is
+            //if main is null means the user is
             //getting to the app for the first time
-            if (!me.getMainFlow()) {
+            if (!me.getMain()) {
                 //we need to wait until all articles are loaded
                 //and then activate the given article
                 Ext.Viewport.on('loaded', function() {
-                    var view = me.getMainFlow().down('#article-' + id);
-                    me.getMainFlow().setActiveItem(view);
+                    var view = me.getMain().down('#article-' + id);
+                    me.getMain().setActiveItem(view);
                 }, me);
             }
         }
@@ -312,9 +307,10 @@ Ext.define('Music.controller.Main', {
         var me = this,
             player = me.getPlayer();
 
-        if (musicData.audioFile.match('\.pls')) {
+        if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
+//            console.log('audio file has pls.')
+
             Ext.util.JSONP.request({
-//                url         : 'http://localhost:9090/getMp3File.jst',
                 url         : 'http://23.21.152.214/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
@@ -322,6 +318,7 @@ Ext.define('Music.controller.Main', {
                     var obj = Ext.clone(musicData);
                     if (success) {
                         obj.audioFile = data.file;
+
                         player.setData(obj);
                     }
                 }
@@ -329,7 +326,21 @@ Ext.define('Music.controller.Main', {
 
         }
         else {
-            player.setData(musicData);
+            if (! me.getAudioHasPlayed()) {
+                var tmpObj = Ext.clone(musicData);
+
+                // this is to fix the IOS auto-start audio issue!
+                tmpObj.audioFile = 'resources/sounds/s.mp3';
+                player.setData(tmpObj);
+
+                Ext.Function.defer(function() {
+                    player.setData(musicData);
+                }, 550);
+                me.setAudioHasPlayed(true);
+            }
+            else {
+                player.setData(musicData);
+            }
         }
     }
 });

@@ -2,12 +2,16 @@ Ext.define('Music.controller.Stations', {
     extend : 'Ext.app.Controller',
 
     config : {
+
         views       : [
             'StationFinder'
         ],
         stores      : [
             'Stations'
         ],
+        refs : {
+            stationFinder  : 'stationfinder'
+        },
         control     : {
             stationfinder : {
                 searchgeo : 'onSearchGeo',
@@ -39,6 +43,7 @@ Ext.define('Music.controller.Stations', {
 
         }
         view.showBy(btn);
+        view.show();
 
     },
 
@@ -51,32 +56,35 @@ Ext.define('Music.controller.Stations', {
     },
 
     onStationUrlSelect : function(detailCard, urlObj) {
-        var content = urlObj.content,
+        var content = urlObj.content || urlObj.audioFile,
             app     = this.getApplication();
 
         urlObj = Ext.clone(urlObj);
 
-        if (content && content.match('\\\.mp3')) {
+//        if (content && content.match('\\\.mp3')) {
             app.fireEvent('playAudio', urlObj);
-        }
-        else if (content.match('\\\.pls')) {
-            Ext.util.JSONP.request({
-                url         : 'http://moduscreate.com/api/npr/plsProxy.php',
-                callbackKey : 'callback',
-                params      : { url : urlObj.content },
-                callback    : function(success, data) {
-                    if (success) {
 
-                        urlObj.content = data.file;
-                        urlObj.title = urlObj.name + ' ' + urlObj.title;
-                        app.fireEvent('playAudio', urlObj);
-                    }
-                    else {
-                        Ext.Msg.alert('We Apologize!', urlObj.title + ' is currently unavailable.');
-                    }
-                }
-            });
-        }
+//        }
+//        else if (content.match('\\\.pls')) {
+//            Ext.util.JSONP.request({
+//                url         : 'http://23.21.152.214/getMp3File.jst',
+//                callbackKey : 'callback',
+//                params      : { url : urlObj.content },
+//                callback    : function(success, data) {
+//                    if (success) {
+//
+//                        urlObj.audioFile = data.file;
+//                        urlObj.title = urlObj.name + ' ' + urlObj.title;
+//                        app.fireEvent('playAudio', urlObj);
+//                    }
+//                    else {
+//                        Ext.Msg.alert('We Apologize!', urlObj.title + ' is currently unavailable.');
+//                    }
+//                }
+//            });
+//        }
+
+        this.getStationFinder().hide();
     },
 
     getGeoLocation : function() {

@@ -19,8 +19,8 @@ Ext.define('Music.controller.Article', {
             'Favorites'
         ],
         refs    : {
-            mainFlow : {
-                selector : 'main mainflow'
+            main : {
+                selector : 'main'
             }
         },
         control : {
@@ -62,10 +62,10 @@ Ext.define('Music.controller.Article', {
     },
 
     onToc : function(view, model) {
-        var mainFlow = this.getMainFlow(),
-            toc = mainFlow.down('#' + model.get('genreKey'));
+        var main = this.getMain(),
+            toc = main.down('#' + model.get('genreKey'));
 
-        mainFlow.setActiveItem(toc);
+        main.setActiveItem(toc);
     },
 
     onTweet : function(view, model) {
