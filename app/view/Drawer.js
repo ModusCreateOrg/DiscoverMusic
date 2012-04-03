@@ -89,9 +89,9 @@ Ext.define('Music.view.Drawer', {
             orientationchange : 'reDraw'
         });
 
-        Ext.Viewport.element.on({
+        Ext.getBody().on({
             scope : me,
-            tapstart : me.onViewportTapStart
+            touchstart : me.onViewportTapStart
         });
     },
 

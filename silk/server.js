@@ -67,14 +67,11 @@ Date.prototype.getJulian = function() {
 
 var addUpdateGenre = function(genre) {
     var today      = new Date().getJulian(),
-        lastUpdate = genre.lastUpdate,
         query      = 'SELECT * FROM genres WHERE lastUpdate="' + today + '" AND db_key="' +  genre.key + '"',
         row        = SQL.getDataRow(query);
 
 //
-//    console.log(today + ' :: '  + query);
     if (row) {
-//        console.log('found record for ' + genre.name);
         return row;
     }
     else {
@@ -163,5 +160,4 @@ var writeFileData = function(fileName, data) {
     return fs.writeFile(fileName, Json.encode(data));
 };
 
-//}
 

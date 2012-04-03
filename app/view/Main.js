@@ -43,7 +43,7 @@ Ext.define('Music.view.Main', {
                     },
                     {
                         xtype  : 'player',
-                        flex   : 1,
+//                        flex   : 1,
                         margin : null,
                         height : null
                     },

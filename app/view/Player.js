@@ -54,9 +54,7 @@ Ext.define('Music.view.Player', {
 
         if (url === audioCmp.getUrl()) {
             if (audioCmp.isPlaying()) {
-                audioCmp.pause();
-                audioCmp.setUrl(url);
-                audioCmp.play();
+                audioCmp.pause()
             }
             else {
                 audioCmp.play();

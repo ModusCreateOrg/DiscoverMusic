@@ -154,20 +154,21 @@ Ext.define('Music.view.StationFinder', {
     },
 
     onPaintedInitViewportTapEvent : function(view) {
-        Ext.Viewport.element.on({
-            scope    : view,
-            tapstart : view.onViewportTapStart
+        var me = this;
+        Ext.getBody().on({
+            scope : me,
+            touchstart : me.onViewportTouchStart
         });
     },
 
-    onViewportTapStart : function(evtObj) {
+    onViewportTouchStart : function(evtObj) {
         var me = this;
         if (!evtObj.getTarget('.stationfinder') && me.isPainted()) {
-            console.log('hiding');
             me.hide();
-            Ext.Viewport.renderElement.un({
+
+            Ext.getBody().un({
                 scope : me,
-                tap   : me.onViewportTap
+                tap   : me.onViewportTouchStart
             });
 
         }

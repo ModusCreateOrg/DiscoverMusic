@@ -80,7 +80,16 @@
 			left:20px;
 			right:20px;
 			bottom:90px;
-			height:130px;
+            overflow: hidden;
+            height:130px;
+
+            @media screen and (orientation:portrait) {
+                height:210px;
+            }
+
+
+            @include border-radius(10px);
+            @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
 
 			.music-content-all {
 				position:relative;
@@ -92,8 +101,6 @@
 				height:100%;
 				width:100%;
 				padding:30px 25px;
-				@include border-radius(10px);
-				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
 			}
 
 			.music-article-title-content{

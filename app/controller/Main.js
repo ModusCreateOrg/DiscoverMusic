@@ -158,13 +158,13 @@ Ext.define('Music.controller.Main', {
         });
 
         main.setFeatured();
+        viewport.add(me.getDrawer());
 
         Ext.Function.defer(function() {
             main.add(me.getFavorites());
             main.add(me.getSearch());
 
             drawer.addArticles();
-            viewport.add(me.getDrawer());
 
         }, 1000);
 
@@ -238,7 +238,6 @@ Ext.define('Music.controller.Main', {
     // when user taps on any genre from the drawer
     showGenre      : function(id, genre) {
         var me = this,
-            main = me.getMain(),
             main = me.getMain(),
             genreKey = genre.get('key') || genre.get('genreKey'),
             view = main.down('#' + genreKey);

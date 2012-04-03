@@ -39,8 +39,6 @@ body { margin: 0; padding: 0; }
 }
 
 .music-about-panel {
-	@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, .75), rgba(0, 0, 0, 1))));
-	border: 3px solid rgba(255, 255, 255, .8);
 	@include border-radius(10px);
 	h1 {
 		color: #fff;
@@ -48,20 +46,24 @@ body { margin: 0; padding: 0; }
 		font-family: $base-font;
 		font-weight: 300;
 		text-align: center;
-		padding: 20px 0px;		
+		padding: 18px 0px;
 	}
 	p {
 		font-family: $alt-font;
 		color: #eee;
 		font-size: 20px;
 		margin: 0px 30px 20px 30px;
-		line-height: 26px;
+		line-height: 20px;
 	}
 	.x-button {
 		height: 40px;
 		width: 250px;
 		margin: 20px auto;
-	}
+	}  
+    a {
+        color: #FFF;
+        font-weight: bold;
+    }
 }
 
 .favorite-icon{

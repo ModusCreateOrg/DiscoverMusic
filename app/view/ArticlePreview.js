@@ -14,13 +14,16 @@ Ext.define('Music.view.ArticlePreview', {
         cls: 'music-article-preview',
         tpl: [
             '<div class="music-article-image" style="background-image:url(http://src.sencha.io/1024/{image});">',
-                '<div class="music-article-category music-article-{genreKey} animated fadeInLeft"><h1>{genre}</h1></div>',
+                '<div class="music-article-category music-article-{genreKey} animated fadeInLeft">',
+                    '<h1>{genre}</h1>',
+                '</div>',
                 '<div class="music-article-title animated fadeInRight"><div class="music-content-all">',
-                    '<div class="music-article-title-bg"></div>',
-                    '<div class="music-article-title-content">',
+//                    '<div class="music-article-title-bg"></div>',
+                    '<div class="music-article-title-bg music-article-title-content">',
                         '<div class="music-article-btn music-article-btn-{genreKey}">Read <em>&</em> Listen</div>',
                         '<h2>{title}</h2>',
-                    '</div></div>',
+                    '</div>',
+                    '</div>',
                 '</div>',
             '</div>'
         ]
