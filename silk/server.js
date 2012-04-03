@@ -13,8 +13,9 @@ SQL = new MySQL();
 SQL.connect();
 
 //Include libraries
-include('lib/Server.js');
-include('lib/Schema.js');
+Server = require('Server.js');
+Schema = require('Schema.js');
+
 Schema.add({
     name       : 'genres',
     primaryKey : 'dbid',

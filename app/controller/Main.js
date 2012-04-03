@@ -311,7 +311,7 @@ Ext.define('Music.controller.Main', {
 //            console.log('audio file has pls.')
 
             Ext.util.JSONP.request({
-                url         : 'http://23.21.152.214/getMp3File.jst',
+                url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
                 callback    : function(success, data) {
