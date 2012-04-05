@@ -14,16 +14,19 @@
 				height:100%;
 				background-size: cover;
 				background-position: center top;
-		    	background-repeat: no-repeat;
+		    background-repeat: no-repeat;
 
 			div {
-				@include background-image(linear-gradient(color-stops(rgba(255, 255, 255, .8), rgba(255, 255, 255, 1))));
-				float:left;
-				padding:5px 15px;
-				color:#222;
-				font-family: $base-font;
-				font-size:0.85em;
-				text-transform:uppercase;
+				background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(247, 247, 247)),to(rgb(215, 208, 210)));
+				float: left;
+				padding: 10px 15px;
+				color: #222;
+				font-family: "nevisBold";
+				font-size: 1.5em;
+				text-transform: uppercase;
+				margin-top: 30px;
+				-webkit-border-top-right-radius: 10px;
+				-webkit-border-bottom-right-radius: 10px;					
 			}
 			h2{
 				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
