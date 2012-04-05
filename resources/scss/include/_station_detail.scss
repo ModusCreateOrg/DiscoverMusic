@@ -1,4 +1,6 @@
-
+.stationfinder {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(30, 30, 30)),to(rgb(17, 17, 17))) !important;
+}
 
 
 .station-selected {
@@ -15,8 +17,10 @@
 
 .stationfinder-title {
     color: #FFF;
+    font-family: $base-font;
+    text-transform: uppercase;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1em;
     padding-left: 10px;
 }
 
