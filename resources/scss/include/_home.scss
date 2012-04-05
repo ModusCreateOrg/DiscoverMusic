@@ -39,31 +39,34 @@ body { margin: 0; padding: 0; }
 }
 
 .music-about-panel {
-	@include border-radius(10px);
+	margin-top: 10px;
 	h1 {
-		color: #fff;
-		font-size: 30px;
+		color: #787878;
+		text-shadow: 0px 2px #000;
+		font-size: 18px;
 		font-family: $base-font;
 		font-weight: 300;
+		text-transform: uppercase;
 		text-align: center;
 		padding: 18px 0px;
 	}
 	p {
-		font-family: $alt-font;
-		color: #eee;
-		font-size: 20px;
-		margin: 0px 30px 20px 30px;
-		line-height: 20px;
+		color: #787878;
+		font-size: 15px;
+		margin: 0px 30px 15px 30px;
+		line-height: 25px;
+		font-size: 15px;
+	  a {
+	      color: #999;
+	      text-decoration: none;
+	      font-weight: bold;
+	  }
 	}
 	.x-button {
 		height: 40px;
 		width: 250px;
 		margin: 20px auto;
 	}  
-    a {
-        color: #FFF;
-        font-weight: bold;
-    }
 }
 
 .favorite-icon{

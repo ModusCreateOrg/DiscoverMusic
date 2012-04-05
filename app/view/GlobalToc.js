@@ -29,9 +29,7 @@ Ext.define('Music.view.GlobalToc', {
                     '</div>',
                     '<div class="music-about-panel">',
                         '<h1>About Discover Music</h1>',
-                        '<p>Discover Music is built using <a href="http://sencha.com/products/touch" target="_new">Sencha Touch 2.0</a>, an HTML5 mobile framework developed by <a href="http://sencha.com/" target="_blank">Sencha, Inc.</a></p>',
-                        '<p>This app was designed and developed by <a href="http://moduscreate.com" target="_new">Modus Create</a>, a hybrid application development company based out of Washington, DC.</p>',
-                        '<p>All content and audio clips are courtesy of <a href="http://npr.org" target="_blank">NPR</a>, and are accessed using their free and open public APIs.</p>',
+                        '<p>Discover Music is built using <a href="http://sencha.com/products/touch" target="_new">Sencha Touch 2.0</a>, an HTML5 mobile framework developed by <a href="http://sencha.com/" target="_blank">Sencha, Inc.</a> This app was designed and developed by <a href="http://moduscreate.com" target="_new">Modus Create</a>, a hybrid application development company based out of Washington, DC. All content and audio clips are courtesy of <a href="http://npr.org" target="_blank">NPR</a>, and are accessed using their free and open public APIs.</p>',
                     '</div>'
                 ]
             },
