@@ -115,8 +115,10 @@
 				//margin-bottom:30px;
 			}
 
-			.global-toc-article-pressed{
-				background-color:darken($bg-color1,25);
+			.global-toc-article-pressed {
+				background-color: $bg-color1;
+				color: #fff;
+				text-shadow: 0px 1px darken($bg-color1, 20);
 			}
 		}
 	}
