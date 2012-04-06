@@ -8,7 +8,8 @@
     );
 
     > div > .x-body {
-        @include background-gradient(#333, 'recessed');
+        background: rgba(255, 255, 255, .65);
+        border-top: 1px solid #929292;
     }
 }
 
@@ -46,18 +47,21 @@
 }
 .drawer-close div {
     @include border-top-radius(8px);
-    @include background-image(linear-gradient(#333, #000));
+    background: rgba(255, 255, 255, .85);
     width: 200px;
-    height: 40px;
+    height: 38px;
     display: inline-block;
     position: relative;
-    top: 8px; // Position hack
-    font-size:0.9em;
-    line-height:30px;
-    font-weight:bold;
+    top: 0px;
+    font-size: 0.9em;
+    line-height: 37px;
+    font-weight: bold;
+    color: #222;
+    border: 1px solid #929292;
+    border-bottom: none;
     &:after {
         content: '›';
-        color: #eee;
+        color: #000;
         font-size: 30px;
         font-weight: 300;
         position: absolute;
@@ -142,6 +146,8 @@
             text-transform: uppercase;
             @include background-image(linear-gradient($bg-color1, $bg-color2));
             @include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;            
             padding: 0 10px 0 15px;
             font-size: 0.9em;
             font-weight: 300;
@@ -162,6 +168,10 @@
         float:right;
         width:182px;
         height:167px;
+        box-shadow: 2px 5px 8px 
+        rgba(0, 0, 0, .7);
+        border: 1px solid 
+        rgba(255, 255, 255, .2);        
     }
 }
 
