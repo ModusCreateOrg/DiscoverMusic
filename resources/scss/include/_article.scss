@@ -187,8 +187,8 @@
 	.music-article-header .music-article-#{$genre}{
 		h2{
 			position:absolute;
-			top:0px;
-			left:0px;
+			top: -5px;
+			left: -5px;
 			@include background-image(linear-gradient($bg-color1, $bg-color2));
 			color:#fff;
 			font-family: $base-font;
@@ -196,6 +196,8 @@
 			text-transform:uppercase;
 			padding:10px 20px;
 			border: 1px solid rgba(255, 255, 255, .5);
+			box-shadow: 3px 5px 5px rgba(0, 0, 0, .5);
+			-webkit-border-bottom-right-radius: 5px;
 		}
 	}
 
