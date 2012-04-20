@@ -109,7 +109,7 @@
         "silk/docroot/getMp3File.jst",
         "silk/docroot/stationFinder.jst",
         "silk/docroot/updateGenres.jst",
-        "silk/server.js"
+        "silk/silk-server.js"
     ],
 
     /**
