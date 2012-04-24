@@ -23,7 +23,7 @@ Ext.define('Music.view.GenreToc', {
                 data   : {},
                 flex   : 1,
                 tpl    : [
-                    '<div class="genre-toc-featured-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
+                    '<div class="genre-toc-featured-{genreKey} genre-toc-featured " data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
                         '<h2>{title}</h2>',
                         '<h3>{genre}</h3>',
                     '</div>'
@@ -39,10 +39,10 @@ Ext.define('Music.view.GenreToc', {
     },
 
     initialize : function() {
-        var me = this,
+        var me        = this,
             container = me.down('#stories'),
-            featured = me.down('#featured'),
-            articles = me.getArticles().getRange(0, 4);
+            featured  = me.down('#featured'),
+            articles  = me.getArticles().getRange(0, 4);
 
         me.callParent();
 

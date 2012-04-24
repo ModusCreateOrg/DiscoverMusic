@@ -97,12 +97,6 @@ Ext.define('Music.view.Drawer', {
 
     onTap : function(ev) {
         var me = this;
-        if (ev.getTarget('.drawer-main')) {
-            return this.fireEvent('gomain', this);
-        }
-        if (ev.getTarget('.drawer-about')) {
-            return this.fireEvent('goabout', this);
-        }
         if (ev.getTarget('.drawer-toggle-pull .x-innerhtml')) {
             return me.toggle();
         }

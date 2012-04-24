@@ -22,24 +22,8 @@ Ext.define('Music.controller.Favorites', {
 
             'main favorites button[action=edit]' : {
                 tap : 'onEditTap'
-            },
-
-            'main toolbar button[action=favorites]' : {
-                tap : 'onFavoriteTap'
-            },
-
-            'drawer' : {
-                favoritestap : 'onFavoriteTap'
             }
         }
-    },
-
-    onFavoriteTap : function() {
-        var me = this,
-            main = me.getMain(),
-            fav = main.down('favorites');
-
-        main.setActiveItem(fav);
     },
 
     onShowArticle : function(dataview, index, target, record, event) {
