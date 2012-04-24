@@ -32,9 +32,7 @@ Ext.define('Music.controller.Main', {
             'Main',
             'ArticlePreview',
             'Article',
-            //            'MainFlow',
             'Drawer',
-            'AboutPanel',
             'Search',
             'Player',
             'Favorites',
@@ -95,7 +93,7 @@ Ext.define('Music.controller.Main', {
             },
 
             'genretoc' : {
-                featuredtap : 'onShowArticle',
+//                featuredtap : 'onShowArticle',
                 storytap    : 'onShowArticle'
             },
 
@@ -105,7 +103,8 @@ Ext.define('Music.controller.Main', {
 
             'drawer' : {
                 itemtap   : 'showGenre',
-                searchtap : 'onSearchTap'
+                searchtap : 'onSearchTap',
+                favoritestap : 'onFavoritesTap'
             },
 
             'globaltoc' : {
@@ -242,7 +241,6 @@ Ext.define('Music.controller.Main', {
             genreKey = genre.get('key') || genre.get('genreKey'),
             view = main.down('#' + genreKey);
 
-        main.setActiveItem(main);
         main.setActiveItem(view);
     },
 

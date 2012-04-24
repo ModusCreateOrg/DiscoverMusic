@@ -1,6 +1,6 @@
 Config.documentRoot = 'docroot';
 Config.numChildren = 25;
-Config.port = 80;
+Config.port = 9090;
 
 Config.mysql = {
     host   : 'localhost',
@@ -12,9 +12,11 @@ Config.mysql = {
 SQL = new MySQL();
 SQL.connect();
 
+
+console.dir(require.path);
 //Include libraries
-Server = require('Server.js');
-Schema = require('Schema.js');
+Server = require('Server');
+Schema = require('Schema');
 
 Schema.add({
     name       : 'genres',
@@ -159,5 +161,5 @@ var getFileData = function(fileName) {
 var writeFileData = function(fileName, data) {
     return fs.writeFile(fileName, Json.encode(data));
 };
-
+//
 
