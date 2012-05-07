@@ -23,7 +23,6 @@ Ext.application({
 
     icon: {
         72: 'resources/images/icon-72.png',
-        114: 'resources/images/icon-114.png',
         144: 'resources/images/icon-144.png'
     },
     

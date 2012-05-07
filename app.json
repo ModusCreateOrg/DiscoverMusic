@@ -96,7 +96,6 @@
         "resources/images",
         "resources/icons",
         "resources/fonts",
-        "resources/sounds/s.mp3",
         "phpProxies/genreProxy.php",
         "phpProxies/m3uProxy.php",
         "phpProxies/plsProxy.php",
