@@ -22,9 +22,9 @@ Ext.application({
     ],
 
     icon: {
-        72: 'resources/images/icon-72x72.png',
-        114: 'resources/images/icon-114x114.png',
-        144: 'resources/images/icon-144x144.png'
+        72: 'resources/images/icon-72.png',
+        114: 'resources/images/icon-114.png',
+        144: 'resources/images/icon-144.png'
     },
     
     tabletStartupScreen: 'resources/images/splash.jpg',
