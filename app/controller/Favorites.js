@@ -10,11 +10,6 @@ Ext.define('Music.controller.Favorites', {
     extend : 'Ext.app.Controller',
 
     config : {
-        refs    : {
-            main : {
-                xtype    : 'main'
-            }
-        },
         control : {
             'main favorites' : {
                 itemtap : 'onShowArticle'
@@ -26,42 +21,33 @@ Ext.define('Music.controller.Favorites', {
         }
     },
 
+
     onShowArticle : function(dataview, index, target, record, event) {
-        var me = this,
-            main = me.getMain(),
-            article = main.down('#article-' + record.get('articleId'));
+        var me = this;
 
         if (event.getTarget('.music-favorites-remove')) {
             var store = dataview.getStore();
             store.remove(record);
-        } else {
-            if(!article){
-                article = main.add({
-                    xtype   : 'article',
-                    itemId  : 'article-'+record.get('articleId'),
-                    model   : record,
-                    data    : record.getData()
-                });
-            }
-            main.setActiveItem(article);
+        }
+        else {
+            me.getApplication().fireEvent('showarticle', record);
         }
     },
 
-    onEditTap : function() {
+    onEditTap : function(btn) {
         var me = this,
-            main = me.getMain(),
-            favorites = main.down('favorites'),
-            btn = main.down('favorites button[action=edit]');
+            favorites = btn.up('favorites');
 
         if (favorites.getEditing()) {
             btn.setText('Edit');
             favorites.getStore().sync();
-        } else {
+        }
+        else {
             btn.setText('Done');
         }
-        favorites.setEditing(!favorites.getEditing());
 
-        me.setEditable(favorites.getStore(), favorites.getEditing());
+        favorites.setEditing(!favorites.getEditing());
+            me.setEditable(favorites.getStore(), favorites.getEditing());
 
     },
 

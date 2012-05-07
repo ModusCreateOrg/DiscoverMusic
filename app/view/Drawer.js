@@ -16,13 +16,15 @@ Ext.define('Music.view.Drawer', {
         store      : 'Music.store.Genres',
         closed     : true,
         indicator  : false,
-        docked     : 'bottom',
-        scrollable : { direction : 'horizontal' },
         height     : 230,
         left       : 0,
+        bottom     : 40,
         cls        : 'drawer-body',
         title      : 'Browse Genres',
         data       : [],
+        scrollable : {
+            direction : 'horizontal'
+        },
         tpl        : [
             '<div class="drawer-pages-cnt">',
                 '<div class="drawer-page">',

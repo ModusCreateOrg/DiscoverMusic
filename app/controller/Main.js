@@ -12,11 +12,11 @@ Ext.define('Music.controller.Main', {
 
     config : {
         audioHasPlayed : false,
-        apiUrl       : 'http://api.npr.org/query',
-        apiKey       : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
-        genresToLoad : [],
-        numErrors    : 0,
-        numResults   : 10,
+        apiUrl         : 'http://api.npr.org/query',
+        apiKey         : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
+        genresToLoad   : [],
+        numErrors      : 0,
+        numResults     : 10,
 
         models : [
             'Article',
@@ -32,6 +32,8 @@ Ext.define('Music.controller.Main', {
             'Main',
             'ArticlePreview',
             'Article',
+            'GenreToc',
+            'GlobalToc',
             'Drawer',
             'Search',
             'Player',
@@ -93,7 +95,7 @@ Ext.define('Music.controller.Main', {
             },
 
             'genretoc' : {
-//                featuredtap : 'onShowArticle',
+                featuredtap : 'onShowArticle',
                 storytap    : 'onShowArticle'
             },
 
@@ -102,8 +104,8 @@ Ext.define('Music.controller.Main', {
             },
 
             'drawer' : {
-                itemtap   : 'showGenre',
-                searchtap : 'onSearchTap',
+                itemtap      : 'showGenre',
+                searchtap    : 'onSearchTap',
                 favoritestap : 'onFavoritesTap'
             },
 
@@ -132,8 +134,9 @@ Ext.define('Music.controller.Main', {
         drawer.getStore().load(me.onGenresLoaded, me);
 
         me.getApplication().on({
-            scope     : me,
-            playAudio : 'onAppPlayAudio'
+            scope       : me,
+            playAudio   : 'onAppPlayAudio',
+            showarticle : 'onShowArticle'
         });
     },
 
@@ -247,7 +250,7 @@ Ext.define('Music.controller.Main', {
     // when a user taps on the "Read & Listen"
     onShowArticle  : function(record) {
         var me = this,
-            id = record.getId ? record.getId() : record,
+            id = record.getId ? record.get('articleId') : record,
             main = me.getMain(),
             article = main.down('#article-' + id);
 
@@ -305,7 +308,7 @@ Ext.define('Music.controller.Main', {
             player = me.getPlayer();
 
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
-//            console.log('audio file has pls.')
+            //            console.log('audio file has pls.')
 
             Ext.util.JSONP.request({
                 url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
@@ -323,7 +326,7 @@ Ext.define('Music.controller.Main', {
 
         }
         else {
-            if (! me.getAudioHasPlayed()) {
+            if (!me.getAudioHasPlayed()) {
                 var tmpObj = Ext.clone(musicData);
 
                 // this is to fix the IOS auto-start audio issue!
