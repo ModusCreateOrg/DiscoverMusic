@@ -52,20 +52,23 @@
     ];
 
 
-var getStationUrl = function(genreId) {
+var getStationUrl = function(genreId, searchTerm) {
     return "http://api.npr.org/query"
         + "?apiKey=MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001"
         + '&id=' + genreId
         + '&requiredAssets=audio,image'
-        + '&numResults=' + 5
-        + '&fields=parent,title,teaser,storyDate,text,audio,image,artist'
+        + '&numResults=' + 20
+        + '&fields=all'
         + '&transform=source'
-        + '&output=JSON';
+        + '&action=Or'
+        + '&output=JSON'
+        + '&searchTerm=' + searchTerm;
 };
 
 var imageGarbageRegex = /\.jpg.*/g;
 
-var cleanupGenre = function(genreData, key,     genreName) {
+var cleanupGenre = function(genreData) {
+    var genre;
 
     genreData = genreData.list;
 //    debugger;
@@ -74,15 +77,32 @@ var cleanupGenre = function(genreData, key,     genreName) {
 
     genreData.title = genreData.title.$text;
     genreData.teaser = genreData.teaser.$text;
-    genreData.key = key;
     genreData.story.each(function(story) {
 
         story.title = story.title.$text;
         story.teaser = story.teaser.$text;
         story.storyDate = story.storyDate.$text;
-        story.genreKey = key;
-        story.genre = genreName;
 //        debugger;
+
+
+        var genreString = 'genre';
+        if (story.parent) {
+            story.parent.each(function(parentObj) {
+
+                if (parentObj.type == genreString) {
+
+                    genres.each(function(g) {
+                        if (g.id == parentObj.id) {
+                            genre = g;
+                            return false;
+                        }
+
+                    });
+
+                    return false;
+                }
+            });
+        }
 
         if (story.audio) {
             story.audio.each(function(audio) {
@@ -116,9 +136,6 @@ var cleanupGenre = function(genreData, key,     genreName) {
             });
 //            debugger;
         }
-//        else {
-//            console.log('NO AUDIO FOR STORY ' + story.name);
-//        }
 
         var foundImage;
 
@@ -145,20 +162,19 @@ var cleanupGenre = function(genreData, key,     genreName) {
                     return false;
                 }
             });
+
             if (foundImage) {
                 story.image = foundImage;
             }
             else {
                 story.image = story.image[0];
             }
+
             delete story.image.type;
             delete story.image.caption;
 
             story.image.src = story.image.src.replace(imageGarbageRegex, '.jpg');
         }
-//        else {
-//            console.log('NO IMAGE FOR STORY ' + story.name);
-//        }
 
         var itemsToDelete = [
             'artist',
@@ -194,54 +210,48 @@ var cleanupGenre = function(genreData, key,     genreName) {
             delete story[item];
         });
 
-
         var newParagraphs = '';
         story.text.paragraph.each(function(paragraph) {
             newParagraphs += '<p>' + paragraph.$text +'</p>';
         });
 
+        story.genreKey = genre.key;
+        story.genre = genre.name;
         story.text = newParagraphs;
     });
 
-    return genreData;
+    return genreData.story;
 };
 
 exports = function() {
-
-    var currentJDate = new Date().getJulian(),
+    var ids = [],
         url,
         data;
 
-    genres = fetchGenres(currentJDate, true) || genres;
     genres.each(function(genre) {
-
-        if (!genre.lastUpdate || genre.lastUpdate !== currentJDate) {
-            url = getStationUrl(genre.id);
-            data = doCurlRequest(url);
-
-            if (data) {
-//                console.log('cURL :: ' + genre.id + ' ' + genre.name);
-                genre.data = Json.decode(data);
-
-                debugger;
-                genre.data = cleanupGenre(genre.data, genre.key, genre.name);
-                genre.data.genreKey = genre.key;
-                addUpdateGenre(genre);
-            }
-        }
-//        else {
-//            console.log('cache ::  ' + genre.id + ' ' + genre.name);
-//        }
+        ids.push(genre.id);
     });
 
+    url = getStationUrl(req.data.genres || ids.toString(), req.data.searchTerm);
+    console.log(url);
+    data = doCurlRequest(url);
 
-    var response = Json.encode(genres);
+    if (data) {
+        data = Json.decode(data);
+
+        debugger;
+        data = cleanupGenre(data);
+//        data.genreKey = key;
+    }
+
+
+    var response = Json.encode(data);
     if (req.data.callback) {
         response = req.data.callback + '(' + response + ')';
     }
 
     console.log('>>>>>>>> DONE >>>>>>> ' + new Date().toLocaleString());
-    //    Json.success({ data : data });
+    res.write(response);
+    res.stop();
     return true;//response;
-    //    Json.success(genres);
 };

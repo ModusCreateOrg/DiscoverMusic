@@ -56,6 +56,7 @@
          */
         "cache": [
             "index.html",
+            "resources/sounds/s.mp3",
             "resources/images/arrow-down.png",
             "resources/images/arrow-up.png",
             "resources/images/article-bg.png",

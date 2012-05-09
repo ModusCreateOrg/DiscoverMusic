@@ -12,8 +12,6 @@ Config.mysql = {
 SQL = new MySQL();
 SQL.connect();
 
-
-console.dir(require.path);
 //Include libraries
 Server = require('Server');
 Schema = require('Schema');
@@ -60,7 +58,9 @@ var curl = require('builtin/curl'),
     updateGenres = require('actions/updateGenres.js'),
     getGenres = require('actions/getGenres.js'),
     stationFinder = require('actions/stationFinder.js'),
-    getMp3File = require('actions/getMp3File.js');
+    getMp3File = require('actions/getMp3File.js'),
+    search = require('actions/search.js');
+
 
 // Add julian calendar method
 Date.prototype.getJulian = function() {

@@ -12,11 +12,11 @@ Ext.define('Music.controller.Main', {
 
     config : {
         audioHasPlayed : false,
-        apiUrl         : 'http://api.npr.org/query',
-        apiKey         : 'MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001',
         genresToLoad   : [],
         numErrors      : 0,
         numResults     : 10,
+
+        today     : Math.floor(new Date().getTime() / 1000),
 
         models : [
             'Article',
@@ -111,27 +111,54 @@ Ext.define('Music.controller.Main', {
 
             'globaltoc' : {
                 storytap : 'onShowArticle'
+            },
+
+            'search' : {
+                storytap : 'onShowArticle'
             }
         }
-
     },
 
     init : function() {
         var me = this,
-            drawer = me.getDrawer();
+            drawer = me.getDrawer(),
+            today = me.getToday(),
+            lastUpdated = +localStorage.getItem('lastUpdate'),
+            isOldEnough = (today - lastUpdated) > 86400,
+            hasNeverLoaded = (lastUpdated == 0),
+            drawerStore = drawer.getStore(),
+            data;
+
+        drawerStore.on({
+            scope : me,
+            load  : 'onGenresLoaded'
+        });
 
         Ext.Viewport.add(me.getMain());
 
         me.db = Ext.create('Ext.util.MixedCollection');
 
-        me.loadMask = Ext.Viewport.add({
-            xtype   : 'loadmask',
-            message : 'Curating content...'
-        });
+        //If we've never loaded the store or it's been older than one day, load the store via JSONP
+        if (isOldEnough || hasNeverLoaded) {
 
-        me.loadMask.show();
+            me.loadMask = Ext.Viewport.add({
+                xtype   : 'loadmask',
+                message : 'Curating content...'
+            });
 
-        drawer.getStore().load(me.onGenresLoaded, me);
+            me.loadMask.show();
+
+            drawerStore.load();
+
+            localStorage.setItem('lastUpdate', me.getToday());
+
+        }
+        //Else, we'll simply use what's in local storage!
+        else {
+            data = Ext.decode(localStorage.getItem('genres'));
+            drawerStore.setData(data);
+            me.onGenresLoaded(drawerStore);
+        }
 
         me.getApplication().on({
             scope       : me,
@@ -139,17 +166,23 @@ Ext.define('Music.controller.Main', {
             showarticle : 'onShowArticle'
         });
     },
-
+    /** This function is responsible for a lot of things
+        - Destroying the load mask if it exists
+        - Adds the articles to the main carousel
+        - renders the drawer 1s after the app bootstraps
+    */
     startApp : function() {
         var me = this,
             drawer = me.getDrawer(),
             main = me.getMain(),
             viewport = Ext.Viewport;
 
-        me.loadMask.hide();
-        me.loadMask.destroy();
+        if (me.loadMask)  {
+            me.loadMask.hide();
+            me.loadMask.destroy();
 
-        delete me.loadMask;
+            delete me.loadMask;
+        }
 
         //adding all the articles to the main
         drawer.getStore().each(function(genre) {
@@ -174,8 +207,13 @@ Ext.define('Music.controller.Main', {
         viewport.fireEvent('loaded');
     },
 
-    onGenresLoaded : function() {
+    /*
+        When the genres are loaded, parse the article data, then cache them in local storage
+
+     */
+    onGenresLoaded : function(store) {
         var me = this,
+            rawData = store.getProxy().getReader().rawData,
             data;
 
         me.getDrawer().getStore().each(function(record) {
@@ -185,34 +223,25 @@ Ext.define('Music.controller.Main', {
             }
         }, me);
 
-        //        var start = new Date().getTime();
-        //        console.log('DOM start', start);
+        rawData && localStorage.setItem('genres', Ext.encode(rawData));
+
         me.startApp();
-        //        var end = new Date().getTime();
-        //        console.log('DOM end', end, ' ' , (end - start) / 1000 , 's')
     },
 
+    // Here, we'll raed the articles from the inbound raw genre object
     parseGenreData : function(rawGenreObject) {
         var me = this,
             genreId = rawGenreObject.id,
             data = rawGenreObject.data,
             story = data.story;
 
-        localStorage.setItem('timestamp-' + genreId, Ext.Date.format(new Date(), 'ymd'));
-        localStorage.setItem('articles-' + genreId, Ext.encode(story));
-
-        me.importDataToStore(genreId, story);
+        me.readArticles(genreId, story);
     },
 
-    importDataToStore : function(genreId, data) {
+    readArticles : function(genreId, data) {
         var me = this,
             store,
             db = me.db;
-
-        if (!data) {
-            data = Ext.decode(localStorage.getItem('articles-' + genreId));
-        }
-
         if (!db.containsKey(genreId)) {
             store = Ext.create('Music.store.Articles');
             db.add(genreId, store);
@@ -254,9 +283,19 @@ Ext.define('Music.controller.Main', {
             main = me.getMain(),
             article = main.down('#article-' + id);
 
+        if (!article) {
+            article = main.add({
+                xtype  : 'article',
+                itemId : 'article-' + record.getId(),
+                model  : record,
+                data   : record.getData()
+            });
+        }
+
         main.setActiveItem(article);
     },
 
+    // Show the favorites screen when user taps on the favorites
     onFavoritesTap : function() {
         var me = this,
             main = me.getMain(),
@@ -265,6 +304,7 @@ Ext.define('Music.controller.Main', {
         main.setActiveItem(fav);
     },
 
+    // show the search screen when user taps on search icon
     onSearchTap : function() {
         var me = this,
             main = me.getMain(),
@@ -273,6 +313,7 @@ Ext.define('Music.controller.Main', {
         main.setActiveItem(search);
     },
 
+    // Display the global TOC when the user taps the global TOC
     onShowGlobalToc : function() {
         var me = this,
             main = me.getMain(),
@@ -303,12 +344,12 @@ Ext.define('Music.controller.Main', {
         }
     },
 
+    //
     onAppPlayAudio : function(musicData) {
         var me = this,
             player = me.getPlayer();
 
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
-            //            console.log('audio file has pls.')
 
             Ext.util.JSONP.request({
                 url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
@@ -336,6 +377,7 @@ Ext.define('Music.controller.Main', {
                 Ext.Function.defer(function() {
                     player.setData(musicData);
                 }, 550);
+
                 me.setAudioHasPlayed(true);
             }
             else {
