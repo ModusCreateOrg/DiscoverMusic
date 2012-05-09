@@ -252,10 +252,10 @@ exports = function() {
 
     var response = Json.encode(data);
     if (req.data.callback) {
+        res.contentType = 'text/javascript';
         response = req.data.callback + '(' + response + ')';
     }
 
-    console.log('>>>>>>>> DONE >>>>>>> ' + new Date().toLocaleString());
     res.write(response);
     res.stop();
     return true;//response;

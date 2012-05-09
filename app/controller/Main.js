@@ -129,17 +129,17 @@ Ext.define('Music.controller.Main', {
             drawerStore = drawer.getStore(),
             data;
 
-        drawerStore.on({
-            scope : me,
-            load  : 'onGenresLoaded'
-        });
-
         Ext.Viewport.add(me.getMain());
 
         me.db = Ext.create('Ext.util.MixedCollection');
 
+        drawerStore.on({
+            scope : me,
+            load : 'onGenresLoaded'
+        });
+
         //If we've never loaded the store or it's been older than one day, load the store via JSONP
-        if (isOldEnough || hasNeverLoaded) {
+        if (isOldEnough || hasNeverLoaded || ! localStorage.genres) {
 
             me.loadMask = Ext.Viewport.add({
                 xtype   : 'loadmask',

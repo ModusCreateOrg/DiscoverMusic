@@ -6,9 +6,6 @@
  * Description: Search page store
  */
 
-
-
-
 Ext.define('Music.store.Search', {
     extend : 'Ext.data.Store',
     alias    : 'store.search',
