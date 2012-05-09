@@ -225,14 +225,19 @@ var cleanupGenre = function(genreData) {
 
 exports = function() {
     var ids = [],
+        searchTerm = req.data.searchTerm,
         url,
         data;
+
+    if (! searchTerm) {
+        Json.failure('You must include a searchTerm!');
+    }
 
     genres.each(function(genre) {
         ids.push(genre.id);
     });
 
-    url = getStationUrl(req.data.genres || ids.toString(), req.data.searchTerm);
+    url = getStationUrl(req.data.genres || ids.toString(), searchTerm);
     console.log(url);
     data = doCurlRequest(url);
 
