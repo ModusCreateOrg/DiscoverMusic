@@ -87,9 +87,9 @@ Ext.define('Music.view.Article', {
             scope             : me,
             orientationchange : me.onOrientationChange
         });
-        if ( Ext.Viewport.getOrientation === 'portrait') {
-            viewport.fireEvent('orientationchange', viewport, viewport.orientation);
-        }
+
+        me.onOrientationChange(viewport, viewport.getOrientation());
+
     },
 
     onPress   : function(event){
@@ -140,13 +140,12 @@ Ext.define('Music.view.Article', {
     },
 
     onOrientationChange : function(viewport, orientation) {
-
         var me = this,
             header = me.down('component[cls=music-article-header]'),
             articleTitle = me.articleTitle,
             portraitButtons = me.element.down('.music-article-header-portrait');
 
-        if (orientation === Ext.Viewport.PORTRAIT) {
+        if (orientation === 'portrait') {
             header.hide();
             articleTitle.setStyle('display', 'block');
             portraitButtons.show();

@@ -1,10 +1,64 @@
+ var genres = [
+        {
+            "id"   : 135408474,
+            "key"  : "electronicDance",
+            "name" : "Electronic"
+        },
+        {
+            "id"   : 10005,
+            "key"  : "hipHop",
+            "name" : "Hip-Hop"
+        },
+        {
+            "id"   : 139998808,
+            "key"  : "rnb",
+            "name" : "R&B / Soul"
+        },
+        {
+            "id"   : 10001,
+            "key"  : "rock",
+            "name" : "Rock"
+        },
+        {
+            "id"   : 139997200,
+            "key"  : "pop",
+            "name" : "Pop"
+        },
+        {
+            "id"   : 10002,
+            "key"  : "jazzBlues",
+            "name" : "Jazz & Blues"
+        },
+        {
+            "id"   : 10004,
+            "key"  : "world",
+            "name" : "World"
+        },
+        {
+            "id"   : 92792712,
+            "key"  : "country",
+            "name" : "Country"
+        },
+        {
+            "id"   : 139996449,
+            "key"  : "latinAlternative",
+            "name" : "Latin"
+        },
+        {
+            "id"   : 10003,
+            "key"  : "classical",
+            "name" : "Classical"
+        }
+    ];
+
+
 var getStationUrl = function(genreId) {
     return "http://api.npr.org/query"
         + "?apiKey=MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001"
         + '&id=' + genreId
         + '&requiredAssets=audio,image'
         + '&numResults=' + 5
-        + '&fields=title,teaser,storyDate,text,audio,image,artist'
+        + '&fields=parent,title,teaser,storyDate,text,audio,image,artist'
         + '&transform=source'
         + '&output=JSON';
 };
@@ -23,9 +77,6 @@ var cleanupGenre = function(genreData, key,     genreName) {
     genreData.key = key;
     genreData.story.each(function(story) {
 
-//        console.log('Cleaning up ' + story.title.$text);
-
-        delete story.link;
         story.title = story.title.$text;
         story.teaser = story.teaser.$text;
         story.storyDate = story.storyDate.$text;
@@ -49,12 +100,10 @@ var cleanupGenre = function(genreData, key,     genreName) {
                     audio.description = audio.title;
                 }
 
-//                console.log('audio.title = ' + audio.title);
-//                console.log('audio.description = ' + audio.description);
                 if (audio.format.mp3) {
                     audio.format.mp3.each(function(audioFormat) {
                         if (audioFormat.type == 'm3u' || audioFormat.type == 'mp3') {
-//                            console.log('Fetching audio file for ' + story.title);
+
                             delete audioFormat.type;
                             audio.src = getMp3File(audioFormat.$text, true);
                             story.audio = audio;
@@ -111,6 +160,41 @@ var cleanupGenre = function(genreData, key,     genreName) {
 //            console.log('NO IMAGE FOR STORY ' + story.name);
 //        }
 
+        var itemsToDelete = [
+            'artist',
+            'byline',
+            'collection',
+            'relatedLink',
+            'container',
+            'externalAsset',
+            'product',
+            'fullText',
+            'keywords',
+            'lastModifiedDate',
+            'link',
+            'member',
+            'miniTeaser',
+            'organization',
+            'parent',
+            'performance',
+            'priorityKeywords',
+            'pubDate',
+            'pullQuote',
+            'shortTitle',
+            'show',
+            'slug',
+            'song',
+            'subtitle',
+            'textWithHtml',
+            'transcript',
+            'thumbnail'
+        ];
+
+        itemsToDelete.each(function(item) {
+            delete story[item];
+        });
+
+
         var newParagraphs = '';
         story.text.paragraph.each(function(paragraph) {
             newParagraphs += '<p>' + paragraph.$text +'</p>';
@@ -123,58 +207,6 @@ var cleanupGenre = function(genreData, key,     genreName) {
 };
 
 exports = function() {
-    var genres = [
-        {
-            "id"   : 135408474,
-            "key"  : "electronicDance",
-            "name" : "Electronic"
-        },
-        {
-            "id"   : 10005,
-            "key"  : "hipHop",
-            "name" : "Hip-Hop"
-        },
-        {
-            "id"   : 139998808,
-            "key"  : "rnb",
-            "name" : "R&B / Soul"
-        },
-        {
-            "id"   : 10001,
-            "key"  : "rock",
-            "name" : "Rock"
-        },
-        {
-            "id"   : 139997200,
-            "key"  : "pop",
-            "name" : "Pop"
-        },
-        {
-            "id"   : 10002,
-            "key"  : "jazzBlues",
-            "name" : "Jazz & Blues"
-        },
-        {
-            "id"   : 10004,
-            "key"  : "world",
-            "name" : "World"
-        },
-        {
-            "id"   : 92792712,
-            "key"  : "country",
-            "name" : "Country"
-        },
-        {
-            "id"   : 139996449,
-            "key"  : "latinAlternative",
-            "name" : "Latin"
-        },
-        {
-            "id"   : 10003,
-            "key"  : "classical",
-            "name" : "Classical"
-        }
-    ];
 
     var currentJDate = new Date().getJulian(),
         url,

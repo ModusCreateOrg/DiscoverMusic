@@ -37,8 +37,7 @@ Ext.define('Music.controller.Main', {
             'Drawer',
             'Search',
             'Player',
-            'Favorites',
-            'ArticlePreview'
+            'Favorites'
         ],
 
         refs : {

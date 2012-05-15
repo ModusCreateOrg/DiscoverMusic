@@ -73,11 +73,11 @@ Ext.define('Music.view.GlobalToc', {
             },
             tpl   : [
                 '<div class="global-toc-genre-image" data-id="{genre.id}" style="background-image:url(http://src.sencha.io/350/{genre.image})">',
-                '<h2>{genre.name}</h2>',
-                '<h3>{genre.title}</h3>',
+                    '<h2>{genre.name}</h2>',
+                    '<h3>{genre.title}</h3>',
                 '</div>',
                 '<tpl for="articles">',
-                '<p class="global-toc-article" data-id="{id}">{title}</p>',
+                    '<p class="global-toc-article" data-id="{id}">{title}</p>',
                 '</tpl>'
             ]
         };
@@ -105,7 +105,6 @@ Ext.define('Music.view.GlobalToc', {
             touchstart : 'onPress',
             touchend   : 'onRelease'
         });
-
     },
 
     onPress : function(event, node) {
