@@ -66,7 +66,7 @@ Ext.define('Music.controller.Stations', {
 
 //        }
 //        else if (content.match('\\\.pls')) {
-//            Ext.util.JSONP.request({
+//            Ext.data.JsonP.request({
 //                url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
 //                callbackKey : 'callback',
 //                params      : { url : urlObj.content },
@@ -107,7 +107,7 @@ Ext.define('Music.controller.Stations', {
 
         me.view.showMask();
 
-        Ext.util.JSONP.request({
+        Ext.data.JsonP.request({
             url         : 'http://query.yahooapis.com/v1/public/yql',
             scope       : me,
             callbackKey : 'callback',
@@ -129,7 +129,7 @@ Ext.define('Music.controller.Stations', {
     getFriendlyGeoName : function(coords) {
         var me = this;
 
-        Ext.util.JSONP.request({
+        Ext.data.JsonP.request({
             url         : 'http://ws.geonames.org/findNearbyPostalCodesJSON',
             scope       : me,
             callbackKey : 'callback',

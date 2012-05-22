@@ -12,10 +12,7 @@ Ext.define('Music.store.Genres', {
         model : 'Music.model.Genre',
 
         proxy : {
-            type : 'jsonp',
-            url  : 'http://discovermusic.moduscreate.com/getGenres.jst'
-//            url  : 'http://localhost:9090/getGenres.jst'
+            type : 'memory'
         }
     }
-
 });

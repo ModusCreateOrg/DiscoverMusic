@@ -9,6 +9,7 @@
 Ext.define('Music.store.Search', {
     extend : 'Ext.data.Store',
     alias    : 'store.search',
+    requires : ['Ext.data.proxy.JsonP'],
     config : {
         model : 'Music.model.Article',
 

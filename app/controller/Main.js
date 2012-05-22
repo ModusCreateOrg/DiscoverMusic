@@ -147,9 +147,16 @@ Ext.define('Music.controller.Main', {
 
             me.loadMask.show();
 
-            drawerStore.load();
-
-            localStorage.setItem('lastUpdate', me.getToday());
+            var url ='http://silkprod2.moduscreate.com/getGenres.jst';
+            console.log(url)
+            Ext.data.JsonP.request({
+                url : url,
+                success : function(data) {
+                    drawerStore.setData(data);
+                    localStorage.setItem('lastUpdate', me.getToday());
+                    me.onGenresLoaded(drawerStore);
+                }
+            });
 
         }
         //Else, we'll simply use what's in local storage!
@@ -350,7 +357,7 @@ Ext.define('Music.controller.Main', {
 
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
 
-            Ext.util.JSONP.request({
+            Ext.data.JsonP.request({
                 url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
