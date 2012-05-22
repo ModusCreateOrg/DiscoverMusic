@@ -147,10 +147,8 @@ Ext.define('Music.controller.Main', {
 
             me.loadMask.show();
 
-            var url ='http://silkprod2.moduscreate.com/getGenres.jst';
-            console.log(url)
             Ext.data.JsonP.request({
-                url : url,
+                url : 'http://discovermusic.moduscreate.com/getGenres.jst',
                 success : function(data) {
                     drawerStore.setData(data);
                     localStorage.setItem('lastUpdate', me.getToday());

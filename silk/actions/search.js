@@ -71,18 +71,21 @@ var cleanupGenre = function(genreData) {
     var genre;
 
     genreData = genreData.list;
-//    debugger;
     delete genreData.miniTeaser;
     delete genreData.link;
 
     genreData.title = genreData.title.$text;
     genreData.teaser = genreData.teaser.$text;
+    var stories = [];
+
     genreData.story.each(function(story) {
+        if (! story.text ) {
+            return;
+        }
 
         story.title = story.title.$text;
         story.teaser = story.teaser.$text;
         story.storyDate = story.storyDate.$text;
-//        debugger;
 
 
         var genreString = 'genre';
@@ -211,6 +214,7 @@ var cleanupGenre = function(genreData) {
         });
 
         var newParagraphs = '';
+
         story.text.paragraph.each(function(paragraph) {
             newParagraphs += '<p>' + paragraph.$text +'</p>';
         });
@@ -218,9 +222,10 @@ var cleanupGenre = function(genreData) {
         story.genreKey = genre.key;
         story.genre = genre.name;
         story.text = newParagraphs;
+        stories.push(story)
     });
 
-    return genreData.story;
+    return stories;
 };
 
 exports = function() {
@@ -238,16 +243,17 @@ exports = function() {
     });
 
     url = getStationUrl(req.data.genres || ids.toString(), searchTerm);
-    console.log(url);
+//    console.log(url);
     data = doCurlRequest(url);
+    data = Json.decode(data);
 
-    if (data) {
-        data = Json.decode(data);
-
-        debugger;
+    if (data && data.list && data.list.story) {
         data = cleanupGenre(data);
-//        data.genreKey = key;
     }
+    else {
+        data = [];
+    }
+
 
 
     var response = Json.encode(data);
