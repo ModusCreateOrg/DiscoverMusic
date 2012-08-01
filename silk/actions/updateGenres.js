@@ -186,15 +186,22 @@ global.updateGenres_action = function() {
         if (!genre.lastUpdate || genre.lastUpdate !== currentJDate) {
             url = getStationUrl(genre.id);
             console.log(url);
-            data =      doCurlRequest(url);
+            data =   doCurlRequest(url);
 
             if (data) {
 //                console.log('cURL :: ' + genre.id + ' ' + genre.name);
-                genre.data = Json.decode(data);
+                try {
+                    genre.data = Json.decode(data);
+                }
+                catch(e) {
+                    console.log('Exception in ' + url)
 
-                genre.data = cleanupGenre(genre.data, genre.key, genre.name);
-                genre.data.genreKey = genre.key;
-                addUpdateGenre(genre);
+                }
+                if (genre.data) {
+                    genre.data = cleanupGenre(genre.data, genre.key, genre.name);
+                    genre.data.genreKey = genre.key;
+                    addUpdateGenre(genre);
+                }
             }
         }
 //        else {
