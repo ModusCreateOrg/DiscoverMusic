@@ -1,4 +1,4 @@
-exports = function(inboundUrl, justReturnFileString) {
+global.getMp3file_action = function(inboundUrl, justReturnFileString) {
     var url   = req.data.url,
         data  = doCurlRequest(inboundUrl || url),
         m3uRe = /\.mp3/i,
@@ -34,7 +34,5 @@ exports = function(inboundUrl, justReturnFileString) {
         return file;
     }
     return file;
-
-//    Json.success({ data : data });
 };
 

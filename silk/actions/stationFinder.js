@@ -1,4 +1,4 @@
-exports = function() {
+global.stationFinder_action = function() {
     var url     = "http://api.npr.org/stations.php?apiKey=MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001",
         reqData = req.data,
         zip     = reqData.zip,

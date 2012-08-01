@@ -74,7 +74,6 @@ var addUpdateGenre = function(genre) {
         query = 'SELECT * FROM genres WHERE lastUpdate="' + today + '" AND db_key="' +  genre.key + '"',
         row   = SQL.getDataRow(query);
 
-//
     if (row) {
         return row;
     }

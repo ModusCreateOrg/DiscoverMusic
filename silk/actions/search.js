@@ -228,8 +228,8 @@ var cleanupGenre = function(genreData) {
     return stories;
 };
 
-exports = function() {
-    var ids = [],
+global.search_action = function() {
+    var ids        = [],
         searchTerm = req.data.searchTerm,
         url,
         data;
