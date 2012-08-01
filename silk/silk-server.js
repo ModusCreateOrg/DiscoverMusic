@@ -61,7 +61,7 @@ var curl = require('cURL'),
     getGenres = require('actions/getGenres.js'),
     stationFinder = require('actions/stationFinder.js'),
     getMp3File = require('actions/getMp3File.js'),
-    search = require('actions/search.js').
+    search = require('actions/search.js'),
     xml = require('XMLParser');
 
 
