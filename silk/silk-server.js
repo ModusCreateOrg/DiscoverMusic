@@ -146,10 +146,12 @@ var fetchGenresExternal = function(requestDate, returnFalse) {
 // utils
 var doCurlRequest = function(url) {
     var handle = curl.init(url);
-    console.log('curl ' + url);
+    console.log( new Date().toLocaleString());
+    console.log('cURL ' + url);
     var success = curl.perform(handle);
-    console.log('AFTER CURL')
-    var    text = curl.getResponseText(handle);
+    console.log('AFTER cURL');
+
+    var text = curl.getResponseText(handle);
 
     curl.destroy(handle);
 
