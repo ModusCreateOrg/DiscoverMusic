@@ -22,7 +22,7 @@ Ext.define('Music.controller.Stations', {
             }
         },
         queryApiTpl : Ext.create('Ext.Template',
-            'select * from xml where url="http://localhost:9090/stationFinder.jst?lat={latitude}&lon={longitude}&zip={zip}"'
+            'select * from xml where url="http://ec2-23-20-142-242.compute-1.amazonaws.com:9090/stationFinder?lat={latitude}&lon={longitude}&zip={zip}"'
         )
     },
 

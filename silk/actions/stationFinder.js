@@ -4,7 +4,7 @@ global.stationFinder_action = function() {
         zip     = reqData.zip,
         lat     = reqData.lat,
         lon     = reqData.lon,
-        data,
+        xmlString,
         ok;
 
     if (lat && lon) {
@@ -17,8 +17,15 @@ global.stationFinder_action = function() {
         ok = true;
     }
 
+
+
     if (ok) {
-        data = doCurlRequest(url);
-        return data;
+         xmlString = doCurlRequest(url);
+
+       var obj  = xml.toObject(xmlString),
+           json = xml.toJson(xmlString);
+
+        console.dir(obj);
+        return json;
     }
 };
