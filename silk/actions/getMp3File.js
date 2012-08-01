@@ -38,4 +38,4 @@ var getMp3File = function(inboundUrl, justReturnFileString) {
 
 
 exports = getMp3File;
-global.getMp3file_action = getMp3File;
+global.getMp3File_action = getMp3File;
