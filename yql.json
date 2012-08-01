@@ -1,0 +1,383 @@
+{"query" : {
+    "count"   : 1,
+    "created" : "2012-08-01T20:06:27Z",
+    "lang"    : "en-US",
+    "results" : {
+        "stations" : {
+            "version" : "0.94",
+            "title"   : "Stations near 39.3678143 latitude and 77.4358472 longitude",
+            "station" : [
+                {
+                    "id"             : "1015",
+                    "callLetters"    : "WYPF",
+                    "band"           : "FM",
+                    "name"           : "WYPF-FM",
+                    "memberStatus"   : "Member",
+                    "frequency"      : "88.1",
+                    "network"        : {
+                        "orgId"   : "725",
+                        "content" : "WYPR-FM"
+                    },
+                    "marketCity"     : "Frederick",
+                    "state"          : "MD",
+                    "signal"         : {
+                        "strength" : "5",
+                        "content"  : "strong"
+                    },
+                    "url"            : [
+                        {
+                            "title"   : "WYPF-FM Homepage",
+                            "type"    : "Organization Home Page",
+                            "typeId"  : "1",
+                            "content" : "http://www.wypr.org/"
+                        },
+                        {
+                            "title"   : "Program Guide",
+                            "type"    : "Program Schedule",
+                            "typeId"  : "2",
+                            "content" : "http://www.publicbroadcasting.net/wypr/guide.guidemain"
+                        },
+                        {
+                            "title"   : "Support",
+                            "type"    : "Pledge Page",
+                            "typeId"  : "4",
+                            "content" : "https://secure.publicbroadcasting.net/wypr/form.pledgemain?action=pledge"
+                        },
+                        {
+                            "title"   : "Listen Online",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://www.wypr.org/listen.html"
+                        },
+                        {
+                            "title"   : "Listen Online",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://www.publicbroadcasting.net/wypr/ppr/wypr.pls"
+                        },
+                        {
+                            "title"   : "Facebook",
+                            "type"    : "Facebook Url",
+                            "typeId"  : "16",
+                            "content" : "http://www.facebook.com/WYPR881Baltimore"
+                        }
+                    ],
+                    "image"          : {
+                        "type"    : "logo",
+                        "content" : "http://media.npr.org/images/stations/logos/wypf_fm.gif"
+                    },
+                    "tagline"        : null,
+                    "orgDisplayName" : "WYPR"
+                },
+                {
+                    "id"                     : "5131263",
+                    "callLetters"            : "WETA",
+                    "band"                   : "FM",
+                    "name"                   : "WETA-FM",
+                    "memberStatus"           : "Translator",
+                    "frequency"              : "88.9",
+                    "translator_callLetters" : "W205BL",
+                    "translator_band"        : "FX",
+                    "network"                : {
+                        "orgId"   : "372",
+                        "content" : "WETA-FM"
+                    },
+                    "marketCity"             : "Washington",
+                    "state"                  : "MD",
+                    "signal"                 : {
+                        "strength" : "3",
+                        "content"  : "moderate"
+                    },
+                    "image"                  : {
+                        "type"    : "logo",
+                        "content" : "http://media.npr.org/images/stations/logos/weta_fm.gif"
+                    },
+                    "tagline"                : "Classical for Washington",
+                    "orgDisplayName"         : "WETA"
+                },
+                {
+                    "id"                 : "305",
+                    "callLetters"        : "WAMU",
+                    "band"               : "FM",
+                    "name"               : "WAMU-FM",
+                    "memberStatus"       : "Member",
+                    "frequency"          : "88.5",
+                    "marketCity"         : "Washington",
+                    "state"              : "DC",
+                    "signal"             : {
+                        "strength" : "1",
+                        "content"  : "weak"
+                    },
+                    "url"                : [
+                        {
+                            "title"   : "WAMU Homepage",
+                            "type"    : "Organization Home Page",
+                            "typeId"  : "1",
+                            "content" : "http://wamu.org"
+                        },
+                        {
+                            "title"   : "Program Schedule",
+                            "type"    : "Program Schedule",
+                            "typeId"  : "2",
+                            "content" : "http://wamu.org/programs/schedule/"
+                        },
+                        {
+                            "title"   : "Support  WAMU",
+                            "type"    : "Pledge Page",
+                            "typeId"  : "4",
+                            "content" : "http://wamu.org/support/membership/campaign/"
+                        },
+                        {
+                            "title"   : "Listen Online",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://wamu.org/listen"
+                        },
+                        {
+                            "title"   : "WAMU 88.5 (HD 88.5-1)",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://wamu.org/listen/"
+                        },
+                        {
+                            "title"   : "WAMU's Bluegrass Country",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://bluegrasscountry.org/"
+                        },
+                        {
+                            "title"   : "Intersection 88.5-3",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://wamu.org/listen/"
+                        },
+                        {
+                            "title"   : "The Animal House from WAMU 88.5",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://feeds.feedburner.com/WAMU885TheAnimalHouse"
+                        },
+                        {
+                            "title"   : "WAMU-FM: The Diane Rehm Show: Friday News Roundup Podcast",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://www.npr.org/templates/rss/podcast.php?id=510024"
+                        },
+                        {
+                            "title"   : "WAMU-FM: WAMU: Metro Connection Podcast",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://www.npr.org/templates/rss/podcast.php?id=510081"
+                        },
+                        {
+                            "title"   : "WAMU-FM: WAMU: The Diane Rehm Show Podcast",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://www.npr.org/templates/rss/podcast.php?id=510071"
+                        },
+                        {
+                            "title"   : "WAMU-FM: WAMU: The Kojo Nnamdi Show Podcast",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://www.npr.org/templates/rss/podcast.php?id=510206"
+                        },
+                        {
+                            "title"   : "WAMU-FM: WAMU: The Kojo Nnamdi Show: Tech Tuesday Podcast",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://www.npr.org/templates/rss/podcast.php?id=510025"
+                        },
+                        {
+                            "title"   : "WAMU-FM: WAMU: The Politics Hour Podcast",
+                            "type"    : "Podcast",
+                            "typeId"  : "9",
+                            "content" : "http://www.npr.org/templates/rss/podcast.php?id=510207"
+                        },
+                        {
+                            "title"   : "WAMU 88.5 (HD 88.5-1)",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://static.wamu.org/streams/npr/wamu-1.pls"
+                        },
+                        {
+                            "title"   : "Intersection 88.5-3",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://static.wamu.org/streams/npr/wamu-3.pls"
+                        },
+                        {
+                            "title"   : "WAMU's Bluegrass Country",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://www.npr.org/burnedPages/xml/localize/music/wamu.pls"
+                        },
+                        {
+                            "title"   : "WAMU's Bluegrass Country",
+                            "type"    : "Audio Windows Media Stream",
+                            "typeId"  : "11",
+                            "content" : "http://wamu-wm.streamguys.com/WAMU-2"
+                        },
+                        {
+                            "title"   : "WAMU-FM News",
+                            "type"    : "Newscast",
+                            "typeId"  : "15",
+                            "content" : "http://downloads.wamu.org/wamunews.mp3"
+                        },
+                        {
+                            "title"   : "Facebook",
+                            "type"    : "Facebook Url",
+                            "typeId"  : "16",
+                            "content" : "http://www.facebook.com/wamu885"
+                        },
+                        {
+                            "title"   : "Twitter",
+                            "type"    : "Twitter Feed",
+                            "typeId"  : "17",
+                            "content" : "http://twitter.com/wamu885"
+                        }
+                    ],
+                    "image"              : {
+                        "type"    : "logo",
+                        "content" : "http://media.npr.org/images/stations/logos/wamu_fm.gif"
+                    },
+                    "tagline"            : "The Mind Is Our Medium",
+                    "orgDisplayName"     : "WAMU",
+                    "identifierAudioUrl" : [
+                        {
+                            "type"    : "mp3",
+                            "content" : "http://media.npr.org/stationid/305.mp3"
+                        },
+                        {
+                            "type"    : "mp4",
+                            "content" : "http://media.npr.org/stationid/305.mp4"
+                        }
+                    ]
+                },
+                {
+                    "id"                 : "372",
+                    "callLetters"        : "WETA",
+                    "band"               : "FM",
+                    "name"               : "WETA-FM",
+                    "memberStatus"       : "Member",
+                    "frequency"          : "90.9",
+                    "marketCity"         : "Washington",
+                    "state"              : "DC",
+                    "signal"             : {
+                        "strength" : "1",
+                        "content"  : "weak"
+                    },
+                    "url"                : [
+                        {
+                            "title"   : "Classical WETA home page",
+                            "type"    : "Organization Home Page",
+                            "typeId"  : "1",
+                            "content" : "http://www.weta.org/fm"
+                        },
+                        {
+                            "title"   : "Classical WETA Weekly Schedule",
+                            "type"    : "Program Schedule",
+                            "typeId"  : "2",
+                            "content" : "http://www.weta.org/fm/stationguide/weeklyschedule/classicalweta"
+                        },
+                        {
+                            "title"   : "Support Classical WETA",
+                            "type"    : "Pledge Page",
+                            "typeId"  : "4",
+                            "content" : "https://secure2.convio.net/weta/site/Donation2?df_id=1740"
+                        },
+                        {
+                            "title"   : "Classical WETA",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://www.weta.org/fm/listenlive"
+                        },
+                        {
+                            "title"   : "WETA's Vocal Channel: The Station That Sings",
+                            "type"    : "Audio Stream",
+                            "typeId"  : "7",
+                            "content" : "http://www.weta.org/fm/listenlive/vivalavoce"
+                        },
+                        {
+                            "title"   : "Listen Live: Classical WETA",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://stream.weta.org:8002/listen.pls"
+                        },
+                        {
+                            "title"   : "Classical WETA",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://stream.weta.org:8004/listen.pls"
+                        },
+                        {
+                            "title"   : "WETA's Vocal Channel: The Station That Sings",
+                            "type"    : "Audio MP3 Stream",
+                            "typeId"  : "10",
+                            "content" : "http://stream.weta.org:8006/listen.pls"
+                        },
+                        {
+                            "title"   : "Listen Live: Classical WETA",
+                            "type"    : "Audio Windows Media Stream",
+                            "typeId"  : "11",
+                            "content" : "http://www.weta.org/files/streamingprerolls/preroll_8002.asx"
+                        },
+                        {
+                            "title"   : "Classical WETA",
+                            "type"    : "Audio Windows Media Stream",
+                            "typeId"  : "11",
+                            "content" : "http://www.weta.org/files/streamingprerolls/preroll_8004.asx"
+                        },
+                        {
+                            "title"   : "WETA's Vocal Channel: The Station That Sings",
+                            "type"    : "Audio Windows Media Stream",
+                            "typeId"  : "11",
+                            "content" : "http://www.weta.org/files/streamingprerolls/preroll_8006.asx"
+                        },
+                        {
+                            "title"   : "Facebook",
+                            "type"    : "Facebook Url",
+                            "typeId"  : "16",
+                            "content" : "http://www.facebook.com/pages/Classical-WETA-and-WETA-Public-Television/34740117468"
+                        }
+                    ],
+                    "image"              : {
+                        "type"    : "logo",
+                        "content" : "http://media.npr.org/images/stations/logos/weta_fm.gif"
+                    },
+                    "tagline"            : "Classical for Washington",
+                    "orgDisplayName"     : "WETA",
+                    "identifierAudioUrl" : [
+                        {
+                            "type"    : "mp3",
+                            "content" : "http://media.npr.org/stationid/372.mp3"
+                        },
+                        {
+                            "type"    : "mp4",
+                            "content" : "http://media.npr.org/stationid/372.mp4"
+                        }
+                    ]
+                },
+                {
+                    "id"             : "1256",
+                    "callLetters"    : "WPFW",
+                    "band"           : "FM",
+                    "name"           : "WPFW Radio/Pacifica",
+                    "memberStatus"   : "Network",
+                    "frequency"      : "89.3",
+                    "marketCity"     : "Washington",
+                    "state"          : "DC",
+                    "signal"         : {
+                        "strength" : "1",
+                        "content"  : "weak"
+                    },
+                    "image"          : {
+                        "type"    : "logo",
+                        "content" : "http://media.npr.org/images/stations/logos/wpfw_fm.gif"
+                    },
+                    "tagline"        : null,
+                    "orgDisplayName" : null
+                }
+            ]
+        }
+    }
+}}

@@ -22,10 +22,10 @@ global.stationFinder_action = function() {
     if (ok) {
          xmlString = doCurlRequest(url);
 
-       var obj  = xml.toObject(xmlString),
-           json = xml.toJson(xmlString);
+        var obj  = xml.toObject(xmlString),
+            json = xml.toJson(xmlString);
 
-        console.dir(obj);
-        return json;
+        res.write(json);
+        res.stop()
     }
 };
