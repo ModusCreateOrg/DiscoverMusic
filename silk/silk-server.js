@@ -145,9 +145,11 @@ var fetchGenresExternal = function(requestDate, returnFalse) {
 
 // utils
 var doCurlRequest = function(url) {
-    var handle = curl.init(url),
-        success = curl.perform(handle),
-        text = curl.getResponseText(handle);
+    var handle = curl.init(url);
+    console.log('curl ' + url);
+    var success = curl.perform(handle);
+    console.log('AFTER CURL')
+    var    text = curl.getResponseText(handle);
 
     curl.destroy(handle);
 
