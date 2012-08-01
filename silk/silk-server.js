@@ -145,16 +145,15 @@ var fetchGenresExternal = function(requestDate, returnFalse) {
 
 // utils
 var doCurlRequest = function(url) {
-    console.log(new Date().toLocaleString());
-    console.log('cURL ' + url);
+//    console.log(new Date().toLocaleString());
+//    console.log('cURL ' + url);
 
     var result = curl({
-        verbose : 999,
         url     : url,
         timeout : 30 // seconds
     });
-
-    console.log('AFTER cURL');
+//
+//    console.log('AFTER cURL');
 
     return result.responseText || false;
 };
