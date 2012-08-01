@@ -150,7 +150,8 @@ var doCurlRequest = function(url) {
 
     var result = curl({
         verbose : 999,
-        url : url
+        url     : url,
+        timeout : 30 // seconds
     });
 
     console.log('AFTER cURL');
