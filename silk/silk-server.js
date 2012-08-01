@@ -149,6 +149,7 @@ var doCurlRequest = function(url) {
     console.log('cURL ' + url);
 
     var result = curl({
+        verbose : 999,
         url : url
     });
 
