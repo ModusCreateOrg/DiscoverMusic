@@ -1,180 +1,242 @@
-
 /*********************************
- *
- * Styles for the cover
- *
- *********************************/
+*
+* Styles for the cover
+*
+*********************************/
 
-@mixin article-category($category, $bg-color1, $bg-color2) {
-	.music-article-preview{
-		// the 'genre flag' in the cover flow
-		.music-article-category {
-			float: left;
-			border: 2px solid rgba(255, 255, 255, .5);
-			border-left: none;
-			-webkit-border-top-right-radius: 10px;
-			-webkit-border-bottom-right-radius: 10px;			
-			h1 {
-				padding:20px 40px;
-				color: #fff;
-				font-size: 1.8em;
-				text-align: center;
-				font-family: $base-font;
-				text-transform: uppercase;
-			}
-		}
+@mixin article-category($category, $bg-color1, $bg-color2){
+  .music-article-preview {
+    // the 'genre flag' in the cover flow
+    .music-article-category {
+      float                              : left;
+      border                             : 2px solid rgba(255, 255, 255, .5);
+      border-left                        : none;
+      -webkit-border-top-right-radius    : 10px;
+      -webkit-border-bottom-right-radius : 10px;
+      h1 {
+        padding        : 20px 40px;
+        color          : #fff;
+        font-size      : 1.8em;
+        text-align     : center;
+        font-family    : $base-font;
+        text-transform : uppercase;
+      }
+    }
 
-		// we'll style these based on the genre colors
-		.music-article-#{$category} {
-			@include background-image(linear-gradient($bg-color1, $bg-color2));
-			@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
-			@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
-		}
+    // we'll style these based on the genre colors
+    .music-article-#{$category} {
+      @include background-image(linear-gradient($bg-color1, $bg-color2));
+      @include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
+      @include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+    }
 
-		// full article page gets the same colors as the genre cover for the title
-		.music-article-full-#{$category} {
-			.image { 
-				background-repeat: no-repeat;
-				height: 400px;
-				position: relative;
-			}
-			.title {
-				@include background-image(linear-gradient($bg-color1, $bg-color2));
-				@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
-				@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
-				position: absolute;
-				left: 0px;
-				top: 320px;
-				h1 {
-					color: #fff;
-					font-family: $base-font;
-					font-weight: 500;
-					font-size: 32px;
-					padding: 20px;
-				}
-			}
-			.text {
-				float: left;
-				width: 700px;
-				background: #fff;
-				padding: 20px;
-				@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
-				p {
-					font-family: $alt-font;
-					font-size: 18px;
-					line-height: 26px;
-					margin-bottom: 15px; 
-				}
-			}
-			.controls {
-				float: left;
-				width: 150px;
-				height: 300px;
-				margin: 20px 30px 0px 30px;
-				background: #ccc;
-				@include border-radius(10px);
-				@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
-			}			
-		}
+    // full article page gets the same colors as the genre cover for the title
+    .music-article-full-#{$category} {
+      .image {
+        background-repeat : no-repeat;
+        height            : 400px;
+        position          : relative;
+      }
+      .title {
+        @include background-image(linear-gradient($bg-color1, $bg-color2));
+        @include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
+        @include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+        position : absolute;
+        left     : 0px;
+        top      : 320px;
+        h1 {
+          color       : #fff;
+          font-family : $base-font;
+          font-weight : 500;
+          font-size   : 32px;
+          padding     : 20px;
+        }
+      }
+      .text {
+        float      : left;
+        width      : 700px;
+        background : #fff;
+        padding    : 20px;
+        @include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+        p {
+          font-family   : $alt-font;
+          font-size     : 18px;
+          line-height   : 26px;
+          margin-bottom : 15px;
+        }
+      }
+      .controls {
+        float      : left;
+        width      : 150px;
+        height     : 300px;
+        margin     : 20px 30px 0px 30px;
+        background : #ccc;
+        @include border-radius(10px);
+        @include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+      }
+    }
 
-		.music-article-title {
-			position:absolute;
-			left:20px;
-			right:20px;
-			bottom:90px;
-            overflow: hidden;
-            height:130px;
+    .music-article-title {
+      position : absolute;
+      left     : 20px;
+      right    : 20px;
+      bottom   : 90px;
+      overflow : hidden;
+      height   : 130px;
 
-            @media screen and (orientation:portrait) {
-                height:210px;
-            }
+      @media screen and (orientation:portrait) {
+        height : 210px;
+      } @include border-radius(10px);
+      @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
 
+      .music-content-all {
+        position : relative;
+        height   : 100%;
+      }
 
-            @include border-radius(10px);
-            @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
+      .music-article-title-bg {
+        position : absolute;
+        height   : 100%;
+        width    : 100%;
+        padding  : 30px 25px;
+      }
 
-			.music-content-all {
-				position:relative;
-				height:100%;
-			}
-			
-			.music-article-title-bg {
-				position:absolute;
-				height:100%;
-				width:100%;
-				padding:30px 25px;
-			}
+      .music-article-title-content {
+        position : absolute;
+        padding  : 30px 25px;
+        width    : 100%;
 
-			.music-article-title-content{
-				position:absolute;
-				padding:30px 25px;
-				width:100%;
+        h2 {
+          color       : #fff;
+          font-size   : 1.9em;
+          font-family : $base-font;
+          @include opacity(1);
+        }
+        .music-article-btn {
+          float       : right;
+          @include opacity(1);
+          @include border-radius(10px);
+          border      : 2px solid rgba(255, 255, 255, .5);
+          padding     : 20px 30px;
+          margin-left : 50px;
+          color       : #fff;
+          font-family : $base-font;
+          font-size   : 1.4em;
+          em {
+            font-family : $alt-font;
+            font-weight : 100;
+            font-size   : 27px;
+          }
+        }
 
-				h2 {
-					color:#fff;
-					font-size:1.9em;
-					font-family: $base-font;
-					@include opacity(1);
-				}
-				.music-article-btn {
-					float:right;
-					@include opacity(1);
-					@include border-radius(10px);
-					border: 2px solid rgba(255, 255, 255, .5);
-					padding:20px 30px;
-					margin-left:50px;
-					color:#fff;
-					font-family: $base-font;
-					font-size: 1.4em;
-					em {
-						font-family: $alt-font;
-						font-weight: 100;
-						font-size: 27px;						
-					}
-				}
+        .music-article-btn-#{$category} {
+          @include background-image(linear-gradient($bg-color1, $bg-color2));
+          @include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
+        }
 
-				.music-article-btn-#{$category}{
-					@include background-image(linear-gradient($bg-color1, $bg-color2));
-					@include single-text-shadow(darken($bg-color2, 15), 0px, 1px, 1px);
-				}
-
-				.music-article-btn-pressed-#{$category}{
-					border: 2px solid rgba(255, 255, 255, .3);
-					@include background-image(linear-gradient($bg-color2,$bg-color1)
-					);
-				}
-			}
-		}
-	}
+        .music-article-btn-pressed-#{$category} {
+          border : 2px solid rgba(255, 255, 255, .3);
+          @include background-image(linear-gradient($bg-color2,$bg-color1));
+        }
+      }
+    }
+  }
 }
 
-
-
-@include article-category('rock', $rock-background-color-light, $rock-background-color-dark);
-@include article-category('classical', $classical-background-color-light, $classical-background-color-dark);
-@include article-category('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
-@include article-category('world', $world-background-color-light, $world-background-color-dark);
-@include article-category('hipHop', $hipHop-background-color-light, $hipHop-background-color-dark);
-@include article-category('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
-@include article-category('pop', $pop-background-color-light,  $pop-background-color-dark);
-@include article-category('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
-@include article-category('country',$country-background-color-light, $country-background-color-dark);
-@include article-category('rnb',$rnb-background-color-light, $rnb-background-color-dark);
-
-
+@include
+article-category
+(
+'rock'
+,
+$rock-background-color-light,
+$rock-background-color-dark)
+;
+@include
+article-category
+(
+'classical'
+,
+$classical-background-color-light,
+$classical-background-color-dark)
+;
+@include
+article-category
+(
+'jazzBlues'
+,
+$jazzblues-background-color-light,
+$jazzblues-background-color-dark)
+;
+@include
+article-category
+(
+'world'
+,
+$world-background-color-light,
+$world-background-color-dark)
+;
+@include
+article-category
+(
+'hipHop'
+,
+$hipHop-background-color-light,
+$hipHop-background-color-dark)
+;
+@include
+article-category
+(
+'electronicDance'
+,
+$electronicdance-background-color-light,
+$electronicdance-background-color-dark)
+;
+@include
+article-category
+(
+'pop'
+,
+$pop-background-color-light,
+$pop-background-color-dark)
+;
+@include
+article-category
+(
+'latinAlternative'
+,
+$latinalternative-background-color-light,
+$latinalternative-background-color-dark)
+;
+@include
+article-category
+(
+'country'
+,
+$country-background-color-light,
+$country-background-color-dark)
+;
+@include
+article-category
+(
+'rnb'
+,
+$rnb-background-color-light,
+$rnb-background-color-dark)
+;
 
 .music-article-preview div.x-innerhtml {
-	height:100%;
+  height : 100%;
 }
-.music-article-preview div.music-article-image{
-	@include box-flex(3);
-	position:relative;
-	padding-top:42px;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height:100%;
-	height:100%;
+
+.music-article-preview div.music-article-image {
+  @include box-flex(3);
+  position            : relative;
+  padding-top         : 42px;
+  background-position : center center;
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  min-height          : 100%;
+  height              : 100%;
 }
 
 /*********************************
@@ -184,185 +246,251 @@
  *********************************/
 
 @mixin article($genre, $bg-color1, $bg-color2){
-	.music-article-header .music-article-#{$genre}{
-		h2{
-			position:absolute;
-			top: -5px;
-			left: -5px;
-			@include background-image(linear-gradient($bg-color1, $bg-color2));
-			color:#fff;
-			font-family: $base-font;
-			font-size:0.9em;
-			text-transform:uppercase;
-			padding:10px 20px;
-			border: 1px solid rgba(255, 255, 255, .5);
-			box-shadow: 3px 5px 5px rgba(0, 0, 0, .5);
-			-webkit-border-bottom-right-radius: 5px;
-		}
-	}
+  .music-article-header .music-article-#{$genre} {
+    h2 {
+      position                           : absolute;
+      top                                : -5px;
+      left                               : -5px;
+      @include background-image(linear-gradient($bg-color1, $bg-color2));
+      color                              : #fff;
+      font-family                        : $base-font;
+      font-size                          : 0.9em;
+      text-transform                     : uppercase;
+      padding                            : 10px 20px;
+      border                             : 1px solid rgba(255, 255, 255, .5);
+      box-shadow                         : 3px 5px 5px rgba(0, 0, 0, .5);
+      -webkit-border-bottom-right-radius : 5px;
+    }
+  }
 
-	.music-article-content .music-article-#{$genre}{
-		h2{
-			@include background-image(linear-gradient($bg-color1, $bg-color2));
-		}
-	}
+  .music-article-content .music-article-#{$genre} {
+    h2 {
+      @include background-image(linear-gradient($bg-color1, $bg-color2));
+    }
+  }
 }
 
-.music-article{
-	.music-article-header {
-        @media screen and (orientation:landscape) {
-            padding: 15px;
-        }
-        @media screen and (orientation:portrait) {
-            padding: 2px 0 2px 2px;
-        }
+.music-article {
+  .music-article-header {
+    @media screen and (orientation:landscape) {
+      padding : 15px;
+    } @media screen and (orientation:portrait) {
+    padding : 2px 0 2px 2px;
+  } background : #191919 url(../images/article-view-sidebar-bg.png);
 
-		background:#191919 url(../images/article-view-sidebar-bg.png);
+    .music-article-header-image {
+      position            : relative;
+      width               : 487px;
+      height              : 331px;
+      background-size     : cover;
+      background-position : center center;
+      background-repeat   : no-repeat;
 
-		.music-article-header-image{
-			position:relative;
-			width:487px;
-			height:331px;
-			background-size: cover;
-			background-position: center center;
-	  		background-repeat: no-repeat;
+      h1 {
+        @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
+        font-family : $base-font;
+        position    : absolute;
+        bottom      : 0;
+        right       : 0;
+        font-size   : 1.5em;
+        text-shadow : 0px 2px rgba(0, 0, 0, .9);
+        color       : #fff;
+        padding     : 20px 25px;
+        width       : 100%;
+      }
+    }
 
-	  		h1{
-				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
-				font-family: $base-font;
-				position:absolute;
-				bottom:0;
-				right:0;
-				font-size:1.5em;
-				text-shadow: 0px 2px rgba(0, 0, 0, .9);
-				color:#fff;
-				padding: 20px 25px;
-				width:100%;
-			}
-		}
+    p {
+      margin      : 15px 15px 0px 15px;
+      font-size   : 0.7em;
+      line-height : 1.6em;
+      color       : #999;
+      margin      : 15px 15px 0px 15px;
+      font-style  : italic;
+    }
+  }
 
-		p {
-			margin: 15px 15px 0px 15px;
-			font-size: 0.7em;
-			line-height: 1.6em;
-			color: #999;
-			margin: 15px 15px 0px 15px;
-			font-style: italic;
-		}
-	}
+  .music-article-container .x-scroll-view {
+    background : #e7e7e7 url(../images/article-bg.png);
+    @include box-shadow(inset rgba(0, 0, 0, 0.7) 5px 0px 5px);
+  }
 
-	.music-article-container .x-scroll-view{
-		background:#e7e7e7 url(../images/article-bg.png);
-		@include box-shadow(inset rgba(0,0,0,0.7) 5px 0px 5px);
-	}
+  .music-article-content {
+    padding : 10px;
 
-	.music-article-content{
-        padding:10px;
+    @media screen and (orientation:portrait) {
+      padding : 0;
+    }
 
-        @media screen and (orientation:portrait) {
-            padding:0;
-        }
+    .music-article-image {
+      position            : relative;
+      height              : 400px;
+      background-size     : cover;
+      background-position : center center;
+      background-repeat   : no-repeat;
+    /*margin-bottom:20px;*/
 
-		.music-article-image{
-			position:relative;
-			height:400px;
-			background-size: cover;
-			background-position: center center;
-	  		background-repeat: no-repeat;
-			/*margin-bottom:20px;*/
+      h1 {
+        @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
+        font-family : $base-font;
+        position    : absolute;
+        bottom      : 0;
+        right       : 0;
+        font-size   : 1.5em;
+        text-shadow : 0px 2px rgba(0, 0, 0, .9);
+        color       : #fff;
+        padding     : 20px 25px;
+        width       : 100%;
+      }
+      h2 {
+        position       : absolute;
+        top            : 0px;
+        left           : 0px;
+        color          : #fff;
+        font-family    : $base-font;
+        font-size      : 0.9em;
+        text-transform : uppercase;
+        padding        : 10px 20px;
+        border         : 1px solid rgba(255, 255, 255, .5);
+      }
+    }
 
-			h1{
-				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
-				font-family: $base-font;
-				position:absolute;
-				bottom:0;
-				right:0;
-				font-size:1.5em;
-				text-shadow: 0px 2px rgba(0, 0, 0, .9);
-				color:#fff;
-				padding: 20px 25px;
-				width:100%;
-			}
-			h2{
-				position:absolute;
-				top:0px;
-				left:0px;
-				color:#fff;
-				font-family: $base-font;
-				font-size:0.9em;
-				text-transform:uppercase;
-				padding:10px 20px;
-				border: 1px solid rgba(255, 255, 255, .5);
-			}
-		}
-		
-		h3, h4 {
-			color: #7A7A7A;
-			font-weight: normal;
-			font-size: 1em;
-			text-shadow: 0px 1px white;
-			font-weight: bold;
-		}
+    h3, h4 {
+      color       : #7A7A7A;
+      font-weight : normal;
+      font-size   : 1em;
+      text-shadow : 0px 1px white;
+      font-weight : bold;
+    }
 
-		h4 {
-			margin-bottom:20px;
-			font-size: .8em;
+    h4 {
+      margin-bottom : 20px;
+      font-size     : .8em;
 
-            /*@media screen and (orientation:portrait) {*/
-                margin-left: 15px;
-            /*}*/
+    /*@media screen and (orientation:portrait) {*/
+      margin-left   : 15px;
+    /*}*/
 
-		}
+    }
 
-		p{
-			margin-bottom:15px;
-			font-size: 1em;
-			color: #111;
-      padding: 0 15px 0 15px;
-			line-height:1.6em;
-		}
-	}
+    p {
+      margin-bottom : 15px;
+      font-size     : 1em;
+      color         : #111;
+      padding       : 0 15px 0 15px;
+      line-height   : 1.6em;
+    }
+  }
 
-	.music-article-button{
-		display: inline-block;
-		width:196px;
-		height:41px;
-		background:transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
-		text-indent:-9999px;
+  .music-article-button {
+    display     : inline-block;
+    width       : 196px;
+    height      : 41px;
+    background  : transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
+    text-indent : -9999px;
 
-        @media screen and (orientation:landscape) {
-            margin:34px 0 0 37px;
-        }
-        @media screen and (orientation:portrait) {
-            margin: 1px 0 2px 120px;
-            width: 194px;
-        }
-	}
-	.music-article-button-listen{
-		background-position:0 -42px;
-	}
-	.music-article-button-tweet{
-		background-position:0 -84px;
-	}
-	.music-article-button-toc{
-		background-position:0 -126px;
-	}
-	.music-article-button-favorite-added{
-		background-position:0 -167px;
-	}
-	.music-article-button-pressed{
-		background-position-x:-197px;
-	}
+    @media screen and (orientation:landscape) {
+      margin : 34px 0 0 37px;
+    } @media screen and (orientation:portrait) {
+    margin : 1px 0 2px 120px;
+    width  : 194px;
+  }
+  }
+  .music-article-button-listen {
+    background-position : 0 -42px;
+  }
+  .music-article-button-tweet {
+    background-position : 0 -84px;
+  }
+  .music-article-button-toc {
+    background-position : 0 -126px;
+  }
+  .music-article-button-favorite-added {
+    background-position : 0 -167px;
+  }
+  .music-article-button-pressed {
+    background-position-x : -197px;
+  }
 }
 
-@include article('rock', $rock-background-color-light, $rock-background-color-dark);
-@include article('classical', $classical-background-color-light, $classical-background-color-dark);
-@include article('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
-@include article('world', $world-background-color-light, $world-background-color-dark);
-@include article('hipHop', $hipHop-background-color-light, $hipHop-background-color-dark);
-@include article('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
-@include article('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
-@include article('pop', $pop-background-color-light,  $pop-background-color-dark);
-@include article('country',$country-background-color-light, $country-background-color-dark);
-@include article('rnb',$rnb-background-color-light, $rnb-background-color-dark);
+@include
+article
+(
+'rock'
+,
+$rock-background-color-light,
+$rock-background-color-dark)
+;
+@include
+article
+(
+'classical'
+,
+$classical-background-color-light,
+$classical-background-color-dark)
+;
+@include
+article
+(
+'jazzBlues'
+,
+$jazzblues-background-color-light,
+$jazzblues-background-color-dark)
+;
+@include
+article
+(
+'world'
+,
+$world-background-color-light,
+$world-background-color-dark)
+;
+@include
+article
+(
+'hipHop'
+,
+$hipHop-background-color-light,
+$hipHop-background-color-dark)
+;
+@include
+article
+(
+'electronicDance'
+,
+$electronicdance-background-color-light,
+$electronicdance-background-color-dark)
+;
+@include
+article
+(
+'latinAlternative'
+,
+$latinalternative-background-color-light,
+$latinalternative-background-color-dark)
+;
+@include
+article
+(
+'pop'
+,
+$pop-background-color-light,
+$pop-background-color-dark)
+;
+@include
+article
+(
+'country'
+,
+$country-background-color-light,
+$country-background-color-dark)
+;
+@include
+article
+(
+'rnb'
+,
+$rnb-background-color-light,
+$rnb-background-color-dark)
+;
 

@@ -122,7 +122,7 @@ var cleanupGenre = function(genreData, key,     genreName) {
     return genreData;
 };
 
-exports = function() {
+global.updateGenres_action = function() {
     var genres = [
         {
             "id"   : 135408474,
@@ -180,18 +180,18 @@ exports = function() {
         url,
         data;
 
-    genres = fetchGenres(currentJDate, true) || genres;
-    genres.each(function(genre) {
+        genres = fetchGenres(currentJDate, true) || genres;
+        genres.each(function(genre) {
 
         if (!genre.lastUpdate || genre.lastUpdate !== currentJDate) {
             url = getStationUrl(genre.id);
+            console.log(url);
             data = doCurlRequest(url);
 
             if (data) {
 //                console.log('cURL :: ' + genre.id + ' ' + genre.name);
                 genre.data = Json.decode(data);
 
-                debugger;
                 genre.data = cleanupGenre(genre.data, genre.key, genre.name);
                 genre.data.genreKey = genre.key;
                 addUpdateGenre(genre);

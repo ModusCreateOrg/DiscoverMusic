@@ -43,7 +43,6 @@ Ext.define('Music.view.Main', {
                     },
                     {
                         xtype  : 'player',
-//                        flex   : 1,
                         margin : null,
                         height : null
                     },
@@ -116,16 +115,17 @@ Ext.define('Music.view.Main', {
     },
 
     setFeatured : function() {
-        var me = this,
+        var me       = this,
             articles = me.getArticles(),
-            cover = articles[Math.floor(Math.random() * articles.length)];
+            cover    = articles[Math.floor(Math.random() * articles.length)],
+            model    = cover.getModel();
 
-        me.globalToc.setFeatured(cover.getModel());
+        me.globalToc.setFeatured(model);
 
         me.insert(0, {
             xtype : 'articlepreview',
-            model : cover.getModel(),
-            data  : cover.getModel().getData()
+            model : model,
+            data  : model.getData()
         });
         me.animateActiveItem(0, { type : 'slide' });
     }

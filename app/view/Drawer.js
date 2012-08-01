@@ -58,14 +58,12 @@ Ext.define('Music.view.Drawer', {
             me.open();
         }
     },
-
     applyStore : function(store) {
         if (Ext.isString(store)) {
             return Ext.create(store);
         }
         return store;
     },
-
     applyDrawerPull : function(config) {
         if (config === true) {
             config = {
@@ -76,7 +74,6 @@ Ext.define('Music.view.Drawer', {
         }
         return Ext.factory(config, Ext.Component, this.getDrawerPull());
     },
-
     registerEvents : function() {
         var me = this,
             el = me.renderElement;
@@ -96,14 +93,12 @@ Ext.define('Music.view.Drawer', {
             touchstart : me.onViewportTapStart
         });
     },
-
     onTap : function(ev) {
         var me = this;
         if (ev.getTarget('.drawer-toggle-pull .x-innerhtml')) {
             return me.toggle();
         }
     },
-
     onPageTap : function(event) {
         var me = this,
             page = Ext.get(event.getTarget('.drawer-page'));
@@ -124,7 +119,6 @@ Ext.define('Music.view.Drawer', {
             }
         }
     },
-
     toggle : function(state, suppressEvent) {
         var me = this,
             closed = me.getClosed();
@@ -145,7 +139,6 @@ Ext.define('Music.view.Drawer', {
         }
         return me;
     },
-
     close : function(hide) {
         var me = this,
             el = me.renderElement,
@@ -162,7 +155,6 @@ Ext.define('Music.view.Drawer', {
 
         me.setClosed(true);
     },
-
     open : function() {
         var me = this,
             el = me.renderElement,
@@ -176,19 +168,16 @@ Ext.define('Music.view.Drawer', {
 
         me.setClosed(false);
     },
-
     reDraw : function() {
         var me = this;
         return me.getClosed() ? me.close() : me.open();
     },
-
     /**
      * Using body width and page sample/icon width, etc, calculate max articles per carousel card
      */
     getMaxPagesPerCard : function() {
         return (Ext.Viewport.getOrientation() == 'portrait') ? 5 : 70;
     },
-
     addArticles : function() {
         var me = this,
             store = me.getStore(),
@@ -200,13 +189,11 @@ Ext.define('Music.view.Drawer', {
 
         me.setData(cardData);
     },
-
     showPageAnim : function(page) {
         return function() {
             page.addCls('drawer-page-animate');
         };
     },
-
     hidePageAnim : function(page) {
         return function() {
             Ext.defer(function() {
@@ -223,5 +210,4 @@ Ext.define('Music.view.Drawer', {
             this.close();
         }
     }
-
 });

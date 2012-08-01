@@ -22,7 +22,7 @@ Ext.define('Music.controller.Stations', {
             }
         },
         queryApiTpl : Ext.create('Ext.Template',
-            'select * from xml where url="http://discovermusic.moduscreate.com/stationFinder.jst?lat={latitude}&lon={longitude}&zip={zip}"'
+            'select * from xml where url="http://localhost:9090/stationFinder.jst?lat={latitude}&lon={longitude}&zip={zip}"'
         )
     },
 
@@ -67,7 +67,7 @@ Ext.define('Music.controller.Stations', {
 //        }
 //        else if (content.match('\\\.pls')) {
 //            Ext.data.JsonP.request({
-//                url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
+//                url         : 'http://localhost:9090/getMp3File.jst',
 //                callbackKey : 'callback',
 //                params      : { url : urlObj.content },
 //                callback    : function(success, data) {

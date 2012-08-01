@@ -70,5 +70,4 @@ Ext.define('Music.controller.Search', {
             this.onSearchTap();
         }
     }
-
 });

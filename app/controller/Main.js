@@ -134,7 +134,7 @@ Ext.define('Music.controller.Main', {
 
         drawerStore.on({
             scope : me,
-            load : 'onGenresLoaded'
+            load  : 'onGenresLoaded'
         });
 
         //If we've never loaded the store or it's been older than one day, load the store via JSONP
@@ -216,6 +216,7 @@ Ext.define('Music.controller.Main', {
 
      */
     onGenresLoaded : function(store) {
+
         var me = this,
             rawData = store.getProxy().getReader().rawData,
             data;
@@ -232,7 +233,7 @@ Ext.define('Music.controller.Main', {
         me.startApp();
     },
 
-    // Here, we'll raed the articles from the inbound raw genre object
+    // Here, we'll read the articles from the inbound raw genre object
     parseGenreData : function(rawGenreObject) {
         var me = this,
             genreId = rawGenreObject.id,
@@ -356,7 +357,7 @@ Ext.define('Music.controller.Main', {
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
 
             Ext.data.JsonP.request({
-                url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
+                url         : 'http://localhost:9090/getMp3File.jst',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
                 callback    : function(success, data) {

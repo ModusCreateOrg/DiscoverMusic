@@ -15,7 +15,7 @@ Ext.define('Music.store.Search', {
 
         proxy : {
             type : 'jsonp',
-            url  : 'http://discovermusic.moduscreate.com/search.jst'
+            url  : 'http://localhost:9090/search.jst'
 //            url  : 'http://localhost:9090/search.jst'
         }
     }

@@ -9,6 +9,8 @@ Config.mysql = {
     db     : 'npr'
 };
 
+MySQL = require('MySQL').MySQL;
+
 SQL = new MySQL();
 SQL.connect();
 
@@ -68,9 +70,9 @@ Date.prototype.getJulian = function() {
 };
 
 var addUpdateGenre = function(genre) {
-    var today      = new Date().getJulian(),
-        query      = 'SELECT * FROM genres WHERE lastUpdate="' + today + '" AND db_key="' +  genre.key + '"',
-        row        = SQL.getDataRow(query);
+    var today = new Date().getJulian(),
+        query = 'SELECT * FROM genres WHERE lastUpdate="' + today + '" AND db_key="' +  genre.key + '"',
+        row   = SQL.getDataRow(query);
 
 //
     if (row) {

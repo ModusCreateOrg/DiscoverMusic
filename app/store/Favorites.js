@@ -6,21 +6,21 @@
  * The favorites store use a localstorage proxy to persist articles
  */
 
-Ext.define('Music.store.Favorites',{
-   extend      : 'Ext.data.Store',
-   requires   : [
-      'Ext.data.proxy.LocalStorage'
-   ],
+Ext.define('Music.store.Favorites', {
+    extend   : 'Ext.data.Store',
+    requires : [
+        'Ext.data.proxy.LocalStorage'
+    ],
 
-   config      : {
-      autoSync: true,
-      model   : 'Music.model.Article',
-      storeId   : 'favorites',
-      autoLoad: true,
-      proxy   : {
-         type   : 'localstorage',
-         id      : 'favorites'
-      }
-   }
+    config : {
+        autoSync : true,
+        model    : 'Music.model.Article',
+        storeId  : 'favorites',
+        autoLoad : true,
+        proxy    : {
+            type : 'localstorage',
+            id   : 'favorites'
+        }
+    }
 
 });
