@@ -55,7 +55,7 @@ Schema.add({
 });
 
 // Add required built in & custom modules
-var curl = require('builtin/curl'),
+var curl = require('cURL'),
     fs = require('builtin/fs'),
     updateGenres = require('actions/updateGenres.js'),
     getGenres = require('actions/getGenres.js'),
@@ -145,17 +145,16 @@ var fetchGenresExternal = function(requestDate, returnFalse) {
 
 // utils
 var doCurlRequest = function(url) {
-    var handle = curl.init(url);
-    console.log( new Date().toLocaleString());
+    console.log(new Date().toLocaleString());
     console.log('cURL ' + url);
-    var success = curl.perform(handle);
+
+    var result = curl({
+        url : url
+    });
+
     console.log('AFTER cURL');
 
-    var text = curl.getResponseText(handle);
-
-    curl.destroy(handle);
-
-    return success === 0 ? text : false;
+    return result.responseText || false;
 };
 
 var getFileData = function(fileName) {

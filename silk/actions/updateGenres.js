@@ -186,7 +186,7 @@ global.updateGenres_action = function() {
         if (!genre.lastUpdate || genre.lastUpdate !== currentJDate) {
             url = getStationUrl(genre.id);
             console.log(url);
-            data = doCurlRequest(url);
+            data =      doCurlRequest(url);
 
             if (data) {
 //                console.log('cURL :: ' + genre.id + ' ' + genre.name);
