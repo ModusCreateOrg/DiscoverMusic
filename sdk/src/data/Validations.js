@@ -82,10 +82,6 @@ Ext.define('Ext.data.Validations', {
      * @return {Boolean} True if validation passed
      */
     presence: function(config, value) {
-        if (value === undefined) {
-            value = config;
-        }
-
         //we need an additional check for zero here because zero is an acceptable form of present data
         return !!value || value === 0;
     },
@@ -137,6 +133,9 @@ Ext.define('Ext.data.Validations', {
      * @return {Boolean} True if the value passes the format validation
      */
     format: function(config, value) {
+        if (value === undefined || value === null) {
+            value = '';
+        }
         return !!(config.matcher && config.matcher.test(value));
     },
 

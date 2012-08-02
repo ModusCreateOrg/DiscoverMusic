@@ -5,6 +5,20 @@
     "name": "{name}",
 
     /**
+     * The file path to this application's front HTML document, relative to this app.json file
+     */
+    "indexHtmlPath": "index.html",
+
+    /**
+     * The absolute URL to this application in development environment, i.e: the URL to run this application
+     * on your web browser during development, e.g: "http://localhost/myapp/index.html".
+     *
+     * This value is needed when build to resolve your application's dependencies if it requires server-side resources
+     * that are not accessible via file system protocol.
+     */
+    "url": null,
+
+    /**
      * List of all JavaScript assets in the right execution order.
      * Each item is an object with the following format:
      *      {
@@ -23,6 +37,7 @@
         {[ "\}"]},
         {
             "path": "app.js",
+            "bundle": true,  /* Indicates that all class dependencies are concatenated into this file when build */
             "update": "delta"
         {[ "\}"]}
     ],
@@ -72,15 +87,22 @@
     /**
      * Extra resources to be copied along when build
      */
-    "extras": [
+    "resources": [
         "resources/images",
         "resources/icons",
-        "resources/loading"
+        "resources/startup"
+    ],
+
+    /**
+     * File / directory name matchers to ignore when copying to the builds, must be valid regular expressions
+     */
+    "ignore": [
+        "\\.svn$"
     ],
 
     /**
      * Directory path to store all previous production builds. Note that the content generated inside this directory
-     * must be kept intact for proper generation of delta between updates
+     * must be kept intact for proper generation of deltas between updates
      */
     "archivePath": "archive",
 

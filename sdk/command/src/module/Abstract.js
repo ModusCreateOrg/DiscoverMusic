@@ -25,6 +25,10 @@ Ext.define('Command.module.Abstract', {
         return this.actions[action];
     },
 
+    getBinaryPath: function(binary) {
+        return require('path').join(this.cli.getBinPath(), binary);
+    },
+
     getVendorPath: function(name) {
         return require('path').resolve(this.cli.getCurrentPath(), 'vendor/' + name);
     },

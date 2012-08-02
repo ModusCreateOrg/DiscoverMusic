@@ -261,7 +261,8 @@ Ext.define('Ext.dataview.NestedList', {
      * @param {Ext.dataview.NestedList} this
      * @param {Ext.dataview.List} list The Ext.dataview.List that is currently active
      * @param {Number} index The index of the item that was tapped
-     * @param {Object} item The item tapped
+     * @param {Ext.dom.Element} target The element tapped
+     * @param {Ext.data.Record} record The record tapped
      * @param {Ext.event.Event} e The event object
      */
 
@@ -277,17 +278,18 @@ Ext.define('Ext.dataview.NestedList', {
      * @event selectionchange
      * Fires when the selected nodes change.
      * @param {Ext.dataview.NestedList} this
-     * @param {Ext.dataview.List} list The Ext.datavaie.List that is currently active
+     * @param {Ext.dataview.List} list The Ext.dataview.List that is currently active
      * @param {Array} selections Array of the selected nodes
      */
 
     /**
-     * @event beforeselect
+     * @event beforeselectionchange
      * Fires before a selection is made.
      * @param {Ext.dataview.NestedList} this
      * @param {Ext.dataview.List} list The Ext.dataview.List that is currently active
      * @param {HTMLElement} node The node to be selected
      * @param {Array} selections Array of currently selected nodes
+     * @deprecated 2.0.0 Please listen to the {@link #selectionchange} event with an order of `before` instead.
      */
 
     /**
@@ -400,19 +402,19 @@ Ext.define('Ext.dataview.NestedList', {
     },
 
     onBeforeSelect: function() {
-        this.fireEvent('beforeselect', [this, Array.prototype.slice.call(arguments)]);
+        this.fireEvent.apply(this, [].concat('beforeselect', this, Array.prototype.slice.call(arguments)));
     },
 
     onContainerTap: function() {
-        this.fireEvent('containertap', [this, Array.prototype.slice.call(arguments)]);
+        this.fireEvent.apply(this, [].concat('containertap', this, Array.prototype.slice.call(arguments)));
     },
 
     onSelectionChange: function() {
-        this.fireEvent('selectionchange', [this, Array.prototype.slice.call(arguments)]);
+        this.fireEvent.apply(this, [].concat('selectionchange', this, Array.prototype.slice.call(arguments)));
     },
 
     onItemDoubleTap: function() {
-        this.fireEvent('itemdoubletap', [this, Array.prototype.slice.call(arguments)]);
+        this.fireEvent.apply(this, [].concat('itemdoubletap', this, Array.prototype.slice.call(arguments)));
     },
 
     onStoreBeforeLoad: function() {
@@ -431,13 +433,16 @@ Ext.define('Ext.dataview.NestedList', {
             }
         }
 
-        this.fireEvent('beforeload', [this, Array.prototype.slice.call(arguments)]);
+        this.fireEvent.apply(this, [].concat('beforeload', this, Array.prototype.slice.call(arguments)));
     },
 
-    onStoreLoad: function(store) {
+    onStoreLoad: function(store, records, successful, operation) {
         this.setMasked(false);
-        this.fireEvent('load', [this, Array.prototype.slice.call(arguments)]);
-        this.goToNode(store.getRoot());
+        this.fireEvent.apply(this, [].concat('load', this, Array.prototype.slice.call(arguments)));
+
+        if (store.indexOf(this.getLastNode()) === -1) {
+            this.goToNode(store.getRoot());
+        }
     },
 
     /**
@@ -791,9 +796,9 @@ Ext.define('Ext.dataview.NestedList', {
                 { event: 'itemtap', fn: 'onItemInteraction', scope: me, order: 'before'},
                 { event: 'itemtouchstart', fn: 'onItemInteraction', scope: me, order: 'before'},
                 { event: 'itemtap', fn: 'onItemTap', scope: me },
-                { event: 'beforeselect', fn: 'onBeforeSelect', scope: me },
+                { event: 'beforeselectionchange', fn: 'onBeforeSelect', scope: me },
                 { event: 'containertap', fn: 'onContainerTap', scope: me },
-                { event: 'selectionchange', fn: 'onSelectionChange', scope: me }
+                { event: 'selectionchange', fn: 'onSelectionChange', order: 'before', scope: me }
             ],
             itemTpl: '<span<tpl if="leaf == true"> class="x-list-item-leaf"</tpl>>' + me.getItemTextTpl(node) + '</span>'
         }, this.getListConfig());

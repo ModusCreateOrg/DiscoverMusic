@@ -254,6 +254,11 @@ Ext.define('Ext.data.NodeStore', {
 
     isVisible: function(node) {
         var parent = node.parentNode;
+
+        if (!this.getRecursive() && parent !== this.getNode()) {
+            return false;
+        }
+
         while (parent) {
             if (!parent.isExpanded()) {
                 return false;

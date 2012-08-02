@@ -9,7 +9,6 @@ Ext.define('Command.module.generate.App', {
 
     execute: function(args) {
         var path = require('path'),
-            fs = this.cli.getModule('fs'),
             cwd = process.cwd(),
             sdkVersionFile = path.join(cwd, 'version.txt'),
             sdkVersion = new Ext.Version(require('fs').readFileSync(sdkVersionFile, 'utf8').trim()),
@@ -24,7 +23,6 @@ Ext.define('Command.module.generate.App', {
             path.join(appPath, 'app', 'store'),
             path.join(appPath, 'app', 'profile'),
             path.join(appPath, 'sdk'),
-            path.join(appPath, 'sdk', 'command'),
             path.join(appPath, 'sdk', 'src'),
             path.join(appPath, 'sdk', 'resources'),
             path.join(appPath, 'resources'),
@@ -51,6 +49,7 @@ Ext.define('Command.module.generate.App', {
         this.directory(path.join(cwd, 'resources'), path.join(appPath, 'sdk', 'resources'));
         this.directory(path.join(cwd, 'command', 'src', 'module', 'generate', 'App', 'resources', 'icons'), path.join(appPath, 'resources', 'icons'));
         this.directory(path.join(cwd, 'command', 'src', 'module', 'generate', 'App', 'resources', 'loading'), path.join(appPath, 'resources', 'loading'));
+        this.directory(path.join(cwd, 'command', 'src', 'module', 'generate', 'App', 'resources', 'startup'), path.join(appPath, 'resources', 'startup'));
         this.directory(path.join(cwd, 'command'), path.join(appPath, 'sdk', 'command'));
 
         this.file(path.join(cwd, 'microloader/development.js'), path.join(appPath, 'sdk', 'microloader/development.js'));

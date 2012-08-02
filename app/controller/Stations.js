@@ -20,10 +20,7 @@ Ext.define('Music.controller.Stations', {
             stationdetail : {
                 stationurlselect : 'onStationUrlSelect'
             }
-        },
-        queryApiTpl : Ext.create('Ext.Template',
-            'select * from xml where url="http://ec2-23-20-142-242.compute-1.amazonaws.com:9090/stationFinder?lat={latitude}&lon={longitude}&zip={zip}"'
-        )
+        }
     },
 
     launch : function() {
@@ -81,13 +78,12 @@ Ext.define('Music.controller.Stations', {
     },
 
     queryStations : function(params) {
-        var me = this,
-            query = me.getQueryApiTpl().apply(params);
+        var me = this;
 
         me.view.showMask();
 
         Ext.data.JsonP.request({
-            url         : 'http://localhost:9090/stationFinder',
+            url         : 'http://discovermusic.moduscreate.com/stationFinder',
             scope       : me,
             callbackKey : 'callback',
             callback    : me.onAfterQueryStations,

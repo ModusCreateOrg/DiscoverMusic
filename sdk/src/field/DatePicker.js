@@ -176,7 +176,6 @@ Ext.define('Ext.field.DatePicker', {
 
         this.getComponent().on({
             scope: this,
-
             masktap: 'onMaskTap'
         });
 
@@ -187,11 +186,11 @@ Ext.define('Ext.field.DatePicker', {
 
     applyValue: function(value) {
         if (!Ext.isDate(value) && !Ext.isObject(value)) {
-            value = null;
+            return null;
         }
 
         if (Ext.isObject(value)) {
-            value = new Date(value.year, value.month - 1, value.day);
+            return new Date(value.year, value.month - 1, value.day);
         }
 
         return value;
@@ -221,7 +220,7 @@ Ext.define('Ext.field.DatePicker', {
      */
     updateDateFormat: function(newDateFormat, oldDateFormat) {
         var value = this.getValue();
-        if (newDateFormat != oldDateFormat && Ext.isDate(value) && this._picker && this._picker instanceof Ext.picker.Date) {
+        if (newDateFormat != oldDateFormat && Ext.isDate(value)) {
             this.getComponent().setValue(Ext.Date.format(value, newDateFormat || Ext.util.Format.defaultDateFormat));
         }
     },
@@ -259,20 +258,23 @@ Ext.define('Ext.field.DatePicker', {
     },
 
     getPicker: function() {
-        var picker = this._picker;
+        var picker = this._picker,
+            value = this.getValue();
 
         if (picker && !picker.isPicker) {
             picker = Ext.factory(picker, Ext.picker.Date);
-            picker.on({
-                scope: this,
-
-                change: 'onPickerChange',
-                hide  : 'onPickerHide'
-            });
-            picker.setValue(this.getValue());
-            Ext.Viewport.add(picker);
-            this._picker = picker;
+            if (value != null) {
+                picker.setValue(value);
+            }
         }
+
+        picker.on({
+            scope: this,
+            change: 'onPickerChange',
+            hide  : 'onPickerHide'
+        });
+        Ext.Viewport.add(picker);
+        this._picker = picker;
 
         return picker;
     },
@@ -327,7 +329,7 @@ Ext.define('Ext.field.DatePicker', {
 
     // @private
     destroy: function() {
-        var picker = this.getPicker();
+        var picker = this._picker;
 
         if (picker && picker.isPicker) {
             picker.destroy();

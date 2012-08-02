@@ -15,8 +15,7 @@ Ext.define('Music.store.Search', {
 
         proxy : {
             type : 'jsonp',
-            url  : 'http://ec2-23-20-142-242.compute-1.amazonaws.com:9090/search'
-//            url  : 'http://localhost:9090/search'
+            url  : 'http://discovermusic.senchafy.com/search'
         }
     }
 

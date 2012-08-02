@@ -126,7 +126,7 @@ Ext.define('Ext.Map', {
         }
         if (newOptions.center && !me.isPainted()) {
             me.un('painted', 'setMapCenter', this);
-            me.on('painted', 'setMapCenter', this, { delay: 50, single: true, args: [newOptions.center] });
+            me.on('painted', 'setMapCenter', this, { delay: 150, single: true, args: [newOptions.center] });
         }
     },
 
@@ -249,7 +249,7 @@ Ext.define('Ext.Map', {
         if (gm) {
             if (!me.isPainted()) {
                 me.un('painted', 'setMapCenter', this);
-                me.on('painted', 'setMapCenter', this, { delay: 50, single: true, args: [coordinates] });
+                me.on('painted', 'setMapCenter', this, { delay: 150, single: true, args: [coordinates] });
                 return;
             }
             coordinates = coordinates || new gm.LatLng(37.381592, -122.135672);

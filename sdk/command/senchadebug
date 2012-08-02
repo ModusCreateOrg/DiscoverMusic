@@ -1,4 +1,0 @@
-#!/bin/sh
-DIR=$(dirname $(which $0))
-export NODE_PATH=$DIR/vendor/nodejs/node_modules
-$DIR/vendor/nodejs/osx/node --debug-brk $DIR/sencha.js $*

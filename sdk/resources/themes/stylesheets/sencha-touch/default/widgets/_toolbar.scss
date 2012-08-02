@@ -89,6 +89,14 @@ $include-toolbar-uis: $include-default-uis !default;
     @include sencha-toolbar-ui('dark', darken($toolbar-base-color, 10%));
     @include sencha-toolbar-ui('light', $toolbar-base-color);
     @include sencha-toolbar-ui('neutral', $neutral-color);
+
+    .x-toolbar.x-toolbar-neutral .x-toolbar-inner .x-button.x-button-pressing {
+      $mask-radial-glow: lighten($base-color, 25);
+      @include background-image(radial-gradient(fade-out($mask-radial-glow, .3), fade-out($mask-radial-glow, 1) 24px));
+      .x-button-icon.x-button-mask {
+        @include background-gradient(#fff, 'recessed');
+      }
+    }
   }
 
   .x-navigation-bar {

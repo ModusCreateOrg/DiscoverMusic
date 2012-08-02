@@ -10,15 +10,22 @@ function error(message) {
 
 var args = phantom.args,
     uri = args[0],
+    elapse = 0,
     dependencies, timer;
 
 var page = new WebPage();
 
 page.settings.localToRemoteUrlAccessEnabled = true;
 page.settings.ignoreSslErrors = true;
+page.settings.webSecurityEnabled = false;
 
-page.onAlert = function(message) {
-    error("Error thown from your application with message: " + message);
+page.onError = function(message, trace) {
+    console.log(message);
+    console.log("Stack trace:");
+    trace.forEach(function(item) {
+        console.log('  ', item.file, ':', item.line, ':', item['function'] || 'Anonymous');
+    });
+    phantom.exit(1);
 };
 
 page.open(uri, function(status) {
@@ -27,9 +34,10 @@ page.open(uri, function(status) {
     }
 
     page.evaluate(function() {
-        window.onerror = function(e) {
-            alert(e);
-        };
+        if (typeof Ext == 'undefined') {
+            throw new Error('Ext is not defined, please verify that the application URL is correct');
+            return;
+        }
 
         Ext.onReady(function() {
             var documentLocation = document.location,
@@ -68,6 +76,10 @@ page.open(uri, function(status) {
                     }
                 }
 
+                fromParts = fromParts.map(function(part){
+                    return decodeURIComponent(part);
+                });
+
                 return fromParts.join('/');
             }
 
@@ -93,6 +105,13 @@ page.open(uri, function(status) {
         if (dependencies) {
             clearInterval(timer);
             success(JSON.stringify(dependencies, null, 4));
+        }
+
+        elapse += 100;
+
+        if (elapse > 5000) {
+            clearInterval(timer);
+            error("Timeout waiting for the application to finish loading");
         }
     }, 100);
 });

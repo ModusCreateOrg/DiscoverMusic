@@ -82,11 +82,11 @@ Ext.define('Command.module.FileSystem', {
         else {
             if (compressor === 'closurecompiler') {
                 command = 'java -jar %s ' + (toFile ? '--js_output_file %s' : '%s') + ' --js %s';
-                jarPath = this.getVendorPath('closurecompiler/compiler.jar');
+                jarPath = this.getBinaryPath('closurecompiler.jar');
             }
             else {
                 command = 'java -jar %s ' + (toFile ? '-o %s' : '%s') + ' %s';
-                jarPath = this.getVendorPath('yuicompressor/yuicompressor.jar');
+                jarPath = this.getBinaryPath('yuicompressor.jar');
             }
 
             this.exec(command, [jarPath, toFile, fromFile], function(error, stdout, stderr) {
@@ -117,7 +117,7 @@ Ext.define('Command.module.FileSystem', {
      */
     delta: function(fromFile, toFile, delta, callback) {
         this.exec('%s encode -json -dictionary %s -target %s -delta %s --stats', [
-            this.getVendorPath('vcdiff/' + this.cli.platformName + '/vcdiff'),
+            this.getBinaryPath('vcdiff'),
             fromFile,
             toFile,
             delta
@@ -185,6 +185,14 @@ Ext.define('Command.module.FileSystem', {
         require('fs').writeFileSync(file, content, 'utf8');
     },
 
+    rename: function(from, to) {
+        return require('fs').renameSync(from, to);
+    },
+
+    removeFile: function(path) {
+        return require('fs').unlinkSync(path);
+    },
+
     writeJson: function(file, object, beautify) {
         return this.write(file, beautify ? JSON.stringify(object, null, 4) : JSON.stringify(object));
     },
@@ -201,7 +209,11 @@ Ext.define('Command.module.FileSystem', {
         fs.closeSync(fd);
     },
 
-    copyFile: function(src, destination) {
+    copyFile: function(src, destination, filterFn) {
+        if (typeof filterFn == 'function' && filterFn(src, destination) === false) {
+            return false;
+        }
+
         var fs = require('fs'),
             path = require('path');
 
@@ -211,6 +223,8 @@ Ext.define('Command.module.FileSystem', {
 
         fs.writeFileSync(destination, fs.readFileSync(src));
         fs.chmodSync(destination, fs.statSync(src).mode.toString(8).substr(-3));
+
+        return true;
     },
 
     removeDirectory: function(directory) {
@@ -239,17 +253,14 @@ Ext.define('Command.module.FileSystem', {
         fs.rmdirSync(directory);
     },
 
-    copyDirectory: function(src, destination) {
+    copyDirectory: function(src, destination, filterFn) {
+        if (typeof filterFn == 'function' && filterFn(src, destination) === false) {
+            return false;
+        }
+
         var fs = require('fs'),
             path = require('path'),
             files, file, stats, i, ln, link, srcFile, destinationFile;
-//
-//        try {
-//            if (fs.statSync(destination).isDirectory()) {
-//                this.removeDirectory(destination);
-//            }
-//        }
-//        catch (e) {}
 
         this.mkdir(destination);
 
@@ -263,19 +274,27 @@ Ext.define('Command.module.FileSystem', {
             stats = fs.lstatSync(srcFile);
 
             if (stats.isDirectory()) {
-                this.copyDirectory(srcFile, destinationFile);
-            }
-            else if (stats.isSymbolicLink()) {
-                try {
-                    link = fs.readlinkSync(srcFile);
-                    fs.symlinkSync(link, destinationFile);
-                }
-                catch (e) {}
+                this.copyDirectory(srcFile, destinationFile, filterFn);
             }
             else {
-                this.copyFile(srcFile, destinationFile);
+                if (typeof filterFn == 'function' && filterFn(src, destination) === false) {
+                    return false;
+                }
+
+                if (stats.isSymbolicLink()) {
+                    try {
+                        link = fs.readlinkSync(srcFile);
+                        fs.symlinkSync(link, destinationFile);
+                    }
+                    catch (e) {}
+                }
+                else {
+                    this.copyFile(srcFile, destinationFile);
+                }
             }
         }
+
+        return true;
     },
 
     checksum: function(file) {
@@ -286,12 +305,12 @@ Ext.define('Command.module.FileSystem', {
         return hash.digest('hex');
     },
 
-    copy: function(src, destination) {
+    copy: function(src, destination, filterFn) {
         if (require('fs').statSync(src).isDirectory()) {
-            return this.copyDirectory(src, destination);
+            return this.copyDirectory(src, destination, filterFn);
         }
         else {
-            return this.copyFile(src, destination);
+            return this.copyFile(src, destination, filterFn);
         }
     }
 });

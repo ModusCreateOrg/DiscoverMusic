@@ -383,6 +383,6 @@ Ext.define('Ext.util.Geolocation', {
     },
 
     destroy : function() {
-        this.updateAutoUpdate(null);
+        this.setAutoUpdate(false);
     }
 });

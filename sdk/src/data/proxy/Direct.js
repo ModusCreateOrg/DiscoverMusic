@@ -126,7 +126,7 @@ Ext.define('Ext.data.proxy.Direct', {
 
         //<debug>
         if (!fn) {
-            Ext.Error.raise('No direct function specified for this proxy');
+            Ext.Logger.error('No direct function specified for this proxy');
         }
         //</debug>
 

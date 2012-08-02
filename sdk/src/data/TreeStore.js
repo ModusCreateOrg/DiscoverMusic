@@ -192,22 +192,26 @@ Ext.define('Ext.data.TreeStore', {
     onNodeAppend: function(parent, node) {
         var proxy = this.getProxy(),
             reader = proxy.getReader(),
+            Model = this.getModel(),
             data = node.raw,
             records = [],
             rootProperty = reader.getRootProperty(),
-            dataRoot, processedData, i, ln;
+            dataRoot, processedData, i, ln, processedDataItem;
 
         if (!node.isLeaf()) {
             dataRoot = reader.getRoot(data);
             if (dataRoot) {
                 processedData = reader.extractData(dataRoot);
                 for (i = 0, ln = processedData.length; i < ln; i++) {
-                    if (processedData[i].node[rootProperty]) {
-                        processedData[i].data[rootProperty] = processedData[i].node[rootProperty];
-                    }
-                    records.push(processedData[i].data);
+                    processedDataItem = processedData[i];
+                    records.push(new Model(processedDataItem.data, processedDataItem.id, processedDataItem.node));
                 }
 
+                if (records.length) {
+                    this.fillNode(node, records);
+                } else {
+                    node.set('loaded', true);
+                }
                 // If the child record is not a leaf, and it has a data root (e.g. items: [])
                 // and there are items in this data root, then we call fillNode to automatically
                 // add these items. fillNode sets the loaded property on the node, meaning that
@@ -217,11 +221,6 @@ Ext.define('Ext.data.TreeStore', {
                 // from the server the next time you expand it.
                 // If you want to have the items loaded on the next expand, then the data for the
                 // node should not contain the items: [] array.
-                if (records.length) {
-                    this.fillNode(node, records);
-                } else {
-                    node.set('loaded', true);
-                }
                 delete data[rootProperty];
             }
         }
@@ -293,7 +292,7 @@ Ext.define('Ext.data.TreeStore', {
         node.fireEvent('load', node, records, successful);
 
         me.loading = false;
-        me.fireEvent('load', this, records, successful);
+        me.fireEvent('load', this, records, successful, operation);
 
         //this is a callback that would have been passed to the 'read' function and is optional
         Ext.callback(operation.getCallback(), operation.getScope() || me, [records, operation, successful]);

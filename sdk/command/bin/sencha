@@ -1,9 +1,0 @@
-#!/bin/sh
-if test -e ".senchasdk"
-then
-    sdkpath=`cat .senchasdk`
-    $sdkpath/command/sencha $*
-else
-    DIR=$(dirname $(which $0))"/../command"
-    jsdb -path $DIR $DIR/sencha.js $*
-fi

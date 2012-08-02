@@ -64,12 +64,28 @@ Ext.define('Ext.field.Radio', {
     },
 
     getValue: function() {
-        return this._value;
+        return (this._value) ? true : null;
     },
 
     setValue: function(value) {
         this._value = value;
         return this;
+    },
+
+    getSubmitValue: function() {
+        var value = this._value;
+        if (typeof value == "undefined" || value == null) {
+            value = true;
+        }
+        return (this.getChecked()) ? value : null;
+    },
+
+    updateChecked: function(newChecked) {
+        this.getComponent().setChecked(newChecked);
+
+        if (this.initialized) {
+            this.refreshGroupValues();
+        }
     },
 
     // @private
@@ -81,14 +97,11 @@ Ext.define('Ext.field.Radio', {
             return false;
         }
 
-        //calling getchecked will sync the new checked value
-        if (me.getChecked()) {
-            me.fireEvent('check', me, e);
-        }
-        else {
+        if (!me.getChecked()) {
             dom.checked = true;
-            me.fireEvent('uncheck', me, e);
         }
+
+        me.refreshGroupValues();
 
         //return false so the mask does not disappear
         return false;
@@ -131,6 +144,23 @@ Ext.define('Ext.field.Radio', {
                 field.setChecked(true);
                 return field;
             }
+        }
+    },
+
+    /**
+     * Loops through each of the fields this radiofield is linked to (has the same name) and
+     * calls onChange on those fields so the appropriate event is fired.
+     * @private
+     */
+    refreshGroupValues: function() {
+        var fields = this.getSameGroupFields(),
+            ln = fields.length,
+            i = 0,
+            field;
+
+        for (; i < ln; i++) {
+            field = fields[i];
+            field.onChange();
         }
     }
 });

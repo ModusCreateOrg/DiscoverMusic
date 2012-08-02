@@ -1,5 +1,6 @@
 /**
  * @aside guide layouts
+ * @aside video layouts
  *
  * Fit Layout is probably the simplest layout available. All it does is make a child component fit to the full size of
  * its parent Container.

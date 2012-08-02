@@ -3,7 +3,7 @@
      * The application's namespace, used by Sencha Command to generate classes
      */
     "name": "Music",
-
+    "url" : "index.html",
     /**
      * List of all JavaScript assets in the right execution order.
      * Each item is an object with the following format:
@@ -62,9 +62,7 @@
             "resources/images/article-bg.png",
             "resources/images/article-buttons-sprite.png",
             "resources/images/article-view-sidebar-bg.png",
-            "resources/images/foundation-grants.png",
             "resources/images/heart.png",
-            "resources/images/major-gifts.png",
             "resources/images/pattern.png",
             "resources/images/play-black.png",
             "resources/images/play-pause.png",
@@ -74,7 +72,6 @@
             "resources/images/search3.png",
             "resources/images/sencha-logo-small.png",
             "resources/images/sound-16x16.png",
-            "resources/images/support-station.png",
             "resources/images/toc-mask.png",
             "resources/images/topbar-texture.png",
         ],
@@ -97,18 +94,12 @@
         "resources/images",
         "resources/icons",
         "resources/fonts",
-        "phpProxies/genreProxy.php",
-        "phpProxies/m3uProxy.php",
-        "phpProxies/plsProxy.php",
-        "phpProxies/stationFinderProxy.php",
+        "resources/sounds/s.mp3",
         "silk/actions/getGenres.js",
         "silk/actions/getMp3File.js",
         "silk/actions/stationFinder.js",
         "silk/actions/updateGenres.js",
-        "silk/docroot/getGenres.jst",
-        "silk/docroot/getMp3File.jst",
-        "silk/docroot/stationFinder.jst",
-        "silk/docroot/updateGenres.jst",
+        "silk/docroot/index.jst",
         "silk/silk-server.js"
     ],
 

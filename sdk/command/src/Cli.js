@@ -7,12 +7,20 @@ Ext.define('Command.Cli', {
         version: '',
         logger: null,
         currentPath: '',
+        binPath: '',
         modules: {}
     },
 
     modules: {},
 
     templates: {},
+
+    ArgumentError: new Ext.Class({
+        extend: Error,
+        constructor: function(message){
+            this.message = message;
+        }
+    }),
 
     constructor: function(config) {
         var platformName = process.platform;
@@ -69,12 +77,19 @@ Ext.define('Command.Cli', {
             return this.printUsage(moduleName);
         }
 
+        process.on('uncaughtException', function(e) {
+            this.error(e.message);
+        }.bind(this));
+
         try {
             this.execute(module, action, options);
         }
         catch (e) {
             this.error(e.message);
-            this.printUsage(moduleName, action);
+
+            if (e instanceof this.ArgumentError) {
+                this.printUsage(moduleName, action);
+            }
         }
     },
 
@@ -128,7 +143,7 @@ Ext.define('Command.Cli', {
                     value = defaultValue;
                 }
                 else {
-                    throw new Error("Missing required value for argument: '" + name + "'");
+                    throw new this.ArgumentError("Missing required value for argument: '" + name + "'");
                 }
             }
 
@@ -144,14 +159,14 @@ Ext.define('Command.Cli', {
         switch (type) {
             case "number":
                 if (isNaN(value)) {
-                    throw new Error(errorMessagePrefix + "must be a valid number");
+                    throw new this.ArgumentError(errorMessagePrefix + "must be a valid number");
                 }
                 return Number(value);
                 break;
 
             case "array":
                 if (typeof value != 'string') {
-                    throw new Error(errorMessagePrefix + "must be a valid comma-separated list of items");
+                    throw new this.ArgumentError(errorMessagePrefix + "must be a valid comma-separated list of items");
                 }
                 return value.split(',');
                 break;
@@ -253,7 +268,6 @@ Ext.define('Command.Cli', {
                 options[key] = true;
                 key = null;
             }
-
 
             if (match = option.match(/^--([^=]+)=(.*)$/i)) {
                 options[match[1]] = match[2];

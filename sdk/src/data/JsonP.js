@@ -29,7 +29,7 @@
  *                     format: 'json',
  *                     num_of_days: 5
  *                 },
- *                 success: function(result) {
+ *                 success: function(result, request) {
  *                     // Unmask the viewport
  *                     Ext.Viewport.unmask();
  *
@@ -38,7 +38,7 @@
  *                     if (weather) {
  *                         // Style the viewport html, and set the html of the max temperature
  *                         Ext.Viewport.setStyleHtmlContent(true);
- *                         Ext.Viewport.setHtml('The temperature in Palo Alto is <b>' + weather[0].tempMaxF + '° F<b/>');
+ *                         Ext.Viewport.setHtml('The temperature in Palo Alto is <b>' + weather[0].tempMaxF + '° F</b>');
  *                     }
  *                 }
  *             });
@@ -255,11 +255,11 @@ Ext.define('Ext.data.JsonP', {
 
         if (request.errorType) {
             success = false;
-            Ext.callback(request.failure, request.scope, [request.errorType]);
+            Ext.callback(request.failure, request.scope, [request.errorType, request]);
         } else {
-            Ext.callback(request.success, request.scope, [result]);
+            Ext.callback(request.success, request.scope, [result, request]);
         }
-        Ext.callback(request.callback, request.scope, [success, result, request.errorType]);
+        Ext.callback(request.callback, request.scope, [success, result, request.errorType, request]);
     },
 
     /**

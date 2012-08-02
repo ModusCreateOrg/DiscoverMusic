@@ -70,7 +70,7 @@ $base-color: #1985D0 !default; // Triton Blue
  * The primary gradient variable from which most elements derive their color scheme.
  * @see background-gradient
  */
-$base-gradient: 'matte' !default;
+$base-gradient: if($include-highlights, matte, null) !default;
 
 /**
  * @var {font-family} $font-family

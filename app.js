@@ -34,7 +34,7 @@ Ext.application({
 
         var x = 3;
         // Initialize the main view
-         window[this.getName()].app = this;
+        window[this.getName()].app = this;
     },
     
     onUpdated: function() {

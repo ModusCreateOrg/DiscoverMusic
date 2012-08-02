@@ -16,6 +16,10 @@ Ext.define('Command.module.Application', {
             ['library', 'l', "The library's build to develop your application with, either 'core' or 'all'. " +
                 "Defaults to 'core'", 'string', 'core', 'all']
         ],
+        upgrade: [
+            "Upgrade the given application to the SDK at the current working directory",
+            ['path', 'p', 'The directory path to the application to upgrade', 'string', null, '/path/to/myapp']
+        ],
         resolve: [
             "Generate a list of dependencies in the exact loading order for the given application. " +
             "Note that the resolved paths are relative to the given application's HTML document",
@@ -54,13 +58,74 @@ Ext.define('Command.module.Application', {
         ]
     },
 
+    isSdkDirectory: function(sdkPath) {
+        var path = require('path'),
+            fs = this.getModule('fs');
+
+        return path.existsSync(sdkPath) && path.existsSync(path.join(sdkPath, '.senchasdk')) &&
+               fs.read(path.join(sdkPath, '.senchasdk')).trim() === '.';
+    },
+
+    isApplicationDirectory: function(appPath) {
+        var path = require('path');
+
+        return path.existsSync(appPath) && path.existsSync(path.join(appPath, '.senchasdk')) &&
+               path.existsSync(path.join(appPath, 'app.json'));
+    },
+
     create: function() {
-        var module = this.getModule('generate');
+        var module = this.getModule('generate'),
+            sdkPath = process.cwd();
+
+        if (!this.isSdkDirectory(sdkPath)) {
+            throw new Error("The current working directory (" + sdkPath + ") is not a valid SDK directory. " +
+                "Please 'cd' into a SDK directory before executing this command");
+        }
 
         module.app.apply(module, arguments);
     },
 
-    resolve: function(uri, output, callback) {
+    upgrade: function(appPath) {
+        var sdkPath = process.cwd(),
+            path = require('path'),
+            fs = this.getModule('fs'),
+            newSdkVersion = fs.read(path.join(sdkPath, 'version.txt')).trim(),
+            appSdkPath, oldSdkVersion, oldSdkPath;
+
+        if (!this.isSdkDirectory(sdkPath)) {
+            throw new Error("The current working directory (" + sdkPath + ") is not a valid SDK directory. " +
+                "Please 'cd' into a SDK directory before executing this command");
+        }
+
+        if (!this.isApplicationDirectory(appPath)) {
+            throw new Error("" + appPath + " is not a valid application directory.");
+        }
+
+        appSdkPath = path.join(appPath, fs.read(path.join(appPath, '.senchasdk')).trim());
+        oldSdkVersion = fs.read(path.join(appSdkPath, 'version.txt')).trim();
+        oldSdkPath = appSdkPath + '-' + oldSdkVersion + '-backup';
+
+        if (oldSdkVersion === newSdkVersion) {
+            this.info("This SDK (version '" + newSdkVersion + "') is identical to the application's SDK, nothing to upgrade.");
+            return;
+        }
+
+        this.info("Upgrading your application from SDK version '" + oldSdkVersion + "' to version '" + newSdkVersion + "'");
+        fs.rename(appSdkPath, oldSdkPath);
+        this.info("Renamed '" + appSdkPath + "' to '" + oldSdkPath + "' for backup");
+
+        fs.copyDirectory(path.join(sdkPath, 'src'), path.join(appSdkPath, 'src'));
+        fs.copyDirectory(path.join(sdkPath, 'resources'), path.join(appSdkPath, 'resources'));
+        fs.copyDirectory(path.join(sdkPath, 'command'), path.join(appSdkPath, 'command'));
+        fs.copyDirectory(path.join(sdkPath, 'microloader'), path.join(appSdkPath, 'microloader'));
+        fs.copyFile(path.join(sdkPath, 'version.txt'), path.join(appSdkPath, 'version.txt'));
+        fs.copyFile(path.join(sdkPath, 'sencha-touch-debug.js'), path.join(appSdkPath, 'sencha-touch.js'));
+        fs.copyFile(path.join(sdkPath, 'sencha-touch-all-debug.js'), path.join(appSdkPath, 'sencha-touch-all.js'));
+
+        this.info("Your application has successfully been upgraded. To revert this operation, simply remove '" + appSdkPath + "' and rename '" + oldSdkPath + "' back to '" + appSdkPath + "'");
+    },
+
+    resolve: function(uri, output, onSuccess, onFailure) {
         var parsedUri = require('url').parse(uri);
 
         if (!/^file|http/.test(parsedUri.protocol)) {
@@ -68,27 +133,31 @@ Ext.define('Command.module.Application', {
         }
 
         this.exec('%s %s %s', [
-            this.getVendorPath('phantomjs/' + this.cli.platformName + '/phantomjs'),
+            this.getBinaryPath('phantomjs'),
             this.getVendorPath('phantomjs/dependencies.js'),
             uri
-        ], function(error, stdout) {
+        ], function(error, stdout, stderr) {
             if (error) {
-                this.error(stdout);
+                this.error(stdout || stderr);
+                if (onFailure) {
+                    onFailure()
+                }
             }
             else {
                 if (output) {
                     this.getModule('fs').write(output, stdout);
                 }
 
-                if (callback) {
-                    callback(JSON.parse(stdout));
+                if (onSuccess) {
+                    onSuccess(JSON.parse(stdout));
                 }
             }
         });
     },
 
     build: function(environment, destination, archive) {
-        var nativePackaging = false;
+        var nativePackaging = false,
+            src = process.cwd();
 
         if (environment == 'native') {
             environment = 'package';
@@ -100,20 +169,31 @@ Ext.define('Command.module.Application', {
                 " must be either 'testing', 'package', 'production' or 'native'");
         }
 
+        if (!this.isApplicationDirectory(src)) {
+            throw new Error("The current directory ('" + src + "') is not a valid application directory.");
+        }
+
         var path = require('path'),
-            src = process.cwd(),
             fs = this.getModule('fs'),
             sdk = path.resolve(src, fs.read('.senchasdk').trim()),
             config = fs.readJson(path.join(src, 'app.json')),
             jsAssets = config.js || [],
             cssAssets = config.css || [],
-            extras = config.extras,
+            extras = config.extras || config.resources,
+            ignore = Ext.Array.from(config.ignore),
             appCache = config.appCache,
+            indexHtmlPath = config.indexHtmlPath || 'index.html',
+            appUrl = config.url || path.join(src, indexHtmlPath),
             preprocessor = Ext.require('Command.Preprocessor').getInstance(),
             nodeFs = require('fs'),
+            temp = Date.now(),
             indexHtml, assets, file, destinationFile, files,
             appJs, assetsCount, processedAssetsCount,
-            packagerConfig, packagerJson, processIndex;
+            packagerConfig, packagerJson, processIndex, ignoreFn;
+
+        if (!/^file|http/.test(require('url').parse(appUrl).protocol)) {
+            appUrl = 'file:///' + path.resolve(appUrl).replace(/\\/g, '/');
+        }
 
         preprocessor.setParams(config.buildOptions || {});
 
@@ -128,8 +208,6 @@ Ext.define('Command.module.Application', {
         destination = path.resolve(destination);
         archive = path.resolve(archive);
 
-        appJs = path.join(destination, 'app.js');
-
         this.info("Deploying your application to " + destination);
 
         fs.mkdir(destination);
@@ -141,6 +219,18 @@ Ext.define('Command.module.Application', {
             asset.type = 'js';
             return asset;
         });
+
+        jsAssets.forEach(function(jsAsset) {
+            if (jsAsset.bundle) {
+                appJs = jsAsset.path;
+            }
+        });
+
+        if (!appJs) {
+            appJs = 'app.js';
+        }
+
+        appJs = path.join(destination, appJs);
 
         cssAssets = cssAssets.map(function(asset) {
             if (typeof asset == 'string') {
@@ -160,8 +250,27 @@ Ext.define('Command.module.Application', {
             this.info("Copied " + file);
         }, this);
 
+        ignore = ignore.map(function(regex){
+            try {
+                return new RegExp(regex);
+            }
+            catch (e) {
+                throw new Error("Invalid ignore value ('" + regex + "'). Reason: " + e);
+            }
+        });
+
+        ignoreFn = function(from, to) {
+            var i, ln;
+            for (i = 0,ln = ignore.length; i < ln; i++) {
+                if (ignore[i].test(from)) {
+                    this.info("Ignored " + from);
+                    return false;
+                }
+            }
+        }.bind(this);
+
         extras.forEach(function(extra) {
-            fs.copy(path.join(src, extra), path.join(destination, extra));
+            fs.copy(path.join(src, extra), path.join(destination, extra), ignoreFn);
             this.info("Copied " + extra);
         }, this);
 
@@ -175,7 +284,7 @@ Ext.define('Command.module.Application', {
             fs.write(path.join(destination, 'app.json'), appJson);
             this.info("Generated app.json");
 
-            indexHtml = fs.read(path.join(src, 'index.html'));
+            indexHtml = fs.read(path.join(src, indexHtmlPath));
 
             if (environment == 'production' && appCache) {
                 indexHtml = indexHtml.replace('<html manifest=""', '<html manifest="cache.manifest"');
@@ -189,8 +298,8 @@ Ext.define('Command.module.Application', {
                         }) : appJson) + ')' +
                     '</script>');
 
-                fs.write(path.join(destination, 'index.html'), indexHtml);
-                this.info("Embedded microloader into index.html");
+                fs.write(path.join(destination, indexHtmlPath), indexHtml);
+                this.info("Embedded microloader into " + indexHtmlPath);
 
                 if (callback) {
                     callback();
@@ -198,9 +307,10 @@ Ext.define('Command.module.Application', {
             }.bind(this));
         }.bind(this);
 
-        this.info("Resolving your application dependencies...");
-        this.resolve(path.join(src, 'index.html'), null, function(dependencies) {
-            this.info("Found " + dependencies.length + " dependencies. Concatenating all into app.js...");
+        this.info("Resolving your application dependencies ("+appUrl+")");
+
+        this.resolve(appUrl, null, function(dependencies) {
+            this.info("Found " + dependencies.length + " dependencies. Concatenating all into '" + appJs + "'");
 
             files = dependencies.map(function(dependency) {
                 return path.join(src, dependency.path);
@@ -208,10 +318,10 @@ Ext.define('Command.module.Application', {
 
             files.push(appJs);
 
-            fs.concat(files, path.join(destination, 'app.all.js'), "\n");
+            fs.concat(files, appJs + '.' + temp, "\n");
 
             nodeFs.unlinkSync(appJs);
-            nodeFs.renameSync(path.join(destination, 'app.all.js'), appJs);
+            nodeFs.renameSync(appJs + '.' + temp, appJs);
 
             processedAssetsCount = 0;
             assetsCount = assets.length;
@@ -287,8 +397,8 @@ Ext.define('Command.module.Application', {
                                 packagerConfig = Ext.JSON.decode(packagerJson);
 
                                 if (packagerConfig.platform.match(/iOS/)) {
-                                    fs.copyDirectory(path.join(src, 'resources', 'icons'), destination);
-                                    fs.copyDirectory(path.join(src, 'resources', 'loading'), destination);
+                                    fs.copyDirectory(path.join(src, 'resources', 'icons'), destination, ignoreFn);
+                                    fs.copyDirectory(path.join(src, 'resources', 'loading'), destination, ignoreFn);
                                 }
 
                                 packagerConfig.inputPath = destination;
@@ -311,6 +421,9 @@ Ext.define('Command.module.Application', {
                 processIndex();
             }
 
+        }.bind(this), function() {
+            this.error("Failed loading your application from: '"+appUrl+"'. " + (!config.url ? "Try setting the " +
+                "absolute URL to your application for the 'url' item inside 'app.json'" : ""));
         }.bind(this));
     }
 });

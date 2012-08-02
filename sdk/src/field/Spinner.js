@@ -103,8 +103,8 @@ Ext.define('Ext.field.Spinner', {
         clearIcon: false,
 
         /**
-         * @cfg {Number} defaultValue The default value for this field when no value has been set. It is also used when
-         *                            the value is set to `NaN`.
+         * @cfg {Number} defaultValue The default value for this field when no value has been set.
+         * It is also used when the value is set to `NaN`.
          */
         defaultValue: 0,
 
@@ -116,7 +116,8 @@ Ext.define('Ext.field.Spinner', {
 
         /**
          * @cfg {Boolean} groupButtons
-         * True if you want to group the buttons to the right of the fields. False if you want the buttons to be at either side of the field.
+         * True if you want to group the buttons to the right of the fields. False if you want the buttons
+         * to be at either side of the field.
          */
         groupButtons: true,
 
