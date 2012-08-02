@@ -139,6 +139,7 @@ Ext.define('Music.view.StationFinder', {
         nestedList.getDetailCard().setData(record.getData());
         this.selectedRecord = record;
     },
+
     showMask      : function() {
         var me = this;
         me.setMasked({

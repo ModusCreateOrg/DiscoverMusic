@@ -148,8 +148,8 @@ Ext.define('Music.controller.Main', {
             me.loadMask.show();
 
             Ext.data.JsonP.request({
-//                url : 'http://discovermusic.moduscreate.com/getGenres.jst',
-                url : 'http://ec2-23-20-142-242.compute-1.amazonaws.com:9090/getGenres',
+//                url : 'http://discovermusic.moduscreate.com/getGenres',
+                url : 'http://localhost:9090/getGenres',
                 success : function(data) {
                     drawerStore.setData(data);
                     localStorage.setItem('lastUpdate', me.getToday());
@@ -352,14 +352,17 @@ Ext.define('Music.controller.Main', {
 
     //
     onAppPlayAudio : function(musicData) {
-        var me = this,
-            player = me.getPlayer();
+        var me     = this,
+            player = me.getPlayer(),
+            tmpObj = Ext.clone(musicData);
 
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
+            tmpObj.audioFile = 'resources/sounds/s.mp3';
+            player.setData(tmpObj);
 
             Ext.data.JsonP.request({
-//                url         : 'http://discovermusic.moduscreate.com/getMp3File.jst',
-                url         : 'http://ec2-23-20-142-242.compute-1.amazonaws.com:9090/getMp3File',
+//                url         : 'http://discovermusic.moduscreate.com/getMp3File',
+                url         : 'http://localhost:9090/getMp3File',
                 callbackKey : 'callback',
                 params      : { url : musicData.audioFile },
                 callback    : function(success, data) {
@@ -375,7 +378,6 @@ Ext.define('Music.controller.Main', {
         }
         else {
             if (!me.getAudioHasPlayed()) {
-                var tmpObj = Ext.clone(musicData);
 
                 // this is to fix the IOS auto-start audio issue!
                 tmpObj.audioFile = 'resources/sounds/s.mp3';

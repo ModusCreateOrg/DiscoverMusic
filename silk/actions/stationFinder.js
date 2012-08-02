@@ -1,9 +1,18 @@
 global.stationFinder_action = function() {
-    var url     = "http://api.npr.org/stations.php?apiKey=MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001",
-        reqData = req.data,
-        zip     = reqData.zip,
-        lat     = reqData.lat,
-        lon     = reqData.lon,
+    var url        = "http://api.npr.org/stations.php?apiKey=MDA4ODE2OTE5MDEzMjYwODI4NDdiOGU5Yw001",
+        reqData    = req.data,
+        zip        = reqData.zip,
+        lat        = reqData.latitude,
+        lon        = reqData.longitude,
+        stations   = [],
+        validItems = {
+            'PodCast'          : 1,
+            'Audio MP3 Stream' : 1,
+            'Newscast'         : 1
+        },
+        stationUrls,
+        obj,
+        response,
         xmlString,
         ok;
 
@@ -17,15 +26,65 @@ global.stationFinder_action = function() {
         ok = true;
     }
 
-
-
     if (ok) {
-         xmlString = doCurlRequest(url);
+        xmlString = doCurlRequest(url);
+//        xmlString = xmlString.replace(/\$t/g, 'content');
+//        console.log(typeof xmlString);
+//        console.log(xmlString);
+        obj  = xml.toObject(xmlString);
+        if (typeof obj == 'object') {
+            obj.stations.station.each(function(station) {
+                if (! station.url) {
+                    return;
+                }
 
-        var obj  = xml.toObject(xmlString),
-            json = xml.toJson(xmlString);
+                stationUrls = [];
 
-        res.write(json);
-        res.stop()
+                delete station.signal;
+                delete station.memberStatus;
+                delete station.id;
+                delete station.callLetters;
+//                delete station.state;
+                delete station.marketCity;
+                delete station.image;
+                delete station.band;
+
+                delete station.orgDisplayName;
+
+                delete station.identifierAudioUrl;
+
+                station.url.each(function(url) {
+                    if (! validItems[url.type]) {
+                        return;
+                    }
+                    delete url.typeId;
+                    delete url.type;
+
+                    stationUrls.push(url);
+                });
+
+                if (stationUrls.length < 1) {
+                    return;
+                }
+
+                station.url = stationUrls;
+
+                stations.push(station);
+            });
+        }
+
+
+
+
+        response = JSON.stringify(stations).replace(/\$t/g, 'content');
+
+
+        if (req.data.callback) {
+            res.contentType = 'text/javascript';
+
+            response = req.data.callback + '(' + response + ')';
+        }
+        res.write(response);
+        res.stop();
     }
 };

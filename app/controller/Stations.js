@@ -62,12 +62,14 @@ Ext.define('Music.controller.Stations', {
         urlObj = Ext.clone(urlObj);
 
 //        if (content && content.match('\\\.mp3')) {
+        debugger;
+        urlObj.audioFile = urlObj.content;
             app.fireEvent('playAudio', urlObj);
 
 //        }
 //        else if (content.match('\\\.pls')) {
 //            Ext.data.JsonP.request({
-//                url         : 'http://localhost:9090/getMp3File.jst',
+//                url         : 'http://localhost:9090/getMp3File',
 //                callbackKey : 'callback',
 //                params      : { url : urlObj.content },
 //                callback    : function(success, data) {
@@ -108,21 +110,17 @@ Ext.define('Music.controller.Stations', {
         me.view.showMask();
 
         Ext.data.JsonP.request({
-            url         : 'http://query.yahooapis.com/v1/public/yql',
+            url         : 'http://localhost:9090/stationFinder',
             scope       : me,
             callbackKey : 'callback',
             callback    : me.onAfterQueryStations,
-            params      : {
-                q      : query,
-                format : 'json'
-            }
+            params      : params
         });
     },
 
     onAfterQueryStations : function(success, data) {
         if (success) {
-            var dataItems = data.query.results.stations.station;
-            this.view.showStations(dataItems);
+            this.view.showStations(data);
         }
     },
 
