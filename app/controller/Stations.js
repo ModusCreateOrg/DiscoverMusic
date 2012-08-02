@@ -56,35 +56,12 @@ Ext.define('Music.controller.Stations', {
     },
 
     onStationUrlSelect : function(detailCard, urlObj) {
-        var content = urlObj.content || urlObj.audioFile,
-            app     = this.getApplication();
+        var app     = this.getApplication();
 
         urlObj = Ext.clone(urlObj);
 
-//        if (content && content.match('\\\.mp3')) {
-        debugger;
         urlObj.audioFile = urlObj.content;
-            app.fireEvent('playAudio', urlObj);
-
-//        }
-//        else if (content.match('\\\.pls')) {
-//            Ext.data.JsonP.request({
-//                url         : 'http://localhost:9090/getMp3File',
-//                callbackKey : 'callback',
-//                params      : { url : urlObj.content },
-//                callback    : function(success, data) {
-//                    if (success) {
-//
-//                        urlObj.audioFile = data.file;
-//                        urlObj.title = urlObj.name + ' ' + urlObj.title;
-//                        app.fireEvent('playAudio', urlObj);
-//                    }
-//                    else {
-//                        Ext.Msg.alert('We Apologize!', urlObj.title + ' is currently unavailable.');
-//                    }
-//                }
-//            });
-//        }
+        app.fireEvent('playAudio', urlObj);
 
         this.getStationFinder().hide();
     },
