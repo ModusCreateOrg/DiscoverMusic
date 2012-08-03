@@ -113,10 +113,10 @@
      * Default paths to build this application to for each environment
      */
     "buildPaths": {
-        "testing": "build/testing",
-        "production": "build/production",
-        "package": "build/package",
-        "native": "build/native"
+        "testing": "../build/testing",
+        "production": "../build/production",
+        "package": "../build/package",
+        "native": "../build/native"
     },
 
     /**
