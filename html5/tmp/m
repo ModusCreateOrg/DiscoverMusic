@@ -1,9 +1,0 @@
-rm -f npr.json
-for i in `cat urls`
-do
-	wget "$i" -nv -O  tmpFile
-	cat tmpFile >> npr.json
-	rm tmpFile
-done
-echo "Done"
-du -h -s npr.json

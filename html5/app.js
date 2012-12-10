@@ -1,17 +1,12 @@
-//<debug>
-Ext.Loader.setPath({
-    'Ext': 'sdk/src'
-});
-//</debug>
-
-Ext.require([
-    'Ext.util.JSONP',
-    'Ext.device.Geolocation'
-]);
-
 Ext.application({
     name      : 'Music',
     appFolder : 'app',
+
+    requires : [
+        'Ext.MessageBox',
+        'Ext.util.JSONP',
+        'Ext.device.Geolocation'
+    ],
 
     controllers : [
         'Main',
@@ -25,14 +20,12 @@ Ext.application({
         72: 'resources/images/icon-72.png',
         144: 'resources/images/icon-144.png'
     },
-    
+
     tabletStartupScreen: 'resources/images/splash.jpg',
 
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
-
-        var x = 3;
         // Initialize the main view
         window[this.getName()].app = this;
     },

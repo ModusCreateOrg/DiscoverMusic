@@ -29,7 +29,18 @@ Ext.define('Music.view.GlobalToc', {
                     '</div>',
                     '<div class="music-about-panel">',
                         '<h1>About Discover Music</h1>',
-                        '<p>Discover Music is built using <a href="http://sencha.com/products/touch" target="_new">Sencha Touch 2.0</a>, an HTML5 mobile framework developed by <a href="http://sencha.com/" target="_blank">Sencha, Inc.</a> This app was designed and developed by <a href="http://moduscreate.com" target="_new">Modus Create</a>, a hybrid application development company based out of Reston, VA. All content and audio clips are courtesy of <a href="http://npr.org" target="_blank">NPR</a>, and are accessed using their free and open public APIs.</p>',
+                            '<p>',
+                                'Discover Music is built using <span data-href="http://sencha.com/products/touch">Sencha Touch 2.0</span>,' +
+                                ' an HTML5 mobile framework developed by <span data-href="http://sencha.com/" target="_blank">Sencha, Inc.</span> ' +
+                                'This app was designed and developed by <span data-href="http://moduscreate.com">Modus Create</span>, a hybrid ' +
+                                'application development company based out of Reston, VA. All content and audio clips are courtesy of ' +
+                                '<span data-href="http://npr.org" target="_blank">NPR</span>, and are accessed using their free and open public APIs.',
+                            '</p>',
+                            '<p>',
+                                'To learn more about the construction of app, you can visit the',
+                                ' <span data-href="http://www.sencha.com/blog/discover-music-with-sencha-touch-2">Sencha Blog</span>',
+                                '.',
+                            '</p>',
                     '</div>'
                 ]
             },
@@ -55,10 +66,10 @@ Ext.define('Music.view.GlobalToc', {
     },
 
     addGenre : function(genre, articles) {
-        var me = this,
+        var me        = this,
             container = me.down('#genres'),
-            range = articles.getRange(1, 4),
-            list = [];
+            range     = articles.getRange(1, 4),
+            list      = [];
 
         Ext.each(range, function(article) {
             list.push(article.getData());
@@ -102,39 +113,48 @@ Ext.define('Music.view.GlobalToc', {
         el.on({
             scope      : me,
             tap        : 'onTap',
-            touchstart : 'onPress',
-            touchend   : 'onRelease'
+            touchstart : 'onTouchStart',
+            touchend   : 'onTouchEnd'
         });
     },
 
-    onPress : function(event, node) {
+    onTouchStart : function(event, node) {
         this.pressing = node;
         Ext.fly(node).addCls('global-toc-article-pressed');
     },
 
-    onRelease : function(event, node) {
+    onTouchEnd : function() {
         Ext.fly(this.pressing).removeCls('global-toc-article-pressed');
         delete this.pressing;
     },
 
     onTap : function(event) {
+
         var me = this,
-            el, id;
+            eventTarget = event.target,
+            el,
+            id;
 
         if (event.getTarget('.global-toc-featured-image')) {
             return me.fireEvent('storytap', me.getFeaturedArticle());
         }
+
         if (event.getTarget('.global-toc-article')) {
             el = Ext.get(event.getTarget('.global-toc-article'));
             id = +el.getAttribute("data-id");
 
             return me.fireEvent('storytap', id);
         }
+
         if (event.getTarget('.global-toc-genre-image')) {
             el = Ext.get(event.getTarget('.global-toc-genre-image'));
             id = +el.getAttribute("data-id");
 
             return me.fireEvent('storytap', id);
+        }
+
+        if (eventTarget.tagName == 'SPAN') {
+            me.fireEvent('anchortap', eventTarget.getAttribute('data-href'));
         }
     }
 });

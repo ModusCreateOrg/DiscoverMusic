@@ -109,7 +109,8 @@ Ext.define('Music.controller.Main', {
             },
 
             'globaltoc' : {
-                storytap : 'onShowArticle'
+                storytap  : 'onShowArticle',
+                anchortap : 'onAnchorTap'
             },
 
             'search' : {
@@ -391,5 +392,21 @@ Ext.define('Music.controller.Main', {
                 player.setData(musicData);
             }
         }
+    },
+    onAnchorTap : function(href) {
+        var plugins = window.plugins;
+        if (plugins && plugins.childBrowser) {
+            plugins.childBrowser.showWebPage(href);
+        }
+        else {
+            var a = document.createElement('a');
+            a.setAttribute("href", href);
+            a.setAttribute("target", "_blank");
+
+            var dispatch = document.createEvent("HTMLEvents")
+            dispatch.initEvent("click", true, true);
+            a.dispatchEvent(dispatch);
+        }
+
     }
 });

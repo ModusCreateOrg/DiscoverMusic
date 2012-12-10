@@ -17,7 +17,7 @@
      *
      *      }
      */
-    "js": [
+    "js":  [
         {
             "path": "sdk/sencha-touch.js"
         },
