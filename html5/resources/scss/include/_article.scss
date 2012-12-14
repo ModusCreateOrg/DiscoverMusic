@@ -196,7 +196,8 @@
 
   .music-article-content .music-article-#{$genre} {
     h2 {
-      @include background-image(linear-gradient($bg-color1, $bg-color2));
+      //@include background-image(linear-gradient($bg-color1, $bg-color2));
+      background-color: #{$bg-color1};
     }
   }
 }
