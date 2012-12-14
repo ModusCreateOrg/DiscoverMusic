@@ -34,7 +34,7 @@ Ext.define('Music.controller.Main', {
             'Article',
             'GenreToc',
             'GlobalToc',
-            'Drawer',
+//            'Drawer',
             'Search',
             'Player',
             'Favorites'
@@ -46,11 +46,11 @@ Ext.define('Music.controller.Main', {
                 selector   : 'main',
                 autoCreate : true
             },
-            drawer    : {
-                xtype      : 'drawer',
-                selector   : 'drawer',
-                autoCreate : true
-            },
+//            drawer    : {
+//                xtype      : 'drawer',
+//                selector   : 'drawer',
+//                autoCreate : true
+//            },
             favorites : {
                 xtype      : 'favorites',
                 selector   : 'favorites',
@@ -121,19 +121,22 @@ Ext.define('Music.controller.Main', {
 
     init : function() {
         var me = this,
-            drawer = me.getDrawer(),
+//            drawer = me.getDrawer(),
             today = me.getToday(),
             lastUpdated = +localStorage.getItem('lastUpdate'),
             isOldEnough = (today - lastUpdated) > 86400,
             hasNeverLoaded = (lastUpdated == 0),
-            drawerStore = drawer.getStore(),
+//            genresStore = drawer.getStore(),
+            genresStore = Ext.create('Music.store.Genres'),
             data;
 
         Ext.Viewport.add(me.getMain());
 
+        me.genresStore = genresStore;
+
         me.db = Ext.create('Ext.util.MixedCollection');
 
-        drawerStore.on({
+        genresStore.on({
             scope : me,
             load  : 'onGenresLoaded'
         });
@@ -151,9 +154,8 @@ Ext.define('Music.controller.Main', {
             Ext.data.JsonP.request({
                 url     : 'http://discovermusic.moduscreate.com/getGenres',
                 success : function(data) {
-                    drawerStore.setData(data);
-                    localStorage.setItem('lastUpdate', me.getToday());
-                    me.onGenresLoaded(drawerStore);
+                    genresStore.setData(data);
+//                    localStorage.setItem('lastUpdate', me.getToday());
                 }
             });
 
@@ -161,8 +163,7 @@ Ext.define('Music.controller.Main', {
         //Else, we'll simply use what's in local storage!
         else {
             data = Ext.decode(localStorage.getItem('genres'));
-            drawerStore.setData(data);
-            me.onGenresLoaded(drawerStore);
+            genresStore.setData(data);
         }
 
         me.getApplication().on({
@@ -178,35 +179,40 @@ Ext.define('Music.controller.Main', {
     */
     startApp : function() {
         var me = this,
-            drawer = me.getDrawer(),
             main = me.getMain(),
+            loadMask = me.loadMask,
             viewport = Ext.Viewport;
 
-        if (me.loadMask)  {
-            me.loadMask.hide();
-            me.loadMask.destroy();
+        if (loadMask)  {
+            loadMask.hide();
+            loadMask.destroy();
 
             delete me.loadMask;
         }
 
+
         //adding all the articles to the main
-        drawer.getStore().each(function(genre) {
+        me.genresStore.data.each(function(genre) {
             var articles = me.db.get(genre.getId());
 
             genre.set('image', articles.getAt(0).get('image'));
-            main.addArticles(genre, articles);
+            genre.set('articles', articles);
+//            main.addArticles(genre, articles);
         });
 
+
+        main.addArticles(me.genresStore.getRange());
         main.setFeatured();
-        viewport.add(me.getDrawer());
 
-        Ext.Function.defer(function() {
-            main.add(me.getFavorites());
-            main.add(me.getSearch());
+//        viewport.add(me.getDrawer());
 
-            drawer.addArticles();
+//        Ext.Function.defer(function() {
+//            main.add(me.getFavorites());
+//            main.add(me.getSearch());
 
-        }, 1000);
+//            drawer.addArticles();
+
+//        }, 1000);
 
         //custom event fired when articles are loaded
         viewport.fireEvent('loaded');
@@ -222,15 +228,14 @@ Ext.define('Music.controller.Main', {
             rawData = store.getProxy().getReader().rawData,
             data;
 
-        me.getDrawer().getStore().each(function(record) {
+        me.genresStore.data.each(function(record) {
             if (record.get('key') !== 'featured') {
                 data = record.getData();
                 me.parseGenreData(data);
             }
         }, me);
 
-        rawData && localStorage.setItem('genres', Ext.encode(rawData));
-
+//        rawData && localStorage.setItem('genres', Ext.encode(rawData));
         me.startApp();
     },
 

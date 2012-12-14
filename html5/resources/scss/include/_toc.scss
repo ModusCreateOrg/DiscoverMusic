@@ -2,129 +2,137 @@
  *	GLOBAL TOC
  ************************************/
 
-.global-toc{
-	background: url('../images/article-view-sidebar-bg.png');
+.global-toc {
+    background : url('../images/article-view-sidebar-bg.png');
 
-	.global-toc-featured-story {
-		.x-innerhtml {
-			height:400px;
-		}
-		.global-toc-featured-image {
-				position:relative;
-				height:100%;
-				background-size: cover;
-				background-position: center top;
-		    background-repeat: no-repeat;
+    .global-toc-featured-story {
+        .x-innerhtml {
+            height : 750px;
+        }
+        .global-toc-featured-image {
+            position            : relative;
+            height              : 100%;
+            background-size     : cover;
+            background-position : center top;
+            background-repeat   : no-repeat;
 
-			div {
-				background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(247, 247, 247)),to(rgb(215, 208, 210)));
-				float: left;
-				padding: 10px 15px;
-				color: #222;
-				font-family: "nevisBold";
-				font-size: 1.3em;
-				text-transform: uppercase;
-				margin-top: 30px;
-				text-shadow: 0px 1px #fff;
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
-				-webkit-border-top-right-radius: 10px;
-				-webkit-border-bottom-right-radius: 10px;					
-			}
-			h2{
-				@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
-				position:absolute;
-				color:#fff;
-				padding: 15px 20px;
-				font-size: 1.5em;
-				width:100%;
-				font-family: $base-font;
-				font-weight:normal;
-				bottom:0;
-			}
-		}
-		.global-toc-featured-content{
-			background: none;
-			color:#fff;
-			line-height:1.6em;
-			padding: 10px 20px;
-			font-size: 17px;
-			font-family: "Georgia", sans-serif;
-		}
-		.global-toc-about{
-			@include border-radius(5px);
-			background-color:#2d2d2d;
-			color:#999;
-			line-height:1.5em;
-			padding:15px 20px;
-			margin:15px 0 0 15px;
-			font-size: 13px;
-		}
-	}
+            div {
+                background-image                   : -webkit-gradient(linear, left top, left bottom, from(rgb(247, 247, 247)), to(rgb(215, 208, 210)));
+                float                              : left;
+                padding                            : 10px 15px;
+                color                              : #222;
+                font-family                        : "nevisBold";
+                font-size                          : 1.3em;
+                text-transform                     : uppercase;
+                margin-top                         : 30px;
+                text-shadow                        : 0px 1px #fff;
+                box-shadow                         : 5px 5px 10px rgba(0, 0, 0, .5);
+                -webkit-border-top-right-radius    : 10px;
+                -webkit-border-bottom-right-radius : 10px;
+            }
+            h2 {
+                @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
+                position    : absolute;
+                color       : #fff;
+                padding     : 15px 20px;
+                font-size   : 1.5em;
+                width       : 100%;
+                font-family : $base-font;
+                font-weight : normal;
+                bottom      : 0;
+            }
+        }
+        .global-toc-featured-content {
+            background  : none;
+            color       : #fff;
+            line-height : 1.6em;
+            padding     : 10px 20px;
+            font-size   : 17px;
+            font-family : "Georgia", sans-serif;
+        }
+        .global-toc-about {
+            @include border-radius(5px);
+            background-color : #2d2d2d;
+            color            : #999;
+            line-height      : 1.5em;
+            padding          : 15px 20px;
+            margin           : 15px 0 0 15px;
+            font-size        : 13px;
+        }
+    }
 }
 
+.global-toc-genre-container .x-innerhtml {
+   display:-webkit-box;
+}
+
+.global-toc-genre-item {
+    -webkit-box-orient  : horizontal;
+
+}
 
 @mixin global-toc($genre, $bg-color1, $bg-color2){
-	.global-toc{
-		.global-toc-right-sidebar { 
-			border-left: 10px solid #000;
-		}
-		.global-toc-genre-#{$genre}{
-			background: url('../images/article-view-sidebar-bg.png');
-			background-attachment: fixed;
+    .global-toc {
 
-			.global-toc-genre-image{
-			   	 position:relative;
-				 height: 250px;
-				 background-size: cover;
-				 background-position: center center;
-		     	 background-repeat: no-repeat;
+        .global-toc-genre-#{$genre} {
+            background            : url('../images/article-view-sidebar-bg.png');
+            background-attachment : fixed;
+            .global-toc-genre-image {
+                //position            : relative;
+                height              : 409px;
+                width               : 309px;
+                background-size     : cover;
+                background-position : center center;
+                background-repeat   : no-repeat;
 
-				h2 {
-					@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-					text-shadow: 0px 2px rgba(0, 0, 0, .9);
-					border: 2px solid rgba(255, 255, 255, .5);
-					box-shadow: 0px 6px 5px rgba(0, 0, 0, .65);
-					color:#fff;
-					font-family: $base-font;
-					text-shadow: 0px 1px darken($bg-color2, 20);
-					font-size:0.85em;
-					text-transform:uppercase;
-					padding: 10px;
-					text-align: center;
-					margin-bottom: 10px;
-				}
+                h2 {
+                    @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+                    text-shadow    : 0px 2px rgba(0, 0, 0, .9);
+                    border         : 2px solid rgba(255, 255, 255, .5);
+                    box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
+                    color          : #fff;
+                    font-family    : $base-font;
+                    text-shadow    : 0px 1px darken($bg-color2, 20);
+                    font-size      : 0.85em;
+                    text-transform : uppercase;
+                    padding        : 10px;
+                    text-align     : center;
+                    margin-bottom  : 10px;
+                }
 
-				h3 {
-					@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
-					text-shadow: 0px 2px rgba(0, 0, 0, .9);
-					font-family: $base-font;
-					position:absolute;
-					width:100%;
-					bottom:0;
-					color:#fff;
-					font-size:1em;
-					padding:15px 20px;
-				}
-			}
+                h3 {
+                    @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
+                    text-shadow : 0px 2px rgba(0, 0, 0, .9);
+                    font-family : $base-font;
+                    position    : absolute;
+                    width       : 100%;
+                    bottom      : 0;
+                    color       : #fff;
+                    font-size   : 1em;
+                    padding     : 15px 20px;
+                }
+            }
 
-			p {
-				font-size:0.85em;
-				text-shadow: 0px 2px rgba(0, 0, 0, .9);
-				font-weight: bold;
-				padding: 12px 20px;
-				color:#ccc;
-			} &:last-child{
-				//margin-bottom:30px;
-			}
+            p {
+                font-size   : 0.85em;
+                text-shadow : 0px 2px rgba(0, 0, 0, .9);
+                font-weight : bold;
+                padding     : 12px 20px;
+                color       : #ccc;
+            }
+            &:last-child {
+                //margin-bottom:30px;
+            }
 
-			.global-toc-article-pressed {
-				background-color: $bg-color1;
-				color: #fff;
-				text-shadow: 0px 1px darken($bg-color1, 20);
-			}
-		}
-	}
+            .global-toc-article-pressed {
+                background-color : $bg-color1;
+                color            : #fff;
+                text-shadow      : 0px 1px darken($bg-color1, 20);
+            }
+        }
+    }
 }
+
 
 @include global-toc('rock', $rock-background-color-light, $rock-background-color-dark);
 @include global-toc('classical', $classical-background-color-light, $classical-background-color-dark);
@@ -138,115 +146,112 @@
 @include global-toc('rnb',$rnb-background-color-light, $rnb-background-color-dark);
 
 
-
-
 /************************************
- *	GENRE TOC
- ************************************/
+*	GENRE TOC
+************************************/
 @mixin genre-toc($genre, $bg-color1, $bg-color2){
-	.genre-toc-featured-#{$genre}{
-			position:relative;
-            height: 645px;
-    		@media screen and (orientation:landscape) {
-                height: 385px;
+    .genre-toc-featured-#{$genre} {
+        position            : relative;
+        height              : 645px;
+        @media screen and (orientation:landscape) {
+            height : 385px;
+        } border            : 6px solid #000;
+        background-size     : cover;
+        background-position : center top;
+        background-repeat   : no-repeat;
+        h2 {
+            background-image : -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+            background-image : -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+            background-image : linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+            position         : absolute;
+            color            : white;
+            padding          : 15px 20px;
+            font-size        : 1.5em;
+            width            : 100%;
+            font-family      : $base-font;
+            font-weight      : normal;
+            bottom           : 0;
+        }
+        h3 {
+            @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+            @include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
+            border         : 2px solid rgba(255, 255, 255, .5);
+            position       : absolute;
+            top            : 10px;
+            left           : 0;
+            color          : #fff;
+            font-size      : 1.2em;
+            padding        : 20px 40px;
+            color          : #fff;
+            font-size      : 1.1em;
+            font-family    : $base-font;
+            text-transform : uppercase;
+            text-shadow    : 0px 1px darken($bg-color2, 20);
+        }
+    }
+
+    .genre-toc-story {
+        p {
+            font-size   : .7em;
+            line-height : 1.8em;
+            padding     : 4px 4px;
+        }
+        .genre-toc-story-image-#{$genre} {
+            position            : relative;
+            height              : 308px;
+            background-size     : cover;
+            background-position : center top;
+            background-repeat   : no-repeat;
+            border              : 6px solid black;
+
+            h3 {
+                @include background-image(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)));
+                position    : absolute;
+                top         : 10px;
+                left        : 0;
+                color       : #fff;
+                font-size   : 1.2em;
+                padding     : 20px;
+                color       : #fff;
+                font-size   : 1.1em;
+                font-family : $base-font;
+                text-shadow : 0px 1px darken($bg-color2, 20);
             }
-			border: 6px solid #000;
-			background-size: cover;
-			background-position: center top;
-	    background-repeat: no-repeat;
-	    h2 {
-				background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-				background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
-				background-image: linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.9));
-				position: absolute;
-				color: white;
-				padding: 15px 20px;
-				font-size: 1.5em;
-				width: 100%;
-				font-family: $base-font;
-				font-weight: normal;
-				bottom: 0;
-	    }
-	    h3 {
-	    	@include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-	    	@include single-box-shadow(rgba(0, 0, 0, .5), 0px, 2px, 2px, 0px, false);
-	    	border: 2px solid rgba(255, 255, 255, .5);
-	    	position:absolute;
-	    	top:10px;
-	    	left:0;
-	    	color:#fff;
-	    	font-size:1.2em;
-				padding:20px 40px;
-				color: #fff;
-				font-size: 1.1em;
-				font-family: $base-font;
-				text-transform: uppercase;
-				text-shadow: 0px 1px darken($bg-color2, 20);
-	    }
-	}
+        }
 
- 	.genre-toc-story {
-    	p {
-				font-size: .7em;
-				line-height: 1.8em;
-				padding: 4px 4px;
-	 	}
-	 	.genre-toc-story-image-#{$genre} {
- 			position:relative;
- 			height:308px;
- 			background-size: cover;
-			background-position: center top;
-            background-repeat: no-repeat;
-            border: 6px solid black;
+        .genre-toc-story {
+            p {
+                font-size   : .7em;
+                line-height : 1.8em;
+                padding     : 4px 4px;
+            }
+            .genre-toc-story-image-#{$genre} {
+                position            : relative;
+                height              : 308px;
+                background-size     : cover;
+                background-position : center top;
+                background-repeat   : no-repeat;
+                border              : 6px solid black;
 
-	 		h3 {
-		    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
-		    	position:absolute;
-		    	top:10px;
-		    	left:0;
-		    	color:#fff;
-		    	font-size:1.2em;
-					padding: 20px;
-					color: #fff;
-					font-size: 1.1em;
-					font-family: $base-font;
-					text-shadow: 0px 1px darken($bg-color2, 20);
-		    }
-		}
-
-	 	.genre-toc-story {
-	    	p {
-					font-size: .7em;
-					line-height: 1.8em;
-					padding: 4px 4px;
-		 	}
-		 	.genre-toc-story-image-#{$genre} {
-	 			position:relative;
-	 			height:308px;
-	 			background-size: cover;
-				background-position: center top;
-                background-repeat: no-repeat;
-                border: 6px solid black;
-
-		 		h3 {
-			    	@include background-image(linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)));
-			    	position:absolute;
-			    	bottom: 0px;
-			    	left:0;
-			    	color:#fff;
-			    	font-size: .85em;
-			    	height: 76px;
-			    	width: 100%;
-			    	padding: 10px;
-						color: #fefefe;
-						font-weight: bold;					
-		 		}
-	 		}
-		}
-		.genre-toc-story:first-child{
-			margin:0;
-		}
-	}
+                h3 {
+                    @include background-image(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)));
+                    position    : absolute;
+                    bottom      : 0px;
+                    left        : 0;
+                    color       : #fff;
+                    font-size   : .85em;
+                    height      : 76px;
+                    width       : 100%;
+                    padding     : 10px;
+                    color       : #fefefe;
+                    font-weight : bold;
+                }
+            }
+        }
+        .genre-toc-story:first-child {
+            margin : 0;
+        }
+    }
 }
 
 @include genre-toc('rock', $rock-background-color-light, $rock-background-color-dark);
@@ -259,5 +264,4 @@
 @include genre-toc('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
 @include genre-toc('country',$country-background-color-light, $country-background-color-dark);
 @include genre-toc('rnb',$rnb-background-color-light, $rnb-background-color-dark);
-
 

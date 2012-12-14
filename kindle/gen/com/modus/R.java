@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.spigit;
+package com.modus;
 
 public final class R {
     public static final class attr {

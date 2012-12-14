@@ -143,86 +143,19 @@
   }
 }
 
-@include
-article-category
-(
-'rock'
-,
-$rock-background-color-light,
-$rock-background-color-dark)
-;
-@include
-article-category
-(
-'classical'
-,
-$classical-background-color-light,
-$classical-background-color-dark)
-;
-@include
-article-category
-(
-'jazzBlues'
-,
-$jazzblues-background-color-light,
-$jazzblues-background-color-dark)
-;
-@include
-article-category
-(
-'world'
-,
-$world-background-color-light,
-$world-background-color-dark)
-;
-@include
-article-category
-(
-'hipHop'
-,
-$hipHop-background-color-light,
-$hipHop-background-color-dark)
-;
-@include
-article-category
-(
-'electronicDance'
-,
-$electronicdance-background-color-light,
-$electronicdance-background-color-dark)
-;
-@include
-article-category
-(
-'pop'
-,
-$pop-background-color-light,
-$pop-background-color-dark)
-;
-@include
-article-category
-(
-'latinAlternative'
-,
-$latinalternative-background-color-light,
-$latinalternative-background-color-dark)
-;
-@include
-article-category
-(
-'country'
-,
-$country-background-color-light,
-$country-background-color-dark)
-;
-@include
-article-category
-(
-'rnb'
-,
-$rnb-background-color-light,
-$rnb-background-color-dark)
-;
+
+@include article-category('rock', $rock-background-color-light, $rock-background-color-dark);
+@include article-category('classical', $classical-background-color-light, $classical-background-color-dark);
+@include article-category('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include article-category('world', $world-background-color-light, $world-background-color-dark);
+@include article-category('hipHop', $hipHop-background-color-light, $hipHop-background-color-dark);
+@include article-category('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
+@include article-category('pop', $pop-background-color-light,  $pop-background-color-dark);
+@include article-category('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
+@include article-category('country',$country-background-color-light, $country-background-color-dark);
+@include article-category('rnb',$rnb-background-color-light, $rnb-background-color-dark);
+
+
 
 .music-article-preview div.x-innerhtml {
   height : 100%;
@@ -413,84 +346,13 @@ $rnb-background-color-dark)
   }
 }
 
-@include
-article
-(
-'rock'
-,
-$rock-background-color-light,
-$rock-background-color-dark)
-;
-@include
-article
-(
-'classical'
-,
-$classical-background-color-light,
-$classical-background-color-dark)
-;
-@include
-article
-(
-'jazzBlues'
-,
-$jazzblues-background-color-light,
-$jazzblues-background-color-dark)
-;
-@include
-article
-(
-'world'
-,
-$world-background-color-light,
-$world-background-color-dark)
-;
-@include
-article
-(
-'hipHop'
-,
-$hipHop-background-color-light,
-$hipHop-background-color-dark)
-;
-@include
-article
-(
-'electronicDance'
-,
-$electronicdance-background-color-light,
-$electronicdance-background-color-dark)
-;
-@include
-article
-(
-'latinAlternative'
-,
-$latinalternative-background-color-light,
-$latinalternative-background-color-dark)
-;
-@include
-article
-(
-'pop'
-,
-$pop-background-color-light,
-$pop-background-color-dark)
-;
-@include
-article
-(
-'country'
-,
-$country-background-color-light,
-$country-background-color-dark)
-;
-@include
-article
-(
-'rnb'
-,
-$rnb-background-color-light,
-$rnb-background-color-dark)
-;
-
+@include article('rock', $rock-background-color-light, $rock-background-color-dark);
+@include article('classical', $classical-background-color-light, $classical-background-color-dark);
+@include article('jazzBlues', $jazzblues-background-color-light, $jazzblues-background-color-dark);
+@include article('world', $world-background-color-light, $world-background-color-dark);
+@include article('hipHop', $hipHop-background-color-light, $hipHop-background-color-dark);
+@include article('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
+@include article('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
+@include article('pop', $pop-background-color-light,  $pop-background-color-dark);
+@include article('country',$country-background-color-light, $country-background-color-dark);
+@include article('rnb',$rnb-background-color-light, $rnb-background-color-dark);

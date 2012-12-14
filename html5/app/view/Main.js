@@ -43,6 +43,7 @@ Ext.define('Music.view.Main', {
                     },
                     {
                         xtype  : 'player',
+                        hidden : true,
                         margin : null,
                         height : null
                     },
@@ -77,11 +78,11 @@ Ext.define('Music.view.Main', {
         }
     },
 
-    addArticles : function(genre, articles) {
+    addArticles : function(genreRecords) {
         var me = this,
             collection = me.getArticles(),
             favorites = Ext.data.StoreManager.lookup('favorites'),
-            article;
+            articles;
 
         //adding the TOC's
         if (Ext.isEmpty(me.globalToc)) {
@@ -89,45 +90,57 @@ Ext.define('Music.view.Main', {
             me.add(me.globalToc);
         }
 
-        me.add({
-            xtype    : 'genretoc',
-            itemId   : genre.get('key'),
-            genre    : genre,
-            articles : articles
+//        debugger;
+        me.setArticles(genreRecords);
+        me.globalToc.addGenres(genreRecords);
+
+        Ext.each(genreRecords, function(record) {
+            var recordData = record.data,
+                genre      = recordData.name,
+                articles   = recordData.articles;
+
+//            debugger
+    //        me.add({
+    //            xtype    : 'genretoc',
+    //            itemId   : genre.get('key'),
+    //            genre    : genre,
+    //            articles : articles
+    //        });
+
+
+            //Adding the articles preview to the main flow
+            return;
+            articles.each(function(article) {
+                var data = article.getData();
+                data.isFavorite = favorites.find('articleId', article.getId()) !== -1;
+//
+                article = me.add({
+                    xtype  : 'article',
+                    itemId : 'article-' + article.getId(),
+                    model  : article,
+                    data   : data,
+                    genre  : genre
+                });
+                collection.push(article);
+            }, me);
         });
-
-        me.globalToc.addGenre(genre, articles);
-
-        //Adding the articles preview to the main flow
-        articles.each(function(article) {
-            var data = article.getData();
-            data.isFavorite = favorites.find('articleId', article.getId()) !== -1;
-
-            article = me.add({
-                xtype  : 'article',
-                itemId : 'article-' + article.getId(),
-                model  : article,
-                data   : data,
-                genre  : genre
-            });
-            collection.push(article);
-        }, me);
     },
 
     setFeatured : function() {
-        var me       = this,
-            articles = me.getArticles(),
-            cover    = articles[Math.floor(Math.random() * articles.length)],
-            model    = cover.getModel();
+//        debugger;
+        var me         = this,
+            articles   = me.getArticles(),
+            randomNum  = Math.floor(Math.random() * articles.length),
+            coverModel = articles[randomNum].data.articles.getAt(0);
 
-        me.globalToc.setFeatured(model);
+        me.globalToc.setFeatured(coverModel);
 
-        me.insert(0, {
-            xtype : 'articlepreview',
-            model : model,
-            data  : model.getData()
-        });
-        me.animateActiveItem(0, { type : 'slide' });
+//        me.insert(0, {
+//            xtype : 'articlepreview',
+//            model : model,
+//            data  : model.getData()
+//        });
+//        me.animateActiveItem(0, { type : 'slide' });
     }
 
 });
