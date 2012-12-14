@@ -4,7 +4,7 @@
 *
 *********************************/
 
-@mixin article-category($category, $bg-color1, $bg-color2){
+@mixin article-category($category, $bg-color1, $bg-color2) {
   .music-article-preview {
     // the 'genre flag' in the cover flow
     .music-article-category {
@@ -84,9 +84,10 @@
       overflow : hidden;
       height   : 130px;
 
-      @media screen and (orientation:portrait) {
+      @media screen and (orientation: portrait) {
         height : 210px;
-      } @include border-radius(10px);
+      }
+      @include border-radius(10px);
       @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.70))));
 
       .music-content-all {
@@ -136,13 +137,12 @@
 
         .music-article-btn-pressed-#{$category} {
           border : 2px solid rgba(255, 255, 255, .3);
-          @include background-image(linear-gradient($bg-color2,$bg-color1));
+          @include background-image(linear-gradient($bg-color2, $bg-color1));
         }
       }
     }
   }
 }
-
 
 @include article-category('rock', $rock-background-color-light, $rock-background-color-dark);
 @include article-category('classical', $classical-background-color-light, $classical-background-color-dark);
@@ -150,12 +150,10 @@
 @include article-category('world', $world-background-color-light, $world-background-color-dark);
 @include article-category('hipHop', $hipHop-background-color-light, $hipHop-background-color-dark);
 @include article-category('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
-@include article-category('pop', $pop-background-color-light,  $pop-background-color-dark);
-@include article-category('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
-@include article-category('country',$country-background-color-light, $country-background-color-dark);
-@include article-category('rnb',$rnb-background-color-light, $rnb-background-color-dark);
-
-
+@include article-category('pop', $pop-background-color-light, $pop-background-color-dark);
+@include article-category('latinAlternative', $latinalternative-background-color-light, $latinalternative-background-color-dark);
+@include article-category('country', $country-background-color-light, $country-background-color-dark);
+@include article-category('rnb', $rnb-background-color-light, $rnb-background-color-dark);
 
 .music-article-preview div.x-innerhtml {
   height : 100%;
@@ -178,7 +176,7 @@
  *
  *********************************/
 
-@mixin article($genre, $bg-color1, $bg-color2){
+@mixin article($genre, $bg-color1, $bg-color2) {
   .music-article-header .music-article-#{$genre} {
     h2 {
       position                           : absolute;
@@ -205,11 +203,13 @@
 
 .music-article {
   .music-article-header {
-    @media screen and (orientation:landscape) {
+    @media screen and (orientation: landscape) {
       padding : 15px;
-    } @media screen and (orientation:portrait) {
-    padding : 2px 0 2px 2px;
-  } background : #191919 url(../images/article-view-sidebar-bg.png);
+    }
+    @media screen and (orientation: portrait) {
+      padding : 2px 0 2px 2px;
+    }
+    background : #191919 url(../images/article-view-sidebar-bg.png);
 
     .music-article-header-image {
       position            : relative;
@@ -251,7 +251,7 @@
   .music-article-content {
     padding : 10px;
 
-    @media screen and (orientation:portrait) {
+    @media screen and (orientation: portrait) {
       padding : 0;
     }
 
@@ -261,7 +261,7 @@
       background-size     : cover;
       background-position : center center;
       background-repeat   : no-repeat;
-    /*margin-bottom:20px;*/
+      /*margin-bottom:20px;*/
 
       h1 {
         @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.90))));
@@ -277,14 +277,19 @@
       }
       h2 {
         position       : absolute;
-        top            : 0px;
-        left           : 0px;
+        top            : 0;
+        left           : 0;
+        width          : 100%;
+        height         : 60px;
+        font-size      : 1.8em;
+        line-height    : 2.3em;
+        border         : none;
         color          : #fff;
         font-family    : $base-font;
-        font-size      : 0.9em;
+        //font-size      : 0.9em;
         text-transform : uppercase;
-        padding        : 10px 20px;
-        border         : 1px solid rgba(255, 255, 255, .5);
+        padding        : 10px 20px 0 30px;
+        //border         : 1px solid rgba(255, 255, 255, .5);
       }
     }
 
@@ -300,9 +305,9 @@
       margin-bottom : 20px;
       font-size     : .8em;
 
-    /*@media screen and (orientation:portrait) {*/
+      /*@media screen and (orientation:portrait) {*/
       margin-left   : 15px;
-    /*}*/
+      /*}*/
 
     }
 
@@ -322,12 +327,13 @@
     background  : transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
     text-indent : -9999px;
 
-    @media screen and (orientation:landscape) {
+    @media screen and (orientation: landscape) {
       margin : 34px 0 0 37px;
-    } @media screen and (orientation:portrait) {
-    margin : 1px 0 2px 120px;
-    width  : 194px;
-  }
+    }
+    @media screen and (orientation: portrait) {
+      margin : 1px 0 2px 120px;
+      width  : 194px;
+    }
   }
   .music-article-button-listen {
     background-position : 0 -42px;
@@ -352,7 +358,7 @@
 @include article('world', $world-background-color-light, $world-background-color-dark);
 @include article('hipHop', $hipHop-background-color-light, $hipHop-background-color-dark);
 @include article('electronicDance', $electronicdance-background-color-light, $electronicdance-background-color-dark);
-@include article('latinAlternative',$latinalternative-background-color-light,  $latinalternative-background-color-dark);
-@include article('pop', $pop-background-color-light,  $pop-background-color-dark);
-@include article('country',$country-background-color-light, $country-background-color-dark);
-@include article('rnb',$rnb-background-color-light, $rnb-background-color-dark);
+@include article('latinAlternative', $latinalternative-background-color-light, $latinalternative-background-color-dark);
+@include article('pop', $pop-background-color-light, $pop-background-color-dark);
+@include article('country', $country-background-color-light, $country-background-color-dark);
+@include article('rnb', $rnb-background-color-light, $rnb-background-color-dark);
