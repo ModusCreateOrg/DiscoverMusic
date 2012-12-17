@@ -13,11 +13,11 @@ Ext.define('Music.view.Article', {
         model      : null,
         genre      : null,
         layout     : 'fit',
+        cls        : 'music-article',
         scrollable : {
             direction     : 'vertical',
             directionLock : true
         },
-        cls        : 'music-article',
         tpl        : Ext.create('Ext.XTemplate',
             '<article>',
                 '<h1>{title}</h1>',
@@ -116,6 +116,7 @@ Ext.define('Music.view.Article', {
 
         me.setData(modelData);
         header.setData(modelData);
+        console.log(modelData);
 
         return model;
     }
