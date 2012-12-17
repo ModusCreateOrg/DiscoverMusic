@@ -12,51 +12,51 @@ Ext.define('Music.view.Article', {
     config : {
         model      : null,
         genre      : null,
-        layout     : {
-            type  : 'vbox',
-            align : 'stretch'
+        layout     : 'fit',
+        scrollable : {
+            direction     : 'vertical',
+            directionLock : true
         },
         cls        : 'music-article',
+        tpl        : new Ext.XTemplate(
+            '<article>',
+                '<h1>{title}</h1>',
+                '<h4>{[ this.dateFormat(values.date) ]}</h4>',
+                '{text}',
+            '</article>',
+            {
+                dateFormat : function(value){
+                    return Ext.util.Format.date(value,'F d, Y');
+                }
+            }
+        ),
         items      : [
             {
-                xtype      : 'component',
-                cls        : 'music-article-content',
-                itemId     : 'article-content',
-                flex       : 1,
-                scrollable : {
-                    direction     : 'vertical',
-                    directionLock : true
-                },
-                tpl        : new Ext.XTemplate(
+                xtype  : 'component',
+                height : 280,
+                docked: 'top',
+                itemId: 'articleHeader',
+                tpl: [
                     '<div class="music-article-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/600/{image});">',
-                        '<div class="music-article-image-overlay">',
-                            '<h2>{genre}</h2>',
+                    '<div class="music-article-image-overlay">',
+                        '<h2>{genre}</h2>',
 
-                            '<div class="music-article-header music-article-header-portrait">',
-                                '<div class="music-article-button music-article-button-listen">Listen to Story</div>',
-                                '<div class="music-article-button music-article-button-favorite">Add to Favorites</div>',
-                                '<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
-                            '</div>',
+                        '<div class="music-article-header music-article-header-portrait">',
+                            '<div class="music-article-button music-article-button-listen">Listen to Story</div>',
+                            '<div class="music-article-button music-article-button-favorite">Add to Favorites</div>',
+                            '<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
                         '</div>',
                     '</div>',
-                    '<article>',
-                        '<h1>{title}</h1>',
-                        '<h4>{[ this.dateFormat(values.date) ]}</h4>',
-                        '{text}',
-                    '</article>',
-                    {
-                        dateFormat : function(value){
-                            return Ext.util.Format.date(value,'F d, Y');
-                        }
-                    }
-                )
+                '</div>'
+                ].join('')
             },
-
             {
                 xtype  : 'component',
                 html   : 'shit',
-                height : 250
+                height : 250,
+                docked: 'bottom'
             }
+
         ]
     },
 
@@ -113,7 +113,8 @@ Ext.define('Music.view.Article', {
         var me = this,
             modelData = model.getData();
 
-        me.down('component#article-content').setData(modelData);
+        me.setData(modelData);
+        me.down('component#articleHeader').setData(modelData);
 
         return model;
     }
