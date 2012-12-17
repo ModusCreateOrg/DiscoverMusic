@@ -126,13 +126,13 @@ Ext.define('Music.controller.Main', {
             lastUpdated = +localStorage.getItem('lastUpdate'),
             isOldEnough = (today - lastUpdated) > 86400,
             hasNeverLoaded = (lastUpdated == 0),
-//            genresStore = drawer.getStore(),
             genresStore = Ext.create('Music.store.Genres'),
             data;
 
         Ext.Viewport.add(me.getMain());
 
         me.genresStore = genresStore;
+        me.allArticlesStore = Ext.create('Music.store.Articles');
 
         me.db = Ext.create('Ext.util.MixedCollection');
 
@@ -181,7 +181,8 @@ Ext.define('Music.controller.Main', {
         var me = this,
             main = me.getMain(),
             loadMask = me.loadMask,
-            viewport = Ext.Viewport;
+            viewport = Ext.Viewport,
+            allArticlesStore = me.allArticlesStore;
 
         if (loadMask)  {
             loadMask.hide();
@@ -191,13 +192,13 @@ Ext.define('Music.controller.Main', {
         }
 
 
+        // TODO: Clean up the data management. This shit has gotten out of hand!
         //adding all the articles to the main
         me.genresStore.data.each(function(genre) {
             var articles = me.db.get(genre.getId());
-
             genre.set('image', articles.getAt(0).get('image'));
             genre.set('articles', articles);
-//            main.addArticles(genre, articles);
+            allArticlesStore.add(articles.getRange());
         });
 
 
@@ -288,22 +289,30 @@ Ext.define('Music.controller.Main', {
     },
 
     // when a user taps on the "Read & Listen"
-    onShowArticle  : function(record) {
-        var me = this,
-            id = record.getId ? record.get('articleId') : record,
-            main = me.getMain(),
-            article = main.down('#article-' + id);
+    onShowArticle  : function(articleId) {
+        debugger;
+        var me          = this,
+            articles    = me.allArticlesStore,
+            index       = articles.find('id', articleId),
+            articleRec  = articles.getAt(index),
+            main        = me.getMain(),
+            articleView = main.down('#article-' + articleId);
 
-        if (!article) {
-            article = main.add({
+        if (!articleRec) {
+            Ext.Msg.alert('We apologize!', 'For some reason we could not locate the article you requested. Please select another article.');
+            throw('WTF?!? We could not find article ID: ' + articleId);
+        }
+        
+        if (!articleView) {
+            articleView = main.add({
                 xtype  : 'article',
-                itemId : 'article-' + record.getId(),
-                model  : record,
-                data   : record.getData()
+                itemId : 'article-' + articleId,
+                model  : articleRec, // TODO: Do we need to pass the whole god damn record?
+                data   : articleRec.getData()
             });
         }
 
-        main.setActiveItem(article);
+        main.setActiveItem(articleView);
     },
 
     // Show the favorites screen when user taps on the favorites
