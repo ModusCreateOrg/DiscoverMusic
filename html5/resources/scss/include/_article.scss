@@ -203,6 +203,11 @@
 }
 
 .music-article {
+  .x-scroll-view {
+    background : #e7e7e7 url(../images/article-bg.png);
+    @include box-shadow(inset rgba(0, 0, 0, 0.7) 5px 0px 5px);
+  }
+
   .music-article-header {
     width            : 300px;
     //@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.80))));
@@ -250,11 +255,6 @@
       margin      : 15px 15px 0px 15px;
       font-style  : italic;
     }
-  }
-
-  .music-article-container .x-scroll-view {
-    background : #e7e7e7 url(../images/article-bg.png);
-    @include box-shadow(inset rgba(0, 0, 0, 0.7) 5px 0px 5px);
   }
 
   .music-article-content {
@@ -344,7 +344,17 @@
     }
 
     article {
-      margin: 0.7em 1.5em 0 1.5em;
+      margin   : 0.7em 1.5em 0 1.5em;
+      position : relative;
+    }
+
+    article:after {
+      position : absolute;
+      height   : 50px;
+      top      : 0;
+      bottom   : 0;
+      width    : 100%;
+      @include background-image(linear-gradient(color-stops(rgba(250, 250, 250, 0.65), rgba(250, 250, 250, 0.90))));
     }
   }
 
