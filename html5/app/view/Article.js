@@ -17,23 +17,6 @@ Ext.define('Music.view.Article', {
         cls        : 'music-article',
         items      : [
             {
-                xtype : 'component',
-                cls   : 'music-article-header',
-                width : 520,
-                tpl   : [
-                    '<div class="music-article-header-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/487/{image});">',
-                        '<h1>{title}</h1>',
-                        '<h2>{genre}</h2>',
-                    '</div>',
-
-                    '<p>{teaser}</p>',
-                    '<div class="music-article-button music-article-button-listen">Listen to Story</div>',
-                    '<div class="music-article-button music-article-button-favorite">Add to Favorites</div>',
-                    '<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
-                    '<div class="music-article-button music-article-button-toc">Table of Contents</div>'
-                ]
-            },
-            {
                 xtype      : 'container',
                 flex       : 1,
                 cls        : 'music-article-container',
@@ -45,7 +28,7 @@ Ext.define('Music.view.Article', {
                     xtype : 'component',
                     cls   : 'music-article-content',
                     tpl   : new Ext.XTemplate(
-                        '<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/600/{image});">',
+                        '<div class="music-article-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/600/{image});">',
                             '<div class="music-article-image-overlay">',
                                 '<h2>G2: {genre}</h2>',
 
@@ -134,11 +117,9 @@ Ext.define('Music.view.Article', {
 
     applyModel : function(model) {
         var me = this,
-            header = me.down('component[cls=music-article-header]'),
             content = me.down('component[cls=music-article-content]'),
             modelData = model.getData();
 
-        header.setData(modelData);
         content.setData(modelData);
 
         return model;
@@ -146,18 +127,12 @@ Ext.define('Music.view.Article', {
 
     onOrientationChange : function(viewport, orientation) {
         var me = this,
-            header = me.down('component[cls=music-article-header]'),
-            articleTitle = me.articleTitle,
             portraitButtons = me.element.down('.music-article-header-portrait');
 
         if (orientation === 'portrait') {
-            header.hide();
-            articleTitle.setStyle('display', 'block');
             portraitButtons.show();
         }
         else {
-            header.show();
-            articleTitle.setStyle('display', 'none');
             portraitButtons.hide();
         }
 
