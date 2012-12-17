@@ -18,7 +18,7 @@ Ext.define('Music.view.Article', {
             directionLock : true
         },
         cls        : 'music-article',
-        tpl        : new Ext.XTemplate(
+        tpl        : Ext.create('Ext.XTemplate',
             '<article>',
                 '<h1>{title}</h1>',
                 '<h4>{[ this.dateFormat(values.date) ]}</h4>',
