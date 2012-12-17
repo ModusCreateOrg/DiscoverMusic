@@ -111,10 +111,11 @@ Ext.define('Music.view.Article', {
 
     applyModel : function(model) {
         var me = this,
+            header = me.down('component#articleHeader'),
             modelData = model.getData();
 
         me.setData(modelData);
-        me.down('component#articleHeader').setData(modelData);
+        header.setData(modelData);
 
         return model;
     }
