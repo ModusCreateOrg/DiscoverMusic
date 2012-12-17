@@ -34,7 +34,7 @@
     .music-article-full-#{$category} {
       .image {
         background-repeat : no-repeat;
-        height            : 400px;
+        height            : 280px;
         position          : relative;
       }
       .title {
@@ -197,20 +197,28 @@
   .music-article-content .music-article-#{$genre} {
     h2 {
       //@include background-image(linear-gradient($bg-color1, $bg-color2));
-      background-color: #{$bg-color1};
+      background-color : #{$bg-color1};
     }
   }
 }
 
 .music-article {
   .music-article-header {
+    width            : 300px;
+    //@include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.80))));
+    background-color : rgba(0, 0, 0, 0.6);
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-align(stretch);
+    @include box-pack(justify);
+
     @media screen and (orientation: landscape) {
       padding : 15px;
     }
     @media screen and (orientation: portrait) {
-      padding : 2px 0 2px 2px;
+      padding : 40px 0 40px 2px;
     }
-    background : #191919 url(../images/article-view-sidebar-bg.png);
+    //background : #191919 url(../images/article-view-sidebar-bg.png);
 
     .music-article-header-image {
       position            : relative;
@@ -257,11 +265,19 @@
     }
 
     .music-article-image {
-      position            : relative;
-      height              : 400px;
+      //position            : relative;
+      height              : 280px;
       background-size     : cover;
       background-position : center center;
       background-repeat   : no-repeat;
+
+      .music-article-image-overlay {
+        height : 100%;
+        @include display-box;
+        @include box-orient(horizontal);
+        @include box-align(stretch);
+      }
+
       /*margin-bottom:20px;*/
 
       h1 {
@@ -277,10 +293,11 @@
         width       : 100%;
       }
       h2 {
-        position       : absolute;
-        top            : 0;
-        left           : 0;
-        width          : 100%;
+        //position       : absolute;
+        //top            : 0;
+        //left           : 0;
+        //width          : 100%;
+        @include box-flex(1);
         height         : 60px;
         font-size      : 1.8em;
         line-height    : 2.3em;
@@ -292,6 +309,12 @@
         padding        : 10px 20px 0 30px;
         //border         : 1px solid rgba(255, 255, 255, .5);
       }
+    }
+
+    h1 {
+      font-size   : 2em;
+      color       : #252525;
+      font-weight : 500;
     }
 
     h3, h4 {
@@ -307,7 +330,7 @@
       font-size     : .8em;
 
       /*@media screen and (orientation:portrait) {*/
-      margin-left   : 15px;
+      //margin-left   : 15px;
       /*}*/
 
     }
@@ -319,37 +342,66 @@
       padding       : 0 15px 0 15px;
       line-height   : 1.6em;
     }
+
+    article {
+      margin: 0.7em 1.5em 0 1.5em;
+    }
   }
 
   .music-article-button {
-    display     : inline-block;
-    width       : 196px;
+    //display     : inline-block;
+    //width       : 196px;
     height      : 41px;
-    background  : transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
-    text-indent : -9999px;
+    //background  : transparent url(../images/article-buttons-sprite.png) 0 0 no-repeat;
+    //text-indent : -9999px;
+    color       : #959595;
+    font-weight : bold;
+    padding     : 0 0 0 30px;
+    position    : relative;
+    //@include box-flex(1);
+    line-height : 41px;
 
     @media screen and (orientation: landscape) {
       margin : 34px 0 0 37px;
     }
     @media screen and (orientation: portrait) {
-      margin : 1px 0 2px 120px;
-      width  : 194px;
+      margin : 1px 0 2px 30px;
+    //width  : 194px;
     }
   }
-  .music-article-button-listen {
-    background-position : 0 -42px;
+
+  .music-article-button:before {
+    position    : absolute;
+    top         : 0;
+    left        : 0;
+    width       : 20px;
+    height      : 40px;
+    line-height : 40px;
+    color       : #959595;
   }
-  .music-article-button-tweet {
-    background-position : 0 -84px;
+
+  .music-article-button-listen:before {
+    content : 'L';
   }
-  .music-article-button-toc {
-    background-position : 0 -126px;
+  .music-article-button-tweet:before {
+    content : 'T';
   }
-  .music-article-button-favorite-added {
-    background-position : 0 -167px;
+  //.music-article-button-toc {
+  //  background-position : 0 -126px;
+  //}
+  .music-article-button-favorite:before {
+    content : 'F';
   }
-  .music-article-button-pressed {
+  //.music-article-button-favorite-added {
+  //  background-position : 0 -167px;
+  //}
+  .music-article-button-pressed:before {
     background-position-x : -197px;
+    color                 : #ffffff;
+  }
+
+  .music-article-button-pressed {
+    color : #ffffff;
   }
 }
 
