@@ -2,9 +2,6 @@
 *.idea
 *iml
 *xml
-/scss/.sass-cache/
-resources/scss/.sass-cache/
-js/Music/resources/scss/.sass-cache/.*
-*.sass-cache
+html5/resources/scss/.sass-cache/
 .DS_Store
-*.sass-cache*
+*sass-cache*
