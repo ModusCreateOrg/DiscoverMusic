@@ -7,3 +7,4 @@ resources/scss/.sass-cache/
 js/Music/resources/scss/.sass-cache/.*
 *.sass-cache
 .DS_Store
+*.sass-cache*
