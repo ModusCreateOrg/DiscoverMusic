@@ -39,10 +39,10 @@ Ext.define('Music.view.GlobalToc', {
                 },
                 tpl : [
                     '<tpl for=".">',
-                        '<div class="global-toc-genre-item global-toc-genre-{data.key}">',
-                            '<div class="global-toc-genre-image" data-id="{id}" style="background-image:url(http://src.sencha.io/350/{image})">',
-                                '<h2>{name}</h2>',
-                                '<h3>{data.title}</h3>',
+                        '<div class="global-toc-genre-item global-toc-genre-{genreKey}">',
+                            '<div class="global-toc-genre-image" data-id="{id}" style="background-image:url(http://src.sencha.io/350/{image.src})">',
+                                '<h2>{genre}</h2>',
+                                '<h3>{title}</h3>',
                             '</div>',
                         '</div>',
                     '</tpl>'
@@ -60,29 +60,32 @@ Ext.define('Music.view.GlobalToc', {
     },
 
     addGenres : function(articleRecords) {
-        console.log('addGenre', articleRecords);
-        var me        = this,
-            container = me.down('#genres'),
-            articles  = [];
+//        console.log('addGenre', articleRecords);
+        var me          = this,
+            container   = me.down('#genres'),
+            rawGenres   = [],
+            tocArticles = [];
 
 //        Ext.each(range, function(article) {
 //            list.push(article.getData());
 //        });
 
         Ext.each(articleRecords, function(genreRecord) {
-            articles.push(genreRecord.data)
+//            debugger;
+            rawGenres.push(genreRecord.data);
+            tocArticles.push(genreRecord.data.data.story[0]);
         });
 
 //        debugger;
-        console.log(articles)
-        container.setData(articles)
+        console.log('rawGenres', rawGenres);
+        container.setData(tocArticles)
 
 //        var component = {
 //            xtype : 'component',
 //            cls   : 'global-toc-genre-' + genre.get('key'),
 //            data  : {
-//                genre    : Ext.apply(genre.getData(), articles.getAt(0).getData()),
-//                articles : list
+//                genre    : Ext.apply(genre.getData(), rawGenres.getAt(0).getData()),
+//                rawGenres : list
 //            },
 //            tpl   :
 //        };
