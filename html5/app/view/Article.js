@@ -68,16 +68,6 @@ Ext.define('Music.view.Article', {
             touchend   : me.onRelease
         });
         me.articleTitle = me.renderElement.down('.music-article-image');
-
-        var viewport = Ext.Viewport;
-
-        viewport.on({
-            scope             : me,
-            orientationchange : me.onOrientationChange
-        });
-
-        me.onOrientationChange(viewport, viewport.getOrientation());
-
     },
 
     onPress   : function(event){
@@ -123,19 +113,5 @@ Ext.define('Music.view.Article', {
         content.setData(modelData);
 
         return model;
-    },
-
-    onOrientationChange : function(viewport, orientation) {
-        var me = this,
-            portraitButtons = me.element.down('.music-article-header-portrait');
-
-        if (orientation === 'portrait') {
-            portraitButtons.show();
-        }
-        else {
-            portraitButtons.hide();
-        }
-
-
     }
 });
