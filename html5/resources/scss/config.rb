@@ -7,8 +7,9 @@ load File.join(dir, '..', '..', 'sdk', 'resources', 'themes')
 # Compass configurations
 sass_path    = dir
 css_path     = File.join(dir, "..", "css")
-environment  = :production
-output_style = :compressed
+#environment  = :production
+#output_style = :compressed
+output_style = (environment == :production) ? :compressed : :expanded
 
 # Push Mountain Lion Notifications
 EXCEPTIONS = [StandardError, ScriptError]
