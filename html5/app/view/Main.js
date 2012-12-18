@@ -96,11 +96,7 @@ Ext.define('Music.view.Main', {
 
         Ext.each(genreRecords, function(genreRecord) {
 //            debugger;
-<<<<<<< HEAD
-            var recordData = record.data,
-=======
             var recordData = genreRecord.data,
->>>>>>> 9258d0c5d94111a5829a62fc1b83bb446f22b491
                 genre      = recordData.name,
                 articles   = recordData.articles,
                 firstArticle = articles.getAt(0);
