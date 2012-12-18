@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 3, ../../sdk/resources/themes/stylesheets/sencha-touch/default/core/_reset.scss */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3,
 h4, h5, h6, pre, code, form, fieldset, legend,
@@ -598,200 +599,200 @@ input, textarea {
   font-size: .8em;
   padding: 1.2em;
 }
-/* line 33, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 33, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
   font-size: 75%;
 }
-/* line 51, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 51, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h1, .x-html h2, .x-html h3, .x-html h4, .x-html h5, .x-html h6 {
   font-weight: normal;
   color: #222222;
 }
-/* line 52, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 52, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h1 img, .x-html h2 img, .x-html h3 img, .x-html h4 img, .x-html h5 img, .x-html h6 img {
   margin: 0;
 }
-/* line 53, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 53, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h1 {
   font-size: 3em;
   line-height: 1;
   margin-bottom: 0.50em;
 }
-/* line 54, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 54, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
 }
-/* line 55, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 55, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h3 {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1.00em;
 }
-/* line 56, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 56, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h4 {
   font-size: 1.2em;
   line-height: 1.25;
   margin-bottom: 1.25em;
 }
-/* line 57, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 57, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h5 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.50em;
 }
-/* line 58, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 58, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h6 {
   font-size: 1em;
   font-weight: bold;
 }
-/* line 59, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 59, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html p {
   margin: 0 0 1.5em;
 }
-/* line 60, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 60, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html p .left {
   display: inline;
   float: left;
   margin: 1.5em 1.5em 1.5em 0;
   padding: 0;
 }
-/* line 61, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 61, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html p .right {
   display: inline;
   float: right;
   margin: 1.5em 0 1.5em 1.5em;
   padding: 0;
 }
-/* line 62, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 62, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html a {
   text-decoration: underline;
   color: #0066cc;
 }
-/* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 18, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:visited {
   color: #004c99;
 }
-/* line 21, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 21, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:focus {
   color: #0099ff;
 }
-/* line 24, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 24, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:hover {
   color: #0099ff;
 }
-/* line 27, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 27, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:active {
   color: #bf00ff;
 }
-/* line 63, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 63, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html blockquote {
   margin: 1.5em;
   color: #666666;
   font-style: italic;
 }
-/* line 64, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 64, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html strong, .x-html dfn {
   font-weight: bold;
 }
-/* line 65, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 65, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html em, .x-html dfn {
   font-style: italic;
 }
-/* line 66, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 66, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html sup, .x-html sub {
   line-height: 0;
 }
-/* line 67, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 67, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html abbr, .x-html acronym {
   border-bottom: 1px dotted #666666;
 }
-/* line 68, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 68, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html address {
   margin: 0 0 1.5em;
   font-style: italic;
 }
-/* line 69, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 69, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html del {
   color: #666666;
 }
-/* line 70, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 70, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html pre {
   margin: 1.5em 0;
   white-space: pre;
 }
-/* line 71, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 71, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html pre, .x-html code, .x-html tt {
   font: 1em "andale mono", "lucida console", monospace;
   line-height: 1.5;
 }
-/* line 72, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 72, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html li ul, .x-html li ol {
   margin: 0;
 }
-/* line 73, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 73, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html ul, .x-html ol {
   margin: 0 1.5em 1.5em 0;
   padding-left: 1.5em;
 }
-/* line 74, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 74, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html ul {
   list-style-type: disc;
 }
-/* line 75, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 75, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html ol {
   list-style-type: decimal;
 }
-/* line 76, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 76, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html dl {
   margin: 0 0 1.5em 0;
 }
-/* line 77, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 77, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html dl dt {
   font-weight: bold;
 }
-/* line 78, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 78, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html dd {
   margin-left: 1.5em;
 }
-/* line 79, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 79, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html table {
   margin-bottom: 1.4em;
   width: 100%;
 }
-/* line 80, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 80, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html th {
   font-weight: bold;
 }
-/* line 81, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 81, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html thead th {
   background: #c3d9ff;
 }
-/* line 82, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 82, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html th, .x-html td, .x-html caption {
   padding: 4px 10px 4px 5px;
 }
-/* line 85, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 85, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html table.striped tr:nth-child(even) td,
 .x-html table tr.even td {
   background: #e5ecf9;
 }
-/* line 86, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 86, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html tfoot {
   font-style: italic;
 }
-/* line 87, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 87, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html caption {
   background: #eeeeee;
 }
-/* line 88, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 88, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html .quiet {
   color: #666666;
 }
-/* line 89, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 89, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html .loud {
   color: #111111;
 }
@@ -9628,24 +9629,24 @@ body {
 
 /* line 12, ../scss/include/_home.scss */
 .music-app-title {
-  background: url("../images/topbar-texture.png") repeat-x;
+  background-color: #252525;
   margin: 0 !important;
   border-bottom: 2px solid black !important;
   border-top: 1px solid #767676 !important;
   z-index: 1;
   height: 60px;
 }
-/* line 22, ../scss/include/_home.scss */
+/* line 23, ../scss/include/_home.scss */
 .music-app-title .x-button-normal {
   background: none;
   border: none;
 }
-/* line 25, ../scss/include/_home.scss */
+/* line 26, ../scss/include/_home.scss */
 .music-app-title .x-button-normal .x-button-icon {
   width: 30px;
   height: 30px;
 }
-/* line 31, ../scss/include/_home.scss */
+/* line 32, ../scss/include/_home.scss */
 .music-app-title .x-innerhtml {
   font-family: "nevisBold";
   font-weight: 300;
@@ -9659,11 +9660,11 @@ body {
   margin-left: 8px;
 }
 
-/* line 47, ../scss/include/_home.scss */
+/* line 48, ../scss/include/_home.scss */
 .music-about-panel {
   margin-top: 10px;
 }
-/* line 49, ../scss/include/_home.scss */
+/* line 50, ../scss/include/_home.scss */
 .music-about-panel h1 {
   color: #787878;
   text-shadow: 0px 2px #000;
@@ -9674,7 +9675,7 @@ body {
   text-align: center;
   padding: 18px 0px;
 }
-/* line 59, ../scss/include/_home.scss */
+/* line 60, ../scss/include/_home.scss */
 .music-about-panel p {
   color: #787878;
   font-size: 15px;
@@ -9682,35 +9683,35 @@ body {
   line-height: 25px;
   font-size: 15px;
 }
-/* line 65, ../scss/include/_home.scss */
+/* line 66, ../scss/include/_home.scss */
 .music-about-panel p span {
   color: #999;
   text-decoration: none;
   font-weight: bold;
 }
-/* line 71, ../scss/include/_home.scss */
+/* line 72, ../scss/include/_home.scss */
 .music-about-panel .x-button {
   height: 40px;
   width: 250px;
   margin: 20px auto;
 }
 
-/* line 78, ../scss/include/_home.scss */
+/* line 79, ../scss/include/_home.scss */
 .favorite-icon {
   background: transparent url(../images/heart.png) center center no-repeat !important;
 }
 
-/* line 82, ../scss/include/_home.scss */
+/* line 83, ../scss/include/_home.scss */
 .search-icon {
   background: transparent url(../images/search3.png) center center no-repeat !important;
 }
 
-/* line 86, ../scss/include/_home.scss */
+/* line 87, ../scss/include/_home.scss */
 .toc-icon {
   background: transparent url(../images/toc-mask.png) center center no-repeat !important;
 }
 
-/* line 90, ../scss/include/_home.scss */
+/* line 91, ../scss/include/_home.scss */
 .find-stations-icon {
   background: transparent url(../images/radar.png) center center no-repeat !important;
 }
@@ -9739,10 +9740,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-rock {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
-  text-shadow: 0px 1px 1px #b37500;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
+  text-shadow: 0px 1px 1px #2d5203;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -9754,10 +9755,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-rock .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
-  text-shadow: 0px 1px 1px #b37500;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
+  text-shadow: 0px 1px 1px #2d5203;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -9868,17 +9869,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-rock {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
-  text-shadow: 0px 1px 1px #b37500;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
+  text-shadow: 0px 1px 1px #2d5203;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-rock {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa700), color-stop(100%, #ffcc00));
-  background-image: -webkit-linear-gradient(#ffa700, #ffcc00);
-  background-image: linear-gradient(#ffa700, #ffcc00);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -9900,10 +9901,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-classical {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
-  text-shadow: 0px 1px 1px #274e0a;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
+  text-shadow: 0px 1px 1px #c24309;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -9915,10 +9916,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-classical .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
-  text-shadow: 0px 1px 1px #274e0a;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
+  text-shadow: 0px 1px 1px #c24309;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10029,17 +10030,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-classical {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
-  text-shadow: 0px 1px 1px #274e0a;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
+  text-shadow: 0px 1px 1px #c24309;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-classical {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #499213), color-stop(100%, #66cc00));
-  background-image: -webkit-linear-gradient(#499213, #66cc00);
-  background-image: linear-gradient(#499213, #66cc00);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -10061,10 +10062,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-jazzBlues {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
-  text-shadow: 0px 1px 1px #0e637f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  text-shadow: 0px 1px 1px #3d1b57;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10076,10 +10077,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-jazzBlues .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
-  text-shadow: 0px 1px 1px #0e637f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  text-shadow: 0px 1px 1px #3d1b57;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10190,17 +10191,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-jazzBlues {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
-  text-shadow: 0px 1px 1px #0e637f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  text-shadow: 0px 1px 1px #3d1b57;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-jazzBlues {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1699c4), color-stop(100%, #33ccff));
-  background-image: -webkit-linear-gradient(#1699c4, #33ccff);
-  background-image: linear-gradient(#1699c4, #33ccff);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -10222,10 +10223,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-world {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
-  text-shadow: 0px 1px 1px #0f0416;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
+  text-shadow: 0px 1px 1px #3d1a56;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10237,10 +10238,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-world .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
-  text-shadow: 0px 1px 1px #0f0416;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
+  text-shadow: 0px 1px 1px #3d1a56;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10351,17 +10352,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-world {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
-  text-shadow: 0px 1px 1px #0f0416;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
+  text-shadow: 0px 1px 1px #3d1a56;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-world {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #391057), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#391057, #662c91);
-  background-image: linear-gradient(#391057, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -10383,10 +10384,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-hipHop {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
-  text-shadow: 0px 1px 1px #610b61;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
+  text-shadow: 0px 1px 1px #002d5a;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10398,10 +10399,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-hipHop .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
-  text-shadow: 0px 1px 1px #610b61;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
+  text-shadow: 0px 1px 1px #002d5a;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10512,17 +10513,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-hipHop {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
-  text-shadow: 0px 1px 1px #610b61;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
+  text-shadow: 0px 1px 1px #002d5a;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-hipHop {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a612a6), color-stop(100%, #ff00ff));
-  background-image: -webkit-linear-gradient(#a612a6, #ff00ff);
-  background-image: linear-gradient(#a612a6, #ff00ff);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -10705,10 +10706,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-pop {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
-  text-shadow: 0px 1px 1px #441e7c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
+  text-shadow: 0px 1px 1px #a0005f;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10720,10 +10721,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-pop .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
-  text-shadow: 0px 1px 1px #441e7c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
+  text-shadow: 0px 1px 1px #a0005f;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10834,17 +10835,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pop {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
-  text-shadow: 0px 1px 1px #441e7c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
+  text-shadow: 0px 1px 1px #a0005f;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-pop {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662dba), color-stop(100%, #893ffc));
-  background-image: -webkit-linear-gradient(#662dba, #893ffc);
-  background-image: linear-gradient(#662dba, #893ffc);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -10866,10 +10867,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-latinAlternative {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
-  text-shadow: 0px 1px 1px #870f0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
+  text-shadow: 0px 1px 1px #a19c14;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10881,10 +10882,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-latinAlternative .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
-  text-shadow: 0px 1px 1px #870f0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
+  text-shadow: 0px 1px 1px #a19c14;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10995,17 +10996,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-latinAlternative {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
-  text-shadow: 0px 1px 1px #870f0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
+  text-shadow: 0px 1px 1px #a19c14;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-latinAlternative {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cd1712), color-stop(100%, #ff1f16));
-  background-image: -webkit-linear-gradient(#cd1712, #ff1f16);
-  background-image: linear-gradient(#cd1712, #ff1f16);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -11027,10 +11028,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-country {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
-  text-shadow: 0px 1px 1px #964c0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  text-shadow: 0px 1px 1px #e89e00;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -11042,10 +11043,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-country .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
-  text-shadow: 0px 1px 1px #964c0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  text-shadow: 0px 1px 1px #e89e00;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -11156,17 +11157,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-country {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
-  text-shadow: 0px 1px 1px #964c0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  text-shadow: 0px 1px 1px #e89e00;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-country {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dd7012), color-stop(100%, #ff8200));
-  background-image: -webkit-linear-gradient(#dd7012, #ff8200);
-  background-image: linear-gradient(#dd7012, #ff8200);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
 }
 
 /* line 10, ../scss/include/_article.scss */
@@ -11188,10 +11189,10 @@ body {
 }
 /* line 27, ../scss/include/_article.scss */
 .music-article-preview .music-article-rnb {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
-  text-shadow: 0px 1px 1px #5e0f33;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
+  text-shadow: 0px 1px 1px #863184;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -11203,10 +11204,10 @@ body {
 }
 /* line 40, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-rnb .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
-  text-shadow: 0px 1px 1px #5e0f33;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
+  text-shadow: 0px 1px 1px #863184;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -11317,17 +11318,17 @@ body {
 }
 /* line 133, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-rnb {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
-  text-shadow: 0px 1px 1px #5e0f33;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
+  text-shadow: 0px 1px 1px #863184;
 }
 /* line 138, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-rnb {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a01a57), color-stop(100%, #ff2d8a));
-  background-image: -webkit-linear-gradient(#a01a57, #ff2d8a);
-  background-image: linear-gradient(#a01a57, #ff2d8a);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
 }
 
 /* line 158, ../scss/include/_article.scss */
@@ -11575,9 +11576,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11590,7 +11591,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-rock h2 {
-  background-color: #ffcc00;
+  background-color: #559c06;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11598,9 +11599,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11613,7 +11614,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-classical h2 {
-  background-color: #66cc00;
+  background-color: #f56522;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11621,9 +11622,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11636,7 +11637,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-jazzBlues h2 {
-  background-color: #33ccff;
+  background-color: #662d91;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11644,9 +11645,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11667,9 +11668,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11682,7 +11683,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-hipHop h2 {
-  background-color: magenta;
+  background-color: #0054a6;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11713,9 +11714,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11728,7 +11729,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-latinAlternative h2 {
-  background-color: #ff1f16;
+  background-color: #e3dc1e;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11736,9 +11737,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11751,7 +11752,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-pop h2 {
-  background-color: #893ffc;
+  background-color: #ec008c;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11759,9 +11760,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11774,7 +11775,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-country h2 {
-  background-color: #ff8200;
+  background-color: #ffbf35;
 }
 
 /* line 181, ../scss/include/_article.scss */
@@ -11782,9 +11783,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11797,7 +11798,7 @@ body {
 
 /* line 198, ../scss/include/_article.scss */
 .music-article .music-article-rnb h2 {
-  background-color: #ff2d8a;
+  background-color: #bc48b9;
 }
 
 /* line 1, ../scss/include/_drawer.scss */
@@ -11963,10 +11964,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
-  text-shadow: 0px 1px 1px #b37500;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
+  text-shadow: 0px 1px 1px #2d5203;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -11981,7 +11982,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #806600;
+  border-right: 10px solid #122101;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12021,10 +12022,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
-  text-shadow: 0px 1px 1px #274e0a;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
+  text-shadow: 0px 1px 1px #c24309;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12039,7 +12040,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #264d00;
+  border-right: 10px solid #913307;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12079,10 +12080,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
-  text-shadow: 0px 1px 1px #0e637f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  text-shadow: 0px 1px 1px #3d1b57;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12097,7 +12098,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #0086b3;
+  border-right: 10px solid #220f30;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12137,10 +12138,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
-  text-shadow: 0px 1px 1px #0f0416;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
+  text-shadow: 0px 1px 1px #3d1a56;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12195,10 +12196,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
-  text-shadow: 0px 1px 1px #610b61;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
+  text-shadow: 0px 1px 1px #002d5a;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12213,7 +12214,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #80007f;
+  border-right: 10px solid #001326;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12311,10 +12312,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
-  text-shadow: 0px 1px 1px #441e7c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
+  text-shadow: 0px 1px 1px #a0005f;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12329,7 +12330,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #4a03b9;
+  border-right: 10px solid #6d0040;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12369,10 +12370,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
-  text-shadow: 0px 1px 1px #870f0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
+  text-shadow: 0px 1px 1px #a19c14;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12387,7 +12388,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #960600;
+  border-right: 10px solid #73700e;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12427,10 +12428,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
-  text-shadow: 0px 1px 1px #964c0c;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  text-shadow: 0px 1px 1px #e89e00;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12445,7 +12446,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #804100;
+  border-right: 10px solid #b47b00;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12485,10 +12486,10 @@ body {
   line-height: 35px;
   font-family: "nevisBold";
   text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
-  text-shadow: 0px 1px 1px #5e0f33;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
+  text-shadow: 0px 1px 1px #863184;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   padding: 0 10px 0 15px;
@@ -12503,7 +12504,7 @@ body {
   margin-top: 35px;
   border-top: 0px solid transparent;
   border-bottom: 20px solid transparent;
-  border-right: 10px solid #ad004c;
+  border-right: 10px solid #61245f;
 }
 
 /* line 167, ../scss/include/_drawer.scss */
@@ -12677,7 +12678,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 /* line 19, ../scss/include/_toc.scss */
@@ -12740,12 +12741,12 @@ body {
   -webkit-box-orient: horizontal;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12753,38 +12754,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #996400;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #1f3a02;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -12792,19 +12793,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-article-pressed {
-  background-color: #ffcc00;
+  background-color: #559c06;
   color: #fff;
-  text-shadow: 0px 1px #997a00;
+  text-shadow: 0px 1px #1f3a02;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12812,38 +12813,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #1c3807;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #a93b08;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -12851,19 +12852,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-article-pressed {
-  background-color: #66cc00;
+  background-color: #f56522;
   color: #fff;
-  text-shadow: 0px 1px #336600;
+  text-shadow: 0px 1px #a93b08;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12871,38 +12872,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #0c5168;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #2f1543;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -12910,19 +12911,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-article-pressed {
-  background-color: #33ccff;
+  background-color: #662d91;
   color: #fff;
-  text-shadow: 0px 1px #0099cc;
+  text-shadow: 0px 1px #2f1543;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12930,38 +12931,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #010001;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #2f1443;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -12969,19 +12970,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-article-pressed {
   background-color: #662c91;
   color: #fff;
   text-shadow: 0px 1px #2f1443;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12989,38 +12990,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #4a084a;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #002040;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -13028,19 +13029,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-article-pressed {
-  background-color: magenta;
+  background-color: #0054a6;
   color: #fff;
-  text-shadow: 0px 1px #990099;
+  text-shadow: 0px 1px #002040;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13048,38 +13049,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
   background-image: linear-gradient(#212121, #0a0a0a);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
   color: #fff;
   font-family: "nevisBold";
+  height: 30px;
   text-shadow: 0px 1px black;
-  font-size: 0.85em;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -13087,19 +13088,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-article-pressed {
   background-color: #212121;
   color: #fff;
   text-shadow: 0px 1px black;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13107,38 +13108,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #391968;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #86004f;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -13146,19 +13147,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-article-pressed {
-  background-color: #893ffc;
+  background-color: #ec008c;
   color: #fff;
-  text-shadow: 0px 1px #5403d2;
+  text-shadow: 0px 1px #86004f;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13166,38 +13167,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #6f0c0a;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #8a8611;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -13205,19 +13206,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-article-pressed {
-  background-color: #ff1f16;
+  background-color: #e3dc1e;
   color: #fff;
-  text-shadow: 0px 1px #af0700;
+  text-shadow: 0px 1px #8a8611;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13225,38 +13226,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #7f400a;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #ce8d00;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -13264,19 +13265,19 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-article-pressed {
-  background-color: #ff8200;
+  background-color: #ffbf35;
   color: #fff;
-  text-shadow: 0px 1px #994e00;
+  text-shadow: 0px 1px #ce8d00;
 }
 
-/* line 77, ../scss/include/_toc.scss */
+/* line 76, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 80, ../scss/include/_toc.scss */
+/* line 79, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13284,38 +13285,38 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 88, ../scss/include/_toc.scss */
+/* line 87, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.65);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
   color: #fff;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #480c27;
-  font-size: 0.85em;
+  height: 30px;
+  text-shadow: 0px 1px #742a72;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: 10px;
-  text-align: center;
+  padding-left: 30px;
+  text-align: left;
   margin-bottom: 10px;
 }
-/* line 103, ../scss/include/_toc.scss */
+/* line 102, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
-  width: 100%;
+  height: 161px;
+  width: 309px;
   bottom: 0;
+  line-height: 30px;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 116, ../scss/include/_toc.scss */
+/* line 117, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb p {
   font-size: 0.85em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
@@ -13323,17 +13324,17 @@ body {
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 127, ../scss/include/_toc.scss */
+/* line 128, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-article-pressed {
-  background-color: #ff2d8a;
+  background-color: #bc48b9;
   color: #fff;
-  text-shadow: 0px 1px #c60058;
+  text-shadow: 0px 1px #742a72;
 }
 
 /************************************
 *	GENRE TOC
 ************************************/
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-rock {
   position: relative;
   height: 645px;
@@ -13343,12 +13344,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-rock {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-rock h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13362,11 +13363,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-rock h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffcc00), color-stop(100%, #ffa700));
-  background-image: -webkit-linear-gradient(#ffcc00, #ffa700);
-  background-image: linear-gradient(#ffcc00, #ffa700);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -13380,16 +13381,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #996400;
+  text-shadow: 0px 1px #1f3a02;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rock {
   position: relative;
   height: 308px;
@@ -13398,7 +13399,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13412,15 +13413,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #996400;
+  text-shadow: 0px 1px #1f3a02;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rock {
   position: relative;
   height: 308px;
@@ -13429,7 +13430,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13445,12 +13446,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-classical {
   position: relative;
   height: 645px;
@@ -13460,12 +13461,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-classical {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-classical h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13479,11 +13480,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-classical h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66cc00), color-stop(100%, #499213));
-  background-image: -webkit-linear-gradient(#66cc00, #499213);
-  background-image: linear-gradient(#66cc00, #499213);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -13497,16 +13498,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #1c3807;
+  text-shadow: 0px 1px #a93b08;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-classical {
   position: relative;
   height: 308px;
@@ -13515,7 +13516,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13529,15 +13530,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #1c3807;
+  text-shadow: 0px 1px #a93b08;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-classical {
   position: relative;
   height: 308px;
@@ -13546,7 +13547,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13562,12 +13563,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues {
   position: relative;
   height: 645px;
@@ -13577,12 +13578,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-jazzBlues {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13596,11 +13597,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33ccff), color-stop(100%, #1699c4));
-  background-image: -webkit-linear-gradient(#33ccff, #1699c4);
-  background-image: linear-gradient(#33ccff, #1699c4);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -13614,16 +13615,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #0c5168;
+  text-shadow: 0px 1px #2f1543;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-jazzBlues {
   position: relative;
   height: 308px;
@@ -13632,7 +13633,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13646,15 +13647,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #0c5168;
+  text-shadow: 0px 1px #2f1543;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-jazzBlues {
   position: relative;
   height: 308px;
@@ -13663,7 +13664,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13679,12 +13680,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-world {
   position: relative;
   height: 645px;
@@ -13694,12 +13695,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-world {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-world h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13713,11 +13714,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-world h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #391057));
-  background-image: -webkit-linear-gradient(#662c91, #391057);
-  background-image: linear-gradient(#662c91, #391057);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -13731,16 +13732,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #010001;
+  text-shadow: 0px 1px #2f1443;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-world {
   position: relative;
   height: 308px;
@@ -13749,7 +13750,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13763,15 +13764,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #010001;
+  text-shadow: 0px 1px #2f1443;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-world {
   position: relative;
   height: 308px;
@@ -13780,7 +13781,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13796,12 +13797,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop {
   position: relative;
   height: 645px;
@@ -13811,12 +13812,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-hipHop {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13830,11 +13831,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff00ff), color-stop(100%, #a612a6));
-  background-image: -webkit-linear-gradient(#ff00ff, #a612a6);
-  background-image: linear-gradient(#ff00ff, #a612a6);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -13848,16 +13849,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #4a084a;
+  text-shadow: 0px 1px #002040;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-hipHop {
   position: relative;
   height: 308px;
@@ -13866,7 +13867,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13880,15 +13881,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #4a084a;
+  text-shadow: 0px 1px #002040;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-hipHop {
   position: relative;
   height: 308px;
@@ -13897,7 +13898,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13913,12 +13914,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance {
   position: relative;
   height: 645px;
@@ -13928,12 +13929,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-electronicDance {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13947,7 +13948,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
@@ -13968,13 +13969,13 @@ body {
   text-shadow: 0px 1px black;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-electronicDance {
   position: relative;
   height: 308px;
@@ -13983,7 +13984,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13999,13 +14000,13 @@ body {
   font-family: "nevisBold";
   text-shadow: 0px 1px black;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-electronicDance {
   position: relative;
   height: 308px;
@@ -14014,7 +14015,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14030,12 +14031,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-pop {
   position: relative;
   height: 645px;
@@ -14045,12 +14046,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-pop {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-pop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14064,11 +14065,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-pop h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #893ffc), color-stop(100%, #662dba));
-  background-image: -webkit-linear-gradient(#893ffc, #662dba);
-  background-image: linear-gradient(#893ffc, #662dba);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -14082,16 +14083,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #391968;
+  text-shadow: 0px 1px #86004f;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-pop {
   position: relative;
   height: 308px;
@@ -14100,7 +14101,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14114,15 +14115,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #391968;
+  text-shadow: 0px 1px #86004f;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-pop {
   position: relative;
   height: 308px;
@@ -14131,7 +14132,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14147,12 +14148,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative {
   position: relative;
   height: 645px;
@@ -14162,12 +14163,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-latinAlternative {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14181,11 +14182,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1f16), color-stop(100%, #cd1712));
-  background-image: -webkit-linear-gradient(#ff1f16, #cd1712);
-  background-image: linear-gradient(#ff1f16, #cd1712);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -14199,16 +14200,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #6f0c0a;
+  text-shadow: 0px 1px #8a8611;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-latinAlternative {
   position: relative;
   height: 308px;
@@ -14217,7 +14218,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14231,15 +14232,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #6f0c0a;
+  text-shadow: 0px 1px #8a8611;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-latinAlternative {
   position: relative;
   height: 308px;
@@ -14248,7 +14249,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14264,12 +14265,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-country {
   position: relative;
   height: 645px;
@@ -14279,12 +14280,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-country {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-country h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14298,11 +14299,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-country h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8200), color-stop(100%, #dd7012));
-  background-image: -webkit-linear-gradient(#ff8200, #dd7012);
-  background-image: linear-gradient(#ff8200, #dd7012);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -14316,16 +14317,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #7f400a;
+  text-shadow: 0px 1px #ce8d00;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-country {
   position: relative;
   height: 308px;
@@ -14334,7 +14335,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14348,15 +14349,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #7f400a;
+  text-shadow: 0px 1px #ce8d00;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-country {
   position: relative;
   height: 308px;
@@ -14365,7 +14366,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14381,12 +14382,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 153, ../scss/include/_toc.scss */
+/* line 154, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb {
   position: relative;
   height: 645px;
@@ -14396,12 +14397,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 153, ../scss/include/_toc.scss */
+  /* line 154, ../scss/include/_toc.scss */
   .genre-toc-featured-rnb {
     height: 385px;
   }
 }
-/* line 162, ../scss/include/_toc.scss */
+/* line 163, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14415,11 +14416,11 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 175, ../scss/include/_toc.scss */
+/* line 176, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2d8a), color-stop(100%, #a01a57));
-  background-image: -webkit-linear-gradient(#ff2d8a, #a01a57);
-  background-image: linear-gradient(#ff2d8a, #a01a57);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -14433,16 +14434,16 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #480c27;
+  text-shadow: 0px 1px #742a72;
 }
 
-/* line 194, ../scss/include/_toc.scss */
+/* line 195, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 199, ../scss/include/_toc.scss */
+/* line 200, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rnb {
   position: relative;
   height: 308px;
@@ -14451,7 +14452,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 207, ../scss/include/_toc.scss */
+/* line 208, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14465,15 +14466,15 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #480c27;
+  text-shadow: 0px 1px #742a72;
 }
-/* line 223, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 228, ../scss/include/_toc.scss */
+/* line 229, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rnb {
   position: relative;
   height: 308px;
@@ -14482,7 +14483,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 236, ../scss/include/_toc.scss */
+/* line 237, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14498,7 +14499,7 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 251, ../scss/include/_toc.scss */
+/* line 252, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
