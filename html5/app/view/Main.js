@@ -95,6 +95,7 @@ Ext.define('Music.view.Main', {
         me.globalToc.addGenres(genreRecords);
 
         Ext.each(genreRecords, function(record) {
+//            debugger;
             var recordData = record.data,
                 genre      = recordData.name,
                 articles   = recordData.articles;

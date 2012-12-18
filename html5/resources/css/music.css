@@ -9629,24 +9629,24 @@ body {
 
 /* line 12, ../scss/include/_home.scss */
 .music-app-title {
-  background: url("../images/topbar-texture.png") repeat-x;
+  background-color: #252525;
   margin: 0 !important;
   border-bottom: 2px solid black !important;
   border-top: 1px solid #767676 !important;
   z-index: 1;
   height: 60px;
 }
-/* line 22, ../scss/include/_home.scss */
+/* line 23, ../scss/include/_home.scss */
 .music-app-title .x-button-normal {
   background: none;
   border: none;
 }
-/* line 25, ../scss/include/_home.scss */
+/* line 26, ../scss/include/_home.scss */
 .music-app-title .x-button-normal .x-button-icon {
   width: 30px;
   height: 30px;
 }
-/* line 31, ../scss/include/_home.scss */
+/* line 32, ../scss/include/_home.scss */
 .music-app-title .x-innerhtml {
   font-family: "nevisBold";
   font-weight: 300;
@@ -9660,11 +9660,11 @@ body {
   margin-left: 8px;
 }
 
-/* line 47, ../scss/include/_home.scss */
+/* line 48, ../scss/include/_home.scss */
 .music-about-panel {
   margin-top: 10px;
 }
-/* line 49, ../scss/include/_home.scss */
+/* line 50, ../scss/include/_home.scss */
 .music-about-panel h1 {
   color: #787878;
   text-shadow: 0px 2px #000;
@@ -9675,7 +9675,7 @@ body {
   text-align: center;
   padding: 18px 0px;
 }
-/* line 59, ../scss/include/_home.scss */
+/* line 60, ../scss/include/_home.scss */
 .music-about-panel p {
   color: #787878;
   font-size: 15px;
@@ -9683,35 +9683,35 @@ body {
   line-height: 25px;
   font-size: 15px;
 }
-/* line 65, ../scss/include/_home.scss */
+/* line 66, ../scss/include/_home.scss */
 .music-about-panel p span {
   color: #999;
   text-decoration: none;
   font-weight: bold;
 }
-/* line 71, ../scss/include/_home.scss */
+/* line 72, ../scss/include/_home.scss */
 .music-about-panel .x-button {
   height: 40px;
   width: 250px;
   margin: 20px auto;
 }
 
-/* line 78, ../scss/include/_home.scss */
+/* line 79, ../scss/include/_home.scss */
 .favorite-icon {
   background: transparent url(../images/heart.png) center center no-repeat !important;
 }
 
-/* line 82, ../scss/include/_home.scss */
+/* line 83, ../scss/include/_home.scss */
 .search-icon {
   background: transparent url(../images/search3.png) center center no-repeat !important;
 }
 
-/* line 86, ../scss/include/_home.scss */
+/* line 87, ../scss/include/_home.scss */
 .toc-icon {
   background: transparent url(../images/toc-mask.png) center center no-repeat !important;
 }
 
-/* line 90, ../scss/include/_home.scss */
+/* line 91, ../scss/include/_home.scss */
 .find-stations-icon {
   background: transparent url(../images/radar.png) center center no-repeat !important;
 }
@@ -11357,10 +11357,105 @@ body {
 /* line 206, ../scss/include/_article.scss */
 .music-article .x-scroll-view {
   background: #e7e7e7 url(../images/article-bg.png);
-  -webkit-box-shadow: inset rgba(0, 0, 0, 0.7) 5px 0px 5px;
-  box-shadow: inset rgba(0, 0, 0, 0.7) 5px 0px 5px;
 }
-/* line 211, ../scss/include/_article.scss */
+@media screen and (orientation: portrait) {
+  /* line 205, ../scss/include/_article.scss */
+  .music-article {
+    padding: 0;
+  }
+}
+/* line 215, ../scss/include/_article.scss */
+.music-article .music-article-image {
+  height: 280px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /*margin-bottom:20px;*/
+}
+/* line 222, ../scss/include/_article.scss */
+.music-article .music-article-image .music-article-image-overlay {
+  height: 100%;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-align: stretch;
+  box-align: stretch;
+}
+/* line 231, ../scss/include/_article.scss */
+.music-article .music-article-image h1 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+  font-family: "nevisBold";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5em;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 20px 25px;
+  width: 100%;
+}
+/* line 243, ../scss/include/_article.scss */
+.music-article .music-article-image h2 {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  height: 60px;
+  font-size: 1.8em;
+  line-height: 2.3em;
+  border: none;
+  color: #fff;
+  font-family: "nevisBold";
+  text-transform: uppercase;
+  padding: 10px 20px 0 30px;
+}
+/* line 262, ../scss/include/_article.scss */
+.music-article h1 {
+  font-size: 2em;
+  color: #252525;
+  font-weight: 500;
+}
+/* line 268, ../scss/include/_article.scss */
+.music-article h3, .music-article h4 {
+  color: #7A7A7A;
+  font-weight: normal;
+  font-size: 1em;
+  text-shadow: 0px 1px white;
+  font-weight: bold;
+}
+/* line 276, ../scss/include/_article.scss */
+.music-article h4 {
+  margin-bottom: 20px;
+  font-size: .8em;
+  /*@media screen and (orientation:portrait) {*/
+  /*}*/
+}
+/* line 286, ../scss/include/_article.scss */
+.music-article p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #111;
+  padding: 0;
+  line-height: 1.6em;
+}
+/* line 294, ../scss/include/_article.scss */
+.music-article article {
+  margin: 0.7em 1.5em 0 1.5em;
+  position: relative;
+}
+/* line 299, ../scss/include/_article.scss */
+.music-article article:after {
+  position: absolute;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(250, 250, 250, 0.65)), color-stop(100%, rgba(250, 250, 250, 0.9)));
+  background-image: -webkit-linear-gradient(rgba(250, 250, 250, 0.65), rgba(250, 250, 250, 0.9));
+  background-image: linear-gradient(rgba(250, 250, 250, 0.65), rgba(250, 250, 250, 0.9));
+}
+/* line 308, ../scss/include/_article.scss */
 .music-article .music-article-header {
   width: 300px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -11374,18 +11469,18 @@ body {
   box-pack: justify;
 }
 @media screen and (orientation: landscape) {
-  /* line 211, ../scss/include/_article.scss */
+  /* line 308, ../scss/include/_article.scss */
   .music-article .music-article-header {
     padding: 15px;
   }
 }
 @media screen and (orientation: portrait) {
-  /* line 211, ../scss/include/_article.scss */
+  /* line 308, ../scss/include/_article.scss */
   .music-article .music-article-header {
     padding: 40px 0 40px 2px;
   }
 }
-/* line 228, ../scss/include/_article.scss */
+/* line 325, ../scss/include/_article.scss */
 .music-article .music-article-header .music-article-header-image {
   position: relative;
   width: 487px;
@@ -11394,7 +11489,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 236, ../scss/include/_article.scss */
+/* line 333, ../scss/include/_article.scss */
 .music-article .music-article-header .music-article-header-image h1 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -11409,7 +11504,7 @@ body {
   padding: 20px 25px;
   width: 100%;
 }
-/* line 250, ../scss/include/_article.scss */
+/* line 347, ../scss/include/_article.scss */
 .music-article .music-article-header p {
   margin: 15px 15px 0px 15px;
   font-size: 0.7em;
@@ -11418,108 +11513,7 @@ body {
   margin: 15px 15px 0px 15px;
   font-style: italic;
 }
-/* line 260, ../scss/include/_article.scss */
-.music-article .music-article-content {
-  padding: 10px;
-}
-@media screen and (orientation: portrait) {
-  /* line 260, ../scss/include/_article.scss */
-  .music-article .music-article-content {
-    padding: 0;
-  }
-}
-/* line 267, ../scss/include/_article.scss */
-.music-article .music-article-content .music-article-image {
-  height: 280px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  /*margin-bottom:20px;*/
-}
-/* line 274, ../scss/include/_article.scss */
-.music-article .music-article-content .music-article-image .music-article-image-overlay {
-  height: 100%;
-  display: -webkit-box;
-  display: box;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-box-align: stretch;
-  box-align: stretch;
-}
-/* line 283, ../scss/include/_article.scss */
-.music-article .music-article-content .music-article-image h1 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  font-family: "nevisBold";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 1.5em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  color: #fff;
-  padding: 20px 25px;
-  width: 100%;
-}
-/* line 295, ../scss/include/_article.scss */
-.music-article .music-article-content .music-article-image h2 {
-  -webkit-box-flex: 1;
-  box-flex: 1;
-  height: 60px;
-  font-size: 1.8em;
-  line-height: 2.3em;
-  border: none;
-  color: #fff;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  padding: 10px 20px 0 30px;
-}
-/* line 314, ../scss/include/_article.scss */
-.music-article .music-article-content h1 {
-  font-size: 2em;
-  color: #252525;
-  font-weight: 500;
-}
-/* line 320, ../scss/include/_article.scss */
-.music-article .music-article-content h3, .music-article .music-article-content h4 {
-  color: #7A7A7A;
-  font-weight: normal;
-  font-size: 1em;
-  text-shadow: 0px 1px white;
-  font-weight: bold;
-}
-/* line 328, ../scss/include/_article.scss */
-.music-article .music-article-content h4 {
-  margin-bottom: 20px;
-  font-size: .8em;
-  /*@media screen and (orientation:portrait) {*/
-  /*}*/
-}
-/* line 338, ../scss/include/_article.scss */
-.music-article .music-article-content p {
-  margin-bottom: 15px;
-  font-size: 1em;
-  color: #111;
-  padding: 0 15px 0 15px;
-  line-height: 1.6em;
-}
-/* line 346, ../scss/include/_article.scss */
-.music-article .music-article-content article {
-  margin: 0.7em 1.5em 0 1.5em;
-  position: relative;
-}
-/* line 351, ../scss/include/_article.scss */
-.music-article .music-article-content article:after {
-  position: absolute;
-  height: 50px;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(250, 250, 250, 0.65)), color-stop(100%, rgba(250, 250, 250, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(250, 250, 250, 0.65), rgba(250, 250, 250, 0.9));
-  background-image: linear-gradient(rgba(250, 250, 250, 0.65), rgba(250, 250, 250, 0.9));
-}
-/* line 361, ../scss/include/_article.scss */
+/* line 363, ../scss/include/_article.scss */
 .music-article .music-article-button {
   height: 41px;
   color: #959595;
@@ -11529,18 +11523,18 @@ body {
   line-height: 41px;
 }
 @media screen and (orientation: landscape) {
-  /* line 361, ../scss/include/_article.scss */
+  /* line 363, ../scss/include/_article.scss */
   .music-article .music-article-button {
     margin: 34px 0 0 37px;
   }
 }
 @media screen and (orientation: portrait) {
-  /* line 361, ../scss/include/_article.scss */
+  /* line 363, ../scss/include/_article.scss */
   .music-article .music-article-button {
     margin: 1px 0 2px 30px;
   }
 }
-/* line 383, ../scss/include/_article.scss */
+/* line 385, ../scss/include/_article.scss */
 .music-article .music-article-button:before {
   position: absolute;
   top: 0;
@@ -11550,24 +11544,24 @@ body {
   line-height: 40px;
   color: #959595;
 }
-/* line 393, ../scss/include/_article.scss */
+/* line 395, ../scss/include/_article.scss */
 .music-article .music-article-button-listen:before {
   content: 'L';
 }
-/* line 396, ../scss/include/_article.scss */
+/* line 398, ../scss/include/_article.scss */
 .music-article .music-article-button-tweet:before {
   content: 'T';
 }
-/* line 402, ../scss/include/_article.scss */
+/* line 404, ../scss/include/_article.scss */
 .music-article .music-article-button-favorite:before {
   content: 'F';
 }
-/* line 408, ../scss/include/_article.scss */
+/* line 410, ../scss/include/_article.scss */
 .music-article .music-article-button-pressed:before {
   background-position-x: -197px;
   color: #ffffff;
 }
-/* line 413, ../scss/include/_article.scss */
+/* line 415, ../scss/include/_article.scss */
 .music-article .music-article-button-pressed {
   color: #ffffff;
 }
@@ -11591,7 +11585,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-rock h2 {
+.music-article .music-article-rock h2 {
   background-color: #559c06;
 }
 
@@ -11614,7 +11608,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-classical h2 {
+.music-article .music-article-classical h2 {
   background-color: #f56522;
 }
 
@@ -11637,7 +11631,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-jazzBlues h2 {
+.music-article .music-article-jazzBlues h2 {
   background-color: #662d91;
 }
 
@@ -11660,7 +11654,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-world h2 {
+.music-article .music-article-world h2 {
   background-color: #662c91;
 }
 
@@ -11683,7 +11677,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-hipHop h2 {
+.music-article .music-article-hipHop h2 {
   background-color: #0054a6;
 }
 
@@ -11706,7 +11700,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-electronicDance h2 {
+.music-article .music-article-electronicDance h2 {
   background-color: #212121;
 }
 
@@ -11729,7 +11723,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-latinAlternative h2 {
+.music-article .music-article-latinAlternative h2 {
   background-color: #e3dc1e;
 }
 
@@ -11752,7 +11746,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-pop h2 {
+.music-article .music-article-pop h2 {
   background-color: #ec008c;
 }
 
@@ -11775,7 +11769,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-country h2 {
+.music-article .music-article-country h2 {
   background-color: #ffbf35;
 }
 
@@ -11798,7 +11792,7 @@ body {
 }
 
 /* line 198, ../scss/include/_article.scss */
-.music-article-content .music-article-rnb h2 {
+.music-article .music-article-rnb h2 {
   background-color: #bc48b9;
 }
 
