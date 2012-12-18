@@ -3,39 +3,46 @@ $base-color: #444444;
 $base-font: 'nevisBold';
 $alt-font: 'JuraRegular';
 
+
+
 //Genre colors
-$rock-background-color-light:rgba(255, 204, 0, 1.0);
-$rock-background-color-dark:rgba(255, 167, 0, 1.0);
 
-$folk-background-color-light:rgba(11, 54, 134, 1.0);
-$folk-background-color-dark:rgba(4, 37, 100, 1.0);
+$jazzblues-background-color-light:rgba(102, 45, 145, 1.0);
+$jazzblues-background-color-dark:rgba(102, 45, 145, 1.0);
 
-$classical-background-color-light:rgba(102, 204, 0, 1.0);
-$classical-background-color-dark:rgba(73, 146, 19, 1.0);
+$rock-background-color-light:rgba(85, 156, 6, 1.0);
+$rock-background-color-dark:rgba(85, 156, 6, 1.0);
 
-$jazzblues-background-color-light:rgba(51, 204, 255, 1.0);
-$jazzblues-background-color-dark:rgba(22, 153, 196, 1.0);
+$classical-background-color-light:rgba(245, 101, 34, 1.0);
+$classical-background-color-dark:rgba(245, 101, 34, 1.0);
 
 $world-background-color-light:rgba(102, 44, 145, 1.0);
-$world-background-color-dark:rgba(57, 16, 87, 1.0);
+$world-background-color-dark:rgba(102, 44, 145, 1.0);
 
-$hipHop-background-color-light:rgba(255, 0, 255, 1.0);
-$hipHop-background-color-dark:rgba(166, 18, 166, 1.0);
+$hipHop-background-color-light:rgba(0, 84, 166, 1.0);
+$hipHop-background-color-dark:rgba(0, 84, 166, 1.0);
 
+
+$latinalternative-background-color-light: rgba(227, 220, 30, 1.0);
+$latinalternative-background-color-dark: rgba(227, 220, 30, 1.0);
+
+// 0, 1941, 243
 $electronicdance-background-color-light: rgba(33, 33, 33, 1.0);
 $electronicdance-background-color-dark: rgba(10, 10, 10, 1.0);
 
-$latinalternative-background-color-light: rgba(255, 31, 22, 1.0);
-$latinalternative-background-color-dark: rgba(205, 23, 18, 1.0);
+$pop-background-color-light:rgba(236, 0, 140, 1.0);
+$pop-background-color-dark:rgba(236, 0, 140, 1.0);
 
-$country-background-color-light: rgba(255, 130, 0, 1.0);
-$country-background-color-dark: rgba(221, 112, 18, 1.0);
 
-$pop-background-color-light:rgba(137, 63, 252, 1.0);
-$pop-background-color-dark:rgba(102, 45, 186, 1.0);
+$country-background-color-light: rgba(255, 191,53, 1.0);
+$country-background-color-dark: rgba(255, 191,53, 1.0);
 
-$rnb-background-color-light: rgba(255, 45, 138, 1.0);
-$rnb-background-color-dark:  rgba(160, 26, 87, 1.0);
+$rnb-background-color-light: rgba(188, 72, 185, 1.0);
+$rnb-background-color-dark: rgba(188, 72, 185, 1.0);
+
+// is FOLK used?!??
+$folk-background-color-light:rgba(11, 54, 134, 1.0);
+$folk-background-color-dark:rgba(4, 37, 100, 1.0);
 
 @import 'sencha-touch/default/all'; 
 
