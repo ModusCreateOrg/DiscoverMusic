@@ -17,13 +17,12 @@ Ext.define('Music.view.GlobalToc', {
         layout          : 'vbox',
         items           : [
             {
-                xtype  : 'container',
+                xtype  : 'component',
                 itemId : 'featuredstory',
                 cls    : 'global-toc-featured-story',
                 flex   : 1,
-                data   : {},
                 tpl    : [
-                    '<div class="global-toc-tap-target global-toc-featured-image" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
+                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
                         '<h2>{genre}</h2>',
                         '<h3 class="global-toc-title">{title}</h2>',
                     '</div>'
@@ -33,7 +32,7 @@ Ext.define('Music.view.GlobalToc', {
                 xtype      : 'container',
                 itemId     : 'genres',
                 cls        : 'global-toc-genre-container',
-                height     : 409,
+                height     : 400,
                 scrollable : {
                     direction     : 'horizontal',
                     directionLock : true

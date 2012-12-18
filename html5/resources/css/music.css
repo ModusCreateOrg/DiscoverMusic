@@ -12635,52 +12635,61 @@ body {
 /************************************
  *	GLOBAL TOC
  ************************************/
-/* line 5, ../scss/include/_toc.scss */
+/* line 11, ../scss/include/_toc.scss */
+.global-toc-genre-container .x-innerhtml {
+  display: -webkit-box;
+}
+
+/* line 15, ../scss/include/_toc.scss */
+.global-toc-genre-item {
+  -webkit-box-orient: horizontal;
+}
+
+/* line 20, ../scss/include/_toc.scss */
 .global-toc {
   background: url("../images/article-view-sidebar-bg.png");
 }
-/* line 9, ../scss/include/_toc.scss */
+/* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
   height: 750px;
 }
-/* line 12, ../scss/include/_toc.scss */
-.global-toc .global-toc-featured-story .global-toc-featured-image {
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-rock {
   position: relative;
   height: 100%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 19, ../scss/include/_toc.scss */
-.global-toc .global-toc-featured-story .global-toc-featured-image div {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d7d0d2));
-  float: left;
-  padding: 10px 15px;
-  color: #222;
-  font-family: "nevisBold";
-  font-size: 1.3em;
-  text-transform: uppercase;
-  margin-top: 30px;
-  text-shadow: 0px 1px #fff;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  -webkit-border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-}
-/* line 33, ../scss/include/_toc.scss */
-.global-toc .global-toc-featured-story .global-toc-featured-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-  position: absolute;
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-rock h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
+  background-image: -webkit-linear-gradient(#559c06, #559c06);
+  background-image: linear-gradient(#559c06, #559c06);
   color: #fff;
-  padding: 15px 20px;
-  font-size: 1.5em;
-  width: 100%;
   font-family: "nevisBold";
-  font-weight: normal;
-  bottom: 0;
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
 }
-/* line 45, ../scss/include/_toc.scss */
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-rock h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -12689,7 +12698,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 53, ../scss/include/_toc.scss */
+/* line 72, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -12700,23 +12709,12 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 65, ../scss/include/_toc.scss */
-.global-toc-genre-container .x-innerhtml {
-  display: -webkit-box;
-}
-
-/* line 69, ../scss/include/_toc.scss */
-.global-toc-genre-item {
-  -webkit-box-orient: horizontal;
-}
-
-/* line 76, ../scss/include/_toc.scss */
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12724,7 +12722,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
   background-image: -webkit-linear-gradient(#559c06, #559c06);
@@ -12732,19 +12730,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #1f3a02;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -12755,27 +12751,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-article-pressed {
   background-color: #559c06;
   color: #fff;
-  text-shadow: 0px 1px #1f3a02;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-classical {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-classical h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
+  background-image: -webkit-linear-gradient(#f56522, #f56522);
+  background-image: linear-gradient(#f56522, #f56522);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-classical h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12783,7 +12841,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
   background-image: -webkit-linear-gradient(#f56522, #f56522);
@@ -12791,19 +12849,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #a93b08;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -12814,27 +12870,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-article-pressed {
   background-color: #f56522;
   color: #fff;
-  text-shadow: 0px 1px #a93b08;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12842,7 +12960,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
   background-image: -webkit-linear-gradient(#662d91, #662d91);
@@ -12850,19 +12968,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #2f1543;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -12873,27 +12989,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-article-pressed {
   background-color: #662d91;
   color: #fff;
-  text-shadow: 0px 1px #2f1543;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-world {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-world h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
+  background-image: -webkit-linear-gradient(#662c91, #662c91);
+  background-image: linear-gradient(#662c91, #662c91);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-world h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12901,7 +13079,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
   background-image: -webkit-linear-gradient(#662c91, #662c91);
@@ -12909,19 +13087,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #2f1443;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -12932,27 +13108,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-article-pressed {
   background-color: #662c91;
   color: #fff;
-  text-shadow: 0px 1px #2f1443;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-hipHop {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-hipHop h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
+  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
+  background-image: linear-gradient(#0054a6, #0054a6);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-hipHop h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -12960,7 +13198,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
   background-image: -webkit-linear-gradient(#0054a6, #0054a6);
@@ -12968,19 +13206,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #002040;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -12991,27 +13227,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-article-pressed {
   background-color: #0054a6;
   color: #fff;
-  text-shadow: 0px 1px #002040;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
+  background-image: -webkit-linear-gradient(#212121, #0a0a0a);
+  background-image: linear-gradient(#212121, #0a0a0a);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13019,7 +13317,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
@@ -13027,19 +13325,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px black;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -13050,27 +13346,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-article-pressed {
   background-color: #212121;
   color: #fff;
-  text-shadow: 0px 1px black;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-pop {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-pop h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
+  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
+  background-image: linear-gradient(#ec008c, #ec008c);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-pop h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13078,7 +13436,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
   background-image: -webkit-linear-gradient(#ec008c, #ec008c);
@@ -13086,19 +13444,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #86004f;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -13109,27 +13465,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-article-pressed {
   background-color: #ec008c;
   color: #fff;
-  text-shadow: 0px 1px #86004f;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
+  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
+  background-image: linear-gradient(#e3dc1e, #e3dc1e);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13137,7 +13555,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
   background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
@@ -13145,19 +13563,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #8a8611;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -13168,27 +13584,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-article-pressed {
   background-color: #e3dc1e;
   color: #fff;
-  text-shadow: 0px 1px #8a8611;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-country {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-country h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-country h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13196,7 +13674,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
   background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
@@ -13204,19 +13682,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #ce8d00;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -13227,27 +13703,89 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-article-pressed {
   background-color: #ffbf35;
   color: #fff;
-  text-shadow: 0px 1px #ce8d00;
 }
 
-/* line 76, ../scss/include/_toc.scss */
+/* line 20, ../scss/include/_toc.scss */
+.global-toc {
+  background: url("../images/article-view-sidebar-bg.png");
+}
+/* line 25, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .x-innerhtml {
+  height: 750px;
+}
+/* line 28, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-rnb {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* line 35, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-rnb h2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
+  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
+  background-image: linear-gradient(#bc48b9, #bc48b9);
+  color: #fff;
+  font-family: "nevisBold";
+  height: 70px;
+  font-size: 3em;
+  text-transform: uppercase;
+  padding-left: 30px;
+  text-align: left;
+}
+/* line 50, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-image-rnb h3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  font-family: "nevisBold";
+  position: absolute;
+  height: 161px;
+  width: 100%;
+  bottom: 0;
+  line-height: 30px;
+  color: #fff;
+  font-size: 2em;
+  padding: 15px 20px;
+}
+/* line 64, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-featured-content {
+  background: none;
+  color: #fff;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: "Georgia", sans-serif;
+}
+/* line 72, ../scss/include/_toc.scss */
+.global-toc .global-toc-featured-story .global-toc-about {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #999;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  margin: 15px 0 0 15px;
+  font-size: 13px;
+}
+/* line 83, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 79, ../scss/include/_toc.scss */
+/* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image {
   height: 409px;
   width: 309px;
@@ -13255,7 +13793,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 87, ../scss/include/_toc.scss */
+/* line 94, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
   background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
@@ -13263,19 +13801,17 @@ body {
   color: #fff;
   font-family: "nevisBold";
   height: 30px;
-  text-shadow: 0px 1px #742a72;
   font-size: 1.3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 102, ../scss/include/_toc.scss */
+/* line 109, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-family: "nevisBold";
   position: absolute;
   height: 161px;
@@ -13286,25 +13822,23 @@ body {
   font-size: 1.5em;
   padding: 15px 20px;
 }
-/* line 117, ../scss/include/_toc.scss */
+/* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb p {
   font-size: 0.85em;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 128, ../scss/include/_toc.scss */
+/* line 135, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-article-pressed {
   background-color: #bc48b9;
   color: #fff;
-  text-shadow: 0px 1px #742a72;
 }
 
 /************************************
 *	GENRE TOC
 ************************************/
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-rock {
   position: relative;
   height: 645px;
@@ -13314,12 +13848,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-rock {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-rock h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13333,7 +13867,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
   background-image: -webkit-linear-gradient(#559c06, #559c06);
@@ -13351,16 +13885,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #1f3a02;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rock {
   position: relative;
   height: 308px;
@@ -13369,7 +13902,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13383,15 +13916,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #1f3a02;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rock {
   position: relative;
   height: 308px;
@@ -13400,7 +13932,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13416,12 +13948,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-classical {
   position: relative;
   height: 645px;
@@ -13431,12 +13963,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-classical {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-classical h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13450,7 +13982,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
   background-image: -webkit-linear-gradient(#f56522, #f56522);
@@ -13468,16 +14000,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #a93b08;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-classical {
   position: relative;
   height: 308px;
@@ -13486,7 +14017,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13500,15 +14031,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #a93b08;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-classical {
   position: relative;
   height: 308px;
@@ -13517,7 +14047,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13533,12 +14063,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues {
   position: relative;
   height: 645px;
@@ -13548,12 +14078,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-jazzBlues {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13567,7 +14097,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
   background-image: -webkit-linear-gradient(#662d91, #662d91);
@@ -13585,16 +14115,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #2f1543;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-jazzBlues {
   position: relative;
   height: 308px;
@@ -13603,7 +14132,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13617,15 +14146,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #2f1543;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-jazzBlues {
   position: relative;
   height: 308px;
@@ -13634,7 +14162,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13650,12 +14178,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-world {
   position: relative;
   height: 645px;
@@ -13665,12 +14193,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-world {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-world h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13684,7 +14212,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
   background-image: -webkit-linear-gradient(#662c91, #662c91);
@@ -13702,16 +14230,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #2f1443;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-world {
   position: relative;
   height: 308px;
@@ -13720,7 +14247,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13734,15 +14261,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #2f1443;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-world {
   position: relative;
   height: 308px;
@@ -13751,7 +14277,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13767,12 +14293,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop {
   position: relative;
   height: 645px;
@@ -13782,12 +14308,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-hipHop {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13801,7 +14327,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
   background-image: -webkit-linear-gradient(#0054a6, #0054a6);
@@ -13819,16 +14345,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #002040;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-hipHop {
   position: relative;
   height: 308px;
@@ -13837,7 +14362,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13851,15 +14376,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #002040;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-hipHop {
   position: relative;
   height: 308px;
@@ -13868,7 +14392,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13884,12 +14408,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance {
   position: relative;
   height: 645px;
@@ -13899,12 +14423,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-electronicDance {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13918,7 +14442,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
@@ -13936,16 +14460,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px black;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-electronicDance {
   position: relative;
   height: 308px;
@@ -13954,7 +14477,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13968,15 +14491,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px black;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-electronicDance {
   position: relative;
   height: 308px;
@@ -13985,7 +14507,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14001,12 +14523,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-pop {
   position: relative;
   height: 645px;
@@ -14016,12 +14538,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-pop {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-pop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14035,7 +14557,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
   background-image: -webkit-linear-gradient(#ec008c, #ec008c);
@@ -14053,16 +14575,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #86004f;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-pop {
   position: relative;
   height: 308px;
@@ -14071,7 +14592,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14085,15 +14606,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #86004f;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-pop {
   position: relative;
   height: 308px;
@@ -14102,7 +14622,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14118,12 +14638,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative {
   position: relative;
   height: 645px;
@@ -14133,12 +14653,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-latinAlternative {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14152,7 +14672,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
   background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
@@ -14170,16 +14690,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #8a8611;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-latinAlternative {
   position: relative;
   height: 308px;
@@ -14188,7 +14707,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14202,15 +14721,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #8a8611;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-latinAlternative {
   position: relative;
   height: 308px;
@@ -14219,7 +14737,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14235,12 +14753,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-country {
   position: relative;
   height: 645px;
@@ -14250,12 +14768,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-country {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-country h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14269,7 +14787,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
   background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
@@ -14287,16 +14805,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #ce8d00;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-country {
   position: relative;
   height: 308px;
@@ -14305,7 +14822,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14319,15 +14836,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #ce8d00;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-country {
   position: relative;
   height: 308px;
@@ -14336,7 +14852,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14352,12 +14868,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 154, ../scss/include/_toc.scss */
+/* line 161, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb {
   position: relative;
   height: 645px;
@@ -14367,12 +14883,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 154, ../scss/include/_toc.scss */
+  /* line 161, ../scss/include/_toc.scss */
   .genre-toc-featured-rnb {
     height: 385px;
   }
 }
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14386,7 +14902,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 176, ../scss/include/_toc.scss */
+/* line 183, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
   background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
@@ -14404,16 +14920,15 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
   text-transform: uppercase;
-  text-shadow: 0px 1px #742a72;
 }
 
-/* line 195, ../scss/include/_toc.scss */
+/* line 202, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 200, ../scss/include/_toc.scss */
+/* line 207, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rnb {
   position: relative;
   height: 308px;
@@ -14422,7 +14937,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 208, ../scss/include/_toc.scss */
+/* line 215, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14436,15 +14951,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   font-family: "nevisBold";
-  text-shadow: 0px 1px #742a72;
 }
-/* line 224, ../scss/include/_toc.scss */
+/* line 231, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 229, ../scss/include/_toc.scss */
+/* line 236, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rnb {
   position: relative;
   height: 308px;
@@ -14453,7 +14967,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 237, ../scss/include/_toc.scss */
+/* line 244, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14469,7 +14983,7 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 252, ../scss/include/_toc.scss */
+/* line 259, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
