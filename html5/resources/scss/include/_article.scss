@@ -296,14 +296,23 @@
     margin : 0.7em 1.5em 0 1.5em;
   }
 
-  .article-scroller:after {
-    content  : '';
+  .article-scroller-nofade footer {
+    background-image: none;
+  }
+
+  .article-scroller footer {
     position : absolute;
     height   : 70px;
     left     : 0;
     bottom   : 0;
     width    : 100%;
     @include background-image(linear-gradient(color-stops(rgba(236, 236, 236, 0), rgba(236, 236, 236, 1))));
+    //background: red;
+  }
+
+  .article-scroller {
+    @include box-shadow(inset rgb(236, 236, 236) 0 -10px 10px -10px);
+    //inset 0 -10px 10px -10px #000000;
   }
 
   .music-article-header {

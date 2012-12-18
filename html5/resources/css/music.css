@@ -11440,8 +11440,11 @@ body {
   margin: 0.7em 1.5em 0 1.5em;
 }
 /* line 299, ../scss/include/_article.scss */
-.music-article .article-scroller:after {
-  content: '';
+.music-article .article-scroller-nofade footer {
+  background-image: none;
+}
+/* line 303, ../scss/include/_article.scss */
+.music-article .article-scroller footer {
   position: absolute;
   height: 70px;
   left: 0;
@@ -11451,7 +11454,12 @@ body {
   background-image: -webkit-linear-gradient(rgba(236, 236, 236, 0), #ececec);
   background-image: linear-gradient(rgba(236, 236, 236, 0), #ececec);
 }
-/* line 309, ../scss/include/_article.scss */
+/* line 313, ../scss/include/_article.scss */
+.music-article .article-scroller {
+  -webkit-box-shadow: inset #ececec 0 -10px 10px -10px;
+  box-shadow: inset #ececec 0 -10px 10px -10px;
+}
+/* line 318, ../scss/include/_article.scss */
 .music-article .music-article-header {
   width: 300px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -11465,18 +11473,18 @@ body {
   box-pack: justify;
 }
 @media screen and (orientation: landscape) {
-  /* line 309, ../scss/include/_article.scss */
+  /* line 318, ../scss/include/_article.scss */
   .music-article .music-article-header {
     padding: 15px;
   }
 }
 @media screen and (orientation: portrait) {
-  /* line 309, ../scss/include/_article.scss */
+  /* line 318, ../scss/include/_article.scss */
   .music-article .music-article-header {
     padding: 40px 0 40px 2px;
   }
 }
-/* line 326, ../scss/include/_article.scss */
+/* line 335, ../scss/include/_article.scss */
 .music-article .music-article-header .music-article-header-image {
   position: relative;
   width: 487px;
@@ -11485,7 +11493,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 334, ../scss/include/_article.scss */
+/* line 343, ../scss/include/_article.scss */
 .music-article .music-article-header .music-article-header-image h1 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -11500,7 +11508,7 @@ body {
   padding: 20px 25px;
   width: 100%;
 }
-/* line 348, ../scss/include/_article.scss */
+/* line 357, ../scss/include/_article.scss */
 .music-article .music-article-header p {
   margin: 15px 15px 0px 15px;
   font-size: 0.7em;
@@ -11509,7 +11517,7 @@ body {
   margin: 15px 15px 0px 15px;
   font-style: italic;
 }
-/* line 364, ../scss/include/_article.scss */
+/* line 373, ../scss/include/_article.scss */
 .music-article .music-article-button {
   height: 41px;
   color: #959595;
@@ -11519,18 +11527,18 @@ body {
   line-height: 41px;
 }
 @media screen and (orientation: landscape) {
-  /* line 364, ../scss/include/_article.scss */
+  /* line 373, ../scss/include/_article.scss */
   .music-article .music-article-button {
     margin: 34px 0 0 37px;
   }
 }
 @media screen and (orientation: portrait) {
-  /* line 364, ../scss/include/_article.scss */
+  /* line 373, ../scss/include/_article.scss */
   .music-article .music-article-button {
     margin: 1px 0 2px 30px;
   }
 }
-/* line 386, ../scss/include/_article.scss */
+/* line 395, ../scss/include/_article.scss */
 .music-article .music-article-button:before {
   position: absolute;
   top: 0;
@@ -11540,24 +11548,24 @@ body {
   line-height: 40px;
   color: #959595;
 }
-/* line 396, ../scss/include/_article.scss */
+/* line 405, ../scss/include/_article.scss */
 .music-article .music-article-button-listen:before {
   content: 'L';
 }
-/* line 399, ../scss/include/_article.scss */
+/* line 408, ../scss/include/_article.scss */
 .music-article .music-article-button-tweet:before {
   content: 'T';
 }
-/* line 405, ../scss/include/_article.scss */
+/* line 414, ../scss/include/_article.scss */
 .music-article .music-article-button-favorite:before {
   content: 'F';
 }
-/* line 411, ../scss/include/_article.scss */
+/* line 420, ../scss/include/_article.scss */
 .music-article .music-article-button-pressed:before {
   background-position-x: -197px;
   color: #ffffff;
 }
-/* line 416, ../scss/include/_article.scss */
+/* line 425, ../scss/include/_article.scss */
 .music-article .music-article-button-pressed {
   color: #ffffff;
 }

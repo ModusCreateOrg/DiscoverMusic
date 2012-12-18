@@ -51,17 +51,16 @@ Ext.define('Music.view.Article', {
             },
             {
                 xtype  : 'component',
-                html   : 'shit',
                 height : 250,
-                docked: 'bottom'
+                docked: 'bottom',
+                html: 'shit'
             }
 
         ]
     },
 
     initialize : function(){
-        var me = this,
-            scroller = me.getScrollable().getScroller();
+        var me = this;
 
         me.callParent();
 
@@ -73,7 +72,18 @@ Ext.define('Music.view.Article', {
         });
         me.articleTitle = me.renderElement.down('.music-article-image');
 
-        scroller.on('scroll', 'onScroll');
+        me.initFading();
+    },
+
+    initFading: function () {
+        var me = this,
+            scrollView = me.getScrollable(),
+            scroller = scrollView.getScroller();
+
+        scrollView.getElement().insertHtml('beforeEnd', '<footer></footer>');
+
+        scroller.on('scroll', me.onScroll, me);
+
     },
 
     /**
@@ -98,8 +108,8 @@ Ext.define('Music.view.Article', {
         if (scroller.maxPosition.y - y > 9 && scroller.fadeRemoved === true) {
             view = this.getScrollable();
             element = view.getElement();
-            scroller.fadeRemoved = true; // deleting is more expensive than setting to false
-            return element.replaceCls('article-scroller-fade', 'article-scroller');
+            scroller.fadeRemoved = false; // deleting is more expensive than setting to false
+            return element.replaceCls('article-scroller-nofade', 'article-scroller');
         }
     },
 
