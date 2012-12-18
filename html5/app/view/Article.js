@@ -13,17 +13,16 @@ Ext.define('Music.view.Article', {
         model      : null,
         genre      : null,
         layout     : 'fit',
-        cls        : 'music-article',
+        baseCls        : 'music-article',
         scrollable : {
+            cls           : Ext.baseCSSPrefix + 'scroll-view article-scroller',
             direction     : 'vertical',
             directionLock : true
         },
         tpl        : Ext.create('Ext.XTemplate',
-            '<article>',
-                '<h1>{title}</h1>',
-                '<h4>{[ this.dateFormat(values.date) ]}</h4>',
-                '{text}',
-            '</article>',
+            '<h1>{title}</h1>',
+            '<h4>{[ this.dateFormat(values.date) ]}</h4>',
+            '{text}',
             {
                 dateFormat : function(value){
                     return Ext.util.Format.date(value,'F d, Y');
@@ -52,9 +51,9 @@ Ext.define('Music.view.Article', {
             },
             {
                 xtype  : 'component',
-                html   : 'shit',
                 height : 250,
-                docked: 'bottom'
+                docked: 'bottom',
+                html: 'shit'
             }
 
         ]
@@ -72,6 +71,46 @@ Ext.define('Music.view.Article', {
             touchend   : me.onRelease
         });
         me.articleTitle = me.renderElement.down('.music-article-image');
+
+        me.initFading();
+    },
+
+    initFading: function () {
+        var me = this,
+            scrollView = me.getScrollable(),
+            scroller = scrollView.getScroller();
+
+        scrollView.getElement().insertHtml('beforeEnd', '<footer></footer>');
+
+        scroller.on('scroll', me.onScroll, me);
+
+    },
+
+    /**
+     * Remove fading when scroller close enough to bottom (lower 10px).
+     * scroller.fadeRemoved flag is set for optimization purposes
+     * view and element references are retrieved only when needed (point of enter/exit lower 10px)
+     *
+     * @param {Ext.scroll.Scroller} scroller
+     * @param {Integer} x x-axis offset
+     * @param {Integer} y y-axis offset, the one we are matching against
+     * @return {*}
+     */
+    onScroll: function (scroller, x, y) {
+        var view, element;
+        if (scroller.maxPosition.y - y < 10 && scroller.fadeRemoved !== true) {
+            view = this.getScrollable();
+            element = view.getElement();
+            scroller.fadeRemoved = true;
+            return element.replaceCls('article-scroller', 'article-scroller-nofade');
+        }
+
+        if (scroller.maxPosition.y - y > 9 && scroller.fadeRemoved === true) {
+            view = this.getScrollable();
+            element = view.getElement();
+            scroller.fadeRemoved = false; // deleting is more expensive than setting to false
+            return element.replaceCls('article-scroller-nofade', 'article-scroller');
+        }
     },
 
     onPress   : function(event){
@@ -116,7 +155,6 @@ Ext.define('Music.view.Article', {
 
         me.setData(modelData);
         header.setData(modelData);
-        console.log(modelData);
 
         return model;
     }
