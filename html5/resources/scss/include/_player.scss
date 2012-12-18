@@ -1,18 +1,18 @@
 .music-player{
-	height:37px;
-	border:2px solid #151313;
-	margin-top:10px;
-	@include border-radius(5px);
-	@include background-image(linear-gradient(#5E5E5E,#232323 2%,black));
+	font-family: "Myriad Pro", sans-serif;
+	height:33px;
+	margin-top:12px;
+    color:#959595;
+    background-color: #000;
 	-webkit-transition: all 1s ease;
+     overflow: hidden;
 
     @media screen and (orientation:landscape) {
         width:670px;
     }
     @media screen and (orientation:portrait) {
-        width:412px;
+        width:300px;
     }
-    overflow: hidden;
 }
 
 .music-player .x-innerhtml{
@@ -25,42 +25,43 @@
 .music-player-timer{
 	display:inline-block;
 	vertical-align: top;
-	width:60px;
+	width:47px;
 	height:20px;
-	@include background-image(linear-gradient(#99ffff,#6adcf3));
-	@include text-shadow(none);
-	@include border-radius(5px);
+	//@include background-image(linear-gradient(#99ffff,#6adcf3));
 	text-align:center;
-	margin:7px 10px 5px 5px;
-	font-size:0.5em;
+	margin: 7px 3px 5px 3px;
+    font-size: 13px;
+	//font-size:0.5em;
 	font-weight:normal;
 	padding:0 5px;
-	line-height:20px;
-	color:#000;
-	text-shadow: 0px 1px white;
+	line-height:15px;
+	color:#959595;
 }
+
 .music-player-button{
 	display:inline-block;
 	vertical-align: top;
 	width:11px;
 	height:10px;
+    color:#959595;
+
 	background:transparent url(../images/play-pause.png) 0 0 no-repeat;
 	margin:10px 5px 10px 10px;
 	-webkit-transition: background-position .2s ease;
 }
+
 .music-player-paused .music-player-button{
 	background-position:0 -10px;
 }
+
 .music-player-title{
-	font-family: "Helvetica Neue", sans-serif;
 	display: inline-block;
 	vertical-align: top;
-	font-size: 13px;
+    font-size: 13px;
 	font-weight:bold;
 	line-height:30px;
-	color:#77c3c3;
-	text-shadow: 0px 1px #000;
-	width: auto;
+	color:#959595;
+	width: 200px; // FIX THIS
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;	

@@ -23,8 +23,9 @@ Ext.define('Music.view.GlobalToc', {
                 flex   : 1,
                 data   : {},
                 tpl    : [
-                    '<div class="global-toc-featured-image" style="background-image:url(http://src.sencha.io/600/{image})">',
-                        '<h2 >{genre}</h2>',
+                    '<div class="global-toc-tap-target global-toc-featured-image" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
+                        '<h2>{genre}</h2>',
+                        '<h3 class="global-toc-title">{title}</h2>',
                     '</div>'
                 ]
             },
@@ -39,10 +40,10 @@ Ext.define('Music.view.GlobalToc', {
                 },
                 tpl : [
                     '<tpl for=".">',
-                        '<div class="global-toc-genre-item global-toc-genre-{genreKey}">',
-                            '<div class="global-toc-genre-image" data-id="{id}" style="background-image:url(http://src.sencha.io/350/{image.src})">',
+                        '<div class="global-toc-tap-target global-toc-genre-item global-toc-genre-{genreKey}" data-id="{id}">',
+                            '<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{image.src})">',
                                 '<h2>{genre}</h2>',
-                                '<h3>{title}</h3>',
+                                '<h3 class="global-toc-title">{title}</h3>',
                             '</div>',
                         '</div>',
                     '</tpl>'
@@ -60,45 +61,25 @@ Ext.define('Music.view.GlobalToc', {
     },
 
     addGenres : function(articleRecords) {
-//        console.log('addGenre', articleRecords);
         var me          = this,
             container   = me.down('#genres'),
             rawGenres   = [],
             tocArticles = [];
 
-//        Ext.each(range, function(article) {
-//            list.push(article.getData());
-//        });
-
         Ext.each(articleRecords, function(genreRecord) {
-//            debugger;
             rawGenres.push(genreRecord.data);
             tocArticles.push(genreRecord.data.data.story[0]);
         });
 
-//        debugger;
         console.log('rawGenres', rawGenres);
-        container.setData(tocArticles)
-
-//        var component = {
-//            xtype : 'component',
-//            cls   : 'global-toc-genre-' + genre.get('key'),
-//            data  : {
-//                genre    : Ext.apply(genre.getData(), rawGenres.getAt(0).getData()),
-//                rawGenres : list
-//            },
-//            tpl   :
-//        };
-
-//        container.add(component);
+        container.setData(tocArticles);
     },
 
     setFeatured : function(model) {
-//        debugger;
-//        debugger;
         var me = this,
             featured = me.down('#featuredstory'),
             data = model.getData();
+
         data.text = Ext.util.Format.ellipsis(data.text, 300, true).replace(/<(\/)?p>/g, ' ');
         featured.setData(data);
         me.setFeaturedArticle(model);
@@ -110,15 +91,25 @@ Ext.define('Music.view.GlobalToc', {
 
         el.on({
             scope      : me,
-            tap        : 'onTap',
             touchstart : 'onTouchStart',
-            touchend   : 'onTouchEnd'
+            touchend   : 'onTouchEnd',
+            delegate   : '.global-toc-tap-target'
+        });
+
+        el.on({
+            scope    : me,
+            tap      : 'onTap',
+            delegate : '.global-toc-tap-target'
+
         });
     },
 
-    onTouchStart : function(event, node) {
-        this.pressing = node;
-        Ext.fly(node).addCls('global-toc-article-pressed');
+    onTouchStart : function(event) {
+        var target      = event.getTarget(),
+            highlightEl = Ext.fly(target).down('.global-toc-title');
+
+        this.pressing = highlightEl;
+        Ext.fly(highlightEl).addCls('global-toc-article-pressed');
     },
 
     onTouchEnd : function() {
@@ -127,32 +118,12 @@ Ext.define('Music.view.GlobalToc', {
     },
 
     onTap : function(event) {
+        var me     = this,
+            target = event.getTarget(),
+            id     = +target.getAttribute("data-id");
 
-        var me = this,
-            eventTarget = event.target,
-            el,
-            id;
-
-        if (event.getTarget('.global-toc-featured-image')) {
-            return me.fireEvent('storytap', me.getFeaturedArticle());
-        }
-
-        if (event.getTarget('.global-toc-article')) {
-            el = Ext.get(event.getTarget('.global-toc-article'));
-            id = +el.getAttribute("data-id");
-
-            return me.fireEvent('storytap', id);
-        }
-
-        if (event.getTarget('.global-toc-genre-image')) {
-            el = Ext.get(event.getTarget('.global-toc-genre-image'));
-            id = +el.getAttribute("data-id");
-
-            return me.fireEvent('storytap', id);
-        }
-
-        if (eventTarget.tagName == 'SPAN') {
-            me.fireEvent('anchortap', eventTarget.getAttribute('data-href'));
+        if (id) {
+            me.fireEvent('storytap', id);
         }
     }
 });

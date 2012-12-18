@@ -17,7 +17,7 @@ Ext.define('Music.view.Player', {
         cls   : 'music-player',
         data  : {
             time  : '00:00',
-            title : 'Press "Listen to story" to play music.'
+            title : 'Listen to this story'
         },
         tpl   : [
             '<div class="music-player-button"></div>',

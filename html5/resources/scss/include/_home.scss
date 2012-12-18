@@ -11,8 +11,9 @@ body {
 
 .music-app-title {
     //background    : url('../images/topbar-texture.png') repeat-x;
-    background-color: #252525;
-    margin : 0 !important;
+    background-image : none;
+    background-color : #252525;
+    margin           : 0 !important;
     //box-shadow    : 0px 2px 7px rgba(0, 0, 0, .75);
     border-bottom    : 2px solid black !important;
     border-top       : 1px solid #767676 !important;

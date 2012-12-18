@@ -290,7 +290,6 @@ Ext.define('Music.controller.Main', {
 
     // when a user taps on the "Read & Listen"
     onShowArticle  : function(articleId) {
-        debugger;
         var me          = this,
             articles    = me.allArticlesStore,
             index       = articles.find('id', articleId),
@@ -300,7 +299,9 @@ Ext.define('Music.controller.Main', {
 
         if (!articleRec) {
             Ext.Msg.alert('We apologize!', 'For some reason we could not locate the article you requested. Please select another article.');
-            throw('WTF?!? We could not find article ID: ' + articleId);
+            console.warn('WTF?!? We could not find article ID: ' + articleId);
+            return;
+
         }
         
         if (!articleView) {
@@ -342,7 +343,7 @@ Ext.define('Music.controller.Main', {
         main.setActiveItem(view);
     },
 
-    onArticleActive : function(id, item, oldItem) {
+    onArticleActive : function(id, item) {
         var me = this;
 
         //if item is not null we need to update
@@ -377,19 +378,21 @@ Ext.define('Music.controller.Main', {
             Ext.data.JsonP.request({
                 url         : 'http://discovermusic.moduscreate.com/getMp3File',
                 callbackKey : 'callback',
-                params      : { url : musicData.audioFile },
+                params      : {
+                    url : musicData.audioFile
+                },
                 callback    : function(success, data) {
                     var obj = Ext.clone(musicData);
+
                     if (success) {
                         obj.audioFile = data.file;
-
                         player.setData(obj);
                     }
                 }
             });
-
         }
         else {
+
             if (!me.getAudioHasPlayed()) {
 
                 // this is to fix the IOS auto-start audio issue!
@@ -407,8 +410,11 @@ Ext.define('Music.controller.Main', {
             }
         }
     },
+
+    // TODO : verify
     onAnchorTap : function(href) {
         var plugins = window.plugins;
+
         if (plugins && plugins.childBrowser) {
             plugins.childBrowser.showWebPage(href);
         }
@@ -417,7 +423,7 @@ Ext.define('Music.controller.Main', {
             a.setAttribute("href", href);
             a.setAttribute("target", "_blank");
 
-            var dispatch = document.createEvent("HTMLEvents")
+            var dispatch = document.createEvent("HTMLEvents");
             dispatch.initEvent("click", true, true);
             a.dispatchEvent(dispatch);
         }
