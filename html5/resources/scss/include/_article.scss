@@ -204,7 +204,8 @@
 
 .music-article {
   .x-scroll-view {
-    background : #e7e7e7 url(../images/article-bg.png);
+    background : #ececec;
+    //url(../images/article-bg.png);
     //@include box-shadow(inset rgba(0, 0, 0, 0.7) 5px 0px 5px);
   }
 
@@ -283,26 +284,27 @@
 
     }
 
-    p {
-      margin-bottom : 15px;
-      font-size     : 1em;
-      color         : #111;
-      padding       : 0;
-      line-height   : 1.6em;
-    }
+  p {
+    margin-bottom : 15px;
+    font-size     : 1em;
+    color         : #111;
+    padding       : 0;
+    line-height   : 1.6em;
+  }
 
-    article {
-      margin   : 0.7em 1.5em 0 1.5em;
-      position : relative;
-    }
+  article {
+    margin   : 0.7em 1.5em 0 1.5em;
+    position : relative;
+  }
 
-  article:after {
+  .x-scroll-view:after {
+    content  : '';
     position : absolute;
-    height   : 50px;
-    top      : 0;
+    height   : 70px;
+    left     : 0;
     bottom   : 0;
-    width    : 300px;
-    @include background-image(linear-gradient(color-stops(rgba(250, 250, 250, 0.65), rgba(250, 250, 250, 0.90))));
+    width    : 100%;
+    @include background-image(linear-gradient(color-stops(rgba(236, 236, 236, 0), rgba(236, 236, 236, 1))));
   }
 
   .music-article-header {
