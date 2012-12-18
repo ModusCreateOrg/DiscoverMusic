@@ -94,9 +94,9 @@ Ext.define('Music.view.Main', {
         me.setArticles(genreRecords);
         me.globalToc.addGenres(genreRecords);
 
-        Ext.each(genreRecords, function(record) {
-//            debugger;
-            var r   ecordData = record.data,
+        Ext.each(genreRecords, function(genreRecord) {
+            debugger;
+            var recordData = genreRecord.data,
                 genre      = recordData.name,
                 articles   = recordData.articles,
                 firstArticle = articles.getAt(0);
@@ -106,11 +106,12 @@ Ext.define('Music.view.Main', {
             //Adding the articles preview to the main flow
             // Todo: Fix this whole nonsense of passing model AND its data to the fucking article view.
             me.add({
-                xtype  : 'article',
-                itemId : 'article-' + firstArticle.getId(),
-                model  : firstArticle,
-                data   : firstArticle.getData(),
-                genre  : genre
+                xtype       : 'article',
+                itemId      : 'article-' + firstArticle.getId(),
+                model       : firstArticle,
+                data        : firstArticle.getData(),
+                genreRecord : genreRecord,
+                genre       : genre
             });
         });
     },
