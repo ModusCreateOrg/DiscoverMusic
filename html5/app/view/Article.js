@@ -13,18 +13,16 @@ Ext.define('Music.view.Article', {
         model      : null,
         genre      : null,
         layout     : 'fit',
-        cls        : 'music-article',
+        baseCls        : 'music-article',
         scrollable : {
             cls           : Ext.baseCSSPrefix + 'scroll-view article-scroller',
             direction     : 'vertical',
             directionLock : true
         },
         tpl        : Ext.create('Ext.XTemplate',
-            '<article>',
-                '<h1>{title}</h1>',
-                '<h4>{[ this.dateFormat(values.date) ]}</h4>',
-                '{text}',
-            '</article>',
+            '<h1>{title}</h1>',
+            '<h4>{[ this.dateFormat(values.date) ]}</h4>',
+            '{text}',
             {
                 dateFormat : function(value){
                     return Ext.util.Format.date(value,'F d, Y');
