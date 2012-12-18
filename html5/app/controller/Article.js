@@ -29,27 +29,6 @@ Ext.define('Music.controller.Article', {
                 favorite : 'onFavorite',
                 toc      : 'onToc',
                 tweet    : 'onTweet'
-            },
-            main: {
-                activeitemchange: 'fixFading'
-            }
-        }
-    },
-
-    /**
-     * Due to a WebKit bug, absolutely positioned layers get reshuffled after transition
-     * On any CSS property reset will the right order get fixed
-     * @param carousel
-     * @param card
-     */
-    fixFading: function (carousel, card) {
-        var footer;
-        if (card instanceof Music.view.Article) {
-            footer = card.element.down('.x-scroll-view footer');
-            if (footer) {
-                footer.setStyle('font-weight', 'bold');
-                // style re-set needs to get out of the execution loop in order for it to be applied
-                Ext.defer(function () {footer.setStyle('font-weight', 'normal');}, 1);
             }
         }
     },
