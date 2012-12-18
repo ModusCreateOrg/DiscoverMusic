@@ -15,6 +15,7 @@ Ext.define('Music.view.Article', {
         layout     : 'fit',
         cls        : 'music-article',
         scrollable : {
+            cls           : Ext.baseCSSPrefix + 'scroll-view article-scroller',
             direction     : 'vertical',
             directionLock : true
         },
@@ -61,7 +62,8 @@ Ext.define('Music.view.Article', {
     },
 
     initialize : function(){
-        var me = this;
+        var me = this,
+            scroller = me.getScrollable().getScroller();
 
         me.callParent();
 
@@ -72,6 +74,35 @@ Ext.define('Music.view.Article', {
             touchend   : me.onRelease
         });
         me.articleTitle = me.renderElement.down('.music-article-image');
+
+        scroller.on('scroll', 'onScroll');
+    },
+
+    /**
+     * Remove fading when scroller close enough to bottom (lower 10px).
+     * scroller.fadeRemoved flag is set for optimization purposes
+     * view and element references are retrieved only when needed (point of enter/exit lower 10px)
+     *
+     * @param {Ext.scroll.Scroller} scroller
+     * @param {Integer} x x-axis offset
+     * @param {Integer} y y-axis offset, the one we are matching against
+     * @return {*}
+     */
+    onScroll: function (scroller, x, y) {
+        var view, element;
+        if (scroller.maxPosition.y - y < 10 && scroller.fadeRemoved !== true) {
+            view = this.getScrollable();
+            element = view.getElement();
+            scroller.fadeRemoved = true;
+            return element.replaceCls('article-scroller', 'article-scroller-nofade');
+        }
+
+        if (scroller.maxPosition.y - y > 9 && scroller.fadeRemoved === true) {
+            view = this.getScrollable();
+            element = view.getElement();
+            scroller.fadeRemoved = true; // deleting is more expensive than setting to false
+            return element.replaceCls('article-scroller-fade', 'article-scroller');
+        }
     },
 
     onPress   : function(event){
@@ -116,7 +147,6 @@ Ext.define('Music.view.Article', {
 
         me.setData(modelData);
         header.setData(modelData);
-        console.log(modelData);
 
         return model;
     }
