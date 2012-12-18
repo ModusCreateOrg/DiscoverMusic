@@ -12,6 +12,7 @@ Ext.define('Music.view.Article', {
     config : {
         model      : null,
         genre      : null,
+        genreRecord: undefined,
         layout     : 'fit',
         baseCls        : 'music-article',
         scrollable : {
