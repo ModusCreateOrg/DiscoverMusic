@@ -102,7 +102,6 @@ Ext.define('Music.view.Main', {
                 firstArticle = articles.getAt(0);
 
 
-
             //Adding the articles preview to the main flow
             // Todo: Fix this whole nonsense of passing model AND its data to the fucking article view.
             me.add({

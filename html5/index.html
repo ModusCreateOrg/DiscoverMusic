@@ -4,7 +4,6 @@
     <!-- iPad - landscape (748x1024) -->
     <link rel="apple-touch-startup-image" href="resources/images/splash.jpg"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
     <meta charset="UTF-8">
-    <!--<script type="text/javascript" src="http://192.168.1.107:8080/target/target-script-min.js#anonymous"></script>-->
 
     <title>DiscoverMusic</title>
     <style type="text/css">
@@ -80,46 +79,46 @@
     <!--<script src="http://platform.twitter.com/anywhere.js?id=Nq70UnO0M06KXlI4Z2UA&v=1" type="text/javascript"></script>-->
     <!--<link rel="stylesheet" href="resources/css/music.css" type="text/css">-->
 
-    <!--<script  type="text/javascript" src="cordova-1.9.0.js"></script>-->
-    <!--<script  type="text/javascript" src="ChildBrowser.js"></script>-->
+     <script src="http://10.1.10.33:8080/target/target-script-min.js#anonymous"></script>
+    <script  type="text/javascript" src="cordova-1.9.0.js"></script>
+    <script  type="text/javascript" src="ChildBrowser.js"></script>
 
     <script type="text/javascript" charset="utf-8">
 
-            // Call onDeviceReady when Cordova is loaded.
-            //
-            // At this point, the document has loaded but cordova-2.0.0.js has not.
-            // When Cordova is loaded and talking with the native device,
-            // it will call the event `deviceready`.
-            //
+        // Call onDeviceReady when Cordova is loaded.
+        //
+        // At this point, the document has loaded but cordova-2.0.0.js has not.
+        // When Cordova is loaded and talking with the native device,
+        // it will call the event `deviceready`.
+        //
 
-        function handleOpenURL(url) {
-             window.invokeString = url;
-        }
+	function handleOpenURL(url) {
+		 window.invokeString = url;
+	}
 
-        /* When this function is called, Cordova has been initialized and is ready to roll */
-        /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-        see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-        for more details -jm */
-        function onDeviceReady() {
-            // do your thing!
-//            navigator.notification.alert('deviceready');
+    /* When this function is called, Cordova has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady() {
+		// do your thing!
+//		navigator.notification.alert('deviceready :: url :: ' + window.invokeString);
 
-        }
+	}
 
-        function onBodyLoad() {
-            document.addEventListener("deviceready", onDeviceReady, false);
-            document.addEventListener("resume", onResume, false);
+	function onBodyLoad() {
+        console.log('onBodyLoad')
+//		document.addEventListener("deviceready", onDeviceReady, false);
+//		document.addEventListener("resume", onResume, false);
 
-        }
+	}
 
-        var onResume = function() {
-    //		navigator.notification.alert('resume :: url :: ' + window.invokeString);
-//            spigit.app.onResume();
-        };
+	var onResume = function() {
+//		navigator.notification.alert('resume :: url :: ' + window.invokeString);
+	};
 
 
     </script>
-
 
 
 </head>
