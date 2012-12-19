@@ -52,9 +52,9 @@ Ext.define('Music.view.Article', {
                         '<h2>{genre}</h2>',
 
                         '<div class="music-article-header music-article-header-portrait">',
-                            '<div class="music-article-button music-article-button-listen">Listen to Story</div>',
-                            '<div class="music-article-button music-article-button-favorite">Add to Favorites</div>',
-                            '<div class="music-article-button music-article-button-tweet">Tweet Story</div>',
+                            '<div class="music-article-button music-article-button-listen"></div>',
+                            '<div class="music-article-button music-article-button-favorite"></div>',
+                            '<div class="music-article-button music-article-button-tweet"></div>',
                         '</div>',
                     '</div>',
                 '</div>'
