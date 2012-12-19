@@ -24,7 +24,7 @@ Ext.define('Music.view.Slidousel', {
          * @cfg {Number} height
          * Height of the carousel
          */
-        height : 400,
+        height : 150,
 
         /**
          * @cfg cls
