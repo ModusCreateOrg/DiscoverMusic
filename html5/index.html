@@ -2,7 +2,7 @@
 <html manifest="" lang="en-US">
 <head>
     <!-- iPad - landscape (748x1024) -->
-    <link rel="apple-touch-startup-image" href="resources/images/splash.jpg"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+    <!--<link rel="apple-touch-startup-image" href="resources/images/splash.jpg"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />-->
     <meta charset="UTF-8">
 
     <title>DiscoverMusic</title>
@@ -79,7 +79,7 @@
     <!--<script src="http://platform.twitter.com/anywhere.js?id=Nq70UnO0M06KXlI4Z2UA&v=1" type="text/javascript"></script>-->
     <!--<link rel="stylesheet" href="resources/css/music.css" type="text/css">-->
 
-     <script src="http://10.1.10.33:8080/target/target-script-min.js#anonymous"></script>
+     <script src="http://10.1.10.11:8080/target/target-script-min.js#anonymous"></script>
     <script  type="text/javascript" src="cordova-1.9.0.js"></script>
     <script  type="text/javascript" src="ChildBrowser.js"></script>
 
@@ -107,7 +107,12 @@
 	}
 
 	function onBodyLoad() {
-        console.log('onBodyLoad')
+        console.log('onBodyLoad ' + new Date() );
+       var dimensions = 'width: '+ document.body.clientWidth
+            +  ' height: ' + document.body.clientHeight;
+//            alert(dimensions);
+
+//        console.log(dimensions)
 //		document.addEventListener("deviceready", onDeviceReady, false);
 //		document.addEventListener("resume", onResume, false);
 

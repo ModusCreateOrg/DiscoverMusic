@@ -94,8 +94,6 @@ Ext.define('Music.view.Article', {
                     src : rec.get('image')
                 }
             });
-
-            console.log(rec.data);
         });
 
         carousel.setData(data);

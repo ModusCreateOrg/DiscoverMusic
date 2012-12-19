@@ -30202,7 +30202,8 @@ Ext.define('Music.view.Slidousel', {
          */
         scrollable : {
             direction     : 'horizontal',
-            directionLock : true
+            directionLock : true,
+            hideIndicator : true
         }
     },
 
@@ -37158,8 +37159,6 @@ Ext.define('Music.view.Article', {
                     src : rec.get('image')
                 }
             });
-
-            console.log(rec.data);
         });
 
         carousel.setData(data);
@@ -37270,7 +37269,7 @@ Ext.define('Music.view.GlobalToc', {
             tocArticles.push(genreRecord.data.data.story[0]);
         });
 
-        console.log('rawGenres', rawGenres);
+//        console.log('rawGenres', rawGenres);
         container.setData(tocArticles);
     },
 
@@ -38356,18 +38355,21 @@ Ext.define('Music.view.Main', {
                         margin : null,
                         height : null
                     },
-                    {
-                        action  : 'findstations',
-                        iconCls : 'find-stations-icon'
-                    },
+                    // TODO: Post Christmas 2012
+//                    {
+//                        action  : 'findstations',
+//                        iconCls : 'find-stations-icon'
+//                    },
                     {
                         iconCls : 'favorite-icon',
                         action  : 'favorites'
                     },
-                    {
-                        action  : 'search',
-                        iconCls : 'search-icon'
-                    }
+                    // TODO: Post Christmas 2012
+
+//                    {
+//                        action  : 'search',
+//                        iconCls : 'search-icon'
+//                    }
                 ]
             }
         ]
@@ -38375,6 +38377,7 @@ Ext.define('Music.view.Main', {
 
     initialize : function() {
         var me = this;
+        console.log(document.body.clientHeight);
 
         me.callParent();
 

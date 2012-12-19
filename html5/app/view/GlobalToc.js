@@ -46,6 +46,22 @@ Ext.define('Music.view.GlobalToc', {
         }
     },
 
+    initialize : function() {
+        var bodyWidth     = document.body.clientWidth,
+//            bodyHeight    = document.body.clientHeight,
+            featuredStory = this.down('#featuredstory'),
+            carousel      = this.down('#genres');
+
+//        alert(bodyWidth)
+        // 8.9"
+        if (bodyWidth == 800) {
+            featuredStory.setHeight(835);
+            carousel.setHeight(300);
+        }
+
+        this.callParent(arguments)
+    },
+
     addGenres : function(articleRecords) {
         var me          = this,
             container   = me.down('#genres'),
@@ -57,7 +73,7 @@ Ext.define('Music.view.GlobalToc', {
             tocArticles.push(genreRecord.data.data.story[0]);
         });
 
-        console.log('rawGenres', rawGenres);
+//        console.log('rawGenres', rawGenres);
         container.setData(tocArticles);
     },
 

@@ -1,3 +1,4 @@
+
 Ext.application({
     name      : 'Music',
     appFolder : 'app',
@@ -22,14 +23,13 @@ Ext.application({
     },
 
     tabletStartupScreen: 'resources/images/splash.jpg',
-
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
         window[this.getName()].app = this;
     },
-    
+
     onUpdated: function() {
         Ext.Msg.confirm(
             "Application Update",

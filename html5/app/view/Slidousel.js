@@ -44,7 +44,8 @@ Ext.define('Music.view.Slidousel', {
          */
         scrollable : {
             direction     : 'horizontal',
-            directionLock : true
+            directionLock : true,
+            hideIndicator : true
         }
     },
 

@@ -47,18 +47,19 @@ Ext.define('Music.view.Main', {
                         margin : null,
                         height : null
                     },
-                    {
-                        action  : 'findstations',
-                        iconCls : 'find-stations-icon'
-                    },
-                    {
-                        iconCls : 'favorite-icon',
-                        action  : 'favorites'
-                    },
-                    {
-                        action  : 'search',
-                        iconCls : 'search-icon'
-                    }
+                    // TODO: Post Christmas 2012
+//                    {
+//                        action  : 'findstations',
+//                        iconCls : 'find-stations-icon'
+//                    },
+//                    {
+//                        iconCls : 'favorite-icon',
+//                        action  : 'favorites'
+//                    },
+//                    {
+//                        action  : 'search',
+//                        iconCls : 'search-icon'
+//                    }
                 ]
             }
         ]
