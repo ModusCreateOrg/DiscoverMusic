@@ -249,7 +249,7 @@
         @include box-flex(1);
         height         : 60px;
         font-size      : 1.8em;
-        line-height    : 2.3em;
+        //line-height    : 2.3em;
         border         : none;
         color          : #fff;
         font-family    : $base-font;
@@ -383,24 +383,34 @@
     color       : #959595;
   }
 
-  .music-article-button-listen:before {
-    content : 'L';
+  .music-article-button-listen {
+    background-image: url('../images/DM-ArticleMenu-Normal-Listen.png');
+    width: 104px;
+    height: 24px;
   }
-  .music-article-button-tweet:before {
-    content : 'T';
+
+  .music-article-button-pressed.music-article-button-listen {
+    background-image: url('../images/DM-ArticleMenu-Active-Listen.png');
   }
-  //.music-article-button-toc {
-  //  background-position : 0 -126px;
-  //}
-  .music-article-button-favorite:before {
-    content : 'F';
+
+  .music-article-button-tweet {
+    background-image: url('../images/DM-ArticleMenu-Normal-Share.png');
+    width: 104px;
+    height: 24px;
   }
-  //.music-article-button-favorite-added {
-  //  background-position : 0 -167px;
-  //}
-  .music-article-button-pressed:before {
-    background-position-x : -197px;
-    color                 : #ffffff;
+
+  .music-article-button-pressed.music-article-button-tweet {
+    background-image: url('../images/DM-ArticleMenu-Active-Share.png');
+  }
+
+  .music-article-button-favorite {
+    background-image: url('../images/DM-ArticleMenu-Normal-Favorites.png');
+    width: 104px;
+    height: 24px;
+  }
+
+  .music-article-button-pressed.music-article-button-favorite {
+    background-image: url('../images/DM-ArticleMenu-Active-Favorites.png');
   }
 
   .music-article-button-pressed {

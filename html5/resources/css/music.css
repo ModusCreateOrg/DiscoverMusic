@@ -11418,7 +11418,6 @@ body {
   box-flex: 1;
   height: 60px;
   font-size: 1.8em;
-  line-height: 2.3em;
   border: none;
   color: #fff;
   font-family: "nevisBold";
@@ -11545,23 +11544,36 @@ body {
   color: #959595;
 }
 /* line 386, ../scss/include/_article.scss */
-.music-article .music-article-button-listen:before {
-  content: 'L';
+.music-article .music-article-button-listen {
+  background-image: url("../images/DM-ArticleMenu-Normal-Listen.png");
+  width: 104px;
+  height: 24px;
 }
-/* line 389, ../scss/include/_article.scss */
-.music-article .music-article-button-tweet:before {
-  content: 'T';
+/* line 392, ../scss/include/_article.scss */
+.music-article .music-article-button-pressed.music-article-button-listen {
+  background-image: url("../images/DM-ArticleMenu-Active-Listen.png");
 }
-/* line 395, ../scss/include/_article.scss */
-.music-article .music-article-button-favorite:before {
-  content: 'F';
+/* line 396, ../scss/include/_article.scss */
+.music-article .music-article-button-tweet {
+  background-image: url("../images/DM-ArticleMenu-Normal-Share.png");
+  width: 104px;
+  height: 24px;
 }
-/* line 401, ../scss/include/_article.scss */
-.music-article .music-article-button-pressed:before {
-  background-position-x: -197px;
-  color: #ffffff;
+/* line 402, ../scss/include/_article.scss */
+.music-article .music-article-button-pressed.music-article-button-tweet {
+  background-image: url("../images/DM-ArticleMenu-Active-Share.png");
 }
 /* line 406, ../scss/include/_article.scss */
+.music-article .music-article-button-favorite {
+  background-image: url("../images/DM-ArticleMenu-Normal-Favorites.png");
+  width: 104px;
+  height: 24px;
+}
+/* line 412, ../scss/include/_article.scss */
+.music-article .music-article-button-pressed.music-article-button-favorite {
+  background-image: url("../images/DM-ArticleMenu-Active-Favorites.png");
+}
+/* line 416, ../scss/include/_article.scss */
 .music-article .music-article-button-pressed {
   color: #ffffff;
 }
