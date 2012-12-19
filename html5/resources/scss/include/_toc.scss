@@ -23,7 +23,7 @@
 
         .global-toc-featured-story {
             .x-innerhtml {
-                height : 750px;
+                height : 300px;
             }
             .global-toc-featured-image-#{$genre} {
                 position            : relative;
@@ -38,9 +38,9 @@
                     //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
                     color          : #fff;
                     font-family    : $base-font;
-                    height         : 70px;
+                    height         : 40px;
                     //text-shadow    : 0px 1px darken($bg-color2, 20);
-                    font-size      : 3em;
+                    font-size      : 1.5em;
                     text-transform : uppercase;
                     padding-left   : 30px;
                     text-align     : left;
@@ -85,8 +85,8 @@
             background-attachment : fixed;
             .global-toc-genre-image {
                 //position            : relative;
-                height              : 409px;
-                width               : 309px;
+                height              : 150px;
+                width               : 150px;
                 background-size     : cover;
                 background-position : center center;
                 background-repeat   : no-repeat;
@@ -97,11 +97,11 @@
                     //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
                     color          : #fff;
                     font-family    : $base-font;
-                    height         : 30px;
+                    height         : 20px;
                     //text-shadow    : 0px 1px darken($bg-color2, 20);
-                    font-size      : 1.3em;
+                    font-size      : .7em;
                     text-transform : uppercase;
-                    padding-left   : 30px;
+                    padding-left   : 5px;
                     text-align     : left;
                     margin-bottom  : 10px;
                 }
@@ -111,13 +111,13 @@
                     //text-shadow : 0px 2px rgba(0, 0, 0, .9);
                     font-family : $base-font;
                     position    : absolute;
-                    height      : 161px;
-                    width       : 309px;
+                    height      : 75px;
+                    width       : 150px;
                     bottom      : 0;
-                    line-height : 30px;
+                    line-height : 15px;
                     color       : #fff;
-                    font-size   : 1.5em;
-                    padding     : 15px 20px;
+                    font-size   : .8em;
+                    padding     : 5px 5px;
                 }
             }
 

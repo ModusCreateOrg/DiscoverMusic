@@ -12574,7 +12574,7 @@ body {
 @media screen and (orientation: portrait) {
   /* line 1, ../scss/include/_player.scss */
   .music-player {
-    width: 150px;
+    width: 300px;
   }
 }
 
@@ -12651,7 +12651,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rock {
@@ -12668,8 +12668,8 @@ body {
   background-image: linear-gradient(#559c06, #559c06);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -12716,8 +12716,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -12729,10 +12729,10 @@ body {
   background-image: linear-gradient(#559c06, #559c06);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -12743,13 +12743,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock p {
@@ -12770,7 +12770,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-classical {
@@ -12787,8 +12787,8 @@ body {
   background-image: linear-gradient(#f56522, #f56522);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -12835,8 +12835,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -12848,10 +12848,10 @@ body {
   background-image: linear-gradient(#f56522, #f56522);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -12862,13 +12862,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical p {
@@ -12889,7 +12889,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues {
@@ -12906,8 +12906,8 @@ body {
   background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -12954,8 +12954,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -12967,10 +12967,10 @@ body {
   background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -12981,13 +12981,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues p {
@@ -13008,7 +13008,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-world {
@@ -13025,8 +13025,8 @@ body {
   background-image: linear-gradient(#662c91, #662c91);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13073,8 +13073,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13086,10 +13086,10 @@ body {
   background-image: linear-gradient(#662c91, #662c91);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13100,13 +13100,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world p {
@@ -13127,7 +13127,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-hipHop {
@@ -13144,8 +13144,8 @@ body {
   background-image: linear-gradient(#0054a6, #0054a6);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13192,8 +13192,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13205,10 +13205,10 @@ body {
   background-image: linear-gradient(#0054a6, #0054a6);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13219,13 +13219,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop p {
@@ -13246,7 +13246,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance {
@@ -13263,8 +13263,8 @@ body {
   background-image: linear-gradient(#212121, #0a0a0a);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13311,8 +13311,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13324,10 +13324,10 @@ body {
   background-image: linear-gradient(#212121, #0a0a0a);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13338,13 +13338,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance p {
@@ -13365,7 +13365,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-pop {
@@ -13382,8 +13382,8 @@ body {
   background-image: linear-gradient(#ec008c, #ec008c);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13430,8 +13430,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13443,10 +13443,10 @@ body {
   background-image: linear-gradient(#ec008c, #ec008c);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13457,13 +13457,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop p {
@@ -13484,7 +13484,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative {
@@ -13501,8 +13501,8 @@ body {
   background-image: linear-gradient(#e3dc1e, #e3dc1e);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13549,8 +13549,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13562,10 +13562,10 @@ body {
   background-image: linear-gradient(#e3dc1e, #e3dc1e);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13576,13 +13576,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative p {
@@ -13603,7 +13603,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-country {
@@ -13620,8 +13620,8 @@ body {
   background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13668,8 +13668,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13681,10 +13681,10 @@ body {
   background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13695,13 +13695,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country p {
@@ -13722,7 +13722,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 750px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rnb {
@@ -13739,8 +13739,8 @@ body {
   background-image: linear-gradient(#bc48b9, #bc48b9);
   color: #fff;
   font-family: "nevisBold";
-  height: 40px;
-  font-size: 1.5em;
+  height: 70px;
+  font-size: 3em;
   text-transform: uppercase;
   padding-left: 30px;
   text-align: left;
@@ -13787,8 +13787,8 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image {
-  height: 150px;
-  width: 150px;
+  height: 409px;
+  width: 309px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13800,10 +13800,10 @@ body {
   background-image: linear-gradient(#bc48b9, #bc48b9);
   color: #fff;
   font-family: "nevisBold";
-  height: 20px;
-  font-size: .7em;
+  height: 30px;
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 5px;
+  padding-left: 30px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -13814,13 +13814,13 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
-  width: 150px;
+  height: 161px;
+  width: 309px;
   bottom: 0;
-  line-height: 15px;
+  line-height: 30px;
   color: #fff;
-  font-size: .8em;
-  padding: 5px 5px;
+  font-size: 1.5em;
+  padding: 15px 20px;
 }
 /* line 124, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb p {
