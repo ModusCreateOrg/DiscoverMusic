@@ -1,7 +1,6 @@
 /**
  * @class Music.view.GlobalToc
  * @extends Ext.Container
- * @author Crysfel Villa <crysfel@moduscreate.com>
  *
  * The global table of content
  */
@@ -9,6 +8,10 @@
 Ext.define('Music.view.GlobalToc', {
     extend : 'Ext.Container',
     xtype  : 'globaltoc',
+
+    requires : [
+        'Music.view.Slidousel'
+    ],
 
     config : {
         first           : true,
@@ -29,34 +32,17 @@ Ext.define('Music.view.GlobalToc', {
                 ]
             },
             {
-                xtype      : 'container',
-                itemId     : 'genres',
-                cls        : 'global-toc-genre-container',
-                height     : 150,
-                scrollable : {
-                    direction     : 'horizontal',
-                    directionLock : true
-                },
-                tpl : [
-                    '<tpl for=".">',
-                        '<div class="global-toc-tap-target global-toc-genre-item global-toc-genre-{genreKey}" data-id="{id}">',
-                            '<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{image.src})">',
-                                '<h2>{genre}</h2>',
-                                '<h3 class="global-toc-title">{title}</h3>',
-                            '</div>',
-                        '</div>',
-                    '</tpl>'
-                ]
+                xtype      : 'slidousel',
+                itemId     : 'genres'
             }
-        ]
-    },
+        ],
 
-    initialize : function() {
-        var me = this;
-
-        me.callParent();
-
-        me.registerEvents();
+        control : {
+            slidousel : {
+                itemtouchstart : 'onTouchStart',
+                itemtouchend   : 'onTouchEnd'
+            }
+        }
     },
 
     addGenres : function(articleRecords) {
@@ -84,26 +70,7 @@ Ext.define('Music.view.GlobalToc', {
         me.setFeaturedArticle(model);
     },
 
-    registerEvents : function() {
-        var me = this,
-            el = me.renderElement;
-
-        el.on({
-            scope      : me,
-            touchstart : 'onTouchStart',
-            touchend   : 'onTouchEnd',
-            delegate   : '.global-toc-tap-target'
-        });
-
-        el.on({
-            scope    : me,
-            tap      : 'onTap',
-            delegate : '.global-toc-tap-target'
-
-        });
-    },
-
-    onTouchStart : function(event) {
+    onTouchStart : function(carousel, id, event) {
         var target      = event.getTarget(),
             highlightEl = Ext.fly(target).down('.global-toc-title');
 
@@ -114,15 +81,5 @@ Ext.define('Music.view.GlobalToc', {
     onTouchEnd : function() {
         Ext.fly(this.pressing).removeCls('global-toc-article-pressed');
         delete this.pressing;
-    },
-
-    onTap : function(event) {
-        var me     = this,
-            target = event.getTarget(),
-            id     = +target.getAttribute("data-id");
-
-        if (id) {
-            me.fireEvent('storytap', id);
-        }
     }
 });
