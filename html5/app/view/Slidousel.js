@@ -8,7 +8,16 @@ Ext.define('Music.view.Slidousel', {
     xtype  : 'slidousel',
 
     config : {
-        sectionName: false,
+        /**
+         * @cfg {Object} sectionGenre
+         * Set a section name to display as a title above carousel
+         * Object containing genre name and key in format
+         *  {
+         *      key: 'hiphop',
+         *      name: 'Hip Hop'
+         *  }
+         */
+        sectionGenre: false,
 
         /**
          * @cfg {Boolean} showTitle
@@ -121,15 +130,20 @@ Ext.define('Music.view.Slidousel', {
         this.setTpl(Ext.create('Ext.XTemplate', tpl));
     },
 
-    applySectionName: function (newValue, oldValue) {
+    applySectionGenre: function (newValue, oldValue) {
+        var view,
+            html;
+
         if (newValue === false) {
             return;
         }
 
         if (oldValue instanceof Ext.dom.Element) {
-            oldValue.setHtml(newValue);
+            oldValue.setHtml(newValue); //todo: need to refactor this
         } else {
-            oldValue = this.element.insertHtml('afterBegin', '<div class="slidousel-sectiontitle">' + newValue + '</div>');
+            view = this.getScrollable().getElement();
+            html = '<div class="slidousel-sectiontitle genre-' +newValue.key + '">' + newValue.name + '</div>';
+            oldValue = view.insertHtml('afterBegin', html);
         }
 
         return oldValue;
