@@ -79,66 +79,66 @@
                 font-size        : 13px;
             }
         }
-
-        .global-toc-genre-#{$genre} {
-            background            : url('../images/article-view-sidebar-bg.png');
-            background-attachment : fixed;
-            .global-toc-genre-image {
-                //position            : relative;
-                height              : 175px;
-                width               : 150px;
-                background-size     : cover;
-                background-position : center center;
-                background-repeat   : no-repeat;
-
-                h2 {
-                    @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-                    //border         : 2px solid rgba(255, 255, 255, .5);
-                    //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
-                    color          : #fff;
-                    font-family    : $base-font;
-                    height         : 20px;
-                    //text-shadow    : 0px 1px darken($bg-color2, 20);
-                    font-size      : .7em;
-                    text-transform : uppercase;
-                    padding-left   : 5px;
-                    text-align     : left;
-                    margin-bottom  : 10px;
-                }
-
-                h3 {
-                    @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55))));
-                    //text-shadow : 0px 2px rgba(0, 0, 0, .9);
-                    font-family : $base-font;
-                    position    : absolute;
-                    height      : 80px;
-                    width       : 150px;
-                    bottom      : 0;
-                    line-height : 15px;
-                    color       : #fff;
-                    font-size   : .8em;
-                    padding     : 5px 5px;
-                }
-            }
-
-            p {
-                font-size   : 0.85em;
-                //text-shadow : 0px 2px rgba(0, 0, 0, .9);
-                font-weight : bold;
-                padding     : 12px 20px;
-                color       : #ccc;
-            }
-            &:last-child {
-                //margin-bottom:30px;
-            }
-
-            .global-toc-article-pressed {
-                background-color : $bg-color1;
-                color            : #fff;
-                //text-shadow      : 0px 1px darken($bg-color1, 20);
-            }
-        }
     }
+
+  .global-toc-genre-#{$genre} {
+      background            : url('../images/article-view-sidebar-bg.png');
+      background-attachment : fixed;
+      .global-toc-genre-image {
+          //position            : relative;
+          height              : 175px;
+          width               : 150px;
+          background-size     : cover;
+          background-position : center center;
+          background-repeat   : no-repeat;
+
+          h2 {
+              @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+              //border         : 2px solid rgba(255, 255, 255, .5);
+              //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
+              color          : #fff;
+              font-family    : $base-font;
+              height         : 20px;
+              //text-shadow    : 0px 1px darken($bg-color2, 20);
+              font-size      : .7em;
+              text-transform : uppercase;
+              padding-left   : 5px;
+              text-align     : left;
+              margin-bottom  : 10px;
+          }
+
+          h3 {
+              @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55))));
+              //text-shadow : 0px 2px rgba(0, 0, 0, .9);
+              font-family : $base-font;
+              position    : absolute;
+              height      : 80px;
+              width       : 150px;
+              bottom      : 0;
+              line-height : 15px;
+              color       : #fff;
+              font-size   : .8em;
+              padding     : 5px 5px;
+          }
+      }
+
+      p {
+          font-size   : 0.85em;
+          //text-shadow : 0px 2px rgba(0, 0, 0, .9);
+          font-weight : bold;
+          padding     : 12px 20px;
+          color       : #ccc;
+      }
+      &:last-child {
+          //margin-bottom:30px;
+      }
+
+      .global-toc-article-pressed {
+          background-color : $bg-color1;
+          color            : #fff;
+          //text-shadow      : 0px 1px darken($bg-color1, 20);
+      }
+  }
 }
 
 
