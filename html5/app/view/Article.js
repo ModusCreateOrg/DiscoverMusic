@@ -9,6 +9,10 @@ Ext.define('Music.view.Article', {
     extend : 'Ext.Container',
     alias  : 'widget.article',
 
+    requires : [
+        'Music.view.Slidousel'
+    ],
+
     config : {
         model      : null,
         genre      : null,
@@ -50,10 +54,12 @@ Ext.define('Music.view.Article', {
                 ].join('')
             },
             {
-                xtype  : 'component',
-                height : 250,
-                docked: 'bottom',
-                html: ''
+                xtype     : 'slidousel',
+                docked    : 'bottom',
+                height    : 150,
+                imgDim    : 200,
+                showGenre : false,
+                showTitle : false
             }
         ]
     },
@@ -70,6 +76,29 @@ Ext.define('Music.view.Article', {
             touchend   : me.onRelease
         });
         me.articleTitle = me.renderElement.down('.music-article-image');
+
+        me.populateGenreArticles();
+    },
+
+    populateGenreArticles: function () {
+        var articleStore = this.getGenreRecord().get('articles'),
+            carousel = this.down('slidousel'),
+            data = [];
+
+        articleStore.each(function (rec) {
+            data.push({
+                id       : rec.get('id'),
+                genreKey : rec.get('genreKey'),
+                title    : rec.get('title'),
+                image    : {
+                    src : rec.get('image')
+                }
+            });
+
+            console.log(rec.data);
+        });
+
+        carousel.setData(data);
     },
 
     onPress   : function(event){
