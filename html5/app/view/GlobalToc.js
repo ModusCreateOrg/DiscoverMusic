@@ -23,7 +23,7 @@ Ext.define('Music.view.GlobalToc', {
                 xtype  : 'component',
                 itemId : 'featuredstory',
                 cls    : 'global-toc-featured-story',
-                flex   : 1,
+                height : 500,
                 tpl    : [
                     '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
                         '<h2>{genre}</h2>',
