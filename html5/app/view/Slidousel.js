@@ -8,6 +8,8 @@ Ext.define('Music.view.Slidousel', {
     xtype  : 'slidousel',
 
     config : {
+        sectionName: false,
+
         /**
          * @cfg {Boolean} showTitle
          * Set false to hide title from showing
@@ -117,6 +119,20 @@ Ext.define('Music.view.Slidousel', {
         ].join('');
 
         this.setTpl(Ext.create('Ext.XTemplate', tpl));
+    },
+
+    applySectionName: function (newValue, oldValue) {
+        if (newValue === false) {
+            return;
+        }
+
+        if (oldValue instanceof Ext.dom.Element) {
+            oldValue.setHtml(newValue);
+        } else {
+            oldValue = this.element.insertHtml('afterBegin', '<div class="slidousel-sectiontitle">' + newValue + '</div>');
+        }
+
+        return oldValue;
     },
 
     initListeners : function () {
