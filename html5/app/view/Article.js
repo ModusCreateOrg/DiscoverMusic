@@ -14,12 +14,19 @@ Ext.define('Music.view.Article', {
     ],
 
     config : {
-        model      : null,
-        genre      : null,
-        genreRecord: undefined,
-        layout     : 'fit',
-        baseCls        : 'music-article',
-        scrollable : {
+        model       : null,
+        genre       : null,
+        genreRecord : undefined,
+        layout      : 'fit',
+        baseCls     : 'music-article',
+        slidousel   : {
+            docked      : 'bottom',
+            height      : 150,
+            imgDim      : 200,
+            showGenre   : false,
+            showTitle   : false
+        },
+        scrollable  : {
             direction     : 'vertical',
             directionLock : true
         },
@@ -52,14 +59,6 @@ Ext.define('Music.view.Article', {
                     '</div>',
                 '</div>'
                 ].join('')
-            },
-            {
-                xtype     : 'slidousel',
-                docked    : 'bottom',
-                height    : 150,
-                imgDim    : 200,
-                showGenre : false,
-                showTitle : false
             }
         ]
     },
@@ -68,6 +67,8 @@ Ext.define('Music.view.Article', {
         var me = this;
 
         me.callParent();
+
+        me.add(me.getSlidousel());
 
         me.renderElement.on({
             scope      : me,
@@ -94,8 +95,6 @@ Ext.define('Music.view.Article', {
                     src : rec.get('image')
                 }
             });
-
-            console.log(rec.data);
         });
 
         carousel.setData(data);
@@ -145,5 +144,16 @@ Ext.define('Music.view.Article', {
         header.setData(modelData);
 
         return model;
+    },
+
+    applySlidousel: function (val, old) {
+        if (Ext.isObject(val)) {
+            var rec = this.getGenreRecord();
+            val.sectionGenre = {
+                key : rec.get('key'),
+                name: rec.get('name')
+            }
+        }
+        return Ext.factory(val, 'Music.view.Slidousel', old);
     }
 });

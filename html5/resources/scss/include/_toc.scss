@@ -139,6 +139,22 @@
           //text-shadow      : 0px 1px darken($bg-color1, 20);
       }
   }
+
+
+  .slidousel-sectiontitle {
+    color          : #fff;
+    font-family    : $base-font;
+    height         : 25px;
+    line-height    : 25px;
+    font-size      : .7em;
+    text-transform : uppercase;
+    padding-left   : 5px;
+    text-align     : left;
+  }
+
+  .genre-#{$genre} {
+    @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+  }
 }
 
 
