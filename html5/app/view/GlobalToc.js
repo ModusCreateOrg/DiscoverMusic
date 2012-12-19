@@ -1,7 +1,6 @@
 /**
  * @class Music.view.GlobalToc
  * @extends Ext.Container
- * @author Crysfel Villa <crysfel@moduscreate.com>
  *
  * The global table of content
  */
