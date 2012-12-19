@@ -27,6 +27,12 @@ Ext.define('Music.view.Slidousel', {
         height : 150,
 
         /**
+         * @cfg {String} imgDim
+         * Dimensions for image to retrieve from src.io
+         */
+        imgDim: '350',
+
+        /**
          * @cfg cls
          * @inheritdoc
          */
@@ -100,7 +106,9 @@ Ext.define('Music.view.Slidousel', {
         var tpl = [
             '<tpl for=".">',
                 '<div class="global-toc-tap-target global-toc-genre-item global-toc-genre-{genreKey}" data-id="{id}">',
-                    '<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{image.src})">',
+                    '<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/',
+                    this.getImgDim(),
+                    ,'/{image.src})">',
                         (this.getShowGenre() === true) ? '<h2>{genre}</h2>' : '',
                         (this.getShowTitle  () === true) ? '<h3 class="global-toc-title">{title}</h3>' : '',
                     '</div>',
