@@ -29285,6 +29285,10 @@ Ext.define('Music.controller.Main', {
                 storytap    : 'onShowArticle'
             },
 
+            'slidousel' : {
+                itemtap: 'onShowArticle'
+            },
+
             'articlepreview' : {
                 readarticle : 'onShowArticle'
             },
@@ -29479,14 +29483,15 @@ Ext.define('Music.controller.Main', {
     onShowArticle  : function(articleId) {
         var me          = this,
             articles    = me.allArticlesStore,
-            index       = articles.find('id', articleId),
+            id          = Ext.isObject(articleId) ? arguments[1] : articleId, //recognize events in slidousel
+            index       = articles.find('id', id),
             articleRec  = articles.getAt(index),
             main        = me.getMain(),
-            articleView = main.down('#article-' + articleId);
+            articleView = main.down('#article-' + id);
 
         if (!articleRec) {
             Ext.Msg.alert('We apologize!', 'For some reason we could not locate the article you requested. Please select another article.');
-            console.warn('WTF?!? We could not find article ID: ' + articleId);
+            console.warn('WTF?!? We could not find article ID: ' + id);
             return;
 
         }
@@ -29494,7 +29499,7 @@ Ext.define('Music.controller.Main', {
         if (!articleView) {
             articleView = main.add({
                 xtype  : 'article',
-                itemId : 'article-' + articleId,
+                itemId : 'article-' + id,
                 model  : articleRec, // TODO: Do we need to pass the whole god damn record?
                 data   : articleRec.getData()
             });
@@ -30272,131 +30277,167 @@ Ext.define('Music.view.GenreToc', {
     }
 });
 /**
- * @class Music.view.GlobalToc
- * @extends Ext.Container
- * @author Crysfel Villa <crysfel@moduscreate.com>
- *
- * The global table of content
+ * Simple sliding carousel
+ * Snapping-less and snapping-free
+ * No components bound, just simple elements
  */
-
-Ext.define('Music.view.GlobalToc', {
+Ext.define('Music.view.Slidousel', {
     extend : 'Ext.Container',
-    xtype  : 'globaltoc',
+    xtype  : 'slidousel',
 
     config : {
-        first           : true,
-        featuredArticle : null,
-        cls             : 'global-toc',
-        layout          : 'vbox',
-        items           : [
-            {
-                xtype  : 'component',
-                itemId : 'featuredstory',
-                cls    : 'global-toc-featured-story',
-                height : 500,
-                tpl    : [
-                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
-                        '<h2>{genre}</h2>',
-                        '<h3 class="global-toc-title">{title}</h2>',
-                    '</div>'
-                ]
-            },
-            {
-                xtype      : 'container',
-                itemId     : 'genres',
-                cls        : 'global-toc-genre-container',
-                height     : 150,
-                scrollable : {
-                    direction     : 'horizontal',
-                    directionLock : true
-                },
-                tpl : [
-                    '<tpl for=".">',
-                        '<div class="global-toc-tap-target global-toc-genre-item global-toc-genre-{genreKey}" data-id="{id}">',
-                            '<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{image.src})">',
-                                '<h2>{genre}</h2>',
-                                '<h3 class="global-toc-title">{title}</h3>',
-                            '</div>',
-                        '</div>',
-                    '</tpl>'
-                ]
-            }
-        ]
+        /**
+         * @cfg {Boolean} showTitle
+         * Set false to hide title from showing
+         */
+        showTitle : true,
+
+        /**
+         * @cfg {Boolean} showGenre
+         * Set false to hide genre name from showing
+         */
+        showGenre : true,
+
+        /**
+         * @cfg {Number} height
+         * Height of the carousel
+         */
+        height : 150,
+
+        /**
+         * @cfg cls
+         * @inheritdoc
+         */
+        cls : 'global-toc-genre-container',
+
+        /**
+         * @cfg scrollable
+         * @inheritdoc
+         */
+        scrollable : {
+            direction     : 'horizontal',
+            directionLock : true
+        }
     },
 
-    initialize : function() {
-        var me = this;
+    /**
+     * @event itemtap
+     * Fires whenever an item is tapped
+     * @param {Music.view.Slidousel} this
+     * @param {String} id ID of the item tapped
+     * @param {Ext.EventObject} e The event object
+     */
 
-        me.callParent();
+    /**
+     * @event itemtaphold
+     * Fires whenever an item is tapped
+     * @param {Music.view.Slidousel} this
+     * @param {String} id ID of the item tapped
+     * @param {Ext.EventObject} e The event object
+     */
 
-        me.registerEvents();
+    /**
+     * @event itemsingletap
+     * Fires whenever an item is singletapped
+     * @param {Music.view.Slidousel} this
+     * @param {String} id ID of the item tapped
+     * @param {Ext.EventObject} e The event object
+     */
+
+    /**
+     * @event itemdoubletap
+     * Fires whenever an item is doubletapped
+     * @param {Music.view.Slidousel} this
+     * @param {String} id ID of the item tapped
+     * @param {Ext.EventObject} e The event object
+     */
+
+    /**
+     * @event itemtouchstart
+     * Fires whenever an item is touched
+     * @param {Music.view.Slidousel} this
+     * @param {String} id ID of the item tapped
+     * @param {Ext.EventObject} e The event object
+     */
+
+    /**
+     * @event itemtouchend
+     * Fires whenever an item is no longer touched
+     * @param {Music.view.Slidousel} this
+     * @param {String} id ID of the item tapped
+     * @param {Ext.EventObject} e The event object
+     */
+
+    initialize: function () {
+        this.callParent();
+        this.initTpl();
+        this.initListeners();
     },
 
-    addGenres : function(articleRecords) {
-        var me          = this,
-            container   = me.down('#genres'),
-            rawGenres   = [],
-            tocArticles = [];
+    initTpl: function () {
+        var tpl = [
+            '<tpl for=".">',
+                '<div class="global-toc-tap-target global-toc-genre-item global-toc-genre-{genreKey}" data-id="{id}">',
+                    '<div class="global-toc-genre-image" style="background-image:url(http://src.sencha.io/350/{image.src})">',
+                        (this.getShowGenre() === true) ? '<h2>{genre}</h2>' : '',
+                        (this.getShowTitle  () === true) ? '<h3 class="global-toc-title">{title}</h3>' : '',
+                    '</div>',
+                '</div>',
+            '</tpl>'
+        ].join('');
 
-        Ext.each(articleRecords, function(genreRecord) {
-            rawGenres.push(genreRecord.data);
-            tocArticles.push(genreRecord.data.data.story[0]);
+        this.setTpl(Ext.create('Ext.XTemplate', tpl));
+    },
+
+    initListeners : function () {
+        this.innerElement.on({
+            touchstart : 'onItemTouchStart',
+            touchend   : 'onItemTouchEnd',
+            tap        : 'onItemTap',
+            taphold    : 'onItemTapHold',
+            singletap  : 'onItemSingleTap',
+            doubletap  : 'onItemDoubleTap',
+            delegate   : '.global-toc-tap-target',
+            scope      : this
         });
-
-        console.log('rawGenres', rawGenres);
-        container.setData(tocArticles);
     },
 
-    setFeatured : function(model) {
-        var me = this,
-            featured = me.down('#featuredstory'),
-            data = model.getData();
-
-        data.text = Ext.util.Format.ellipsis(data.text, 300, true).replace(/<(\/)?p>/g, ' ');
-        featured.setData(data);
-        me.setFeaturedArticle(model);
-    },
-
-    registerEvents : function() {
-        var me = this,
-            el = me.renderElement;
-
-        el.on({
-            scope      : me,
-            touchstart : 'onTouchStart',
-            touchend   : 'onTouchEnd',
-            delegate   : '.global-toc-tap-target'
-        });
-
-        el.on({
-            scope    : me,
-            tap      : 'onTap',
-            delegate : '.global-toc-tap-target'
-
-        });
-    },
-
-    onTouchStart : function(event) {
-        var target      = event.getTarget(),
-            highlightEl = Ext.fly(target).down('.global-toc-title');
-
-        this.pressing = highlightEl;
-        Ext.fly(highlightEl).addCls('global-toc-article-pressed');
-    },
-
-    onTouchEnd : function() {
-        Ext.fly(this.pressing).removeCls('global-toc-article-pressed');
-        delete this.pressing;
-    },
-
-    onTap : function(event) {
-        var me     = this,
-            target = event.getTarget(),
+    /**
+     * This abstract handles repeated fireEvent actions
+     * @private
+     * @param {Ext.EventObject} e The event object
+     * @param {String} eventName Name of the event to fire
+     */
+    pushEvent: function (e, eventName) {
+         var me    = this,
+            target = e.getTarget(),
             id     = +target.getAttribute("data-id");
 
-        if (id) {
-            me.fireEvent('storytap', id);
-        }
+        me.fireEvent(eventName, me, id, e);
+    },
+
+    onItemTap : function (e) {
+        this.pushEvent(e, 'itemtap');
+    },
+
+    onItemSingleTap : function (e) {
+        this.pushEvent(e, 'itemsingletap');
+    },
+
+    onItemDoubleTap : function (e) {
+        this.pushEvent(e, 'itemdoubletap');
+    },
+
+    onItemTapHold : function (e) {
+        this.pushEvent(e, 'itemtaphold');
+    },
+
+    onItemTouchStart : function (e) {
+        this.pushEvent(e, 'itemtouchstart');
+    },
+
+    onItemTouchEnd : function (e) {
+        this.pushEvent(e, 'itemtouchend');
     }
 });
 /**
@@ -37133,6 +37174,92 @@ Ext.anims = {
     })
 };
 
+/**
+ * @class Music.view.GlobalToc
+ * @extends Ext.Container
+ *
+ * The global table of content
+ */
+
+Ext.define('Music.view.GlobalToc', {
+    extend : 'Ext.Container',
+    xtype  : 'globaltoc',
+
+    requires : [
+        'Music.view.Slidousel'
+    ],
+
+    config : {
+        first           : true,
+        featuredArticle : null,
+        cls             : 'global-toc',
+        layout          : 'vbox',
+        items           : [
+            {
+                xtype  : 'component',
+                itemId : 'featuredstory',
+                cls    : 'global-toc-featured-story',
+                height : 545,
+                tpl    : [
+                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
+                        '<h2>{genre}</h2>',
+                        '<h3 class="global-toc-title">{title}</h2>',
+                    '</div>'
+                ]
+            },
+            {
+                xtype  : 'slidousel',
+                itemId : 'genres',
+                height : 175
+            }
+        ],
+
+        control : {
+            slidousel : {
+                itemtouchstart : 'onTouchStart',
+                itemtouchend   : 'onTouchEnd'
+            }
+        }
+    },
+
+    addGenres : function(articleRecords) {
+        var me          = this,
+            container   = me.down('#genres'),
+            rawGenres   = [],
+            tocArticles = [];
+
+        Ext.each(articleRecords, function(genreRecord) {
+            rawGenres.push(genreRecord.data);
+            tocArticles.push(genreRecord.data.data.story[0]);
+        });
+
+        console.log('rawGenres', rawGenres);
+        container.setData(tocArticles);
+    },
+
+    setFeatured : function(model) {
+        var me = this,
+            featured = me.down('#featuredstory'),
+            data = model.getData();
+
+        data.text = Ext.util.Format.ellipsis(data.text, 300, true).replace(/<(\/)?p>/g, ' ');
+        featured.setData(data);
+        me.setFeaturedArticle(model);
+    },
+
+    onTouchStart : function(carousel, id, event) {
+        var target      = event.getTarget(),
+            highlightEl = Ext.fly(target).down('.global-toc-title');
+
+        this.pressing = highlightEl;
+        Ext.fly(highlightEl).addCls('global-toc-article-pressed');
+    },
+
+    onTouchEnd : function() {
+        Ext.fly(this.pressing).removeCls('global-toc-article-pressed');
+        delete this.pressing;
+    }
+});
 /**
  * @class Music.view.Search
  * @extends Ext.Panel

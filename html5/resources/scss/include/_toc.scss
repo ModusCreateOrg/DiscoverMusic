@@ -23,7 +23,7 @@
 
         .global-toc-featured-story {
             .x-innerhtml {
-                height : 300px;
+                height : 545px;
             }
             .global-toc-featured-image-#{$genre} {
                 position            : relative;
@@ -85,7 +85,7 @@
             background-attachment : fixed;
             .global-toc-genre-image {
                 //position            : relative;
-                height              : 150px;
+                height              : 175px;
                 width               : 150px;
                 background-size     : cover;
                 background-position : center center;
@@ -111,7 +111,7 @@
                     //text-shadow : 0px 2px rgba(0, 0, 0, .9);
                     font-family : $base-font;
                     position    : absolute;
-                    height      : 75px;
+                    height      : 80px;
                     width       : 150px;
                     bottom      : 0;
                     line-height : 15px;

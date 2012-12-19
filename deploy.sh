@@ -4,3 +4,4 @@ compass compile;
 cd ../..
 sencha app build testing ../android/assets/www/ 
 cd ..
+say done

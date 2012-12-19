@@ -12651,7 +12651,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rock {
@@ -12716,7 +12716,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rock .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -12743,7 +12743,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -12770,7 +12770,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-classical {
@@ -12835,7 +12835,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-classical .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -12862,7 +12862,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -12889,7 +12889,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues {
@@ -12954,7 +12954,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -12981,7 +12981,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13008,7 +13008,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-world {
@@ -13073,7 +13073,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13100,7 +13100,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13127,7 +13127,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-hipHop {
@@ -13192,7 +13192,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-hipHop .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13219,7 +13219,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13246,7 +13246,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance {
@@ -13311,7 +13311,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-electronicDance .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13338,7 +13338,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13365,7 +13365,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-pop {
@@ -13430,7 +13430,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-pop .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13457,7 +13457,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13484,7 +13484,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative {
@@ -13549,7 +13549,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-latinAlternative .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13576,7 +13576,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13603,7 +13603,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-country {
@@ -13668,7 +13668,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13695,7 +13695,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13722,7 +13722,7 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
 /* line 28, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rnb {
@@ -13787,7 +13787,7 @@ body {
 }
 /* line 86, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-rnb .global-toc-genre-image {
-  height: 150px;
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
@@ -13814,7 +13814,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;

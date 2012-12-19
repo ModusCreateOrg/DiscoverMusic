@@ -131,7 +131,7 @@ Ext.define('Music.view.Slidousel', {
      * @param {String} eventName Name of the event to fire
      */
     pushEvent: function (e, eventName) {
-         var me = this,
+         var me    = this,
             target = e.getTarget(),
             id     = +target.getAttribute("data-id");
 
