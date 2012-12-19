@@ -94,14 +94,13 @@ Ext.define('Music.view.Main', {
         me.setArticles(genreRecords);
         me.globalToc.addGenres(genreRecords);
 
-        return;
+//        return;
         Ext.each(genreRecords, function(genreRecord) {
 //            debugger;
             var recordData = genreRecord.data,
                 genre      = recordData.name,
                 articles   = recordData.articles,
                 firstArticle = articles.getAt(0);
-
 
 
             //Adding the articles preview to the main flow

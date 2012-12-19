@@ -18,6 +18,7 @@
      *      }
      */
     "js":  [
+
         {
             "path": "sdk/sencha-touch.js"
         },
@@ -95,6 +96,8 @@
         "resources/icons",
         "resources/fonts",
         "resources/sounds/s.mp3",
+        "cordova-1.9.0.js",
+        "ChildBrowser.js",
         "silk/actions/getGenres.js",
         "silk/actions/getMp3File.js",
         "silk/actions/stationFinder.js",
