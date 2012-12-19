@@ -98,6 +98,10 @@ Ext.define('Music.controller.Main', {
                 storytap    : 'onShowArticle'
             },
 
+            'slidousel' : {
+                itemtap: 'onShowArticle'
+            },
+
             'articlepreview' : {
                 readarticle : 'onShowArticle'
             },
@@ -292,14 +296,15 @@ Ext.define('Music.controller.Main', {
     onShowArticle  : function(articleId) {
         var me          = this,
             articles    = me.allArticlesStore,
-            index       = articles.find('id', articleId),
+            id          = Ext.isObject(articleId) ? arguments[1] : articleId, //recognize events in slidousel
+            index       = articles.find('id', id),
             articleRec  = articles.getAt(index),
             main        = me.getMain(),
-            articleView = main.down('#article-' + articleId);
+            articleView = main.down('#article-' + id);
 
         if (!articleRec) {
             Ext.Msg.alert('We apologize!', 'For some reason we could not locate the article you requested. Please select another article.');
-            console.warn('WTF?!? We could not find article ID: ' + articleId);
+            console.warn('WTF?!? We could not find article ID: ' + id);
             return;
 
         }
@@ -307,7 +312,7 @@ Ext.define('Music.controller.Main', {
         if (!articleView) {
             articleView = main.add({
                 xtype  : 'article',
-                itemId : 'article-' + articleId,
+                itemId : 'article-' + id,
                 model  : articleRec, // TODO: Do we need to pass the whole god damn record?
                 data   : articleRec.getData()
             });
