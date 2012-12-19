@@ -1,0 +1,8 @@
+07-27 08:33:20.520: DEBUG/ChildBrowserClient(17510): [[ DOMAIN ]]  innovatehealthcare.alpha332.spigit.com
+07-27 08:33:20.520: DEBUG/ChildBrowserClient(17510): [[ URL ]]  http://innovatehealthcare.alpha332.spigit.com/widget_gw?widget=top_ranked_ideas_if&provideJSON=true
+07-27 08:33:20.560: DEBUG/ChildBrowserClient(17510): [[ DOMAIN ]]  innovatehealthcare.alpha332.spigit.com
+07-27 08:33:20.560: DEBUG/ChildBrowserClient(17510): [[ URL ]]  http://innovatehealthcare.alpha332.spigit.com/jsp/unprotected/spigit_sp.jsp?RelayState=http%3A%2F%2Finnovatehealthcare.alpha332.spigit.com%2Fwidget_gw%3Fwidget%3Dtop_ranked_ideas_if%26provideJSON%3Dtrue
+07-27 08:33:20.600: DEBUG/ChildBrowserClient(17510): [[ DOMAIN ]]  sso.spigit.com
+07-27 08:33:20.600: DEBUG/ChildBrowserClient(17510): [[ URL ]]  https://sso.spigit.com/simplesaml/saml2/idp/SSOService.php
+07-27 08:33:20.940: DEBUG/ChildBrowserClient(17510): [[ DOMAIN ]]  sso.spigit.com
+07-27 08:33:20.940: DEBUG/ChildBrowserClient(17510): [[ URL ]]  https://sso.spigit.com/simplesaml/module.php/core/loginuserpass.php?AuthState=_dafa802c43988e9045ad1b06d445891627e143ab7b%3Ahttps%3A%2F%2Fsso.spigit.com%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttp%253A%252F%252Fbeta.alpha332.spigit.com%252Fshibboleth-sp%26cookieTime%3D1343392399%26RelayState%3Dhttp%253A%252F%252Finnovatehealthcare.alpha332.spigit.com%252Fwidget_gw%253Fwidget%253Dtop_ranked_ideas_if%2526provideJSON%253Dtrue
