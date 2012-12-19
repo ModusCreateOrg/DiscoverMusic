@@ -134,7 +134,7 @@ Ext.define('Music.view.Slidousel', {
         var view,
             html;
 
-        if (newValue === false) {
+        if (!newValue) { //intentionally loose
             return;
         }
 
