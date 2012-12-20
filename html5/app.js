@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 Ext.Loader.setConfig({
     disableCaching: false
 });
-=======
->>>>>>> 53d78fa9d9ad888506a6365405d3dfb378d00575
 
 Ext.application({
     name      : 'Music',
