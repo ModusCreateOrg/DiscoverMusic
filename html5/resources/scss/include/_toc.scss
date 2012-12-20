@@ -36,7 +36,7 @@
 
                 @media #{$kindle-hd-8i} {
                     height : 835px;
-                    border: 1px solid #00F;
+                    //border: 1px solid #00F;
                 }
 
             }
@@ -80,16 +80,17 @@
                     width       : 100%;
                     bottom      : 0;
                     color       : #fff;
+                    line-height : 35px;
 
                     @media #{$kindle-hd-7i} {
-                        line-height : 35px;
                         font-size   : 2em;
                         padding     : 15px 20px;
                     }
 
                     @media #{$kindle-hd-8i} {
-                        line-height : 30px;
-                        font-size   : 2.5em;
+                        line-height : 45px;
+
+                        font-size   : 2.25em;
                         padding     : 15px 20px;
                     }
 
@@ -194,9 +195,9 @@
                 padding     : 12px 20px;
                 color       : #ccc;
             }
-            &:last-child {
-                //margin-bottom:30px;
-            }
+            //&:last-child {
+            //    //margin-bottom:30px;
+            //}
 
             .global-toc-article-pressed {
                 background-color : $bg-color1;

@@ -5,16 +5,16 @@ Ext.application({
 
     requires : [
         'Ext.MessageBox',
-        'Ext.util.JSONP',
-        'Ext.device.Geolocation'
+        'Ext.util.JSONP'
+//        'Ext.device.Geolocation'
     ],
 
     controllers : [
         'Main',
-        'Article',
-        'Favorites',
-        'Search',
-        'Stations'
+        'Article'
+//        'Favorites',
+//        'Search',
+//        'Stations'
     ],
 
     icon: {

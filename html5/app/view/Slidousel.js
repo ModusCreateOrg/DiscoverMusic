@@ -109,8 +109,8 @@ Ext.define('Music.view.Slidousel', {
      */
 
     initialize: function () {
-        this.callParent();
         this.initTpl();
+        this.callParent();
         this.initListeners();
     },
 
@@ -128,7 +128,7 @@ Ext.define('Music.view.Slidousel', {
             '</tpl>'
         ].join('');
 
-        this.setTpl(Ext.create('Ext.XTemplate', tpl));
+        this.setTpl(tpl);
     },
 
     applySectionGenre: function (newValue, oldValue) {
@@ -141,7 +141,8 @@ Ext.define('Music.view.Slidousel', {
 
         if (oldValue instanceof Ext.dom.Element) {
             oldValue.setHtml(newValue); //todo: need to refactor this
-        } else {
+        }
+        else {
             view = this.getScrollable().getElement();
             html = '<div class="slidousel-sectiontitle genre-' +newValue.key + '">' + newValue.name + '</div>';
             oldValue = view.insertHtml('afterBegin', html);
