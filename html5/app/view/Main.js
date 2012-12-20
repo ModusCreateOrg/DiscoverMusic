@@ -117,10 +117,11 @@ Ext.define('Music.view.Main', {
     },
 
     setFeatured : function() {
-        var me         = this,
-            articles   = me.getArticles(),
-            randomNum  = Math.floor(Math.random() * articles.length),
-            coverModel = articles[randomNum].data.articles.getAt(0);
+        var me          = this,
+            articles    = me.getArticles(),
+            randomNum   = Math.floor(Math.random() * articles.length),
+            allArticles = articles[randomNum].data.articles,
+            coverModel  = allArticles.getAt(allArticles.getCount() - 1);
 
         me.globalToc.setFeatured(coverModel);
 

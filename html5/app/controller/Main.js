@@ -94,7 +94,6 @@ Ext.define('Music.controller.Main', {
             },
 
             'genretoc' : {
-                featuredtap : 'onShowArticle',
                 storytap    : 'onShowArticle'
             },
 
@@ -307,17 +306,8 @@ Ext.define('Music.controller.Main', {
             Ext.Msg.alert('We apologize!', 'For some reason we could not locate the article you requested. Please select another article.');
             console.warn('WTF?!? We could not find article ID: ' + id);
             return;
-
         }
-        
-//        if (!articleView) {
-//            articleView = main.add({
-//                xtype  : 'article',
-//                itemId : 'article-' + id,
-//                model  : articleRec, // TODO: Do we need to pass the whole god damn record?
-//                data   : articleRec.getData()
-//            });
-//        }
+
         articleView.updateHtmlStuff(articleRec.data);
         main.setActiveItem(articleView);
     },
