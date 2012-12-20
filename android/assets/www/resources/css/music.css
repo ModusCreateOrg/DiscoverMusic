@@ -598,200 +598,200 @@ input, textarea {
   font-size: .8em;
   padding: 1.2em;
 }
-/* line 33, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 33, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #333333;
   font-size: 75%;
 }
-/* line 51, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 51, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h1, .x-html h2, .x-html h3, .x-html h4, .x-html h5, .x-html h6 {
   font-weight: normal;
   color: #222222;
 }
-/* line 52, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 52, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h1 img, .x-html h2 img, .x-html h3 img, .x-html h4 img, .x-html h5 img, .x-html h6 img {
   margin: 0;
 }
-/* line 53, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 53, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h1 {
   font-size: 3em;
   line-height: 1;
   margin-bottom: 0.50em;
 }
-/* line 54, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 54, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
 }
-/* line 55, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 55, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h3 {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1.00em;
 }
-/* line 56, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 56, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h4 {
   font-size: 1.2em;
   line-height: 1.25;
   margin-bottom: 1.25em;
 }
-/* line 57, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 57, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h5 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.50em;
 }
-/* line 58, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 58, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html h6 {
   font-size: 1em;
   font-weight: bold;
 }
-/* line 59, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 59, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html p {
   margin: 0 0 1.5em;
 }
-/* line 60, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 60, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html p .left {
   display: inline;
   float: left;
   margin: 1.5em 1.5em 1.5em 0;
   padding: 0;
 }
-/* line 61, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 61, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html p .right {
   display: inline;
   float: right;
   margin: 1.5em 0 1.5em 1.5em;
   padding: 0;
 }
-/* line 62, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 62, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html a {
   text-decoration: underline;
   color: #0066cc;
 }
-/* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 18, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:visited {
   color: #004c99;
 }
-/* line 21, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 21, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:focus {
   color: #0099ff;
 }
-/* line 24, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 24, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:hover {
   color: #0099ff;
 }
-/* line 27, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 27, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .x-html a:active {
   color: #bf00ff;
 }
-/* line 63, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 63, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html blockquote {
   margin: 1.5em;
   color: #666666;
   font-style: italic;
 }
-/* line 64, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 64, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html strong, .x-html dfn {
   font-weight: bold;
 }
-/* line 65, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 65, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html em, .x-html dfn {
   font-style: italic;
 }
-/* line 66, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 66, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html sup, .x-html sub {
   line-height: 0;
 }
-/* line 67, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 67, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html abbr, .x-html acronym {
   border-bottom: 1px dotted #666666;
 }
-/* line 68, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 68, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html address {
   margin: 0 0 1.5em;
   font-style: italic;
 }
-/* line 69, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 69, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html del {
   color: #666666;
 }
-/* line 70, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 70, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html pre {
   margin: 1.5em 0;
   white-space: pre;
 }
-/* line 71, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 71, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html pre, .x-html code, .x-html tt {
   font: 1em "andale mono", "lucida console", monospace;
   line-height: 1.5;
 }
-/* line 72, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 72, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html li ul, .x-html li ol {
   margin: 0;
 }
-/* line 73, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 73, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html ul, .x-html ol {
   margin: 0 1.5em 1.5em 0;
   padding-left: 1.5em;
 }
-/* line 74, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 74, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html ul {
   list-style-type: disc;
 }
-/* line 75, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 75, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html ol {
   list-style-type: decimal;
 }
-/* line 76, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 76, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html dl {
   margin: 0 0 1.5em 0;
 }
-/* line 77, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 77, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html dl dt {
   font-weight: bold;
 }
-/* line 78, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 78, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html dd {
   margin-left: 1.5em;
 }
-/* line 79, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 79, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html table {
   margin-bottom: 1.4em;
   width: 100%;
 }
-/* line 80, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 80, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html th {
   font-weight: bold;
 }
-/* line 81, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 81, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html thead th {
   background: #c3d9ff;
 }
-/* line 82, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 82, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html th, .x-html td, .x-html caption {
   padding: 4px 10px 4px 5px;
 }
-/* line 85, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 85, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html table.striped tr:nth-child(even) td,
 .x-html table tr.even td {
   background: #e5ecf9;
 }
-/* line 86, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 86, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html tfoot {
   font-style: italic;
 }
-/* line 87, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 87, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html caption {
   background: #eeeeee;
 }
-/* line 88, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 88, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html .quiet {
   color: #666666;
 }
-/* line 89, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
+/* line 89, ../../../../../Users/jgarcia/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 .x-html .loud {
   color: #111111;
 }
@@ -9538,7 +9538,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* line 17, ../scss/include/_shortcuts.scss */
-.fullwidth, .drawer-page-title {
+.fullwidth {
   width: 100%;
 }
 
@@ -11781,721 +11781,6 @@ body {
   background-color: #bc48b9;
 }
 
-/* line 1, ../scss/include/_drawer.scss */
-.drawer-body {
-  height: 230px;
-  width: 100%;
-  color: white;
-  -webkit-transition: top 0.2s ease-out, opacity 3s ease-in-out;
-  transition: top 0.2s ease-out, opacity 3s ease-in-out;
-}
-/* line 10, ../scss/include/_drawer.scss */
-.drawer-body > div > .x-body {
-  background: rgba(255, 255, 255, 0.65);
-  border-top: 1px solid #929292;
-}
-
-/* line 16, ../scss/include/_drawer.scss */
-.drawer-pages-cnt {
-  display: -webkit-box;
-  display: box;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-}
-
-/* line 21, ../scss/include/_drawer.scss */
-.drawer-page-animate {
-  opacity: 0;
-  -webkit-transform-origin: 0px 100px;
-  -webkit-transform: translate(30px, -480px) rotate(32deg) translate(40px, 0) scale(2.5);
-  -webkit-transition-property: -webkit-transform, -webkit-transform-origin, opacity;
-  -webkit-transition-duration: .8s;
-}
-
-/* line 29, ../scss/include/_drawer.scss */
-.drawer-page-title {
-  height: 50px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  position: absolute;
-  bottom: 0;
-  background-color: #f3f3f3;
-  padding: 8px 6px;
-  font-weight: bold;
-  border-top: 2px solid #982c2e;
-  /*white-space: nowrap;*/
-}
-
-/* line 45, ../scss/include/_drawer.scss */
-.drawer-close {
-  text-align: center;
-}
-
-/* line 48, ../scss/include/_drawer.scss */
-.drawer-close div {
-  -webkit-border-top-left-radius: 8px;
-  border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  border-top-right-radius: 8px;
-  background: rgba(255, 255, 255, 0.85);
-  width: 200px;
-  height: 38px;
-  display: inline-block;
-  position: relative;
-  top: 0px;
-  font-size: 0.9em;
-  line-height: 37px;
-  font-weight: bold;
-  color: #222;
-  border: 1px solid #929292;
-  border-bottom: none;
-}
-/* line 62, ../scss/include/_drawer.scss */
-.drawer-close div:after {
-  content: '›';
-  color: #000;
-  font-size: 30px;
-  font-weight: 300;
-  position: absolute;
-  top: 0px;
-  left: 16px;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-/* line 74, ../scss/include/_drawer.scss */
-.drawer-close div.drawer-open-pull:after {
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-
-/* line 84, ../scss/include/_drawer.scss */
-.drawer-bottom-bar {
-  background: #EBEBEB;
-  height: 40px;
-  border-top: 1px solid white;
-}
-
-/* line 90, ../scss/include/_drawer.scss */
-.drawer-home {
-  width: 30px;
-  height: 31px;
-  margin: 5px 10px 5px 20px;
-}
-
-/* line 96, ../scss/include/_drawer.scss */
-.drawer-bottom-bar > div {
-  display: -webkit-box;
-  display: box;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-}
-
-/* line 103, ../scss/include/_drawer.scss */
-.drawer-inner-btn {
-  padding-left: 70px;
-  height: 77px;
-  background: #e6e6e6 url(../images/search-favorites.png) 15px -75px no-repeat;
-  border: 1px solid rgba(0, 0, 0, 0.7);
-  color: #333;
-  font-size: 1.3em;
-  font-weight: bold;
-  line-height: 77px;
-  text-shadow: 0px 1px #fff;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-}
-
-/* line 117, ../scss/include/_drawer.scss */
-.drawer-inner-btn:first-child {
-  margin-bottom: 10px;
-  background-position: 15px 0;
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-rock h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
-  background-image: -webkit-linear-gradient(#559c06, #559c06);
-  background-image: linear-gradient(#559c06, #559c06);
-  text-shadow: 0px 1px 1px #2d5203;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-rock .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #122101;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-classical h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
-  background-image: -webkit-linear-gradient(#f56522, #f56522);
-  background-image: linear-gradient(#f56522, #f56522);
-  text-shadow: 0px 1px 1px #c24309;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-classical .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #913307;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-jazzBlues h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
-  text-shadow: 0px 1px 1px #3d1b57;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-jazzBlues .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #220f30;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-world h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
-  text-shadow: 0px 1px 1px #3d1a56;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-world .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #210e2f;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-hipHop h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
-  background-image: -webkit-linear-gradient(#0054a6, #0054a6);
-  background-image: linear-gradient(#0054a6, #0054a6);
-  text-shadow: 0px 1px 1px #002d5a;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-hipHop .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #001326;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-electronicDance h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
-  background-image: -webkit-linear-gradient(#212121, #0a0a0a);
-  background-image: linear-gradient(#212121, #0a0a0a);
-  text-shadow: 0px 1px 1px black;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-electronicDance .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid black;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-pop h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
-  background-image: -webkit-linear-gradient(#ec008c, #ec008c);
-  background-image: linear-gradient(#ec008c, #ec008c);
-  text-shadow: 0px 1px 1px #a0005f;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-pop .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #6d0040;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-latinAlternative h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
-  background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
-  background-image: linear-gradient(#e3dc1e, #e3dc1e);
-  text-shadow: 0px 1px 1px #a19c14;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-latinAlternative .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #73700e;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-country h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
-  text-shadow: 0px 1px 1px #e89e00;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-country .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #b47b00;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* line 123, ../scss/include/_drawer.scss */
-.drawer-page {
-  margin: 14px 10px 0 10px;
-  height: 167px;
-  color: #fff;
-  width: 190px;
-  float: left;
-}
-/* line 130, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n+1) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/* line 133, ../scss/include/_drawer.scss */
-.drawer-page:nth-child(2n) {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-/* line 139, ../scss/include/_drawer.scss */
-.drawer-page-rnb h2 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  font-family: "nevisBold";
-  text-transform: uppercase;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
-  background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
-  background-image: linear-gradient(#bc48b9, #bc48b9);
-  text-shadow: 0px 1px 1px #863184;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  padding: 0 10px 0 15px;
-  font-size: 0.9em;
-  font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-/* line 157, ../scss/include/_drawer.scss */
-.drawer-page-rnb .drawer-title-folded {
-  width: 0;
-  height: 0;
-  margin-top: 35px;
-  border-top: 0px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid #61245f;
-}
-
-/* line 167, ../scss/include/_drawer.scss */
-.drawer-page img {
-  float: right;
-  width: 182px;
-  height: 167px;
-  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 /* line 1, ../scss/include/_search.scss */
 .music-search {
   background: url("../images/article-view-sidebar-bg.png");
@@ -12650,9 +11935,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rock {
   position: relative;
   height: 100%;
@@ -12660,7 +11963,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rock h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
   background-image: -webkit-linear-gradient(#559c06, #559c06);
@@ -12673,7 +11976,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -12688,7 +11991,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -12697,7 +12000,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -12708,22 +12011,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-rock {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rock {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-rock .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rock .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-rock .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rock .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
   background-image: -webkit-linear-gradient(#559c06, #559c06);
   background-image: linear-gradient(#559c06, #559c06);
@@ -12736,14 +12038,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-rock .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rock .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -12751,15 +12053,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-rock p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rock p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-rock .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rock .global-toc-article-pressed {
   background-color: #559c06;
   color: #fff;
 }
@@ -12770,9 +12072,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-classical {
   position: relative;
   height: 100%;
@@ -12780,7 +12100,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-classical h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
   background-image: -webkit-linear-gradient(#f56522, #f56522);
@@ -12793,7 +12113,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -12808,7 +12128,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -12817,7 +12137,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -12828,22 +12148,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-classical {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-classical {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-classical .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-classical .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-classical .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-classical .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
   background-image: -webkit-linear-gradient(#f56522, #f56522);
   background-image: linear-gradient(#f56522, #f56522);
@@ -12856,14 +12175,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-classical .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-classical .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -12871,15 +12190,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-classical p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-classical p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-classical .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-classical .global-toc-article-pressed {
   background-color: #f56522;
   color: #fff;
 }
@@ -12890,9 +12209,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues {
   position: relative;
   height: 100%;
@@ -12900,7 +12237,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
   background-image: -webkit-linear-gradient(#662d91, #662d91);
@@ -12913,7 +12250,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -12928,7 +12265,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -12937,7 +12274,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -12948,22 +12285,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-jazzBlues {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-jazzBlues {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-jazzBlues .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-jazzBlues .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-jazzBlues .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
   background-image: -webkit-linear-gradient(#662d91, #662d91);
   background-image: linear-gradient(#662d91, #662d91);
@@ -12976,14 +12312,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-jazzBlues .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -12991,15 +12327,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-jazzBlues p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-jazzBlues p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-jazzBlues .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-jazzBlues .global-toc-article-pressed {
   background-color: #662d91;
   color: #fff;
 }
@@ -13010,9 +12346,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-world {
   position: relative;
   height: 100%;
@@ -13020,7 +12374,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-world h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
   background-image: -webkit-linear-gradient(#662c91, #662c91);
@@ -13033,7 +12387,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13048,7 +12402,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13057,7 +12411,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13068,22 +12422,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-world {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-world {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-world .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-world .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-world .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-world .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
   background-image: -webkit-linear-gradient(#662c91, #662c91);
   background-image: linear-gradient(#662c91, #662c91);
@@ -13096,14 +12449,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-world .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-world .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13111,15 +12464,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-world p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-world p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-world .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-world .global-toc-article-pressed {
   background-color: #662c91;
   color: #fff;
 }
@@ -13130,9 +12483,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-hipHop {
   position: relative;
   height: 100%;
@@ -13140,7 +12511,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-hipHop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
   background-image: -webkit-linear-gradient(#0054a6, #0054a6);
@@ -13153,7 +12524,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13168,7 +12539,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13177,7 +12548,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13188,22 +12559,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-hipHop {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-hipHop {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-hipHop .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-hipHop .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-hipHop .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-hipHop .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
   background-image: -webkit-linear-gradient(#0054a6, #0054a6);
   background-image: linear-gradient(#0054a6, #0054a6);
@@ -13216,14 +12586,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-hipHop .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-hipHop .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13231,15 +12601,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-hipHop p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-hipHop p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-hipHop .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-hipHop .global-toc-article-pressed {
   background-color: #0054a6;
   color: #fff;
 }
@@ -13250,9 +12620,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance {
   position: relative;
   height: 100%;
@@ -13260,7 +12648,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
@@ -13273,7 +12661,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13288,7 +12676,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13297,7 +12685,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13308,22 +12696,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-electronicDance {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-electronicDance {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-electronicDance .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-electronicDance .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-electronicDance .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-electronicDance .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
   background-image: linear-gradient(#212121, #0a0a0a);
@@ -13336,14 +12723,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-electronicDance .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-electronicDance .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13351,15 +12738,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-electronicDance p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-electronicDance p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-electronicDance .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-electronicDance .global-toc-article-pressed {
   background-color: #212121;
   color: #fff;
 }
@@ -13370,9 +12757,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-pop {
   position: relative;
   height: 100%;
@@ -13380,7 +12785,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-pop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
   background-image: -webkit-linear-gradient(#ec008c, #ec008c);
@@ -13393,7 +12798,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13408,7 +12813,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13417,7 +12822,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13428,22 +12833,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-pop {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-pop {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-pop .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-pop .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-pop .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-pop .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
   background-image: -webkit-linear-gradient(#ec008c, #ec008c);
   background-image: linear-gradient(#ec008c, #ec008c);
@@ -13456,14 +12860,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-pop .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-pop .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13471,15 +12875,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-pop p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-pop p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-pop .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-pop .global-toc-article-pressed {
   background-color: #ec008c;
   color: #fff;
 }
@@ -13490,9 +12894,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative {
   position: relative;
   height: 100%;
@@ -13500,7 +12922,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
   background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
@@ -13513,7 +12935,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13528,7 +12950,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13537,7 +12959,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13548,22 +12970,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-latinAlternative {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-latinAlternative {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-latinAlternative .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-latinAlternative .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-latinAlternative .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-latinAlternative .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
   background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
   background-image: linear-gradient(#e3dc1e, #e3dc1e);
@@ -13576,14 +12997,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-latinAlternative .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-latinAlternative .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13591,15 +13012,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-latinAlternative p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-latinAlternative p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-latinAlternative .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-latinAlternative .global-toc-article-pressed {
   background-color: #e3dc1e;
   color: #fff;
 }
@@ -13610,9 +13031,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-country {
   position: relative;
   height: 100%;
@@ -13620,7 +13059,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-country h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
   background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
@@ -13633,7 +13072,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13648,7 +13087,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13657,7 +13096,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13668,22 +13107,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-country {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-country {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-country .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-country .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-country .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-country .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
   background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
   background-image: linear-gradient(#ffbf35, #ffbf35);
@@ -13696,14 +13134,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-country .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-country .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13711,15 +13149,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-country p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-country p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-country .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-country .global-toc-article-pressed {
   background-color: #ffbf35;
   color: #fff;
 }
@@ -13730,9 +13168,27 @@ body {
 }
 /* line 25, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .x-innerhtml {
-  height: 300px;
+  height: 545px;
 }
-/* line 28, ../scss/include/_toc.scss */
+@media only screen and (-webkit-min-device-width: 800px) and (-webkit-min-device-height: 1193px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #F00;
+  }
+}
+@media only screen and (-webkit-max-device-width: 800px) and (orientation: portrait) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #0F0;
+  }
+}
+@media only screen and (-webkit-max-device-width: 533px) and (max-device-height: 778px) {
+  /* line 25, ../scss/include/_toc.scss */
+  .global-toc .global-toc-featured-story .x-innerhtml {
+    border: 1px solid #00F;
+  }
+}
+/* line 37, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rnb {
   position: relative;
   height: 100%;
@@ -13740,7 +13196,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 35, ../scss/include/_toc.scss */
+/* line 44, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rnb h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
   background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
@@ -13753,7 +13209,7 @@ body {
   padding-left: 30px;
   text-align: left;
 }
-/* line 50, ../scss/include/_toc.scss */
+/* line 59, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
@@ -13768,7 +13224,7 @@ body {
   font-size: 2em;
   padding: 15px 20px;
 }
-/* line 64, ../scss/include/_toc.scss */
+/* line 73, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-content {
   background: none;
   color: #fff;
@@ -13777,7 +13233,7 @@ body {
   font-size: 17px;
   font-family: "Georgia", sans-serif;
 }
-/* line 72, ../scss/include/_toc.scss */
+/* line 81, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-about {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -13788,22 +13244,21 @@ body {
   margin: 15px 0 0 15px;
   font-size: 13px;
 }
-
-/* line 85, ../scss/include/_toc.scss */
-.global-toc-genre-rnb {
+/* line 92, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rnb {
   background: url("../images/article-view-sidebar-bg.png");
   background-attachment: fixed;
 }
-/* line 88, ../scss/include/_toc.scss */
-.global-toc-genre-rnb .global-toc-genre-image {
-  height: 150px;
+/* line 95, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rnb .global-toc-genre-image {
+  height: 175px;
   width: 150px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/include/_toc.scss */
-.global-toc-genre-rnb .global-toc-genre-image h2 {
+/* line 103, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rnb .global-toc-genre-image h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
   background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
   background-image: linear-gradient(#bc48b9, #bc48b9);
@@ -13816,14 +13271,14 @@ body {
   text-align: left;
   margin-bottom: 10px;
 }
-/* line 111, ../scss/include/_toc.scss */
-.global-toc-genre-rnb .global-toc-genre-image h3 {
+/* line 118, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rnb .global-toc-genre-image h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, rgba(0, 0, 0, 0.55)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   font-family: "nevisBold";
   position: absolute;
-  height: 75px;
+  height: 80px;
   width: 150px;
   bottom: 0;
   line-height: 15px;
@@ -13831,15 +13286,15 @@ body {
   font-size: .8em;
   padding: 5px 5px;
 }
-/* line 126, ../scss/include/_toc.scss */
-.global-toc-genre-rnb p {
+/* line 133, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rnb p {
   font-size: 0.85em;
   font-weight: bold;
   padding: 12px 20px;
   color: #ccc;
 }
-/* line 137, ../scss/include/_toc.scss */
-.global-toc-genre-rnb .global-toc-article-pressed {
+/* line 144, ../scss/include/_toc.scss */
+.global-toc .global-toc-genre-rnb .global-toc-article-pressed {
   background-color: #bc48b9;
   color: #fff;
 }
@@ -13847,7 +13302,7 @@ body {
 /************************************
 *	GENRE TOC
 ************************************/
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-rock {
   position: relative;
   height: 645px;
@@ -13857,12 +13312,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-rock {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-rock h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13876,7 +13331,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #559c06), color-stop(100%, #559c06));
   background-image: -webkit-linear-gradient(#559c06, #559c06);
@@ -13896,13 +13351,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rock {
   position: relative;
   height: 308px;
@@ -13911,7 +13366,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13926,13 +13381,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rock {
   position: relative;
   height: 308px;
@@ -13941,7 +13396,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rock h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -13957,12 +13412,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-classical {
   position: relative;
   height: 645px;
@@ -13972,12 +13427,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-classical {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-classical h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -13991,7 +13446,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f56522), color-stop(100%, #f56522));
   background-image: -webkit-linear-gradient(#f56522, #f56522);
@@ -14011,13 +13466,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-classical {
   position: relative;
   height: 308px;
@@ -14026,7 +13481,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14041,13 +13496,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-classical {
   position: relative;
   height: 308px;
@@ -14056,7 +13511,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-classical h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14072,12 +13527,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues {
   position: relative;
   height: 645px;
@@ -14087,12 +13542,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-jazzBlues {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14106,7 +13561,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
   background-image: -webkit-linear-gradient(#662d91, #662d91);
@@ -14126,13 +13581,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-jazzBlues {
   position: relative;
   height: 308px;
@@ -14141,7 +13596,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14156,13 +13611,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-jazzBlues {
   position: relative;
   height: 308px;
@@ -14171,7 +13626,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-jazzBlues h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14187,12 +13642,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-world {
   position: relative;
   height: 645px;
@@ -14202,12 +13657,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-world {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-world h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14221,7 +13676,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
   background-image: -webkit-linear-gradient(#662c91, #662c91);
@@ -14241,13 +13696,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-world {
   position: relative;
   height: 308px;
@@ -14256,7 +13711,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14271,13 +13726,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-world {
   position: relative;
   height: 308px;
@@ -14286,7 +13741,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-world h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14302,12 +13757,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop {
   position: relative;
   height: 645px;
@@ -14317,12 +13772,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-hipHop {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14336,7 +13791,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0054a6), color-stop(100%, #0054a6));
   background-image: -webkit-linear-gradient(#0054a6, #0054a6);
@@ -14356,13 +13811,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-hipHop {
   position: relative;
   height: 308px;
@@ -14371,7 +13826,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14386,13 +13841,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-hipHop {
   position: relative;
   height: 308px;
@@ -14401,7 +13856,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-hipHop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14417,12 +13872,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance {
   position: relative;
   height: 645px;
@@ -14432,12 +13887,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-electronicDance {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14451,7 +13906,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #212121), color-stop(100%, #0a0a0a));
   background-image: -webkit-linear-gradient(#212121, #0a0a0a);
@@ -14471,13 +13926,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-electronicDance {
   position: relative;
   height: 308px;
@@ -14486,7 +13941,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14501,13 +13956,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-electronicDance {
   position: relative;
   height: 308px;
@@ -14516,7 +13971,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-electronicDance h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14532,12 +13987,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-pop {
   position: relative;
   height: 645px;
@@ -14547,12 +14002,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-pop {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-pop h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14566,7 +14021,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec008c), color-stop(100%, #ec008c));
   background-image: -webkit-linear-gradient(#ec008c, #ec008c);
@@ -14586,13 +14041,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-pop {
   position: relative;
   height: 308px;
@@ -14601,7 +14056,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14616,13 +14071,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-pop {
   position: relative;
   height: 308px;
@@ -14631,7 +14086,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-pop h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14647,12 +14102,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative {
   position: relative;
   height: 645px;
@@ -14662,12 +14117,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-latinAlternative {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14681,7 +14136,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3dc1e), color-stop(100%, #e3dc1e));
   background-image: -webkit-linear-gradient(#e3dc1e, #e3dc1e);
@@ -14701,13 +14156,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-latinAlternative {
   position: relative;
   height: 308px;
@@ -14716,7 +14171,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14731,13 +14186,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-latinAlternative {
   position: relative;
   height: 308px;
@@ -14746,7 +14201,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-latinAlternative h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14762,12 +14217,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-country {
   position: relative;
   height: 645px;
@@ -14777,12 +14232,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-country {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-country h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14796,7 +14251,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
   background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
@@ -14816,13 +14271,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-country {
   position: relative;
   height: 308px;
@@ -14831,7 +14286,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14846,13 +14301,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-country {
   position: relative;
   height: 308px;
@@ -14861,7 +14316,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-country h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14877,12 +14332,12 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }
 
-/* line 163, ../scss/include/_toc.scss */
+/* line 170, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb {
   position: relative;
   height: 645px;
@@ -14892,12 +14347,12 @@ body {
   background-repeat: no-repeat;
 }
 @media screen and (orientation: landscape) {
-  /* line 163, ../scss/include/_toc.scss */
+  /* line 170, ../scss/include/_toc.scss */
   .genre-toc-featured-rnb {
     height: 385px;
   }
 }
-/* line 172, ../scss/include/_toc.scss */
+/* line 179, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb h2 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
@@ -14911,7 +14366,7 @@ body {
   font-weight: normal;
   bottom: 0;
 }
-/* line 185, ../scss/include/_toc.scss */
+/* line 192, ../scss/include/_toc.scss */
 .genre-toc-featured-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bc48b9), color-stop(100%, #bc48b9));
   background-image: -webkit-linear-gradient(#bc48b9, #bc48b9);
@@ -14931,13 +14386,13 @@ body {
   text-transform: uppercase;
 }
 
-/* line 204, ../scss/include/_toc.scss */
+/* line 211, ../scss/include/_toc.scss */
 .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 209, ../scss/include/_toc.scss */
+/* line 216, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rnb {
   position: relative;
   height: 308px;
@@ -14946,7 +14401,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 217, ../scss/include/_toc.scss */
+/* line 224, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14961,13 +14416,13 @@ body {
   font-size: 1.1em;
   font-family: "nevisBold";
 }
-/* line 233, ../scss/include/_toc.scss */
+/* line 240, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story p {
   font-size: .7em;
   line-height: 1.8em;
   padding: 4px 4px;
 }
-/* line 238, ../scss/include/_toc.scss */
+/* line 245, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rnb {
   position: relative;
   height: 308px;
@@ -14976,7 +14431,7 @@ body {
   background-repeat: no-repeat;
   border: 6px solid black;
 }
-/* line 246, ../scss/include/_toc.scss */
+/* line 253, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story .genre-toc-story-image-rnb h3 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
@@ -14992,7 +14447,7 @@ body {
   color: #fefefe;
   font-weight: bold;
 }
-/* line 261, ../scss/include/_toc.scss */
+/* line 268, ../scss/include/_toc.scss */
 .genre-toc-story .genre-toc-story:first-child {
   margin: 0;
 }

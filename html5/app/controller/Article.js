@@ -33,8 +33,8 @@ Ext.define('Music.controller.Article', {
         }
     },
 
-    onPlay : function(model) {
-        this.getApplication().fireEvent('playAudio', model.getData());
+    onPlay : function(dataObj) {
+        this.getApplication().fireEvent('playAudio', dataObj);
     },
 
     onFavorite : function(view, model, el) {

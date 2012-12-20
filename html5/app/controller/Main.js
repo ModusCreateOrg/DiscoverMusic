@@ -230,7 +230,7 @@ Ext.define('Music.controller.Main', {
     onGenresLoaded : function(store) {
 
         var me = this,
-            rawData = store.getProxy().getReader().rawData,
+//            rawData = store.getProxy().getReader().rawData,
             data;
 
         me.genresStore.data.each(function(record) {

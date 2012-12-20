@@ -46,19 +46,36 @@ Ext.define('Music.view.GlobalToc', {
         }
     },
 
+    initialize : function() {
+        var bodyWidth     = document.body.clientWidth,
+//            bodyHeight    = document.body.clientHeight,
+            featuredStory = this.down('#featuredstory'),
+            carousel      = this.down('#genres');
+
+//        alert(bodyWidth)
+        // 8.9"
+        if (bodyWidth == 800) {
+            featuredStory.setHeight(835);
+            carousel.setHeight(300);
+        }
+
+        this.callParent(arguments)
+    },
+
     addGenres : function(articleRecords) {
         var me          = this,
-            container   = me.down('#genres'),
+            genres      = me.down('#genres'),
             rawGenres   = [],
             tocArticles = [];
 
+//        debugger;
         Ext.each(articleRecords, function(genreRecord) {
-            rawGenres.push(genreRecord.data);
+//            rawGenres.push(genreRecord.data);
             tocArticles.push(genreRecord.data.data.story[0]);
         });
 
-        console.log('rawGenres', rawGenres);
-        container.setData(tocArticles);
+        console.log('tocArticles', tocArticles);
+        genres.setData(tocArticles);
     },
 
     setFeatured : function(model) {
@@ -67,6 +84,7 @@ Ext.define('Music.view.GlobalToc', {
             data = model.getData();
 
         data.text = Ext.util.Format.ellipsis(data.text, 300, true).replace(/<(\/)?p>/g, ' ');
+
         featured.setData(data);
         me.setFeaturedArticle(model);
     },

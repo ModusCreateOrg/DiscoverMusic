@@ -27,7 +27,7 @@ Ext.define('Music.view.Main', {
                 layout : 'hbox',
 
                 defaults : {
-                    margin   : '9 0 0 0',
+                    margin   : '0 0 0 0',
                     height   : 40,
                     iconMask : true,
                     xtype    : 'button'
@@ -36,29 +36,33 @@ Ext.define('Music.view.Main', {
                 items : [
                     {
                         xtype  : 'title',
-                        title  : '<span class="app-title">Discover Music</span>',
+//                        title  : '<span class="app-title">Discover Music</span>',
+                        title  : ' ',
+                        cls    : 'app-title',
                         width  : 190,
                         margin : null,
                         height : null
                     },
                     {
                         xtype  : 'player',
+//                        flex   : 1,
 //                        hidden : false,
                         margin : null,
                         height : null
-                    },
-                    {
-                        action  : 'findstations',
-                        iconCls : 'find-stations-icon'
-                    },
-                    {
-                        iconCls : 'favorite-icon',
-                        action  : 'favorites'
-                    },
-                    {
-                        action  : 'search',
-                        iconCls : 'search-icon'
                     }
+                    // TODO: Post Christmas 2012
+//                    {
+//                        action  : 'findstations',
+//                        iconCls : 'find-stations-icon'
+//                    },
+//                    {
+//                        iconCls : 'favorite-icon',
+//                        action  : 'favorites'
+//                    },
+//                    {
+//                        action  : 'search',
+//                        iconCls : 'search-icon'
+//                    }
                 ]
             }
         ]
@@ -90,17 +94,14 @@ Ext.define('Music.view.Main', {
             me.add(me.globalToc);
         }
 
-//        debugger;
         me.setArticles(genreRecords);
         me.globalToc.addGenres(genreRecords);
 
         Ext.each(genreRecords, function(genreRecord) {
-//            debugger;
             var recordData = genreRecord.data,
                 genre      = recordData.name,
                 articles   = recordData.articles,
                 firstArticle = articles.getAt(0);
-
 
             //Adding the articles preview to the main flow
             // Todo: Fix this whole nonsense of passing model AND its data to the fucking article view.
@@ -116,7 +117,6 @@ Ext.define('Music.view.Main', {
     },
 
     setFeatured : function() {
-//        debugger;
         var me         = this,
             articles   = me.getArticles(),
             randomNum  = Math.floor(Math.random() * articles.length),

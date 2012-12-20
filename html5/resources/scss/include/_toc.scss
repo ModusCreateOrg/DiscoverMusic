@@ -24,6 +24,21 @@
         .global-toc-featured-story {
             .x-innerhtml {
                 height : 545px;
+
+                //@media #{$kindle-fire} {
+                //    border: 1px solid #F00;
+                //}
+
+                @media #{$kindle-hd-7i} {
+                    height : 545px;
+                    //border: 1px solid #0F0;
+                }
+
+                @media #{$kindle-hd-8i} {
+                    height : 835px;
+                    //border: 1px solid #00F;
+                }
+
             }
             .global-toc-featured-image-#{$genre} {
                 position            : relative;
@@ -38,13 +53,22 @@
                     //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
                     color          : #fff;
                     font-family    : $base-font;
-                    height         : 40px;
                     //text-shadow    : 0px 1px darken($bg-color2, 20);
-                    font-size      : 1.5em;
                     text-transform : uppercase;
-                    padding-left   : 30px;
                     text-align     : left;
-                    //margin-bottom  : 10px;
+
+                    @media #{$kindle-hd-7i} {
+                        font-size : 1.5em;
+                        height    : 40px;
+                        padding   : 5px 0 0 10px;
+                    }
+
+                    @media #{$kindle-hd-8i} {
+                        font-size : 2.25em;
+                        height    : 75px;
+                        padding   : 10px 0 0 10px;
+
+                    }
                 }
 
                 h3 {
@@ -55,10 +79,21 @@
                     height      : 161px;
                     width       : 100%;
                     bottom      : 0;
-                    line-height : 30px;
                     color       : #fff;
-                    font-size   : 2em;
-                    padding     : 15px 20px;
+                    line-height : 35px;
+
+                    @media #{$kindle-hd-7i} {
+                        font-size   : 2em;
+                        padding     : 15px 20px;
+                    }
+
+                    @media #{$kindle-hd-8i} {
+                        line-height : 45px;
+
+                        font-size   : 2.25em;
+                        padding     : 15px 20px;
+                    }
+
                 }
             }
             .global-toc-featured-content {
@@ -79,82 +114,98 @@
                 font-size        : 13px;
             }
         }
+
+        .global-toc-genre-#{$genre} {
+            background            : url('../images/article-view-sidebar-bg.png');
+            background-attachment : fixed;
+            .global-toc-genre-image {
+                background-size     : cover;
+                background-position : center center;
+                background-repeat   : no-repeat;
+                //position            : relative;
+
+                @media #{$kindle-hd-7i} {
+                    height : 175px;
+                    width  : 150px;
+                }
+
+                @media #{$kindle-hd-8i} {
+                    height : 300px;
+                    width  : 250px;
+                }
+
+
+                h2 {
+                    @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
+                    color          : #fff;
+                    font-family    : $base-font;
+                    text-align     : left;
+                    text-transform : uppercase;
+                    padding-left   : 5px;
+
+                    @media #{$kindle-hd-7i} {
+                        font-size     : 1em;
+                        padding-top   : 2px;
+
+                        margin-bottom : 10px;
+                        height        : 25px;
+                    }
+
+                    @media #{$kindle-hd-8i} {
+                        font-size   : 1.2em;
+                        padding-top : 7px;
+                        line-height : 15px;
+                        height      : 30px;
+                    }
+
+                }
+
+                h3 {
+                    @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55))));
+                    //text-shadow : 0px 2px rgba(0, 0, 0, .9);
+                    font-family : $base-font;
+                    position    : absolute;
+                    bottom      : 0;
+                    color       : #fff;
+
+                    @media #{$kindle-hd-7i} {
+                        height      : 80px;
+                        width       : 150px;
+                        line-height : 15px;
+                        font-size   : .8em;
+                        padding     : 5px 5px;
+
+                    }
+
+                    @media #{$kindle-hd-8i} {
+                        height      : 110px;
+                        width       : 250px;
+                        line-height : 20px;
+                        padding     : 8px 10px;
+                        font-size   : 1.3em;
+                    }
+
+                }
+            }
+
+            p {
+                font-size   : 0.85em;
+                //text-shadow : 0px 2px rgba(0, 0, 0, .9);
+                font-weight : bold;
+                padding     : 12px 20px;
+                color       : #ccc;
+            }
+            //&:last-child {
+            //    //margin-bottom:30px;
+            //}
+
+            .global-toc-article-pressed {
+                background-color : $bg-color1;
+                color            : #fff;
+                //text-shadow      : 0px 1px darken($bg-color1, 20);
+            }
+        }
     }
-
-  .global-toc-genre-#{$genre} {
-      background            : url('../images/article-view-sidebar-bg.png');
-      background-attachment : fixed;
-      .global-toc-genre-image {
-          //position            : relative;
-          height              : 175px;
-          width               : 150px;
-          background-size     : cover;
-          background-position : center center;
-          background-repeat   : no-repeat;
-
-          h2 {
-              @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-              //border         : 2px solid rgba(255, 255, 255, .5);
-              //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
-              color          : #fff;
-              font-family    : $base-font;
-              height         : 20px;
-              //text-shadow    : 0px 1px darken($bg-color2, 20);
-              font-size      : .7em;
-              text-transform : uppercase;
-              padding-left   : 5px;
-              text-align     : left;
-              margin-bottom  : 10px;
-          }
-
-          h3 {
-              @include background-image(linear-gradient(color-stops(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55))));
-              //text-shadow : 0px 2px rgba(0, 0, 0, .9);
-              font-family : $base-font;
-              position    : absolute;
-              height      : 80px;
-              width       : 150px;
-              bottom      : 0;
-              line-height : 15px;
-              color       : #fff;
-              font-size   : .8em;
-              padding     : 5px 5px;
-          }
-      }
-
-      p {
-          font-size   : 0.85em;
-          //text-shadow : 0px 2px rgba(0, 0, 0, .9);
-          font-weight : bold;
-          padding     : 12px 20px;
-          color       : #ccc;
-      }
-      &:last-child {
-          //margin-bottom:30px;
-      }
-
-      .global-toc-article-pressed {
-          background-color : $bg-color1;
-          color            : #fff;
-          //text-shadow      : 0px 1px darken($bg-color1, 20);
-      }
-  }
-
-
-  .slidousel-sectiontitle {
-    color          : #fff;
-    font-family    : $base-font;
-    height         : 25px;
-    line-height    : 25px;
-    font-size      : .7em;
-    text-transform : uppercase;
-    padding-left   : 5px;
-    text-align     : left;
-  }
-
-  .genre-#{$genre} {
-    @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-  }
 }
 
 

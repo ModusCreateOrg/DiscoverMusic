@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        html, body {
+                height: 100%;
+        }
+
+
+        /* 7"  (2011) */
+        @media screen and (min-width: 584px) and (max-height: 984px) {
+            body {
+                background-color: #9F9;
+            }
+        }
+
+        /* 7"  (2012) */
+        @media screen and (min-width: 517px) and (min-height: 778px) {
+            body {
+                background-color: #99F;
+            }
+        }
+
+        /* 8.9" */
+        @media screen and (min-width: 784px) and (max-height: 1193px) {
+            body {
+                background-color: #F99;
+            }
+
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        var onBodyLoad  = function() {
+            var dimensions = 'width: '+ document.body.clientWidth
+                +  ' height: ' + document.body.clientHeight;
+//                alert(dimensions);
+
+            console.log(dimensions)
+        }
+    </script>
+
+</head>
+<body onload="onBodyLoad()">
+</body>
+</html>

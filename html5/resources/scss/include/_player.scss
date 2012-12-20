@@ -1,68 +1,71 @@
-.music-player{
-	font-family: "Myriad Pro", sans-serif;
-	height:33px;
-	margin-top:12px;
-    color:#959595;
-    background-color: #000;
-	-webkit-transition: all 1s ease;
-     overflow: hidden;
-
-    @media screen and (orientation:landscape) {
-        width:670px;
+.music-player {
+    font-family        : "Myriad Pro", sans-serif;
+    height             : 30px;
+    margin-top         : 14px;
+    color              : #959595;
+    background-color   : #000;
+    -webkit-transition : all 1s ease;
+    overflow           : hidden;
+    @media #{$kindle-hd-7i} {
+        width : 305px;
+        //border : 1px solid #0F0;
     }
-    @media screen and (orientation:portrait) {
-        width:150px;
+
+    @media #{$kindle-hd-8i} {
+        width : 575px;
+        //border: 1px solid #00F;
     }
 }
 
-.music-player .x-innerhtml{
-	margin:0;
-	background:none;
-	padding:0;
-    white-space: nowrap;
+.music-player .x-innerhtml {
+    margin      : 0;
+    background  : none;
+    padding     : 0;
+    white-space : nowrap;
 }
 
-.music-player-timer{
-	display:inline-block;
-	vertical-align: top;
-	width:47px;
-	height:20px;
-	//@include background-image(linear-gradient(#99ffff,#6adcf3));
-	text-align:center;
-	margin: 7px 3px 5px 3px;
-    font-size: 13px;
-	//font-size:0.5em;
-	font-weight:normal;
-	padding:0 5px;
-	line-height:15px;
-	color:#959595;
+.music-player-timer {
+    font-family    : sans-serif;
+    font-weight    : bold;
+    display        : inline-block;
+    vertical-align : top;
+    width          : 47px;
+    height         : 20px;
+    text-align     : center;
+    margin         : 7px 3px 5px 3px;
+    font-size      : 13px;
+    padding        : 0 5px;
+    line-height    : 15px;
+    color          : #959595;
 }
 
-.music-player-button{
-	display:inline-block;
-	vertical-align: top;
-	width:11px;
-	height:10px;
-    color:#959595;
+.music-player-button {
+    display            : inline-block;
+    vertical-align     : top;
+    width              : 11px;
+    height             : 10px;
+    color              : #959595;
 
-	background:transparent url(../images/play-pause.png) 0 0 no-repeat;
-	margin:10px 5px 10px 10px;
-	-webkit-transition: background-position .2s ease;
+    background         : transparent url(../images/play-pause.png) 0 0 no-repeat;
+    margin             : 9px 5px 10px 10px;
+    -webkit-transition : background-position .2s ease;
 }
 
-.music-player-paused .music-player-button{
-	background-position:0 -10px;
+.music-player-paused .music-player-button {
+    background-position : 0 -10px;
 }
 
-.music-player-title{
-	display: inline-block;
-	vertical-align: top;
-    font-size: 13px;
-	font-weight:bold;
-	line-height:30px;
-	color:#959595;
-	width: 200px; // FIX THIS
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;	
+.music-player-title {
+    font-family    : sans-serif;
+
+    display        : inline-block;
+    vertical-align : top;
+    font-size      : 13px;
+    font-weight    : bold;
+    line-height    : 30px;
+    color          : #959595;
+    //width: 200px; // FIX THIS
+    text-overflow  : ellipsis;
+    overflow       : hidden;
+    white-space    : nowrap;
 }

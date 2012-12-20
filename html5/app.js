@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 Ext.Loader.setConfig({
     disableCaching: false
 });
+=======
+>>>>>>> 53d78fa9d9ad888506a6365405d3dfb378d00575
 
 Ext.application({
     name      : 'Music',
@@ -8,16 +11,16 @@ Ext.application({
 
     requires : [
         'Ext.MessageBox',
-        'Ext.util.JSONP',
-        'Ext.device.Geolocation'
+        'Ext.util.JSONP'
+//        'Ext.device.Geolocation'
     ],
 
     controllers : [
         'Main',
-        'Article',
-        'Favorites',
-        'Search',
-        'Stations'
+        'Article'
+//        'Favorites',
+//        'Search',
+//        'Stations'
     ],
 
     icon: {
@@ -26,14 +29,13 @@ Ext.application({
     },
 
     tabletStartupScreen: 'resources/images/splash.jpg',
-
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
         window[this.getName()].app = this;
     },
-    
+
     onUpdated: function() {
         Ext.Msg.confirm(
             "Application Update",
