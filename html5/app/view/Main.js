@@ -121,7 +121,7 @@ Ext.define('Music.view.Main', {
             articles    = me.getArticles(),
             randomNum   = Math.floor(Math.random() * articles.length),
             allArticles = articles[randomNum].data.articles,
-            coverModel  = allArticles.getAt(allArticles.getCount() - 1);
+            coverModel  = allArticles.getAt(2);
 
         me.globalToc.setFeatured(coverModel);
 

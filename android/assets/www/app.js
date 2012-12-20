@@ -28576,7 +28576,7 @@ Ext.define('Music.controller.Main', {
             index       = articles.find('id', id),
             articleRec  = articles.getAt(index),
             main        = me.getMain(),
-            articleView = main.down('[genre=' + articleRec.get('genre') + ']');
+            articleView;
 
 
         if (!articleRec) {
@@ -28584,6 +28584,8 @@ Ext.define('Music.controller.Main', {
             console.warn('WTF?!? We could not find article ID: ' + id);
             return;
         }
+
+        articleView = main.down('[genre=' + articleRec.get('genre') + ']');
 
         articleView.updateHtmlStuff(articleRec.data);
         main.setActiveItem(articleView);
@@ -28648,42 +28650,49 @@ Ext.define('Music.controller.Main', {
             tmpObj = Ext.clone(musicData);
 
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
-            tmpObj.audioFile = 'resources/sounds/s.mp3';
-            player.setData(tmpObj);
 
-            Ext.data.JsonP.request({
-                url         : 'http://discovermusic.moduscreate.com/getMp3File',
-                callbackKey : 'callback',
-                params      : {
-                    url : musicData.audioFile
-                },
-                callback    : function(success, data) {
-                    var obj = Ext.clone(musicData);
 
-                    if (success) {
-                        obj.audioFile = data.file;
-                        player.setData(obj);
+//            tmpObj.audioFile = 'resources/sounds/s.mp3';
+//            player.setData(tmpObj);
+
+
+            Ext.Function.defer(function() {
+                Ext.data.JsonP.request({
+                    url         : 'http://discovermusic.moduscreate.com/getMp3File',
+                    callbackKey : 'callback',
+                    params      : {
+                        url : musicData.audioFile
+                    },
+                    callback    : function(success, data) {
+                        var obj = Ext.clone(musicData);
+
+                        if (success) {
+                            obj.audioFile = data.file;
+                            player.setData(obj);
+                        }
                     }
-                }
-            });
+                });
+            }, 250);
+
         }
         else {
+            player.setData(musicData);
 
-            if (!me.getAudioHasPlayed()) {
-
-                // this is to fix the IOS auto-start audio issue!
-                tmpObj.audioFile = 'resources/sounds/s.mp3';
-                player.setData(tmpObj);
-
-                Ext.Function.defer(function() {
-                    player.setData(musicData);
-                }, 550);
-
-                me.setAudioHasPlayed(true);
-            }
-            else {
-                player.setData(musicData);
-            }
+//            if (!me.getAudioHasPlayed()) {
+//
+//                // this is to fix the IOS auto-start audio issue!
+////                tmpObj.audioFile = 'resources/sounds/s.mp3';
+////                player.setData(tmpObj);
+//
+//                Ext.Function.defer(function() {
+//                    player.setData(musicData);
+//                }, 550);
+//
+//                me.setAudioHasPlayed(true);
+//            }
+//            else {
+//                player.setData(musicData);
+//            }
         }
     },
 
@@ -36632,7 +36641,7 @@ Ext.define('Music.view.Main', {
             articles    = me.getArticles(),
             randomNum   = Math.floor(Math.random() * articles.length),
             allArticles = articles[randomNum].data.articles,
-            coverModel  = allArticles.getAt(allArticles.getCount() - 1);
+            coverModel  = allArticles.getAt(2);
 
         me.globalToc.setFeatured(coverModel);
 
@@ -36810,60 +36819,59 @@ Ext.define('Music.view.Player', {
             '<div class="music-player-button"></div>',
             '<div class="music-player-timer">{time}</div>',
             '<div class="music-player-title">{title}</div>'
-        ],
-        items : [
-            {
-                xtype  : 'audio',
-                hidden : true
-            }
         ]
     },
 
     initialize : function() {
-        var me = this,
-            audio = me.down('audio');
+        var me = this;
 
         me.callParent();
-
         me.element.on('tap', 'onPlayPause', me);
-
-        audio.on({
-            scope      : me,
-            pause      : 'onPause',
-            play       : 'onPlay',
-            timeupdate : 'onUpdateTime'
-        });
     },
 
     loadSound : function(url) {
         var me    = this,
-            audioCmp = me.down('audio');
+            audioEl = this.audioEl,
+            listenerCfg = {
+                scope      : me,
+                pause      : 'onPause',
+                play       : 'onPlay',
+                timeupdate : 'onUpdateTime'
+            };
 
-        if (url === audioCmp.getUrl()) {
-            if (audioCmp.isPlaying()) {
-                audioCmp.pause()
-            }
-            else {
-                audioCmp.play();
-            }
+        // todo: REUSE the fucking audio element
+        if (audioEl) {
+            audioEl.pause();
+            audioEl.currentTime = 0;
+            delete this.audioEl;
         }
-        else {
-            audioCmp.setUrl(url);
-            audioCmp.play();
-        }
+
+        audioEl = document.createElement('audio');
+        audioEl.src = url;
+        audioEl.addEventListener('timeupdate', Ext.Function.bind(me.onUpdateTime, me));
+        this.audioEl = audioEl;
+
+
+
+        Ext.Function.defer(function() {
+            audioEl.play();
+
+            me.onPlay();
+        }, 250);
 
     },
 
     onPlayPause : function() {
         var me = this,
-            audio = me.down('audio');
+            audio = me.audioEl;
 
-        if (audio.isPlaying()) {
+        if (! audio.paused) {
             audio.pause();
             me.onPause();
         }
         else {
             audio.play();
+
             me.onPlay();
         }
     },
@@ -36878,15 +36886,15 @@ Ext.define('Music.view.Player', {
         }
 
         if (!o.time) {
-            o.time = '00:00';
+            o.time = '--:--';
         }
 
         return o;
     },
 
-    onUpdateTime : function(audio, time) {
-
+    onUpdateTime : function() {
         var me = this,
+            time    = me.audioEl.currentTime,
             minutes = Math.floor(time / 60),
             seconds = Math.floor(time - minutes * 60);
 
