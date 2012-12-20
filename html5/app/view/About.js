@@ -2,12 +2,15 @@
  *  About Discover Music
  */
 Ext.define('Music.view.About', {
-    extend : 'Ext.Component',
+    extend : 'Ext.Container',
     xtype: 'about',
 
     config : {
         cls: 'aboutpage',
-        layout: 'fit',
+        scrollable :  {
+            direction     : 'vertical',
+            directionLock : true
+        },
         html : [
             '<header>',
                 '<h1>About This App</h1>',

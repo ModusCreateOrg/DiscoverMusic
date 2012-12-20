@@ -61,7 +61,11 @@
             "resources/images/sound-16x16.png",
             "resources/images/play-pause.png",
             "resources/images/DM-Logo-NoBG-Active.png",
-            "resources/images/icon_play.png"
+            "resources/images/icon_play.png",
+            "resources/images/DM-Logo-Large.png",
+            "resources/images/moduscreate-logo-black.png",
+            "resources/images/moduscreate-logo-white-small.png",
+            "resources/images/moduscreate-logo-white.png"
         ],
         /**
          * List of items in the NETWORK section
