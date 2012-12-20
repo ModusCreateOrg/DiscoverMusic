@@ -166,10 +166,7 @@ Ext.define('Music.view.Article', {
             articleRecord = allArticles.getAt(articleIndex);
             articleData = articleRecord.data;
 
-            me.down('#carousel-title').setData(articleData);
-            me.down('component#articleHeader').setData(articleData);
-            me.setData(articleData);
-
+            me.updateHtmlStuff(articleData);
         }
 
 //        else if (isFavButton) {
@@ -184,24 +181,30 @@ Ext.define('Music.view.Article', {
     },
 
     applyModel : function(model) {
-        var me = this,
-            header = me.down('component#articleHeader'),
-            modelData = model.getData(),
-            genreRecord = me.getGenreRecord(),
-            carousel = me.down('#carousel'),
+        var me            = this,
+            modelData     = model.getData(),
+            genreRecord   = me.getGenreRecord(),
+            carousel      = me.down('#carousel'),
             carouselTitle = me.down('#carousel-title'),
-            articles = [];
+            articles      = [];
 
         genreRecord.data.articles.each(function(article, index) {
-//            debugger;
             articles[index] = article.data;
         });
 
-        carousel.setData(articles);
         carouselTitle.setData(articles[0]);
-        me.setData(modelData);
-        header.setData(modelData);
+        carousel.setData(articles);
 
+        me.updateHtmlStuff(modelData);
         return model;
+    },
+
+    updateHtmlStuff : function(modelData) {
+        var me     =  this,
+            header = me.down('component#articleHeader');
+
+        me.down('#carousel-title').setData(modelData);
+        me.down('component#articleHeader').setData(modelData);
+        me.setData(modelData);
     }
 });

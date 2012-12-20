@@ -10142,15 +10142,15 @@ body {
 
 /* line 60, ../scss/include/_article.scss */
 .article-carousel-title-jazzBlues {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
 }
 
 /* line 64, ../scss/include/_article.scss */
 .article-carousel-image-jazzBlues {
-  border-left: 1px solid #662d91;
-  border-right: 1px solid #662d91;
+  border-left: 1px solid #ffbf35;
+  border-right: 1px solid #ffbf35;
 }
 
 /* line 72, ../scss/include/_article.scss */
@@ -10172,10 +10172,10 @@ body {
 }
 /* line 89, ../scss/include/_article.scss */
 .music-article-preview .music-article-jazzBlues {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
-  text-shadow: 0px 1px 1px #3d1b57;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  text-shadow: 0px 1px 1px #e89e00;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10187,10 +10187,10 @@ body {
 }
 /* line 102, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-jazzBlues .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
-  text-shadow: 0px 1px 1px #3d1b57;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
+  text-shadow: 0px 1px 1px #e89e00;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10301,29 +10301,29 @@ body {
 }
 /* line 194, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-jazzBlues {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
 }
 /* line 198, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-jazzBlues {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
 }
 
 /* line 60, ../scss/include/_article.scss */
 .article-carousel-title-world {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
 }
 
 /* line 64, ../scss/include/_article.scss */
 .article-carousel-image-world {
-  border-left: 1px solid #662c91;
-  border-right: 1px solid #662c91;
+  border-left: 1px solid #cc0000;
+  border-right: 1px solid #cc0000;
 }
 
 /* line 72, ../scss/include/_article.scss */
@@ -10345,10 +10345,10 @@ body {
 }
 /* line 89, ../scss/include/_article.scss */
 .music-article-preview .music-article-world {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
-  text-shadow: 0px 1px 1px #3d1a56;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
+  text-shadow: 0px 1px 1px maroon;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -10360,10 +10360,10 @@ body {
 }
 /* line 102, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-world .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
-  text-shadow: 0px 1px 1px #3d1a56;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
+  text-shadow: 0px 1px 1px maroon;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -10474,16 +10474,16 @@ body {
 }
 /* line 194, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-world {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
 }
 /* line 198, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-world {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
 }
 
 /* line 60, ../scss/include/_article.scss */
@@ -11180,15 +11180,15 @@ body {
 
 /* line 60, ../scss/include/_article.scss */
 .article-carousel-title-country {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
 }
 
 /* line 64, ../scss/include/_article.scss */
 .article-carousel-image-country {
-  border-left: 1px solid #ffbf35;
-  border-right: 1px solid #ffbf35;
+  border-left: 1px solid #662d91;
+  border-right: 1px solid #662d91;
 }
 
 /* line 72, ../scss/include/_article.scss */
@@ -11210,10 +11210,10 @@ body {
 }
 /* line 89, ../scss/include/_article.scss */
 .music-article-preview .music-article-country {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
-  text-shadow: 0px 1px 1px #e89e00;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  text-shadow: 0px 1px 1px #3d1b57;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
@@ -11225,10 +11225,10 @@ body {
 }
 /* line 102, ../scss/include/_article.scss */
 .music-article-preview .music-article-full-country .title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
-  text-shadow: 0px 1px 1px #e89e00;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
+  text-shadow: 0px 1px 1px #3d1b57;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -11339,16 +11339,16 @@ body {
 }
 /* line 194, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-country {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
 }
 /* line 198, ../scss/include/_article.scss */
 .music-article-preview .music-article-title .music-article-title-content .music-article-btn-pressed-country {
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
 }
 
 /* line 60, ../scss/include/_article.scss */
@@ -11833,9 +11833,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11852,9 +11852,9 @@ body {
   font-size: 1.8em;
   border: none;
   color: #fff;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   font-family: "nevisBold";
   text-transform: uppercase;
   padding: 10px 20px 0 30px;
@@ -11878,7 +11878,7 @@ body {
 
 /* line 285, ../scss/include/_article.scss */
 .music-article-btn-pressed-jazzBlues {
-  background-color: #662d91;
+  background-color: #ffbf35;
 }
 
 /* line 241, ../scss/include/_article.scss */
@@ -11886,9 +11886,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -11905,9 +11905,9 @@ body {
   font-size: 1.8em;
   border: none;
   color: #fff;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
   font-family: "nevisBold";
   text-transform: uppercase;
   padding: 10px 20px 0 30px;
@@ -11931,7 +11931,7 @@ body {
 
 /* line 285, ../scss/include/_article.scss */
 .music-article-btn-pressed-world {
-  background-color: #662c91;
+  background-color: #cc0000;
 }
 
 /* line 241, ../scss/include/_article.scss */
@@ -12151,9 +12151,9 @@ body {
   position: absolute;
   top: -5px;
   left: -5px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
   font-size: 0.9em;
@@ -12170,9 +12170,9 @@ body {
   font-size: 1.8em;
   border: none;
   color: #fff;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   font-family: "nevisBold";
   text-transform: uppercase;
   padding: 10px 20px 0 30px;
@@ -12196,7 +12196,7 @@ body {
 
 /* line 285, ../scss/include/_article.scss */
 .music-article-btn-pressed-country {
-  background-color: #ffbf35;
+  background-color: #662d91;
 }
 
 /* line 241, ../scss/include/_article.scss */
@@ -12426,7 +12426,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -12625,7 +12625,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -12824,14 +12824,14 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-jazzBlues h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
   text-transform: uppercase;
@@ -12928,9 +12928,9 @@ body {
 }
 /* line 138, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   color: #fff;
   font-family: "nevisBold";
   text-align: left;
@@ -12994,7 +12994,7 @@ body {
 }
 /* line 202, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-jazzBlues .global-toc-article-pressed {
-  background-color: #662d91;
+  background-color: #ffbf35;
   color: #fff;
 }
 
@@ -13023,14 +13023,14 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-world h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
   color: #fff;
   font-family: "nevisBold";
   text-transform: uppercase;
@@ -13127,9 +13127,9 @@ body {
 }
 /* line 138, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
   color: #fff;
   font-family: "nevisBold";
   text-align: left;
@@ -13193,7 +13193,7 @@ body {
 }
 /* line 202, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-world .global-toc-article-pressed {
-  background-color: #662c91;
+  background-color: #cc0000;
   color: #fff;
 }
 
@@ -13222,7 +13222,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -13421,7 +13421,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -13620,7 +13620,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -13819,7 +13819,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -14018,14 +14018,14 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
 .global-toc .global-toc-featured-story .global-toc-featured-image-country h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
   text-transform: uppercase;
@@ -14122,9 +14122,9 @@ body {
 }
 /* line 138, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-genre-image h2 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   color: #fff;
   font-family: "nevisBold";
   text-align: left;
@@ -14188,7 +14188,7 @@ body {
 }
 /* line 202, ../scss/include/_toc.scss */
 .global-toc .global-toc-genre-country .global-toc-article-pressed {
-  background-color: #ffbf35;
+  background-color: #662d91;
   color: #fff;
 }
 
@@ -14217,7 +14217,7 @@ body {
   position: relative;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 /* line 50, ../scss/include/_toc.scss */
@@ -14655,9 +14655,9 @@ body {
 }
 /* line 250, ../scss/include/_toc.scss */
 .genre-toc-featured-jazzBlues h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
-  background-image: -webkit-linear-gradient(#662d91, #662d91);
-  background-image: linear-gradient(#662d91, #662d91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
+  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
+  background-image: linear-gradient(#ffbf35, #ffbf35);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -14770,9 +14770,9 @@ body {
 }
 /* line 250, ../scss/include/_toc.scss */
 .genre-toc-featured-world h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662c91), color-stop(100%, #662c91));
-  background-image: -webkit-linear-gradient(#662c91, #662c91);
-  background-image: linear-gradient(#662c91, #662c91);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cc0000), color-stop(100%, #cc0000));
+  background-image: -webkit-linear-gradient(#cc0000, #cc0000);
+  background-image: linear-gradient(#cc0000, #cc0000);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -15345,9 +15345,9 @@ body {
 }
 /* line 250, ../scss/include/_toc.scss */
 .genre-toc-featured-country h3 {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffbf35), color-stop(100%, #ffbf35));
-  background-image: -webkit-linear-gradient(#ffbf35, #ffbf35);
-  background-image: linear-gradient(#ffbf35, #ffbf35);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #662d91), color-stop(100%, #662d91));
+  background-image: -webkit-linear-gradient(#662d91, #662d91);
+  background-image: linear-gradient(#662d91, #662d91);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);

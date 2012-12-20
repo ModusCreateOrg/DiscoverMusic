@@ -73,14 +73,14 @@ Ext.define('Music.controller.Main', {
             }
         },
 
-        routes : {
-            'article/:id' : 'onArticleActive'
-        },
+//        routes : {
+//            'article/:id' : 'onArticleActive'
+//        },
 
         control : {
             'main' : {
-                titletap         : 'onShowGlobalToc',
-                activeitemchange : 'onArticleActive'
+                titletap         : 'onShowGlobalToc'
+//                activeitemchange : 'onArticleActive'
             },
 
             'main toolbar button[action=favorites]' : {
@@ -96,7 +96,6 @@ Ext.define('Music.controller.Main', {
             },
 
             'genretoc' : {
-                featuredtap : 'onShowArticle',
                 storytap    : 'onShowArticle'
             },
 
@@ -308,24 +307,16 @@ Ext.define('Music.controller.Main', {
             index       = articles.find('id', id),
             articleRec  = articles.getAt(index),
             main        = me.getMain(),
-            articleView = main.down('#article-' + id);
+            articleView = main.down('[genre=' + articleRec.get('genre') + ']');
+
 
         if (!articleRec) {
             Ext.Msg.alert('We apologize!', 'For some reason we could not locate the article you requested. Please select another article.');
             console.warn('WTF?!? We could not find article ID: ' + id);
             return;
-
-        }
-        
-        if (!articleView) {
-            articleView = main.add({
-                xtype  : 'article',
-                itemId : 'article-' + id,
-                model  : articleRec, // TODO: Do we need to pass the whole god damn record?
-                data   : articleRec.getData()
-            });
         }
 
+        articleView.updateHtmlStuff(articleRec.data);
         main.setActiveItem(articleView);
     },
 
@@ -356,27 +347,30 @@ Ext.define('Music.controller.Main', {
         main.setActiveItem(view);
     },
 
-    onArticleActive : function(id, item) {
-        var me = this;
+    // TODO: Add routing, etc.
 
-        //if item is not null we need to update
-        //the browser's URL HASH
-        if (item && item.xtype === 'article') {
-            me.redirectTo(item.getModel());
-        }
-        else {
-            //if main is null means the user is
-            //getting to the app for the first time
-            if (!me.getMain()) {
-                //we need to wait until all articles are loaded
-                //and then activate the given article
-                Ext.Viewport.on('loaded', function() {
-                    var view = me.getMain().down('#article-' + id);
-                    me.getMain().setActiveItem(view);
-                }, me);
-            }
-        }
-    },
+//    onArticleActive : function(id, item) {
+//        debugger;
+//        var me = this;
+//
+//        //if item is not null we need to update
+//        //the browser's URL HASH
+//        if (item && item.xtype === 'article') {
+//            me.redirectTo(item.getModel());
+//        }
+//        else {
+//            //if main is null means the user is
+//            //getting to the app for the first time
+//            if (!me.getMain()) {
+//                //we need to wait until all articles are loaded
+//                //and then activate the given article
+//                Ext.Viewport.on('loaded', function() {
+//                    var view = me.getMain().down('#article-' + id);
+//                    me.getMain().setActiveItem(view);
+//                }, me);
+//            }
+//        }
+//    },
 
     //
     onAppPlayAudio : function(musicData) {

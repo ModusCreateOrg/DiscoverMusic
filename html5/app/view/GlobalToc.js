@@ -60,12 +60,19 @@ Ext.define('Music.view.GlobalToc', {
         }
 
         this.callParent(arguments)
+
+
+        this.element.on({
+            delegate : '.global-toc-tap-target',
+            scope    : this,
+            tap      : this.onElementTap
+        });
     },
 
     addGenres : function(articleRecords) {
         var me          = this,
             genres      = me.down('#genres'),
-            rawGenres   = [],
+//            rawGenres   = [],
             tocArticles = [];
 
 //        debugger;
@@ -87,6 +94,12 @@ Ext.define('Music.view.GlobalToc', {
 
         featured.setData(data);
         me.setFeaturedArticle(model);
+    },
+
+    onElementTap : function(event) {
+        var id = event.getTarget().getAttribute('data-id');
+        this.fireEvent('storytap', id);
+
     },
 
     onTouchStart : function(carousel, id, event) {
