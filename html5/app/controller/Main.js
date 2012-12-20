@@ -37,7 +37,8 @@ Ext.define('Music.controller.Main', {
 //            'Drawer',
             'Search',
             'Player',
-            'Favorites'
+            'Favorites',
+            'About'
         ],
 
         refs : {
@@ -46,6 +47,7 @@ Ext.define('Music.controller.Main', {
                 selector   : 'main',
                 autoCreate : true
             },
+
 //            drawer    : {
 //                xtype      : 'drawer',
 //                selector   : 'drawer',
@@ -62,8 +64,8 @@ Ext.define('Music.controller.Main', {
                 autoCreate : true
             },
             about     : {
-                xtype      : 'aboutpanel',
-                selector   : 'aboutpanel',
+                xtype      : 'about',
+                selector   : 'about',
                 autoCreate : true
             },
             player    : {
@@ -119,6 +121,10 @@ Ext.define('Music.controller.Main', {
 
             'search' : {
                 storytap : 'onShowArticle'
+            },
+
+            about: {
+                backhome: 'onShowGlobalToc'
             }
         }
     },
@@ -195,7 +201,6 @@ Ext.define('Music.controller.Main', {
             delete me.loadMask;
         }
 
-
         // TODO: Clean up the data management. This shit has gotten out of hand!
         //adding all the articles to the main
         me.genresStore.data.each(function(genre) {
@@ -208,6 +213,9 @@ Ext.define('Music.controller.Main', {
 
         main.addArticles(me.genresStore.getRange());
         main.setFeatured();
+
+        // add about page
+        main.add(me.getAbout());
 
 //        viewport.add(me.getDrawer());
 
