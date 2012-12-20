@@ -13,7 +13,8 @@ public class EngageMobile extends DroidGap {
         super.onCreate(savedInstanceState);
 //        super.loadUrl("http://extraordinarycommons.com/MediaQueryTest.html");
 //        super.loadUrl("http://mqtest.io");
-        super.loadUrl("http://10.1.10.11/html5/");
+//        super.loadUrl("http://10.1.10.11/html5/");
+        super.loadUrl("file:///android_asset/www/index.html");
 //        super.loadUrl("http://10.1.10.11/html5/m.html");
     }
 }

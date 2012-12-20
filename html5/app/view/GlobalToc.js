@@ -52,15 +52,13 @@ Ext.define('Music.view.GlobalToc', {
             featuredStory = this.down('#featuredstory'),
             carousel      = this.down('#genres');
 
-//        alert(bodyWidth)
         // 8.9"
         if (bodyWidth == 800) {
             featuredStory.setHeight(835);
             carousel.setHeight(300);
         }
 
-        this.callParent(arguments)
-
+        this.callParent(arguments);
 
         this.element.on({
             delegate : '.global-toc-tap-target',

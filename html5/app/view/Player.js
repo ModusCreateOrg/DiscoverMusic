@@ -23,60 +23,59 @@ Ext.define('Music.view.Player', {
             '<div class="music-player-button"></div>',
             '<div class="music-player-timer">{time}</div>',
             '<div class="music-player-title">{title}</div>'
-        ],
-        items : [
-            {
-                xtype  : 'audio',
-                hidden : true
-            }
         ]
     },
 
     initialize : function() {
-        var me = this,
-            audio = me.down('audio');
+        var me = this;
 
         me.callParent();
-
         me.element.on('tap', 'onPlayPause', me);
-
-        audio.on({
-            scope      : me,
-            pause      : 'onPause',
-            play       : 'onPlay',
-            timeupdate : 'onUpdateTime'
-        });
     },
 
     loadSound : function(url) {
         var me    = this,
-            audioCmp = me.down('audio');
+            audioEl = this.audioEl,
+            listenerCfg = {
+                scope      : me,
+                pause      : 'onPause',
+                play       : 'onPlay',
+                timeupdate : 'onUpdateTime'
+            };
 
-        if (url === audioCmp.getUrl()) {
-            if (audioCmp.isPlaying()) {
-                audioCmp.pause()
-            }
-            else {
-                audioCmp.play();
-            }
+        // todo: REUSE the fucking audio element
+        if (audioEl) {
+            audioEl.pause();
+            audioEl.currentTime = 0;
+            delete this.audioEl;
         }
-        else {
-            audioCmp.setUrl(url);
-            audioCmp.play();
-        }
+
+        audioEl = document.createElement('audio');
+        audioEl.src = url;
+        audioEl.addEventListener('timeupdate', Ext.Function.bind(me.onUpdateTime, me));
+        this.audioEl = audioEl;
+
+
+
+        Ext.Function.defer(function() {
+            audioEl.play();
+
+            me.onPlay();
+        }, 250);
 
     },
 
     onPlayPause : function() {
         var me = this,
-            audio = me.down('audio');
+            audio = me.audioEl;
 
-        if (audio.isPlaying()) {
+        if (! audio.paused) {
             audio.pause();
             me.onPause();
         }
         else {
             audio.play();
+
             me.onPlay();
         }
     },
@@ -91,15 +90,15 @@ Ext.define('Music.view.Player', {
         }
 
         if (!o.time) {
-            o.time = '00:00';
+            o.time = '--:--';
         }
 
         return o;
     },
 
-    onUpdateTime : function(audio, time) {
-
+    onUpdateTime : function() {
         var me = this,
+            time    = me.audioEl.currentTime,
             minutes = Math.floor(time / 60),
             seconds = Math.floor(time - minutes * 60);
 

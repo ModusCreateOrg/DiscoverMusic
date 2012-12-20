@@ -307,7 +307,7 @@ Ext.define('Music.controller.Main', {
             index       = articles.find('id', id),
             articleRec  = articles.getAt(index),
             main        = me.getMain(),
-            articleView = main.down('[genre=' + articleRec.get('genre') + ']');
+            articleView;
 
 
         if (!articleRec) {
@@ -315,6 +315,8 @@ Ext.define('Music.controller.Main', {
             console.warn('WTF?!? We could not find article ID: ' + id);
             return;
         }
+
+        articleView = main.down('[genre=' + articleRec.get('genre') + ']');
 
         articleView.updateHtmlStuff(articleRec.data);
         main.setActiveItem(articleView);
@@ -379,42 +381,49 @@ Ext.define('Music.controller.Main', {
             tmpObj = Ext.clone(musicData);
 
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
-            tmpObj.audioFile = 'resources/sounds/s.mp3';
-            player.setData(tmpObj);
 
-            Ext.data.JsonP.request({
-                url         : 'http://discovermusic.moduscreate.com/getMp3File',
-                callbackKey : 'callback',
-                params      : {
-                    url : musicData.audioFile
-                },
-                callback    : function(success, data) {
-                    var obj = Ext.clone(musicData);
 
-                    if (success) {
-                        obj.audioFile = data.file;
-                        player.setData(obj);
+//            tmpObj.audioFile = 'resources/sounds/s.mp3';
+//            player.setData(tmpObj);
+
+
+            Ext.Function.defer(function() {
+                Ext.data.JsonP.request({
+                    url         : 'http://discovermusic.moduscreate.com/getMp3File',
+                    callbackKey : 'callback',
+                    params      : {
+                        url : musicData.audioFile
+                    },
+                    callback    : function(success, data) {
+                        var obj = Ext.clone(musicData);
+
+                        if (success) {
+                            obj.audioFile = data.file;
+                            player.setData(obj);
+                        }
                     }
-                }
-            });
+                });
+            }, 250);
+
         }
         else {
+            player.setData(musicData);
 
-            if (!me.getAudioHasPlayed()) {
-
-                // this is to fix the IOS auto-start audio issue!
-                tmpObj.audioFile = 'resources/sounds/s.mp3';
-                player.setData(tmpObj);
-
-                Ext.Function.defer(function() {
-                    player.setData(musicData);
-                }, 550);
-
-                me.setAudioHasPlayed(true);
-            }
-            else {
-                player.setData(musicData);
-            }
+//            if (!me.getAudioHasPlayed()) {
+//
+//                // this is to fix the IOS auto-start audio issue!
+////                tmpObj.audioFile = 'resources/sounds/s.mp3';
+////                player.setData(tmpObj);
+//
+//                Ext.Function.defer(function() {
+//                    player.setData(musicData);
+//                }, 550);
+//
+//                me.setAudioHasPlayed(true);
+//            }
+//            else {
+//                player.setData(musicData);
+//            }
         }
     },
 
