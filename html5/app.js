@@ -31,6 +31,15 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
         window[this.getName()].app = this;
+
+       var onBodyLoad  = function() {
+        var dimensions = 'width: '+ document.body.clientWidth
+            +  '<br /> height: ' + document.body.clientHeight;
+//                alert(dimensions);
+//         document.getElementById('stuff').innerHTML = dimensions;
+            console.log(dimensions);
+           console.log(window.devicePixelRatio)
+    }
     },
 
     onUpdated: function() {

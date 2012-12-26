@@ -23,8 +23,10 @@ $alt-font: 'JuraRegular';
 //$kindle-fire : "all and (max-device-width: 533px) and (max-device-height: 778px)";
 //$kindle-hd-7i : "screen and (min-width: 517px) and (min-height: 778px)";
 //$kindle-hd-8i : "screen and (min-width: 784px) and (max-height: 1193px)";
-//$kindle-fire : "screen and (max-width: 600px) and (max-height: 924px)";
-$kindle-hd-7i : "screen and (min-width: 533px) and (min-height: 778px)";
+
+
+$kindle-fire :  "screen and (min-width: 584px) and (max-height: 924px) and (-webkit-min-device-pixel-ratio: 1)";
+$kindle-hd-7i : "screen and (min-width: 533px) and (max-height: 778px)";
 $kindle-hd-8i : "screen and (min-width: 784px) and (max-height: 1193px)";
 
 //Genre colors

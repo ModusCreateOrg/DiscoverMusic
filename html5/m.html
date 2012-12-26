@@ -7,27 +7,72 @@
                 height: 100%;
         }
 
+        /* The below are *FROM AMAZON and do not work with PhoneGap */
+        /* Fire 2011/2012 */
+        /*@media screen and (min-width: 580px) and (max-width: 610px) and (min-height: 1000px) and (max-height: 1030px) {*/
+            /*body { background-color: #F00; }*/
+        /*}*/
+        /*@media screen and (min-width: 1010px) and (max-width: 1030px) and (min-height: 570px) and (max-height: 1030px) {*/
+            /*body { background-color: #F88; }*/
+        /*}*/
 
-        /* 7"  (2011) */
-        @media screen and (min-width: 584px) and (max-height: 984px) {
+        /* Fire HD 7" */
+        /*@media screen and (min-width: 530px) and (max-width: 550px) and (min-height: 850px) and (max-height: 860px) {*/
+            /*body { background-color: #0F0; }*/
+        /*}*/
+        /*@media screen and (min-width: 850px) and (max-width: 860px) and (min-height: 530px) and (max-height: 550px) {*/
+            /*body { background-color: #8F8; }*/
+        /*}*/
+
+        /* Fire HD 8.9" */
+        /*@media screen and (min-width: 790px) and (max-width: 810px) and (min-height: 1270px) and (max-height: 1290px) {*/
+            /*body { background-color: #00F; }*/
+        /*}*/
+        /*@media screen and (min-width: 1270px) and (max-width: 1290px) and (min-height: 790px) and (max-height: 810px) {*/
+            /*body { background-color: #88F; }*/
+        /*}*/
+
+        /* iPad 1/2 */
+        /*@media screen and (min-width: 970px) and (max-width: 990px) and (min-height: 1180px) and (max-height: 1250px) and (-webkit-min-device-pixel-ratio:1) {*/
+            /*body { background-color: #FF0; }*/
+        /*}*/
+        /*@media screen and (min-width: 980px) and (max-width: 990px) and (min-height: 640px) and (max-height: 700px) and (-webkit-min-device-pixel-ratio:1) {*/
+            /*body { background-color: #FF8; }*/
+        /*}*/
+
+        /* iPad 3/4 */
+        /*@media screen and (min-width: 970px) and (max-width: 990px) and (min-height: 1180px) and (max-height: 1250px) and (-webkit-min-device-pixel-ratio:2) {*/
+            /*body { background-color: #F0F; }*/
+        /*}*/
+        /*@media screen and (min-width: 980px) and (max-width: 990px) and (min-height: 640px) and (max-height: 700px) and (-webkit-min-device-pixel-ratio:2) {*/
+            /*body { background-color: #F8F; }*/
+        /*}*/
+
+
+         /*7"  (2011)*/
+        /**
+            width: 600px
+            height: 924
+        */
+        @media screen and (min-width: 584px) and (max-height: 924px) {
+        /*@media screen and (max-width: 584px) and (max-height: 924px) {*/
             body {
                 background-color: #9F9;
             }
         }
 
-        /* 7"  (2012) */
-        @media screen and (min-width: 517px) and (min-height: 778px) {
+         /*7"  (2012)*/
+        @media screen and (min-width: 517px) and (max-height: 778px) {
             body {
                 background-color: #99F;
             }
         }
 
-        /* 8.9" */
+         /*8.9"*/
         @media screen and (min-width: 784px) and (max-height: 1193px) {
             body {
                 background-color: #F99;
             }
-
         }
 
 
@@ -35,14 +80,15 @@
     <script type="text/javascript">
         var onBodyLoad  = function() {
             var dimensions = 'width: '+ document.body.clientWidth
-                +  ' height: ' + document.body.clientHeight;
+                +  '<br /> height: ' + document.body.clientHeight;
 //                alert(dimensions);
-
-            console.log(dimensions)
+             document.getElementById('stuff').innerHTML = dimensions;
+//            console.log(dimensions)
         }
     </script>
 
 </head>
 <body onload="onBodyLoad()">
+    <div id="stuff"></div>
 </body>
 </html>

@@ -1,0 +1,99 @@
+/**
+ * debug_css.css
+ *
+ * Copyright (c) 2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * PROPRIETARY/CONFIDENTIAL
+ *
+ * Use is subject to license terms.
+ */
+#input {
+	font-family: monospace;
+	width: 600px;
+}
+
+#submit {
+	width: 100px;
+}
+
+#scroll {
+	height: 400px;
+	overflow: scroll;
+}
+
+#output {
+	font-family: monospace;
+}
+
+#template {
+	display: none;
+}
+
+.log {
+	padding-left: 0;
+	padding-bottom: 0.2em;
+	list-style-type: none;
+	text-overflow: clip;
+}
+
+.level {
+	padding-right: 1em;
+}
+
+.loc {
+	padding-left: 1em;
+	font-style: italic;
+}
+
+#error {
+	width: 800px;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+/**
+ * Special log levels for inputs and responses
+ */
+.level-R>.level,.level-J>.level {
+	visibility: hidden;
+}
+
+.level-J>.msg {
+	color: #33AA33;
+	font-style: italic;
+}
+
+.level-R>.msg {
+	color: #000000;
+	font-weight: bold;
+}
+
+/**
+ * Change color based on level
+ */
+.level-E {
+	color: #FF0000;
+}
+
+.level-W {
+	color: orange;
+}
+
+.level-I {
+	color: #3333AA;
+}
+
+.level-D {
+	color: #AAAAAA;
+}
+
+.level-V {
+	color: #999999;
+}
+
+/**
+ * Change message weight based on level
+ */
+.level-E>.msg,.level-W>.msg {
+	font-weight: bold;
+}

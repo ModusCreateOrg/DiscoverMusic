@@ -57,7 +57,6 @@
          */
         "cache": [
             "index.html",
-            "resources/sounds/s.mp3",
             "resources/images/sound-16x16.png",
             "resources/images/play-pause.png",
             "resources/images/DM-Logo-NoBG-Active.png",
@@ -83,18 +82,10 @@
      * Extra resources to be copied along when build
      */
     "extras": [
+        "cordova-1.9.0.js",
         "resources/images",
         "resources/icons",
-        "resources/fonts",
-        "resources/sounds/s.mp3",
-        "cordova-1.9.0.js",
-        "ChildBrowser.js",
-        "silk/actions/getGenres.js",
-        "silk/actions/getMp3File.js",
-        "silk/actions/stationFinder.js",
-        "silk/actions/updateGenres.js",
-        "silk/docroot/index.jst",
-        "silk/silk-server.js"
+        "resources/fonts"
     ],
 
     /**

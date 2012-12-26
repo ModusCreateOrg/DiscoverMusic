@@ -2,26 +2,39 @@
  *  About Discover Music
  */
 Ext.define('Music.view.About', {
-    extend : 'Ext.Container',
+    extend : 'Ext.Component',
     xtype: 'about',
 
     config : {
+        isKF2011 : navigator.userAgent == "Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Kindle Fire Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
         cls: 'aboutpage',
-        scrollable :  {
-            direction     : 'vertical',
-            directionLock : true
-        },
-        html : [
+
+    },
+
+    /**
+     * @event backhome
+     * Fires when Back to Home Screen button is tapped
+     * @param {Music.view.About} this About page instance
+     */
+
+    initialize : function () {
+        var me = this,
+            isOldSchool = (! this.getIsKF2011()) ? [
+                '<figure class="dmlogo"></figure>',
+
+                '<figure class="mclogo">',
+                    '<figcaption>developed by</figcaption>',
+                '</figure>'
+            ].join('') : '';
+
+        this.setHtml([
             '<header>',
                 '<h1>About This App</h1>',
                 '<aside>Back to home screen</aside>',
             '</header>',
 
-            '<figure class="dmlogo"></figure>',
+             isOldSchool,
 
-            '<figure class="mclogo">',
-                '<figcaption>developed by</figcaption>',
-            '</figure>',
 
             '<article>',
                 '<p><strong>DiscoverMusic</strong> was built to encourage users to listen to new music, read the ',
@@ -35,29 +48,21 @@ Ext.define('Music.view.About', {
                 'app are courtesy of <strong>National Public Radio (NPR)</strong>, and are accessed using their free ',
                 'and open public APIs.</p>',
 
-                '<p>If you want to share your feedback with Modus Create, inc, visit their website at ',
-                '<strong>moduscreate.com</strong>.</p>',
+                '<p>Want to share your feedback with Modus Create, inc.? Visit our website at ',
+                '<strong>www.moduscreate.com</strong>.</p>',
 
-                '<p>If you want to learn more about the Sencha Touch 2.0 platform, visit Sencha website at ',
-                '<strong>sencha.com</strong>.</p>',
+                '<p>If you want to learn more about the Sencha Touch 2.0 platform, visit the Sencha website at ',
+                '<strong>www.sencha.com</strong>.</p>',
             '</article>',
 
-            '<footer>©2012 Modus Create, Inc. All Rights Reserved. www.moduscreate.com</footer>'
-        ].join('')
-    },
+            '<footer>©2012 Modus Create, Inc. All Rights Reserved. <br />www.moduscreate.com</footer>'
+        ].join(''))
 
-    /**
-     * @event backhome
-     * Fires when Back to Home Screen button is tapped
-     * @param {Music.view.About} this About page instance
-     */
-
-    initialize : function () {
-        this.callParent();
-        this.innerElement.on({
-            tap        : 'onBackTap',
-            delegate   : 'header aside',
-            scope      : this
+        me.callParent();
+        me.innerElement.on({
+            tap      : 'onBackTap',
+            delegate : 'header aside',
+            scope    : me
         });
     },
 

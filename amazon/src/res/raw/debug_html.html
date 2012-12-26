@@ -1,0 +1,35 @@
+<!--
+  - debug_html.html
+  -
+  - Copyright (c) 2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  -
+  - PROPRIETARY/CONFIDENTIAL
+  -
+  - Use is subject to license terms.
+  -->
+<!DOCTYPE html>
+<html>
+<head>
+<link href="debug.css" rel="stylesheet" type="text/css">
+<script src="jquery.js" type="text/javascript"></script>
+<script src="debug.js" type="text/javascript"></script>
+<title>JavaScript Console</title>
+</head>
+<body>
+<h1>JavaScript Console</h1>
+<div id="scroll">
+    <ul id="output">
+        <li id="template" class="log">
+            <span class="level"></span>
+            <span class="msg"></span>
+            <span class="loc"></span>
+        </li>
+    </ul>
+</div>
+<form onsubmit="jsConsole.exec(); return false;">
+    <input type="text" id="input">
+    <input type="submit" value="Execute" id="submit">
+</form>
+<p id="error"></p>
+</body>
+</html>

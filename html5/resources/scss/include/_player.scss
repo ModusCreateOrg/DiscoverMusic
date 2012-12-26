@@ -6,6 +6,11 @@
     background-color   : #000;
     -webkit-transition : all 1s ease;
     overflow           : hidden;
+
+    @media #{$kindle-fire} {
+        width  : 375px;
+        //border : 1px solid #F00;
+    }
     @media #{$kindle-hd-7i} {
         width : 305px;
         //border : 1px solid #0F0;

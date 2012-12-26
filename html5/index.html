@@ -75,7 +75,7 @@
     </style>
 
 
-    <script type="text/javascript" src="https://amazon-web-appsdk.s3.amazonaws.com/v0/latest/Amazon-Web-App-API.min.js"></script>
+    <!--<script type="text/javascript" src="https://amazon-web-appsdk.s3.amazonaws.com/v0/latest/Amazon-Web-App-API.min.js"></script>-->
     <script id="microloader" type="text/javascript" src="sdk/microloader/development.js"></script>
     <!--<script src="http://platform.twitter.com/anywhere.js?id=8ldlwsezZHOGhPfbnxqTg&v=1" type="text/javascript"></script>-->
     <!-- dev token -->
@@ -87,7 +87,7 @@
     <script  type="text/javascript" src="cordova-1.9.0.js"></script>
     <!--<script  type="text/javascript" src="ChildBrowser.js"></script>-->
 
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript">
 
         // Call onDeviceReady when Cordova is loaded.
         //
@@ -96,42 +96,42 @@
         // it will call the event `deviceready`.
         //
 
-	function handleOpenURL(url) {
-		 window.invokeString = url;
-	}
+//	function handleOpenURL(url) {
+//		 window.invokeString = url;
+//	}
 
     /* When this function is called, Cordova has been initialized and is ready to roll */
 	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
 	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
 	for more details -jm */
-	function onDeviceReady() {
+//	function onDeviceReady() {
 		// do your thing!
 //		navigator.notification.alert('deviceready :: url :: ' + window.invokeString);
 
-	}
+//	}
 
-	function onBodyLoad() {
-        console.log('onBodyLoad ' + new Date() );
-       var dimensions = 'width: '+ document.body.clientWidth
-            +  ' height: ' + document.body.clientHeight;
+//	function onBodyLoad() {
+        //console.log('onBodyLoad ' + new Date() );
+       //var dimensions = 'width: '+ document.body.clientWidth
+       //     +  ' height: ' + document.body.clientHeight;
 //            alert(dimensions);
 
 //        console.log(dimensions)
 //		document.addEventListener("deviceready", onDeviceReady, false);
 //		document.addEventListener("resume", onResume, false);
 
-	}
+//	}
 
-	var onResume = function() {
+//	var onResume = function() {
 //		navigator.notification.alert('resume :: url :: ' + window.invokeString);
-	};
+//	};
 
 
     </script>
 
 
 </head>
-<body onload="onBodyLoad()">
+<body>
     <div id="appLoadingIndicator">
         <div></div>
         <div></div>

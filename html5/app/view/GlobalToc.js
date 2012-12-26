@@ -25,7 +25,7 @@ Ext.define('Music.view.GlobalToc', {
                 cls    : 'global-toc-featured-story',
                 height : 545,
                 tpl    : [
-                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
+                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/700/{image})">',
                         '<h2>{genre}</h2>',
                         '<h3 class="global-toc-title">{title}</h2>',
                     '</div>'
@@ -54,8 +54,13 @@ Ext.define('Music.view.GlobalToc', {
 
         // 8.9"
         if (bodyWidth == 800) {
-            featuredStory.setHeight(835);
+            alert('ere')
+            featuredStory.setHeight(810);
             carousel.setHeight(300);
+        }
+        else if (bodyWidth == 600) {
+            featuredStory.setHeight(640);
+            carousel.setHeight(223);
         }
 
         this.callParent(arguments);
@@ -79,7 +84,7 @@ Ext.define('Music.view.GlobalToc', {
             tocArticles.push(genreRecord.data.data.story[0]);
         });
 
-        console.log('tocArticles', tocArticles);
+//        console.log('tocArticles', tocArticles);
         genres.setData(tocArticles);
     },
 

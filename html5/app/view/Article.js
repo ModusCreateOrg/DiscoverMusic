@@ -43,7 +43,7 @@ Ext.define('Music.view.Article', {
                 tpl    : [
                     '<div class="music-article-genre-{genreKey}">{genre}',
                     '</div>',
-                    '<div class="music-article-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/600/{image});">',
+                    '<div class="music-article-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/650/{image});">',
 
 
                         '<div class="music-article-btn music-article-btn-normal music-article-btn-{genreKey}">',
@@ -75,7 +75,7 @@ Ext.define('Music.view.Article', {
                 tpl         : [
                     '<tpl for=".">',
                         '<div class="article-carousel-tap-target global-toc-genre-item" data-id="{id}">',
-                            '<div class="article-carousel-image article-carousel-image-{genreKey}" style="background-image:url(http://src.sencha.io/200/{image})"></div>',
+                            '<div class="article-carousel-image article-carousel-image-{genreKey}" style="background-image:url(http://src.sencha.io/250/{image})"></div>',
                         '</div>',
                     '</tpl>'
                 ].join(''),
@@ -100,6 +100,11 @@ Ext.define('Music.view.Article', {
         if (bodyWidth >= 800) {
             me.down('#articleHeader').setHeight(400);
             me.down('#carousel').setHeight(200);
+
+        }
+        else if (bodyWidth == 600) {
+            me.down('#articleHeader').setHeight(225);
+            me.down('#carousel').setHeight(160);
 
         }
         else {

@@ -9,6 +9,12 @@
     width  : 250px;
     -webkit-box-orient  : horizontal;
 
+    @media #{$kindle-fire} {
+        height : 160px;
+        width  : 200px;
+        //border : 1px dashed #F00;
+    }
+
     @media #{$kindle-hd-7i} {
         height              : 125px;
         width               : 200px;
@@ -30,7 +36,11 @@
     height              : 150px;
     width               : 250px;
 
-
+    @media #{$kindle-fire} {
+        height : 175px;
+        width  : 200px;
+        //border : 1px solid #F00;
+    }
     @media #{$kindle-hd-7i} {
         height              : 125px;
         width               : 200px;
@@ -265,6 +275,13 @@
         text-transform : uppercase;
         padding        : 10px 20px 0 30px;
 
+        @media #{$kindle-fire} {
+            height         : 30px;
+            font-size      : 1.1em;
+            padding        : 5px 20px 0 30px;
+            //border : 1px solid #F00;
+        }
+
         @media #{$kindle-hd-7i} {
             height         : 40px;
             font-size      : 1.3em;
@@ -305,6 +322,11 @@
         background-position : top center;
         background-repeat   : no-repeat;
 
+
+        @media #{$kindle-fire} {
+            height : 225px;
+            //border : 1px solid #F00;
+        }
 
         @media #{$kindle-hd-7i} {
             height : 200px;
@@ -430,17 +452,22 @@
         display    : block;
         width      : 70px;
         height     : 58px;
+            right      : 0;
         //border     : 1px dashed #F00;
+
+        @media #{$kindle-fire} {
+            top        : 167px;
+            //border: 1px dashed #F00;
+        }
+
 
         @media #{$kindle-hd-7i} {
             top        : 140px;
-            right      : 0;
             //border: 1px solid #0F0;
         }
 
         @media #{$kindle-hd-8i} {
             top        : 342px;
-            right      : 0;
             //border: 1px solid #00F;
         }
 

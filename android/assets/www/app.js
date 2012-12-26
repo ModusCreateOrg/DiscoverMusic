@@ -28492,7 +28492,7 @@ Ext.define('Music.controller.Main', {
 
         // add about page
         main.add(me.getAbout());
-
+//        main.setActiveItem(me.getAbout())
 //        viewport.add(me.getDrawer());
 
 //        Ext.Function.defer(function() {
@@ -28996,26 +28996,39 @@ Ext.define('Music.view.GenreToc', {
  *  About Discover Music
  */
 Ext.define('Music.view.About', {
-    extend : 'Ext.Container',
+    extend : 'Ext.Component',
     xtype: 'about',
 
     config : {
+        isKF2011 : navigator.userAgent == "Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Kindle Fire Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
         cls: 'aboutpage',
-        scrollable :  {
-            direction     : 'vertical',
-            directionLock : true
-        },
-        html : [
+
+    },
+
+    /**
+     * @event backhome
+     * Fires when Back to Home Screen button is tapped
+     * @param {Music.view.About} this About page instance
+     */
+
+    initialize : function () {
+        var me = this,
+            isOldSchool = (! this.getIsKF2011()) ? [
+                '<figure class="dmlogo"></figure>',
+
+                '<figure class="mclogo">',
+                    '<figcaption>developed by</figcaption>',
+                '</figure>'
+            ].join('') : '';
+
+        this.setHtml([
             '<header>',
                 '<h1>About This App</h1>',
                 '<aside>Back to home screen</aside>',
             '</header>',
 
-            '<figure class="dmlogo"></figure>',
+             isOldSchool,
 
-            '<figure class="mclogo">',
-                '<figcaption>developed by</figcaption>',
-            '</figure>',
 
             '<article>',
                 '<p><strong>DiscoverMusic</strong> was built to encourage users to listen to new music, read the ',
@@ -29029,29 +29042,21 @@ Ext.define('Music.view.About', {
                 'app are courtesy of <strong>National Public Radio (NPR)</strong>, and are accessed using their free ',
                 'and open public APIs.</p>',
 
-                '<p>If you want to share your feedback with Modus Create, inc, visit their website at ',
-                '<strong>moduscreate.com</strong>.</p>',
+                '<p>Want to share your feedback with Modus Create, inc.? Visit our website at ',
+                '<strong>www.moduscreate.com</strong>.</p>',
 
-                '<p>If you want to learn more about the Sencha Touch 2.0 platform, visit Sencha website at ',
-                '<strong>sencha.com</strong>.</p>',
+                '<p>If you want to learn more about the Sencha Touch 2.0 platform, visit the Sencha website at ',
+                '<strong>www.sencha.com</strong>.</p>',
             '</article>',
 
-            '<footer>©2012 Modus Create, Inc. All Rights Reserved. www.moduscreate.com</footer>'
-        ].join('')
-    },
+            '<footer>©2012 Modus Create, Inc. All Rights Reserved. <br />www.moduscreate.com</footer>'
+        ].join(''))
 
-    /**
-     * @event backhome
-     * Fires when Back to Home Screen button is tapped
-     * @param {Music.view.About} this About page instance
-     */
-
-    initialize : function () {
-        this.callParent();
-        this.innerElement.on({
-            tap        : 'onBackTap',
-            delegate   : 'header aside',
-            scope      : this
+        me.callParent();
+        me.innerElement.on({
+            tap      : 'onBackTap',
+            delegate : 'header aside',
+            scope    : me
         });
     },
 
@@ -35303,7 +35308,7 @@ Ext.define('Music.view.Article', {
                 tpl    : [
                     '<div class="music-article-genre-{genreKey}">{genre}',
                     '</div>',
-                    '<div class="music-article-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/600/{image});">',
+                    '<div class="music-article-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/650/{image});">',
 
 
                         '<div class="music-article-btn music-article-btn-normal music-article-btn-{genreKey}">',
@@ -35335,7 +35340,7 @@ Ext.define('Music.view.Article', {
                 tpl         : [
                     '<tpl for=".">',
                         '<div class="article-carousel-tap-target global-toc-genre-item" data-id="{id}">',
-                            '<div class="article-carousel-image article-carousel-image-{genreKey}" style="background-image:url(http://src.sencha.io/200/{image})"></div>',
+                            '<div class="article-carousel-image article-carousel-image-{genreKey}" style="background-image:url(http://src.sencha.io/250/{image})"></div>',
                         '</div>',
                     '</tpl>'
                 ].join(''),
@@ -35360,6 +35365,11 @@ Ext.define('Music.view.Article', {
         if (bodyWidth >= 800) {
             me.down('#articleHeader').setHeight(400);
             me.down('#carousel').setHeight(200);
+
+        }
+        else if (bodyWidth == 600) {
+            me.down('#articleHeader').setHeight(225);
+            me.down('#carousel').setHeight(160);
 
         }
         else {
@@ -35495,7 +35505,7 @@ Ext.define('Music.view.GlobalToc', {
                 cls    : 'global-toc-featured-story',
                 height : 545,
                 tpl    : [
-                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/600/{image})">',
+                    '<div class="global-toc-tap-target global-toc-featured-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/700/{image})">',
                         '<h2>{genre}</h2>',
                         '<h3 class="global-toc-title">{title}</h2>',
                     '</div>'
@@ -35524,8 +35534,12 @@ Ext.define('Music.view.GlobalToc', {
 
         // 8.9"
         if (bodyWidth == 800) {
-            featuredStory.setHeight(835);
+            featuredStory.setHeight(810);
             carousel.setHeight(300);
+        }
+        else if (bodyWidth == 600) {
+            featuredStory.setHeight(640);
+            carousel.setHeight(223);
         }
 
         this.callParent(arguments);
@@ -35549,7 +35563,7 @@ Ext.define('Music.view.GlobalToc', {
             tocArticles.push(genreRecord.data.data.story[0]);
         });
 
-        console.log('tocArticles', tocArticles);
+//        console.log('tocArticles', tocArticles);
         genres.setData(tocArticles);
     },
 
@@ -48951,6 +48965,15 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
         window[this.getName()].app = this;
+
+       var onBodyLoad  = function() {
+        var dimensions = 'width: '+ document.body.clientWidth
+            +  '<br /> height: ' + document.body.clientHeight;
+//                alert(dimensions);
+//         document.getElementById('stuff').innerHTML = dimensions;
+            console.log(dimensions);
+           console.log(window.devicePixelRatio)
+    }
     },
 
     onUpdated: function() {

@@ -215,7 +215,7 @@ Ext.define('Music.controller.Main', {
 
         // add about page
         main.add(me.getAbout());
-
+//        main.setActiveItem(me.getAbout())
 //        viewport.add(me.getDrawer());
 
 //        Ext.Function.defer(function() {

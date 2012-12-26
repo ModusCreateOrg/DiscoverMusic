@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Created-By: 1.6.0_37 (Sun Microsystems Inc.)
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: TJE1tg63y88xLdIALKGpuLmgh0s=
+
+Name: res/raw/debug_js.js
+SHA1-Digest: FyYESHHQ4IlykR51dRv4jAoP6WI=
+
+Name: res/drawable-hdpi/ic_launcher.png
+SHA1-Digest: ioH2V9g4FYKkqpDHk7jPryMKtcE=
+
+Name: resources.arsc
+SHA1-Digest: 6CZF70GotAAFkWM4GkwFO+PwG7Y=
+
+Name: classes.dex
+SHA1-Digest: yXZDVJJJRhU2xfnvVq0IgD8DD6k=
+
+Name: res/layout/notification.xml
+SHA1-Digest: P6TwDfWhB+oJNdSlKJJQQ56ufLc=
+
+Name: res/raw/debug_html.html
+SHA1-Digest: sUTqq1mBwhkF0HfscdsV4uwq970=
+
+Name: res/drawable-ldpi/ic_launcher.png
+SHA1-Digest: r6Mdl54h2qEvVnqgfsgxU4CysiI=
+
+Name: res/layout/main.xml
+SHA1-Digest: aKxeEABQc8n9f1m4cEfY8J0kiXI=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 09LUKoW+t1WOfS+VwyBb0fAAjPw=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: aM73uFWfPOOvq5Kk9Ffd3cWm0OQ=
+
+Name: res/raw/jquery.js
+SHA1-Digest: 9Xel4Rc7Lwu2Wlk9wlYN7TsK3Y8=
+
+Name: assets/www/js/script.js
+SHA1-Digest: /w0ASLnbPzNslDeRbH9XCjFitko=
+
+Name: assets/www/index.html
+SHA1-Digest: 1v0VZ0aE9vW8e4w3U6AJ+PFv5rs=
+
+Name: res/menu/activity_main.xml
+SHA1-Digest: 3wgOt3GZBT9A5Yw4JKk8Z3wjyEM=
+
+Name: res/raw/debug_css.css
+SHA1-Digest: MMlO3Quz+qjznapwMqbxr8oHHJE=
+
