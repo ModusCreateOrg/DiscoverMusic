@@ -25,19 +25,31 @@
             .x-innerhtml {
                 height : 545px;
 
-                @media #{$kindle-fire} {
+                @media #{$kf-2012-sd-7i} {
+                    height : 680px;
+                    //border: 1px dashed #FF9;
+                }
+
+
+                @media #{$kf-2011} {
                     height : 640px;
-                    //border: 1px dashed #F00;
+                    //border: 1px dashed #9F9;
                 }
 
-                @media #{$kindle-hd-7i} {
+                @media #{$google-nexus-7} {
+                    height : 640px;
+                    //border: 1px dashed #F9F;
+                }
+
+
+                @media #{$kf-2012-hd-7i} {
                     height : 545px;
-                    //border: 1px solid #0F0;
+                    //border: 1px solid #99F;
                 }
 
-                @media #{$kindle-hd-8i} {
+                @media #{$kf-2012-hd-8i} {
                     height : 835px;
-                    //border: 1px solid #00F;
+                    //border: 1px solid #F99;
                 }
 
             }
@@ -50,31 +62,47 @@
 
                 h2 {
                     @include background-image(linear-gradient(color-stops($bg-color1, $bg-color2)));
-                    //border         : 2px solid rgba(255, 255, 255, .5);
-                    //box-shadow     : 0px 6px 5px rgba(0, 0, 0, .65);
                     color          : #fff;
                     font-family    : $base-font;
-                    //text-shadow    : 0px 1px darken($bg-color2, 20);
                     text-transform : uppercase;
                     text-align     : left;
 
-                    @media #{$kindle-fire} {
+                    font-size      : 1.5em;
+                    height         : 40px;
+                    padding        : 5px 0 0 10px;
+
+                    @media #{$kf-2012-sd-7i} {
+
+
+                        //border: 1px dashed #FF9;
+                    }
+
+                    @media #{$kf-2011} {
+                        font-size : 1.5em;
+                        height    : 45px;
+                        padding   : 5px 0 0 10px;
+                        //border: 1px dashed #9F9;
+                    }
+
+                    @media #{$google-nexus-7} {
+
+                        //border: 1px dashed #F9F;
+                    }
+
+
+                    @media #{$kf-2012-hd-7i} {
                         font-size : 1.5em;
                         height    : 40px;
                         padding   : 5px 0 0 10px;
+                        //border: 1px solid #99F;
                     }
 
-                    @media #{$kindle-hd-7i} {
-                        font-size : 1.5em;
-                        height    : 40px;
-                        padding   : 5px 0 0 10px;
-                    }
 
-                    @media #{$kindle-hd-8i} {
+                    @media #{$kf-2012-hd-8i} {
                         font-size : 2.25em;
                         height    : 75px;
                         padding   : 10px 0 0 10px;
-
+                        //border: 1px solid #F99;
                     }
                 }
 
@@ -88,22 +116,44 @@
                     bottom      : 0;
                     color       : #fff;
                     line-height : 35px;
+                    font-size   : 2em;
+                    padding     : 15px 20px;
 
-                    @media #{$kindle-fire} {
+
+
+                    @media #{$kf-2012-sd-7i} {
                         font-size   : 2em;
                         padding     : 15px 20px;
-                    }
-                    @media #{$kindle-hd-7i} {
-                        font-size   : 2em;
-                        padding     : 15px 20px;
+                        //border: 1px dashed #FF9;
                     }
 
-                    @media #{$kindle-hd-8i} {
+                    @media #{$kf-2011} {
+                        font-size   : 2em;
+                        padding     : 15px 20px;
+                        //border: 1px dashed #9F9;
+                    }
+
+                    @media #{$google-nexus-7} {
+                        font-size   : 1.5em;
+                        padding     : 10px 15px;
+                        //border: 1px dashed #F9F;
+                    }
+
+
+                    @media #{$kf-2012-hd-7i} {
+                        font-size   : 2em;
+                        padding     : 15px 20px;
+                        //border: 1px solid #99F;
+                    }
+
+
+                    @media #{$kf-2012-hd-8i} {
                         line-height : 45px;
-
                         font-size   : 2.25em;
                         padding     : 15px 20px;
+                        //border: 1px solid #F99;
                     }
+
 
                 }
             }
@@ -133,22 +183,41 @@
                 background-size     : cover;
                 background-position : center center;
                 background-repeat   : no-repeat;
-                //position            : relative;
+                height : 175px;
+                width  : 150px;
 
-                @media #{$kindle-fire} {
+
+
+
+                @media #{$kf-2012-sd-7i} {
+                    height : 193px;
+                    width  : 200px;
+                    //border: 1px dashed #FF9;
+                }
+
+                @media #{$kf-2011} {
                     height : 223px;
                     width  : 200px;
-                    //border: 1px dashed red;
+                    //border: 1px dashed #9F9;
                 }
 
-                @media #{$kindle-hd-7i} {
+                @media #{$google-nexus-7} {
+
+                    //border: 1px dashed #F9F;
+                }
+
+
+                @media #{$kf-2012-hd-7i} {
                     height : 175px;
                     width  : 150px;
+                    //border: 1px solid #99F;
                 }
 
-                @media #{$kindle-hd-8i} {
+
+                @media #{$kf-2012-hd-8i} {
                     height : 300px;
                     width  : 250px;
+                    //border: 1px solid #F99;
                 }
 
 
@@ -160,26 +229,48 @@
                     text-transform : uppercase;
                     padding-left   : 5px;
 
-                    @media #{$kindle-fire} {
+                    font-size     : 1em;
+                    padding-top   : 2px;
+                    margin-bottom : 10px;
+                    height : 25px;
+
+                    @media #{$kf-2012-sd-7i} {
+                        height: 30px;
+
+                        //border: 1px dashed #FF9;
+                    }
+
+                    @media #{$kf-2011} {
                         font-size     : 1em;
                         padding-top   : 2px;
                         margin-bottom : 10px;
-                        height
-                        : 25px;
+                        height : 25px;
+                        //border: 1px dashed #9F9;
                     }
-                    @media #{$kindle-hd-7i} {
+
+                    @media #{$google-nexus-7} {
+
+                        //border: 1px dashed #F9F;
+                    }
+
+
+                    @media #{$kf-2012-hd-7i} {
                         font-size     : 1em;
                         padding-top   : 2px;
                         margin-bottom : 10px;
                         height        : 25px;
+                        //border: 1px solid #99F;
                     }
 
-                    @media #{$kindle-hd-8i} {
+
+                    @media #{$kf-2012-hd-8i} {
                         font-size   : 1.2em;
                         padding-top : 7px;
                         line-height : 15px;
                         height      : 30px;
+                        //border: 1px solid #F99;
                     }
+
 
                 }
 
@@ -190,31 +281,57 @@
                     position    : absolute;
                     bottom      : 0;
                     color       : #fff;
+                    height      : 80px;
+                    width       : 200px;
+                    line-height : 15px;
+                    font-size   : .8em;
+                    padding     : 5px 5px;
 
-                    @media #{$kindle-fire} {
+
+
+                    @media #{$kf-2012-sd-7i} {
+                        height      : 70px;
+                        width       : 200px;
+                        line-height : 18px;
+                        font-size   : .85em;
+                        padding     : 5px 5px;
+                        //border      : 1px dashed #FF9;
+                    }
+
+                    @media #{$kf-2011} {
                         height      : 80px;
                         width       : 200px;
                         line-height : 15px;
                         font-size   : .8em;
                         padding     : 5px 5px;
-
+                        //border      : 1px dashed #9F9;
                     }
-                    @media #{$kindle-hd-7i} {
+
+                    @media #{$google-nexus-7} {
+
+                        ////border: 1px dashed #F9F;
+                    }
+
+
+                    @media #{$kf-2012-hd-7i} {
                         height      : 80px;
                         width       : 150px;
                         line-height : 15px;
                         font-size   : .8em;
                         padding     : 5px 5px;
-
+                        //border: 1px solid #99F;
                     }
 
-                    @media #{$kindle-hd-8i} {
+
+                    @media #{$kf-2012-hd-8i} {
                         height      : 110px;
                         width       : 250px;
                         line-height : 20px;
                         padding     : 8px 10px;
                         font-size   : 1.3em;
+                        //border: 1px solid #F99;
                     }
+
 
                 }
             }
@@ -261,7 +378,8 @@
         height              : 645px;
         @media screen and (orientation:landscape) {
             height : 385px;
-        } border            : 6px solid #000;
+        }
+        border            : 6px solid #000;
         background-size     : cover;
         background-position : center top;
         background-repeat   : no-repeat;

@@ -20,14 +20,70 @@ $alt-font: 'JuraRegular';
         device-height : 1280px
 */
 
-//$kindle-fire : "all and (max-device-width: 533px) and (max-device-height: 778px)";
-//$kindle-hd-7i : "screen and (min-width: 517px) and (min-height: 778px)";
-//$kindle-hd-8i : "screen and (min-width: 784px) and (max-height: 1193px)";
+//$kf-2011 : "all and (max-device-width: 533px) and (max-device-height: 778px)";
+//$kf-2012-hd-7i : "screen and (min-width: 517px) and (min-height: 778px)";
+//$kf-2012-hd-8i : "screen and (min-width: 784px) and (max-height: 1193px)";
 
+$kf-2012-sd-7i : "screen and (min-width: 584px) and  (max-height: 936px)";
+$google-nexus-7 : "screen and (min-width: 586px) and (min-height: 800px) and (-webkit-min-device-pixel-ratio: 1.33)";
+$kf-2011 : "screen and (min-width: 584px) and (max-height: 924px) and (-webkit-min-device-pixel-ratio: 1)";
+$kf-2012-hd-7i : "screen and (min-width: 533px) and (max-height: 778px)";
+$kf-2012-hd-8i : "screen and (min-width: 784px) and (max-height: 1193px)";
 
-$kindle-fire :  "screen and (min-width: 584px) and (max-height: 924px) and (-webkit-min-device-pixel-ratio: 1)";
-$kindle-hd-7i : "screen and (min-width: 533px) and (max-height: 778px)";
-$kindle-hd-8i : "screen and (min-width: 784px) and (max-height: 1193px)";
+/*Kindle Fire 7" (2012) SD*/
+//@media #{$kf-2012-sd-7i}  {
+//    /*
+//        Width: 600
+//        height: 936
+//        device-width: 600
+//        deviceHeight : 1024
+//        pixelRatio 1
+//    */
+//    body {
+//        background-color: #FF9;
+//    }
+//}
+//
+///* Kindle Fire 7"  (2011)*/
+//@media #{$kf-2011} {
+//    /**
+//        width, device : 600px
+//        height, device: 924px
+//    */
+//    body {
+//        background-color: #9F9;
+//    }
+//}
+//
+// /*Nexus 7"  (2012)*/
+//@media #{$google-nexus-7} {
+//    /*
+//        width: 600px
+//        device-width: 800px
+//        device-height: 1280
+//        pixel-ratio: 1.33
+//        height: 924
+//    */
+//    body {
+//        background-color: #F9F;
+//    }
+//}
+//
+// /*Kindle Fire 7" HD (2012)*/
+//@media #{$kf-2012-hd-7i} {
+//    body {
+//        background-color: #99F;
+//    }
+//}
+//
+//
+// /*Kindle Fire 8.9" HD */
+//@media #{$kf-2012-hd-8i} {
+//    body {
+//        background-color: #F99;
+//    }
+//}
+//
 
 //Genre colors
 
@@ -70,12 +126,12 @@ $folk-background-color-dark:rgba(4, 37, 100, 1.0);
 @include sencha-panel;
 @include sencha-buttons;
 @include sencha-sheet;
-@include sencha-picker;
+//@include sencha-picker;
 /*@include sencha-tabs;*/
 @include sencha-toolbar;
 @include sencha-toolbar-forms;
-@include sencha-indexbar;
-@include sencha-list;
+//@include sencha-indexbar;
+//@include sencha-list;
 /*@include sencha-list-paging;*/
 /*@include sencha-list-pullrefresh;*/
 @include sencha-layout;
@@ -86,15 +142,14 @@ $folk-background-color-dark:rgba(4, 37, 100, 1.0);
 
 @import 'include/animate';
 @import 'include/shortcuts';
-@import 'include/station_detail';
+//@import 'include/station_detail';
 @import 'include/home';
 @import 'include/article';
 //@import 'include/drawer';
-@import 'include/search';
-@import 'include/donate';
+//@import 'include/search';
 @import 'include/player';
 @import 'include/toc';
-@import 'include/favorites';
+//@import 'include/favorites';
 @import 'include/about';
 
 // include our @font-faces

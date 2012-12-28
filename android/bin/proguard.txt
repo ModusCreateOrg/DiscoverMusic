@@ -1,3 +1,0 @@
-# view AndroidManifest.xml #generated:31
--keep class com.Modus.Discover { <init>(...); }
-

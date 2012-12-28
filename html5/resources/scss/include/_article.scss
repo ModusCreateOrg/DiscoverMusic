@@ -5,26 +5,38 @@
 *********************************/
 
 .article-carousel-tap-target {
-    height : 150px;
-    width  : 250px;
+    //height : 160px;
+    //width  : 200px;
     -webkit-box-orient  : horizontal;
 
-    @media #{$kindle-fire} {
-        height : 160px;
+    @media #{$kf-2012-sd-7i} {
+        height : 115px;
+        width  : 155px;
+        //border : 1px solid #FF9;
+    }
+
+    @media #{$kf-2011} {
+        height : 115px;
+        width  : 155px;
+        //border : 1px dashed #9F9;
+    }
+
+    @media #{$google-nexus-7} {
+        //border: 1px dashed #F9F;
+    }
+
+
+    @media #{$kf-2012-hd-7i} {
+        height : 125px;
         width  : 200px;
-        //border : 1px dashed #F00;
+        //border: 1px solid #99F;
     }
 
-    @media #{$kindle-hd-7i} {
-        height              : 125px;
-        width               : 200px;
-        //border: 1px solid #0F0;
-    }
 
-    @media #{$kindle-hd-8i} {
+    @media #{$kf-2012-hd-8i} {
         height : 210px;
         width  : 250px;
-        //border: 1px solid #00F;
+        //border: 1px solid #F99;
     }
 
 }
@@ -33,29 +45,50 @@
     background-repeat   : no-repeat;
     background-size     : cover;
     background-position : center center;
-    height              : 150px;
-    width               : 250px;
+    //height              : 150px;
+    //width               : 250px;
 
-    @media #{$kindle-fire} {
-        height : 175px;
-        width  : 200px;
-        //border : 1px solid #F00;
+    @media #{$kf-2012-sd-7i} {
+        height : 115px;
+        width  : 155px;
+        //border : 1px solid #FF9;
     }
-    @media #{$kindle-hd-7i} {
+
+    @media #{$kf-2011} {
+        height : 115px;
+        width  : 155px;
+        //border : 1px dashed #9F9;
+    }
+
+    @media #{$google-nexus-7} {
+        //border: 1px dashed #F9F;
+    }
+
+
+    @media #{$kf-2012-hd-7i} {
         height              : 125px;
         width               : 200px;
-        //border: 1px solid #0F0;
+        //border: 1px solid #99F;
     }
 
-    @media #{$kindle-hd-8i} {
+
+    @media #{$kf-2012-hd-8i} {
         height              : 200px;
         width               : 250px;
-        //border: 1px solid #00F;
+        //border: 1px solid #F99;
     }
+
+
+}
+
+.article-carousel {
+    background-color: #000;
 }
 
 .article-carousel .x-innerhtml {
-   display:-webkit-box;
+    background-color: #000;
+
+    display:-webkit-box;
 }
 
 .article-carousel-title {
@@ -275,27 +308,47 @@
         text-transform : uppercase;
         padding        : 10px 20px 0 30px;
 
-        @media #{$kindle-fire} {
-            height         : 30px;
-            font-size      : 1.1em;
-            padding        : 5px 20px 0 30px;
-            //border : 1px solid #F00;
+
+        height         : 30px;
+        font-size      : 1.1em;
+        padding        : 5px 20px 0 30px;
+
+
+
+
+        @media #{$kf-2012-sd-7i} {
+            height    : 40px;
+            font-size : 1.3em;
+            padding   : 5px 0 0 10px;
+            //border    : 1px dashed #FF9;
         }
 
-        @media #{$kindle-hd-7i} {
+        @media #{$kf-2011} {
+            height    : 35px;
+            font-size : 1.1em;
+            padding   : 5px 0 0 10px;
+            //border    : 1px dashed #9F9;
+        }
+
+        @media #{$google-nexus-7} {
+            //border: 1px dashed #F9F;
+        }
+
+
+        @media #{$kf-2012-hd-7i} {
             height         : 40px;
             font-size      : 1.3em;
             padding        : 5px 20px 0 30px;
-            //border : 1px solid #0F0;
+            //border: 1px solid #99F;
         }
 
-        @media #{$kindle-hd-8i} {
+
+        @media #{$kf-2012-hd-8i} {
             height         : 60px;
             font-size      : 1.8em;
             padding        : 10px 20px 0 30px;
-            //border: 1px solid #00F;
+            //border: 1px solid #F99;
         }
-
 
     }
 
@@ -317,26 +370,45 @@
 
     .music-article-image {
         //position            : relative;
-        height              : 280px;
+        //height              : 280px;
         background-size     : cover;
         background-position : top center;
         background-repeat   : no-repeat;
 
 
-        @media #{$kindle-fire} {
-            height : 225px;
-            //border : 1px solid #F00;
+
+        @media #{$kf-2012-sd-7i} {
+            height              : 240px;
+            background-position : center center;
+
+            //border              : 1px dashed #FF9;
         }
 
-        @media #{$kindle-hd-7i} {
+        @media #{$kf-2011} {
+            height : 160px;
+            background-position : top center;
+
+            //border : 1px dashed #9F9;
+        }
+
+        @media #{$google-nexus-7} {
+            //border: 1px dashed #F9F;
+        }
+
+
+        @media #{$kf-2012-hd-7i} {
             height : 200px;
-            //border : 1px solid #0F0;
+            //border: 1px solid #99F;
         }
 
-        @media #{$kindle-hd-8i} {
+
+        @media #{$kf-2012-hd-8i} {
             height : 400px;
-            //border: 1px solid #00F;
+            //border: 1px solid #F99;
         }
+
+
+
 
         .music-article-image-overlay {
             height : 100%;
@@ -446,29 +518,39 @@
     }
 
     .music-article-btn {
-        top        : 222px;
-        right      : 0;
+        //top        : 150px;
+        //right      : 0;
         position   : absolute;
         display    : block;
         width      : 70px;
         height     : 58px;
-            right      : 0;
-        //border     : 1px dashed #F00;
+        right      : 0;
+        //border     : 1px dashed #9F9;
 
-        @media #{$kindle-fire} {
-            top        : 167px;
-            //border: 1px dashed #F00;
+
+
+        @media #{$kf-2012-sd-7i} {
+            top    : 183px;
+            //border : 1px dashed #FF9;
         }
 
-
-        @media #{$kindle-hd-7i} {
-            top        : 140px;
-            //border: 1px solid #0F0;
+        @media #{$kf-2011} {
+            top    : 138px;
+            //border : 1px dashed #9F9;
         }
 
-        @media #{$kindle-hd-8i} {
-            top        : 342px;
-            //border: 1px solid #00F;
+        @media #{$google-nexus-7} {
+            //border: 1px dashed #F9F;
+        }
+
+        @media #{$kf-2012-hd-7i} {
+            top        : 143px;
+            //border: 1px solid #99F;
+        }
+
+        @media #{$kf-2012-hd-8i} {
+            top    : 342px;
+            //border: 1px solid #F99;
         }
 
     }
@@ -481,14 +563,14 @@
         width    : 70px;
         height   : 58px;
 
-        //@media #{$kindle-hd-7i} {
+        //@media #{$kf-2012-hd-7i} {
         //    height      : 40px;
         //    font-size : 1.5em;
         //    height    : 40px;
         //    padding   : 5px 0 0 10px;
         //}
         //
-        //@media #{$kindle-hd-8i} {
+        //@media #{$kf-2012-hd-8i} {
         //   font-size : 2.25em;
         //   height    : 75px;
         //   padding   : 10px 0 0 10px;

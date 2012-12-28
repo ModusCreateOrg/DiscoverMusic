@@ -6,19 +6,36 @@
     background-color   : #000;
     -webkit-transition : all 1s ease;
     overflow           : hidden;
+    width  : 375px;
 
-    @media #{$kindle-fire} {
+
+
+
+    @media #{$kf-2012-sd-7i} {
+        //width  : 375px;
+        //border : 1px dashed #FF9;
+    }
+
+    @media #{$kf-2011} {
         width  : 375px;
-        //border : 1px solid #F00;
-    }
-    @media #{$kindle-hd-7i} {
-        width : 305px;
-        //border : 1px solid #0F0;
+        //border      : 1px dashed #9F9;
     }
 
-    @media #{$kindle-hd-8i} {
+    @media #{$google-nexus-7} {
+
+        //border: 1px dashed #F9F;
+    }
+
+
+    @media #{$kf-2012-hd-7i} {
+        width : 305px;
+        //border: 1px solid #99F;
+    }
+
+
+    @media #{$kf-2012-hd-8i} {
         width : 575px;
-        //border: 1px solid #00F;
+        //border: 1px solid #F99;
     }
 }
 

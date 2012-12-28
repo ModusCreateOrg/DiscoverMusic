@@ -11,14 +11,16 @@ public class Discover extends DroidGap {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    super.setIntegerProperty("splashscreen", R.drawable.ic_launcher);
+        super.setIntegerProperty("splashscreen", R.drawable.splash);
 
         super.onCreate(savedInstanceState);
-//        super.loadUrl("http://extraordinarycommons.com/MediaQueryTest.html");
-//        super.loadUrl("http://mqtest.io");
-        super.loadUrl("file:///android_asset/www/index.html");
-//        super.loadUrl("http://10.1.10.11/html5/m.html");
-//        super.loadUrl("http://10.1.10.11/html5/");
+        super.clearCache();
+//        super.loadUrl("http://mqtest.io", 3000);
+        super.loadUrl("file:///android_asset/www/index.html", 4000);
+//        super.loadUrl("http://192.168.1.138/html5/m.html", 3000);
+//        super.loadUrl("http://192.168.1.138/html5/", 5000);
+//        super.loadUrl("http://192.168.1.138/html5/mqtester.html", 3000);
 
     }
 }
+

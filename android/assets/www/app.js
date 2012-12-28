@@ -28307,14 +28307,13 @@ Ext.define('Music.controller.Main', {
 
         views : [
             'Main',
-            'ArticlePreview',
+//            'ArticlePreview',
             'Article',
-            'GenreToc',
+//            'GenreToc',
             'GlobalToc',
-//            'Drawer',
-            'Search',
+//            'Search',
             'Player',
-            'Favorites',
+//            'Favorites',
             'About'
         ],
 
@@ -28325,11 +28324,6 @@ Ext.define('Music.controller.Main', {
                 autoCreate : true
             },
 
-//            drawer    : {
-//                xtype      : 'drawer',
-//                selector   : 'drawer',
-//                autoCreate : true
-//            },
             favorites : {
                 xtype      : 'favorites',
                 selector   : 'favorites',
@@ -28356,7 +28350,7 @@ Ext.define('Music.controller.Main', {
 
         control : {
             'main' : {
-                titletap         : 'onShowGlobalToc'
+                titletap         : 'onTitleTap'
 //                activeitemchange : 'onArticleActive'
             },
 
@@ -28372,23 +28366,17 @@ Ext.define('Music.controller.Main', {
                 tap : 'onSearchTap'
             },
 
-            'genretoc' : {
-                storytap    : 'onShowArticle'
-            },
-
+//            'genretoc' : {
+//                storytap    : 'onShowArticle'
+//            },
+//
             'slidousel' : {
                 itemtap: 'onShowArticle'
             },
 
-            'articlepreview' : {
-                readarticle : 'onShowArticle'
-            },
-
-            'drawer' : {
-                itemtap      : 'showGenre',
-                searchtap    : 'onSearchTap',
-                favoritestap : 'onFavoritesTap'
-            },
+//            'articlepreview' : {
+//                readarticle : 'onShowArticle'
+//            },
 
             'globaltoc' : {
                 storytap  : 'onShowArticle',
@@ -28407,7 +28395,6 @@ Ext.define('Music.controller.Main', {
 
     init : function() {
         var me = this,
-//            drawer = me.getDrawer(),
             today = me.getToday(),
             lastUpdated = +localStorage.getItem('lastUpdate'),
             isOldEnough = (today - lastUpdated) > 86400,
@@ -28461,7 +28448,6 @@ Ext.define('Music.controller.Main', {
     /** This function is responsible for a lot of things
         - Destroying the load mask if it exists
         - Adds the articles to the main carousel
-        - renders the drawer 1s after the app bootstraps
     */
     startApp : function() {
         var me = this,
@@ -28492,19 +28478,12 @@ Ext.define('Music.controller.Main', {
 
         // add about page
         main.add(me.getAbout());
-//        main.setActiveItem(me.getAbout())
-//        viewport.add(me.getDrawer());
 
-//        Ext.Function.defer(function() {
-//            main.add(me.getFavorites());
-//            main.add(me.getSearch());
-
-//            drawer.addArticles();
-
-//        }, 1000);
-
-        //custom event fired when articles are loaded
         viewport.fireEvent('loaded');
+    },
+
+    onTitleTap : function() {
+
     },
 
     /*
@@ -28514,7 +28493,6 @@ Ext.define('Music.controller.Main', {
     onGenresLoaded : function(store) {
 
         var me = this,
-//            rawData = store.getProxy().getReader().rawData,
             data;
 
         me.genresStore.data.each(function(record) {
@@ -28524,7 +28502,6 @@ Ext.define('Music.controller.Main', {
             }
         }, me);
 
-//        rawData && localStorage.setItem('genres', Ext.encode(rawData));
         me.startApp();
     },
 
@@ -28686,6 +28663,8 @@ Ext.define('Music.controller.Main', {
         else {
             player.setData(musicData);
 
+
+            // IOS hacks
 //            if (!me.getAudioHasPlayed()) {
 //
 //                // this is to fix the IOS auto-start audio issue!
@@ -28840,65 +28819,75 @@ Ext.define('Music.controller.Article', {
     }
 });
 /**
- * @class Music.view.ArticlePreview
- * @extends Ext.Panel
- * @author Crysfel Villa <crysfel@moduscreate.com>
- *
- * The article view
+ *  About Discover Music
  */
-Ext.define('Music.view.ArticlePreview', {
+Ext.define('Music.view.About', {
     extend : 'Ext.Component',
-    xtype  : 'articlepreview',
+    xtype: 'about',
+
     config : {
-        model : null,
-        genre : null,
-        cls   : 'music-article-preview',
-        tpl   : [
-            '<div class="music-article-image" style="background-image:url(http://src.sencha.io/1024/{image});">',
-                '<div class="music-article-category music-article-{genreKey} animated fadeInLeft">',
-                    '<h1>{genre}</h1>',
-                '</div>',
-                '<div class="music-article-title animated fadeInRight">',
-                    '<div class="music-content-all">',
-                        '<div class="music-article-title-bg music-article-title-content">',
-                            '<div class="music-article-btn music-article-btn-{genreKey}">Read <em>&</em> Listen</div>',
-                            '<h2>{title}</h2>',
-                        '</div>',
-                    '</div>',
-                '</div>',
-            '</div>'
-        ]
+        isKF2011 : navigator.userAgent == "Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Kindle Fire Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
+        cls: 'aboutpage',
+
     },
 
-    initialize : function() {
-        this.callParent();
-        this.registerEvents();
-    },
+    /**
+     * @event backhome
+     * Fires when Back to Home Screen button is tapped
+     * @param {Music.view.About} this About page instance
+     */
 
-    registerEvents : function() {
-        var me = this;
+    initialize : function () {
+        var me = this,
+            isOldSchool = (! this.getIsKF2011()) ? [
+                '<figure class="dmlogo"></figure>',
 
-        me.readAndListen = me.renderElement.down(".music-article-btn");
+                '<figure class="mclogo">',
+                    '<figcaption>developed by</figcaption>',
+                '</figure>'
+            ].join('') : '';
 
-        me.readAndListen.on({
-            scope      : me,
-            tap        : 'showFullArticle',
-            touchstart : 'onPress',
-            touchend   : 'onRelease'
+        this.setHtml([
+            '<header>',
+                '<h1>About This App</h1>',
+                '<aside>Back to home screen</aside>',
+            '</header>',
+
+             isOldSchool,
+
+
+            '<article>',
+                '<p><strong>DiscoverMusic</strong> was built to encourage users to listen to new music, read the ',
+                'fascinatng stories behind the artists, and share their discoveries with friends.</p>',
+
+                '<p>DiscoverMusic was designed and developed by <strong>Modus Create, Inc.</strong>, a mobile and ',
+                'cloud application development company based in Reston, Virginia.</p>',
+
+                '<p>Modus Create, Inc. used <strong>Sencha Touch 2.0</strong>, an HTML5 mobile framework developed by ',
+                '<strong>Sencha, Inc</strong>, to create DiscoverMusic. All content and audio clips presented in the ',
+                'app are courtesy of <strong>National Public Radio (NPR)</strong>, and are accessed using their free ',
+                'and open public APIs.</p>',
+
+                '<p>Want to share your feedback with Modus Create, inc.? Visit our website at ',
+                '<strong>www.moduscreate.com</strong>.</p>',
+
+                '<p>If you want to learn more about the Sencha Touch 2.0 platform, visit the Sencha website at ',
+                '<strong>www.sencha.com</strong>.</p>',
+            '</article>',
+
+            '<footer>©2012 Modus Create, Inc. All Rights Reserved. <br />www.moduscreate.com</footer>'
+        ].join(''))
+
+        me.callParent();
+        me.innerElement.on({
+            tap      : 'onBackTap',
+            delegate : 'header aside',
+            scope    : me
         });
-        me.pressedCls = 'music-article-btn-pressed-' + this.getModel().get('genreKey');
     },
 
-    onPress : function() {
-        this.readAndListen.addCls(this.pressedCls);
-    },
-
-    onRelease : function() {
-        this.readAndListen.removeCls(this.pressedCls);
-    },
-
-    showFullArticle : function() {
-        this.fireEvent("readarticle", this.getModel());
+    onBackTap: function () {
+        this.fireEvent('backhome', this);
     }
 });
 /**
@@ -28990,78 +28979,6 @@ Ext.define('Music.view.GenreToc', {
 
             return me.fireEvent('storytap', me.getArticles().getById(id));
         }
-    }
-});
-/**
- *  About Discover Music
- */
-Ext.define('Music.view.About', {
-    extend : 'Ext.Component',
-    xtype: 'about',
-
-    config : {
-        isKF2011 : navigator.userAgent == "Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Kindle Fire Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1",
-        cls: 'aboutpage',
-
-    },
-
-    /**
-     * @event backhome
-     * Fires when Back to Home Screen button is tapped
-     * @param {Music.view.About} this About page instance
-     */
-
-    initialize : function () {
-        var me = this,
-            isOldSchool = (! this.getIsKF2011()) ? [
-                '<figure class="dmlogo"></figure>',
-
-                '<figure class="mclogo">',
-                    '<figcaption>developed by</figcaption>',
-                '</figure>'
-            ].join('') : '';
-
-        this.setHtml([
-            '<header>',
-                '<h1>About This App</h1>',
-                '<aside>Back to home screen</aside>',
-            '</header>',
-
-             isOldSchool,
-
-
-            '<article>',
-                '<p><strong>DiscoverMusic</strong> was built to encourage users to listen to new music, read the ',
-                'fascinatng stories behind the artists, and share their discoveries with friends.</p>',
-
-                '<p>DiscoverMusic was designed and developed by <strong>Modus Create, Inc.</strong>, a mobile and ',
-                'cloud application development company based in Reston, Virginia.</p>',
-
-                '<p>Modus Create, Inc. used <strong>Sencha Touch 2.0</strong>, an HTML5 mobile framework developed by ',
-                '<strong>Sencha, Inc</strong>, to create DiscoverMusic. All content and audio clips presented in the ',
-                'app are courtesy of <strong>National Public Radio (NPR)</strong>, and are accessed using their free ',
-                'and open public APIs.</p>',
-
-                '<p>Want to share your feedback with Modus Create, inc.? Visit our website at ',
-                '<strong>www.moduscreate.com</strong>.</p>',
-
-                '<p>If you want to learn more about the Sencha Touch 2.0 platform, visit the Sencha website at ',
-                '<strong>www.sencha.com</strong>.</p>',
-            '</article>',
-
-            '<footer>©2012 Modus Create, Inc. All Rights Reserved. <br />www.moduscreate.com</footer>'
-        ].join(''))
-
-        me.callParent();
-        me.innerElement.on({
-            tap      : 'onBackTap',
-            delegate : 'header aside',
-            scope    : me
-        });
-    },
-
-    onBackTap: function () {
-        this.fireEvent('backhome', this);
     }
 });
 /**
@@ -29268,526 +29185,6 @@ Ext.define('Music.view.Slidousel', {
         this.pushEvent(e, 'itemtouchend');
     }
 });
-/**
- * @aside guide forms
- *
- * The checkbox field is an enhanced version of the native browser checkbox and is great for enabling your user to
- * choose one or more items from a set (for example choosing toppings for a pizza order). It works like any other
- * {@link Ext.field.Field field} and is usually found in the context of a form:
- *
- * ## Example
- *
- *     @example miniphone preview
- *     var form = Ext.create('Ext.form.Panel', {
- *         fullscreen: true,
- *         items: [
- *             {
- *                 xtype: 'checkboxfield',
- *                 name : 'tomato',
- *                 label: 'Tomato',
- *                 value: 'tomato',
- *                 checked: true
- *             },
- *             {
- *                 xtype: 'checkboxfield',
- *                 name : 'salami',
- *                 label: 'Salami'
- *             },
- *             {
- *                 xtype: 'toolbar',
- *                 docked: 'bottom',
- *                 items: [
- *                     { xtype: 'spacer' },
- *                     {
- *                         text: 'getValues',
- *                         handler: function() {
- *                             var form = Ext.ComponentQuery.query('formpanel')[0],
- *                                 values = form.getValues();
- *
- *                             Ext.Msg.alert(null,
- *                                 "Tomato: " + ((values.tomato) ? "yes" : "no")
- *                                 + "<br />Salami: " + ((values.salami) ? "yes" : "no")
- *                             );
- *                         }
- *                     },
- *                     { xtype: 'spacer' }
- *                 ]
- *             }
- *         ]
- *     });
- *
- *
- * The form above contains two check boxes - one for Tomato, one for Salami. We configured the Tomato checkbox to be
- * checked immediately on load, and the Salami checkbox to be unchecked. We also specified an optional text
- * {@link #value} that will be sent when we submit the form. We can get this value using the Form's
- * {@link Ext.form.Panel#getValues getValues} function, or have it sent as part of the data that is sent when the
- * form is submitted:
- *
- *     form.getValues(); //contains a key called 'tomato' if the Tomato field is still checked
- *     form.submit(); //will send 'tomato' in the form submission data
- *
- */
-Ext.define('Ext.field.Checkbox', {
-    extend: 'Ext.field.Field',
-    alternateClassName: 'Ext.form.Checkbox',
-
-    xtype: 'checkboxfield',
-    qsaLeftRe: /[\[]/g,
-    qsaRightRe: /[\]]/g,
-
-    isCheckbox: true,
-
-    /**
-     * @event check
-     * Fires when the checkbox is checked.
-     * @param {Ext.field.Checkbox} this This checkbox
-     * @param {Ext.EventObject} e This event object
-     */
-
-    /**
-     * @event uncheck
-     * Fires when the checkbox is unchecked.
-     * @param {Ext.field.Checkbox} this This checkbox
-     * @param {Ext.EventObject} e This event object
-     */
-
-    config: {
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-        ui: 'checkbox',
-
-        /**
-         * @cfg {String} value The string value to submit if the item is in a checked state.
-         * @accessor
-         */
-        value: '',
-
-        /**
-         * @cfg {Boolean} checked <tt>true</tt> if the checkbox should render initially checked
-         * @accessor
-         */
-        checked: false,
-
-        /**
-         * @cfg {Number} tabIndex
-         * @hide
-         */
-        tabIndex: -1,
-
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-        component: {
-            xtype   : 'input',
-            type    : 'checkbox',
-            useMask : true,
-            cls     : Ext.baseCSSPrefix + 'input-checkbox'
-        }
-    },
-
-    // @private
-    initialize: function() {
-        var me = this;
-
-        me.callParent();
-
-        me.getComponent().on({
-            scope: me,
-            order: 'before',
-            masktap: 'onMaskTap'
-        });
-    },
-
-    // @private
-    doInitValue: function() {
-        var me = this,
-            initialConfig = me.getInitialConfig();
-
-        // you can have a value or checked config, but checked get priority
-        if (initialConfig.hasOwnProperty('value')) {
-            me.originalState = initialConfig.value;
-        }
-
-        if (initialConfig.hasOwnProperty('checked')) {
-            me.originalState = initialConfig.checked;
-        }
-
-        me.callParent(arguments);
-    },
-
-    // @private
-    updateInputType: function(newInputType) {
-        var component = this.getComponent();
-        if (component) {
-            component.setType(newInputType);
-        }
-    },
-
-    // @private
-    updateName: function(newName) {
-        var component = this.getComponent();
-        if (component) {
-            component.setName(newName);
-        }
-    },
-
-    /**
-     * Returns the field checked value
-     * @return {Mixed} The field value
-     */
-    getChecked: function() {
-        // we need to get the latest value from the {@link #input} and then update the value
-        this._checked = this.getComponent().getChecked();
-        return this._checked;
-    },
-
-    /**
-     * Returns the submit value for the checkbox which can be used when submitting forms.
-     * @return {Boolean/String} value The value of {@link #value} or true, if {@link #checked}.
-     */
-    getSubmitValue: function() {
-        return (this.getChecked()) ? this._value || true : null;
-    },
-
-    setChecked: function(newChecked) {
-        this.updateChecked(newChecked);
-        this._checked = newChecked;
-    },
-
-    updateChecked: function(newChecked) {
-        this.getComponent().setChecked(newChecked);
-
-        // only call onChange (which fires events) if the component has been initialized
-        if (this.initialized) {
-            this.onChange();
-        }
-    },
-
-    // @private
-    onMaskTap: function(component, e) {
-        var me = this,
-            dom = component.input.dom;
-
-        if (me.getDisabled()) {
-            return false;
-        }
-
-        //we must manually update the input dom with the new checked value
-        dom.checked = !dom.checked;
-
-        me.onChange(e);
-
-        //return false so the mask does not disappear
-        return false;
-    },
-
-    /**
-     * Fires the `check` or `uncheck` event when the checked value of this component changes.
-     * @private
-     */
-    onChange: function(e) {
-        var me = this,
-            oldChecked = me._checked,
-            newChecked = me.getChecked();
-
-        // only fire the event when the value changes
-        if (oldChecked != newChecked) {
-            if (newChecked) {
-                me.fireEvent('check', me, e);
-            } else {
-                me.fireEvent('uncheck', me, e);
-            }
-        }
-    },
-
-    /**
-     * @method
-     * Method called when this {@link Ext.field.Checkbox} has been checked
-     */
-    doChecked: Ext.emptyFn,
-
-    /**
-     * @method
-     * Method called when this {@link Ext.field.Checkbox} has been unchecked
-     */
-    doUnChecked: Ext.emptyFn,
-
-    /**
-     * Returns the checked state of the checkbox.
-     * @return {Boolean} True if checked, else otherwise
-     */
-    isChecked: function() {
-        return this.getChecked();
-    },
-
-    /**
-     * Set the checked state of the checkbox to true
-     * @return {Ext.field.Checkbox} This checkbox
-     */
-    check: function() {
-        return this.setChecked(true);
-    },
-
-    /**
-     * Set the checked state of the checkbox to false
-     * @return {Ext.field.Checkbox} This checkbox
-     */
-    uncheck: function() {
-        return this.setChecked(false);
-    },
-
-    getSameGroupFields: function() {
-        var component = this.up('formpanel') || this.up('fieldset'),
-            name = this.getName(),
-            replaceLeft = this.qsaLeftRe,
-            replaceRight = this.qsaRightRe,
-            components = [],
-            elements, element, i, ln;
-
-        if (!component) {
-            component = Ext.Viewport;
-        }
-
-        // This is to handle ComponentQuery's lack of handling [name=foo[bar]] properly
-        name = name.replace(replaceLeft, '\\[');
-        name = name.replace(replaceRight, '\\]');
-
-        elements = Ext.query('[name=' + name + ']', component.element.dom);
-        ln = elements.length;
-        for (i = 0; i < ln; i++) {
-            element = elements[i];
-            element = Ext.fly(element).up('.x-field-' + element.getAttribute('type'));
-            if (element && element.id) {
-                components.push(Ext.getCmp(element.id));
-            }
-        }
-        return components;
-    },
-
-    /**
-     * Returns an array of values from the checkboxes in the group that are checked,
-     * @return {Array}
-     */
-    getGroupValues: function() {
-        var values = [];
-
-        this.getSameGroupFields().forEach(function(field) {
-            if (field.getChecked()) {
-                values.push(field.getValue());
-            }
-        });
-
-        return values;
-    },
-
-    /**
-     * Set the status of all matched checkboxes in the same group to checked
-     * @param {Array} values An array of values
-     * @return {Ext.field.Checkbox} This checkbox
-     */
-    setGroupValues: function(values) {
-        this.getSameGroupFields().forEach(function(field) {
-            field.setChecked((values.indexOf(field.getValue()) !== -1));
-        });
-
-        return this;
-    },
-
-    /**
-     * Resets the status of all matched checkboxes in the same group to checked
-     * @return {Ext.field.Checkbox} This checkbox
-     */
-    resetGroupValues: function() {
-        this.getSameGroupFields().forEach(function(field) {
-            field.setChecked(field.originalState);
-        });
-
-        return this;
-    },
-
-    reset: function() {
-        this.setChecked(this.originalState);
-        return this;
-    }
-});
-
-/**
- * @aside guide forms
- *
- * A FieldSet is a great way to visually separate elements of a form. It's normally used when you have a form with
- * fields that can be divided into groups - for example a customer's billing details in one fieldset and their shipping
- * address in another. A fieldset can be used inside a form or on its own elsewhere in your app. Fieldsets can
- * optionally have a title at the top and instructions at the bottom. Here's how we might create a FieldSet inside a
- * form:
- *
- *     @example
- *     Ext.create('Ext.form.Panel', {
- *         fullscreen: true,
- *         items: [
- *             {
- *                 xtype: 'fieldset',
- *                 title: 'About You',
- *                 instructions: 'Tell us all about yourself',
- *                 items: [
- *                     {
- *                         xtype: 'textfield',
- *                         name : 'firstName',
- *                         label: 'First Name'
- *                     },
- *                     {
- *                         xtype: 'textfield',
- *                         name : 'lastName',
- *                         label: 'Last Name'
- *                     }
- *                 ]
- *             }
- *         ]
- *     });
- *
- * Above we created a {@link Ext.form.Panel form} with a fieldset that contains two text fields. In this case, all
- * of the form fields are in the same fieldset, but for longer forms we may choose to use multiple fieldsets. We also
- * configured a {@link #title} and {@link #instructions} to give the user more information on filling out the form if
- * required.
- */
-Ext.define('Ext.form.FieldSet', {
-    extend  : 'Ext.Container',
-    alias   : 'widget.fieldset',
-    requires: ['Ext.Title'],
-
-    config: {
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-        baseCls: Ext.baseCSSPrefix + 'form-fieldset',
-
-        /**
-         * @cfg {String} title Optional fieldset title, rendered just above the grouped fields
-         * @accessor
-         */
-        title: null,
-
-        /**
-         * @cfg {String} instructions Optional fieldset instructions, rendered just below the grouped fields
-         * @accessor
-         */
-        instructions: null
-    },
-
-    // @private
-    applyTitle: function(title) {
-        if (typeof title == 'string') {
-            title = {title: title};
-        }
-
-        Ext.applyIf(title, {
-            docked : 'top',
-            baseCls: this.getBaseCls() + '-title'
-        });
-
-        return Ext.factory(title, Ext.Title, this.getTitle());
-    },
-
-    // @private
-    updateTitle: function(newTitle, oldTitle) {
-        if (newTitle) {
-            this.add(newTitle);
-        }
-        if (oldTitle) {
-            this.remove(oldTitle);
-        }
-    },
-
-    // @private
-    applyInstructions: function(instructions) {
-        if (typeof instructions == 'string') {
-            instructions = {title: instructions};
-        }
-
-        Ext.applyIf(instructions, {
-            docked : 'bottom',
-            baseCls: this.getBaseCls() + '-instructions'
-        });
-
-        return Ext.factory(instructions, Ext.Title, this.getInstructions());
-    },
-
-    // @private
-    updateInstructions: function(newInstructions, oldInstructions) {
-        if (newInstructions) {
-            this.add(newInstructions);
-        }
-        if (oldInstructions) {
-            this.remove(oldInstructions);
-        }
-    }
-});
-
-/**
- * @aside guide forms
- *
- * The Search field creates an HTML5 search input and is usually created inside a form. Because it creates an HTML
- * search input type, the visual styling of this input is slightly different to normal text input contrls (the corners
- * are rounded), though the virtual keyboard displayed by the operating system is the standard keyboard control.
- *
- * As with all other form fields in Sencha Touch, the search field gains a "clear" button that appears whenever there
- * is text entered into the form, and which removes that text when tapped.
- *
- *     @example
- *     Ext.create('Ext.form.Panel', {
- *         fullscreen: true,
- *         items: [
- *             {
- *                 xtype: 'fieldset',
- *                 title: 'Search',
- *                 items: [
- *                     {
- *                         xtype: 'searchfield',
- *                         label: 'Query',
- *                         name: 'query'
- *                     }
- *                 ]
- *             }
- *         ]
- *     });
- *
- * Or on its own, outside of a form:
- *
- *     Ext.create('Ext.field.Search', {
- *         label: 'Search:',
- *         value: 'query'
- *     });
- *
- * Because search field inherits from {@link Ext.field.Text textfield} it gains all of the functionality that text
- * fields provide, including getting and setting the value at runtime, validations and various events that are fired
- * as the user interacts with the component. Check out the {@link Ext.field.Text} docs to see the additional
- * functionality available.
- */
-Ext.define('Ext.field.Search', {
-    extend: 'Ext.field.Text',
-    xtype: 'searchfield',
-    alternateClassName: 'Ext.form.Search',
-
-    config: {
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-        component: {
-	        type: 'search'
-	    },
-
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-	    ui: 'search'
-    }
-});
-
 /**
  * @author Tommy Maintz
  *
@@ -30313,832 +29710,6 @@ Ext.define('Ext.Media', {
                 dom.removeEventListener(e, fn);
             }
         });
-    }
-});
-
-/**
- * Tracks what records are currently selected in a databound widget. This class is mixed in to {@link Ext.dataview.DataView} and
- * all subclasses.
- * @private
- */
-Ext.define('Ext.mixin.Selectable', {
-    extend: 'Ext.mixin.Mixin',
-
-    mixinConfig: {
-        id: 'selectable',
-        hooks: {
-            updateStore: 'updateStore'
-        }
-    },
-
-    /**
-     * @event beforeselectionchange
-     * Fires before an item is selected
-     * @param {Ext.mixin.Selectable} this
-     * @preventable selectionchange
-     * @deprecated 2.0.0 Please listen to the {@link #selectionchange} event with an order of `before` instead.
-     */
-
-    /**
-     * @event selectionchange
-     * Fires when a selection changes
-     * @param {Ext.mixin.Selectable} this
-     * @param {Ext.data.Model[]} records The records whose selection has changed
-     */
-
-    config: {
-        /**
-         * @cfg {Boolean} disableSelection <p><tt>true</tt> to disable selection.
-         * This configuration will lock the selection model that the DataView uses.</p>
-         * @accessor
-         */
-        disableSelection: null,
-
-        /**
-         * @cfg {String} mode
-         * Modes of selection.
-         * Valid values are SINGLE, SIMPLE, and MULTI. Defaults to 'SINGLE'
-         * @accessor
-         */
-        mode: 'SINGLE',
-
-        /**
-         * @cfg {Boolean} allowDeselect
-         * Allow users to deselect a record in a DataView, List or Grid. Only applicable when the Selectable's mode is
-         * 'SINGLE'. Defaults to false.
-         * @accessor
-         */
-        allowDeselect: false,
-
-        /**
-         * @cfg {Ext.data.Model} lastSelected
-         * @private
-         * @accessor
-         */
-        lastSelected: null,
-
-        /**
-         * @cfg {Ext.data.Model} lastFocused
-         * @private
-         * @accessor
-         */
-        lastFocused: null,
-
-        /**
-         * @cfg {Boolean} deselectOnContainerClick True to deselect current selection when the container body is
-         * clicked. Defaults to true
-         * @accessor
-         */
-        deselectOnContainerClick: true
-    },
-
-    modes: {
-        SINGLE: true,
-        SIMPLE: true,
-        MULTI: true
-    },
-
-    selectableEventHooks: {
-        addrecords: 'onSelectionStoreAdd',
-        removerecords: 'onSelectionStoreRemove',
-        updaterecord: 'onSelectionStoreUpdate',
-        load: 'refreshSelection',
-        refresh: 'refreshSelection'
-    },
-
-    constructor: function() {
-        this.selected = new Ext.util.MixedCollection();
-        this.callParent(arguments);
-    },
-
-    /**
-     * @private
-     */
-    applyMode: function(mode) {
-        mode = mode ? mode.toUpperCase() : 'SINGLE';
-        // set to mode specified unless it doesnt exist, in that case
-        // use single.
-        return this.modes[mode] ? mode : 'SINGLE';
-    },
-
-    /**
-     * @private
-     */
-    updateStore: function(newStore, oldStore) {
-        var me = this,
-            bindEvents = Ext.apply({}, me.selectableEventHooks, { scope: me });
-
-        if (oldStore && Ext.isObject(oldStore) && oldStore.isStore) {
-            if (oldStore.autoDestroy) {
-                oldStore.destroy();
-            }
-            else {
-                oldStore.un(bindEvents);
-            }
-        }
-
-        if (newStore) {
-            newStore.on(bindEvents);
-            me.refreshSelection();
-        }
-    },
-
-    /**
-     * Selects all records.
-     * @param {Boolean} silent True to suppress all select events.
-     */
-    selectAll: function(silent) {
-        var me = this,
-            selections = me.getStore().getRange(),
-            ln = selections.length,
-            i = 0;
-        for (; i < ln; i++) {
-            me.select(selections[i], true, silent);
-        }
-    },
-
-    /**
-     * Deselects all records.
-     */
-    deselectAll: function(supress) {
-        var me = this,
-            selections = me.getStore().getRange();
-
-        me.deselect(selections, supress);
-
-        me.selected.clear();
-        me.setLastSelected(null);
-        me.setLastFocused(null);
-    },
-
-    // Provides differentiation of logic between MULTI, SIMPLE and SINGLE
-    // selection modes.
-    selectWithEvent: function(record) {
-        var me = this,
-            isSelected = me.isSelected(record);
-        switch (me.getMode()) {
-            case 'MULTI':
-            case 'SIMPLE':
-                if (isSelected) {
-                    me.deselect(record);
-                }
-                else {
-                    me.select(record, true);
-                }
-                break;
-            case 'SINGLE':
-                if (me.getAllowDeselect() && isSelected) {
-                    // if allowDeselect is on and this record isSelected, deselect it
-                    me.deselect(record);
-                } else {
-                    // select the record and do NOT maintain existing selections
-                    me.select(record, false);
-                }
-                break;
-        }
-    },
-
-    /**
-     * Selects a range of rows if the selection model {@link Ext.mixin.Selectable#getDisableSelection is not locked}.
-     * All rows in between startRow and endRow are also selected.
-     * @param {Number} startRow The index of the first row in the range
-     * @param {Number} endRow The index of the last row in the range
-     * @param {Boolean} keepExisting (optional) True to retain existing selections
-     */
-    selectRange: function(startRecord, endRecord, keepExisting) {
-        var me = this,
-            store = me.getStore(),
-            records = [],
-            tmp, i;
-
-        if (me.getDisableSelection()) {
-            return;
-        }
-
-        // swap values
-        if (startRecord > endRecord) {
-            tmp = endRecord;
-            endRecord = startRecord;
-            startRecord = tmp;
-        }
-
-        for (i = startRecord; i <= endRecord; i++) {
-            records.push(store.getAt(i));
-        }
-        this.doMultiSelect(records, keepExisting);
-    },
-
-    /**
-     * Adds the given records to the currently selected set
-     * @param {Ext.data.Model/Array/Number} records The records to select
-     * @param {Boolean} keepExisting If true, the existing selection will be added to (if not, the old selection is replaced)
-     * @param {Boolean} suppressEvent If true, the 'select' event will not be fired
-     */
-    select: function(records, keepExisting, suppressEvent) {
-        var me = this,
-            record;
-
-        if (me.getDisableSelection()) {
-            return;
-        }
-
-        if (typeof records === "number") {
-            records = [me.getStore().getAt(records)];
-        }
-
-        if (!records) {
-            return;
-        }
-
-        if (me.getMode() == "SINGLE" && records) {
-            record = records.length ? records[0] : records;
-            me.doSingleSelect(record, suppressEvent);
-        } else {
-            me.doMultiSelect(records, keepExisting, suppressEvent);
-        }
-    },
-
-    /**
-     * Selects a single record
-     * @private
-     */
-    doSingleSelect: function(record, suppressEvent) {
-        var me = this,
-            selected = me.selected;
-
-        if (me.getDisableSelection()) {
-            return;
-        }
-
-        // already selected.
-        // should we also check beforeselect?
-        if (me.isSelected(record)) {
-            return;
-        }
-
-        if (selected.getCount() > 0) {
-            me.deselect(me.getLastSelected(), suppressEvent);
-        }
-
-        selected.add(record);
-        me.setLastSelected(record);
-        me.onItemSelect(record, suppressEvent);
-        me.setLastFocused(record);
-
-        if (!suppressEvent) {
-            me.fireSelectionChange([record]);
-        }
-    },
-
-    /**
-     * Selects a set of multiple records
-     * @private
-     */
-    doMultiSelect: function(records, keepExisting, suppressEvent) {
-        if (records === null || this.getDisableSelection()) {
-            return;
-        }
-        records = !Ext.isArray(records) ? [records] : records;
-
-        var me = this,
-            selected = me.selected,
-            ln = records.length,
-            change = false,
-            i = 0,
-            record;
-
-        if (!keepExisting && selected.getCount() > 0) {
-            change = true;
-            me.deselect(me.getSelection(), true);
-        }
-        for (; i < ln; i++) {
-            record = records[i];
-            if (keepExisting && me.isSelected(record)) {
-                continue;
-            }
-            change = true;
-            me.setLastSelected(record);
-            selected.add(record);
-            if (!suppressEvent) {
-                me.setLastFocused(record);
-            }
-
-            me.onItemSelect(record, suppressEvent);
-        }
-        if (change && !suppressEvent) {
-            this.fireSelectionChange(records);
-        }
-    },
-
-    /**
-     * Deselects the given record(s). If many records are currently selected, it will only deselect those you pass in.
-     * @param {Number/Array/Ext.data.Model} records The record(s) to deselect. Can also be a number to reference by index
-     * @param {Boolean} suppressEvent If true the deselect event will not be fired
-     */
-    deselect: function(records, suppressEvent) {
-        var me = this;
-
-        if (me.getDisableSelection()) {
-            return;
-        }
-
-        records = Ext.isArray(records) ? records : [records];
-
-        var selected = me.selected,
-            change   = false,
-            i        = 0,
-            store    = me.getStore(),
-            ln       = records.length,
-            record;
-
-        for (; i < ln; i++) {
-            record = records[i];
-
-            if (typeof record === 'number') {
-                record = store.getAt(record);
-            }
-
-            if (selected.remove(record)) {
-                if (me.getLastSelected() == record) {
-                    me.setLastSelected(selected.last());
-                }
-                change = true;
-            }
-            if (record) {
-                me.onItemDeselect(record, suppressEvent);
-            }
-        }
-
-        if (change && !suppressEvent) {
-            me.fireSelectionChange(records);
-        }
-    },
-
-    /**
-     * Sets a record as the last focused record. This does NOT mean
-     * that the record has been selected.
-     * @param {Ext.data.Record} newRecord
-     * @param {Ext.data.Record} oldRecord
-     */
-    updateLastFocused: function(newRecord, oldRecord) {
-        this.onLastFocusChanged(oldRecord, newRecord);
-    },
-
-    fireSelectionChange: function(records) {
-        var me = this;
-            me.fireAction('selectionchange', [me, records], 'getSelection');
-    },
-
-    /**
-     * Returns an array of the currently selected records.
-     * @return {Array} An array of selected records
-     */
-    getSelection: function() {
-        return this.selected.getRange();
-    },
-
-    /**
-     * Returns <tt>true</tt> if the specified row is selected.
-     * @param {Ext.data.Model/Number} record The record or index of the record to check
-     * @return {Boolean}
-     */
-    isSelected: function(record) {
-        record = Ext.isNumber(record) ? this.getStore().getAt(record) : record;
-        return this.selected.indexOf(record) !== -1;
-    },
-
-    /**
-     * Returns true if there is a selected record.
-     * @return {Boolean}
-     */
-    hasSelection: function() {
-        return this.selected.getCount() > 0;
-    },
-
-    /**
-     * @private
-     */
-    refreshSelection: function() {
-        var me = this,
-            selections = me.getSelection();
-
-        me.deselectAll(true);
-        if (selections.length) {
-            me.select(selections, false, true);
-        }
-    },
-
-    // prune records from the SelectionModel if
-    // they were selected at the time they were
-    // removed.
-    onSelectionStoreRemove: function(store, records) {
-        var me = this,
-            selected = me.selected,
-            ln = records.length,
-            record, i;
-
-        if (me.getDisableSelection()) {
-            return;
-        }
-
-        for (i = 0; i < ln; i++) {
-            record = records[i];
-            if (selected.remove(record)) {
-                if (me.getLastSelected() == record) {
-                    me.setLastSelected(null);
-                }
-                if (me.getLastFocused() == record) {
-                    me.setLastFocused(null);
-                }
-                me.fireSelectionChange([record]);
-            }
-        }
-    },
-
-    /**
-     * Returns the number of selections.
-     * @return {Number}
-     */
-    getSelectionCount: function() {
-        return this.selected.getCount();
-    },
-
-    onSelectionStoreAdd: Ext.emptyFn,
-    onSelectionStoreUpdate: Ext.emptyFn,
-    onItemSelect: Ext.emptyFn,
-    onItemDeselect: Ext.emptyFn,
-    onLastFocusChanged: Ext.emptyFn,
-    onEditorKey: Ext.emptyFn
-}, function() {
-    /**
-     * Selects a record instance by record instance or index.
-     * @member Ext.mixin.Selectable
-     * @method doSelect
-     * @param {Ext.data.Model/Number} records An array of records or an index
-     * @param {Boolean} keepExisting
-     * @param {Boolean} suppressEvent Set to false to not fire a select event
-     * @deprecated 2.0.0 Please use {@link #select} instead.
-     */
-
-    /**
-     * Deselects a record instance by record instance or index.
-     * @member Ext.mixin.Selectable
-     * @method doDeselect
-     * @param {Ext.data.Model/Number} records An array of records or an index
-     * @param {Boolean} suppressEvent Set to false to not fire a deselect event
-     * @deprecated 2.0.0 Please use {@link #deselect} instead.
-     */
-
-    /**
-     * Returns the selection mode currently used by this Selectable
-     * @member Ext.mixin.Selectable
-     * @method getSelectionMode
-     * @return {String} The current mode
-     * @deprecated 2.0.0 Please use {@link #getMode} instead.
-     */
-
-    /**
-     * Returns the array of previously selected items
-     * @member Ext.mixin.Selectable
-     * @method getLastSelected
-     * @return {Array} The previous selection
-     * @deprecated 2.0.0
-     */
-
-    /**
-     * Returns true if the Selectable is currently locked
-     * @member Ext.mixin.Selectable
-     * @method isLocked
-     * @return {Boolean} True if currently locked
-     * @deprecated 2.0.0 Please use {@link #getDisableSelection} instead.
-     */
-
-    /**
-     * This was an internal function accidentally exposed in 1.x and now deprecated. Calling it has no effect
-     * @member Ext.mixin.Selectable
-     * @method setLastFocused
-     * @deprecated 2.0.0
-     */
-
-    /**
-     * Deselects any currently selected records and clears all stored selections
-     * @member Ext.mixin.Selectable
-     * @method clearSelections
-     * @deprecated 2.0.0 Please use {@link #deselectAll} instead.
-     */
-
-    /**
-     * Returns the number of selections.
-     * @member Ext.mixin.Selectable
-     * @method getCount
-     * @return {Number}
-     * @deprecated 2.0.0 Please use {@link #getSelectionCount} instead.
-     */
-
-    /**
-     * @cfg {Boolean} locked
-     * @inheritdoc Ext.mixin.Selectable#disableSelection
-     * @deprecated 2.0.0 Please use {@link #disableSelection} instead.
-     */
-
-});
-
-/**
- * @private
- */
-Ext.define('Ext.dataview.element.Container', {
-    extend: 'Ext.Component',
-
-    /**
-     * @event itemtouchstart
-     * Fires whenever an item is touched
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item touched
-     * @param {Number} index The index of the item touched
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtouchmove
-     * Fires whenever an item is moved
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item moved
-     * @param {Number} index The index of the item moved
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtouchend
-     * Fires whenever an item is touched
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item touched
-     * @param {Number} index The index of the item touched
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtap
-     * Fires whenever an item is tapped
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item tapped
-     * @param {Number} index The index of the item tapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtaphold
-     * Fires whenever an item is tapped
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item tapped
-     * @param {Number} index The index of the item tapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemsingletap
-     * Fires whenever an item is doubletapped
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item singletapped
-     * @param {Number} index The index of the item singletapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemdoubletap
-     * Fires whenever an item is doubletapped
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item doubletapped
-     * @param {Number} index The index of the item doubletapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemswipe
-     * Fires whenever an item is swiped
-     * @param {Ext.dataview.element.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item swiped
-     * @param {Number} index The index of the item swiped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    doInitialize: function() {
-        this.element.on({
-            touchstart: 'onItemTouchStart',
-            touchend: 'onItemTouchEnd',
-            tap: 'onItemTap',
-            taphold: 'onItemTapHold',
-            touchmove: 'onItemTouchMove',
-            singletap: 'onItemSingleTap',
-            doubletap: 'onItemDoubleTap',
-            swipe: 'onItemSwipe',
-            delegate: '> div',
-            scope: this
-        });
-    },
-
-    //@private
-    initialize: function() {
-        this.callParent();
-        this.doInitialize();
-    },
-
-    updateBaseCls: function(newBaseCls, oldBaseCls) {
-        var me = this;
-
-        me.callParent([newBaseCls + '-container', oldBaseCls]);
-    },
-
-    onItemTouchStart: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        Ext.get(target).on({
-            touchmove: 'onItemTouchMove',
-            scope   : me,
-            single: true
-        });
-
-        me.fireEvent('itemtouchstart', me, Ext.get(target), index, e);
-    },
-
-    onItemTouchEnd: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        Ext.get(target).un({
-            touchmove: 'onItemTouchMove',
-            scope   : me
-        });
-
-        me.fireEvent('itemtouchend', me, Ext.get(target), index, e);
-    },
-
-    onItemTouchMove: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        me.fireEvent('itemtouchmove', me, Ext.get(target), index, e);
-    },
-
-    onItemTap: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        me.fireEvent('itemtap', me, Ext.get(target), index, e);
-    },
-
-    onItemTapHold: function(e) {
-        var me     = this,
-            target = e.getTarget(),
-            index  = me.getViewItems().indexOf(target);
-
-        me.fireEvent('itemtaphold', me, Ext.get(target), index, e);
-    },
-
-    onItemDoubleTap: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        me.fireEvent('itemdoubletap', me, Ext.get(target), index, e);
-    },
-
-    onItemSingleTap: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        me.fireEvent('itemsingletap', me, Ext.get(target), index, e);
-    },
-
-    onItemSwipe: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            index = me.getViewItems().indexOf(target);
-
-        me.fireEvent('itemswipe', me,  Ext.get(target), index, e);
-    },
-
-    updateListItem: function(record, item) {
-        var me = this,
-            dataview = me.dataview,
-            data = dataview.prepareData(record.getData(true), dataview.getStore().indexOf(record), record);
-        item.innerHTML = me.dataview.getItemTpl().apply(data);
-    },
-
-    addListItem: function(index, record) {
-        var me = this,
-            dataview = me.dataview,
-            data = dataview.prepareData(record.getData(true), dataview.getStore().indexOf(record), record),
-            element = me.element,
-            childNodes = element.dom.childNodes,
-            ln = childNodes.length,
-            wrapElement;
-
-        wrapElement = Ext.Element.create(this.getItemElementConfig(index, data));
-
-        if (!ln || index == ln) {
-            wrapElement.appendTo(element);
-        } else {
-            wrapElement.insertBefore(childNodes[index]);
-        }
-    },
-
-    getItemElementConfig: function(index, data) {
-        var dataview = this.dataview,
-            itemCls = dataview.getItemCls(),
-            cls = dataview.getBaseCls() + '-item';
-
-        if (itemCls) {
-            cls += ' ' + itemCls;
-        }
-        return {
-            cls: cls,
-            html: dataview.getItemTpl().apply(data)
-        };
-    },
-
-    doRemoveItemCls: function(cls) {
-        var elements = this.getViewItems(),
-            ln = elements.length,
-            i = 0;
-
-        for (; i < ln; i++) {
-            Ext.fly(elements[i]).removeCls(cls);
-        }
-    },
-
-    doAddItemCls: function(cls) {
-        var elements = this.getViewItems(),
-            ln = elements.length,
-            i = 0;
-
-        for (; i < ln; i++) {
-            Ext.fly(elements[i]).addCls(cls);
-        }
-    },
-
-    // Remove
-    moveItemsToCache: function(from, to) {
-        var me = this,
-            items = me.getViewItems(),
-            i = to - from,
-            item;
-
-        for (; i >= 0; i--) {
-            item = items[from + i];
-            item.parentNode.removeChild(item);
-        }
-        if (me.getViewItems().length == 0) {
-            this.dataview.showEmptyText();
-        }
-    },
-
-    // Add
-    moveItemsFromCache: function(records) {
-        var me = this,
-            dataview = me.dataview,
-            store = dataview.getStore(),
-            ln = records.length,
-            i, record;
-
-        if (ln) {
-            dataview.hideEmptyText();
-        }
-
-        for (i = 0; i < ln; i++) {
-            records[i]._tmpIndex = store.indexOf(records[i]);
-        }
-
-        Ext.Array.sort(records, function(record1, record2) {
-            return record1._tmpIndex > record2._tmpIndex ? 1 : -1;
-        });
-
-        for (i = 0; i < ln; i++) {
-            record = records[i];
-            me.addListItem(record._tmpIndex, record);
-            delete record._tmpIndex;
-        }
-    },
-
-    // Transform ChildNodes into a proper Array so we can do indexOf...
-    getViewItems: function() {
-        return Array.prototype.slice.call(this.element.dom.childNodes);
-    },
-
-    destroy: function() {
-        var elements = this.getViewItems(),
-            ln = elements.length,
-            i = 0;
-
-        for (; i < ln; i++) {
-            Ext.removeNode(elements[i]);
-        }
-        this.callParent();
     }
 });
 
@@ -32747,147 +31318,6 @@ Ext.define('Ext.data.Error', {
 
     constructor: function(config) {
         this.initConfig(config);
-    }
-});
-
-/**
- * A DataItem is a container for {@link Ext.dataview.DataView} with useComponents: true. It ties together
- * {@link Ext.data.Model records} to its contained Components via a {@link #dataMap dataMap} configuration.
- *
- * For example, lets say you have a `text` configuration which, when applied, gets turned into an instance of an
- * Ext.Component. We want to update the {@link #html} of a sub-component when the 'text' field of the record gets
- * changed.
- *
- * As you can see below, it is simply a matter of setting the key of the object to be the getter of the config
- * (getText), and then give that property a value of an object, which then has 'setHtml' (the html setter) as the key,
- * and 'text' (the field name) as the value. You can continue this for a as many sub-components as you wish.
- *
- *        dataMap: {
- *           // When the record is updated, get the text configuration, and
- *           // call {@link #setHtml} with the 'text' field of the record.
- *           getText: {
- *              setHtml: 'text'
- *          },
- *
- *          // When the record is updated, get the userName configuration, and
- *          // call {@link #setHtml} with the 'from_user' field of the record.
- *          getUserName: {
- *              setHtml: 'from_user'
- *          },
- *
- *          // When the record is updated, get the avatar configuration, and
- *          // call `setSrc` with the 'profile_image_url' field of the record.
- *          getAvatar: {
- *              setSrc: 'profile_image_url'
- *          }
- *      },
- */
-
-Ext.define('Ext.dataview.component.DataItem', {
-    extend: 'Ext.Container',
-    xtype : 'dataitem',
-
-    config: {
-        baseCls: Ext.baseCSSPrefix + 'data-item',
-
-        defaultType: 'component',
-
-        /**
-         * @cfg {Ext.data.Model} record The model instance of this DataItem. It is controlled by the Component DataView
-         * @accessor
-         */
-        record: null,
-
-        /**
-         * @cfg {String} itemCls
-         * An additional CSS class to apply to items within the DataView.
-         * @accessor
-         */
-        itemCls: null,
-
-        /**
-         * @cfg dataMap
-         * The dataMap allows you to map {@link #record} fields to specific configurations in this component.
-         *
-         * For example, lets say you have a `text` configuration which, when applied, gets turned into an instance of an Ext.Component.
-         * We want to update the {@link #html} of this component when the 'text' field of the record gets changed.
-         * For example:
-         *
-         *      dataMap: {
-         *          getText: {
-         *              setHtml: 'text'
-         *          }
-         *      }
-         *
-         * In this example, it is simply a matter of setting the key of the object to be the getter of the config (getText), and then give that
-         * property a value of an object, which then has 'setHtml' (the html setter) as the key, and 'text' (the field name) as the value.
-         */
-        dataMap: {},
-
-        items: [{
-            xtype: 'component'
-        }]
-    },
-
-    updateBaseCls: function(newBaseCls, oldBaseCls) {
-        var me = this;
-
-        me.callParent(arguments);
-    },
-
-    updateItemCls: function(newCls, oldCls) {
-        if (oldCls) {
-            this.removeCls(oldCls);
-        }
-        if (newCls) {
-            this.addCls(newCls);
-        }
-    },
-
-    /**
-     * Updates this container's child items, passing through the dataMap.
-     * @param newRecord
-     * @private
-     */
-    updateRecord: function(newRecord) {
-        if (!newRecord) {
-            return;
-        }
-        this._record = newRecord;
-
-        var me = this,
-            dataview = me.config.dataview,
-            data = dataview.prepareData(newRecord.getData(true), dataview.getStore().indexOf(newRecord), newRecord),
-            items = me.getItems(),
-            item = items.first(),
-            dataMap = me.getDataMap(),
-            componentName, component, setterMap, setterName;
-
-        if (!item) {
-            return;
-        }
-        for (componentName in dataMap) {
-            setterMap = dataMap[componentName];
-            component = me[componentName]();
-            if (component) {
-                for (setterName in setterMap) {
-                    if (component[setterName]) {
-                        component[setterName](data[setterMap[setterName]]);
-                    }
-                }
-            }
-        }
-
-        /**
-         * @event updatedata
-         * Fires whenever the data of the DataItem is updated
-         * @param {Ext.dataview.component.DataItem} this The DataItem instance
-         * @param {Object} newData The new data
-         */
-        me.fireEvent('updatedata', me, data);
-
-        // Bypassing setter because sometimes we pass the same object (different properties)
-        item.updateData(data);
     }
 });
 
@@ -35356,25 +33786,35 @@ Ext.define('Music.view.Article', {
     },
 
     initialize : function(){
-        var me = this,
-            renderEl = me.renderElement,
-            bodyWidth = document.body.clientWidth;
+        var me            = this,
+            renderEl      = me.renderElement,
+            docBody       = document.body,
+            bodyWidth     = docBody.clientWidth,
+            bodyHeight    = docBody.clientHeight,
+            articleHeader = me.down('#articleHeader'),
+            carousel      = me.down('#carousel');
 
-
-        // 8.9"
+//         alert(bodyWidth + ' ' +bodyHeight);
+        // KF HD 2012 8.9"
         if (bodyWidth >= 800) {
-            me.down('#articleHeader').setHeight(400);
-            me.down('#carousel').setHeight(200);
-
+            articleHeader.setHeight(400);
+            carousel.setHeight(200);
         }
-        else if (bodyWidth == 600) {
-            me.down('#articleHeader').setHeight(225);
-            me.down('#carousel').setHeight(160);
 
+        // KF 2011
+        else if (bodyWidth == 600 && bodyHeight == 924) {
+            articleHeader.setHeight(195);
+            carousel.setHeight(130);
         }
+
+        // KF 2012 SD 7"
+        else if (bodyWidth == 600 && bodyHeight == 936) {
+            articleHeader.setHeight(240);
+            carousel.setHeight(130);
+        }
+
         else {
-            me.down('#carousel').setHeight(120);
-
+            carousel.setHeight(120);
         }
 
         me.callParent();
@@ -35387,8 +33827,6 @@ Ext.define('Music.view.Article', {
         });
 
         me.articleTitle = renderEl.down('.music-article-image');
-
-//        me.populateGenreArticles();
     },
 
     onPress   : function(event){
@@ -35527,19 +33965,26 @@ Ext.define('Music.view.GlobalToc', {
     },
 
     initialize : function() {
-        var bodyWidth     = document.body.clientWidth,
-//            bodyHeight    = document.body.clientHeight,
+        var docBody       = document.body,
+            bodyWidth     = docBody.clientWidth,
+            bodyHeight    = docBody.clientHeight,
             featuredStory = this.down('#featuredstory'),
             carousel      = this.down('#genres');
 
         // 8.9"
         if (bodyWidth == 800) {
-            featuredStory.setHeight(810);
+            featuredStory.setHeight(835);
             carousel.setHeight(300);
         }
-        else if (bodyWidth == 600) {
+        // KF 2012 HD 7"
+        else if (bodyWidth == 600 && bodyHeight != 936) {
             featuredStory.setHeight(640);
             carousel.setHeight(223);
+        }
+        // KF 2012 SD 7"
+        else if (bodyWidth == 600 && bodyHeight == 936) {
+            featuredStory.setHeight(680);
+            carousel.setHeight(195);
         }
 
         this.callParent(arguments);
@@ -35595,164 +34040,6 @@ Ext.define('Music.view.GlobalToc', {
     onTouchEnd : function() {
         Ext.fly(this.pressing).removeCls('global-toc-article-pressed');
         delete this.pressing;
-    }
-});
-/**
- * @class Music.view.Search
- * @extends Ext.Panel
- * @author Crysfel Villa<crysfel@moduscreate.com>
- *
- * Search page view.
- */
-
-Ext.define('Music.view.Search', {
-    extend   : 'Ext.Panel',
-    alias    : 'widget.search',
-    requires : [
-        'Ext.form.Checkbox',
-        'Ext.form.FieldSet',
-        'Ext.field.Search'
-    ],
-
-    config : {
-        layout : 'hbox',
-        cls    : 'music-search',
-        items  : [
-            {
-                xtype      : 'panel',
-                width      : 285,
-                padding    : 15,
-                cls        : 'music-genre-filters',
-                scrollable : {
-                    direction     : 'vertical',
-                    directionLock : true
-                },
-                items      : [
-                    {
-                        xtype    : 'fieldset',
-                        title    : 'Filter by Genre',
-                        defaults : {
-                            xtype      : 'checkboxfield',
-                            labelWidth : '70%',
-                            checked    : true
-                        },
-                        items    : [
-                            {
-                                "value" : 135408474,
-                                "name"  : "electronicDance",
-                                "label" : "Electronic"
-                            },
-                            {
-                                "value" : 10005,
-                                "name"  : "hipHop",
-                                "label" : "Hip-Hop"
-                            },
-                            {
-                                "value" : 139998808,
-                                "name"  : "rnb",
-                                "label" : "R&B / Soul"
-                            },
-                            {
-                                "value" : 10001,
-                                "name"  : "rock",
-                                "label" : "Rock"
-                            },
-                            {
-                                "value" : 139997200,
-                                "name"  : "pop",
-                                "label" : "Pop"
-                            },
-                            {
-                                "value" : 10002,
-                                "name"  : "jazzBlues",
-                                "label" : "Jazz & Blues"
-                            },
-                            {
-                                "value" : 10004,
-                                "name"  : "world",
-                                "label" : "World"
-                            },
-                            {
-                                "value" : 92792712,
-                                "name"  : "country",
-                                "label" : "Country"
-                            },
-                            {
-                                "value" : 139996449,
-                                "name"  : "latinAlternative",
-                                "label" : "Latin"
-                            },
-                            {
-                                "value" : 10003,
-                                "name"  : "classical",
-                                "label" : "Classical"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                xtype      : 'dataview',
-                flex       : 1,
-                store      : {
-                    type : 'search'
-                },
-                itemTpl    : [
-                    '<div class="music-result-article" style="background-image:url(http://src.sencha.io/300/{image})">',
-                        '<h2>{title}</h2>',
-                    '</div>'
-                ],
-                scrollable : {
-                    direction     : 'vertical',
-                    directionLock : true
-                },
-                items      : {
-                    xtype  : 'toolbar',
-                    docked : 'top',
-                    items  : [
-                        {
-                            xtype       : 'searchfield',
-                            flex        : 1,
-                            placeHolder : 'Search Artist, Genres, Songs...'
-                        },
-                        {
-                            xtype  : 'button',
-                            text   : 'Search',
-                            action : 'search'
-                        }
-                    ]
-                }
-
-            }
-        ],
-        control : {
-            'dataview' : {
-                itemtap : 'onDataViewItemTap'
-            }
-        }
-    },
-
-    initialize : function() {
-        var me = this,
-            viewport = Ext.Viewport;
-
-        me.callParent();
-
-        viewport.on('orientationchange', me.onOrientationChange, me);
-        viewport.fireEvent('orientationchange', Ext.Viewport, Ext.Viewport.orientation);
-    },
-
-    onOrientationChange : function(viewport, orientation) {
-        var me = this,
-            filters = me.down('panel[cls=music-genre-filters]'),
-            width;
-
-        width = ( orientation === Ext.Viewport.PORTRAIT) ? 275 : 285;
-        filters.setWidth(width);
-    },
-
-    onDataViewItemTap : function(view, index, target, record) {
-        this.fireEvent('storytap', record);
     }
 });
 /**
@@ -36899,8 +35186,9 @@ Ext.define('Music.view.Player', {
     ],
 
     config : {
-        cls   : 'music-player',
-        data  : {
+        hidden : true,
+        cls    : 'music-player',
+        data   : {
             time  : '00:00',
             title : 'Listen to this story'
         },
@@ -36920,13 +35208,13 @@ Ext.define('Music.view.Player', {
 
     loadSound : function(url) {
         var me    = this,
-            audioEl = this.audioEl,
-            listenerCfg = {
-                scope      : me,
-                pause      : 'onPause',
-                play       : 'onPlay',
-                timeupdate : 'onUpdateTime'
-            };
+            audioEl = me.audioEl;
+//            listenerCfg = {
+//                scope      : me,
+//                pause      : 'onPause',
+//                play       : 'onPlay',
+//                timeupdate : 'onUpdateTime'
+//            };
 
         // todo: REUSE the fucking audio element
         if (audioEl) {
@@ -36938,18 +35226,22 @@ Ext.define('Music.view.Player', {
         audioEl = document.createElement('audio');
         audioEl.src = url;
         audioEl.addEventListener('timeupdate', Ext.Function.bind(me.onUpdateTime, me));
-        this.audioEl = audioEl;
+        me.audioEl = audioEl;
 
 
+        me.doPlay();
+
+    },
+    doPlay : function() {
+        var me = this,
+            audioEl = me.audioEl;
 
         Ext.Function.defer(function() {
             audioEl.play();
 
             me.onPlay();
         }, 250);
-
     },
-
     onPlayPause : function() {
         var me = this,
             audio = me.audioEl;
@@ -36960,25 +35252,34 @@ Ext.define('Music.view.Player', {
         }
         else {
             audio.play();
-
             me.onPlay();
         }
     },
 
-    applyData : function(o) {
+    applyData : function(obj) {
         var me = this,
-            file;
+            myData = me.getData(),
+            soundFile = (obj.audioFile || obj.content || obj.file);
 
-        if (o && (file = o.audioFile || o.content || o.file)) {
-            delete me.timer;
-            me.loadSound(file);
+        obj.soundFile = soundFile;
+
+
+        if (obj && soundFile) {
+            if (obj.soundFile == myData.soundFile) {
+                me.doPlay();
+            }
+            else {
+                delete me.timer;
+                me.loadSound(soundFile);
+
+            }
         }
 
-        if (!o.time) {
-            o.time = '--:--';
+        if (!obj.time) {
+            obj.time = '--:--';
         }
 
-        return o;
+        return obj;
     },
 
     onUpdateTime : function() {
@@ -36998,6 +35299,7 @@ Ext.define('Music.view.Player', {
     },
 
     onPlay : function() {
+        this.setHidden(false);
         this.element.addCls('music-player-paused');
     },
 
@@ -38251,1317 +36553,6 @@ Ext.define('Ext.data.StoreManager', {
     };
 });
 
-/**
- * @private
- */
-Ext.define('Ext.dataview.component.Container', {
-    extend: 'Ext.Container',
-
-    requires: [
-        'Ext.dataview.component.DataItem'
-    ],
-
-    /**
-     * @event itemtouchstart
-     * Fires whenever an item is touched
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item touched
-     * @param {Number} index The index of the item touched
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtouchmove
-     * Fires whenever an item is moved
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item moved
-     * @param {Number} index The index of the item moved
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtouchend
-     * Fires whenever an item is touched
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item touched
-     * @param {Number} index The index of the item touched
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtap
-     * Fires whenever an item is tapped
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item tapped
-     * @param {Number} index The index of the item tapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtaphold
-     * Fires whenever an item is tapped
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item tapped
-     * @param {Number} index The index of the item tapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemsingletap
-     * Fires whenever an item is doubletapped
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item singletapped
-     * @param {Number} index The index of the item singletapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemdoubletap
-     * Fires whenever an item is doubletapped
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item doubletapped
-     * @param {Number} index The index of the item doubletapped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemswipe
-     * Fires whenever an item is swiped
-     * @param {Ext.dataview.component.Container} this
-     * @param {Ext.dataview.component.DataItem} item The item swiped
-     * @param {Number} index The index of the item swiped
-     * @param {Ext.EventObject} e The event object
-     */
-
-    constructor: function() {
-        this.itemCache = [];
-        this.callParent(arguments);
-    },
-
-    //@private
-    doInitialize: function() {
-        this.innerElement.on({
-            touchstart: 'onItemTouchStart',
-            touchend: 'onItemTouchEnd',
-            tap: 'onItemTap',
-            taphold: 'onItemTapHold',
-            touchmove: 'onItemTouchMove',
-            singletap: 'onItemSingleTap',
-            doubletap: 'onItemDoubleTap',
-            swipe: 'onItemSwipe',
-            delegate: '> .' + Ext.baseCSSPrefix + 'data-item',
-            scope: this
-        });
-    },
-
-    //@private
-    initialize: function() {
-        this.callParent();
-        this.doInitialize();
-    },
-
-    onItemTouchStart: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-
-        item.on({
-            touchmove: 'onItemTouchMove',
-            scope   : me,
-            single: true
-        });
-
-        me.fireEvent('itemtouchstart', me, item, me.indexOf(item), e);
-    },
-
-    onItemTouchMove: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-        me.fireEvent('itemtouchmove', me, item, me.indexOf(item), e);
-    },
-
-    onItemTouchEnd: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-
-        item.un({
-            touchmove: 'onItemTouchMove',
-            scope   : me
-        });
-
-        me.fireEvent('itemtouchend', me, item, me.indexOf(item), e);
-    },
-
-    onItemTap: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-        me.fireEvent('itemtap', me, item, me.indexOf(item), e);
-    },
-
-    onItemTapHold: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-        me.fireEvent('itemtaphold', me, item, me.indexOf(item), e);
-    },
-
-    onItemSingleTap: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-        me.fireEvent('itemsingletap', me, item, me.indexOf(item), e);
-    },
-
-    onItemDoubleTap: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-        me.fireEvent('itemdoubletap', me, item, me.indexOf(item), e);
-    },
-
-    onItemSwipe: function(e) {
-        var me = this,
-            target = e.getTarget(),
-            item = Ext.getCmp(target.id);
-        me.fireEvent('itemswipe', me, item, me.indexOf(item), e);
-    },
-
-    moveItemsToCache: function(from, to) {
-        var me = this,
-            dataview = me.dataview,
-            maxItemCache = dataview.getMaxItemCache(),
-            items = me.getViewItems(),
-            itemCache = me.itemCache,
-            cacheLn = itemCache.length,
-            pressedCls = dataview.getPressedCls(),
-            selectedCls = dataview.getSelectedCls(),
-            i = to - from,
-            item;
-
-        for (; i >= 0; i--) {
-            item = items[from + i];
-            if (cacheLn !== maxItemCache) {
-                me.remove(item, false);
-                item.removeCls([pressedCls, selectedCls]);
-                itemCache.push(item);
-                cacheLn++;
-            }
-            else {
-                item.destroy();
-            }
-        }
-
-        if (me.getViewItems().length == 0) {
-            this.dataview.showEmptyText();
-        }
-    },
-
-    moveItemsFromCache: function(records) {
-        var me = this,
-            dataview = me.dataview,
-            store = dataview.getStore(),
-            ln = records.length,
-            xtype = dataview.getDefaultType(),
-            itemConfig = dataview.getItemConfig(),
-            itemCache = me.itemCache,
-            cacheLn = itemCache.length,
-            items = [],
-            i, item, record;
-
-        if (ln) {
-            dataview.hideEmptyText();
-        }
-
-        for (i = 0; i < ln; i++) {
-            records[i]._tmpIndex = store.indexOf(records[i]);
-        }
-
-        Ext.Array.sort(records, function(record1, record2) {
-            return record1._tmpIndex > record2._tmpIndex ? 1 : -1;
-        });
-
-        for (i = 0; i < ln; i++) {
-            record = records[i];
-            if (cacheLn) {
-                cacheLn--;
-                item = itemCache.pop();
-                this.updateListItem(record, item);
-            }
-            else {
-                item = me.getDataItemConfig(xtype, record, itemConfig);
-            }
-            this.insert(record._tmpIndex, item);
-            delete record._tmpIndex;
-        }
-        return items;
-    },
-
-    getViewItems: function() {
-        return this.getInnerItems();
-    },
-
-    updateListItem: function(record, item) {
-        if (item.updateRecord) {
-            item.updateRecord(record);
-        }
-    },
-
-    getDataItemConfig: function(xtype, record, itemConfig) {
-        var dataview = this.dataview,
-            dataItemConfig = {
-                xtype: xtype,
-                record: record,
-                dataview: dataview,
-                itemCls: dataview.getItemCls(),
-                defaults: itemConfig
-            };
-        return Ext.merge(dataItemConfig, itemConfig);
-    },
-
-    doRemoveItemCls: function(cls) {
-        var items = this.getViewItems(),
-            ln = items.length,
-            i = 0;
-
-        for (; i < ln; i++) {
-            items[i].removeCls(cls);
-        }
-    },
-
-    doAddItemCls: function(cls) {
-        var items = this.getViewItems(),
-            ln = items.length,
-            i = 0;
-
-        for (; i < ln; i++) {
-            items[i].addCls(cls);
-        }
-    },
-
-    destroy: function() {
-        var me = this,
-            itemCache = me.itemCache,
-            ln = itemCache.length,
-            i = 0;
-
-        for (; i < ln; i++) {
-            itemCache[i].destroy();
-        }
-        this.callParent();
-    }
-});
-
-/**
- * @aside guide dataview
- *
- * DataView makes it easy to create lots of components dynamically, usually based off a {@link Ext.data.Store Store}.
- * It's great for rendering lots of data from your server backend or any other data source and is what powers
- * components like {@link Ext.List}.
- *
- * Use DataView whenever you want to show sets of the same component many times, for examples in apps like these:
- *
- * - List of messages in an email app
- * - Showing latest news/tweets
- * - Tiled set of albums in an HTML5 music player
- *
- * # Creating a Simple DataView
- *
- * At its simplest, a DataView is just a Store full of data and a simple template that we use to render each item:
- *
- *     @example miniphone preview
- *     var touchTeam = Ext.create('Ext.DataView', {
- *         fullscreen: true,
- *         store: {
- *             fields: ['name', 'age'],
- *             data: [
- *                 {name: 'Jamie',  age: 100},
- *                 {name: 'Rob',   age: 21},
- *                 {name: 'Tommy', age: 24},
- *                 {name: 'Jacky', age: 24},
- *                 {name: 'Ed',   age: 26}
- *             ]
- *         },
- *
- *         itemTpl: '<div>{name} is {age} years old</div>'
- *     });
- *
- * Here we just defined everything inline so it's all local with nothing being loaded from a server. For each of the 5
- * data items defined in our Store, DataView will render a {@link Ext.Component Component} and pass in the name and age
- * data. The component will use the tpl we provided above, rendering the data in the curly bracket placeholders we
- * provided.
- *
- * Because DataView is integrated with Store, any changes to the Store are immediately reflected on the screen. For
- * example, if we add a new record to the Store it will be rendered into our DataView:
- *
- *     touchTeam.getStore().add({
- *         name: 'Abe Elias',
- *         age: 33
- *     });
- *
- * We didn't have to manually update the DataView, it's just automatically updated. The same happens if we modify one
- * of the existing records in the Store:
- *
- *     touchTeam.getStore().getAt(0).set('age', 42);
- *
- * This will get the first record in the Store (Jamie), change the age to 42 and automatically update what's on the
- * screen.
- *
- *     @example miniphone
- *     var touchTeam = Ext.create('Ext.DataView', {
- *         fullscreen: true,
- *         store: {
- *             fields: ['name', 'age'],
- *             data: [
- *                 {name: 'Jamie',  age: 100},
- *                 {name: 'Rob',   age: 21},
- *                 {name: 'Tommy', age: 24},
- *                 {name: 'Jacky', age: 24},
- *                 {name: 'Ed',   age: 26}
- *             ]
- *         },
- *
- *         itemTpl: '<div>{name} is {age} years old</div>'
- *     });
- *
- *     touchTeam.getStore().add({
- *         name: 'Abe Elias',
- *         age: 33
- *     });
- *
- *     touchTeam.getStore().getAt(0).set('age', 42);
- *
- * # Loading data from a server
- *
- * We often want to load data from our server or some other web service so that we don't have to hard code it all
- * locally. Let's say we want to load all of the latest tweets about Sencha Touch into a DataView, and for each one
- * render the user's profile picture, user name and tweet message. To do this all we have to do is modify the
- * {@link #store} and {@link #itemTpl} a little:
- *
- *     @example portrait
- *     Ext.create('Ext.DataView', {
- *         fullscreen: true,
- *         cls: 'twitterView',
- *         store: {
- *             autoLoad: true,
- *             fields: ['from_user', 'text', 'profile_image_url'],
- *
- *             proxy: {
- *                 type: 'jsonp',
- *                 url: 'http://search.twitter.com/search.json?q=Sencha Touch',
- *
- *                 reader: {
- *                     type: 'json',
- *                     rootProperty: 'results'
- *                 }
- *             }
- *         },
- *
- *         itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2><p>{text}</p><div style="clear: both"></div>'
- *     });
- *
- * The Store no longer has hard coded data, instead we've provided a {@link Ext.data.proxy.Proxy Proxy}, which fetches
- * the data for us. In this case we used a JSON-P proxy so that we can load from Twitter's JSON-P search API. We also
- * specified the fields present for each tweet, and used Store's {@link Ext.data.Store#autoLoad autoLoad} configuration
- * to load automatically. Finally, we configured a Reader to decode the response from Twitter, telling it to expect
- * JSON and that the tweets can be found in the 'results' part of the JSON response.
- *
- * The last thing we did is update our template to render the image, twitter username and message. All we need to do
- * now is add a little CSS to style the list the way we want it and we end up with a very basic twitter viewer. Click
- * the preview button on the example above to see it in action.
- */
-Ext.define('Ext.dataview.DataView', {
-    extend: 'Ext.Container',
-
-    alternateClassName: 'Ext.DataView',
-
-    mixins: ['Ext.mixin.Selectable'],
-
-    xtype: 'dataview',
-
-    requires: [
-        'Ext.LoadMask',
-        'Ext.data.StoreManager',
-        'Ext.dataview.component.Container',
-        'Ext.dataview.element.Container'
-    ],
-
-    /**
-     * @event containertap
-     * Fires when a tap occurs and it is not on a template node.
-     * @removed 2.0.0
-     */
-
-    /**
-     * @event itemtouchstart
-     * Fires whenever an item is touched
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item touched
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem touched
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtouchmove
-     * Fires whenever an item is moved
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item moved
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem moved
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtouchend
-     * Fires whenever an item is touched
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item touched
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem touched
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtap
-     * Fires whenever an item is tapped
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item tapped
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem tapped
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemtaphold
-     * Fires whenever an item's taphold event fires
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item touched
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem touched
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemsingletap
-     * Fires whenever an item is singletapped
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item singletapped
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem singletapped
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemdoubletap
-     * Fires whenever an item is doubletapped
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item doubletapped
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem doubletapped
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event itemswipe
-     * Fires whenever an item is swiped
-     * @param {Ext.dataview.DataView} this
-     * @param {Number} index The index of the item swiped
-     * @param {Ext.Element/Ext.dataview.component.DataItem} target The element or DataItem swiped
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Ext.EventObject} e The event object
-     */
-
-    /**
-     * @event select
-     * @preventable doItemSelect
-     * Fires whenever an item is selected
-     * @param {Ext.dataview.DataView} this
-     * @param {Ext.data.Model} record The record assosciated to the item
-     */
-
-    /**
-     * @event deselect
-     * @preventable doItemDeselect
-     * Fires whenever an item is deselected
-     * @param {Ext.dataview.DataView} this
-     * @param {Ext.data.Model} record The record assosciated to the item
-     * @param {Boolean} supressed Flag to supress the event
-     */
-
-    /**
-     * @event refresh
-     * @preventable doRefresh
-     * Fires whenever the DataView is refreshed
-     * @param {Ext.dataview.DataView} this
-     */
-
-    /**
-     * @hide
-     * @event add
-     */
-
-    /**
-     * @hide
-     * @event remove
-     */
-
-    /**
-     * @hide
-     * @event move
-     */
-
-    config: {
-        /**
-         * @cfg layout
-         * Hide layout config in DataView. It only causes confusion.
-         * @accessor
-         * @private
-         */
-
-        /**
-         * @cfg {Ext.data.Store/Object} store
-         * Can be either a Store instance or a configuration object that will be turned into a Store. The Store is used
-         * to populate the set of items that will be rendered in the DataView. See the DataView intro documentation for
-         * more information about the relationship between Store and DataView.
-         * @accessor
-         */
-        store: null,
-
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-        baseCls: Ext.baseCSSPrefix + 'dataview',
-
-        /**
-         * @cfg {String} emptyText
-         * The text to display in the view when there is no data to display
-         */
-        emptyText: null,
-
-        /**
-         * @cfg {Boolean} deferEmptyText True to defer emptyText being applied until the store's first load
-         */
-        deferEmptyText: true,
-
-        /**
-         * @cfg {String/String[]/Ext.XTemplate} itemTpl
-         * The tpl to use for each of the items displayed in this DataView.
-         */
-        itemTpl: '<div>{text}</div>',
-
-        /**
-         * @cfg {String} pressedCls
-         * The CSS class to apply to an item on the view while it is being pressed.
-         * @accessor
-         */
-        pressedCls: 'x-item-pressed',
-
-        /**
-         * @cfg {String} itemCls
-         * An additional CSS class to apply to items within the DataView.
-         * @accessor
-         */
-        itemCls: null,
-
-        /**
-         * @cfg {String} selectedCls
-         * The CSS class to apply to an item on the view while it is selected.
-         * @accessor
-         */
-        selectedCls: 'x-item-selected',
-
-        /**
-         * @cfg {String} triggerEvent
-         * Determines what type of touch event causes an item to be selected. Defaults to 'itemtap'.
-         * Valid options are 'itemtap', 'itemsingletap', 'itemdoubletap', 'itemswipe', 'itemtaphold'.
-         * @accessor
-         */
-        triggerEvent: 'itemtap',
-
-        /**
-         * @cfg {String} triggerCtEvent
-         * Determines what type of touch event is recognized as a touch on the container.
-         * Valid options are 'tap' and 'singletap'.
-         * @accessor
-         */
-        triggerCtEvent: 'tap',
-
-        /**
-         * @cfg {Boolean} deselectOnContainerClick
-         * When set to true, tapping on the DataView's background (i.e. not on
-         * an item in the DataView) will deselect any currently selected items.
-         * @accessor
-         */
-        deselectOnContainerClick: true,
-
-        /**
-         * @cfg
-         * @inheritdoc
-         */
-        scrollable: true,
-
-        /**
-         * @cfg {Boolean/Object} inline
-         * When set to true the items within the DataView will have their display set to inline-block
-         * and be arranged horizontally. By default the items will wrap to the width of the DataView.
-         * Passing an object with { wrap: false } will turn off this wrapping behavior and overflowed
-         * items will need to be scrolled to horizontally.
-         * @accessor
-         */
-        inline: null,
-
-        /**
-         * @cfg {Number} pressedDelay
-         * The amount of delay between the tapstart and the moment we add the pressedCls.
-         * Settings this to true defaults to 100ms.
-         * @accessor
-         */
-        pressedDelay: 100,
-
-        /**
-         * @cfg {String} loadingText
-         * A string to display during data load operations (defaults to 'Loading...').  If specified, this text will be
-         * displayed in a loading div and the view's contents will be cleared while loading, otherwise the view's
-         * contents will continue to display normally until the new data is loaded and the contents are replaced.
-         */
-        loadingText: 'Loading...',
-
-        /**
-         * @cfg {Boolean} useComponents
-         * Flag the use a component based DataView implementation.  This allows the full use of components in the
-         * DataView at the cost of some performance.
-         *
-         * Checkout the [DataView Guide](#!/guide/dataview) for more information on using this configuration.
-         * @accessor
-         */
-        useComponents: null,
-
-        /**
-         * @cfg {Object} itemConfig
-         * A configuration object that is passed to every item created by a component based DataView. Because each
-         * item that a DataView renders is a Component, we can pass configuration options to each component to
-         * easily customize how each child component behaves.
-         * Note this is only used when useComponents is true.
-         * @accessor
-         */
-        itemConfig: {},
-
-        /**
-         * @cfg {Number} maxItemCache
-         * Maintains a cache of reusable components when using a component based DataView.  Improveing performance at
-         * the cost of memory.
-         * Note this is currently only used when useComponents is true.
-         * @accessor
-         */
-        maxItemCache: 20,
-
-        /**
-         * @cfg {String} defaultType
-         * The xtype used for the component based DataView. Defaults to dataitem.
-         * Note this is only used when useComponents is true.
-         * @accessor
-         */
-        defaultType: 'dataitem',
-
-        /**
-         * @cfg {String} scrollToTopOnRefresh
-         * Scroll the DataView to the top when the DataView is refreshed
-         * @accessor
-         */
-        scrollToTopOnRefresh: true
-    },
-
-    constructor: function(config) {
-        var me = this;
-
-
-        me.hasLoadedStore = false;
-
-        me.mixins.selectable.constructor.apply(me, arguments);
-
-        me.callParent(arguments);
-    },
-
-    updateItemCls: function(newCls, oldCls) {
-        var container = this.container;
-        if (container) {
-            if (oldCls) {
-                container.doRemoveItemCls(oldCls);
-            }
-            if (newCls) {
-                container.doAddItemCls(newCls);
-            }
-        }
-    },
-
-    storeEventHooks: {
-        beforeload: 'onBeforeLoad',
-        load: 'onLoad',
-        refresh: 'refresh',
-        addrecords: 'onStoreAdd',
-        removerecords: 'onStoreRemove',
-        updaterecord: 'onStoreUpdate'
-    },
-
-    initialize: function() {
-        this.callParent();
-        var me = this,
-            container;
-
-        me.on(me.getTriggerCtEvent(), me.onContainerTrigger, me);
-
-        container = me.container = this.add(new Ext.dataview[me.getUseComponents() ? 'component' : 'element'].Container({
-            baseCls: this.getBaseCls()
-        }));
-        container.dataview = me;
-
-        me.on(me.getTriggerEvent(), me.onItemTrigger, me);
-
-        container.on({
-            itemtouchstart: 'onItemTouchStart',
-            itemtouchend: 'onItemTouchEnd',
-            itemtap: 'onItemTap',
-            itemtaphold: 'onItemTapHold',
-            itemtouchmove: 'onItemTouchMove',
-            itemsingletap: 'onItemSingleTap',
-            itemdoubletap: 'onItemDoubleTap',
-            itemswipe: 'onItemSwipe',
-            scope: me
-        });
-
-        if (this.getStore()) {
-            this.refresh();
-        }
-    },
-
-    applyInline: function(config) {
-        if (Ext.isObject(config)) {
-            config = Ext.apply({}, config);
-        }
-        return config;
-    },
-
-    updateInline: function(newInline, oldInline) {
-        var baseCls = this.getBaseCls();
-        if (oldInline) {
-            this.removeCls([baseCls + '-inlineblock', baseCls + '-nowrap']);
-        }
-        if (newInline) {
-            this.addCls(baseCls + '-inlineblock');
-            if (Ext.isObject(newInline) && newInline.wrap === false) {
-                this.addCls(baseCls + '-nowrap');
-            }
-            else {
-                this.removeCls(baseCls + '-nowrap');
-            }
-        }
-    },
-
-    /**
-     * Function which can be overridden to provide custom formatting for each Record that is used by this
-     * DataView's {@link #tpl template} to render each node.
-     * @param {Object/Object[]} data The raw data object that was used to create the Record.
-     * @param {Number} recordIndex the index number of the Record being prepared for rendering.
-     * @param {Ext.data.Model} record The Record being prepared for rendering.
-     * @return {Array/Object} The formatted data in a format expected by the internal {@link #tpl template}'s overwrite() method.
-     * (either an array if your params are numeric (i.e. {0}) or an object (i.e. {foo: 'bar'}))
-     */
-    prepareData: function(data, index, record) {
-        data.xindex = index + 1;
-        return data;
-    },
-
-    // apply to the selection model to maintain visual UI cues
-    onContainerTrigger: function(e) {
-        var me = this;
-        if (e.target != me.element.dom) {
-            return;
-        }
-        if (me.getDeselectOnContainerClick() && me.getStore()) {
-            me.deselectAll();
-        }
-    },
-
-    // apply to the selection model to maintain visual UI cues
-    onItemTrigger: function(me, index) {
-        this.selectWithEvent(this.getStore().getAt(index));
-    },
-
-    doAddPressedCls: function(record) {
-        var me = this,
-        item = me.container.getViewItems()[me.getStore().indexOf(record)];
-        if (Ext.isElement(item)) {
-            item = Ext.get(item);
-        }
-        if (item) {
-            item.addCls(me.getPressedCls());
-        }
-    },
-
-    onItemTouchStart: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        me.fireAction('itemtouchstart', [me, index, target, record, e], 'doItemTouchStart');
-    },
-
-    doItemTouchStart: function(me, index, target, record) {
-        var pressedDelay = me.getPressedDelay();
-
-        if (record) {
-            if (pressedDelay > 0) {
-                me.pressedTimeout = Ext.defer(me.doAddPressedCls, pressedDelay, me, [record]);
-            }
-            else {
-                me.doAddPressedCls(record);
-            }
-        }
-    },
-
-    onItemTouchEnd: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        if (this.hasOwnProperty('pressedTimeout')) {
-            clearTimeout(this.pressedTimeout);
-            delete this.pressedTimeout;
-        }
-
-        if (record && target) {
-            target.removeCls(me.getPressedCls());
-        }
-
-        me.fireEvent('itemtouchend', me, index, target, record, e);
-    },
-
-    onItemTouchMove: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        if (me.hasOwnProperty('pressedTimeout')) {
-            clearTimeout(me.pressedTimeout);
-            delete me.pressedTimeout;
-        }
-
-        if (record && target) {
-            target.removeCls(me.getPressedCls());
-        }
-        me.fireEvent('itemtouchmove', me, index, target, record, e);
-    },
-
-    onItemTap: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        me.fireEvent('itemtap', me, index, target, record, e);
-    },
-
-    onItemTapHold: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        me.fireEvent('itemtaphold', me, index, target, record, e);
-    },
-
-    onItemSingleTap: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        me.fireEvent('itemsingletap', me, index, target, record, e);
-    },
-
-    onItemDoubleTap: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        me.fireEvent('itemdoubletap', me, index, target, record, e);
-    },
-
-    onItemSwipe: function(container, target, index, e) {
-        var me = this,
-            store = me.getStore(),
-            record = store && store.getAt(index);
-
-        me.fireEvent('itemswipe', me, index, target, record, e);
-    },
-
-    // invoked by the selection model to maintain visual UI cues
-    onItemSelect: function(record, suppressEvent) {
-        var me = this;
-        if (suppressEvent) {
-            me.doItemSelect(me, record);
-        } else {
-            me.fireAction('select', [me, record], 'doItemSelect');
-        }
-    },
-
-    // invoked by the selection model to maintain visual UI cues
-    doItemSelect: function(me, record) {
-        if (me.container && !me.isDestroyed) {
-            var item = me.container.getViewItems()[me.getStore().indexOf(record)];
-            if (Ext.isElement(item)) {
-                item = Ext.get(item);
-            }
-            if (item) {
-                item.removeCls(me.getPressedCls());
-                item.addCls(me.getSelectedCls());
-            }
-        }
-    },
-
-    // invoked by the selection model to maintain visual UI cues
-    onItemDeselect: function(record, suppressEvent) {
-        var me = this;
-        if (me.container && !me.isDestroyed) {
-            if (suppressEvent) {
-                me.doItemDeselect(me, record);
-            }
-            else {
-                me.fireAction('deselect', [me, record, suppressEvent], 'doItemDeselect');
-            }
-        }
-    },
-
-    doItemDeselect: function(me, record) {
-        var item = me.container.getViewItems()[me.getStore().indexOf(record)];
-
-        if (Ext.isElement(item)) {
-            item = Ext.get(item);
-        }
-
-        if (item) {
-            item.removeCls([me.getPressedCls(), me.getSelectedCls()]);
-        }
-    },
-
-    updateData: function(data) {
-        var store = this.getStore();
-        if (!store) {
-            this.setStore(Ext.create('Ext.data.Store', {
-                data: data
-            }));
-        } else {
-            store.add(data);
-        }
-    },
-
-    applyStore: function(store) {
-        var me = this,
-            bindEvents = Ext.apply({}, me.storeEventHooks, { scope: me }),
-            proxy, reader;
-
-        if (store) {
-            store = Ext.data.StoreManager.lookup(store);
-            if (store && Ext.isObject(store) && store.isStore) {
-                store.on(bindEvents);
-                proxy = store.getProxy();
-                if (proxy) {
-                    reader = proxy.getReader();
-                    if (reader) {
-                        reader.on('exception', 'handleException', this);
-                    }
-                }
-            }
-        }
-
-        return store;
-    },
-
-    /**
-     * Method called when the Store's Reader throws an exception
-     * @method handleException
-     */
-    handleException: function() {
-        this.setMasked(false);
-    },
-
-    updateStore: function(newStore, oldStore) {
-        var me = this,
-            bindEvents = Ext.apply({}, me.storeEventHooks, { scope: me }),
-            proxy, reader;
-
-        if (oldStore && Ext.isObject(oldStore) && oldStore.isStore) {
-            if (oldStore.autoDestroy) {
-                oldStore.destroy();
-            }
-            else {
-                oldStore.un(bindEvents);
-                proxy = oldStore.getProxy();
-                if (proxy) {
-                    reader = proxy.getReader();
-                    if (reader) {
-                        reader.un('exception', 'handleException', this);
-                    }
-                }
-            }
-        }
-
-        if (newStore) {
-            if (newStore.isLoaded()) {
-                this.hasLoadedStore = true;
-            }
-
-            if (newStore.isLoading()) {
-                me.onBeforeLoad();
-            }
-            if (me.container) {
-                me.refresh();
-            }
-        }
-    },
-
-    onBeforeLoad: function() {
-        var scrollable = this.getScrollable();
-        if (scrollable) {
-            scrollable.getScroller().stopAnimation();
-        }
-
-        var loadingText = this.getLoadingText();
-        if (loadingText) {
-            this.setMasked({
-                xtype: 'loadmask',
-                message: loadingText
-            });
-
-            //disable scorlling while it is masked
-            if (scrollable) {
-                scrollable.getScroller().setDisabled(true);
-            }
-        }
-
-        this.hideEmptyText();
-    },
-
-    updateEmptyText: function(newEmptyText, oldEmptyText) {
-        var me = this,
-            store;
-
-        if (oldEmptyText && me.emptyTextCmp) {
-            me.remove(me.emptyTextCmp, true);
-            delete me.emptyTextCmp;
-        }
-
-        if (newEmptyText) {
-            me.emptyTextCmp = me.add({
-                xtype: 'component',
-                cls: me.getBaseCls() + '-emptytext',
-                html: newEmptyText,
-                hidden: true
-            });
-            store = me.getStore();
-            if (store && me.hasLoadedStore && !store.getCount()) {
-                this.showEmptyText();
-            }
-        }
-    },
-
-    onLoad: function(store) {
-        var scrollable = this.getScrollable();
-
-        //remove any masks on the store
-        this.hasLoadedStore = true;
-        this.setMasked(false);
-
-        //enable the scroller again
-        if (scrollable) {
-            scrollable.getScroller().setDisabled(false);
-        }
-        if (!store.getCount()) {
-            this.showEmptyText();
-        }
-    },
-
-    /**
-     * Refreshes the view by reloading the data from the store and re-rendering the template.
-     */
-    refresh: function() {
-        var me = this,
-            container = me.container;
-
-        if (!me.getStore()) {
-            if (!me.hasLoadedStore && !me.getDeferEmptyText()) {
-                me.showEmptyText();
-            }
-            return;
-        }
-        if (container) {
-            me.fireAction('refresh', [me], 'doRefresh');
-        }
-    },
-
-    applyItemTpl: function(config) {
-        return (Ext.isObject(config) && config.isTemplate) ? config : new Ext.XTemplate(config);
-    },
-
-    onAfterRender: function() {
-        var me = this;
-        me.callParent(arguments);
-        me.updateStore(me.getStore());
-    },
-
-    getViewItems: function() {
-        return this.container.getViewItems();
-    },
-
-    doRefresh: function(me) {
-        var container = me.container,
-            store = me.getStore(),
-            records = store.getRange(),
-            items = container.getViewItems(),
-            recordsLn = records.length,
-            itemsLn = items.length,
-            deltaLn = recordsLn - itemsLn,
-            scrollable = me.getScrollable(),
-            i, item;
-
-        if (this.getScrollToTopOnRefresh() && scrollable) {
-            scrollable.getScroller().scrollToTop();
-        }
-
-        // No items, hide all the items from the collection.
-        if (recordsLn < 1) {
-            me.onStoreClear();
-            return;
-        }
-
-        // Too many items, hide the unused ones
-        if (deltaLn < 0) {
-            container.moveItemsToCache(itemsLn + deltaLn, itemsLn - 1);
-            // Items can changed, we need to refresh our references
-            items = container.getViewItems();
-            itemsLn = items.length;
-        }
-        // Not enough items, create new ones
-        else if (deltaLn > 0) {
-            container.moveItemsFromCache(store.getRange(itemsLn));
-        }
-
-        // Update Data and insert the new html for existing items
-        for (i = 0; i < itemsLn; i++) {
-            item = items[i];
-            container.updateListItem(records[i], item);
-        }
-    },
-
-    showEmptyText: function() {
-        if (this.getEmptyText() && (this.hasLoadedStore || !this.getDeferEmptyText()) ) {
-            this.emptyTextCmp.show();
-        }
-    },
-
-    hideEmptyText: function() {
-        if (this.getEmptyText()) {
-            this.emptyTextCmp.hide();
-        }
-    },
-
-    onStoreClear: function() {
-        var me = this,
-            container = me.container,
-            items = container.getViewItems();
-
-        container.moveItemsToCache(0, items.length - 1);
-        this.showEmptyText();
-    },
-
-    // private
-    onStoreAdd: function(store, records) {
-        if (records) {
-            this.container.moveItemsFromCache(records);
-        }
-    },
-
-    // private
-    onStoreRemove: function(store, records, indices) {
-        var container = this.container,
-            ln = records.length,
-            i;
-        for (i = 0; i < ln; i++) {
-            container.moveItemsToCache(indices[i], indices[i]);
-        }
-    },
-
-    // private
-    onStoreUpdate: function(store, record, newIndex, oldIndex) {
-        var me = this,
-            container = me.container;
-        oldIndex = (typeof oldIndex === 'undefined') ? newIndex : oldIndex;
-
-
-        if (oldIndex !== newIndex) {
-            container.moveItemsToCache(oldIndex, oldIndex);
-            container.moveItemsFromCache([record]);
-            if (me.isSelected(record)) {
-                me.doItemSelect(me, record);
-            }
-        }
-        else {
-            // Bypassing setter because sometimes we pass the same record (different data)
-            container.updateListItem(record, container.getViewItems()[newIndex]);
-        }
-    }
-});
-
-/**
- * @class Music.view.Favorites
- * @extends Ext.Panel
- * @author Crysfel Villa <crysfel@moduscreate.com>
- *
- * The favorites view
- */
-
-Ext.define('Music.view.Favorites', {
-    extend : 'Ext.dataview.DataView',
-    alias  : 'widget.favorites',
-
-    config : {
-        store      : 'favorites',
-        cls        : 'music-favorites',
-        editing    : false,
-        emptyText  : 'To add favorites, please visit an article and press the "Add to favorites" button.',
-        scrollable : {
-            direction     : 'vertical',
-            directionLock : true
-        },
-        itemTpl    : [
-            '<div class="music-result-article" style="background-image:url(http://src.sencha.io/300/{image})">',
-                '<tpl if="editable == true">',
-                    '<div class="music-favorites-remove">X</div>',
-                '</tpl>',
-                '<h2>{title}</h2>',
-            '</div>'
-        ],
-        items      : [
-            {
-                docked : 'top',
-                xtype  : 'toolbar',
-                ui     : 'transparent',
-                items  : [
-                    {
-                        xtype : 'title',
-                        title : 'Your Favorites'
-                    },
-                    {
-                        text   : 'Edit',
-                        action : 'edit',
-                        margin : '10 0 0 0'
-                    }
-                ]
-            }
-        ]
-    }
-});
 /**
  * @class Ext.data.Types
  * <p>This is s static class containing the system-supplied data types which may be given to a {@link Ext.data.Field Field}.<p/>

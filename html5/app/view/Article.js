@@ -91,25 +91,35 @@ Ext.define('Music.view.Article', {
     },
 
     initialize : function(){
-        var me = this,
-            renderEl = me.renderElement,
-            bodyWidth = document.body.clientWidth;
+        var me            = this,
+            renderEl      = me.renderElement,
+            docBody       = document.body,
+            bodyWidth     = docBody.clientWidth,
+            bodyHeight    = docBody.clientHeight,
+            articleHeader = me.down('#articleHeader'),
+            carousel      = me.down('#carousel');
 
-
-        // 8.9"
+//         alert(bodyWidth + ' ' +bodyHeight);
+        // KF HD 2012 8.9"
         if (bodyWidth >= 800) {
-            me.down('#articleHeader').setHeight(400);
-            me.down('#carousel').setHeight(200);
-
+            articleHeader.setHeight(400);
+            carousel.setHeight(200);
         }
-        else if (bodyWidth == 600) {
-            me.down('#articleHeader').setHeight(225);
-            me.down('#carousel').setHeight(160);
 
+        // KF 2011
+        else if (bodyWidth == 600 && bodyHeight == 924) {
+            articleHeader.setHeight(195);
+            carousel.setHeight(130);
         }
+
+        // KF 2012 SD 7"
+        else if (bodyWidth == 600 && bodyHeight == 936) {
+            articleHeader.setHeight(240);
+            carousel.setHeight(130);
+        }
+
         else {
-            me.down('#carousel').setHeight(120);
-
+            carousel.setHeight(120);
         }
 
         me.callParent();
@@ -122,8 +132,6 @@ Ext.define('Music.view.Article', {
         });
 
         me.articleTitle = renderEl.down('.music-article-image');
-
-//        me.populateGenreArticles();
     },
 
     onPress   : function(event){

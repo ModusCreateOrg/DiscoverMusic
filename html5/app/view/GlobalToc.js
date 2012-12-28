@@ -47,20 +47,26 @@ Ext.define('Music.view.GlobalToc', {
     },
 
     initialize : function() {
-        var bodyWidth     = document.body.clientWidth,
-//            bodyHeight    = document.body.clientHeight,
+        var docBody       = document.body,
+            bodyWidth     = docBody.clientWidth,
+            bodyHeight    = docBody.clientHeight,
             featuredStory = this.down('#featuredstory'),
             carousel      = this.down('#genres');
 
         // 8.9"
         if (bodyWidth == 800) {
-            alert('ere')
-            featuredStory.setHeight(810);
+            featuredStory.setHeight(835);
             carousel.setHeight(300);
         }
-        else if (bodyWidth == 600) {
+        // KF 2012 HD 7"
+        else if (bodyWidth == 600 && bodyHeight != 936) {
             featuredStory.setHeight(640);
             carousel.setHeight(223);
+        }
+        // KF 2012 SD 7"
+        else if (bodyWidth == 600 && bodyHeight == 936) {
+            featuredStory.setHeight(680);
+            carousel.setHeight(195);
         }
 
         this.callParent(arguments);

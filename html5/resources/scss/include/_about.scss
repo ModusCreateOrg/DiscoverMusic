@@ -11,7 +11,7 @@
 
 
 
-    @media #{$kindle-fire} {
+    @media #{$kf-2012-sd-7i} {
 
         header {
             background : #e1e1e1;
@@ -46,13 +46,84 @@
         }
 
         figure.dmlogo {
-            border : 1px solid #0F0;
+            //border : 1px solid #FF9;
+
+            width       : 520px;
+            height      : 125px;
+            margin-left : 15px;
+
+            background  : url('../images/DM-Logo-Large.png') top left no-repeat;
+            //background-size     : cover;
+        }
+
+        .mclogo {
+            width      : 220px;
+            height     : 55px;
+            background : url('../images/moduscreate-logo-white-small.png') bottom left no-repeat;
+
+            figcaption {
+                color : #959595;
+            }
+        }
+
+        article {
+            padding   : 1em;
+            font-size : 1.1em;
+        }
+
+        p {
+            margin : 10px 0;
+        }
+
+        footer {
+            text-align : center;
+            font-size  : 0.9em;
+            display    : table-row;
+        }
+    }
+
+    @media #{$kf-2011} {
+
+        header {
+            background : #e1e1e1;
+            height     : 70px;
+
+            h1 {
+                color       : #111111;
+                font-size   : 1.6em;
+                line-height : 70px;
+                margin-left : 1em;
+                float       : left;
+            }
+
+            aside {
+                text-transform     : uppercase;
+                background         : #959595;
+                font-size          : 0.8em;
+                width              : 212px;
+                height             : 38px;
+                line-height        : 38px;
+                float              : right;
+                margin             : 16px 1.8em;
+                text-align        : center;
+                -webkit-transition : -webkit-transform 0.2s ease-out;
+            }
+
+            aside:active {
+                background-color  : #252525;
+                color             : #959595;
+                -webkit-transform : scale(0.9);
+            }
+        }
+
+        figure.dmlogo {
 
             width       : 690px;
             height      : 250px;
             margin-left : 15px;
 
             background  : url('../images/DM-Logo-Large.png') top left no-repeat;
+            //border : 1px solid #F99;
             //background-size     : cover;
         }
 
@@ -82,8 +153,11 @@
         }
     }
 
-    @media #{$kindle-hd-7i} {
-        //border : 1px solid #0F0;
+
+
+
+    @media #{$kf-2012-hd-7i} {
+        //border : 1px solid #99F;
 
         header {
             background : #e1e1e1;
@@ -153,8 +227,8 @@
         }
     }
 
-    @media #{$kindle-hd-8i} {
-        //border: 1px solid #00F;
+    @media #{$kf-2012-hd-8i} {
+        //border: 1px solid #F99;
         header {
             background : #e1e1e1;
             height     : 70px;

@@ -14,8 +14,9 @@ Ext.define('Music.view.Player', {
     ],
 
     config : {
-        cls   : 'music-player',
-        data  : {
+        hidden : true,
+        cls    : 'music-player',
+        data   : {
             time  : '00:00',
             title : 'Listen to this story'
         },
@@ -35,13 +36,13 @@ Ext.define('Music.view.Player', {
 
     loadSound : function(url) {
         var me    = this,
-            audioEl = this.audioEl,
-            listenerCfg = {
-                scope      : me,
-                pause      : 'onPause',
-                play       : 'onPlay',
-                timeupdate : 'onUpdateTime'
-            };
+            audioEl = me.audioEl;
+//            listenerCfg = {
+//                scope      : me,
+//                pause      : 'onPause',
+//                play       : 'onPlay',
+//                timeupdate : 'onUpdateTime'
+//            };
 
         // todo: REUSE the fucking audio element
         if (audioEl) {
@@ -53,18 +54,22 @@ Ext.define('Music.view.Player', {
         audioEl = document.createElement('audio');
         audioEl.src = url;
         audioEl.addEventListener('timeupdate', Ext.Function.bind(me.onUpdateTime, me));
-        this.audioEl = audioEl;
+        me.audioEl = audioEl;
 
 
+        me.doPlay();
+
+    },
+    doPlay : function() {
+        var me = this,
+            audioEl = me.audioEl;
 
         Ext.Function.defer(function() {
             audioEl.play();
 
             me.onPlay();
         }, 250);
-
     },
-
     onPlayPause : function() {
         var me = this,
             audio = me.audioEl;
@@ -75,25 +80,34 @@ Ext.define('Music.view.Player', {
         }
         else {
             audio.play();
-
             me.onPlay();
         }
     },
 
-    applyData : function(o) {
+    applyData : function(obj) {
         var me = this,
-            file;
+            myData = me.getData(),
+            soundFile = (obj.audioFile || obj.content || obj.file);
 
-        if (o && (file = o.audioFile || o.content || o.file)) {
-            delete me.timer;
-            me.loadSound(file);
+        obj.soundFile = soundFile;
+
+
+        if (obj && soundFile) {
+            if (obj.soundFile == myData.soundFile) {
+                me.doPlay();
+            }
+            else {
+                delete me.timer;
+                me.loadSound(soundFile);
+
+            }
         }
 
-        if (!o.time) {
-            o.time = '--:--';
+        if (!obj.time) {
+            obj.time = '--:--';
         }
 
-        return o;
+        return obj;
     },
 
     onUpdateTime : function() {
@@ -113,6 +127,7 @@ Ext.define('Music.view.Player', {
     },
 
     onPlay : function() {
+        this.setHidden(false);
         this.element.addCls('music-player-paused');
     },
 

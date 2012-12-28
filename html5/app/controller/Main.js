@@ -30,14 +30,13 @@ Ext.define('Music.controller.Main', {
 
         views : [
             'Main',
-            'ArticlePreview',
+//            'ArticlePreview',
             'Article',
-            'GenreToc',
+//            'GenreToc',
             'GlobalToc',
-//            'Drawer',
-            'Search',
+//            'Search',
             'Player',
-            'Favorites',
+//            'Favorites',
             'About'
         ],
 
@@ -48,11 +47,6 @@ Ext.define('Music.controller.Main', {
                 autoCreate : true
             },
 
-//            drawer    : {
-//                xtype      : 'drawer',
-//                selector   : 'drawer',
-//                autoCreate : true
-//            },
             favorites : {
                 xtype      : 'favorites',
                 selector   : 'favorites',
@@ -79,7 +73,7 @@ Ext.define('Music.controller.Main', {
 
         control : {
             'main' : {
-                titletap         : 'onShowGlobalToc'
+                titletap         : 'onTitleTap'
 //                activeitemchange : 'onArticleActive'
             },
 
@@ -95,23 +89,17 @@ Ext.define('Music.controller.Main', {
                 tap : 'onSearchTap'
             },
 
-            'genretoc' : {
-                storytap    : 'onShowArticle'
-            },
-
+//            'genretoc' : {
+//                storytap    : 'onShowArticle'
+//            },
+//
             'slidousel' : {
                 itemtap: 'onShowArticle'
             },
 
-            'articlepreview' : {
-                readarticle : 'onShowArticle'
-            },
-
-            'drawer' : {
-                itemtap      : 'showGenre',
-                searchtap    : 'onSearchTap',
-                favoritestap : 'onFavoritesTap'
-            },
+//            'articlepreview' : {
+//                readarticle : 'onShowArticle'
+//            },
 
             'globaltoc' : {
                 storytap  : 'onShowArticle',
@@ -130,7 +118,6 @@ Ext.define('Music.controller.Main', {
 
     init : function() {
         var me = this,
-//            drawer = me.getDrawer(),
             today = me.getToday(),
             lastUpdated = +localStorage.getItem('lastUpdate'),
             isOldEnough = (today - lastUpdated) > 86400,
@@ -184,7 +171,6 @@ Ext.define('Music.controller.Main', {
     /** This function is responsible for a lot of things
         - Destroying the load mask if it exists
         - Adds the articles to the main carousel
-        - renders the drawer 1s after the app bootstraps
     */
     startApp : function() {
         var me = this,
@@ -215,19 +201,12 @@ Ext.define('Music.controller.Main', {
 
         // add about page
         main.add(me.getAbout());
-//        main.setActiveItem(me.getAbout())
-//        viewport.add(me.getDrawer());
 
-//        Ext.Function.defer(function() {
-//            main.add(me.getFavorites());
-//            main.add(me.getSearch());
-
-//            drawer.addArticles();
-
-//        }, 1000);
-
-        //custom event fired when articles are loaded
         viewport.fireEvent('loaded');
+    },
+
+    onTitleTap : function() {
+
     },
 
     /*
@@ -237,7 +216,6 @@ Ext.define('Music.controller.Main', {
     onGenresLoaded : function(store) {
 
         var me = this,
-//            rawData = store.getProxy().getReader().rawData,
             data;
 
         me.genresStore.data.each(function(record) {
@@ -247,7 +225,6 @@ Ext.define('Music.controller.Main', {
             }
         }, me);
 
-//        rawData && localStorage.setItem('genres', Ext.encode(rawData));
         me.startApp();
     },
 
@@ -409,6 +386,8 @@ Ext.define('Music.controller.Main', {
         else {
             player.setData(musicData);
 
+
+            // IOS hacks
 //            if (!me.getAudioHasPlayed()) {
 //
 //                // this is to fix the IOS auto-start audio issue!
