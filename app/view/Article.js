@@ -22,7 +22,7 @@ Ext.define('Music.view.Article', {
                 cls   : 'music-article-header',
                 width : 520,
                 tpl   : [
-                    '<div class="music-article-header-image music-article-{genreKey}" style="background-image:url(http://src.sencha.io/487/{image});">',
+                    '<div class="music-article-header-image music-article-{genreKey}" style="background-image:url({image});">', //487
                         '<h1>{title}</h1>',
                         '<h2>{genre}</h2>',
                     '</div>',
@@ -45,7 +45,7 @@ Ext.define('Music.view.Article', {
                     xtype : 'component',
                     cls   : 'music-article-content',
                     tpl   : new Ext.XTemplate(
-                        '<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url(http://src.sencha.io/600/{image});">',
+                        '<div class="music-article-image music-article-{genreKey}" style="display:none;background-image:url({image});">', //600
                             '<h1>{title}</h1>',
                             '<h2>{genre}</h2>',
                         '</div>',

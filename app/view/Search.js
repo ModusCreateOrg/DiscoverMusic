@@ -99,7 +99,7 @@ Ext.define('Music.view.Search', {
                     type : 'search'
                 },
                 itemTpl    : [
-                    '<div class="music-result-article" style="background-image:url(http://src.sencha.io/300/{image})">',
+                    '<div class="music-result-article" style="background-image:url({image})">', // 300
                         '<h2>{title}</h2>',
                     '</div>'
                 ],

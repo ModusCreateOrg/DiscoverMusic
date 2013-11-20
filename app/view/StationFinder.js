@@ -41,7 +41,9 @@ Ext.define('Music.view.StationFinder', {
                                 width       : 200,
                                 placeHolder : 'Zip code',
                                 itemId      : 'zipCode',
-                                style       : 'float: left; margin-right: 10px; -webkit-border-radius: 10px; min-height: 1.5em !important;'
+                                style       : 'float: left; margin-right: 10px; -webkit-border-radius: 10px; min-height: 1.5em !important;',
+                                value       : '10001',
+                                readOnly    : true
                             },
                             {
                                 xtype  : 'button',

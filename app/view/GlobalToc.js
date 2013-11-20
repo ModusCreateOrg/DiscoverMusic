@@ -23,7 +23,7 @@ Ext.define('Music.view.GlobalToc', {
                 flex   : 1,
                 data   : {},
                 tpl    : [
-                    '<div class="global-toc-featured-image" style="background-image:url(http://src.sencha.io/600/{image})">',
+                    '<div class="global-toc-featured-image" style="background-image:url({image})">', //600
                         '<div>Featured story</div>',
                         '<h2>{title}</h2>',
                     '</div>',
@@ -72,7 +72,7 @@ Ext.define('Music.view.GlobalToc', {
                 articles : list
             },
             tpl   : [
-                '<div class="global-toc-genre-image" data-id="{genre.id}" style="background-image:url(http://src.sencha.io/350/{genre.image})">',
+                '<div class="global-toc-genre-image" data-id="{genre.id}" style="background-image:url({genre.image})">', //350
                     '<h2>{genre.name}</h2>',
                     '<h3>{genre.title}</h3>',
                 '</div>',

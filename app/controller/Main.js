@@ -147,8 +147,8 @@ Ext.define('Music.controller.Main', {
 
             me.loadMask.show();
 
-            Ext.data.JsonP.request({
-                url     : 'http://discovermusic.moduscreate.com/getGenres',
+            Ext.Ajax.request({
+                url     : 'data/genres.json',
                 success : function(data) {
                     drawerStore.setData(data);
                     localStorage.setItem('lastUpdate', me.getToday());
@@ -358,7 +358,6 @@ Ext.define('Music.controller.Main', {
         if (musicData.audioFile && musicData.audioFile.match('\.pls')) {
             tmpObj.audioFile = 'resources/sounds/s.mp3';
             player.setData(tmpObj);
-
             Ext.data.JsonP.request({
                 url         : 'http://discovermusic.moduscreate.com/getMp3File',
                 callbackKey : 'callback',

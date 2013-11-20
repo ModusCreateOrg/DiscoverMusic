@@ -82,20 +82,36 @@ Ext.define('Music.controller.Stations', {
 
         me.view.showMask();
 
-        Ext.data.JsonP.request({
-            url         : 'http://discovermusic.moduscreate.com/stationFinder',
-            scope       : me,
-            callbackKey : 'callback',
-            callback    : me.onAfterQueryStations,
-            params      : params
+//        Ext.data.JsonP.request({
+//            url         : 'http://discovermusic.moduscreate.com/stationFinder',
+//            scope       : me,
+//            callbackKey : 'callback',
+//            callback    : me.onAfterQueryStations,
+//            params      : params
+//        });
+
+        Ext.Ajax.request({
+            url     : 'data/stations.json',
+            success : me.onAfterQueryStations,
+            scope   : me
         });
     },
 
-    onAfterQueryStations : function(success, data) {
-        if (success) {
+//    Deprecated JSONP Callback
+//    onAfterQueryStations : function(success, data) {
+//        if (success) {
+//            this.view.showStations(data);
+//        }
+//    },
+
+    onAfterQueryStations : function(response, opts) {
+        var data = JSON.parse(response.responseText);
+
+        if (data) {
             this.view.showStations(data);
         }
     },
+
 
     getFriendlyGeoName : function(coords) {
         var me = this;
@@ -119,14 +135,14 @@ Ext.define('Music.controller.Stations', {
             text,
             locationBtn;
 
-        if (success) {
-            var postalCodeItem = data.postalCodes[0];
-            text = 'Use : ' + postalCodeItem.adminName2 + ', ' + postalCodeItem.adminCode1;
-
+//        if (success) {
+//            var postalCodeItem = data.postalCodes[0];
+//            text = 'Use : ' + postalCodeItem.adminName2 + ', ' + postalCodeItem.adminCode1;
+            text = 'Use : New York, NY';
             locationBtn = view.down('#searchGeoLocationBtn');
             view.setHeight(130);
             locationBtn.setText(text);
             locationBtn.show();
-        }
+//        }
     }
 });

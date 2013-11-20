@@ -34,7 +34,7 @@ Ext.define('Music.view.Drawer', {
                 '<tpl for=".">',
                     '<div class="drawer-page drawer-page-{key}" data-id="{id}">',
                         '<h2>{name}</h2>',
-                        '<img src="http://src.sencha.io/182/{image}" />',
+                        '<img src="{image}" />', //182
                         '<div class="drawer-title-folded"></div>',
                     '</div>',
                 '</tpl>',

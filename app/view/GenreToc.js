@@ -23,7 +23,7 @@ Ext.define('Music.view.GenreToc', {
                 data   : {},
                 flex   : 1,
                 tpl    : [
-                    '<div class="genre-toc-featured-{genreKey} genre-toc-featured " data-id="{id}" style="background-image:url(http://src.sencha.io/1024/{image});">',
+                    '<div class="genre-toc-featured-{genreKey} genre-toc-featured " data-id="{id}" style="background-image:url({image});">', // 1024
                         '<h2>{title}</h2>',
                         '<h3>{genre}</h3>',
                     '</div>'
@@ -64,7 +64,7 @@ Ext.define('Music.view.GenreToc', {
             flex  : 1,
             data  : article.getData(),
             tpl   : [
-                '<div class="genre-toc-story genre-toc-story-image-{genreKey}" data-id="{id}" style="background-image:url(http://src.sencha.io/300/{image})">',
+                '<div class="genre-toc-story genre-toc-story-image-{genreKey}" data-id="{id}" style="background-image:url({image})">', // 300
                     '<h3>{title}</h3>',
                 '</div>'
             ]

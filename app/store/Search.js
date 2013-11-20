@@ -14,8 +14,10 @@ Ext.define('Music.store.Search', {
         model : 'Music.model.Article',
 
         proxy : {
-            type : 'jsonp',
-            url  : 'http://discovermusic.senchafy.com/search'
+//            type : 'jsonp',
+//            url  : 'http://discovermusic.moduscreate.com/search'
+            type : 'ajax',
+            url  : 'data/search.json'
         }
     }
 

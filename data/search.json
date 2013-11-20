@@ -1,0 +1,233 @@
+[
+    {
+        "id"        : "174759127",
+        "title"     : "Electronic Edition: James Blake And Brian Eno, DJ Koze, Bonobo, More",
+        "teaser"    : "This week, <em>All Songs Considered</em> goes electronic. Bob Boilen and Robin Hilton are joined by Sami Yenigun and Otis Hart, who bring us new cuts from DJ Koze, Julio Bashmore, Joker, Kyle Hall and more.",
+        "storyDate" : "Wed, 20 Mar 2013 12:30:00 -0400",
+        "audio"     : {
+            "id"          : "174825096",
+            "type"        : "primary",
+            "title"       : "Hear The Discussion",
+            "description" : "Hear The Discussion",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/asc/2013/03/20130320_asc_wholeshow.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2013/03/20/collage20130320-73c5d5bd0a14c676805dd006ead8932b68b8b688.jpg",
+            "title" : "Clockwise from upper left: Joker, Bonobo, James Blake, DJ Koze, Julio Bashmore"
+        },
+        "text"      : "<p>Fresh from their musical trek to Austin, Texas for this year's South by Southwest music festival, Bob Boilen and Robin Hilton are joined by Sami Yenigun and Otis Hart, who share some of their favorite electronic, house, and dubstep discoveries.</p><p>Sami kicks things off with the first track from techno producer DJ Koze's new album Amygdala, which you can stream in full on our site right now. British singer, songwriter and producer James Blake brings us a new and wonderful collaboration with Brian Eno. Julio Bashmore makes Justin Timberlake's \"Suit & Tie\" almost unrecognizable with his remix.</p><p>Bonobo's epic new track \"Cirrus\" has Sami constantly hitting \"repeat\" and British producer Joker introduces us to the \"big room sound\" with \"Handz Up.\" We also hear a brand new collaboration between Dirtybird Records labelmates Justin Martin and Ardalan.</p><p>MssngNo brings us a \"refix\" of Brandy's 2008 single \"Right Here.\" We bring things to a close with the premiere of \"Measure To Measure\" from Detroit-based prodigy Kyle Hall. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "163951554",
+        "title"     : "The Best Of Moogfest 2012",
+        "teaser"    : "Join <em>All Songs Considered</em> host Bob Boilen and NPR Music contributor Sami Yenigun as they drive back from this year's Moogfest and discuss some of their favorite sets, including electronic-music pioneer Morton Subotnick, DJs Andy Stott and Ana Sia, Exitmusic and more.",
+        "storyDate" : "Wed, 31 Oct 2012 17:06:00 -0400",
+        "audio"     : {
+            "id"          : "164047214",
+            "type"        : "primary",
+            "title"       : "Hear The Discussion",
+            "description" : "Hear The Discussion",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/asc/2012/10/20121031_asc_wholeshow.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/10/30/crowdatprimus_slide-b7d5693a48c8f3020c226bb0cd94666a3d31c4cd.jpg",
+            "title" : "Moogfest always draws a creative crowd. But the festival's proximity to Halloween inspires some fans to dress in unusual costumes."
+        },
+        "artist"    : [
+            {
+                "id"       : "164041336",
+                "artistId" : {
+                    "$text" : "163347773"
+                },
+                "name"     : {
+                    "$text" : "Death Grips"
+                }
+            },
+            {
+                "id"       : "164041333",
+                "artistId" : {
+                    "$text" : "114184243"
+                },
+                "name"     : {
+                    "$text" : "Ahleuchatistas"
+                }
+            },
+            {
+                "id"       : "164041330",
+                "artistId" : {
+                    "$text" : "142896815"
+                },
+                "name"     : {
+                    "$text" : "Tim Hecker"
+                }
+            },
+            {
+                "id"       : "164041327",
+                "artistId" : {
+                    "$text" : "151519211"
+                },
+                "name"     : {
+                    "$text" : "Exitmusic"
+                }
+            }
+        ],
+        "text"      : "<p>If it weren't for Robert Moog, a lot of the music you enjoy today might not have been possible. As the inventor of the Moog synthesizer, he gave rise to not only the technology needed for modern electronic music, but also the creative spirit that inspired countless musicians to take his vision and play with it, mold it and reshape it into mind-blowing works of art.</p><p>This past weekend, a remarkably gifted group of electronic and experimental rock artists gathered in Asheville, N.C., for the annual Moogfest. All Songs Considered host Bob Boilen and NPR electronic and dance-music contributor Sami Yenigun were there and, on this week's show, discuss some of their favorite sets, including a special performance from electronic-music pioneer Morton Subotnick, Andy Stott, DJ legends Carl Craig and Richie Hawtin, along with Ana Sia, Squarepusher, Exitmusic and more.</p><p>Hear full sets from some of the performers at Moogfest 2012. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "163243273",
+        "title"     : "Disclosure In Concert: Moogfest 2012",
+        "teaser"    : "One of the most exciting teams to hit the club circuit in years, brothers Guy and Howard Lawrence have broken through on the U.K. garage-house scene. Here, Disclosure performs live at Moogfest 2012 in Asheville, N.C.",
+        "storyDate" : "Wed, 31 Oct 2012 17:00:00 -0400",
+        "audio"     : {
+            "id"          : "164129316",
+            "type"        : "primary",
+            "title"       : "Disclosure Live From Moogfest",
+            "description" : "Disclosure Live From Moogfest",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/concerts/2012/11/20121101_concerts_disclosure.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/10/30/disclosure_slide-00876096154b2d21b6fc3ea0a4b735e16204b7cf.jpg",
+            "title" : "Disclosure performs live at Moogfest 2012."
+        },
+        "text"      : "<p>Brothers Guy and Howard Lawrence grew up on the outskirts of London, and got their start in the U.K. garage scene under the name Disclosure. One of their most popular remixes — of \"Running\" by U.K. pop newcomer Jessie Ware — gained support from BBC radio DJs like Annie Mac, and secured their status as one of the most exciting teams to hit the club circuit in years.</p><p>Here, Disclosure performs live at Moogfest 2012 in Asheville, N.C. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "159471518",
+        "title"     : "Guest DJ Dan Deacon",
+        "teaser"    : "On this edition of <em>All Songs Considered</em> electro-pop genius Dan Deacon shares some of his favorite music, and talks about his latest record, America.",
+        "storyDate" : "Tue, 21 Aug 2012 17:00:00 -0400",
+        "audio"     : {
+            "id"          : "159471988",
+            "type"        : "primary",
+            "title"       : "Hear The Discussion",
+            "description" : "Hear The Discussion",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/asc/2012/08/20120821_asc_wholeshow.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/08/21/onyxcvr_sq-5bcdbe1cb419e2bf5b5573e2e7725bf55900b47c.jpeg",
+            "title" : "onyx cover"
+        },
+        "text"      : "<p>Electro-pop genius Dan Deacon's latest album is as big as its name, America. It's epic, soaring and loud, but also minimalist at times and full of beauty. On this edition of All Songs Considered, Deacon talks about his latest album and shares some of his favorite songs with host Bob Boilen. Deacon brought a strange and surprising mix of artists, from The Rolling Stones to early electronic artist Raymond Scott, and minimalist composer Steve Reich, plus a few great unknowns.</p><p>You can hear Dan Deacon's entire album, America, now in our First Listen series. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "158487015",
+        "title"     : "Little Dragon In Concert",
+        "teaser"    : "The Swedish quartet's experimental, electro soul turned out the Prospect Park Bandshell in a Celebrate Brooklyn show.",
+        "storyDate" : "Mon, 13 Aug 2012 13:13:00 -0400",
+        "audio"     : {
+            "id"          : "158698923",
+            "type"        : "primary",
+            "title"       : "Little Dragon Live From Celebrate Brooklyn",
+            "description" : "Little Dragon Live From Celebrate Brooklyn",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/concerts/2012/08/20120813_concerts_ldragon.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/08/12/7757579718_6237ef133d_b-6edbeb4bc074988512264f392a95a925f3f09999.jpg",
+            "title" : "Drummer Erik Bodin relentlessly kept the momentum up with both a drum set and electronic drum pad."
+        },
+        "text"      : "<p>Swedish electro group Little Dragon has been remixed countless times. Their soul-infused dance songs steal scenes in primetime TV shows. They've collaborated across genres with the likes of the Gorillaz, SBTRKT and Big Boi. But their experimental evolution is most impressive when it unfurls live — as in this set that brought down the house at Celebrate Brooklyn.</p><p>A band whose varied percussion equals its heavy synth elements, Little Dragon makes innovative fusion pop with the occasional dub creeper. In faster and choppier numbers, touring keyboardist Arild Werling (filling in for member Håkan Wirenstrand, who was back in Sweden with his family) hit all the '80s synthpop signifiers, even channeling Devo at times. While drummer Erik Bodin relentlessly kept the momentum up with both a drum set and electronic drum pad, bassist Fredrik Källgren Wallin added the structure for lead singer Yukimi Nagano's one-of-a-kind voice.</p><p>Nagano's fiery spirit mesmerized the crowd as she bounced about banging on acoustic and electronic percussion instruments many have never seen the likes of. While practically everyone couldn't help but move, Nagano brought the at-capacity Prospect Park Bandshell crowd to a standstill on the atypical slower number \"Twice,\" which showcases her impressive lower range. Little Dragon doesn't perform the well-known trip-hop-inspired song very much anymore, but they made an exception for this show.</p><p>Set List</p><p>undefined</p><p>\"Looking Glass\"</p><p>\"Ritual Union\"</p><p>\"Test\"</p><p>\"Brush The Heat\"</p><p>\"Shuffle A Dream\"</p><p>\"Please Turn\"</p><p>\"Runabout\"</p><p>\"Precious\"</p><p>\"Summertearz\"</p><p>\"Little Man\"</p><p>\"Nightlight\"</p><p>\"Crystalfilm\"</p><p>\"Feather\"</p><p>\"My Step\"</p><p>\"Twice\"</p><p>undefined</p><p>Credits</p><p>Audio Engineer: Josh Rogosin. Audio Mix: Crispin Anderson/Courtesy of Little Dragon. Special thanks to Celebrate Brooklyn and BRIC Arts. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "156633214",
+        "title"     : "Hot Chip In Concert",
+        "teaser"    : "The British quintet rocked an outdoor crowd at Celebrate Brooklyn, reminding us that some bands still make dance music the old school way: with instruments played in real time by multiple human beings.",
+        "storyDate" : "Thu, 19 Jul 2012 15:02:00 -0400",
+        "audio"     : {
+            "id"          : "157130190",
+            "type"        : "primary",
+            "title"       : "Full Audio: Hot Chip Live From Celebrate Brooklyn",
+            "description" : "Full Audio: Hot Chip Live From Celebrate Brooklyn",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/concerts/2012/07/20120720_concerts_hotchip.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/07/19/7603253052_0dd55ddf32_h_slide-eff75f3f5c49f057d29f6ded5046badd5f1a1c44.jpg",
+            "title" : "Al Doyle played a variety of instruments on Wednesday night. Guitar was one of them."
+        },
+        "text"      : "<p>The huge popularity of EDM — electronic dance music — has led to a sea change in concerts lately, as huge crowds gather to watch brand-name DJs like Skrillex, Deadmau5 and Avicii. Nothing wrong with that, but it was great to be reminded last night at Celebrate Brooklyn that there are still bands playing dance music the old school way: with multiple human beings and instruments being played in real time.</p><p>Hot Chip transitions seamlessly between songs, as they did heading from \"One Life Stand\" into \"Night And Day,\" which, even divorced from its recent video (which is totally bananas), is still a trippy, catchy piece of dance-pop. The band still does DJ shows, but they haven't given up on music as a performance art: Their live show is precise and polished. And again, there were plenty of echoes of earlier musical influences — fans of early Depeche Mode and New Order would have been very happy with the show last night. And fans of Fleetwood Mac who were on the ball might've noticed that band's \"Everywhere\" used as a kind of transition out of Hot Chip's own \"Ready For The Floor,\" one of a handful of older songs they played. (Most of the rest of the set came from the new album In Our Heads.)</p><p>Everything (including our broadcast) had been delayed by a summer storm that brought heavy rain, nickel-sized hailstones, and a dangerously impressive lightning display to the New York area. But Hot Chip made no concessions to the weather or the outdoor venue, accompanying their live music with a full-on, fairly intense light show.</p><p>The set was dancey but melodic, from a band that has always known how to have fun. And the sold-out audience (almost 8,000) had fun too. A walk around the back of the crowd turned up lots of people dancing their butts off. It may not have been a DJ set or a rave, but all the accoutrements of a major dance music event were there. And at the end of the set, Hot Chip invited the audience to join them for an actual DJ set at Santos Party House in lower Manhattan. For anyone with the time and the ability to squeeze in, the fun promised to last a lot longer.</p><p>The band will play NYC's Terminal 5 on Friday, July 20. Tickets are still available.</p><p>Set List</p><p>undefined</p><p>\"Boy From School\"</p><p>\"Don't Deny Your Heart\"</p><p>\"One Life Stand\"</p><p>\"Night And Day\"</p><p>\"Flutes\"*</p><p>\"Over And Over\"</p><p>\"Hand Me Down Your Love\"</p><p>\"Look At Where We Are\"</p><p>\"How Do You Do?\"*</p><p>\"I Feel Better\"</p><p>\"Ready For The Floor\"*</p><p>\"Everywhere\" (Fleetwood Mac cover)</p><p>\"Hold On\"</p><p>\"Let Me Be Him\"</p><p>undefined</p><p>*included in video presentation</p><p>Credits</p><p>Produced by Saidah Blount and Amy Schriefer; Audio engineered by Josh Rogosin; Video produced by Brooklyn Independent Television; Video edited by Mito Habe-Evans; Hosted by John Schaefer, WNYC; Special thanks to Celebrate Brooklyn and Bowery Presents [Copyright 2013 WNYC Soundcheck ]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "157038123",
+        "title"     : "Gang Gang Dance In Concert",
+        "teaser"    : "The experimental dance group featured keening, alien vocal lines soaring over choppy keyboards, rhythmic samples and glitches and two live drummer/percussionists.",
+        "storyDate" : "Thu, 19 Jul 2012 13:13:00 -0400",
+        "audio"     : {
+            "id"          : "157056014",
+            "type"        : "primary",
+            "title"       : "Gang Gang Dance Live From Celebrate Brooklyn",
+            "description" : "Gang Gang Dance Live From Celebrate Brooklyn",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/concerts/2012/07/20120719_concerts_ganggangdance.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/07/19/7603259834_133fb500df_h-dac7e2e688484b64eec84977aaca1d7548dbd592.jpg",
+            "title" : "The band opened for Hot Chip as part of the annual Celebrate Brooklyn concert series."
+        },
+        "text"      : "<p>I was curious to see how Gang Gang Dance would present their edgy mix of dance and more experimental electronica at the outdoor Prospect Park Bandshell for Celebrate Brooklyn. The answer was: convincingly. Gang Gang Dance's set featured keening, alien vocal lines soaring over choppy keyboards, rhythmic samples and glitches, and two live drummer/percussionists. Although their first song had a hint of a Bollywood rhythm, much of their set looked back to an early generation of electronic rockers: Songs were connected by long, flowing musical textures reminiscent of Tangerine Dream, Klaus Schulze, and Vangelis.</p><p>Credits</p><p>Produced by Saidah Blount and Amy Schriefer; Audio engineered by Josh Rogosin; Hosted by John Schaefer, WNYC; Special thanks to Celebrate Brooklyn and Bowery Presents [Copyright 2013 WNYC Soundcheck ]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "153989069",
+        "title"     : "Dancing While The Sun Comes Up: Detroit Electronic Music Festival, 2012 Recap",
+        "teaser"    : "Host Bob Boilen and NPR Music reporter Sami Yenigun look back at the 24-7 dance party that was Detroit's Movement Festival.",
+        "storyDate" : "Wed, 30 May 2012 15:12:00 -0400",
+        "audio"     : {
+            "id"          : "153994163",
+            "type"        : "primary",
+            "title"       : "Hear The Discussion",
+            "description" : "Hear The Discussion",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/asc/2012/05/20120530_asc_wholeshow.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/05/30/demf2012-86490378744ece6895c790848a4bd30a67b8499c.jpg",
+            "title" : "crowd dancing at the detroit electronic music festival"
+        },
+        "text"      : "<p>Last week, about a hundred DJs and bands played to more than a 100-thousand lovers of electronic dance music. They all came together for one reason: to dance, and that's what they did 24-7, for three days.</p><p>Now in its thirteenth year, Movement: Detroit's Electronic Music Festival has featured an enormously diverse group of electronic producers and DJs from around the world. Detroit is the birthplace of Techno and after all these years of being more popular nearly everywhere but Detroit, there was a feeling at this year's festival that it's all coming back home. In fact, Detroit's mayor declared it \"Detroit Techno Week.\" Fresh off the plane from Detroit, NPR's Sami Yenigun and U Street Music Hall promotions director Morgan Tepper talk to host Bob Boilen about the music they heard at the festival's parties, the after-parties and the after-after-parties. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "148526561",
+        "title"     : "Dan Deacon, Live In Concert: SXSW 2012",
+        "teaser"    : "Deacon served as ringleader for an orgy of sound and a live act all about barely contained chaos.",
+        "storyDate" : "Thu, 15 Mar 2012 01:01:00 -0400",
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/03/15/6837707680_a3612ec5e2_b_wide-0aac2e3364451544b4209c5429d55886cbb826b3.jpg",
+            "title" : "Dan Deacon plays NPR Music's SXSW showcase at Stubb's Wednesday night."
+        },
+        "text"      : "<p>Few high-profile musicians could disappear into the SXSW crowd as seamlessly as Dan Deacon, who doesn't exactly cut a lithe, otherworldly, Mick Jagger-esque figure offstage. But everything about his set at Stubb's on Wednesday night was a raving, raging bundle of surprises: Deacon puts on some of the most rivetingly unpredictable, oddly interactive concerts in the business, whether he's teaching the crowd how to move in choreographed unison — witness the dance contest that precedes \"Konono Ripoff No. 1\" — or issuing a long spoken riff that somehow invokes both Avatar and the mom from the movie Big.</p><p>Bookended by busy drummers and looming over an array of technology that looks as if it could power a small spacecraft — not to mention a large glowing skull, film projections and a prolific assortment of blinking lights — Deacon serves as ringleader for a ludicrously overdriven orgy of sound. Naturally, lots went wrong along the way, from technical difficulties and language malfunctions to hastily recruited dancers Deacon publicly derided as inadequate. But the calamities aren't so much incidental as integral to a live act that's all about barely contained chaos.</p><p>Credits</p><p>Producers: Amy Schriefer, Robin Hilton; Video by: XI Media; Audio Engineer: Kevin Wait [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    },
+    {
+        "id"        : "146882787",
+        "title"     : "Electronic Edition: Burial, The 2 Bears, VCMG And More",
+        "teaser"    : "This week on <em>All Songs Considered</em>: the first album from an enigmatic Spanish producer, a Hot Chip side project, remixed South African dance music and a new song from some former Depeche Mode bandmates.",
+        "storyDate" : "Wed, 15 Feb 2012 08:53:00 -0500",
+        "audio"     : {
+            "id"          : "146883018",
+            "type"        : "primary",
+            "title"       : "Listen To The Discussion",
+            "description" : "Listen To The Discussion",
+            "src"         : "http://pd.npr.org/anon.npr-mp3/npr/asc/2012/02/20120215_asc_wholeshow.mp3"
+        },
+        "image"     : {
+            "src"   : "http://media.npr.org/assets/img/2012/02/14/collage20120215-412f1024e6f719ca0109a002f844cb9a1add20ff.jpg",
+            "title" : "Clockwise from top left: John Talabot, The 2 Bears, Grimes, VCMG."
+        },
+        "text"      : "<p>NPR's Sami Yenigun and Otis Hart are back to talk beats, loops, drops and more with Bob Boilen. The latest electronic edition of All Songs Considered includes cuts from the new Grimes album, a surprise EP from  Burial, a Burnt Friedman remix of South African dance music and premieres from Claude VonStroke, Nina Kraviz and VCMG — a collaboration between two former bandmates in Depeche Mode.</p><p>Also on the show: Hot Chip's Joe Goddard emerges with the side project The 2 Bears, and the mysterious Spanish producer John Talabot unveils his first proper album. Plus, Sami and Otis discuss the homegrown sounds coming out of San Francisco and explain the logic behind limited-edition releases. [Copyright 2013 NPR]</p>",
+        "genreKey"  : "electronicDance",
+        "genre"     : "Electronic"
+    }
+]
